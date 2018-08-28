@@ -1,9 +1,0 @@
-2016. 10. 12 오후 9:40:18 org.apache.catalina.core.StandardWrapperValve invoke
-정보: ==============================
-e:com.microsoft.sqlserver.jdbc.SQLServerException: PRIMARY KEY 제약 조건 'pk_tUserItem_gameid_listidx'을(를) 위반했습니다. 개체 'dbo.tUserItem'에 중복 키를 삽입할 수 없습니다. 중복 키 값은 (farm12093415, 11206)입니다.
-org.apache.jsp.goo.ubboxopengetitem_jsp@520d6867
- gameid:farm12093415
- password:5159648a3a5c3x839371
- mode:3
- boxslotidx:3
-
