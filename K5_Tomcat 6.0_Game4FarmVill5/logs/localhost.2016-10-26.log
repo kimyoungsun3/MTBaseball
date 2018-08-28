@@ -1,0 +1,11 @@
+2016. 10. 26 오후 11:41:17 org.apache.catalina.core.StandardWrapperValve invoke
+정보: ==============================
+e:com.microsoft.sqlserver.jdbc.SQLServerException: 트랜잭션(프로세스 ID 130)이 잠금 리소스에서 다른 프로세스와의 교착 상태가 발생하여 실행이 중지되었습니다. 트랜잭션을 다시 실행하십시오.
+org.apache.jsp.goo.login_jsp@35323af
+ gameid=farm22308325
+ password=3555726c8a5w1o571138
+ market=5
+ version=115
+ kakaoprofile=X1O+2tQVVBqen7Rw61tqzjRMS7Ck1OLSozeclo8Z5i7YABa1SpCELaSSmBgrptCuNcw6LOrNlUUMUZ2W8rCcoisApV1Pnu6JPWrSPhQnp6CT+9XOJcFHIC8RZMNnBms+
+ kakaomsgblocked=-1
+

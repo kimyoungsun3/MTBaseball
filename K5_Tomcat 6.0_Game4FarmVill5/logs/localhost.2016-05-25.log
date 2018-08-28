@@ -1,0 +1,158 @@
+2016. 5. 25 오전 10:39:42 org.apache.catalina.core.StandardWrapperValve invoke
+정보: ==============================
+e:com.microsoft.sqlserver.jdbc.SQLServerException: 열 이름 bgcttradecnt이(가) 잘못되었습니다.
+org.apache.jsp.goo.trade_jsp@1065443
+ gameid=gameid
+ password=password
+ userinfo=
+ aniitem=
+ cusitem=
+ tradeinfo=
+ paraminfo=
+
+2016. 5. 25 오후 12:13:41 org.apache.catalina.core.StandardWrapperValve invoke
+정보: ==============================
+e:com.microsoft.sqlserver.jdbc.SQLServerException: 열 이름 bgcttradecnt이(가) 잘못되었습니다.
+org.apache.jsp.goo.trade_jsp@1065443
+ gameid=gameid
+ password=password
+ userinfo=
+ aniitem=
+ cusitem=
+ tradeinfo=
+ paraminfo=
+
+2016. 5. 25 오후 12:13:51 org.apache.catalina.core.StandardWrapperValve invoke
+정보: ==============================
+e:com.microsoft.sqlserver.jdbc.SQLServerException: 열 이름 bgcttradecnt이(가) 잘못되었습니다.
+org.apache.jsp.goo.trade_jsp@1065443
+ gameid=gameid
+ password=password
+ userinfo=
+ aniitem=
+ cusitem=
+ tradeinfo=
+ paraminfo=
+
+2016. 5. 25 오후 12:55:49 org.apache.catalina.core.StandardWrapperValve invoke
+정보: ==============================
+e:com.microsoft.sqlserver.jdbc.SQLServerException: 저장 프로시저 'dbo.spu_SeedHarvest'을(를) 찾을 수 없습니다.
+org.apache.jsp.goo.seedharvest_jsp@2c437a58
+ gameid:farm9414876
+ password:6817345n8d6k1i773844
+ seedidx:0
+ mode:1
+ feeduse:18
+
+2016. 5. 25 오후 12:55:49 org.apache.catalina.core.StandardWrapperValve invoke
+정보: ==============================
+e:com.microsoft.sqlserver.jdbc.SQLServerException: 저장 프로시저 'dbo.spu_SeedHarvest'을(를) 찾을 수 없습니다.
+org.apache.jsp.goo.seedharvest_jsp@2c437a58
+ gameid:farm9414876
+ password:6817345n8d6k1i773844
+ seedidx:0
+ mode:1
+ feeduse:18
+
+2016. 5. 25 오후 12:55:50 org.apache.catalina.core.StandardWrapperValve invoke
+정보: ==============================
+e:com.microsoft.sqlserver.jdbc.SQLServerException: 저장 프로시저 'dbo.spu_SeedHarvest'을(를) 찾을 수 없습니다.
+org.apache.jsp.goo.seedharvest_jsp@2c437a58
+ gameid:farm9414876
+ password:6817345n8d6k1i773844
+ seedidx:0
+ mode:1
+ feeduse:18
+
+2016. 5. 25 오후 12:55:50 org.apache.catalina.core.StandardWrapperValve invoke
+정보: ==============================
+e:com.microsoft.sqlserver.jdbc.SQLServerException: 저장 프로시저 'dbo.spu_SeedHarvest'을(를) 찾을 수 없습니다.
+org.apache.jsp.goo.seedharvest_jsp@2c437a58
+ gameid:farm9414876
+ password:6817345n8d6k1i773844
+ seedidx:0
+ mode:1
+ feeduse:18
+
+2016. 5. 25 오후 12:55:51 org.apache.catalina.core.StandardWrapperValve invoke
+정보: ==============================
+e:com.microsoft.sqlserver.jdbc.SQLServerException: 저장 프로시저 'dbo.spu_SeedHarvest'을(를) 찾을 수 없습니다.
+org.apache.jsp.goo.seedharvest_jsp@2c437a58
+ gameid:farm9414876
+ password:6817345n8d6k1i773844
+ seedidx:0
+ mode:1
+ feeduse:18
+
+2016. 5. 25 오후 12:55:51 org.apache.catalina.core.StandardWrapperValve invoke
+정보: ==============================
+e:com.microsoft.sqlserver.jdbc.SQLServerException: 저장 프로시저 'dbo.spu_SeedHarvest'을(를) 찾을 수 없습니다.
+org.apache.jsp.goo.seedharvest_jsp@2c437a58
+ gameid:farm9414876
+ password:6817345n8d6k1i773844
+ seedidx:0
+ mode:1
+ feeduse:18
+
+2016. 5. 25 오후 12:55:51 org.apache.catalina.core.StandardWrapperValve invoke
+정보: ==============================
+e:com.microsoft.sqlserver.jdbc.SQLServerException: 저장 프로시저 'dbo.spu_SeedHarvest'을(를) 찾을 수 없습니다.
+org.apache.jsp.goo.seedharvest_jsp@2c437a58
+ gameid:farm9414876
+ password:6817345n8d6k1i773844
+ seedidx:0
+ mode:1
+ feeduse:18
+
+2016. 5. 25 오후 12:55:51 org.apache.catalina.core.StandardWrapperValve invoke
+정보: ==============================
+e:com.microsoft.sqlserver.jdbc.SQLServerException: 저장 프로시저 'dbo.spu_SeedHarvest'을(를) 찾을 수 없습니다.
+org.apache.jsp.goo.seedharvest_jsp@2c437a58
+ gameid:farm9414876
+ password:6817345n8d6k1i773844
+ seedidx:0
+ mode:1
+ feeduse:18
+
+2016. 5. 25 오후 12:55:52 org.apache.catalina.core.StandardWrapperValve invoke
+정보: ==============================
+e:com.microsoft.sqlserver.jdbc.SQLServerException: 저장 프로시저 'dbo.spu_SeedHarvest'을(를) 찾을 수 없습니다.
+org.apache.jsp.goo.seedharvest_jsp@2c437a58
+ gameid:farm9414876
+ password:6817345n8d6k1i773844
+ seedidx:2
+ mode:1
+ feeduse:18
+
+2016. 5. 25 오후 12:55:53 org.apache.catalina.core.StandardWrapperValve invoke
+정보: ==============================
+e:com.microsoft.sqlserver.jdbc.SQLServerException: 저장 프로시저 'dbo.spu_SeedHarvest'을(를) 찾을 수 없습니다.
+org.apache.jsp.goo.seedharvest_jsp@2c437a58
+ gameid:farm9414876
+ password:6817345n8d6k1i773844
+ seedidx:1
+ mode:1
+ feeduse:18
+
+2016. 5. 25 오후 12:55:53 org.apache.catalina.core.StandardWrapperValve invoke
+정보: ==============================
+e:com.microsoft.sqlserver.jdbc.SQLServerException: 저장 프로시저 'dbo.spu_SeedHarvest'을(를) 찾을 수 없습니다.
+org.apache.jsp.goo.seedharvest_jsp@2c437a58
+ gameid:farm9414876
+ password:6817345n8d6k1i773844
+ seedidx:0
+ mode:1
+ feeduse:18
+
+2016. 5. 25 오후 2:03:32 org.apache.catalina.core.StandardWrapperValve invoke
+정보: ==============================
+e:com.microsoft.sqlserver.jdbc.SQLServerException: 열 이름 bgcttradecnt이(가) 잘못되었습니다.
+org.apache.jsp.goo.trade_jsp@4acdde90
+ gameid=gameid
+ password=password
+ userinfo=
+ aniitem=
+ cusitem=
+ tradeinfo=
+ paraminfo=
+

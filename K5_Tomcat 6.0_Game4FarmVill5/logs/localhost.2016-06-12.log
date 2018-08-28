@@ -1,0 +1,23 @@
+2016. 6. 12 오전 12:27:46 org.apache.catalina.core.StandardWrapperValve invoke
+정보: ==============================
+e:com.microsoft.sqlserver.jdbc.SQLServerException: 트랜잭션(프로세스 ID 148)이 잠금 리소스에서 다른 프로세스와의 교착 상태가 발생하여 실행이 중지되었습니다. 트랜잭션을 다시 실행하십시오.
+org.apache.jsp.goo.trade_jsp@65808588
+ gameid=farm13517966
+ password=1941192h9e9h3i316331
+ userinfo=0:2035;1:1;2:0;4:2;10:5;11:249;12:87;13:4089;30:14;40:-1;41:-1;44:-1;45:-1;42:-1;43:1;
+ aniitem=269:5,24,0;212:5,25,0;214:5,25,0;185:5,25,0;246:5,25,0;311:5,25,0;49:5,10,0;161:6,3,0;98:5,8,0;48:6,9,0;23:8,21,0;24:7,4,0;310:7,12,0;
+ cusitem=58:3;313:1;314:1;
+ tradeinfo=0:1456;1:25;10:69;11:13;12:0;20:6;30:3;31:47;61:1;62:1;63:7;64:1;70:1;33:6;34:54;35:282;40:5121;50:5;51:4;52:16;
+ paraminfo=0:90166;1:12;2:0;3:0;4:203408;5:0;
+
+2016. 6. 12 오후 4:15:28 org.apache.catalina.core.StandardWrapperValve invoke
+정보: ==============================
+e:com.microsoft.sqlserver.jdbc.SQLServerException: 트랜잭션(프로세스 ID 147)이 잠금 리소스에서 다른 프로세스와의 교착 상태가 발생하여 실행이 중지되었습니다. 트랜잭션을 다시 실행하십시오.
+org.apache.jsp.goo.login_jsp@35323af
+ gameid=farm12591320
+ password=6256032d8r2y4p821844
+ market=5
+ version=115
+ kakaoprofile=X1O+2tQVVBqen7Rw61tqzjRMS7Ck1OLSozeclo8Z5i7YABa1SpCELZ3hzzk4MAOBnj56Ls15gzgkk7r51evhYrpJaqPO7SZWSl1nC2RI5YCT+9XOJcFHIC8RZMNnBms+
+ kakaomsgblocked=-1
+

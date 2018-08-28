@@ -1,0 +1,23 @@
+2016. 12. 19 오후 9:55:07 org.apache.catalina.core.StandardWrapperValve invoke
+정보: ==============================
+e:com.microsoft.sqlserver.jdbc.SQLServerException: 열 이름 bgcttradecnt이(가) 잘못되었습니다.
+org.apache.jsp.goo.trade_jsp@65808588
+ gameid=gameid
+ password=password
+ userinfo=
+ aniitem=
+ cusitem=
+ tradeinfo=
+ paraminfo=
+
+2016. 12. 19 오후 11:03:48 org.apache.catalina.core.StandardWrapperValve invoke
+정보: ==============================
+e:com.microsoft.sqlserver.jdbc.SQLServerException: PRIMARY KEY 제약 조건 'pk_tUserItem_gameid_listidx'을(를) 위반했습니다. 개체 'dbo.tUserItem'에 중복 키를 삽입할 수 없습니다. 중복 키 값은 (farm25578399, 1221)입니다.
+org.apache.jsp.goo.anibattleresult_jsp@67c6f5b9
+ ?gameid=farm25578399
+ &password=9906209x3m5p8h242395
+ &battleidx2:821
+ &gresult:1
+ &playtime:38
+ &star:3
+

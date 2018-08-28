@@ -1,0 +1,35 @@
+2016. 6. 7 오후 2:53:48 org.apache.catalina.core.StandardWrapperValve invoke
+정보: ==============================
+e:com.microsoft.sqlserver.jdbc.SQLServerException: 열 이름 bgcttradecnt이(가) 잘못되었습니다.
+org.apache.jsp.goo.trade_jsp@65808588
+ gameid=gameid
+ password=password
+ userinfo=
+ aniitem=
+ cusitem=
+ tradeinfo=
+ paraminfo=
+
+2016. 6. 7 오후 2:53:55 org.apache.catalina.core.StandardWrapperValve invoke
+정보: ==============================
+e:com.microsoft.sqlserver.jdbc.SQLServerException: 열 이름 bgcttradecnt이(가) 잘못되었습니다.
+org.apache.jsp.goo.trade_jsp@65808588
+ gameid=gameid
+ password=password
+ userinfo=
+ aniitem=
+ cusitem=
+ tradeinfo=
+ paraminfo=
+
+2016. 6. 7 오후 7:29:59 org.apache.catalina.core.StandardWrapperValve invoke
+정보: ==============================
+e:com.microsoft.sqlserver.jdbc.SQLServerException: 트랜잭션(프로세스 ID 148)이 잠금 리소스에서 다른 프로세스와의 교착 상태가 발생하여 실행이 중지되었습니다. 트랜잭션을 다시 실행하십시오.
+org.apache.jsp.goo.login_jsp@35323af
+ gameid=farm2025130
+ password=9871536c0y8w1m195474
+ market=5
+ version=115
+ kakaoprofile=X1O+2tQVVBqen7Rw61tqzjRMS7Ck1OLSozeclo8Z5i7YABa1SpCELQCLF4g/v2E7scD77CjF3mRBlvbVnb2MEAAvEHmR0OWW5PtmvthcXYaT+9XOJcFHIC8RZMNnBms+
+ kakaomsgblocked=-1
+

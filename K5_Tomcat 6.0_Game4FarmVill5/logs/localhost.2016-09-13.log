@@ -1,0 +1,12 @@
+2016. 9. 13 오후 10:37:17 org.apache.catalina.core.StandardWrapperValve invoke
+정보: ==============================
+e:com.microsoft.sqlserver.jdbc.SQLServerException: 열 이름 bgcttradecnt이(가) 잘못되었습니다.
+org.apache.jsp.goo.trade_jsp@65808588
+ gameid=gameid
+ password=password
+ userinfo=
+ aniitem=
+ cusitem=
+ tradeinfo=
+ paraminfo=
+

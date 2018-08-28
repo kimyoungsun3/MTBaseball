@@ -1,0 +1,24 @@
+2016. 6. 13 오전 1:08:43 org.apache.catalina.core.StandardWrapperValve invoke
+정보: ==============================
+e:com.microsoft.sqlserver.jdbc.SQLServerException: 열 이름 bgcttradecnt이(가) 잘못되었습니다.
+org.apache.jsp.goo.trade_jsp@65808588
+ gameid=gameid
+ password=password
+ userinfo=
+ aniitem=
+ cusitem=
+ tradeinfo=
+ paraminfo=
+
+2016. 6. 13 오전 4:16:38 org.apache.catalina.core.StandardWrapperValve invoke
+정보: ==============================
+e:com.microsoft.sqlserver.jdbc.SQLServerException: 열 이름 bgcttradecnt이(가) 잘못되었습니다.
+org.apache.jsp.goo.trade_jsp@65808588
+ gameid=farm15022401
+ password=7190942i1u9c2c345573
+ userinfo=0:2019;1:6;2:0;4:2;10:22;11:343;12:68;13:1020;30:13;40:-1;41:-1;44:-1;45:-1;42:-1;43:0;
+ aniitem=0:5,12,0;35:3,0,0;43:5,15,0;28:6,16,0;48:5,25,0;24:6,13,0;41:7,21,0;25:8,22,0;40:7,10,0;39:6,24,0;44:4,10,0;45:5,25,0;46:5,25,0;47:10,15,0;
+ cusitem=7:5;8:2;
+ tradeinfo=0:678;1:16;10:27;11:5;12:0;20:43;30:2;31:38;61:1;62:1;63:3;64:1;70:1;33:6;34:17;35:228;40:1001;50:0;51:4;52:9;
+ paraminfo=0:90115;1:0;2:0;3:0;4:201901;5:0;
+

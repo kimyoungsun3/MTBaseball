@@ -1,0 +1,33 @@
+2016. 6. 17 오전 1:03:48 org.apache.catalina.core.StandardWrapperValve invoke
+정보: ==============================
+e:com.microsoft.sqlserver.jdbc.SQLServerException: 열 이름 bgcttradecnt이(가) 잘못되었습니다.
+org.apache.jsp.goo.trade_jsp@65808588
+ gameid=gameid
+ password=password
+ userinfo=
+ aniitem=
+ cusitem=
+ tradeinfo=
+ paraminfo=
+
+2016. 6. 17 오후 4:39:58 org.apache.catalina.core.StandardWrapperValve invoke
+정보: ==============================
+e:com.microsoft.sqlserver.jdbc.SQLServerException: PRIMARY KEY 제약 조건 'pk_tUserItem_gameid_listidx'을(를) 위반했습니다. 개체 'dbo.tUserItem'에 중복 키를 삽입할 수 없습니다. 중복 키 값은 (farm7373387, 3436)입니다.
+org.apache.jsp.goo.ubboxopengetitem_jsp@520d6867
+ gameid:farm7373387
+ password:0288517s2j8t8i526426
+ mode:3
+ boxslotidx:2
+
+2016. 6. 17 오후 5:13:00 org.apache.catalina.core.StandardWrapperValve invoke
+정보: ==============================
+e:com.microsoft.sqlserver.jdbc.SQLServerException: 열 이름 bgcttradecnt이(가) 잘못되었습니다.
+org.apache.jsp.goo.trade_jsp@65808588
+ gameid=farm15364927
+ password=7370899a2a5k8f285596
+ userinfo=0:2023;1:5;2:0;4:3;10:1;11:12;12:58;13:812;30:11;40:-1;41:-1;44:-1;45:-1;42:-1;43:2;
+ aniitem=0:6,4,0;1:5,16,0;15:5,3,0;26:6,5,0;21:5,15,0;56:6,18,0;35:6,11,0;44:5,19,0;59:6,3,0;22:6,1,0;37:6,4,0;3:5,5,0;48:7,2,0;
+ cusitem=25:4;36:1;34:1;52:1;
+ tradeinfo=0:1194;1:22;10:30;11:5;12:270;20:17;30:1;31:35;61:1;62:1;63:4;64:-1;70:1;33:9;34:19;35:315;40:5101;50:0;51:1;52:6;
+ paraminfo=0:90121;1:0;2:0;3:0;4:201911;5:0;
+

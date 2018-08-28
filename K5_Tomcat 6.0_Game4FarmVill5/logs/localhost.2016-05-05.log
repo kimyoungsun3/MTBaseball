@@ -1,0 +1,51 @@
+2016. 5. 5 오후 1:30:56 org.apache.catalina.core.StandardWrapperValve invoke
+심각: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 27 in the jsp file: /admin/eventdaily_list.jsp
+formatdd cannot be resolved
+24: 	int cnt = 0, pack = 0, gamecost = 0, cashcost = 0;
+25: 	int eventidx				= util.getParamInt(request, "idx", -1);
+26: 	int packstate				= util.getParamInt(request, "packstate", 1);
+27: 	String dd 					= "" + formatdd.format(now);
+28: 	int dday					= -1;
+29: 	String bgcolor				= "";
+30: 
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:443)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:606)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Unknown Source)
+2016. 5. 5 오후 8:18:29 org.apache.catalina.core.StandardWrapperValve invoke
+정보: ==============================
+e:com.microsoft.sqlserver.jdbc.SQLServerException: 열 이름 bgcttradecnt이(가) 잘못되었습니다.
+org.apache.jsp.goo.trade_jsp@38130461
+ gameid:farm4567611
+ password:1868543m4k2n4e744454
+ userinfo:0:2014;1:8;2:0;4:4;10:10;11:120;12:99;13:1089;30:9;40:-1;41:-1;44:-1;45:-1;42:-1;43:0;
+ aniitem:31:5,25,0;0:5,7,0;1:9,9,0;2:1,13,0;3:3,22,1;16:3,24,0;30:4,24,0;32:4,19,0;
+ cusitem:8:1;
+ tradeinfo:0:176;1:8;10:5;11:0;12:0;20:1;30:1;31:31;61:1;62:1;63:1;70:1;33:3;34:11;35:93;40:5101;50:0;51:3;52:5;
+ paraminfo:0:90112;1:0;2:0;3:0;4:201408;5:0;
+

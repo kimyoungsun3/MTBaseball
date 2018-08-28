@@ -1,0 +1,187 @@
+2016. 5. 24 오전 12:01:08 org.apache.catalina.core.StandardWrapperValve invoke
+정보: ==============================
+e:com.microsoft.sqlserver.jdbc.SQLServerException: 열 이름 bgcttradecnt이(가) 잘못되었습니다.
+org.apache.jsp.goo.trade_jsp@72b1edbe
+ gameid=farm11872251
+ password=1484232r0e0n6b264278
+ userinfo=0:2015;1:1;2:0;4:4;10:30;11:3000;12:0;13:0;30:0;40:-1;41:-1;44:-1;45:-1;42:-1;43:1;
+ aniitem=40:10,10,0;34:5,25,0;0:2,0,0;1:2,0,0;22:4,0,0;49:7,5,0;15:2,0,0;21:3,0,0;39:3,0,0;46:9,9,0;50:10,9,0;
+ cusitem=7:1;
+ tradeinfo=0:226;1:9;10:9;11:1;12:0;20:7;30:0;31:27;61:1;62:1;63:-1;64:-1;70:1;33:14;34:100;35:378;40:701;50:0;51:2;52:2;
+ paraminfo=0:90114;1:0;2:0;3:0;4:201407;5:0;
+
+2016. 5. 24 오전 12:01:10 org.apache.catalina.core.StandardWrapperValve invoke
+정보: ==============================
+e:com.microsoft.sqlserver.jdbc.SQLServerException: 열 이름 bgcttradecnt이(가) 잘못되었습니다.
+org.apache.jsp.goo.trade_jsp@72b1edbe
+ gameid=farm11872251
+ password=1484232r0e0n6b264278
+ userinfo=0:2015;1:1;2:0;4:4;10:30;11:3000;12:0;13:0;30:0;40:-1;41:-1;44:-1;45:-1;42:-1;43:1;
+ aniitem=40:10,10,0;34:5,25,0;0:2,0,0;1:2,0,0;22:4,0,0;49:7,5,0;15:2,0,0;21:3,0,0;39:3,0,0;46:9,9,0;50:10,9,0;
+ cusitem=
+ tradeinfo=0:226;1:9;10:9;11:1;12:0;20:7;30:0;31:27;61:1;62:1;63:-1;64:-1;70:1;33:14;34:100;35:378;40:2011;50:0;51:2;52:2;
+ paraminfo=0:90114;1:0;2:0;3:0;4:201407;5:0;
+
+2016. 5. 24 오전 12:01:11 org.apache.catalina.core.StandardWrapperValve invoke
+정보: ==============================
+e:com.microsoft.sqlserver.jdbc.SQLServerException: 열 이름 bgcttradecnt이(가) 잘못되었습니다.
+org.apache.jsp.goo.trade_jsp@72b1edbe
+ gameid=farm11872251
+ password=1484232r0e0n6b264278
+ userinfo=0:2015;1:1;2:0;4:4;10:30;11:3000;12:0;13:0;30:0;40:-1;41:-1;44:-1;45:-1;42:-1;43:1;
+ aniitem=40:10,10,0;34:5,25,0;0:2,0,0;1:2,0,0;22:4,0,0;49:7,5,0;15:2,0,0;21:3,0,0;39:3,0,0;46:9,9,0;50:10,9,0;
+ cusitem=
+ tradeinfo=0:226;1:9;10:9;11:1;12:0;20:7;30:0;31:27;61:1;62:1;63:-1;64:-1;70:1;33:14;34:100;35:378;40:1001;50:0;51:2;52:2;
+ paraminfo=0:90114;1:0;2:0;3:0;4:201407;5:0;
+
+2016. 5. 24 오전 12:01:14 org.apache.catalina.core.StandardWrapperValve invoke
+정보: ==============================
+e:com.microsoft.sqlserver.jdbc.SQLServerException: 열 이름 bgcttradecnt이(가) 잘못되었습니다.
+org.apache.jsp.goo.trade_jsp@72b1edbe
+ gameid=farm11872251
+ password=1484232r0e0n6b264278
+ userinfo=0:2015;1:1;2:0;4:4;10:30;11:3000;12:0;13:0;30:0;40:-1;41:-1;44:-1;45:-1;42:-1;43:1;
+ aniitem=40:10,10,0;34:5,25,0;0:2,0,0;1:2,0,0;22:4,0,0;49:7,5,0;15:2,0,0;21:3,0,0;39:3,0,0;46:9,9,0;50:10,9,0;
+ cusitem=
+ tradeinfo=0:226;1:9;10:9;11:1;12:0;20:7;30:0;31:27;61:1;62:1;63:-1;64:-1;70:1;33:14;34:100;35:378;40:5119;50:0;51:2;52:2;
+ paraminfo=0:90114;1:0;2:0;3:0;4:201407;5:0;
+
+2016. 5. 24 오전 12:01:15 org.apache.catalina.core.StandardWrapperValve invoke
+정보: ==============================
+e:com.microsoft.sqlserver.jdbc.SQLServerException: 열 이름 bgcttradecnt이(가) 잘못되었습니다.
+org.apache.jsp.goo.trade_jsp@72b1edbe
+ gameid=farm11872251
+ password=1484232r0e0n6b264278
+ userinfo=0:2015;1:1;2:0;4:4;10:30;11:3000;12:0;13:0;30:0;40:-1;41:-1;44:-1;45:-1;42:-1;43:1;
+ aniitem=40:10,10,0;34:5,25,0;0:2,0,0;1:2,0,0;22:4,0,0;49:7,5,0;15:2,0,0;21:3,0,0;39:3,0,0;46:9,9,0;50:10,9,0;
+ cusitem=
+ tradeinfo=0:226;1:9;10:9;11:1;12:0;20:7;30:0;31:27;61:1;62:1;63:-1;64:-1;70:1;33:14;34:100;35:378;40:1000;50:0;51:2;52:2;
+ paraminfo=0:90114;1:0;2:0;3:0;4:201407;5:0;
+
+2016. 5. 24 오전 12:01:15 org.apache.catalina.core.StandardWrapperValve invoke
+정보: ==============================
+e:com.microsoft.sqlserver.jdbc.SQLServerException: 열 이름 bgcttradecnt이(가) 잘못되었습니다.
+org.apache.jsp.goo.trade_jsp@72b1edbe
+ gameid=farm11872251
+ password=1484232r0e0n6b264278
+ userinfo=0:2015;1:1;2:0;4:4;10:30;11:3000;12:0;13:0;30:0;40:-1;41:-1;44:-1;45:-1;42:-1;43:1;
+ aniitem=40:10,10,0;34:5,25,0;0:2,0,0;1:2,0,0;22:4,0,0;49:7,5,0;15:2,0,0;21:3,0,0;39:3,0,0;46:9,9,0;50:10,9,0;
+ cusitem=
+ tradeinfo=0:226;1:9;10:9;11:1;12:0;20:7;30:0;31:27;61:1;62:1;63:-1;64:-1;70:1;33:14;34:100;35:378;40:5119;50:0;51:2;52:2;
+ paraminfo=0:90114;1:0;2:0;3:0;4:201407;5:0;
+
+2016. 5. 24 오전 12:01:15 org.apache.catalina.core.StandardWrapperValve invoke
+정보: ==============================
+e:com.microsoft.sqlserver.jdbc.SQLServerException: 열 이름 bgcttradecnt이(가) 잘못되었습니다.
+org.apache.jsp.goo.trade_jsp@72b1edbe
+ gameid=farm11872251
+ password=1484232r0e0n6b264278
+ userinfo=0:2015;1:1;2:0;4:4;10:30;11:3000;12:0;13:0;30:0;40:-1;41:-1;44:-1;45:-1;42:-1;43:1;
+ aniitem=40:10,10,0;34:5,25,0;0:2,0,0;1:2,0,0;22:4,0,0;49:7,5,0;15:2,0,0;21:3,0,0;39:3,0,0;46:9,9,0;50:10,9,0;
+ cusitem=
+ tradeinfo=0:226;1:9;10:9;11:1;12:0;20:7;30:0;31:27;61:1;62:1;63:-1;64:-1;70:1;33:14;34:100;35:378;40:5111;50:0;51:2;52:2;
+ paraminfo=0:90114;1:0;2:0;3:0;4:201407;5:0;
+
+2016. 5. 24 오전 12:01:15 org.apache.catalina.core.StandardWrapperValve invoke
+정보: ==============================
+e:com.microsoft.sqlserver.jdbc.SQLServerException: 열 이름 bgcttradecnt이(가) 잘못되었습니다.
+org.apache.jsp.goo.trade_jsp@72b1edbe
+ gameid=farm11872251
+ password=1484232r0e0n6b264278
+ userinfo=0:2015;1:1;2:0;4:4;10:30;11:3000;12:0;13:0;30:0;40:-1;41:-1;44:-1;45:-1;42:-1;43:1;
+ aniitem=40:10,10,0;34:5,25,0;0:2,0,0;1:2,0,0;22:4,0,0;49:7,5,0;15:2,0,0;21:3,0,0;39:3,0,0;46:9,9,0;50:10,9,0;
+ cusitem=
+ tradeinfo=0:226;1:9;10:9;11:1;12:0;20:7;30:0;31:27;61:1;62:1;63:-1;64:-1;70:1;33:14;34:100;35:378;40:5119;50:0;51:2;52:2;
+ paraminfo=0:90114;1:0;2:0;3:0;4:201407;5:0;
+
+2016. 5. 24 오전 12:02:07 org.apache.catalina.core.StandardWrapperValve invoke
+정보: ==============================
+e:com.microsoft.sqlserver.jdbc.SQLServerException: 열 이름 bgcttradecnt이(가) 잘못되었습니다.
+org.apache.jsp.goo.trade_jsp@72b1edbe
+ gameid=farm11872251
+ password=1484232r0e0n6b264278
+ userinfo=0:2015;1:2;2:0;4:4;10:30;11:3000;12:0;13:0;30:0;40:-1;41:-1;44:-1;45:-1;42:-1;43:0;
+ aniitem=40:9,0,0;34:5,25,0;0:2,0,0;1:2,0,0;22:4,0,0;49:3,0,0;15:2,0,0;21:3,0,0;39:3,0,0;46:7,0,0;50:10,0,0;
+ cusitem=7:1;
+ tradeinfo=0:236;1:9;10:10;11:1;12:0;20:0;30:0;31:27;61:1;62:1;63:-1;64:-1;70:1;33:14;34:100;35:378;40:700;50:0;51:2;52:2;
+ paraminfo=0:90114;1:0;2:0;3:0;4:201407;5:0;
+
+2016. 5. 24 오전 12:02:08 org.apache.catalina.core.StandardWrapperValve invoke
+정보: ==============================
+e:com.microsoft.sqlserver.jdbc.SQLServerException: 열 이름 bgcttradecnt이(가) 잘못되었습니다.
+org.apache.jsp.goo.trade_jsp@72b1edbe
+ gameid=farm11872251
+ password=1484232r0e0n6b264278
+ userinfo=0:2015;1:2;2:0;4:4;10:30;11:3000;12:0;13:0;30:0;40:-1;41:-1;44:-1;45:-1;42:-1;43:0;
+ aniitem=40:9,0,0;34:5,25,0;0:2,0,0;1:2,0,0;22:4,0,0;49:3,0,0;15:2,0,0;21:3,0,0;39:3,0,0;46:7,0,0;50:10,0,0;
+ cusitem=
+ tradeinfo=0:236;1:9;10:10;11:1;12:0;20:0;30:0;31:27;61:1;62:1;63:-1;64:-1;70:1;33:14;34:100;35:378;40:701;50:0;51:2;52:2;
+ paraminfo=0:90114;1:0;2:0;3:0;4:201407;5:0;
+
+2016. 5. 24 오후 7:52:22 org.apache.catalina.core.ApplicationContext log
+심각: Failed to locate resource [/admin/userinfo_list.jsp] in context [/Game4FarmVill5]
+java.io.FileNotFoundException: D:\Game4FarmVill5\admin\userinfo_list.jsp (다른 프로세스가 파일을 사용 중이기 때문에 프로세스가 액세스 할 수 없습니다)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at org.apache.naming.resources.FileDirContext$FileResource.streamContent(FileDirContext.java:927)
+	at org.apache.catalina.core.ApplicationContext.getResourceAsStream(ApplicationContext.java:539)
+	at org.apache.catalina.core.ApplicationContextFacade.getResourceAsStream(ApplicationContextFacade.java:186)
+	at org.apache.jasper.JspCompilationContext.getResourceAsStream(JspCompilationContext.java:282)
+	at org.apache.jasper.compiler.JspUtil.getInputStream(JspUtil.java:847)
+	at org.apache.jasper.xmlparser.XMLEncodingDetector.getEncoding(XMLEncodingDetector.java:108)
+	at org.apache.jasper.compiler.ParserController.determineSyntaxAndEncoding(ParserController.java:348)
+	at org.apache.jasper.compiler.ParserController.doParse(ParserController.java:207)
+	at org.apache.jasper.compiler.ParserController.parseDirectives(ParserController.java:120)
+	at org.apache.jasper.compiler.Compiler.generateJava(Compiler.java:180)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:354)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:606)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Unknown Source)
+2016. 5. 24 오후 7:52:22 org.apache.catalina.core.StandardWrapperValve invoke
+심각: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: File "/admin/userinfo_list.jsp" not found
+	at org.apache.jasper.compiler.DefaultErrorHandler.jspError(DefaultErrorHandler.java:51)
+	at org.apache.jasper.compiler.ErrorDispatcher.dispatch(ErrorDispatcher.java:409)
+	at org.apache.jasper.compiler.ErrorDispatcher.jspError(ErrorDispatcher.java:116)
+	at org.apache.jasper.compiler.JspUtil.getInputStream(JspUtil.java:851)
+	at org.apache.jasper.xmlparser.XMLEncodingDetector.getEncoding(XMLEncodingDetector.java:108)
+	at org.apache.jasper.compiler.ParserController.determineSyntaxAndEncoding(ParserController.java:348)
+	at org.apache.jasper.compiler.ParserController.doParse(ParserController.java:207)
+	at org.apache.jasper.compiler.ParserController.parseDirectives(ParserController.java:120)
+	at org.apache.jasper.compiler.Compiler.generateJava(Compiler.java:180)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:354)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:606)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Unknown Source)
