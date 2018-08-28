@@ -44,7 +44,7 @@ select * from dbo.tSchoolBank where schoolidx = @schoolidx
 select * from dbo.tSchoolMaster where schoolidx = @schoolidx
 select * from dbo.tSchoolUser where schoolidx = @schoolidx
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_SchoolInfo', 'P' ) IS NOT NULL

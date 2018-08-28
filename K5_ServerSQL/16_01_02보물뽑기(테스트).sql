@@ -4,7 +4,7 @@ exec spu_RoulTreasureBuyNewTest 'xxxx2', '049000s1i0n7t8445289', 1, 7721, -1			-
 exec spu_RoulTreasureBuyNewTest 'xxxx2', '049000s1i0n7t8445289', 2, 7723, -1			-- ·çºñ»Ì±â
 exec spu_RoulTreasureBuyNewTest 'xxxx2', '049000s1i0n7t8445289', 4, 7725, -1			-- ·çºñ»Ì±â 10 + 1
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_RoulTreasureBuyNewTest', 'P' ) IS NOT NULL

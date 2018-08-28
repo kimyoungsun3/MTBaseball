@@ -10,7 +10,7 @@ exec spu_ItemQuick 'xxxx9', '049000s1i0n7t8445289',  9,-1, -1	-- 老槽(秦力)
 exec spu_ItemQuick 'xxxx9', '049000s1i0n7t8445289', 10, 1, -1	-- 盟柳力
 exec spu_ItemQuick 'xxxx9', '049000s1i0n7t8445289', 10,-1, -1	-- 盟柳力(秦力)
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_ItemQuick', 'P' ) IS NOT NULL

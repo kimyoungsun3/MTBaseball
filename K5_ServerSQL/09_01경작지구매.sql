@@ -6,7 +6,7 @@ exec spu_SeedBuy 'xxxx2', '049000s1i0n7t8445289', -1, -1	-- 잘못된 경작지번호.
 
 exec spu_SeedBuy 'xxxx2', '049000s1i0n7t8445289',  1, -1
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_SeedBuy', 'P' ) IS NOT NULL

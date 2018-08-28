@@ -1,4 +1,4 @@
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 -- 학교 마스터 입력

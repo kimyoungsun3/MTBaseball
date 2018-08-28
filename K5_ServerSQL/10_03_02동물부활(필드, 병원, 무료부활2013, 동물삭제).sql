@@ -24,7 +24,7 @@ exec spu_AniRevival 'xxxx2', '049000s1i0n7t8445289', 2, 6, -1, -1		--
 -- 삭제하기
 exec spu_AniRevival 'xxxx', '049000s1i0n7t8445289', 3, 5, -1, -1		-- 병원부활 > 삭제하기.
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_AniRevival', 'P' ) IS NOT NULL

@@ -4,7 +4,7 @@
 exec spu_RoulTreasureWear 'xxxx2', '049000s1i0n7t8445289',  '1:72;2:73;3:74;4:-1;5:-1;', -1
 exec spu_RoulTreasureWear 'xxxx2', '049000s1i0n7t8445289',  '1:54;2:-1;3:-1;4:-1;5:-1;', -1
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_RoulTreasureWear', 'P' ) IS NOT NULL

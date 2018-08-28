@@ -2,7 +2,7 @@
 ---------------------------------------------
 -- 야바위 정보.
 ---------------------------------------------
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID (N'dbo.tSystemYabau', N'U') IS NOT NULL

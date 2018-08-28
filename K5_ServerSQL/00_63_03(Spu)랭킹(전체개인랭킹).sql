@@ -6,7 +6,7 @@ update dbo.tUserMaster set ttsalecoin = 125 where gameid = 'xxxx3'
 exec spu_subUserTotalRank 'xxxx2',  1	-- ½ÇÁ¦·©Å·.
 exec spu_subUserTotalRank 'xxxx2', -1	-- ´õ¹Ì·©Å·.
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_subUserTotalRank', 'P' ) IS NOT NULL

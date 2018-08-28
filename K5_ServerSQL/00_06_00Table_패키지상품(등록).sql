@@ -2,7 +2,7 @@
 ---------------------------------------------
 -- 패키지 정보.
 ---------------------------------------------
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID (N'dbo.tSystemPack', N'U') IS NOT NULL

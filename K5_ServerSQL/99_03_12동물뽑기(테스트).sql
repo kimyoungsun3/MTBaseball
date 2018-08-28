@@ -1,4 +1,4 @@
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 declare @gameid_								varchar(20),

@@ -55,7 +55,7 @@ exec spu_TSRetentionEffect 'xxxx2', 120595
 exec spu_TSRetentionEffect 'xxxx2', 120010		--기타 -> 패스
 */
 
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_TSRetentionEffect', 'P' ) IS NOT NULL

@@ -107,7 +107,7 @@ exec spu_GiftGainNew 'xxxx2', '049000s1i0n7t8445289', -3, 1923, -1, -1, -1, -1	-
 
 exec spu_GiftGainNew 'xxxx2', '049000s1i0n7t8445289', -5, -1, -1, -1, -1, -1	-- 리스트갱신
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_GiftGainNew', 'P' ) IS NOT NULL

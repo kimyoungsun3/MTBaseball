@@ -21,7 +21,7 @@ select dbo.fun_GetApartGrade( 2, 4)	-- 황금(4)
 select dbo.fun_GetApartGrade( 2, 5)	-- 전설(5)
 select dbo.fun_GetApartGrade( 2, 6)	-- 붉은(6)
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( N'dbo.fun_GetApartGrade', N'FN' ) IS NOT NULL

@@ -100,7 +100,7 @@ exec spu_SubGiftSendNew 2,3800,    1, 'SysLogin', 'xxxx2', ''				-- 짜요쿠폰
 exec spu_SubGiftSendNew 2,3900,   99, 'SysLogin', 'xxxx2', ''				-- 캐쉬포인트.
 */
 --################################################################
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_SubGiftSendNew', 'P' ) IS NOT NULL

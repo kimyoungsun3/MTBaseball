@@ -14,7 +14,7 @@ exec spu_RoulTreasureUpgrade 'xxxx2', '049000s1i0n7t8445289', 2, 132, 7776, -1
 exec spu_RoulTreasureUpgrade 'xxxx2', '049000s1i0n7t8445289', 2, 132, 7766, -1
 
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_RoulTreasureUpgrade', 'P' ) IS NOT NULL

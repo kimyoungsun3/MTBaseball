@@ -9,7 +9,7 @@ select idx3, * from dbo.tUserItemAliveLog where gameid = 'xxxx2' order by idx de
 
 
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_AnimalLogBackup', 'P' ) IS NOT NULL

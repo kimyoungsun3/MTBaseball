@@ -4,7 +4,7 @@ exec spu_TradeChange 'xxxx2', '049000s1i0n7t8445289', '0:0;1:1;2:2;3:3;4:4;5:5;6
 exec spu_TradeChange 'xxxx2', '049000s1i0n7t8445289', '0:7;1:8;2:9;3:10;4:11;5:12;6:13;', -1	-- 신규
 exec spu_TradeChange 'xxxx2', '049000s1i0n7t8445289', '0:1;1:1;2:1;3:1;4:1;5:1;6:1;', -1		-- 잘못된것.
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_TradeChange', 'P' ) IS NOT NULL

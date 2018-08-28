@@ -1,7 +1,7 @@
 /*
 exec spu_KakaoFriendReset 'xxxx2',  '049000s1i0n7t8445289', '0:kakaouseridxxxx;1:kakaouseridxxxx3;', -1
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_KakaoFriendReset', 'P' ) IS NOT NULL

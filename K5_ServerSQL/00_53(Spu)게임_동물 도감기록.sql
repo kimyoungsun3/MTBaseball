@@ -9,7 +9,7 @@ exec spu_DogamListLog 'xxxx', 3
 
 
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_DogamListLog', 'P' ) IS NOT NULL

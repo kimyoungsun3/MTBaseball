@@ -17,7 +17,7 @@ while ( @grade <= 6 )
 
 
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( N'dbo.fun_GetTSUpgradeProbability', N'FN' ) IS NOT NULL

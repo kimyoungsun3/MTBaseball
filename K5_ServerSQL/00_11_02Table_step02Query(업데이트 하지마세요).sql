@@ -1,4 +1,4 @@
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 if(not exists(select top 1 * from dbo.tSchoolBank where schoolname = '경신중학교' and schoolarea = '서울중부' and schoolkind = 2))

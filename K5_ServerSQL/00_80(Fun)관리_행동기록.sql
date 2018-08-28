@@ -3,7 +3,7 @@
 -- exec spu_AdminAction 'blackm', 'sususu', '선물을 지급했다.'
 -- select * from dbo.tMessageAdmin order by idx desc
 --################################################################
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_AdminAction', 'P' ) IS NOT NULL

@@ -22,7 +22,7 @@ exec spu_RoulAdLogNew 'xxxx2', 'xxxx2',101, 2300,  -1,  -1,  -1,  -1,  -1,  -1, 
 exec spu_RoulAdLogNew 'xxxx2', 'xxxx2',101, 5100,  -1,  -1,  -1,  -1,  -1,  -1,  -1,  -1,  -1,  -1	-- ·ê·¿.
 exec spu_RoulAdLogNew 'xxxx2', 'xxxx2',101, 3600,  -1,  -1,  -1,  -1,  -1,  -1,  -1,  -1,  -1,  -1	-- ·ê·¿.
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_RoulAdLogNew', 'P' ) IS NOT NULL

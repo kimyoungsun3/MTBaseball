@@ -4,7 +4,7 @@ select * from dbo.tTTTT where gameid = 'farm548802' order by idx desc
 --select * from dbo.tUserSaleLog where gameid = 'farm548802' order by idx desc
 
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_GameTradeTest4', 'P' ) IS NOT NULL

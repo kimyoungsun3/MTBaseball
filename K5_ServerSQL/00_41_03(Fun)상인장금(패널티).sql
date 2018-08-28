@@ -16,7 +16,7 @@ select dbo.fun_GetDealerStateValue( 11, -1, 0   )	-- 목장배틀 코인(11)
 select dbo.fun_GetDealerStateValue( 12, -1, 0   )	-- 목장배틀 세포수량(12)
 
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( N'dbo.fun_GetDealerStateValue', N'FN' ) IS NOT NULL

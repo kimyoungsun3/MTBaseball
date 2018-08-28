@@ -9,7 +9,7 @@ exec spu_TutoStep 'xxxx3', '049000s1i0n7t8445289', 5503, -1, -1	--
 exec spu_TutoStep 'xxxx3', '049000s1i0n7t8445289', 5504, -1, -1	--
 exec spu_TutoStep 'xxxx3', '049000s1i0n7t8445289', 5505, -1, -1	--
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_TutoStep', 'P' ) IS NOT NULL

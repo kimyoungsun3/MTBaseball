@@ -13,7 +13,7 @@ while (@famelv < 80)
 	end
 
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( N'dbo.fun_GetRoulPrice', N'FN' ) IS NOT NULL

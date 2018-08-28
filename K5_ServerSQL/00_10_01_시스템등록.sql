@@ -1,4 +1,4 @@
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 declare @USERITEM_INVENKIND_ANI	int 	set @USERITEM_INVENKIND_ANI					= 1

@@ -1,6 +1,6 @@
 -- update dbo.tUserItem set petupgrade = 6 where gameid = 'farm185995' and invenkind = 1000
 
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 -- 동물선물하기.

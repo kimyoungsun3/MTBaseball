@@ -8,7 +8,7 @@ exec spu_ChangeInfo 'xxxx2', '049000s1i0n7t8445289', 11, -1, '', -1		-- 푸쉬승인
 --select kakaomsgblocked from dbo.tUserMaster where gameid = 'xxxx2'
 exec spu_ChangeInfo 'xxxx2', '049000s1i0n7t8445289', 12, -1, '', -1		-- 카카오 메세지 자기것 거부
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_ChangeInfo', 'P' ) IS NOT NULL

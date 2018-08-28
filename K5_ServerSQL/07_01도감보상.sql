@@ -7,7 +7,7 @@ exec spu_DogamReward 'xxxx2', '049000s1i0n7t8445289', 1, -1	-- 이미지급
 exec spu_DogamReward 'xxxx2', '049000s1i0n7t8445289', 2, -1	-- 조건만족
 exec spu_DogamReward 'xxxx2', '049000s1i0n7t8445289', 3, -1	-- 부족
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_DogamReward', 'P' ) IS NOT NULL

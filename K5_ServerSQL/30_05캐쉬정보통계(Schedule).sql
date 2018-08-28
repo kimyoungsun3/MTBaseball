@@ -5,7 +5,7 @@
 -- 유저 정보를 1일 단위로 백업을 진행한다.
 -- 매일 시작 04시 00분 00초에 시작
 ---------------------------------------------
---use Game4Farmvill5
+--use GameMTBaseball
 --GO
 --
 --select * from dbo.tStaticCashMaster

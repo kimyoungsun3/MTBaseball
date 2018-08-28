@@ -11,7 +11,7 @@ exec spu_AniUseItem 'xxxx2', '049000s1i0n7t8445289', '', -1						-- 없음.
 exec spu_AniUseItem 'xxxx2', '049000s1i0n7t8445289', '6:4', -1					-- 동물 > 패스.
 exec spu_AniUseItem 'xxxx2', '049000s1i0n7t8445289', '12:1;13:1;14:1;15:1', -1	-- 소모템
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_AniUseItem', 'P' ) IS NOT NULL

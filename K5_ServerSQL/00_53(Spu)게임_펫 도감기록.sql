@@ -5,7 +5,7 @@
 -- exec spu_DogamListPetLog 'xxxx2', 100001
 -- select * from dbo.tDogamListPet where gameid = 'xxxx3' order by itemcode asc
 --################################################################
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_DogamListPetLog', 'P' ) IS NOT NULL

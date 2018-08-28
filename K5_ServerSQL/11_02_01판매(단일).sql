@@ -26,7 +26,7 @@ exec spu_ItemSell 'guest90289', '0426468u1h0p8t484847', 15, 1, -1	-- 긴급요청티�
 exec spu_ItemSell 'guest90289', '0426468u1h0p8t484847', 16, 1, -1	-- 악세(머리)
 exec spu_ItemSell 'xxxx2', '049000s1i0n7t8445289', 71, 1, -1	-- 보물
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_ItemSell', 'P' ) IS NOT NULL

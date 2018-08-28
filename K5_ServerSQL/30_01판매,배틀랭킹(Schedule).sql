@@ -5,7 +5,7 @@
 -- 유저 정보를 1주일 단위로 백업을 진행한다.
 -- 매주 토요일 시작 23시 59분 59초에 시작
 ---------------------------------------------
--- use Game4Farmvill5
+-- use GameMTBaseball
 -- GO
 -- delete from dbo.tUserBattleRankMaster 	delete from dbo.tUserBattleRankSub 	delete from dbo.tUserRankMaster 	delete from dbo.tUserRankSub
 -- update dbo.tUserMaster set ttsalecoin = 11 where gameid = 'xxxx' update dbo.tUserMaster set ttsalecoin = 12 where gameid = 'xxxx2' update dbo.tUserMaster set ttsalecoin = 13 where gameid = 'xxxx3'

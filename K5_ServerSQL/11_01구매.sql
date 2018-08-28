@@ -92,7 +92,7 @@ update dbo.tUserMaster set cashcost = 100000, gamecost = 0, heart = 0, cashpoint
 update dbo.tUserMaster set cashcost = 100000, gamecost = 0, heart = 0, cashpoint = 140000, randserial = -1 where gameid = 'xxxx2'
 exec spu_ItemBuy 'xxxx2', '049000s1i0n7t8445289', 2000, 1, -1, -1, -1, 7789, -1	-- «œ∆Æ(√ﬂ∞° »πµÊ¿÷¿Ω)
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_ItemBuy', 'P' ) IS NOT NULL

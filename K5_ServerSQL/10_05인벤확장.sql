@@ -8,7 +8,7 @@ exec spu_ItemInvenExp 'xxxx2', '049000s1i0n7t8445289', 4, -1		-- 악세사리 인벤확
 exec spu_ItemInvenExp 'xxxx2', '049000s1i0n7t8445289', 1040, -1		-- 줄기세포 인벤확장.
 exec spu_ItemInvenExp 'xxxx2', '049000s1i0n7t8445289', 1200, -1		-- 보물 인벤확장.
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_ItemInvenExp', 'P' ) IS NOT NULL

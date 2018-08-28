@@ -2,7 +2,7 @@
 -- delete from dbo.tUserItem where gameid = 'xxxx5' and invenkind = 1
 exec spu_AniRestore 'xxxx5', '049000s1i0n7t8445289', -1		-- 복구하기.
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_AniRestore', 'P' ) IS NOT NULL

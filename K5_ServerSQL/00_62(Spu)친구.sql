@@ -10,7 +10,7 @@ exec spu_subFriendList 'xxxx2'
 exec spu_subFriendList 'xxxx2'
 exec spu_subFriendList 'zzzz26'
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_subFriendList', 'P' ) IS NOT NULL

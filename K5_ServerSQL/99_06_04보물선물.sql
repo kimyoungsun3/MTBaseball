@@ -1,6 +1,6 @@
 -- update dbo.tUserItem set treasureupgrade = 7 where gameid = 'farm185995' and invenkind = 1200
 
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 -- 동물선물하기.

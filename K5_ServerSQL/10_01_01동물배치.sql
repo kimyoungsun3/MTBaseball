@@ -7,7 +7,7 @@ exec spu_AniSet 'xxxx', '049000s1i0n7t8445289', '0:1;2:3;3:17', -1
 exec spu_AniSet 'xxxx', '049000s1i0n7t8445289', '0:1;1:3;2:17;3:16;4:8', -1
 exec spu_AniSet 'xxxx', '049000s1i0n7t8445289', '0:1;1:2;2:3;3:4;4:5;5:6;6:12;7:13;8:14', -1	-- 필드9마리.
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_AniSet', 'P' ) IS NOT NULL

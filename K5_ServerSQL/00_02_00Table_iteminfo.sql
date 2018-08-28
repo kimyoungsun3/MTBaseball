@@ -1,7 +1,7 @@
 ---------------------------------------------
 --		아이템 정보
 ---------------------------------------------
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID (N'dbo.tItemInfo', N'U') IS NOT NULL

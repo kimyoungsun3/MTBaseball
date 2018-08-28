@@ -1,7 +1,7 @@
 /*
 exec spu_DeleteUserExpire 'xxxx2'
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_DeleteUserExpire', 'P' ) IS NOT NULL

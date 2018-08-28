@@ -24,7 +24,7 @@ exec spu_AniPromote 'xxxx2', '049000s1i0n7t8445289', 102000, 21, 32, -1, -1, -1,
 exec spu_AniPromote 'xxxx2', '049000s1i0n7t8445289', 102000, 21, 51, -1, -1, -1, 999993, -1	-- 동물종류가 틀림.
 
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_AniPromote', 'P' ) IS NOT NULL

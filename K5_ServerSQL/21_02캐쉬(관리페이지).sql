@@ -14,7 +14,7 @@ exec spu_CashBuyAdmin 1, 'xxxx2',      '', '049000s1i0n7t8445289', 'xxxxd1', '63
 exec spu_CashBuyAdmin 1, 'xxxx2',      '', '049000s1i0n7t8445289', 'xxxxf1', '63234567090110987675defgxabc534531423576576945f2', 5, 1, 5050,   310,   3300,   310,   3300, '', '', '', '', -1	-- »ý¾Ö
 exec spu_CashBuyAdmin 1, 'xxxx2',      '', '049000s1i0n7t8445289', 'xxxxz7', '63234567090110987675defgxabc534531423576576945z3', 5, 1, 5051,   550,   5500,   550,   5500, '', '', '', '', -1	--
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_CashBuyAdmin', 'P' ) IS NOT NULL

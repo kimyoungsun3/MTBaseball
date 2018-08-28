@@ -3,7 +3,7 @@ delete from dbo.tGiftList where gameid = 'xxxx2'
 update dbo.tUserMaster set cashcost = 1000, randserial = -1 where gameid = 'xxxx2'
 exec spu_PackBuy 'xxxx2', '049000s1i0n7t8445289', 1, 7777, -1			-- 정상유저
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_PackBuy', 'P' ) IS NOT NULL

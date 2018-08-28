@@ -17,7 +17,7 @@ exec spu_AniBattleResult 'xxxx2', '049000s1i0n7t8445289', 61,  1, 90, 1, -1
 update dbo.tUserMaster set battleflag = 1 where gameid = 'xxxx2'
 exec spu_AniBattleResult 'xxxx2', '049000s1i0n7t8445289', 65,  1, 90, 3, -1
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_AniBattleResult', 'P' ) IS NOT NULL

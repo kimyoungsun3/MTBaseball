@@ -9,7 +9,7 @@ select top 100 * from dbo.tUserItemBuyLogTotalMaster order by dateid8
 select top 100 * from dbo.tUserItemBuyLogTotalSub order by dateid8 desc, itemcode desc
 select top 100 * from dbo.tUserItemBuyLogMonth order by dateid6 desc, itemcode desc
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_UserItemBuyLogNew', 'P' ) IS NOT NULL

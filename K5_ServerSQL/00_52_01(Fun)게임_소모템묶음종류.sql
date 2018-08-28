@@ -4,7 +4,7 @@
 -- select dbo.fnu_GetItemcodeFromConsumePackage(16, 1600)
 -- select dbo.fnu_GetItemcodeFromConsumePackage(16, 1601)
 --################################################################
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( N'dbo.fnu_GetItemcodeFromConsumePackage', N'FN' ) IS NOT NULL

@@ -31,7 +31,7 @@ exec spu_KakaoFriendAdd 'farm2140',  '6384038f4n5l2p846344', '0:8806919052561104
 exec spu_KakaoFriendAdd 'farm2140',  '6384038f4n5l2p846344', '0:88069190525611041;', -1
 exec spu_KakaoFriendAdd 'farm2140',  '6384038f4n5l2p846344', '0:88293738841848528;1:88069190525611041;2:88106204730209152;3:88067354040525536;', -1
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_KakaoFriendAdd', 'P' ) IS NOT NULL

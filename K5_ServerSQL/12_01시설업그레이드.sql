@@ -31,7 +31,7 @@ update dbo.tUserMaster set gamecost = 10000000, cashcost = 10000 where gameid = 
 exec spu_FacUpgrade 'xxxx2', '049000s1i0n7t8445289', 60, 1, -1		-- 집		(시작).
 exec spu_FacUpgrade 'xxxx2', '049000s1i0n7t8445289', 60, 2, -1		--			(즉시완료)
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_FacUpgrade', 'P' ) IS NOT NULL

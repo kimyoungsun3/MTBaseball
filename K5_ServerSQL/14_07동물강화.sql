@@ -11,7 +11,7 @@ exec spu_AniUpgrade 'xxxx2', '049000s1i0n7t8445289', 2, '0:30;',							'7771', -
 exec spu_AniUpgrade 'xxxx2', '049000s1i0n7t8445289', 2, '1:31;2:32;3:33;4:34;5:35;6:36;', 	'7772', -1
 
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_AniUpgrade', 'P' ) IS NOT NULL

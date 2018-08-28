@@ -9,7 +9,7 @@ exec spu_AniBattleStart 'xxxx2', '049000s1i0n7t8445289', 6902, '0:2;1:39;1:38;',
 exec spu_AniBattleStart 'farm308281', '0522672n2f3p6t462944', 6900, '0:67;1:84;2:69;', -1
 exec spu_AniBattleStart 'xxxx2', '049000s1i0n7t8445289', 6900, '', -1
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_AniBattleStart', 'P' ) IS NOT NULL

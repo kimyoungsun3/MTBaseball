@@ -4,7 +4,7 @@
 -- select dbo.fun_getUserItemFieldCheck(5,		1, 1, 1,	1, 1, 1,	-1, -1,-1)
 -- select dbo.fun_getUserItemFieldCheck(6,		1, 1, 1,	1, 1, 1,	-1, -1,-1)
 ----------------------------------------------------------------------
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( N'dbo.fun_getUserItemFieldCheck', N'FN' ) IS NOT NULL

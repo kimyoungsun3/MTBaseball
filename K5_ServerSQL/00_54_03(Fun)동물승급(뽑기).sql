@@ -4,7 +4,7 @@ select dbo.fnu_GetRandomPromote( 950,		1,	2,	3,	-1,	-1,		950,  50,   0,  0, 	0)
 select dbo.fnu_GetRandomPromote( 950,		1,	2,	3,	-1,	-1,		900,   0, 100,  0, 	0)
 select dbo.fnu_GetRandomPromote( 950,		1,	2,	3,	-1,	-1,		900,  50,  50,  0, 	0)
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( N'dbo.fnu_GetRandomPromote', N'FN' ) IS NOT NULL

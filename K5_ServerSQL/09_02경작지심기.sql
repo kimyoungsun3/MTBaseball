@@ -14,7 +14,7 @@ exec spu_SeedPlant 'xxxx2', '049000s1i0n7t8445289',  6, 607, 0, -1	-- 하트 > 직�
 exec spu_SeedPlant 'xxxx2', '049000s1i0n7t8445289',  7, 605, 0, -1	-- 회복 > 소모(선물함).
 exec spu_SeedPlant 'xxxx2', '049000s1i0n7t8445289',  8, 606, 0, -1	-- 촉진 > 소모(선물함).
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_SeedPlant', 'P' ) IS NOT NULL

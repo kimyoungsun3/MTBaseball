@@ -1,4 +1,4 @@
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 delete from dbo.tItemInfo where subcategory = 700 and itemcode >= 70001

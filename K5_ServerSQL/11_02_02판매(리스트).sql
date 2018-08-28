@@ -6,7 +6,7 @@ exec spu_ItemSellListSet 'xxxx2', '049000s1i0n7t8445289', '1:5;2:7;', -1	-- 총알
 exec spu_ItemSellListSet 'xxxx2', '049000s1i0n7t8445289', '1:42;2:45;', -1	-- 줄기세포.
 exec spu_ItemSellListSet 'xxxx2', '049000s1i0n7t8445289', '', -1
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_ItemSellListSet', 'P' ) IS NOT NULL

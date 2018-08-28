@@ -6,7 +6,7 @@ exec spu_UserPushMsgAndroid 'guest90586', '5697165c2c6g3u571634', 'guest90586', 
 exec spu_UserPushMsgAndroid 'guest90586', '5697165c2c6g3u571634', 'guest90586', 2, '磊尔力格', '磊尔郴侩', 5, -1
 exec spu_UserPushMsgAndroid 'guest90586', '5697165c2c6g3u571634', 'guest90586', 3, 'URL力格', 'http://m.naver.com', -1, -1
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_UserPushMsgAndroid', 'P' ) IS NOT NULL

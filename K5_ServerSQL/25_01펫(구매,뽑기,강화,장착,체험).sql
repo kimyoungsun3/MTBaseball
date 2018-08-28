@@ -21,7 +21,7 @@ exec spu_ItemPet 'xxxx2', '049000s1i0n7t8445289', 4,     40, -1
 --update dbo.tUserMaster set pettodayitemcode2 = pettodayitemcode where gameid = 'xxxx2'
 exec spu_ItemPet 'xxxx2', '049000s1i0n7t8445289', 5,     -1, -1
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_ItemPet', 'P' ) IS NOT NULL

@@ -1,5 +1,5 @@
 /*
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 --select 'DEBUG  유저점수 > 학교 랭킹 정리데이타'

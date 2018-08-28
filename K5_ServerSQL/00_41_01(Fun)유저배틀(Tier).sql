@@ -8,7 +8,7 @@ select dbo.fun_GetTier( 1700 )
 select dbo.fun_GetTier( 2000 )
 select dbo.fun_GetTier( 3000 )
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( N'dbo.fun_GetTier', N'FN' ) IS NOT NULL

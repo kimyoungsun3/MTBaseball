@@ -15,7 +15,7 @@ exec spu_UserFarm 'xxxx2', '049000s1i0n7t8445289',  22, -1, -1		-- All수입
 update dbo.tUserFarm set incomedate = getdate() - 0.1, buystate = 1 where gameid = 'xxxx2' and itemcode = 6900
 exec spu_UserFarm 'xxxx2', '049000s1i0n7t8445289',  3, 6900, -1		-- 판매
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_UserFarm', 'P' ) IS NOT NULL

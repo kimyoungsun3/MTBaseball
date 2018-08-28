@@ -9,7 +9,7 @@ exec spu_DeleteUserItemBackup 3, 'guest90909', 145	-- 6:승급
 exec spu_DeleteUserItemBackup 3, 'guest90909', 145	-- 10:장터구매.
 exec spu_DeleteUserItemBackup 3, 'guest90909', 145	-- 11:만기삭제.
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_DeleteUserItemBackup', 'P' ) IS NOT NULL

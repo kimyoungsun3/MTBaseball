@@ -8,7 +8,7 @@ select * from dbo.tTTTT order by idx asc
 select * from dbo.tUserSaleLog where gameid = 'farm166775' -- and gameyear = 2024 and gamemonth = 5
 */
 
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_TTTT', 'P' ) IS NOT NULL

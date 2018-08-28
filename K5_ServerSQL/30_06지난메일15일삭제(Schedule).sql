@@ -2,7 +2,7 @@
 --------------------------------------------
 -- 15일이 지난 메일은 삭제됩니다.
 ---------------------------------------------
---use Game4Farmvill5
+--use GameMTBaseball
 --GO
 --
 -- select max(idx), min(idx) from dbo.tGiftList

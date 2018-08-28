@@ -18,7 +18,7 @@ exec spu_UserBoard 'xxxx2', '049000s1i0n7t8445289', 2,  1, 7456, '', -1					-- Ä
 exec spu_UserBoard 'xxxx2', '049000s1i0n7t8445289', 2,  1, 7457, '', -1					-- Ä£Ãß.
 exec spu_UserBoard 'xxxx2', '049000s1i0n7t8445289', 2,  1, 7458, '', -1					-- Ä£Ãß.
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_UserBoard', 'P' ) IS NOT NULL

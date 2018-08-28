@@ -3,7 +3,7 @@ exec spu_UserParam 'xxxx2', '049000s1i0n7t8445289', 1, '0:0;1:1;2:2;3:3;4:4;5:5;
 exec spu_UserParam 'xxxx2', '049000s1i0n7t8445289', 1, '0:9;1:8;2:7;3:6;4:5;5:4;6:3;7:2;8:1;9:0;', -1	--
 exec spu_UserParam 'xxxx2', '049000s1i0n7t8445289', 2, '', -1											-- ÀÐ±â.
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_UserParam', 'P' ) IS NOT NULL

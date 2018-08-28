@@ -35,7 +35,7 @@ exec spu_CashBuy 1, 'farm488258', '', '7292083m4k0w0v465454', 'TX_00000000336681
 	'{"product":[{"appid":"OA00700316","bp_info":"","charge_amount":3300,"detail_pname":"Î£®ÎπÑ 310Í∞?,"log_time":"20160518171536","product_id":"0910047079","tid":""}],"message":"?ïÏÉÅÍ≤?¶ù?ÑÎ£å.","detail":"0000","count":1,"status":0}',
 	'168400605', -1	--
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_CashBuy', 'P' ) IS NOT NULL

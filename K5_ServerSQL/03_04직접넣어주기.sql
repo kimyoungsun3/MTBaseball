@@ -40,7 +40,7 @@ set @rtnlistidx = -1
 exec spu_SetDirectItem 'xxxx2',   -1, 1, @nResult_ = @rtnlistidx OUTPUT		-- empty -> 다이렉트
 select @rtnlistidx rtnlistidx
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 ------------------------------------------------
 --	1. 프로시져 생성

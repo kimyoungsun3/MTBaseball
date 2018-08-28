@@ -1,4 +1,4 @@
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 --select * from dbo.tUserBattleBank where userdata = 0

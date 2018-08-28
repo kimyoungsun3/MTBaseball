@@ -8,7 +8,7 @@ select * from dbo.tUserItemUpgradeLogMonth
 
 
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_UserItemUpgradeLog', 'P' ) IS NOT NULL

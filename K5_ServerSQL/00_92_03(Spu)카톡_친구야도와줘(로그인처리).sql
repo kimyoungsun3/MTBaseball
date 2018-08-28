@@ -4,7 +4,7 @@
 -- exec sup_subKakaoHelpWait 'xxxx'
 -- exec sup_subKakaoHelpWait 'xxxx3'
 -----------------------------------------------------------------------
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.sup_subKakaoHelpWait', 'P' ) IS NOT NULL

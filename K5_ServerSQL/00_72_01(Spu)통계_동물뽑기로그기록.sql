@@ -7,7 +7,7 @@ exec spu_UserItemRoulLogNew 'xxxx2', 2, 1, 60045, 20,   0,   0,	8, 1455,  2,  3,
 --update dbo.tRouletteLogPerson set idx2 = 0 where idx2 is null
 --select * from dbo.tRouletteLogPerson where gameid = 'xxxx2'
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_UserItemRoulLogNew', 'P' ) IS NOT NULL

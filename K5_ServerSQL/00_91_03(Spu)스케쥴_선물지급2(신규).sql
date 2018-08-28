@@ -2,7 +2,7 @@
 -- exec spu_SchoolScheduleGiftSendNew2 'xxxx2', 1, 1, -1, -1, '메세지'
 -- select * from dbo.tSchoolUser where gameid = 'xxxx2'
 -----------------------------------------------------------------------
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_SchoolScheduleGiftSendNew2', 'P' ) IS NOT NULL

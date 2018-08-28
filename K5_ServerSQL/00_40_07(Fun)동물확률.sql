@@ -30,7 +30,7 @@ while( @cashpoint < 1000000)
 
 
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( N'dbo.fun_GetAnimalGroupPercent', N'FN' ) IS NOT NULL

@@ -1,4 +1,4 @@
-﻿use Game4Farmvill5
+﻿use GameMTBaseball
 GO
 /*
 select * from dbo.fnu_GetShuffleCard(9, 		1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11)

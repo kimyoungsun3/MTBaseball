@@ -23,7 +23,7 @@ while (@idx < 1000)
 --	     0 -> 240
 --	     0 -> 240
 ---------------------------------------------
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID (N'dbo.tSystemBattleBox', N'U') IS NOT NULL

@@ -62,7 +62,7 @@ exec spu_AniCompose 'xxxx2', '049000s1i0n7t8445289', 1, 101003, 1, 2, -1, -1, -1
 exec spu_AniCompose 'xxxx2', '049000s1i0n7t8445289', 1, 101003, 1, 2,  3, -1, -1, 999991, -1	-- 3마리 (성공)
 
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_AniCompose', 'P' ) IS NOT NULL

@@ -1,7 +1,7 @@
 /*
 exec spu_GiftList 'xxxx2'
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_GiftList', 'P' ) IS NOT NULL

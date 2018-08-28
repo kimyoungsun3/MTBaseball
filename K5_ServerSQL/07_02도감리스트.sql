@@ -1,7 +1,7 @@
 /*
 exec spu_DogamList 'xxxx', '049000s1i0n7t8445289', -1
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_DogamList', 'P' ) IS NOT NULL

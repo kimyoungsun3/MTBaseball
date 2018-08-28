@@ -1,4 +1,4 @@
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 delete from dbo.tItemInfo where subcategory = 600 and itemname like '%(2Â÷¹öÁ¯)%'

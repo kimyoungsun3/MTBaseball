@@ -6,7 +6,7 @@ exec spu_subFriendRank 'guest90904', 1
 
 exec spu_subFriendRank 'farm278878', 1
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_subFriendRank', 'P' ) IS NOT NULL

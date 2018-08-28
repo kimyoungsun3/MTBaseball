@@ -30,7 +30,7 @@ close curTemp
 Deallocate curTemp
 */
 --################################################################
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( N'dbo.fnu_SplitTwoStr', N'TF' ) IS NOT NULL

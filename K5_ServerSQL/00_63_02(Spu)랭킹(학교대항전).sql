@@ -19,7 +19,7 @@ exec spu_SchoolRank 20, -1, ''			-- 지난 날짜리스트.																--										
 exec spu_SchoolRank 22, -1, '20140523'	-- 지난 지정된 날짜 학교순위 (20131227일 학교 랭킹)								--										50_01웹검색
 exec spu_SchoolRank 23,  1, '20140523'	-- 지난 지정된 날짜 학교내의 > 유저 랭킹										--										50_01웹검색
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_SchoolRank', 'P' ) IS NOT NULL

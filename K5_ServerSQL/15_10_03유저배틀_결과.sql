@@ -21,7 +21,7 @@ update dbo.tUserMaster set userbattleflag = 1 where gameid = 'xxxx2'
 exec spu_UserBattleResult 'xxxx2', '049000s1i0n7t8445289', 123,  -1, 90, -1
 
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_UserBattleResult', 'P' ) IS NOT NULL

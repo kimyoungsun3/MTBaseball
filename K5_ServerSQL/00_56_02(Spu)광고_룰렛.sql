@@ -6,7 +6,7 @@ exec spu_WheelAdLogNew 'xxxx2', 'xxxx2', 101, 	2300,    6	--
 exec spu_WheelAdLogNew 'xxxx2', 'xxxx2', 101, 	5100,12000	--
 exec spu_WheelAdLogNew 'xxxx2', 'xxxx2', 101, 	3600,  200	--
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_WheelAdLogNew', 'P' ) IS NOT NULL

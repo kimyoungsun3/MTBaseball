@@ -20,7 +20,7 @@ select MAX(idx) from dbo.tUserItemBuyLog 			-- 8165681	> 구매통계(입력,참조는idx
 --> 2주 거래로그 삭제 해주자. 	(tUserSaleLog) 	> 하드2 > 하드3 이동후 삭제
 --> 2주 판매로그 삭제 해주자. 	(tUserSaleLog) 	> 하드2 > 하드3 이동후 삭제
 --> 학교데이타중 1주일간 활동 없는 친구 강제 탈퇴
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 select MAX(idx) from dbo.tUserItem 					-- 7181878	> 안전

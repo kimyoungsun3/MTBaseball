@@ -8,7 +8,7 @@ select cashcost from dbo.tUserMaster where gameid = 'xxxx2'
 
 exec spu_CheckKakaoNickName 'farm200484', '0058948l6z4g6e529442', 1, 'ffff8', -1		-- 유료변경
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_CheckKakaoNickName', 'P' ) IS NOT NULL

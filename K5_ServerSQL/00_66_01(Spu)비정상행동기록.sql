@@ -3,7 +3,7 @@ update dbo.tUserMaster set resultcopy= 0, cashcopy = 0, blockstate = 0 where gam
 exec spu_SubUnusualRecord  'xxxx2', 15, '결과치트Test'
 select resultcopy, cashcopy, blockstate from dbo.tUserMaster where gameid = 'xxxx2'
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_SubUnusualRecord', 'P' ) IS NOT NULL

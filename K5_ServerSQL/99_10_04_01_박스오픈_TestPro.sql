@@ -1,7 +1,7 @@
 /*
 
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_BoxOpenModeTest', 'P' ) IS NOT NULL

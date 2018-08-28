@@ -23,7 +23,7 @@ exec spu_SetDirectItem 'xxxx2',   2600, 1, -1		update dbo.tUserMaster set randse
 exec spu_RoulTreasureBuyNew 'xxxx2', '049000s1i0n7t8445289', 2, 7777, -1			-- 루비뽑기				(티켓).
 -- 없음.																			-- 루비뽑기 10 + 1		(티켓).
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_RoulTreasureBuyNew', 'P' ) IS NOT NULL

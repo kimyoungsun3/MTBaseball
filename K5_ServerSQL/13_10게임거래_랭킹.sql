@@ -1,7 +1,7 @@
 /*
 exec spu_RankList 'xxxx2', '049000s1i0n7t8445289', -1
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_RankList', 'P' ) IS NOT NULL

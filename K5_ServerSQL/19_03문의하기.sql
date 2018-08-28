@@ -2,7 +2,7 @@
 select * from dbo.tSysInquire order by idx desc
 exec spu_SysInquire 'xxxx2', '049000s1i0n7t8445289', '문의합니다.', -1
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_SysInquire', 'P' ) IS NOT NULL

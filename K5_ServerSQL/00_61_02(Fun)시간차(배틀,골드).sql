@@ -8,7 +8,7 @@ select * from dbo.fnu_GetActionTime('2013-11-26 00:00', '2013-11-26 00:11', 30, 
 select * from dbo.fnu_GetActionTime('2013-11-26 00:00', getdate(), 30, 20)
 -----------------------------------------------------
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 

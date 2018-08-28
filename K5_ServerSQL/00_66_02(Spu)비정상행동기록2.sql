@@ -1,7 +1,7 @@
 /*
 exec spu_SubUnusualRecord2  'xxxx2', '결과치트Test'
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_SubUnusualRecord2', 'P' ) IS NOT NULL

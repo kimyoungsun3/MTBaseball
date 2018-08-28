@@ -12,7 +12,7 @@ select dbo.fnu_GetDatePart('hh', '2013-11-26 12:30:00', '2013-11-27 12:30:00')
 select dbo.fnu_GetDatePart('hh', '2013-11-26 12:30:00', '2013-11-27 13:30:00')
 -----------------------------------------------------
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( N'dbo.fnu_GetDatePart', N'FN' ) IS NOT NULL

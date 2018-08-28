@@ -5,7 +5,7 @@
 -- SELECT * FROM dbo.fnu_SplitTwoStr(';', ':', '0:kakaouseridxxxx;1:kakaouseridxxxx3;')
 -- exec sup_subAddKakaoFriend 'farm1503', '0:88227566776204833;1:88248034712699921;2:88282071099937857;'
 -----------------------------------------------------------------------
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.sup_subAddKakaoFriend', 'P' ) IS NOT NULL

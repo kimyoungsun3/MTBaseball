@@ -6,7 +6,7 @@ exec spu_UserItemTreasureLogNew 'xxxx2', 4, 1, 130001, 3000,   0,   0,	120013, 1
 --update dbo.tTreasureLogPerson set idx2 = 0 where idx2 is null
 --select * from dbo.tTreasureLogPerson where gameid = 'xxxx2'
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_UserItemTreasureLogNew', 'P' ) IS NOT NULL

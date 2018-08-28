@@ -9,7 +9,7 @@ exec spu_KakaoFriendHelp 'xxxx2', '049000s1i0n7t8445289', 'xxxx3', 1, -1
 
 exec spu_KakaoFriendHelpList 'xxxx', '049000s1i0n7t8445289', -1
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_KakaoFriendHelpList', 'P' ) IS NOT NULL

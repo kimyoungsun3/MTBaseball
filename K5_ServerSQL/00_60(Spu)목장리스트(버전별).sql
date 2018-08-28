@@ -5,7 +5,7 @@ exec spu_UserFarmListNew 'xxxx2', 101, 5, 115	-- 관리용(리스트)
 exec spu_UserFarmListNew 'farm939088725',   1, 5, 116	-- 게임(리스트)
 exec spu_UserFarmListNew 'farm939088725', 101, 5, 116	-- 관리용(리스트)
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_UserFarmListNew', 'P' ) IS NOT NULL

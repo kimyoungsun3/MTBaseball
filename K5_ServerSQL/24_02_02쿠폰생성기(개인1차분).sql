@@ -4,7 +4,7 @@
 -- select count(*) from dbo.tEventCertNo where itemcode1 = 5013
 -- select count(*) from dbo.tEventCertNo where itemcode1 = 5014 and itemcode2 = 111
 /*
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 insert into dbo.tEventCertNo(certno,  itemcode1,  itemcode2,  itemcode3) values('3333',         5013,          -1,          -1)

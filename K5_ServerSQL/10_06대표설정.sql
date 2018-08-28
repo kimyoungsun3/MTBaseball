@@ -8,7 +8,7 @@ exec spu_AniRepReg 'xxxx', '049000s1i0n7t8445289', 0, -1	-- 정상(창고).
 exec spu_AniRepReg 'xxxx2', '049000s1i0n7t8445289', 3, -1	-- 정상(필드).
 select * from dbo.tSchoolUser where gameid = 'xxxx2'
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_AniRepReg', 'P' ) IS NOT NULL

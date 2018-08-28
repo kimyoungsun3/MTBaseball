@@ -4,7 +4,7 @@
 -- SQL Server 에이전트(먼저 켜져있어야한다.)
 -- 매주월요일 시작 04시 00분 00초에 시작
 ---------------------------------------------
--- use Game4Farmvill5
+-- use GameMTBaseball
 -- GO
 --
 -- delete from dbo.tStaticMaster where dateid = '20140404'

@@ -5,7 +5,7 @@ exec spu_Notice 5, 0, -1
 exec spu_Notice 6, 0, -1
 exec spu_Notice 7, 0, -1
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_Notice', 'P' ) IS NOT NULL

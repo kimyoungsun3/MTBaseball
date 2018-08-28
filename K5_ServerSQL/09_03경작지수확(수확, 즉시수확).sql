@@ -32,7 +32,7 @@ exec spu_SeedHarvest 'xxxx2', '049000s1i0n7t8445289',  1, 3, 1, -1	-- 버리기.
 exec spu_SeedHarvest 'xxxx2', '049000s1i0n7t8445289',  1, 1, 3, -1	-- 버리기.
 
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_SeedHarvest', 'P' ) IS NOT NULL

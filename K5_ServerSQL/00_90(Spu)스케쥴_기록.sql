@@ -1,7 +1,7 @@
 ﻿-----------------------------------------------------------------------
 -- exec spu_SchoolScheduleRecord '20131231', 0
 -----------------------------------------------------------------------
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_SchoolScheduleRecord', 'P' ) IS NOT NULL

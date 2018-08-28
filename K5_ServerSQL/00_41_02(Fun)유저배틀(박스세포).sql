@@ -10,7 +10,7 @@ select dbo.fun_GetBoxStemCell( 2, 1, 1    )
 select dbo.fun_GetBoxStemCell( 2, 1000, 1 )
 select dbo.fun_GetBoxStemCell( 2, 1000, 8 )
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( N'dbo.fun_GetBoxStemCell', N'FN' ) IS NOT NULL

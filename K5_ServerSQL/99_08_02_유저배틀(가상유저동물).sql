@@ -19,7 +19,7 @@ select * from dbo.tUserBattleBank where trophy >= 800 and ( aniitemcode1 = -1 or
 exec spu_UserBattleStart 'farm484968', '2173403f8l7a9b455788', '0:190;1:195;2:194;', 				-1
 */
 
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 declare @userdata				int					set @userdata			= 0 --가이드 데이타.

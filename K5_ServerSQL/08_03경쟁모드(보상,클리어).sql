@@ -54,7 +54,7 @@ update dbo.tUserMaster set comreward = 90258 where gameid = 'xxxx2'
 exec spu_ComReward 'xxxx2', '049000s1i0n7t8445289', 90258, '0:0;1:1;', -1, -1
 
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_ComReward', 'P' ) IS NOT NULL

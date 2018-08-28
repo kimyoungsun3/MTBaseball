@@ -1,4 +1,4 @@
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 -- 개수를 치트한 경우. > 100이상 , 0개 미만

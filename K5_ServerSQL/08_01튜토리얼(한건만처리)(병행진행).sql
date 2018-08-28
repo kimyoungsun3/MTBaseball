@@ -29,7 +29,7 @@ exec spu_Tutorial 'xxxx2', '049000s1i0n7t8445289', 2, -1		-- 재튜토리얼.
 
 
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_Tutorial', 'P' ) IS NOT NULL

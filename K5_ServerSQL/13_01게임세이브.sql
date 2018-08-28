@@ -50,7 +50,7 @@ exec spu_GameSave 'xxxx2', '049000s1i0n7t8445289', '0:2013;  1:3;      2:13;    
 
 
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_GameSave', 'P' ) IS NOT NULL

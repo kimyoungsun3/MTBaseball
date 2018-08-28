@@ -4,7 +4,7 @@
 update dbo.tUserMaster set cashcost = 1000, fpoint = 1000 where gameid = 'xxxx2'
 exec spu_TradeCash 'xxxx2', '049000s1i0n7t8445289', -1
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_TradeCash', 'P' ) IS NOT NULL

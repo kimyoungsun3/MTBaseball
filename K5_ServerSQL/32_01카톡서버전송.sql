@@ -8,7 +8,7 @@ exec spu_KakaoPayment 2, 136, '132, 133, 134, 135, 136', '', -1
 exec spu_KakaoPayment 2, 138, '137, 138', '', -1
 exec spu_KakaoPayment 2,  -1, '', '', -1
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_KakaoPayment', 'P' ) IS NOT NULL

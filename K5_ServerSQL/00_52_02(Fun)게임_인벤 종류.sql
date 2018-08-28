@@ -33,7 +33,7 @@
 -- select dbo.fnu_GetInvenFromSubCategory(1200)
 -- select dbo.fnu_GetInvenFromSubCategory(39)
 --################################################################
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( N'dbo.fnu_GetInvenFromSubCategory', N'FN' ) IS NOT NULL

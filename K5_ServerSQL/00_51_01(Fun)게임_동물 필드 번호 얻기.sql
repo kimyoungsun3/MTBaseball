@@ -7,7 +7,7 @@
 -- select dbo.fun_getUserItemFieldIdxAni('dd14')
 -- select dbo.fun_getUserItemFieldIdxAni('dd15')
 --################################################################
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( N'dbo.fun_getUserItemFieldIdxAni', N'FN' ) IS NOT NULL

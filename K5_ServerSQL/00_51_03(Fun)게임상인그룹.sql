@@ -11,7 +11,7 @@ while( @tradesuccesscnt <= 10)
 
 
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( N'dbo.fun_GetDealerGroup', N'FN' ) IS NOT NULL

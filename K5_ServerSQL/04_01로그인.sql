@@ -28,7 +28,7 @@ update dbo.tUserMaster set attenddate = getdate() - 1, tsskillcashcost = 0, tssk
 exec spu_Login 'xxxx2', '049000s1i0n7t8445289', 5, 119, '', -1, -1			-- 정상유저
 
 */
-use Game4Farmvill5
+use GameMTBaseball
 Go
 
 IF OBJECT_ID ( 'dbo.spu_Login', 'P' ) IS NOT NULL

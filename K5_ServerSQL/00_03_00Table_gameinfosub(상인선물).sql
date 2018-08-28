@@ -1,7 +1,7 @@
 ---------------------------------------------
 --		거래보상코드
 ---------------------------------------------
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID (N'dbo.tUserSaleRewardItemCode', N'U') IS NOT NULL

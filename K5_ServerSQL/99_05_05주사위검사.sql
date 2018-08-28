@@ -1,5 +1,5 @@
 
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 declare @YABAU_COUNT_L1						int					set @YABAU_COUNT_L1							= 40

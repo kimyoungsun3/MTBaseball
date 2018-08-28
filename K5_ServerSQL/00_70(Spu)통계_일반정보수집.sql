@@ -68,7 +68,7 @@ exec spu_DayLogInfoStatic 1, 123, 1				-- 일 경작지하트 짜요쿠폰조각
 
 select * from dbo.tDayLogInfoStatic order by idx desc
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_DayLogInfoStatic', 'P' ) IS NOT NULL

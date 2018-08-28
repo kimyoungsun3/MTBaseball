@@ -33,7 +33,7 @@ exec spu_ApartItemcode 'xxxx2', '049000s1i0n7t8445289', 1, '1:30;', '7785', -1
 exec spu_ApartItemcode 'xxxx2', '049000s1i0n7t8445289', 1, '2:31;', '7786', -1
 
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_ApartItemcode', 'P' ) IS NOT NULL

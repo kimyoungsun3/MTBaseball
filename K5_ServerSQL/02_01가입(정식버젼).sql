@@ -57,7 +57,7 @@ while @var < @loop
 -- delete from dbo.tKakaoMaster where idx in (9)
 
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_UserCreate', 'P' ) IS NOT NULL

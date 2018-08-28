@@ -6,7 +6,7 @@ select dbo.fun_getZCPChance( 10, 0,  5000)	-- 작물(10) -> 10분  1		-> 12/120
 select dbo.fun_getZCPChance( 20, 0, 10000)	-- 박스(20) -> 120분 1 		->  1/120
 
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( N'dbo.fun_getZCPChance', N'FN' ) IS NOT NULL

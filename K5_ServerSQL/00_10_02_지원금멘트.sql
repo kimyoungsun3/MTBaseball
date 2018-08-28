@@ -1,7 +1,7 @@
 ---------------------------------------------
 -- 지원금멘트.
 ---------------------------------------------
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID (N'dbo.tSystemSupportMsg', N'U') IS NOT NULL

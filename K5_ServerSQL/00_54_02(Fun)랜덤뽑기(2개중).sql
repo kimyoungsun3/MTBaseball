@@ -7,7 +7,7 @@ select dbo.fnu_GetRandomStemTwo(1040,     0, 3000, 104015, 104005)
 select dbo.fnu_GetRandomStemTwo(1040,  1000, 3000, 104025, 104015)
 select dbo.fnu_GetRandomStemTwo(1040,     0, 3000, 104025, 104015)
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( N'dbo.fnu_GetRandomStemTwo', N'FN' ) IS NOT NULL

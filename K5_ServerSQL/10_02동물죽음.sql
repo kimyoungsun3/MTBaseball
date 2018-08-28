@@ -12,7 +12,7 @@ exec spu_AniDie 'xxxx2', '049000s1i0n7t8445289', 1, 21, -1		-- ´­·¯Á×À½.
 exec spu_AniDie 'xxxx2', '049000s1i0n7t8445289', 1, 22, -1		-- ´­·¯Á×À½.
 
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_AniDie', 'P' ) IS NOT NULL

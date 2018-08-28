@@ -11,7 +11,7 @@ exec spu_TSWearEffect 'xxxx2' 		-- 유저 장착보물 능력치 계산
 
 */
 
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_TSWearEffect', 'P' ) IS NOT NULL

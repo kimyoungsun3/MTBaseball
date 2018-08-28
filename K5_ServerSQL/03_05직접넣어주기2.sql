@@ -74,7 +74,7 @@ declare @rtnlistidx int		set @rtnlistidx = -1	-- 짜요쿠폰.
 exec spu_SetDirectItemNew 'xxxx2', 3801, 1, 20, @rtn_ = @rtnlistidx OUTPUT
 select @rtnlistidx rtnlistidx
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 ------------------------------------------------
 --	1. 프로시져 생성

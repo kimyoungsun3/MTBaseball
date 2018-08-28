@@ -18,7 +18,7 @@ delete from dbo.tGiftList where gameid in ('xxxx2')
 update dbo.tUserMaster set yabauidx = 1, yabaucount = 0, yabaustep = 1 where gameid = 'xxxx2'
 exec spu_RoulYabau 'xxxx2', '049000s1i0n7t8445289', 4,     40, -1	-- 받아가기 갱신
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_RoulYabau', 'P' ) IS NOT NULL

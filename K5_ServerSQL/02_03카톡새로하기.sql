@@ -4,7 +4,7 @@
 --exec spu_SchoolInfo 'guest115966', '049000s1i0n7t8445289', 2, 1, '', -1			-- 가입모드
 exec spu_NewStart 'xxxx11',  '049000s1i0n7t8445289', 'farmFB7940F66C204CD', -1
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_NewStart', 'P' ) IS NOT NULL

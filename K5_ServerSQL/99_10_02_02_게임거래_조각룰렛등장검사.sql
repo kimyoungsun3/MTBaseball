@@ -1,4 +1,4 @@
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 declare @gameid				varchar(20) set @gameid			= 'xxxx2'

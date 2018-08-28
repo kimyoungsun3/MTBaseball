@@ -15,7 +15,7 @@ exec sup_CheckCertNo 'xxxx2', '049000s1i0n7t8445289', 'COMMON2', -1	-- °ø¿ëÄíÆù 
 exec sup_CheckCertNo 'xxxx3', '049000s1i0n7t8445289', 'COMMON2', -1
 
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 

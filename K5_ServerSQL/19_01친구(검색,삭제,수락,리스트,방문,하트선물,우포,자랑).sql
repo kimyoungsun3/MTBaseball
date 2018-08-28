@@ -47,7 +47,7 @@ update dbo.tUserMaster set kakaomsgblocked = -1 where gameid = 'xxxx'	--수신가능
 update dbo.tUserMaster set kakaomsgblocked =  1 where gameid = 'xxxx'	--블럭상태.
 exec spu_Friend 'xxxx2', '049000s1i0n7t8445289', 10, 'xxxx', -1		-- 자랑하기? 가능?
 */
-use Game4Farmvill5
+use GameMTBaseball
 GO
 
 IF OBJECT_ID ( 'dbo.spu_Friend', 'P' ) IS NOT NULL
