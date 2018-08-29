@@ -1,9 +1,8 @@
 ﻿
-select * from dbo.tAdminUser
 --관리자 로그인(25)
 --exec spu_GameMTBaseballD 25, 1, 1000, -1, -1, -1, -1, -1, -1, -1, 'global', 'qwer1234', '', '', '', '', '', '', '', ''			-- 관리자 생성
 --exec spu_GameMTBaseballD 25, 1, 1000, -1, -1, -1, -1, -1, -1, -1, 'blackm', 'qwer1234', '', '', '', '', '', '', '', ''			-- 관리자 생성
---exec spu_GameMTBaseballD 25, 2, -1, -1, -1, -1, -1, -1, -1, -1, 'blackm', 'a1s2d3f4', '', '', '', '', '', '', '', ''			-- 관리자 로그인
+--exec spu_GameMTBaseballD 25, 2, -1, -1, -1, -1, -1, -1, -1, -1, 'blackm', 'qwer1234', '', '', '', '', '', '', '', ''			-- 관리자 로그인
 --exec spu_GameMTBaseballD 25, 3, 1000, -1, -1, -1, -1, -1, -1, -1, 'global', 'qwer1234', '', '', '', '', '', '', '', ''			-- 관리자 등급수정
 --exec spu_GameMTBaseballD 25, 3, 1000, -1, -1, -1, -1, -1, -1, -1, 'blackm', 'qwer1234', '', '', '', '', '', '', '', ''			-- 관리자 등급수정
 --exec spu_GameMTBaseballD 25, 4, -1, -1, -1, -1, -1, -1, -1, -1, 'aaaaaa', 'bbbbbb', '', '', '', '', '', '', '', ''				-- 관리자 삭제

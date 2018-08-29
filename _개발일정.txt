@@ -1,16 +1,15 @@
-- 서버전달받음
   IP주소 : 49.247.202.212
   ID : Administrator
   PW : U^MD#0F7
-  Port : 1433 
-  ID : sa
-  PW : Ghktjddlsdi9   <화성인야9>
   DB : GameMTBaseball / gamemtbaseball / a1s2d3f4  
   http://49.247.202.212:8086/GameMTBaseball/admin/_login.jsp
-  \\49.247.202.212\GameMTBaseball
+
 - 아이템 리스트
   > 검토해서 신규아이템 테이블 작업
      상점판매용, 착용, 조각
+  - 초기 검토 문서 작업
+  - itemname 이름 한글20자(v(40))까지 가는지 나중에 확인해보자.
+
 - 싱글모드 NetUI작업
 
 
@@ -84,3 +83,20 @@ AIData, 개발	: 대표 전바다
 게임개발자 		: 강희아부지 : 게임개발자 최향태 차장
 이사 전용욱, 김예영
 ----------------------------------------------------
+= 서버전달받음
+  IP주소 : 49.247.202.212
+  ID : Administrator
+  PW : U^MD#0F7
+  Port : 1433 
+  ID : sa
+  PW : Ghktjddlsdi9   <화성인야9>
+  DB : GameMTBaseball / gamemtbaseball / a1s2d3f4  
+  http://49.247.202.212:8086/GameMTBaseball/admin/_login.jsp
+  \\49.247.202.212\GameMTBaseball
+  => 서버 재부팅 잘되고 뭔가 문제가 심각하다.... > 의견을 전달했고 상태를 봤다....
+     서버 재부팅하고 성능에 문제가 있다.  외부접근용 어플로 문제를 해결하라고 한다. ㅠㅠ
+     8.28 2회 부팅
+     8.29 오전 2번 부팅 밀웨어 xx라고 하면서 재부팅됨....
+  => web - jsp - mssql
+     관리자 로그인 해보자.
+     OK
