@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rows>
+	<dealinfo>
+		<syscode>80100</syscode>
+		<fameofdealok>5</fameofdealok>
+		<fameofbarrelfail>-15</fameofbarrelfail>
+		<fameoffreshfail>-15</fameoffreshfail>
+		<presentablecount>6</presentablecount>
+		<overdealbarrel>100</overdealbarrel>
+		<overdealfresh>0</overdealfresh>
+		<firstwantbarrel>3</firstwantbarrel>
+		<fameofdealok1>9</fameofdealok1>
+		<fameofdealok2>14</fameofdealok2>
+	</dealinfo>
+	<color>
+		<syscode>80200</syscode>
+		<colorcode>1</colorcode>
+		<r>255</r>
+		<g>229</g>
+		<b>158</b>
+		<descript>소 d등급 sa 1</descript>
+	</color>
+	<color>
+		<syscode>80201</syscode>
+		<colorcode>2</colorcode>
+		<r>185</r>
+		<g>231</g>
+		<b>255</b>
+		<descript>소 d등급 sa 2</descript>
+	</color>
+	<color>
+		<syscode>80202</syscode>
+		<colorcode>3</colorcode>
+		<r>73</r>
+		<g>170</g>
+		<b>211</b>
+		<descript>소 c등급 sc 1</descript>
+	</color>
+	<color>
+		<syscode>80203</syscode>
+		<colorcode>4</colorcode>
+		<r>202</r>
+		<g>124</g>
+		<b>255</b>
+		<descript>소 c등급 sc 2</descript>
+	</color>
+	<color>
+		<syscode>80204</syscode>
+		<colorcode>5</colorcode>
+		<r>255</r>
+		<g>156</g>
+		<b>179</b>
+		<descript>소 b등급 sb 1</descript>
+	</color>
+	<stbody>
+		<syscode>80300</syscode>
+		<stcode>100</stcode>
+		<atlasname>animal_00</atlasname>
+		<a1>cow_b_01</a1>
+		<a2>cow_b_02</a2>
+		<a3>cow_b_03</a3>
+		<a4>cow_b_04</a4>
+		<a5>cow_b_05</a5>
+		<a6>cow_b_06</a6>
+		<a7>cow_b_07</a7>
+		<a8>cow_b_08</a8>
+		<a9>cow_b_09</a9>
+		<a10>cow_b_10</a10>
+		<a11>cow_b_11</a11>
+		<a12>cow_b_12</a12>
+		<a13>cow_b_13</a13>
+	</stbody>
+	<stbody>
+		<syscode>80300</syscode>
+		<stcode>101</stcode>
+		<atlasname>animal_00</atlasname>
+		<a1>cow_bg_01</a1>
+		<a2>cow_bg_02</a2>
+		<a3>cow_bg_03</a3>
+		<a4>cow_bg_04</a4>
+		<a5>cow_bg_05</a5>
+		<a6>cow_bg_06</a6>
+		<a7>cow_bg_07</a7>
+		<a8>cow_bg_08</a8>
+		<a9>cow_bg_09</a9>
+		<a10>cow_bg_10</a10>
+		<a11>cow_bg_11</a11>
+		<a12>cow_bg_12</a12>
+		<a13>cow_bg_13</a13>
+	</stbody>
+	<stbody>
+		<syscode>80300</syscode>
+		<stcode>102</stcode>
+		<atlasname>animal_00</atlasname>
+		<a1>cow_bh_01</a1>
+		<a2>cow_bh_02</a2>
+		<a3>cow_bh_03</a3>
+		<a4>cow_bh_04</a4>
+		<a5>cow_bh_05</a5>
+		<a6>cow_bh_06</a6>
+		<a7>cow_bh_07</a7>
+		<a8>cow_bh_08</a8>
+		<a9>cow_bh_09</a9>
+		<a10>cow_bh_10</a10>
+		<a11>cow_bh_11</a11>
+		<a12>cow_bh_12</a12>
+		<a13>cow_bh_13</a13>
+	</stbody>
+	<stbody>
+		<syscode>80300</syscode>
+		<stcode>103</stcode>
+		<atlasname>animal_00</atlasname>
+		<a1>cow_bi_01</a1>
+		<a2>cow_bi_02</a2>
+		<a3>cow_bi_03</a3>
+		<a4>cow_bi_04</a4>
+		<a5>cow_bi_05</a5>
+		<a6>cow_bi_06</a6>
+		<a7>cow_bi_07</a7>
+		<a8>cow_bi_08</a8>
+		<a9>cow_bi_09</a9>
+		<a10>cow_bi_10</a10>
+		<a11>cow_bi_11</a11>
+		<a12>cow_bi_12</a12>
+		<a13>cow_bi_13</a13>
+	</stbody>
+	<stbody>
+		<syscode>80300</syscode>
+		<stcode>104</stcode>
+		<atlasname>animal_00</atlasname>
+		<a1>cow_bj_01</a1>
+		<a2>cow_bj_02</a2>
+		<a3>cow_bj_03</a3>
+		<a4>cow_bj_04</a4>
+		<a5>cow_bj_05</a5>
+		<a6>cow_bj_06</a6>
+		<a7>cow_bj_07</a7>
+		<a8>cow_bj_08</a8>
+		<a9>cow_bj_09</a9>
+		<a10>cow_bj_10</a10>
+		<a11>cow_bj_11</a11>
+		<a12>cow_bj_12</a12>
+		<a13>cow_bj_13</a13>
+	</stbody>
+	<cropframe>
+		<syscode>80500</syscode>
+		<code>1</code>
+		<name>배추</name>
+		<a1>cabbage_03</a1>
+		<a2>cabbage_02</a2>
+		<a3>cabbage_01</a3>
+		<a4>seed</a4>
+		<rot>badplants_01</rot>
+	</cropframe>
+	<cropframe>
+		<syscode>80501</syscode>
+		<code>2</code>
+		<name>귀리</name>
+		<a1>oats_03</a1>
+		<a2>oats_02</a2>
+		<a3>oats_01</a3>
+		<a4>seed</a4>
+		<rot>badplants_01</rot>
+	</cropframe>
+	<cropframe>
+		<syscode>80502</syscode>
+		<code>3</code>
+		<name>옥수수</name>
+		<a1>corn_03</a1>
+		<a2>corn_02</a2>
+		<a3>corn_01</a3>
+		<a4>seed</a4>
+		<rot>badplants_01</rot>
+	</cropframe>
+	<cropframe>
+		<syscode>80503</syscode>
+		<code>4</code>
+		<name>호박</name>
+		<a1>pumpkin_03</a1>
+		<a2>pumpkin_02</a2>
+		<a3>pumpkin_01</a3>
+		<a4>seed</a4>
+		<rot>badplants_01</rot>
+	</cropframe>
+	<cropframe>
+		<syscode>80504</syscode>
+		<code>5</code>
+		<name>고구마</name>
+		<a1>sweetpotato_03</a1>
+		<a2>sweetpotato_02</a2>
+		<a3>sweetpotato_01</a3>
+		<a4>seed</a4>
+		<rot>badplants_01</rot>
+	</cropframe>
+	<cropframe>
+		<syscode>80505</syscode>
+		<code>6</code>
+		<name>회복제 나무</name>
+		<a1>healingwood_c</a1>
+		<a2>healingwood_b</a2>
+		<a3>healingwood_a</a3>
+		<a4>seed</a4>
+		<rot>badplants_01</rot>
+	</cropframe>
+	<cropframe>
+		<syscode>80506</syscode>
+		<code>7</code>
+		<name>촉진제 나무</name>
+		<a1>speedwood_c</a1>
+		<a2>speedwood_b</a2>
+		<a3>speedwood_a</a3>
+		<a4>seed</a4>
+		<rot>badplants_01</rot>
+	</cropframe>
+	<cropframe>
+		<syscode>80507</syscode>
+		<code>8</code>
+		<name>하트 나무</name>
+		<a1>hearflower_03</a1>
+		<a2>hearflower_02</a2>
+		<a3>hearflower_01</a3>
+		<a4>seed</a4>
+		<rot>badplants_01</rot>
+	</cropframe>
+	<cropframe>
+		<syscode>80508</syscode>
+		<code>9</code>
+		<name>큰박</name>
+		<a1>bac_02</a1>
+		<a2></a2>
+		<a3>bac_seed</a3>
+		<a4>bac_seed</a4>
+		<rot>badplants_01</rot>
+	</cropframe>
+	<rival>
+		<talkcode>1</talkcode>
+		<title>첫 걸음</title>
+		<complete>우유를 모으는데 성공했군요. 생각보다 우유 모으는 솜씨는 어느 정도 있는 것 같습니다.</complete>
+		<talkcnt>4</talkcnt>
+		<talk1>흠, 여기가 이번에 새로운 주인이 왔다는 짜요 목장입니까?</talk1>
+		<talk2>난 짜요 목장 건너편의 Smart and Genius 목장 그룹의 대표 ,폴,이라고 합니다.</talk2>
+		<talk3>그나저나 한동안 짜요 목장에 주인이 없었다더니, 목장 꼴이 말이 아니군요.</talk3>
+		<talk4>일단 얼마나 우유를 잘 모으는지 보도록 하죠. 얼마나 해낼 수 있는지 평가를 한후 이야기 하도록 하겠습니다.</talk4>
+	</rival>
+	<rival>
+		<talkcode>2</talkcode>
+		<title>많을수록 좋아요</title>
+		<complete>가축을 배치하는데 성공 하셨습니까? 가축이 늘어나니 어떤 장점이 있는지 아시면 좋겠군요. 참, 잊지 말고 우편함을 확인하시기 바랍니다.</complete>
+		<talkcnt>3</talkcnt>
+		<talk1>나름 열심히 하려는 모습은 보이는것 같군요.</talk1>
+		<talk2>질문 하나 드리도록 하죠. 목장의 우유 생산량을 늘리면 어떻게해야 하는지 알고 계십니까?</talk2>
+		<talk3>...뭘 멀뚱멀뚱 보고 있습니까? 당연히 가축을 더 많이 배치해야 하겠죠. 어떻게 해서든 새로운 가축을 목장에 추가해 보십시오.</talk3>
+		<talk4>null</talk4>
+	</rival>
+	<rival>
+		<talkcode>3</talkcode>
+		<title>멋쟁이 가축들</title>
+		<complete>새로운 가축을 얻으셨군요. 어떻습니까, 새로운 가축을 얻으신 소감이?</complete>
+		<talkcnt>3</talkcnt>
+		<talk1>혹시 [ffcc00]프리미엄 교배 티켓[ffffff]을 가지고 계십니까? 제 기억으로는 아마 한장 정도는 가지고 계실텐데 말이죠.</talk1>
+		<talk2>프리미엄 교배를 통하면 평소에는 구하기 어려운 가축을 훨씬 쉽게 구할 수 있습니다.</talk2>
+		<talk3>프리미엄 교배권이 있다면, 어디 한번 새로운 가축을 얻는데 시도해 보시죠.</talk3>
+		<talk4>null</talk4>
+	</rival>
+	<rivalquest>
+		<questcode>30</questcode>
+		<desc>목장에 가축을 최대 (n)마리 배치해보세요.</desc>
+	</rivalquest>
+	<rivalquest>
+		<questcode>13</questcode>
+		<desc>건초를 (n)개 생산하세요.</desc>
+	</rivalquest>
+	<rivalquest>
+		<questcode>53</questcode>
+		<desc>착유기를 (n)단계로 향상시키세요.</desc>
+	</rivalquest>
+	<rivalquest>
+		<questcode>51</questcode>
+		<desc>우유탱크를 (n)단계로 향상시키세요.</desc>
+	</rivalquest>
+	<rivalquest>
+		<questcode>63</questcode>
+		<desc>알바 아이템 (n)번 사용하기</desc>
+	</rivalquest>
+	<rivalquest>
+		<questcode>1</questcode>
+		<desc>늑대 (n)마리 잡아 보세요.</desc>
+	</rivalquest>
+	<rivalquest>
+		<questcode>65</questcode>
+		<desc>긴급지원을 (n)번 사용해보세요.</desc>
+	</rivalquest>
+	<rivalquest>
+		<questcode>40</questcode>
+		<desc>경작지를 (n)개 보유하세요.</desc>
+	</rivalquest>
+	<rivalquest>
+		<questcode>50</questcode>
+		<desc>집을 (n)으로 향상시키세요.</desc>
+	</rivalquest>
+	<rivalquest>
+		<questcode>31</questcode>
+		<desc>명성 레벨을 (n)까지 올려보세요.</desc>
+	</rivalquest>
+	<rivalquest>
+		<questcode>54</questcode>
+		<desc>주입기를 (n)단계로 향상시키세요.</desc>
+	</rivalquest>
+	<rivalquest>
+		<questcode>11</questcode>
+		<desc>여러 달 거래하여 (n)만 코인 매출에 도달하세요.</desc>
+	</rivalquest>
+	<rivalquest>
+		<questcode>32</questcode>
+		<desc>친구를 (n)명 추가하세요.</desc>
+	</rivalquest>
+	<rivalquest>
+		<questcode>33</questcode>
+		<desc>친구에게 하트를 (n)개 선물해보세요.</desc>
+	</rivalquest>
+</rows>

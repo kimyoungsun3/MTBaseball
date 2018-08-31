@@ -5,6 +5,7 @@
   http://49.247.202.212:8086/GameMTBaseball/admin/_login.jsp
 
 - 아이템 리스트
+  > 아이템 테이블 작성...
   > 레벨 SQL Function 만들기....
   > 검토해서 신규아이템 테이블 작업
      상점판매용, 착용, 조각
