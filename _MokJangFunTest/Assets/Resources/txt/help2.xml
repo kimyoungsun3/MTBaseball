@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rows>
+	<row>
+		<content>연속으로, 홈런을 치게 되면 보너스 점수를 받습니다.</content>
+	</row>
+	<row>
+		<content>싱글 모드 플레이시 스테미너 3을 소모합니다.</content>
+	</row>
+	<row>
+		<content>연습 모드를 통해 실력을 향상시킬 수 있습니다.</content>
+	</row>
+	<row>
+		<content>기억력 모드는 미리 보여지는 공을 암기하여 치는 모드입니다.</content>
+	</row>
+	<row>
+		<content>기억력 모드에서 5번 실수를 하게 되면 게임이 끝나게 됩니다.</content>
+	</row>
+	<row>
+		<content>머신 모드에서 투구수가 0이 되면 게임이 끝나게 됩니다.</content>
+	</row>
+	<row>
+		<content>머신 모드에서는 20개의 공이 날아옵니다. 최대한 멀리 날리세요!</content>
+	</row>
+	<row>
+		<content>연습 모드를 제외한 싱글 모드는 랭킹 서비스가 제공됩니다.</content>
+	</row>
+	<row>
+		<content>퀵매치를 통해 즉각적으로 배틀 모드를 플레이 할 수 있습니다.</content>
+	</row>
+	<row>
+		<content>배틀 모드 플레이시 스테미너 5를 소모합니다.</content>
+	</row>
+	<row>
+		<content>배틀 모드를 플레이 하기 전 대기 화면에서 아이템을 구매할 수 있습니다.</content>
+	</row>
+	<row>
+		<content>상대방을 큰 차이로 이기게 되면 더 많은 보상을 획득 할 수 있습니다.</content>
+	</row>
+	<row>
+		<content>배틀 모드 진행 중 게임을 중단하고 나가게 되면 승점이 감소합니다.</content>
+	</row>
+	<row>
+		<content>배틀 모드에서 상대방을 이기게 되면 승점을 얻습니다.</content>
+	</row>
+	<row>
+		<content>승점(별)이 5점 이상 쌓이게 되면 계급이 올라갑니다.</content>
+	</row>
+	<row>
+		<content>실드 아이템은 절반의 확률로 상대방의 패널티를 방어합니다.</content>
+	</row>
+	<row>
+		<content>공격 강화 아이템을 사용하면 상대방에게 더욱 강력한 패널티를 보낼 수 있습니다.</content>
+	</row>
+	<row>
+		<content>공 추적 아이템을 장착하면 공의 궤적을 볼 수 있습니다.</content>
+	</row>
+	<row>
+		<content>확장 아이템을 사용하면 보너스 점수 구조물의 크기가 커집니다.</content>
+	</row>
+	<row>
+		<content>자동 타격을 사용해도 배트 아이콘을 정확하게 위치시켜야 멀리 칠 수 있습니다.</content>
+	</row>
+	<row>
+		<content>안타를 쳐서 상대방에게 보낼 패널티 수치를 누적시킬 수 있습니다.</content>
+	</row>
+	<row>
+		<content>연속해서 홈런을 치게 되면 상대방에게 연속적으로 공격를 날릴 수 있습니다.</content>
+	</row>
+	<row>
+		<content>스모크 패널티는 타자의 시야를 방해합니다.</content>
+	</row>
+	<row>
+		<content>마구 패널티는 다음 투구시 투수가 마구를 던집니다.</content>
+	</row>
+	<row>
+		<content>지진 패널티는 투구시 화면이 흔들리게 됩니다.</content>
+	</row>
+	<row>
+		<content>스피드볼 패널티는 투수가 공을 더 빠르게 던집니다.</content>
+	</row>
+	<row>
+		<content>아웃 카운트 패널티는 출루 마크를 초기화 시켜버립니다.</content>
+	</row>
+	<row>
+		<content>헤비 볼 패널티는 타격 파워를 일정 비율로 감소시킵니다.</content>
+	</row>
+	<row>
+		<content>연속해서 홈런을 치면 더 강력한 공격이 적용됩니다.</content>
+	</row>
+	<row>
+		<content>승점이 0점 이하로 떨어지게 되면 계급이 떨어집니다.</content>
+	</row>
+	<row>
+		<content>상대를 큰 차이로 이길 수록 빠르게 계급을 올릴 수가 있습니다.</content>
+	</row>
+	<row>
+		<content>많은 의상과 장비를 보유하고 있을 수록 파워가 늘어납니다.</content>
+	</row>
+	<row>
+		<content>펫을 장착하게 되면 추가적인 보너스 효과를 얻을 수 있습니다.</content>
+	</row>
+	<row>
+		<content>멋진 액세서리를 장착하고 자신의 캐릭터를 꾸미세요!</content>
+	</row>
+	<row>
+		<content>추가 캐릭터는 기본캐릭터보다 뛰어난 특징을 가지고 있습니다. 확인하세요!</content>
+	</row>
+	<row>
+		<content>캡슐을 돌리는데 사용하는 코인은 하루 1개가 제공됩니다. 잊지 말고 사용하세요.</content>
+	</row>
+	<row>
+		<content>아이템을 강화할 수록 더 강력한 능력치를 보유할 수 있습니다.</content>
+	</row>
+	<row>
+		<content>아이템의 강화는 무한하게 진행 할 수 있습니다!</content>
+	</row>
+	<row>
+		<content>스케일 포션을 통해 캐릭터의 머리 크기를 조절할 수 있습니다.</content>
+	</row>
+	<row>
+		<content>같은 레벨의 장비라도 각각 다른 특징의 능력치를 지니고 있습니다.</content>
+	</row>
+	<row>
+		<content>친구 추가를 통해 친구를 늘리세요.</content>
+	</row>
+	<row>
+		<content>방문한 친구를 통해 새로운 친구에게 방문을 할 수 있습니다.</content>
+	</row>
+	<row>
+		<content>친구를 방문해 친구의 전적 정보를 확인 할 수 있습니다.</content>
+	</row>
+	<row>
+		<content>계급이 높을 수록 대전 보상이 높아집니다.</content>
+	</row>
+	<row>
+		<content>친구가 많을 수록 라커룸에 생성되는 실버볼의 개수가 많아집니다.</content>
+	</row>
+	<row>
+		<content>라커룸의 프로필에서 개인정보를 수정할 수 있습니다.</content>
+	</row>
+	<row>
+		<content>게스트로 입장시 비밀번호를 잊어버리게 되면 복구 할 수 없으니 주의하세요.</content>
+	</row>
+	<row>
+		<content>출루 마크가 누적된 상황에서 홈런을 치면 상대방에게 공격이 적용됩니다.</content>
+	</row>
+	<row>
+		<content>누적된 출루 마크는 홈런을 날리게 되면 사라집니다.</content>
+	</row>
+	<row>
+		<content>머신 모드에서 게이지가 높을 수록 많은 점수를 획득합니다.</content>
+	</row>
+	<row>
+		<content>펫을 교배하여 펫의 능력치를 강화할 수 있습니다.</content>
+	</row>
+	<row>
+		<content>펫 교배에 실패를 해도 보상을 획득 할 수 있습니다.</content>
+	</row>
+	<row>
+		<content>교배를 시도할 경우 교배를 시도한 대상에게도 실버볼이 돌아갑니다.</content>
+	</row>
+	<row>
+		<content>개인정보의 수정은 프로필에서 변경 가능합니다.</content>
+	</row>
+	<row>
+		<content>순위 정보는 메인 상단의 배틀 메뉴에서 확인가능합니다.</content>
+	</row>
+	<row>
+		<content>펫 등록을 해야 교배 시도 보상을 획득 할 수 있습니다.</content>
+	</row>
+	<row>
+		<content>선물함에서 자신에게 온 선물을 확인 하세요.</content>
+	</row>
+	<row>
+		<content>액세서리/꼬리/날개/펫은 구매시 영구 귀속됩니다.</content>
+	</row>
+	<row>
+		<content>머리/상의/하의/배트를 20단계 까지 강화하게 되면 영구 귀속 장비로 변경됩니다.</content>
+	</row>
+	<row>
+		<content>스타디움마다 각기 다른 장점을 가지고 있습니다.</content>
+	</row>
+	<row>
+		<content>배틀 모드에서 연승을 이어가면 대전 추가 보상을 획득합니다.</content>
+	</row>
+	<row>
+		<content>스프린트 모드에서 10연승을 하게 되면 많은 보상을 획득할 수 있습니다. 도전하세요!</content>
+	</row>
+	<row>
+		<content>스프린트 모드에서는 배틀 아이템을 사용할 수 없습니다.</content>
+	</row>
+	<row>
+		<content>스프린트 모드에서는 500m에 먼저 도달하면 승리하게 됩니다.</content>
+	</row>
+	<row>
+		<content>스프린트 모드에서 10연승에 도달하지 않아도 중간 보상을 획득하고 끝마칠 수 있습니다.</content>
+	</row>
+	<row>
+		<content>대전 모드에서는 홈런을 칠 때마다 실버를 획득 할 수 있습니다.</content>
+	</row>
+	<row>
+		<content>대전 모드에서 특수 구조물을 맞추거나 콤보를 낼 경우 추가 실버볼을 획득 할 수 있습니다.</content>
+	</row>
+	<row>
+		<content>콤보가 3의 배수로 끝날 때마다 실버볼 2배 획득의 찬스가 주어집니다. 놓치지 마세요!</content>
+	</row>
+	<row>
+		<content>대전 모드에서는 비거리에 따라서 추가로 획득 할 수 있는 실버볼의 양이 달라집니다.</content>
+	</row>
+	<row>
+		<content>파워가 높을 수록 비거리가 늘어납니다.</content>
+	</row>
+	<row>
+		<content>정확도가 높을 수록 날아가는 각도가 멀리 날아가도록 보정됩니다.</content>
+	</row>
+	<row>
+		<content>비너스를 착용하면 경기중 2배의 실버볼을 획득 할 수 있습니다.</content>
+	</row>
+	<row>
+		<content>고스트는 착용 아이템의 종류가 적은 대신 기본 캐릭터의 2배의 위력을 가지고 있습니다.</content>
+	</row>
+	<row>
+		<content>프로필에서 아바타를 변경할 수 있습니다.</content>
+	</row>
+	<row>
+		<content>카일은 상대방의 공격을 일정확률로 방어할 수 있는 능력을 가지고 있습니다.</content>
+	</row>
+	<row>
+		<content>메인화면의 헬멧을 선택하면 현재 자신의 계급이 어느 위치에 있는지 알 수 있습니다.</content>
+	</row>
+	<row>
+		<content>교배를 통해 상위 펫을 획득 할 수 있습니다.</content>
+	</row>
+	<row>
+		<content>레벨이 오를 때마다 스테미너가 충전됩니다.</content>
+	</row>
+	<row>
+		<content>선물을 받기전 장비의 레벨을 확인하세요!</content>
+	</row>
+</rows>

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rows>
+	<tooltip>
+		<count>0</count>
+		<tip>늑대는 한달 동안 최대 3마리 까지 나올 수 있습니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>1</count>
+		<tip>교배로 새로운 가축들을 얻어보세요!</tip>
+	</tooltip>
+	<tooltip>
+		<count>2</count>
+		<tip>질병에 걸리게 되면 가축들이 우유를 만들어내는 속도가 줄어듭니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>3</count>
+		<tip>메뉴 - 업그레이드에서 목장의 다양한 시설물을 향상시키세요.</tip>
+	</tooltip>
+	<tooltip>
+		<count>4</count>
+		<tip>친구와 서로 하트를 주고 받으세요!</tip>
+	</tooltip>
+	<tooltip>
+		<count>5</count>
+		<tip>친구의 가축이 좋을수록 더 많은 교배 하트와 우정 포인트를 받을 수 있습니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>6</count>
+		<tip>주택을 향상시키면 저장할 수 있는 건초의 수량이 늘어납니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>7</count>
+		<tip>질병에 걸리셨다면 치료제를 사용하세요.</tip>
+	</tooltip>
+	<tooltip>
+		<count>8</count>
+		<tip>겨울에는 생산량이 감소합니다. 촉진제를 사용하세요!</tip>
+	</tooltip>
+	<tooltip>
+		<count>9</count>
+		<tip>일부 촉진제는 신선도를 올려줍니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>10</count>
+		<tip>손이 바쁘세요? 일꾼을 사용하면 더 쉽게 게임을 풀어나갈 수 있습니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>11</count>
+		<tip>일꾼과 촉진제를 함께 사용하면 더 많은 우유를 채집할 수 있습니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>12</count>
+		<tip>아이템을 아끼지 마세요!</tip>
+	</tooltip>
+	<tooltip>
+		<count>13</count>
+		<tip>가축에게 건초를 주지 않으면 우유를 생산하지 않습니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>14</count>
+		<tip>높은 등급의 가축일 수록 많은 먹이를 먹습니다. 먹보라고 미워하진 마세요^^;</tip>
+	</tooltip>
+	<tooltip>
+		<count>15</count>
+		<tip>건초는 항상 넉넉하게 비축해두세요.</tip>
+	</tooltip>
+	<tooltip>
+		<count>16</count>
+		<tip>미처 목장에서 살리지 못한 가축은 가축 병원에서 확인할 수 있습니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>17</count>
+		<tip>가축 병원은 공간이 무한정이지 않아요. 되살리고 싶은 가축은 빨리 되살리세요~</tip>
+	</tooltip>
+	<tooltip>
+		<count>18</count>
+		<tip>목장에 좋은 가축을 많이 배치할수록 더욱 신선한 우유를 빠르게 생산합니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>19</count>
+		<tip>가축이 너무 많아 관리하기 힘들다면 보관함으로 넣어두세요.</tip>
+	</tooltip>
+	<tooltip>
+		<count>20</count>
+		<tip>필요없는 가축이 너무 많은가요? 과감하게 판매하세요.</tip>
+	</tooltip>
+	<tooltip>
+		<count>21</count>
+		<tip>경작지에서는 건초뿐 아니라 교배용 하트와 치료제, 촉진제도 얻을 수 있습니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>22</count>
+		<tip>프리미엄 교배에서는 더욱 멋진 가축을 얻을 수 있어요!</tip>
+	</tooltip>
+	<tooltip>
+		<count>23</count>
+		<tip>목장 착유기를 업그레이드 하면 더 빨리 우유를 얻을 수 있습니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>24</count>
+		<tip>우유 탱크를 업그레이드 하면 상인에게 판매할 우유를 더 많이 모을 수 있습니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>25</count>
+		<tip>양동이를 업그레이드 하면 우유 탱크에 자주 왔다갔다하지 않아도 되요.</tip>
+	</tooltip>
+	<tooltip>
+		<count>26</count>
+		<tip>주입기를 업그레이드 할 수록 우유 탱크 터치 횟수 숫자가 줄어들어 시간을 아낄 수 있습니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>27</count>
+		<tip>정화시설(변경예정)을 업그레이드 하면 가축들이 병에 걸릴 확률이 줄어들어요!</tip>
+	</tooltip>
+	<tooltip>
+		<count>28</count>
+		<tip>품질향상 시설을 향상시키면 저장된 우유의 신선도가 증가합니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>29</count>
+		<tip>가을에 우유 생산속도가 가장 빨라져요. 일꾼을 함께 사용하면 더 많은 우유를 모을 수 있습니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>30</count>
+		<tip>항상 사냥총에 여분의 총알을 준비해두세요.</tip>
+	</tooltip>
+	<tooltip>
+		<count>31</count>
+		<tip>늑대가 나타나면 상점에 들어갈 수 없어요! 평소에 총알을 꼭 준비하세요.</tip>
+	</tooltip>
+	<tooltip>
+		<count>32</count>
+		<tip>늑대는 여러 종류가 있어요. 강한 늑대는 강력한 총알로 쫓아버리세요.</tip>
+	</tooltip>
+	<tooltip>
+		<count>33</count>
+		<tip>상인의 요구조건을 맞춰주지 못하면 거래 금액이 반감되요.</tip>
+	</tooltip>
+	<tooltip>
+		<count>34</count>
+		<tip>상인의 요구조건보다 많은 양을 판매하면 거래 금액이 더 증가됩니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>35</count>
+		<tip>꾸준히 상인의 요구조건을 만족시켜주면 상금이 주어집니다. 연속으로 상금을 받을 수록 상금이 증가되요!</tip>
+	</tooltip>
+	<tooltip>
+		<count>36</count>
+		<tip>피버모드에서는 마구마구 소를 터치하세요! 터치할 때 마다 떨어지는 코인은 보너스~</tip>
+	</tooltip>
+	<tooltip>
+		<count>37</count>
+		<tip>액세서리를 사용해서 소의 능력을 올려줄 수 있어요.</tip>
+	</tooltip>
+	<tooltip>
+		<count>38</count>
+		<tip>가축의 능력치가 보기 복잡하세요? 큰 별이 많은 가축일 수록 좋은 가축이랍니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>39</count>
+		<tip>명성도는 상인의 요구 조건을 만족시키는 거래를 진행할 시 향상됩니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>40</count>
+		<tip>상인의 요구조건을 만족시키지 못하면 명성도가 떨어집니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>41</count>
+		<tip>명성도를 올릴수록 더 많은 목장의 기능을 사용할 수 있어요.</tip>
+	</tooltip>
+</rows>
