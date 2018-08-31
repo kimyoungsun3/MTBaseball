@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rows>
+	<tooltip>
+		<count>0</count>
+		<tip>동물교배를 통해 새로운 동물을 얻어보세요!</tip>
+	</tooltip>
+	<tooltip>
+		<count>1</count>
+		<tip>동물교배로 도감을 완성하면 상인거래 기본단가가 상승합니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>2</count>
+		<tip>동물을 짜지 않고 방치해두면 동물이 터져죽게됩니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>3</count>
+		<tip>동물병원은 공간이 한정 되어 있습니다. 살리고 싶은 동물은 빨리 부활시키세요~</tip>
+	</tooltip>
+	<tooltip>
+		<count>4</count>
+		<tip>상인거래 시 만족도가 불만족이라면 동물교배를 해보세요.</tip>
+	</tooltip>
+	<tooltip>
+		<count>5</count>
+		<tip>동물을 너무 많이 짜면 동물이 죽게 됩니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>6</count>
+		<tip>남는 동물과 보물을 어떻게 하냐고요? 분해로 강화세포를 획득할 수 있습니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>7</count>
+		<tip>상위 동물을 구할 수 있는 좋은 방법은 동물합성과 동물승급입니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>8</count>
+		<tip>필요없는 동물들을 분해하시면 강화세포를 획득 할 수 있습니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>9</count>
+		<tip>상점에서 구매한 동물은 분해해도 강화세포를 획득할 수 없어요.</tip>
+	</tooltip>
+	<tooltip>
+		<count>10</count>
+		<tip>지원받은 동물은 분해해도 강화세포를 얻을 수 없습니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>11</count>
+		<tip>합성 포인트는 합성 성공 시에만 포인트가 누적됩니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>12</count>
+		<tip>S로 끝나는 동물은 스페셜 능력을 가지고 있습니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>13</count>
+		<tip>스페셜 동물들은 교배와 승급으로 얻을 수 있습니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>14</count>
+		<tip>상위 동물로 획득하는 방법으로 합성과 승급이 있습니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>15</count>
+		<tip>트로피는 유저배틀을 통해서 획득 할 수 있습니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>16</count>
+		<tip>트로피에 따라서 티어가 구분되면 티어가 높을 수록 박스 보상이 상승합니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>17</count>
+		<tip>우정포인트는 황금상인을 불러 높은 단가를 받고 싶을 때 사용할 수 있습니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>18</count>
+		<tip>보물뽑기를 통해 얻은 필요없는 보물들은 분해를 해보세요. 동물강화세포를 획득할 수 있답니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>19</count>
+		<tip>소는 산양, 산양은 양, 양은 소에 대해서 상성이 강해 배틀에 유리합니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>20</count>
+		<tip>배틀에서는 턴 값이 높으면 공격 턴 주기가 빨라집니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>21</count>
+		<tip>전국목장에서 새로운 목장을 구매하시면 더 좋은 세포를 획득할 수 있어요!</tip>
+	</tooltip>
+	<tooltip>
+		<count>22</count>
+		<tip>배틀 횟수는 매일 00시에 초기화됩니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>23</count>
+		<tip>친구에게 하트를 선물하고 얻는 우정 포인트로 황금상인을 불러 대박을 노려보세요!</tip>
+	</tooltip>
+	<tooltip>
+		<count>24</count>
+		<tip>친구와 서로 하트를 주고 받으세요!</tip>
+	</tooltip>
+	<tooltip>
+		<count>25</count>
+		<tip>하트는 동물교배나 보물뽑기에 사용되요.</tip>
+	</tooltip>
+	<tooltip>
+		<count>26</count>
+		<tip>하트는 동물강화나 보물강화에 사용되요.</tip>
+	</tooltip>
+	<tooltip>
+		<count>27</count>
+		<tip>하트는 경작지에서 재배 할수도 있으니 꾸준히 모아두세요!</tip>
+	</tooltip>
+	<tooltip>
+		<count>28</count>
+		<tip>친구들과 하트 교환은 하루 100회까지만 가능합니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>29</count>
+		<tip>목장을 구입하려면 구매 조건을 달성해야 합니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>30</count>
+		<tip>목장을 많이 보유하면 거래단가가 상승합니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>31</count>
+		<tip>늑대는 여러 종류가 있어요. 강한 늑대는 강력한 총알로 쫓아버리세요.</tip>
+	</tooltip>
+	<tooltip>
+		<count>32</count>
+		<tip>늑대는 한 달 동안 최대 3마리까지 나올 수 있습니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>33</count>
+		<tip>늑대가 동물을 덮칠때 잡으시면 보다 많은 코인을 받을 수 있습니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>34</count>
+		<tip>늑대에 대비해서 총알은 충분히 준비해두세요.</tip>
+	</tooltip>
+	<tooltip>
+		<count>35</count>
+		<tip>질병에 걸린 동물을 오랫동안 치료하지 않으면 죽게됩니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>36</count>
+		<tip>질병이 발생하면 동물들이 우유를 만들어내는 속도가 줄어듭니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>37</count>
+		<tip>동물이 질병에 걸렸다면 꼭! 치료제를 사용하세요. 치료제는 상점에 있습니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>38</count>
+		<tip>동물 도감을 완성하시면 보상이 있습니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>39</count>
+		<tip>우편함은 일정 시간 동안 받아가지 않으면 삭제됩니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>40</count>
+		<tip>피버모드에서는 마구마구 동물을 터치하세요! 터치할 때 마다 떨어지는 코인은 보너스~</tip>
+	</tooltip>
+	<tooltip>
+		<count>41</count>
+		<tip>시설물 업그레이드에서 목장의 다양한 시설물을 향상시키세요.</tip>
+	</tooltip>
+	<tooltip>
+		<count>42</count>
+		<tip>주택을 업그레이드하면 저장할 수 있는 건초의 수량이 늘어납니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>43</count>
+		<tip>동물들이 너무 우유를 천천히 생산하는 것 같나요? 촉진제를 사용하세요!</tip>
+	</tooltip>
+	<tooltip>
+		<count>44</count>
+		<tip>일부 특수한 촉진제는 우유 신선도를 올려줍니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>45</count>
+		<tip>일꾼과 촉진제의 신선도 적용은 동물을 직접 짤 때만 적용됩니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>46</count>
+		<tip>손이 바쁘세요? 일꾼을 사용하면 게임을 더 쉽게 즐기실수 있습니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>47</count>
+		<tip>아이템을 아끼지 마세요!</tip>
+	</tooltip>
+	<tooltip>
+		<count>48</count>
+		<tip>동물에게 건초를 주지 않으면 우유를 생산하지 않습니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>49</count>
+		<tip>높은 등급의 동물일수록 먹이를 많이 먹습니다. 먹보라고 미워하진 마세요^^;</tip>
+	</tooltip>
+	<tooltip>
+		<count>50</count>
+		<tip>동물에게 줄 건초는 항상 넉넉하게 비축해두세요.</tip>
+	</tooltip>
+	<tooltip>
+		<count>51</count>
+		<tip>목장에서 살리지 못한 동물은 동물병원에서 확인 할 수 있습니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>52</count>
+		<tip>목장에 좋은 동물을 많이 배치해야 더 좋은 품질의 우유를 얻을 수 있어요.</tip>
+	</tooltip>
+	<tooltip>
+		<count>53</count>
+		<tip>동물이 너무 많아 관리하기 힘들다면 보관함에 잠시 넣어두세요~</tip>
+	</tooltip>
+	<tooltip>
+		<count>54</count>
+		<tip>프리미엄 교배에서는 더욱 좋은 동물을 얻을 수 있어요!</tip>
+	</tooltip>
+	<tooltip>
+		<count>55</count>
+		<tip>착유기를 업그레이드 하면 더 빨리 우유를 얻을 수 있습니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>56</count>
+		<tip>우유 탱크를 업그레이드하면 상인에게 판매할 우유를 더 많이 모을 수 있습니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>57</count>
+		<tip>양동이를 업그레이드하면 우유 탱크에 자주 왔다~갔다~하지 않아도 돼요.</tip>
+	</tooltip>
+	<tooltip>
+		<count>58</count>
+		<tip>주입기를 업그레이드하면 우유 탱크 터치 횟수가 줄어 시간을 아낄 수 있습니다..</tip>
+	</tooltip>
+	<tooltip>
+		<count>59</count>
+		<tip>목장 환경을 업그레이드하면 동물들이 병에 걸릴 확률이 낮아집니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>60</count>
+		<tip>품질향상 시설을 업그레이드하면 저장된 우유의 신선도가 증가합니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>61</count>
+		<tip>우유 생산속도는 가을에 가장 빨라집니다. 일꾼을 함께 사용하면 더 많은 우유를 모을 수 있어요.</tip>
+	</tooltip>
+	<tooltip>
+		<count>62</count>
+		<tip>항상 늑대를 잡고 난 뒤에는 남은 총알 수를 꼭 확인하세요. 늑대가 잡아가고 난 뒤 후회하지 마세요!</tip>
+	</tooltip>
+	<tooltip>
+		<count>63</count>
+		<tip>늑대가 나타나면 상점, 경작지,등 메뉴에 들어갈 수 없어요! 평소에 총알과 건초를 꼭 준비하세요.</tip>
+	</tooltip>
+	<tooltip>
+		<count>64</count>
+		<tip>동물 강화를 통해 능력치가 높은 동물로 만들수 있습니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>65</count>
+		<tip>동물 강화레벨이 상승하면 신선도와 공격력이 상승합니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>66</count>
+		<tip>강화세포로 동물강화를 하면 동물의 기본 능력치가 상승합니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>67</count>
+		<tip>연속거래를 계속 성공시키면 상인거래 기본단가가 상승됩니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>68</count>
+		<tip>전국목장에서 목장을 오픈하시면 단가가 더 높은 상인과 거래할 수 있습니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>69</count>
+		<tip>상인이 좋아하는 동물들을 보유하고 있으면 거래 단가가 높아져요.</tip>
+	</tooltip>
+	<tooltip>
+		<count>70</count>
+		<tip>상인의 요구 신선도를 못 맞출것 같으면 상인잠금메뉴를 사용해보세요.</tip>
+	</tooltip>
+	<tooltip>
+		<count>71</count>
+		<tip>상인이 잠겨있으면 신규 상인을 만날수 없습니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>72</count>
+		<tip>상인이 잠겨있으면 다른 페널티는 없습니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>73</count>
+		<tip>황금티켓 없이 상인거래를 하면 경험치가 안오릅니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>74</count>
+		<tip>상인이 잠겨있거나 황금 티켓이 없으면 새로운 상인을 만날 수 없습니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>75</count>
+		<tip>연속거래를 계속 성공시키면 높은 단가의 상인이 오픈됩니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>76</count>
+		<tip>레벨이 올라가면 거래 금액도 함께 오릅니다! 열심히 거래하세요.</tip>
+	</tooltip>
+	<tooltip>
+		<count>77</count>
+		<tip>황금티켓이 있으면 기본 단가를 높게 받을 수 있습니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>78</count>
+		<tip>황금티켓이 없으면 보너스 보상이 없으며 경험치 역시 상승하지 않습니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>79</count>
+		<tip>엄청난 금액으로 거래를 해주는 황금상인이 있대요~ 대박을 노려보세요!</tip>
+	</tooltip>
+	<tooltip>
+		<count>80</count>
+		<tip>좋은 상인일 수록 좋은 보너스 아이템을 준답니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>81</count>
+		<tip>레벨이 올라갈수록 더 많은 일을 할 수 있습니다. 더 귀여운 동물들과 다양한 시설로 목장을 향상시켜 나가세요.</tip>
+	</tooltip>
+	<tooltip>
+		<count>82</count>
+		<tip>상인 요구조건을 꾸준히 만족시키면 표창을 받을 수 있어요.</tip>
+	</tooltip>
+	<tooltip>
+		<count>83</count>
+		<tip>상인이 요구하는 신선도보다 더 높은 신선도의 우유를 판매하면  거래금액이 증가합니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>84</count>
+		<tip>상인이 요구하는 신선도와 수량을 모두 만족시키면 특별한 보상이 주어집니다!</tip>
+	</tooltip>
+	<tooltip>
+		<count>85</count>
+		<tip>낙농등급의 포인트는 1원당 1포인트입니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>86</count>
+		<tip>포인트가 일정 모이면 등급이 상승하며 해당 해택을 받을 수 있습니다.</tip>
+	</tooltip>
+	<tooltip>
+		<count>87</count>
+		<tip>낙농포인트와 VIP포인트는 같은 말이며 1포인트가 1원입니다.</tip>
+	</tooltip>
+</rows>
