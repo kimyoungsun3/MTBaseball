@@ -2,8 +2,8 @@ use Farm
 Go
 /*
 -- update dbo.tFVNotice set syscheck = 0
--- select * from dbo.tFVUserMaster where gameid = 'xxxx@gmail.com'
--- update dbo.tFVUserMaster set eventspot0x = 0 where gameid = 'xxxx@gmail.com'	 delete from dbo.tFVGiftList where gameid = 'xxxx@gmail.com'
+-- select * from dbo.tUserMaster where gameid = 'xxxx@gmail.com'
+-- update dbo.tUserMaster set eventspot0x = 0 where gameid = 'xxxx@gmail.com'	 delete from dbo.tFVGiftList where gameid = 'xxxx@gmail.com'
 
 exec spu_FVLogin 'xxxx@gmail.com',  '01022223331', 1, 199, 82, 0, 'pushid', -1			-- 정상유저
 exec spu_FVLogin 'xxxx@gmail.com',  '01022223331', 5, 199, 82, 0, 'pushid', -1			-- 정상유저
@@ -17,7 +17,7 @@ exec spu_FVLogin 'xxxx7@gmail.com', '01022223337', 5, 101, 82, 0, 'pushid', -1		
 exec spu_FVLogin 'xxxx8@gmail.com', '01022223338', 5, 101, 82, 0, 'pushid', -1			-- 삭제유저
 exec spu_FVLogin 'xxxx9@gmail.com', '01022223339', 5, 101, 82, 0, 'pushid', -1			-- 삭제유저
 
-delete from dbo.tFVUserMaster where gameid in ('', 'xxxx91@gmail.com', 'xxxx92@gmail.com', 'xxxx93@gmail.com', 'xxxx95@gmail.com', 'xxxx96@gmail.com', 'xxxx97@gmail.com')
+delete from dbo.tUserMaster where gameid in ('', 'xxxx91@gmail.com', 'xxxx92@gmail.com', 'xxxx93@gmail.com', 'xxxx95@gmail.com', 'xxxx96@gmail.com', 'xxxx97@gmail.com')
 delete from dbo.tFVGiftList where gameid in ('', 'xxxx91@gmail.com', 'xxxx92@gmail.com', 'xxxx93@gmail.com', 'xxxx95@gmail.com', 'xxxx96@gmail.com', 'xxxx97@gmail.com')
 exec spu_FVLogin 'xxxx91@gmail.com', '01022223390', 1, 101, 82, 0, 'pushid', -1	-- SKT
 exec spu_FVLogin 'xxxx92@gmail.com', '01022223390', 2, 101, 82, 0, 'pushid', -1	-- KT
@@ -26,8 +26,8 @@ exec spu_FVLogin 'xxxx95@gmail.com', '01022223390', 5, 101, 82, 0, 'pushid', -1	
 exec spu_FVLogin 'xxxx96@gmail.com', '01022223390', 6, 101, 82, 0, 'pushid', -1	-- NHN Event
 exec spu_FVLogin 'xxxx97@gmail.com', '01022223390', 7, 101, 82, 0, 'pushid', -1	-- iPhone
 
--- delete from dbo.tFVUserMaster where gameid in ('xxxx70@gmail.com', 'xxxx72@gmail.com')
--- select * from dbo.tFVUserMaster where gameid in ('xxxx70@gmail.com', 'xxxx72@gmail.com')
+-- delete from dbo.tUserMaster where gameid in ('xxxx70@gmail.com', 'xxxx72@gmail.com')
+-- select * from dbo.tUserMaster where gameid in ('xxxx70@gmail.com', 'xxxx72@gmail.com')
 exec spu_FVLogin 'xxxx70@gmail.com', '01022223371', 5, 199, 82, 0, 'pushid', -1	-- Google(무료)
 exec spu_FVLogin 'xxxx72@gmail.com', '01022223372', 5, 199, 82, 1, 'pushid', -1	-- Google(유료)
 
@@ -219,7 +219,7 @@ Begin
 		@blockstate		= blockstate,
 		@cashcopy		= cashcopy,
 		@eventspot0x	= eventspot0x
-	from dbo.tFVUserMaster
+	from dbo.tUserMaster
 	where gameid = @gameid_
 	--select 'DEBUG 유저정보', @gameid gameid
 
@@ -277,7 +277,7 @@ Begin
 			--select 'DEBUG ', @comment
 
 			-- xx회 이상카피행동 > 블럭처리, 블럭로그기록
-			update dbo.tFVUserMaster
+			update dbo.tUserMaster
 				set
 					blockstate = @BLOCK_STATE_YES,
 					cashcopy = 0
@@ -308,7 +308,7 @@ Begin
 					---------------------------------------------
 					-- 가입, 유니크 가입.
 					---------------------------------------------
-					insert into dbo.tFVUserMaster(gameid,   phone,   market,   version,   concode,   pushid,   buytype)
+					insert into dbo.tUserMaster(gameid,   phone,   market,   version,   concode,   pushid,   buytype)
 					values(                      @gameid_, @phone_, @market_, @version_, @concode_, @pushid_, @buytype_)
 
 					---------------------------------------------
@@ -474,9 +474,9 @@ Begin
 			------------------------------------------------------------------
 			-- 유저 정보를 업데이트하기
 			------------------------------------------------------------------
-			--select * from dbo.tFVUserMaster where gameid = @gameid_
+			--select * from dbo.tUserMaster where gameid = @gameid_
 
-			update dbo.tFVUserMaster
+			update dbo.tUserMaster
 				set
 					market			= @market_,
 					version			= @version_,
@@ -514,7 +514,7 @@ Begin
 						     adidx,
 				kakaomsginvitecnt, kakaomsginvitetodaycnt, kakaomsginvitetodaydate,
 				roulette, nickname, nickcnt
-			from dbo.tFVUserMaster where gameid = @gameid_
+			from dbo.tUserMaster where gameid = @gameid_
 
 			----------------------------------------------
 			-- 선물리스트

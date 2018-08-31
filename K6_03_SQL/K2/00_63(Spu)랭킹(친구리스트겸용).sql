@@ -1,7 +1,7 @@
 /*
-update dbo.tFVUserMaster set salemoney = 12345678901230 where gameid = 'xxxx'
-update dbo.tFVUserMaster set salemoney = 12345678901232 where gameid = 'xxxx@gmail.com'
-update dbo.tFVUserMaster set salemoney = 12345678901233 where gameid = 'xxxx3'
+update dbo.tUserMaster set salemoney = 12345678901230 where gameid = 'xxxx'
+update dbo.tUserMaster set salemoney = 12345678901232 where gameid = 'xxxx@gmail.com'
+update dbo.tUserMaster set salemoney = 12345678901233 where gameid = 'xxxx3'
 
 exec spu_FVsubFriendRank 'xxxx@gmail.com', 1		-- ·©Å·
 exec spu_FVsubFriendRank 'xxxx@gmail.com', 0		-- Empty
@@ -102,7 +102,7 @@ Begin
 					when rtndate > getdate() - 1 					then @MODE_RETURN_STATE_SENDED
 					else 												 @MODE_RETURN_STATE_LONG
 				end, rtndate from
-				(select gameid, bestani, salemoney, kakaotalkid, kakaouserid, kakaomsgblocked, condate, rtndate from dbo.tFVUserMaster where gameid in (select friendid from @tTempFriendList) and kakaostatus = 1) as m
+				(select gameid, bestani, salemoney, kakaotalkid, kakaouserid, kakaomsgblocked, condate, rtndate from dbo.tUserMaster where gameid in (select friendid from @tTempFriendList) and kakaostatus = 1) as m
 			JOIN
 				(select friendid, kakaofriendkind, helpdate, senddate, rentdate from @tTempFriendList) as f
 			ON

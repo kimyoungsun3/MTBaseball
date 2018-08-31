@@ -7,11 +7,11 @@ GO
 ---------------------------------------------
 --		유저정보
 ---------------------------------------------
-IF OBJECT_ID (N'dbo.tFVUserMaster', N'U') IS NOT NULL
-	DROP TABLE dbo.tFVUserMaster;
+IF OBJECT_ID (N'dbo.tUserMaster', N'U') IS NOT NULL
+	DROP TABLE dbo.tUserMaster;
 GO
 
-create table dbo.tFVUserMaster(
+create table dbo.tUserMaster(
 	idx			int 					IDENTITY(1, 1),			-- indexing
 
 	--(유저정보)
@@ -95,32 +95,32 @@ create table dbo.tFVUserMaster(
 	CONSTRAINT pk_tFVUserMaster_gameid	PRIMARY KEY(gameid)
 )
 GO
--- alter table dbo.tFVUserMaster add logindate	varchar(8)				default('20100101')
+-- alter table dbo.tUserMaster add logindate	varchar(8)				default('20100101')
 -- 데이타 10만건 강제로 넣어서 쿼리해보기(상상ID로 만든 유저를 입력한다.)
 -- 가입시 gameid 쿼리 > PRIMARY KEY(gameid) > 인덱싱
 
 -- 폰인덱싱
 IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tFVUserMaster_phone')
-    DROP INDEX tFVUserMaster.idx_tFVUserMaster_phone
+    DROP INDEX tUserMaster.idx_tFVUserMaster_phone
 GO
-CREATE INDEX idx_tFVUserMaster_phone ON tFVUserMaster (phone)
+CREATE INDEX idx_tFVUserMaster_phone ON tUserMaster (phone)
 GO
 
 IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tFVUserMaster_idx')
-   DROP INDEX tFVUserMaster.idx_tFVUserMaster_idx
+   DROP INDEX tUserMaster.idx_tFVUserMaster_idx
 GO
-CREATE INDEX idx_tFVUserMaster_idx ON tFVUserMaster (idx)
+CREATE INDEX idx_tFVUserMaster_idx ON tUserMaster (idx)
 GO
 
 IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tFVUserMaster_salemoney2')
-   DROP INDEX tFVUserMaster.idx_tFVUserMaster_salemoney2
+   DROP INDEX tUserMaster.idx_tFVUserMaster_salemoney2
 GO
-CREATE INDEX idx_tFVUserMaster_salemoney2 ON tFVUserMaster (salemoney2)
+CREATE INDEX idx_tFVUserMaster_salemoney2 ON tUserMaster (salemoney2)
 GO
 
--- insert into dbo.tFVUserMaster(gameid, phone, market, version) values('xxxx@gmail.com', '01022223333', 5, 101)
--- select * from dbo.tFVUserMaster where gameid = 'xxxx@gmail.com'
--- update dbo.tFVUserMaster set market = 5, version = 101 where gameid = 'xxxx@gmail.com'
+-- insert into dbo.tUserMaster(gameid, phone, market, version) values('xxxx@gmail.com', '01022223333', 5, 101)
+-- select * from dbo.tUserMaster where gameid = 'xxxx@gmail.com'
+-- update dbo.tUserMaster set market = 5, version = 101 where gameid = 'xxxx@gmail.com'
 
 ---------------------------------------------
 --		유저정보

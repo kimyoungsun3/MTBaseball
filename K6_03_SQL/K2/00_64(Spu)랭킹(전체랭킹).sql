@@ -1,7 +1,7 @@
 /*
-update dbo.tFVUserMaster set salemoney = 12345678901230 where gameid = 'xxxx'
-update dbo.tFVUserMaster set salemoney = 12345678901232 where gameid = 'xxxx@gmail.com'
-update dbo.tFVUserMaster set salemoney = 12345678901233 where gameid = 'xxxx3'
+update dbo.tUserMaster set salemoney = 12345678901230 where gameid = 'xxxx'
+update dbo.tUserMaster set salemoney = 12345678901232 where gameid = 'xxxx@gmail.com'
+update dbo.tUserMaster set salemoney = 12345678901233 where gameid = 'xxxx3'
 
 exec spu_FVsubTotalRank 'xxxx@gmail.com'
 */
@@ -43,12 +43,12 @@ Begin
 		@salemoney 	= salemoney,
 		@bestani 	= bestani,
 		@nickname	= nickname
-	from tFVUserMaster
+	from tUserMaster
 	where gameid = @gameid_
 
-	select count(gameid)+1 as rank, @bestani bestani, @salemoney salemoney, @gameid gameid, @nickname nickname from dbo.tFVUserMaster where salemoney > @salemoney
+	select count(gameid)+1 as rank, @bestani bestani, @salemoney salemoney, @gameid gameid, @nickname nickname from dbo.tUserMaster where salemoney > @salemoney
 	union all
-	select top 100 rank() over(order by salemoney desc) as rank, bestani, salemoney, gameid, nickname from dbo.tFVUserMaster
+	select top 100 rank() over(order by salemoney desc) as rank, bestani, salemoney, gameid, nickname from dbo.tUserMaster
 
 
 

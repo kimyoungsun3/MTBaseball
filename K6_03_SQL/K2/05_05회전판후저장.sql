@@ -1,7 +1,7 @@
 use Farm
 Go
 /*
-update dbo.tFVUserMaster set randserial = -1, roulette = 1, ownercashcost = 10000, wheelgauage = 0, wheelfree = 1 where gameid = 'xxxx@gmail.com'
+update dbo.tUserMaster set randserial = -1, roulette = 1, ownercashcost = 10000, wheelgauage = 0, wheelfree = 1 where gameid = 'xxxx@gmail.com'
 exec spu_FVWheel 'xxxx@gmail.com',  '01022223331', 20,    0, 'savedata1', 7776, -1			-- 일일회전판(20)    MODE_WHEEL_NORMAL
 exec spu_FVWheel 'xxxx@gmail.com',  '01022223331', 21, 1000, 'savedata2', 7777, -1			-- 결정회전판(21)    MODE_WHEEL_PREMINUM
 exec spu_FVWheel 'xxxx@gmail.com',  '01022223331', 22,    0, 'savedata3', 7778, -1			-- 황금무료(22)  	 MODE_WHEEL_PREMINUMFREE
@@ -87,7 +87,7 @@ Begin
 		@ownercashcost	= ownercashcost,	@roulette		= roulette,
 		@wheelgauage	= wheelgauage,		@wheelfree		= wheelfree,
 		@randserial		= randserial
-	from dbo.tFVUserMaster
+	from dbo.tUserMaster
 	where gameid = @gameid_ and phone = @phone_
 	--select 'DEBUG 유저정보', @gameid gameid, @market market, @ownercashcost ownercashcost, @wheelgauage wheelgauage, @wheelfree wheelfree, @randserial randserial
 
@@ -230,7 +230,7 @@ Begin
 			--	황금 : userinfo		20:-1;21:0;22:1;
 			---------------------------------------------------
 			--select 'DEBUG 유저 정보 갱신'
-			update dbo.tFVUserMaster
+			update dbo.tUserMaster
 				set
 					roulette 		= @roulette,
 					ownercashcost	= @ownercashcost2,

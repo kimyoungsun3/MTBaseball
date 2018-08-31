@@ -14,13 +14,13 @@ exec spu_FVSave2 'xxxx@gmail.com',  '049000s1i0n7t8445289', 1, '0:0  ;  1:500;  
 exec spu_FVSave2 'xxxx@gmail.com',  '049000s1i0n7t8445289', 1, '0:0  ;  1:500;  10:0;  11:0;  20:-1;  21:0;         30:0;   31:0;   32:0;  33:0;  ', 'google22savetest', 8772, -1
 exec spu_FVSave2 'xxxx@gmail.com',  '049000s1i0n7t8445289', 0, '0:123;  1:500;  10:0;  11:0;  20:-1;  21:1;  22:0;  30:30;  31:31;  32:32;  33:33;', 'google22savetest', 8773, -1
 exec spu_FVSave2 'xxxx@gmail.com',  '049000s1i0n7t8445289', 0, '0:123;  1:500;  10:0;  11:0;  20:-1;  21:0;  22:1;  30:30;  31:31;  32:32;  33:33;', 'google22savetest', 8774, -1
-select * from dbo.tFVUserData where gameid = 'xxxx@gmail.com' select salemoney, bestani from dbo.tFVUserMaster where gameid = 'xxxx@gmail.com'
+select * from dbo.tFVUserData where gameid = 'xxxx@gmail.com' select salemoney, bestani from dbo.tUserMaster where gameid = 'xxxx@gmail.com'
 
 -- 비과금인데 과금한것처럼 데이타 전송
--- update dbo.tFVUserMaster set cashpoint = 0, vippoint = 0, cashcost = 0 where gameid = 'xxxx@gmail.com'
--- update dbo.tFVUserMaster set                vippoint2 = 0, cashcost2 = 0 where gameid = 'xxxx@gmail.com'
+-- update dbo.tUserMaster set cashpoint = 0, vippoint = 0, cashcost = 0 where gameid = 'xxxx@gmail.com'
+-- update dbo.tUserMaster set                vippoint2 = 0, cashcost2 = 0 where gameid = 'xxxx@gmail.com'
 -- delete from dbo.tFVUserUnusualLog2 where gameid = 'xxxx@gmail.com'
-update dbo.tFVUserMaster set randserial = -1 where gameid = 'xxxx@gmail.com'
+update dbo.tUserMaster set randserial = -1 where gameid = 'xxxx@gmail.com'
 exec spu_FVSave2 'xxxx@gmail.com',  '049000s1i0n7t8445289', 1, '0:123;   1:500;        10:50000;    11:0;      20:-1', 'google22savetest',     8772, -1	-- 캐쉬치트
 exec spu_FVSave2 'xxxx@gmail.com',  '049000s1i0n7t8445289', 1, '0:456;   1:500;        10:0;        11:50000;  20:-1', 'google22savetest',     8773, -1	-- VIP치트
 
@@ -149,7 +149,7 @@ Begin
 		@cashpoint	= cashpoint,	@vippoint	= vippoint,
 		@market		= market,
 		@randserial	= randserial
-	from dbo.tFVUserMaster
+	from dbo.tUserMaster
 	where gameid = @gameid_ and phone = @phone_
 	--select 'DEBUG 유저정보', @gameid gameid
 
@@ -296,7 +296,7 @@ Begin
 			-- 유저 정보 갱신
 			---------------------------------------------------
 			--select 'DEBUG', @rkroulettecnt2 rkroulettecnt2
-			update dbo.tFVUserMaster
+			update dbo.tUserMaster
 				set
 					ownercashcost	= @ownercashcost,
 					adidx			= case when @adidxmax > @adidx then @adidxmax else @adidx end,
@@ -327,7 +327,7 @@ Begin
 			----------------------------------------------
 			-- 5개 단위로 1개 선물 > 버그존재
 			----------------------------------------------
-			--select @roulloop = roulettepaycnt from dbo.tFVUserMaster where gameid = @gameid_
+			--select @roulloop = roulettepaycnt from dbo.tUserMaster where gameid = @gameid_
 			--set @roulloop2 = @roulloop % 5
 			--if(@roulettepaycnt2 > 0 and @roulloop > 0 and @roulloop2 = 0)
 			--	begin
@@ -374,7 +374,7 @@ Begin
 			-- 유저정보.
 			-- > 하트받은량.
 			-----------------------------------
-			select @heartget2 heartget2, * from dbo.tFVUserMaster where gameid = @gameid_
+			select @heartget2 heartget2, * from dbo.tUserMaster where gameid = @gameid_
 
 			------------------------------------------------
 			-- 랭킹정보(결산할때).

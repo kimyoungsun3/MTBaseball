@@ -2,9 +2,9 @@ use Farm
 GO
 
 /*
-update dbo.tFVUserMaster set salemoney2 = 12345678901230 where gameid = 'xxxx@gmail.com'
-update dbo.tFVUserMaster set salemoney2 = 12345678901232 where gameid = 'xxxx2@gmail.com'
-update dbo.tFVUserMaster set salemoney2 = 12345678901233 where gameid = 'xxxx3@gmail.com'
+update dbo.tUserMaster set salemoney2 = 12345678901230 where gameid = 'xxxx@gmail.com'
+update dbo.tUserMaster set salemoney2 = 12345678901232 where gameid = 'xxxx2@gmail.com'
+update dbo.tUserMaster set salemoney2 = 12345678901233 where gameid = 'xxxx3@gmail.com'
 
 exec spu_FVsubTotalRank 'xxxx@gmail.com'
 */
@@ -42,12 +42,12 @@ Begin
 		@salemoney2 	= salemoney2,
 		@bestani 	= bestani,
 		@nickname	= nickname
-	from tFVUserMaster
+	from tUserMaster
 	where gameid = @gameid_
 
-	select count(gameid)+1 as rank, @bestani bestani, @salemoney2 salemoney2, @gameid gameid, @nickname nickname from dbo.tFVUserMaster where salemoney2 > @salemoney2
+	select count(gameid)+1 as rank, @bestani bestani, @salemoney2 salemoney2, @gameid gameid, @nickname nickname from dbo.tUserMaster where salemoney2 > @salemoney2
 	union all
-	select top 100 rank() over(order by salemoney2 desc) as rank, bestani, salemoney2, gameid, nickname from dbo.tFVUserMaster
+	select top 100 rank() over(order by salemoney2 desc) as rank, bestani, salemoney2, gameid, nickname from dbo.tUserMaster
 
 	set nocount off
 End

@@ -3,7 +3,7 @@ GO
 
 /*
 -- 구매[O], 선물[O]
-update dbo.tFVUserMaster set concode = 81 where gameid = 'xxxx@gmail.com'
+update dbo.tUserMaster set concode = 81 where gameid = 'xxxx@gmail.com'
 delete from tFVCashTotal
 delete from tFVCashLog where gameid = 'xxxx@gmail.com'
 delete from tFVGiftList where gameid = 'xxxx@gmail.com'
@@ -133,7 +133,7 @@ Begin
 		@gameid 	= gameid,
 		@market		= market,
 		@concode	= concode
-	from dbo.tFVUserMaster where gameid = @gameid_
+	from dbo.tUserMaster where gameid = @gameid_
 
 	------------------------------------------------
 	--	3-2-3. 연산수행
@@ -156,7 +156,7 @@ Begin
 			---------------------------------------------------
 			--	캐쉬카피 플래그 기록
 			---------------------------------------------------
-			update dbo.tFVUserMaster set cashcopy = cashcopy + 10 where gameid = @gameid_
+			update dbo.tUserMaster set cashcopy = cashcopy + 10 where gameid = @gameid_
 
 			insert into dbo.tFVUserUnusualLog(gameid, comment) values(@gameid_, '**** 캐쉬카피를 시도했습니다(과금코드가 오류코드(-6)) ****')
 		end
@@ -168,7 +168,7 @@ Begin
 			---------------------------------------------------
 			--	캐쉬카피 플래그 기록
 			---------------------------------------------------
-			update dbo.tFVUserMaster set cashcopy = cashcopy + 10 where gameid = @gameid_
+			update dbo.tUserMaster set cashcopy = cashcopy + 10 where gameid = @gameid_
 
 			insert into dbo.tFVUserUnusualLog(gameid, comment) values(@gameid_, '**** 캐쉬카피를 시도했습니다(인증되지 않는 아이템 코드(-5)) ****')
 		end
@@ -180,7 +180,7 @@ Begin
 			---------------------------------------------------
 			--	캐쉬카피 플래그 기록
 			---------------------------------------------------
-			update dbo.tFVUserMaster set cashcopy = cashcopy + 10 where gameid = @gameid_
+			update dbo.tUserMaster set cashcopy = cashcopy + 10 where gameid = @gameid_
 
 			insert into dbo.tFVUserUnusualLog(gameid, comment) values(@gameid_, '**** 캐쉬카피를 시도했습니다(중복요청을 했다.) ****')
 		end
@@ -226,11 +226,11 @@ Begin
 			---------------------------------------------------
 			-- 직접구매 > 캐쉬Pluse
 			---------------------------------------------------
-			update dbo.tFVUserMaster
+			update dbo.tUserMaster
 				set
 					cashpoint = cashpoint + @buycash
 			where gameid = @gameid_
-			--select 'DEBUG 구매한량', cashpoint from dbo.tFVUserMaster where gameid = @gameid_
+			--select 'DEBUG 구매한량', cashpoint from dbo.tUserMaster where gameid = @gameid_
 
 			---------------------------------------------------
 			-- 직접구매 > 구매기록하기
@@ -262,7 +262,7 @@ Begin
 				end
 
 			--유저 수정과 실버볼 갱신해주기
-			select * from dbo.tFVUserMaster where gameid = @gameid_
+			select * from dbo.tUserMaster where gameid = @gameid_
 		end
 
 

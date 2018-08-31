@@ -55,7 +55,7 @@ Begin
 	select
 		@gameid 	= gameid,
 		@market		= market
-	from dbo.tFVUserMaster
+	from dbo.tUserMaster
 	where gameid = @gameid_ and phone = @phone_
 	--select 'DEBUG 유저정보', @gameid gameid
 

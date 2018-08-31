@@ -4,7 +4,7 @@ GO
 -- delete from dbo.tFVRankDaJun where rkdateid8 = '20150331'
 -- update dbo.tFVRankDaJun set rkreward = 0 where rkdateid8 = '20150331'
 -- update dbo.tFVRankDaJun set rksalemoney = 0, rkproductcnt	= 0, rkfarmearn		= 0, rkwolfcnt		= 0, rkfriendpoint	= 0, rkroulettecnt	= 0, rkplaycnt		= 0, rksalemoney2	= 0, rkproductcnt2	= 0, rkfarmearn2		= 0, rkwolfcnt2		= 0, rkfriendpoint2	= 0, rkroulettecnt2	= 0, rkplaycnt2		= 0 where rkdateid8 = '20150312'
--- update dbo.tFVUserMaster set rksalemoney		= 0, rkproductcnt	= 0, rkfarmearn		= 0, rkwolfcnt		= 0, rkfriendpoint	= 0, rkroulettecnt	= 0, rkplaycnt		= 0 where gameid in ('xxxx@gmail.com', 'xxxx3')
+-- update dbo.tUserMaster set rksalemoney		= 0, rkproductcnt	= 0, rkfarmearn		= 0, rkwolfcnt		= 0, rkfriendpoint	= 0, rkroulettecnt	= 0, rkplaycnt		= 0 where gameid in ('xxxx@gmail.com', 'xxxx3')
 
 
 exec spu_subFVRankDaJun 'xxxx@gmail.com', 1, 2, 3, 4, 5, 6, 7		-- 짝
@@ -68,7 +68,7 @@ Begin
 	------------------------------------------------
 	--	유저정보.
 	------------------------------------------------
-	select @rkteam = rkteam from dbo.tFVUserMaster where gameid = @gameid_
+	select @rkteam = rkteam from dbo.tUserMaster where gameid = @gameid_
 	--select 'DEBUG ', @rkteam rkteam
 	if(@rkteam is null) return;
 
@@ -177,7 +177,7 @@ Begin
 	------------------------------------------------
 	--	랭킹개인기록.
 	------------------------------------------------
-	update dbo.tFVUserMaster
+	update dbo.tUserMaster
 		set
 			rksalemoney		= rksalemoney	+ @rksalemoney_,
 			rkproductcnt	= rkproductcnt 	+ @rkproductcnt_,
@@ -187,7 +187,7 @@ Begin
 			rkroulettecnt	= rkroulettecnt + @rkroulettecnt_,
 			rkplaycnt		= rkplaycnt 	+ @rkplaycnt_
 	where gameid = @gameid_
-	--select 'DEBUG 개인기록', rksalemoney, rkproductcnt, rkfarmearn	, rkwolfcnt	, rkfriendpoint, rkroulettecnt, rkplaycnt, * from dbo.tFVUserMaster where gameid = @gameid_
+	--select 'DEBUG 개인기록', rksalemoney, rkproductcnt, rkfarmearn	, rkwolfcnt	, rkfriendpoint, rkroulettecnt, rkplaycnt, * from dbo.tUserMaster where gameid = @gameid_
 
 	------------------------------------------------
 	--	4-1. 종류

@@ -1,11 +1,11 @@
 use Farm
 Go
 /*
-update dbo.tFVUserMaster set nickname = '' where gameid = 'xxxx@gmail.com'
+update dbo.tUserMaster set nickname = '' where gameid = 'xxxx@gmail.com'
 exec spu_FVNickName 'xxxx@gmail.com',  '049000s1i0n7t8445289', '테스인원', -1
 exec spu_FVNickName 'xxxx@gmail.com',  '049000s1i0n7t8445289', 'nn', -1
 exec spu_FVNickName 'xxxx@gmail.com',  '049000s1i0n7t8445289', '', -1
-select nickname from dbo.tFVUserMaster where gameid = 'xxxx@gmail.com'
+select nickname from dbo.tUserMaster where gameid = 'xxxx@gmail.com'
 select * from dbo.tFVUserNickNameChange where gameid = 'xxxx@gmail.com' order by idx desc
 
 */
@@ -54,7 +54,7 @@ Begin
 	select
 		@gameid 	= gameid,
 		@oldnickname= nickname
-	from dbo.tFVUserMaster
+	from dbo.tUserMaster
 	where gameid = @gameid_ and phone = @phone_
 	--select 'DEBUG 유저정보', @gameid gameid
 
@@ -78,10 +78,10 @@ Begin
 			---------------------------------------------------
 			-- 유저 정보 갱신
 			---------------------------------------------------
-			update dbo.tFVUserMaster
+			update dbo.tUserMaster
 				set
 					nickname 	= @nickname_
-			from dbo.tFVUserMaster
+			from dbo.tUserMaster
 			where gameid = @gameid_
 
 

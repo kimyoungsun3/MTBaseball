@@ -16,7 +16,7 @@ set @kakaouserid	= '91188455545412242'	-- PC
 --set @kakaouserid	= '88103356826892544'	-- 이대표
 --set @kakaouserid	= '88258263875124913'	--핸드폰
 
-select top 1 @gameid = gameid from dbo.tFVUserMaster where kakaouserid = @kakaouserid order by idx desc
+select top 1 @gameid = gameid from dbo.tUserMaster where kakaouserid = @kakaouserid order by idx desc
 delete from dbo.tFVGiftList where gameid = @gameid
 
 exec spu_FVSubGiftSend 2, 80010, 1, 'blackm', @gameid, ''

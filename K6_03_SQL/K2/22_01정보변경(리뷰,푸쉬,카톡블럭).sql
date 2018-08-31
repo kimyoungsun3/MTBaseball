@@ -1,7 +1,7 @@
 /*
 exec spu_FVChangeInfo 'xxxx@gmail.com',  '01022223331', 11, -1		-- 푸쉬승인/거절
 
---select kakaomsgblocked from dbo.tFVUserMaster where gameid = 'xxxx@gmail.com'
+--select kakaomsgblocked from dbo.tUserMaster where gameid = 'xxxx@gmail.com'
 exec spu_FVChangeInfo 'xxxx@gmail.com',  '01022223331', 12, -1		-- 카카오 메세지 자기것 거부
 */
 use Farm
@@ -74,7 +74,7 @@ Begin
 	------------------------------------------------
 	select
 		@gameid 		= gameid
-	from dbo.tFVUserMaster
+	from dbo.tUserMaster
 	where gameid = @gameid_ and phone = @phone_
 	--select 'DEBUG 유저정보', @gameid gameid
 
@@ -99,7 +99,7 @@ Begin
 			set @comment 	= 'SUCCESS 변경하였습니다.'
 			--select 'DEBUG ' + @comment
 
-			update dbo.tFVUserMaster
+			update dbo.tUserMaster
 				set
 					kkopushallow	= case
 											when kkopushallow = @INFOMATION_NO then @INFOMATION_YES
@@ -113,7 +113,7 @@ Begin
 			set @comment 	= 'SUCCESS 변경하였습니다.'
 			----select 'DEBUG ' + @comment
 
-			update dbo.tFVUserMaster
+			update dbo.tUserMaster
 				set
 					kakaomsgblocked	= case
 											when kakaomsgblocked = @KAKAO_MESSAGE_ALLOW then @KAKAO_MESSAGE_BLOCK
@@ -137,7 +137,7 @@ Begin
 			--------------------------------------------------------------
 			-- 유저 정보.
 			--------------------------------------------------------------
-			select * from dbo.tFVUserMaster where gameid = @gameid_
+			select * from dbo.tUserMaster where gameid = @gameid_
 		end
 
 	------------------------------------------------

@@ -6,7 +6,7 @@ GO
 -- delete from tFVCashTotal
 delete from tFVCashLog where gameid in ('xxxx@gmail.com', 'xxxx3')
 delete from tFVGiftList where gameid in ('xxxx@gmail.com', 'xxxx3')
-update dbo.tFVUserMaster set vippoint = 0, cashpoint = 0, cashcost = 0 where gameid = 'xxxx@gmail.com'
+update dbo.tUserMaster set vippoint = 0, cashpoint = 0, cashcost = 0 where gameid = 'xxxx@gmail.com'
 --					gameid           itemcode ikind      acode
 exec spu_FVCashBuy2 'xxxx@gmail.com',  '01022223331', '', '7000', 'googlekw', '12999763169054705758.1343569877495792', -1	-- GOOGLE(googlekw)
 exec spu_FVCashBuy2 'xxxx@gmail.com',  '01022223331', '', '7004', 'REAL', '1009010102', -1								-- NHN(REAL)
@@ -129,7 +129,7 @@ Begin
 		@blockstate = blockstate,
 		@market		= market,
 		@kakaouserid= kakaouserid
-	from dbo.tFVUserMaster
+	from dbo.tUserMaster
 	where gameid = @gameid_ and phone = @phone_
 
 	------------------------------------------------
@@ -154,7 +154,7 @@ Begin
 			---------------------------------------------------
 			--	캐쉬카피 플래그 기록
 			---------------------------------------------------
-			update dbo.tFVUserMaster set cashcopy = cashcopy + 10 where gameid = @gameid_
+			update dbo.tUserMaster set cashcopy = cashcopy + 10 where gameid = @gameid_
 
 			insert into dbo.tFVUserUnusualLog(gameid, comment) values(@gameid_, '**** 캐쉬카피를 시도했습니다(인증되지 않는 아이템 코드(-5)) ****')
 		end
@@ -166,7 +166,7 @@ Begin
 			---------------------------------------------------
 			--	캐쉬카피 플래그 기록
 			---------------------------------------------------
-			update dbo.tFVUserMaster set cashcopy = cashcopy + 10 where gameid = @gameid_
+			update dbo.tUserMaster set cashcopy = cashcopy + 10 where gameid = @gameid_
 
 			insert into dbo.tFVUserUnusualLog(gameid, comment) values(@gameid_, '**** 캐쉬카피를 시도했습니다(중복요청을 했다.) ****')
 		end
@@ -239,13 +239,13 @@ Begin
 			---------------------------------------------------
 			-- 직접구매 > 캐쉬Pluse
 			---------------------------------------------------
-			update dbo.tFVUserMaster
+			update dbo.tUserMaster
 				set
 					cashpoint 	= cashpoint + @buycash,
 					cashcost 	= cashcost + @cashcost,
 					vippoint 	= vippoint + @vippoint
 			where gameid = @gameid_
-			--select 'DEBUG 구매한량', cashpoint from dbo.tFVUserMaster where gameid = @gameid_
+			--select 'DEBUG 구매한량', cashpoint from dbo.tUserMaster where gameid = @gameid_
 
 			---------------------------------------------------
 			-- 직접구매 > 구매기록하기
@@ -277,7 +277,7 @@ Begin
 				end
 
 			--유저 수정과 실버볼 갱신해주기
-			select * from dbo.tFVUserMaster where gameid = @gameid_
+			select * from dbo.tUserMaster where gameid = @gameid_
 		end
 
 

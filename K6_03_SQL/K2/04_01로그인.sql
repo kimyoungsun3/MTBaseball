@@ -2,12 +2,12 @@ use Farm
 Go
 /*
 -- update dbo.tFVNotice set syscheck = 0
--- select rkteam, gameid, * from dbo.tFVUserMaster where gameid in ( 'xxxx@gmail.com', 'farm81499', 'farm99545')
--- update dbo.tFVUserMaster set cashcopy = 2 where gameid = 'xxxx@gmail.com'
--- update dbo.tFVUserMaster set heartget = 0, heartcnt = 0, heartdate = '20010101' where gameid = 'xxxx@gmail.com'
--- update dbo.tFVUserMaster set heartget = 10, heartcnt = 10, heartdate = '20010101' where gameid = 'xxxx@gmail.com'
--- update dbo.tFVUserMaster set heartget = 10, heartcnt = 10, heartdate = '20150202' where gameid = 'xxxx@gmail.com'
--- update dbo.tFVUserMaster set heartget = 10, heartcnt = 50, heartdate = '20150202' where gameid = 'xxxx@gmail.com'
+-- select rkteam, gameid, * from dbo.tUserMaster where gameid in ( 'xxxx@gmail.com', 'farm81499', 'farm99545')
+-- update dbo.tUserMaster set cashcopy = 2 where gameid = 'xxxx@gmail.com'
+-- update dbo.tUserMaster set heartget = 0, heartcnt = 0, heartdate = '20010101' where gameid = 'xxxx@gmail.com'
+-- update dbo.tUserMaster set heartget = 10, heartcnt = 10, heartdate = '20010101' where gameid = 'xxxx@gmail.com'
+-- update dbo.tUserMaster set heartget = 10, heartcnt = 10, heartdate = '20150202' where gameid = 'xxxx@gmail.com'
+-- update dbo.tUserMaster set heartget = 10, heartcnt = 50, heartdate = '20150202' where gameid = 'xxxx@gmail.com'
 
 exec spu_FVLogin 'xxxx@gmail.com',  '01022223331', 5, 199, 0, -1			-- 정상유저
 exec spu_FVLogin 'xxxx3', '049000s1i0n7t8445289', 5, 199, 0, -1			-- 정상유저
@@ -235,7 +235,7 @@ Begin
 		@heartget	= heartget, 	@heartcnt	= heartcnt,		@heartdate	= heartdate,
 		@kakaomsginvitetodaycnt 	= kakaomsginvitetodaycnt,
 		@kakaomsginvitetodaydate	= kakaomsginvitetodaydate
-	from dbo.tFVUserMaster
+	from dbo.tUserMaster
 	where gameid = @gameid_ and phone = @phone_
 	--select 'DEBUG 유저정보', @gameid gameid, @blockstate blockstate, @logindate logindate, @heartdate heartdate
 
@@ -294,7 +294,7 @@ Begin
 			--select 'DEBUG ', @comment
 
 			-- xx회 이상카피행동 > 블럭처리, 블럭로그기록
-			update dbo.tFVUserMaster
+			update dbo.tUserMaster
 				set
 					blockstate = @BLOCK_STATE_YES,
 					cashcopy = 0
@@ -501,9 +501,9 @@ Begin
 			------------------------------------------------------------------
 			-- 유저 정보를 업데이트하기
 			------------------------------------------------------------------
-			--select 'DEBUG(전)', rkteam, * from dbo.tFVUserMaster where gameid = @gameid_
+			--select 'DEBUG(전)', rkteam, * from dbo.tUserMaster where gameid = @gameid_
 
-			update dbo.tFVUserMaster
+			update dbo.tUserMaster
 				set
 					market			= @market_,
 					version			= @version_,
@@ -537,7 +537,7 @@ Begin
 					concnt			= concnt + 1		-- 접속횟수 +1
 			where gameid = @gameid_
 
-			--select 'DEBUG(후)', rkteam, * from dbo.tFVUserMaster where gameid = @gameid_
+			--select 'DEBUG(후)', rkteam, * from dbo.tUserMaster where gameid = @gameid_
 
 
 			----------------------------------------------
@@ -560,7 +560,7 @@ Begin
 				@tsgauageflag tsgauageflag,
 				@wheelgauageflag wheelgauageflag,
 				*
-			from dbo.tFVUserMaster where gameid = @gameid_
+			from dbo.tUserMaster where gameid = @gameid_
 
 			--------------------------------------------------------------
 			-- 유저 친구정보   &   랭 킹

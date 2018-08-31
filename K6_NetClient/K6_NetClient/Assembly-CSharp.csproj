@@ -55,6 +55,7 @@
   <ItemGroup>
      <Compile Include="Assets\Test01\GameManager.cs" />
      <Compile Include="Assets\Test01\T2.cs" />
+     <Compile Include="Assets\Test02\RigidbodyVelocityMove.cs" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>C:/devtool/project/MTBaseball/MTBaseball/K6_NetClient/K6_NetClient/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>

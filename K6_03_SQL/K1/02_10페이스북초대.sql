@@ -1,13 +1,13 @@
 use Farm
 GO
 /*
-update dbo.tFVUserMaster set kakaomsginvitecnt = 4, kakaomsginvitetodaycnt = 0, kakaomsginvitetodaydate = kakaomsginvitetodaydate - 1 	where gameid = 'xxxx@gmail.com'
-update dbo.tFVUserMaster set kakaomsginvitecnt = 9, kakaomsginvitetodaycnt = 0, kakaomsginvitetodaydate = kakaomsginvitetodaydate - 1 	where gameid = 'xxxx@gmail.com'
-update dbo.tFVUserMaster set kakaomsginvitecnt = 19, kakaomsginvitetodaycnt = 0, kakaomsginvitetodaydate = kakaomsginvitetodaydate - 1 	where gameid = 'xxxx@gmail.com'
-update dbo.tFVUserMaster set kakaomsginvitecnt = 39, kakaomsginvitetodaycnt = 0, kakaomsginvitetodaydate = kakaomsginvitetodaydate - 1 	where gameid = 'xxxx@gmail.com'
-update dbo.tFVUserMaster set kakaomsginvitecnt = 69, kakaomsginvitetodaycnt = 0, kakaomsginvitetodaydate = kakaomsginvitetodaydate - 1 	where gameid = 'xxxx@gmail.com'
-update dbo.tFVUserMaster set kakaomsginvitecnt = 99, kakaomsginvitetodaycnt = 0, kakaomsginvitetodaydate = kakaomsginvitetodaydate - 1 	where gameid = 'xxxx@gmail.com'
-update dbo.tFVUserMaster set kakaomsginvitetodaydate = kakaomsginvitetodaydate - 1 	where gameid = 'xxxx@gmail.com'
+update dbo.tUserMaster set kakaomsginvitecnt = 4, kakaomsginvitetodaycnt = 0, kakaomsginvitetodaydate = kakaomsginvitetodaydate - 1 	where gameid = 'xxxx@gmail.com'
+update dbo.tUserMaster set kakaomsginvitecnt = 9, kakaomsginvitetodaycnt = 0, kakaomsginvitetodaydate = kakaomsginvitetodaydate - 1 	where gameid = 'xxxx@gmail.com'
+update dbo.tUserMaster set kakaomsginvitecnt = 19, kakaomsginvitetodaycnt = 0, kakaomsginvitetodaydate = kakaomsginvitetodaydate - 1 	where gameid = 'xxxx@gmail.com'
+update dbo.tUserMaster set kakaomsginvitecnt = 39, kakaomsginvitetodaycnt = 0, kakaomsginvitetodaydate = kakaomsginvitetodaydate - 1 	where gameid = 'xxxx@gmail.com'
+update dbo.tUserMaster set kakaomsginvitecnt = 69, kakaomsginvitetodaycnt = 0, kakaomsginvitetodaydate = kakaomsginvitetodaydate - 1 	where gameid = 'xxxx@gmail.com'
+update dbo.tUserMaster set kakaomsginvitecnt = 99, kakaomsginvitetodaycnt = 0, kakaomsginvitetodaydate = kakaomsginvitetodaydate - 1 	where gameid = 'xxxx@gmail.com'
+update dbo.tUserMaster set kakaomsginvitetodaydate = kakaomsginvitetodaydate - 1 	where gameid = 'xxxx@gmail.com'
 update dbo.tFVKakaoInvite set senddate = senddate - 31 where gameid = 'xxxx@gmail.com'
 -- delete from dbo.tFVKakaoInvite where gameid = 'xxxx@gmail.com'
 -- delete from dbo.tFVGiftList where gameid = 'xxxx@gmail.com'
@@ -122,7 +122,7 @@ Begin
 		@kakaomsginvitecnt 			= kakaomsginvitecnt,
 		@kakaomsginvitetodaycnt 	= kakaomsginvitetodaycnt,
 		@kakaomsginvitetodaydate	= kakaomsginvitetodaydate
-	from dbo.tFVUserMaster
+	from dbo.tUserMaster
 	where gameid = @gameid_ and phone = @phone_
 	--select 'DEBUG 2', @gameid gameid, @kakaomsginvitecnt kakaomsginvitecnt, @kakaomsginvitetodaycnt kakaomsginvitetodaycnt, @kakaomsginvitetodaydate kakaomsginvitetodaydate
 
@@ -269,7 +269,7 @@ Begin
 			------------------------------------------------
 			-- 유저정보
 			------------------------------------------------
-			update dbo.tFVUserMaster
+			update dbo.tUserMaster
 				set
 					kakaomsginvitecnt 		= @kakaomsginvitecnt,
 					kakaomsginvitetodaycnt 	= @kakaomsginvitetodaycnt,

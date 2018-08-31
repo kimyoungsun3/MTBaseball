@@ -1,12 +1,12 @@
 -- use Farm
 -- GO
 -- delete from dbo.tFVUserRankMaster where dateid in ('20150413')
--- update dbo.tFVUserMaster set salemoney2 = 123456789000 where gameid = 'xxxx@gmail.com' update dbo.tFVUserMaster set salemoney2 = 123456789002 where gameid = 'xxxx2@gmail.com' update dbo.tFVUserMaster set salemoney2 = 123456789003 where gameid = 'xxxx3@gmail.com'
+-- update dbo.tUserMaster set salemoney2 = 123456789000 where gameid = 'xxxx@gmail.com' update dbo.tUserMaster set salemoney2 = 123456789002 where gameid = 'xxxx2@gmail.com' update dbo.tUserMaster set salemoney2 = 123456789003 where gameid = 'xxxx3@gmail.com'
 -- select * from dbo.tFVUserRankMaster
 -- select * from dbo.tFVUserRankSub
--- select * from dbo.tFVUserMaster where gameid in ('xxxx@gmail.com', 'xxxx3@gmail.com')
--- update dbo.tFVUserMaster set salemoney2 = 10 where gameid in ('xxxx@gmail.com', 'xxxx3@gmail.com')
--- select top 1000 rank() over(order by salemoney2 desc) as rank, gameid, salemoney2, bestani, nickname from dbo.tFVUserMaster where salemoney2 > 0
+-- select * from dbo.tUserMaster where gameid in ('xxxx@gmail.com', 'xxxx3@gmail.com')
+-- update dbo.tUserMaster set salemoney2 = 10 where gameid in ('xxxx@gmail.com', 'xxxx3@gmail.com')
+-- select top 1000 rank() over(order by salemoney2 desc) as rank, gameid, salemoney2, bestani, nickname from dbo.tUserMaster where salemoney2 > 0
 
 --------------------------------------------
 -- SQL Server 에이전트(먼저 켜져있어야한다.)
@@ -41,11 +41,11 @@ else
 		--select 'DEBUG 랭킹 산출 하기', @dateid dateid
 		-- 랭킹데이타 백업
 		insert into dbo.tFVUserRankSub(rank, dateid8, gameid, salemoney, bestani, nickname)
-		select top 1000 rank() over(order by salemoney2 desc) as rank, @dateid, gameid, salemoney2, bestani, nickname from dbo.tFVUserMaster where salemoney2 > 0
+		select top 1000 rank() over(order by salemoney2 desc) as rank, @dateid, gameid, salemoney2, bestani, nickname from dbo.tUserMaster where salemoney2 > 0
 
 		-- 1. 랭킹 커서로 읽어오기.
 		declare curUserRanking Cursor for
-		select top 1000 rank() over(order by salemoney2 desc) as rank, gameid from dbo.tFVUserMaster where salemoney2 > 0
+		select top 1000 rank() over(order by salemoney2 desc) as rank, gameid from dbo.tUserMaster where salemoney2 > 0
 
 		-- 2. 커서오픈
 		open curUserRanking
@@ -97,11 +97,11 @@ else
 ----------------------------------------
 --	유저마스터 클리어하기.
 ----------------------------------------
-select @idx = max(idx) from dbo.tFVUserMaster
+select @idx = max(idx) from dbo.tUserMaster
 while(@idx > -1000)
 	begin
 		--select 'DEBUG 유저 정보 클리어', @idx idx
-		update dbo.tFVUserMaster
+		update dbo.tUserMaster
 			set
 				salemoney2 = 0
 		where idx >= @idx - 1000 and idx <= @idx

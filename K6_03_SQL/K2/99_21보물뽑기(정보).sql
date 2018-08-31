@@ -31,20 +31,20 @@ while(@bestani <= @bestaniend)
 		delete from dbo.tFVRouletteLogTotalMaster where dateid8 = @dateid8	-- ÀüÃ¼»Ì±â
 		delete from dbo.tFVRouletteLogTotalSub where dateid8 = @dateid8		-- ÀüÃ¼»Ì±â
 
-		update dbo.tFVUserMaster set market = 5, version = 999 where gameid = @gameid_
-		update dbo.tFVUserMaster set bestani = @bestani, tsgrade1cnt = 0, tsgrade2cnt = 0, tsgrade3cnt = 0, tsgrade4cnt = 0 where gameid = @gameid_
+		update dbo.tUserMaster set market = 5, version = 999 where gameid = @gameid_
+		update dbo.tUserMaster set bestani = @bestani, tsgrade1cnt = 0, tsgrade2cnt = 0, tsgrade3cnt = 0, tsgrade4cnt = 0 where gameid = @gameid_
 
 
 		while(@curloop <= @loopmax)
 			begin
-				update dbo.tFVUserMaster set bestani = @bestani, randserial = -1, ownercashcost = 100, tsgrade2gauage = 0, tsgrade3gauage = 0, tsgrade4gauage = 0, tsgrade2free = 1, tsgrade3free = 1, tsgrade4free = 1 where gameid = @gameid_
+				update dbo.tUserMaster set bestani = @bestani, randserial = -1, ownercashcost = 100, tsgrade2gauage = 0, tsgrade3gauage = 0, tsgrade4gauage = 0, tsgrade2free = 1, tsgrade3free = 1, tsgrade4free = 1 where gameid = @gameid_
 				set @randserial_	= @curloop
 
 				exec spu_FVRoulBuyTest @gameid_, @password_, @mode, 'savedata1', @randserial_, -1
 				set @curloop = @curloop + 1
 
 				-------------------------------------------------
-				--update dbo.tFVUserMaster set randserial = -1, ownercashcost = 100, tsgrade1cnt = 0, tsgrade2cnt = 0, tsgrade3cnt = 0, tsgrade4cnt = 0, tsgrade2gauage = 0, tsgrade3gauage = 0, tsgrade4gauage = 0, tsgrade2free = 1, tsgrade3free = 1, tsgrade4free = 1 where gameid in ('xxxx@gmail.com', 'xxxx6')
+				--update dbo.tUserMaster set randserial = -1, ownercashcost = 100, tsgrade1cnt = 0, tsgrade2cnt = 0, tsgrade3cnt = 0, tsgrade4cnt = 0, tsgrade2gauage = 0, tsgrade3gauage = 0, tsgrade4gauage = 0, tsgrade2free = 1, tsgrade3free = 1, tsgrade4free = 1 where gameid in ('xxxx@gmail.com', 'xxxx6')
 				--exec spu_FVRoulBuyTest 'xxxx@gmail.com',  '01022223331', 1, 'savedata1', 7776, -1			-- D, C
 				--exec spu_FVRoulBuyTest 'xxxx@gmail.com',  '01022223331', 2, 'savedata2', 7777, -1			-- B, A
 				--exec spu_FVRoulBuyTest 'xxxx@gmail.com',  '01022223331', 3, 'savedata3', 7778, -1			-- A, S

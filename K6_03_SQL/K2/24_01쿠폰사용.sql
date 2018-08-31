@@ -1,8 +1,8 @@
 /*
--- select * from dbo.tFVUserMaster where gameid = 'xxxx@gmail.com'
+-- select * from dbo.tUserMaster where gameid = 'xxxx@gmail.com'
 -- select * from dbo.tFVEventCertNoBack where gameid = 'xxxx@gmail.com'
--- update dbo.tFVUserMaster set market = 5 where gameid = 'xxxx@gmail.com'
--- update dbo.tFVUserMaster set randserial = -1, itemcode1 = -1, cnt1 = 0, itemcode2 = -1, cnt2 = 0, itemcode3 = -1, cnt3 = 0 where gameid = 'xxxx@gmail.com'
+-- update dbo.tUserMaster set market = 5 where gameid = 'xxxx@gmail.com'
+-- update dbo.tUserMaster set randserial = -1, itemcode1 = -1, cnt1 = 0, itemcode2 = -1, cnt2 = 0, itemcode3 = -1, cnt3 = 0 where gameid = 'xxxx@gmail.com'
 -- select * from dbo.tFVEventCertNo where kind = 2
 -- delete from dbo.tFVGiftList where gameid in ('xxxx@gmail.com', 'editor1234567890')
 -- delete from dbo.tFVEventCertNoBack where gameid in ('xxxx@gmail.com', 'editor1234567890')
@@ -115,7 +115,7 @@ Begin
 		@bgitemcode1	= bgitemcode1,	@bgcnt1		= bgcnt1,
 		@bgitemcode2	= bgitemcode2,	@bgcnt2		= bgcnt2,
 		@bgitemcode3	= bgitemcode3,	@bgcnt3		= bgcnt3
-	from dbo.tFVUserMaster where gameid = @gameid_ and password = @password_
+	from dbo.tUserMaster where gameid = @gameid_ and password = @password_
 	--select 'DEBUG ', @gameid gameid, @market market, @randserial randserial, @bgitemcode1 bgitemcode1, @bgcnt1 bgcnt1, @bgitemcode2 bgitemcode2, @bgcnt2 bgcnt2, @bgitemcode3 bgitemcode3, @bgcnt3 bgcnt3
 
 	------------------------------------------------
@@ -183,7 +183,7 @@ Begin
 							--------------------------------------
 							-- 인증번호 > 사용상태로 변경
 							--------------------------------------
-							update dbo.tFVUserMaster set eventspot06 = @EVENT_STATE_YES where gameid = @gameid_
+							update dbo.tUserMaster set eventspot06 = @EVENT_STATE_YES where gameid = @gameid_
 						end
 					else if(@certno_ = @EVENT07_CHECK_ITEM)
 						begin
@@ -203,7 +203,7 @@ Begin
 							--------------------------------------
 							-- 인증번호 > 사용상태로 변경
 							--------------------------------------
-							update dbo.tFVUserMaster set eventspot07 = @EVENT_STATE_YES where gameid = @gameid_
+							update dbo.tUserMaster set eventspot07 = @EVENT_STATE_YES where gameid = @gameid_
 						end
 					--else if(@certno_ = @EVENT08_CHECK_ITEM)
 					--	begin
@@ -223,7 +223,7 @@ Begin
 					--		--------------------------------------
 					--		-- 인증번호 > 사용상태로 변경
 					--		--------------------------------------
-					--		update dbo.tFVUserMaster set eventspot08 = @EVENT_STATE_YES where gameid = @gameid_
+					--		update dbo.tUserMaster set eventspot08 = @EVENT_STATE_YES where gameid = @gameid_
 					--	end
 					--else if(@certno_ = @EVENT09_CHECK_ITEM)
 					--	begin
@@ -243,7 +243,7 @@ Begin
 					--		--------------------------------------
 					--		-- 인증번호 > 사용상태로 변경
 					--		--------------------------------------
-					--		update dbo.tFVUserMaster set eventspot09 = @EVENT_STATE_YES where gameid = @gameid_
+					--		update dbo.tUserMaster set eventspot09 = @EVENT_STATE_YES where gameid = @gameid_
 					--	end
 
 
@@ -320,7 +320,7 @@ Begin
 	if(@nResult_ = @RESULT_SUCCESS)
 		begin
 			-- 아이템을 직접 넣어줌
-			update dbo.tFVUserMaster
+			update dbo.tUserMaster
 				set
 					randserial	= @randserial_,
 					bgitemcode1	= @itemcode1,		bgcnt1	= @cnt1,

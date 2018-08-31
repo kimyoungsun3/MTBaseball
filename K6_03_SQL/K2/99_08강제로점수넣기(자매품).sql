@@ -64,7 +64,7 @@ Begin
 	------------------------------------------------
 	--	유저정보.
 	------------------------------------------------
-	select @rkteam = rkteam from dbo.tFVUserMaster where gameid = @gameid_
+	select @rkteam = rkteam from dbo.tUserMaster where gameid = @gameid_
 	--select 'DEBUG ', @rkteam rkteam
 	if(@rkteam is null) return;
 
@@ -161,7 +161,7 @@ Begin
 	------------------------------------------------
 	--	랭킹개인기록.
 	------------------------------------------------
-	update dbo.tFVUserMaster
+	update dbo.tUserMaster
 		set
 			rksalemoney		= rksalemoney	+ @rksalemoney_,
 			rkproductcnt	= rkproductcnt 	+ @rkproductcnt_,
@@ -171,7 +171,7 @@ Begin
 			rkroulettecnt	= rkroulettecnt + @rkroulettecnt_,
 			rkplaycnt		= rkplaycnt 	+ @rkplaycnt_
 	where gameid = @gameid_
-	--select 'DEBUG 개인기록', rksalemoney, rkproductcnt, rkfarmearn	, rkwolfcnt	, rkfriendpoint, rkroulettecnt, rkplaycnt, * from dbo.tFVUserMaster where gameid = @gameid_
+	--select 'DEBUG 개인기록', rksalemoney, rkproductcnt, rkfarmearn	, rkwolfcnt	, rkfriendpoint, rkroulettecnt, rkplaycnt, * from dbo.tUserMaster where gameid = @gameid_
 
 	------------------------------------------------
 	--	4-1. 종류

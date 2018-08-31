@@ -132,21 +132,6 @@ as
 	------------------------------------------------
 	--	2-2. 정의값
 	------------------------------------------------
-	-- 구매처코드
-	declare @MARKET_SKT							int					set @MARKET_SKT						= 1
-	declare @MARKET_GOOGLE						int					set @MARKET_GOOGLE					= 5
-	declare @MARKET_NHN							int					set @MARKET_NHN						= 6
-	declare @MARKET_IPHONE						int					set @MARKET_IPHONE					= 7
-
-	-- (무료/유료코드)
-	declare @BUYTYPE_FREE						int					set @BUYTYPE_FREE 					= 0	-- 무료가입 : 리워드 최소
-	declare @BUYTYPE_PAY						int					set @BUYTYPE_PAY 					= 1	-- 유료가입 : 리워드 많음
-	declare @BUYTYPE_PAY2						int					set @BUYTYPE_PAY2 					= 2	-- 유료가입(재가입)
-
-	-- (플랫폼)
-	declare @PLATFORM_ANDROID 					int					set @PLATFORM_ANDROID				= 1
-	declare @PLATFORM_IPHONE 					int					set @PLATFORM_IPHONE				= 2
-
 	-- 블럭상태값.
 	declare @BLOCK_STATE_NO						int					set	@BLOCK_STATE_NO					= 0	-- 블럭상태아님
 	declare @BLOCK_STATE_YES					int					set	@BLOCK_STATE_YES				= 1	-- 블럭상태
@@ -166,10 +151,6 @@ as
 	-- bool
 	declare @BOOL_TRUE							int					set @BOOL_TRUE						= 1
 	declare @BOOL_FALSE							int					set @BOOL_FALSE						= 0
-
-	-- 일반가입, 게스트 가입
-	declare @JOIN_MODE_GUEST					int					set @JOIN_MODE_GUEST				= 1
-	declare @JOIN_MODE_PLAYER					int					set @JOIN_MODE_PLAYER				= 2
 
 	-- compose
 	declare @COMPOSE_RESULT_SUCCESS				int					set @COMPOSE_RESULT_SUCCESS			= 1

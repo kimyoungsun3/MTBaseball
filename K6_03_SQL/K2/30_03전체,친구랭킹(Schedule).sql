@@ -1,6 +1,6 @@
 -- use Farm
 -- GO
--- update dbo.tFVUserMaster set salemoney = 123456789000 where gameid = 'xxxx' update dbo.tFVUserMaster set salemoney = 123456789002 where gameid = 'xxxx@gmail.com' update dbo.tFVUserMaster set salemoney = 123456789003 where gameid = 'xxxx3'
+-- update dbo.tUserMaster set salemoney = 123456789000 where gameid = 'xxxx' update dbo.tUserMaster set salemoney = 123456789002 where gameid = 'xxxx@gmail.com' update dbo.tUserMaster set salemoney = 123456789003 where gameid = 'xxxx3'
 -- delete from dbo.tFVUserMasterSchedule where dateid = '20150209'
 -- update dbo.tFVUserMasterSchedule set idxStart = 1 where dateid = '20150209'
 -- select * from dbo.tFVUserMasterSchedule where dateid = '20150209'
@@ -46,11 +46,11 @@ else
 		--select 'DEBUG 랭킹 산출 하기', @dateid dateid
 		-- 랭킹데이타 백업
 		insert into dbo.tFVUserRankSub(rank, dateid8, gameid, salemoney, bestani, nickname)
-		select top 1000 rank() over(order by salemoney desc) as rank, @dateid, gameid, salemoney, bestani, nickname from dbo.tFVUserMaster where salemoney > 0
+		select top 1000 rank() over(order by salemoney desc) as rank, @dateid, gameid, salemoney, bestani, nickname from dbo.tUserMaster where salemoney > 0
 
 		-- 1. 랭킹 커서로 읽어오기.
 		declare curUserRanking Cursor for
-		select top 1000 rank() over(order by salemoney desc) as rank, gameid from dbo.tFVUserMaster where salemoney > 0
+		select top 1000 rank() over(order by salemoney desc) as rank, gameid from dbo.tUserMaster where salemoney > 0
 
 		-- 2. 커서오픈
 		open curUserRanking
@@ -119,7 +119,7 @@ set @binsert = @idx
 
 -- 1. 친구 랭킹 커서로 읽어오기.
 declare curUserMaster Cursor for
-select idx, gameid, salemoney from dbo.tFVUserMaster
+select idx, gameid, salemoney from dbo.tUserMaster
 where idx > @idx
 order by idx asc
 
@@ -144,7 +144,7 @@ while @@Fetch_status = 0
 		---------------------------------
 		-- 친구랭킹.
 		insert into @tTempTableList(                   rank, gameid, bestani, salemoney)
-		select rank() over(order by salemoney desc) as rank, gameid, bestani, salemoney from dbo.tFVUserMaster
+		select rank() over(order by salemoney desc) as rank, gameid, bestani, salemoney from dbo.tUserMaster
 		where gameid in (select friendid from dbo.tFVUserFriend where (gameid = @gameid and state = @USERFRIEND_STATE_FRIEND)
 						union
 						select @gameid)
@@ -162,7 +162,7 @@ while @@Fetch_status = 0
 		-------------------------------------
 		-- 2. 값을 세팅하기.
 		-------------------------------------
-		update dbo.tFVUserMaster
+		update dbo.tUserMaster
 			set
 				-- 자신의 랭킹.
 				rankresult	= 1,
@@ -203,11 +203,11 @@ update tFVUserMasterSchedule set idxStart = @idx where dateid = @dateid
 ----------------------------------------
 --	유저마스터 클리어하기.
 ----------------------------------------
-select @idx = max(idx) from dbo.tFVUserMaster
+select @idx = max(idx) from dbo.tUserMaster
 while(@idx > -1000)
 	begin
 		--select 'DEBUG 유저 정보 클리어', @idx idx
-		update dbo.tFVUserMaster
+		update dbo.tUserMaster
 			set
 				salemoney = 0
 		where idx >= @idx - 1000 and idx <= @idx

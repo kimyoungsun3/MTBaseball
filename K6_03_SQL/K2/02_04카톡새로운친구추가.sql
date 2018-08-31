@@ -46,7 +46,7 @@ Begin
 	------------------------------------------------
 	select
 		@gameid = gameid
-	from dbo.tFVUserMaster
+	from dbo.tUserMaster
 	where gameid = @gameid_ and phone = @phone_
 	--select 'DEBUG 2', @gameid gameid
 

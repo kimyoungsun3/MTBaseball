@@ -14,7 +14,7 @@ declare @t1			bigint,
 
 -- 1. 랭킹 커서로 읽어오기.
 declare curUserRanking Cursor for
-select gameid from dbo.tFVUserMaster
+select gameid from dbo.tUserMaster
 
 -- 2. 커서오픈
 open curUserRanking
@@ -32,7 +32,7 @@ while @@Fetch_status = 0
 		set @t7 = Convert(bigint, ceiling(RAND() *      86400))
 
 
-		--update dbo.tFVUserMaster set rkteam			= (CASE WHEN ISNUMERIC(SUBSTRING(gameid, LEN(LTRIM(gameid)), LEN(LTRIM(gameid)))) = 1 THEN CAST(SUBSTRING(gameid, LEN(LTRIM(gameid)), LEN(LTRIM(gameid))) AS INT) ELSE 0 END)%2
+		--update dbo.tUserMaster set rkteam			= (CASE WHEN ISNUMERIC(SUBSTRING(gameid, LEN(LTRIM(gameid)), LEN(LTRIM(gameid)))) = 1 THEN CAST(SUBSTRING(gameid, LEN(LTRIM(gameid)), LEN(LTRIM(gameid))) AS INT) ELSE 0 END)%2
 		--where gameid = @gameid
 		exec spu_subFVRankDaJunTest @gameid, '20150312', @t1, @t2, @t3, @t4, @t5, @t6, @t7
 

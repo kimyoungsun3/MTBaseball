@@ -1,7 +1,7 @@
 use Farm
 Go
 /*
-update dbo.tFVUserMaster set randserial = -1, ownercashcost = 10000  where gameid = 'xxxx2'
+update dbo.tUserMaster set randserial = -1, ownercashcost = 10000  where gameid = 'xxxx2'
 exec spu_FVTSUgrade 'xxxx@gmail.com',  '01022223331', 1, 80010, 0, 1,    0, 100, 'savedata1', 7776, -1			-- 일반강화(1)
 exec spu_FVTSUgrade 'xxxx@gmail.com',  '01022223331', 2, 80010, 0, 1, 1000,   0, 'savedata2', 7777, -1			-- 결정강화(2)
 
@@ -82,7 +82,7 @@ Begin
 		@market		= market,
 		@ownercashcost= ownercashcost,
 		@randserial	= randserial
-	from dbo.tFVUserMaster
+	from dbo.tUserMaster
 	where gameid = @gameid_ and phone = @phone_
 	--select 'DEBUG 유저정보', @gameid gameid, @market market, @ownercashcost ownercashcost, @randserial randserial
 
@@ -164,7 +164,7 @@ Begin
 			---------------------------------------------------
 			-- 유저 정보 갱신
 			---------------------------------------------------
-			update dbo.tFVUserMaster
+			update dbo.tUserMaster
 				set
 					ownercashcost	= @ownercashcost2,
 					randserial		= @randserial_

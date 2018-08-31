@@ -2,7 +2,7 @@ use Farm
 Go
 /*
 
-select roulette, roulettefreecnt, roulettepaycnt from dbo.tFVUserMaster where gameid = 'xxxx@gmail.com'
+select roulette, roulettefreecnt, roulettepaycnt from dbo.tUserMaster where gameid = 'xxxx@gmail.com'
 select * from dbo.tFVUserData
 exec spu_FVSave3 'xxxx@gmail.com',  '01022223331', 0, 1, '', 'skt11savetest',    -1			-- 세이브모드. (랭킹없음)
 exec spu_FVSave3 'xxxx@gmail.com',  '01022223331', 1, 1, '', 'skt11savetest',    -1			-- 세이브모드. (랭킹있음)
@@ -19,20 +19,20 @@ exec spu_FVSave3 'xxxx@gmail.com',  '01022223331', 1, 5, '  0:123;   1:500;     
 exec spu_FVSave3 'xxxx@gmail.com',  '01022223331', 1, 5, '100:123;   1:500;        10:1000;    11:2000;         20:-1;          21:1;', 'google22savetest',  -1		-- 토탈방식
 exec spu_FVSave3 'xxxx@gmail.com',  '01022223331', 1, 5, '0:0;1:500;10:0;11:0;', 'google22savetest',  -1
 
-select salemoney2 from dbo.tFVUserMaster where gameid = 'xxxx@gmail.com'
+select salemoney2 from dbo.tUserMaster where gameid = 'xxxx@gmail.com'
 exec spu_FVSave3 'xxxx@gmail.com',  '01022223331', 1, 5, '  0:123;   1:500;        10:1000;    11:2000;   20:-1', 'google22savetest',  -1		-- 누적방식
-select salemoney2 from dbo.tFVUserMaster where gameid = 'xxxx@gmail.com'
+select salemoney2 from dbo.tUserMaster where gameid = 'xxxx@gmail.com'
 
-select salemoney2 from dbo.tFVUserMaster where gameid = 'xxxx@gmail.com'
-update dbo.tFVUserMaster set savebktime = getdate() - 10 where gameid = 'xxxx@gmail.com'
+select salemoney2 from dbo.tUserMaster where gameid = 'xxxx@gmail.com'
+update dbo.tUserMaster set savebktime = getdate() - 10 where gameid = 'xxxx@gmail.com'
 exec spu_FVSave3 'xxxx@gmail.com',  '01022223331', 1, 5, '100:123;   1:500;        10:1000;    11:2000;   20:-1;', 'google22savetest',  -1		-- 토탈방식
-select salemoney2 from dbo.tFVUserMaster where gameid = 'xxxx@gmail.com'
+select salemoney2 from dbo.tUserMaster where gameid = 'xxxx@gmail.com'
 
-update dbo.tFVUserMaster set savebktime = getdate() - 1 where gameid = 'xxxx@gmail.com'
+update dbo.tUserMaster set savebktime = getdate() - 1 where gameid = 'xxxx@gmail.com'
 exec spu_FVSave3 'xxxx@gmail.com',  '01022223331', 1, 5, '100:123;   1:500;        10:1000;    11:2000;   20:-1;', 'save11',  -1
-update dbo.tFVUserMaster set savebktime = getdate() - 1 where gameid = 'xxxx@gmail.com'
+update dbo.tUserMaster set savebktime = getdate() - 1 where gameid = 'xxxx@gmail.com'
 exec spu_FVSave3 'xxxx@gmail.com',  '01022223331', 1, 5, '100:123;   1:500;        10:1000;    11:2000;   20:-1;', 'save12',  -1
-update dbo.tFVUserMaster set savebktime = getdate() - 1 where gameid = 'PC14DAE9EC6A77'
+update dbo.tUserMaster set savebktime = getdate() - 1 where gameid = 'PC14DAE9EC6A77'
 exec spu_FVSave3 'xxxx@gmail.com',  '01022223331', 1, 5, '100:123;   1:500;        10:1000;    11:2000;   20:-1;', 'save13',  -1
 select * from dbo.tFVUserDataBackup where gameid = 'xxxx@gmail.com' order by idx2 desc
 
@@ -119,7 +119,7 @@ Begin
 	select
 		@gameid 		= gameid,
 		@savebktime		= savebktime
-	from dbo.tFVUserMaster
+	from dbo.tUserMaster
 	where gameid = @gameid_ and phone = @phone_
 	--select 'DEBUG 유저정보', @gameid gameid, @savebktime savebktime
 
@@ -221,7 +221,7 @@ Begin
 			---------------------------------------------------
 			-- 유저 정보 갱신
 			---------------------------------------------------
-			update dbo.tFVUserMaster
+			update dbo.tUserMaster
 				set
 					savebktime		= @savebktime,
 					ownercashcost	= @ownercashcost,
@@ -236,7 +236,7 @@ Begin
 					roulette		=               	case when (@roulette2 = -1)		   				then -1         else roulette      	end,
 					roulettefreecnt	= roulettefreecnt +	case when (@roulette2 = -1 and roulette = 1)	then  1         else 0             	end,
 					roulettepaycnt	= roulettepaycnt + 	case when (@roulettepaycnt2 <= 0)  				then  0         else @roulettepaycnt2 end
-			from dbo.tFVUserMaster
+			from dbo.tUserMaster
 			where gameid = @gameid_
 
 			----------------------------------------------

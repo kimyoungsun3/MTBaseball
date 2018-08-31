@@ -64,11 +64,11 @@ set @idx 		= -1
 -- 플레이타임	86,400 			0.100000 	8,640
 -- 3. 개인점수 백업후 > 클리어
 --------------------------------------------------------
-	select @idx = max(idx) from dbo.tFVUserMaster
+	select @idx = max(idx) from dbo.tUserMaster
 	while(@idx > -1000)
 		begin
 			-- --select 'DEBUG 유저 랭킹정보 계산', @idx idx
-			update dbo.tFVUserMaster
+			update dbo.tUserMaster
 				set
 					-- 1차 백업 데이타를 백업한다.
 					rktotal2 		= rktotal,
@@ -94,7 +94,7 @@ set @idx 		= -1
 			where idx >= @idx - 1000 and idx <= @idx
 			set @idx =  @idx - 1000
 		end
-	--select 'DEBUG ', gameid, rkteam, rktotal, rktotal2 from dbo.tFVUserMaster where rktotal > 0 order by rktotal desc
+	--select 'DEBUG ', gameid, rkteam, rktotal, rktotal2 from dbo.tUserMaster where rktotal > 0 order by rktotal desc
 
 
 --------------------------------------------------------
@@ -104,7 +104,7 @@ set @idx 		= -1
 
 	-- 1. 랭킹 커서로 읽어오기.
 	declare curUserRanking Cursor for
-	select rank() over(order by rktotal desc) as rank, gameid from dbo.tFVUserMaster where rktotal > 0
+	select rank() over(order by rktotal desc) as rank, gameid from dbo.tUserMaster where rktotal > 0
 
 	-- 2. 커서오픈
 	open curUserRanking

@@ -193,7 +193,7 @@ Begin
 										@tsgrade2gauage	= tsgrade2gauage,@tsgrade3gauage= tsgrade3gauage,@tsgrade4gauage= tsgrade4gauage,
 										@tsgrade2free	= tsgrade2free,	@tsgrade3free	= tsgrade3free,	@tsgrade4free	= tsgrade4free,
 		@randserial		= randserial
-	from dbo.tFVUserMaster
+	from dbo.tUserMaster
 	where gameid = @gameid_ and phone = @phone_
 	--select 'DEBUG 유저정보', @gameid gameid, @nickname nickname, @market market, @bestani bestani, @randserial randserial, @roul1 roul1, @roul2 roul2, @roul3 roul3, @roul4 roul4, @roul5 roul5, @tsgrade1cnt tsgrade1cnt, @tsgrade2cnt tsgrade2cnt, @tsgrade3cnt tsgrade3cnt, @tsgrade4cnt tsgrade4cnt, @tsgrade2gauage	tsgrade2gauage, @tsgrade3gauage tsgrade3gauage, @tsgrade4gauage tsgrade4gauage, @tsgrade2free tsgrade2free,	@tsgrade3free tsgrade3free,	@tsgrade4free tsgrade4free
 
@@ -838,7 +838,7 @@ Begin
 	if(@nResult_ = @RESULT_SUCCESS)
 		begin
 			-- 아이템을 직접 넣어줌
-			update dbo.tFVUserMaster
+			update dbo.tUserMaster
 				set
 					randserial		= @randserial_,
 					ownercashcost	= @ownercashcost2,

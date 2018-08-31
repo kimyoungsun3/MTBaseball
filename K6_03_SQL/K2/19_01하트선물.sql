@@ -1,16 +1,16 @@
 /*
--- update dbo.tFVUserMaster set kakaomsgblocked = 1 where gameid = 'xxxx3'
--- update dbo.tFVUserMaster set kakaomsgblocked = 0 where gameid = 'xxxx3'
--- select * from dbo.tFVUserMaster where gameid in ( 'farm16225', 'farm51837')
+-- update dbo.tUserMaster set kakaomsgblocked = 1 where gameid = 'xxxx3'
+-- update dbo.tUserMaster set kakaomsgblocked = 0 where gameid = 'xxxx3'
+-- select * from dbo.tUserMaster where gameid in ( 'farm16225', 'farm51837')
 
 update dbo.tFVUserFriend set senddate = getdate() - 1 where gameid = 'xxxx@gmail.com' and friendid = 'xxxx3'
-update dbo.tFVUserMaster set heartget = 10, heartcnt = 20, heartdate = '20150202' where gameid = 'xxxx@gmail.com'
-update dbo.tFVUserMaster set heartget = 30, heartcnt = 400, heartdate = '20150201' where gameid = 'xxxx3'
+update dbo.tUserMaster set heartget = 10, heartcnt = 20, heartdate = '20150202' where gameid = 'xxxx@gmail.com'
+update dbo.tUserMaster set heartget = 30, heartcnt = 400, heartdate = '20150201' where gameid = 'xxxx3'
 exec spu_FVFriend 'xxxx@gmail.com',  '01022223331', 7, 'xxxx3', -1		-- 하트 : 하트선물, 포인트누적.
 exec spu_FVFriend 'xxxx3', '049000s1i0n7t8445289', 7, 'xxxx@gmail.com', -1		-- 하트 : 하트선물, 포인트누적.
 
 
-select * from dbo.tFVUserMaster where gameid in ( 'farm16225', 'farm51837')
+select * from dbo.tUserMaster where gameid in ( 'farm16225', 'farm51837')
 -- 창규 : farm16225		3465659i5o0x9v476693
 -- 준식 : farm51837		7758499v9a9u6d423517
 update dbo.tFVUserFriend set senddate = getdate() - 1 where gameid = 'farm16225' and friendid = 'farm51837'
@@ -124,7 +124,7 @@ Begin
 				@gameid 	= gameid,		@market 	= market,
 				@heartget	= heartget, 	@heartcnt	= heartcnt,
 				@heartcntmax= heartcntmax, 	@heartdate	= heartdate
-			from dbo.tFVUserMaster
+			from dbo.tUserMaster
 			where gameid = @gameid_ and password = @password_
 			--select 'DEBUG 보낸이(A)', @gameid gameid, @heartget heartget, @heartcnt heartcnt, @heartcntmax heartcntmax, @heartdate heartdate
 
@@ -132,7 +132,7 @@ Begin
 				@friendid 	= gameid,		@fkakaomsgblocked = kakaomsgblocked,
 				@fheartget	= heartget, 	@fheartcnt	= heartcnt,
 				@fheartcntmax= heartcntmax, @fheartdate	= heartdate
-			from dbo.tFVUserMaster where gameid = @friendid_
+			from dbo.tUserMaster where gameid = @friendid_
 			--select 'DEBUG 받는이(B)', @friendid friendid, @fheartget fheartget, @fheartcnt fheartcnt, @fheartcntmax fheartcntmax, @fheartdate fheartdate
 
 			select
@@ -189,7 +189,7 @@ Begin
 					set @heartget2 = @heartget
 					set @heartget = 0
 
-					update dbo.tFVUserMaster
+					update dbo.tUserMaster
 						set
 							heartget		= @heartget,
 							heartcnt		= @heartcnt,
@@ -220,7 +220,7 @@ Begin
 					set @fheartcnt = @fheartcnt + @plusheart
 					--select 'DEBUG 받은이(B)', @plusheart plusheart, @fheartget fheartget, @fheartcnt fheartcnt
 
-					update dbo.tFVUserMaster
+					update dbo.tUserMaster
 						set
 							heartget = @fheartget,
 							heartcnt = @fheartcnt
@@ -241,7 +241,7 @@ Begin
 					---------------------------------------------
 					--	유저정보.
 					---------------------------------------------
-					select @heartget2 heartget2 --, * from dbo.tFVUserMaster where gameid = @gameid_
+					select @heartget2 heartget2 --, * from dbo.tUserMaster where gameid = @gameid_
 
 					--------------------------------------------------------------
 					-- 유저 친구정보

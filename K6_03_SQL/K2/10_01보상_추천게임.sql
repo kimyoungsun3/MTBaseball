@@ -75,7 +75,7 @@ Begin
 		@gameid 		= gameid,		@market		= market,
 		@randserial		= randserial,
 		@bgitemcode1	= bgitemcode1,	@bgcnt1		= bgcnt1
-	from dbo.tFVUserMaster where gameid = @gameid_ and phone = @phone_
+	from dbo.tUserMaster where gameid = @gameid_ and phone = @phone_
 	--select 'DEBUG ', @gameid gameid, @market market, @randserial randserial, @bgitemcode1 bgitemcode1, @bgcnt1 bgcnt1
 
 	-- 추천게임 정보보기.
@@ -128,7 +128,7 @@ Begin
 			insert into dbo.tFVSysRecommendLog(gameid,   recommendidx)
 			values(                           @gameid_,         @idx_)
 
-			update dbo.tFVUserMaster
+			update dbo.tUserMaster
 				set
 					randserial	= @randserial_,
 					bgitemcode1	= @rewarditemcode,		bgcnt1	= @rewardcnt

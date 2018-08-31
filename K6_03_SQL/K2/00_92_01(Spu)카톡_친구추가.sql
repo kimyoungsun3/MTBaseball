@@ -67,10 +67,10 @@ Begin
 							------------------------------------------
 							-- 나 - 친구
 							--select 'DEBUG 나 - 친구', @gameid_ gameid_, @kakaouserid kakaouserid
-							--select 'DEBUG ', gameid from dbo.tFVUserMaster where kakaouserid = @kakaouserid and kakaostatus != @KAKAO_STATUS_NEWSTART
+							--select 'DEBUG ', gameid from dbo.tUserMaster where kakaouserid = @kakaouserid and kakaostatus != @KAKAO_STATUS_NEWSTART
 							--delete from dbo.tFVUserFriend
 							--where gameid = @gameid_
-							--	  and friendid in (select gameid from dbo.tFVUserMaster where kakaouserid = @kakaouserid and kakaostatus != @KAKAO_STATUS_NEWSTART)
+							--	  and friendid in (select gameid from dbo.tUserMaster where kakaouserid = @kakaouserid and kakaostatus != @KAKAO_STATUS_NEWSTART)
 
 
 							--select 'DEBUG 있음', @kakaouserid, @friendid
@@ -94,10 +94,10 @@ Begin
 							-- 친구 - 내
 							--select 'DEBUG 친구 - 내', @friendid friendid, @kakaouserid kakaouserid, @gameid_ gameid_
 							--select 'DEBUG ', kakaouserid from dbo.tFVKakaoMaster where gameid = @gameid_
-							--select 'DEBUG ', gameid from dbo.tFVUserMaster where kakaouserid in (select kakaouserid from dbo.tFVKakaoMaster where gameid = @gameid_) and kakaostatus != @KAKAO_STATUS_NEWSTART
+							--select 'DEBUG ', gameid from dbo.tUserMaster where kakaouserid in (select kakaouserid from dbo.tFVKakaoMaster where gameid = @gameid_) and kakaostatus != @KAKAO_STATUS_NEWSTART
 							--delete from dbo.tFVUserFriend
 							--where gameid = @friendid
-							--	  and friendid in (select gameid from dbo.tFVUserMaster where kakaouserid in (select kakaouserid from dbo.tFVKakaoMaster where gameid = @gameid_) and kakaostatus != @KAKAO_STATUS_NEWSTART)
+							--	  and friendid in (select gameid from dbo.tUserMaster where kakaouserid in (select kakaouserid from dbo.tFVKakaoMaster where gameid = @gameid_) and kakaostatus != @KAKAO_STATUS_NEWSTART)
 
 							if(not exists(select top 1 * from dbo.tFVUserFriend where gameid = @friendid and friendid = @gameid_))
 								begin

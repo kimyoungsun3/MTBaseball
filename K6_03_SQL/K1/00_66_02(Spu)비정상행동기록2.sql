@@ -1,13 +1,13 @@
 use Farm
 Go
 /*
-update dbo.tFVUserMaster set logwrite2 =  1 where gameid = 'xxxx@gmail.com'
+update dbo.tUserMaster set logwrite2 =  1 where gameid = 'xxxx@gmail.com'
 exec spu_FVSubUnusualRecord2  'xxxx@gmail.com', '기록하기'
-update dbo.tFVUserMaster set logwrite2 = -1 where gameid = 'xxxx@gmail.com'
+update dbo.tUserMaster set logwrite2 = -1 where gameid = 'xxxx@gmail.com'
 exec spu_FVSubUnusualRecord2  'xxxx@gmail.com', '기록안함'
 
 exec spu_FVSubUnusualRecord2  'xxxx@gmail.com', '결과치트Test'
-select * from dbo.tFVUserMaster where gameid = 'xxxx@gmail.com'
+select * from dbo.tUserMaster where gameid = 'xxxx@gmail.com'
 select * from dbo.tFVUserUnusualLog2 where gameid = 'xxxx@gmail.com'
 */
 
@@ -37,7 +37,7 @@ Begin
 	------------------------------------------------
 	set nocount on
 	--select 'DEBUG ', @gameid_ gameid_, @comment_ comment_
-	select @logwrite2 = logwrite2 from dbo.tFVUserMaster where gameid = @gameid_
+	select @logwrite2 = logwrite2 from dbo.tUserMaster where gameid = @gameid_
 
 	if(@logwrite2 = 1)
 		begin

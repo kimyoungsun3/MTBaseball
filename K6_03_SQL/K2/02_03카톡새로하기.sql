@@ -1,5 +1,5 @@
 /*
-select * from dbo.tFVUserMaster where kakaouserid != ''
+select * from dbo.tUserMaster where kakaouserid != ''
 select * from dbo.tFVKakaoMaster where gameid = 'guest115966'
 exec spu_FVUserCreate 'farm',  '049000s1i0n7t8445289', 1, 0, 1, 'ukukukuk', 101, '01011112222', '', 'kakaotalkidnnnn2', '', -1, '0:kakaouseridxxxx;1:kakaouseridxxxx3;', -1
 
@@ -61,9 +61,9 @@ Begin
 	select
 		@gameid2 		= gameid,
 		@kakaouserid	= kakaouserid
-	from dbo.tFVUserMaster
+	from dbo.tUserMaster
 	where gameid = @gameid_ and phone = @phone_
-	--select 'DEBUG tFVUserMaster > ', @kakaouserid kakaouserid, @gameid2 gameid2
+	--select 'DEBUG tUserMaster > ', @kakaouserid kakaouserid, @gameid2 gameid2
 
 	select
 		@gameid = gameid
@@ -110,7 +110,7 @@ Begin
 			-----------------------------------
 			-- 유저 마스터에 새로하기를 했다고 표시하기.
 			-----------------------------------
-			update dbo.tFVUserMaster
+			update dbo.tUserMaster
 				set
 					kakaostatus = @KAKAO_STATUS_NEWSTART,
 					deletestate = @DELETE_STATE_YES,

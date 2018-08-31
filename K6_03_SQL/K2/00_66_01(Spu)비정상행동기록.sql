@@ -1,7 +1,7 @@
 /*
-update dbo.tFVUserMaster set resultcopy= 0, cashcopy = 0, blockstate = 0 where gameid = 'xxxx@gmail.com'
+update dbo.tUserMaster set resultcopy= 0, cashcopy = 0, blockstate = 0 where gameid = 'xxxx@gmail.com'
 exec spu_FVSubUnusualRecord  'xxxx@gmail.com', 15, '결과치트Test'
-select resultcopy, cashcopy, blockstate from dbo.tFVUserMaster where gameid = 'xxxx@gmail.com'
+select resultcopy, cashcopy, blockstate from dbo.tUserMaster where gameid = 'xxxx@gmail.com'
 */
 use Farm
 GO
@@ -44,7 +44,7 @@ Begin
 	select
 		@resultcopy = resultcopy,
 		@cashcopy	= cashcopy
-	from dbo.tFVUserMaster
+	from dbo.tUserMaster
 	where gameid = @gameid_
 
 	--select 'DEBUG ', @resultcopy resultcopy, @cashcopy cashcopy
@@ -57,7 +57,7 @@ Begin
 			if(@resultcopy >= @BLOCK_RESULTCOPY_MAX or @cashcopy >= @BLOCK_CASHCOPY_MAX)
 				begin
 					--select 'DEBUG 치트 많아서 > 블럭 처리함.'
-					update dbo.tFVUserMaster
+					update dbo.tUserMaster
 						set
 							blockstate		= @BLOCK_STATE_YES,
 							resultcopy 		= 0,
@@ -69,7 +69,7 @@ Begin
 			else
 				begin
 					--select 'DEBUG 치트 들어와서 > 기록함.'
-					update dbo.tFVUserMaster
+					update dbo.tUserMaster
 						set
 							resultcopy 		= @resultcopy,
 							cashcopy		= @cashcopy

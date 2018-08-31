@@ -22,6 +22,6 @@ update dbo.tFVUserData	set savedata = @savedata where gameid = @gameid and marke
 set @gameid	= '100635317797180352086'	-- ¿”¡¯«ı
 set @savedata = '14:0%1:-1,-1,-1,-1,-1%2:1%3:2000%4:502,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1%5:9,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1%280:%6:2023%7:3%8:38%27:-1%19:%50:0,0,0,0,0,0,0,0,0,0,0,0%51:0%52:0%40:%9:0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,99000%100:-1%101:-1%102:-1%13:0%21:0%22:0%23:0%28:-1%29:-1%34:%35:%30:%15:0%24:0%31:%16:1%17:1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0%18:5000%25:1%36:-1%33:PCBC5FF4B901D6%37:%290:0%300:3/16/2015 3@08@44 PM'
 update dbo.tFVUserData	set savedata = @savedata where gameid = @gameid and market = 5
---select 'DEBUG ', @gameid, gameid, Len(@savedata) len, gameid  from dbo.tFVUserMaster where gameid = @gameid
+--select 'DEBUG ', @gameid, gameid, Len(@savedata) len, gameid  from dbo.tUserMaster where gameid = @gameid
 
 

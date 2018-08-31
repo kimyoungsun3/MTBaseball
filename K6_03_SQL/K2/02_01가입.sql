@@ -1,7 +1,7 @@
 /*
 -- 일반가입
 select * from dbo.tFVKakaoMaster where gameid like 'xxxx%'
-select * from dbo.tFVUserMaster where kakaouserid like 'kakaouserid%'
+select * from dbo.tUserMaster where kakaouserid like 'kakaouserid%'
 exec spu_FVUserCreate 'xxxx',   '049000s1i0n7t8445289', 1, 0, 1, 'ukukukuk', 101, '01011112221', '', 'kakaotalkidxxxx', 'kakaouseridxxxx', -1, '', -1
 exec spu_FVUserCreate 'xxxx@gmail.com',  '049000s1i0n7t8445289', 1, 0, 1, 'ukukukuk', 101, '01011112222', '', 'kakaotalkidxxxx2', 'kakaouseridxxxx2', -1, '', -1
 exec spu_FVUserCreate 'xxxx3',  '049000s1i0n7t8445289', 1, 0, 1, 'ukukukuk', 101, '01011112222', '', 'kakaotalkidxxxx3', 'kakaouseridxxxx3', -1, '', -1
@@ -15,7 +15,7 @@ exec spu_FVUserCreate 'xxxx9',  '049000s1i0n7t8445289', 1, 0, 1, 'ukukukuk', 101
 -- 처음(생성), 두번째(연결)
 exec spu_FVUserCreate 'farm',  '049000s1i0n7t8445289', 1, 0, 1, 'ukukukuk', 101, '01011112222', '', 'kakaotalkidnnnn2', '', -1, '0:x1;1:x2;2:x3;', -1
 
--- select * from dbo.tFVUserMaster where gameid = ''
+-- select * from dbo.tUserMaster where gameid = ''
 -- select top 10 * from dbo.tFVKakaoMaster order by idx desc
 
 -- guest가입 (강제로 5만건 입력하기 )
@@ -23,7 +23,7 @@ declare @var 			int
 declare @loop			int				set @loop	= 1
 declare @gameid 		varchar(20)		set @gameid = 'farm'	-- farm, iuest
 declare @phone 			varchar(20)
-select @var = max(idx) + 1 from dbo.tFVUserMaster
+select @var = max(idx) + 1 from dbo.tUserMaster
 set @loop = @var + @loop
 while @var < @loop
 	begin
@@ -171,12 +171,12 @@ Begin
 			-- 1. guest 아이디생성
 			declare @maxIdx int
 			declare @rand int
-			select @maxIdx = max(idx)+1 from dbo.tFVUserMaster
+			select @maxIdx = max(idx)+1 from dbo.tUserMaster
 			set @rand 	= 100 + Convert(int, ceiling(RAND() * 899))	-- 100 ~ 999
 			set @gameid_ = @gameid_ + rtrim(ltrim(str(@maxIdx))) + rtrim(ltrim(str(@rand)))
 			--select 'DEBUG 3-2-1 guest가입모드', @gameid_
 
-			if exists (select * from tFVUserMaster where gameid = @gameid_)
+			if exists (select * from tUserMaster where gameid = @gameid_)
 				begin
 					declare @tmp varchar(10)
 					set @tmp = replace(newid(), '-', '')
@@ -212,7 +212,7 @@ Begin
 	--			end
     --
 	--		-- 유저 정보 갱신.
-	--		update dbo.tFVUserMaster
+	--		update dbo.tUserMaster
 	--			set
 	--				kakaotalkid		= @kakaotalkid_,
 	--				kakaouserid		= @kakaouserid_,
@@ -248,7 +248,7 @@ Begin
 						end
 
 					-- 유저 정보 갱신.
-					update dbo.tFVUserMaster
+					update dbo.tUserMaster
 						set
 							kakaotalkid		= @kakaotalkid_,
 							kakaouserid		= @kakaouserid_,
@@ -291,7 +291,7 @@ Begin
 	------------------------------------------------
 	--	3-3. 유저생성.
 	------------------------------------------------
-	if (@gameid != '' and exists(select top 1 * from dbo.tFVUserMaster where gameid = @gameid))
+	if (@gameid != '' and exists(select top 1 * from dbo.tUserMaster where gameid = @gameid))
 		begin
 			set @nResult_ = @RESULT_SUCCESS
 			set @comment = '(재연결)가입을 축하합니다.'
@@ -308,19 +308,19 @@ Begin
 				end
 
 			-- 닉네임과 프로파일을 갱신하다.
-			update dbo.tFVUserMaster
+			update dbo.tUserMaster
 				set
 					--market		= @market_,				-- 로그인할때 변경한다.
 					pushid			= @pushid_
 			where gameid = @gameid
 
 			select @nResult_ rtn, @comment comment, gameid, password
-			from dbo.tFVUserMaster
+			from dbo.tUserMaster
 			where gameid = @gameid
 
 			return
 		end
-	--else if exists (select * from tFVUserMaster where gameid = @gameid_)
+	--else if exists (select * from tUserMaster where gameid = @gameid_)
 	--	begin
 	--		set @nResult_ = @RESULT_ERROR_ID_DUPLICATE
 	--		set @comment = '(생성)아이디가 중복되었습니다.'
@@ -369,7 +369,7 @@ Begin
 			-- 하트맥스 : 10
 			---------------------------------------------
 			--select 'DEBUG 6-3 유저 정보 입력'
-			insert into dbo.tFVUserMaster(gameid,  password,   market,   buytype,   platform,   ukey,   version,   phone,   pushid,
+			insert into dbo.tUserMaster(gameid,  password,   market,   buytype,   platform,   ukey,   version,   phone,   pushid,
 										 kakaotalkid,   kakaouserid,   kakaomsgblocked,   nickname
 										)
 			values(                     @gameid_, @password_, @market_, @buytype_, @platform_, @ukey_, @version_, @phone_, @pushid_,

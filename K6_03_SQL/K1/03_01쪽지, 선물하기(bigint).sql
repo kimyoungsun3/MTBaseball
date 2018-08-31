@@ -1,6 +1,6 @@
 ﻿--################################################################
 /*
--- update dbo.tFVUserMaster set concode = 82 where gameid = 'xxxx@gmail.com'
+-- update dbo.tUserMaster set concode = 82 where gameid = 'xxxx@gmail.com'
 -- 쪽지, 선물 기록하기(데일리 보상)
 -- 200개까지만 기록하고 나머지는 삭제됨.
 exec spu_FVSubGiftSend 1,   -1,   0, 'SysCoup', 'xxxx@gmail.com', 'message'			-- ?????? ????
@@ -62,7 +62,7 @@ Begin
 	------------------------------------------------
 	--	3-1. 해당언어.
 	------------------------------------------------
-	select @concode = concode from dbo.tFVUserMaster where gameid = @gameid_
+	select @concode = concode from dbo.tUserMaster where gameid = @gameid_
 	set @adminid_ = case
 						when (@adminid_ = 'SysCoup' and @concode = 82) 		then '쿠폰보상'
 						when (@adminid_ = 'SysCoup' and @concode = 81) 		then 'Reward'

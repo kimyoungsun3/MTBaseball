@@ -392,11 +392,11 @@ Begin
 		begin
 			if(isnull(@ps2_, '') != '')
 				begin
-					select top 100 * from dbo.tFVUserMaster where phone = @ps2_ order by idx desc
+					select top 100 * from dbo.tUserMaster where phone = @ps2_ order by idx desc
 				end
 			else if(isnull(@gameid, '') = '')
 				begin
-					select @idx = max(idx) from dbo.tFVUserMaster
+					select @idx = max(idx) from dbo.tUserMaster
 					set @maxPage = (@idx - 1) / 10
 					set @idxPage = @p10_
 					if(@idxPage > @maxPage)
@@ -407,11 +407,11 @@ Begin
 
 					if(@idxPage = -1)
 						begin
-							select top 10 *, @maxPage maxPage from dbo.tFVUserMaster                       order by idx desc
+							select top 10 *, @maxPage maxPage from dbo.tUserMaster                       order by idx desc
 						end
 					else
 						begin
-							select top 10 *, @maxPage maxPage from dbo.tFVUserMaster where idx <= @idxPage order by idx desc
+							select top 10 *, @maxPage maxPage from dbo.tUserMaster where idx <= @idxPage order by idx desc
 						end
 				end
 			else
@@ -419,7 +419,7 @@ Begin
 					-----------------------------------------
 					-- 유저정보
 					-----------------------------------------
-					select * from dbo.tFVUserMaster where gameid = @gameid order by idx desc
+					select * from dbo.tUserMaster where gameid = @gameid order by idx desc
 
 					-----------------------------------------------
 					---- 캐쉬로그, 환전
@@ -507,7 +507,7 @@ Begin
 					-------------------------------------
 					-- 아이디 > 블럭기록
 					-------------------------------------
-					select @phone = phone from dbo.tFVUserMaster where gameid = @gameid
+					select @phone = phone from dbo.tUserMaster where gameid = @gameid
 
 					if(not exists(select top 1 * from dbo.tFVUserBlockPhone where phone = @phone))
 						begin
@@ -515,7 +515,7 @@ Begin
 							insert into dbo.tFVUserBlockPhone(phone, comment)
 							values(@phone, '관리자(' + @ps2_ + ')가 직접 블럭 처리했습니다.')
 
-							update dbo.tFVUserMaster
+							update dbo.tUserMaster
 								set
 									blockstate = @BLOCK_STATE_YES
 							 where gameid = @gameid
@@ -525,7 +525,7 @@ Begin
 							-- 블럭해제
 							delete from dbo.tFVUserBlockPhone where phone = @phone
 
-							update dbo.tFVUserMaster
+							update dbo.tUserMaster
 								set
 									blockstate = @BLOCK_STATE_NO
 							 where gameid = @gameid
@@ -535,7 +535,7 @@ Begin
 				end
 			else if(@p2_ = 2)
 				begin
-					delete from dbo.tFVUserMaster where gameid = @gameid
+					delete from dbo.tUserMaster where gameid = @gameid
 					delete from dbo.tFVUserUnusualLog2 where gameid = @gameid
 					select @RESULT_SUCCESS 'rtn'
 				end
@@ -584,7 +584,7 @@ Begin
 					if(@p3_ = 1)
 						begin
 							set @p4_ = case when @p4_ < 0 then 0 else @p4_ end
-							update dbo.tFVUserMaster set kakaomsginvitecnt = @p4_ where gameid = @gameid
+							update dbo.tUserMaster set kakaomsginvitecnt = @p4_ where gameid = @gameid
 						end
 					else if(@p3_ = 2)
 						begin
@@ -597,32 +597,32 @@ Begin
 					else if(@p3_ = 8)
 						begin
 							set @p4_ = case when @p4_ < 0 then 0 else @p4_ end
-							update dbo.tFVUserMaster set kakaomsginvitetodaycnt = @p4_ where gameid = @gameid
+							update dbo.tUserMaster set kakaomsginvitetodaycnt = @p4_ where gameid = @gameid
 						end
 					else if(@p3_ = 9)
 						begin
-							update dbo.tFVUserMaster set kakaomsginvitetodaydate = kakaomsginvitetodaydate - 1 where gameid = @gameid
+							update dbo.tUserMaster set kakaomsginvitetodaydate = kakaomsginvitetodaydate - 1 where gameid = @gameid
 						end
 					else if(@p3_ = 13)
 						begin
-							update dbo.tFVUserMaster set cashcopy = 0 where gameid = @gameid
+							update dbo.tUserMaster set cashcopy = 0 where gameid = @gameid
 						end
 					else if(@p3_ = 18)
 						begin
-							update dbo.tFVUserMaster set roulette = case when roulette = 1 then -1 else 1 end where gameid = @gameid
-							update dbo.tFVUserMaster set logindate = '20010101' where gameid = @gameid
+							update dbo.tUserMaster set roulette = case when roulette = 1 then -1 else 1 end where gameid = @gameid
+							update dbo.tUserMaster set logindate = '20010101' where gameid = @gameid
 						end
 					else if(@p3_ = 19)
 						begin
-							update dbo.tFVUserMaster set nickcnt = 0 where gameid = @gameid
+							update dbo.tUserMaster set nickcnt = 0 where gameid = @gameid
 						end
 					else if(@p3_ = 190)
 						begin
-							update dbo.tFVUserMaster set wheelgauage = 100 where gameid = @gameid
+							update dbo.tUserMaster set wheelgauage = 100 where gameid = @gameid
 						end
 					else if(@p3_ = 20)
 						begin
-							update dbo.tFVUserMaster set wheelfree = 1 where gameid = @gameid
+							update dbo.tUserMaster set wheelfree = 1 where gameid = @gameid
 						end
 					select 1 rtn
 				end
@@ -638,14 +638,14 @@ Begin
 				begin
 					select @val = userrankview from dbo.tFVUserRankView where idx = 1
 					select m.*, d.savedata, d.market market2 from
-						(select top 500 rank() over(order by salemoney2 desc) as rank, @val userrankview, * from dbo.tFVUserMaster) m
+						(select top 500 rank() over(order by salemoney2 desc) as rank, @val userrankview, * from dbo.tUserMaster) m
 					JOIN
 						dbo.tFVUserData d
 						ON m.gameid = d.gameid
 				end
 			else if(@p2_ = 95)
 				begin
-					update dbo.tFVUserMaster set salemoney2 = 0 where gameid = @gameid
+					update dbo.tUserMaster set salemoney2 = 0 where gameid = @gameid
 					select 1 rtn
 				end
 			else if(@p2_ = 96)
@@ -655,7 +655,7 @@ Begin
 				end
 			else if(@p2_ = 97)
 				begin
-					update dbo.tFVUserMaster set logwrite2 =  case when (logwrite2 = 1) then -1 else 1 end where gameid = @gameid
+					update dbo.tUserMaster set logwrite2 =  case when (logwrite2 = 1) then -1 else 1 end where gameid = @gameid
 					select 1 rtn
 				end
 			else if(@p2_ = 413)
@@ -808,13 +808,13 @@ Begin
 				end
 			else if(@p2_ = 2000)
 				begin
-					update dbo.tFVUserMaster set logindate = '20010101' where gameid = @gameid
+					update dbo.tUserMaster set logindate = '20010101' where gameid = @gameid
 
 					select 1 rtn
 				end
 			else if(@p2_ = 2003)
 				begin
-					select @market = market from dbo.tFVUserMaster where gameid = @ps1_
+					select @market = market from dbo.tUserMaster where gameid = @ps1_
 
 					update dbo.tFVUserData set savedata = @ps10_
 					where gameid = @ps1_ and market = @market
@@ -825,7 +825,7 @@ Begin
 				begin
 					set @comment4 = ''
 					select @comment4 = savedata from dbo.tFVUserData where gameid = @ps1_ and market = @p3_
-					select @market = market from dbo.tFVUserMaster where gameid = @ps1_
+					select @market = market from dbo.tUserMaster where gameid = @ps1_
 
 					update dbo.tFVUserData set savedata = @comment4
 					where gameid = @ps2_ and market = @market
@@ -855,22 +855,22 @@ Begin
 					if(@p3_ = 1)
 						begin
 							-- 무과금, 5만 결정보유
-							select * from dbo.tFVUserMaster where blockstate = 0 and logwrite2 = 1 and cashpoint = 0 and cashcost2 >= 50000
+							select * from dbo.tUserMaster where blockstate = 0 and logwrite2 = 1 and cashpoint = 0 and cashcost2 >= 50000
 						end
 					else if(@p3_ = 2)
 						begin
 							-- 무과금, 2만 VIP보유
-							select * from dbo.tFVUserMaster where blockstate = 0 and logwrite2 = 1 and cashpoint = 0 and vippoint2 >= 20000
+							select * from dbo.tUserMaster where blockstate = 0 and logwrite2 = 1 and cashpoint = 0 and vippoint2 >= 20000
 						end
 					else if(@p3_ = 3)
 						begin
 							-- 무과금 520까지 진화.
-							select * from dbo.tFVUserMaster where blockstate = 0 and logwrite2 = 1 and cashpoint = 0 and bestani >= 520
+							select * from dbo.tUserMaster where blockstate = 0 and logwrite2 = 1 and cashpoint = 0 and bestani >= 520
 						end
 					else if(@p3_ = 4)
 						begin
 							-- 과금 4배이상 차이발생.
-							select * from dbo.tFVUserMaster where blockstate = 0 and logwrite2 = 1 and cashpoint > 0 and cashpoint*4 < cashcost2
+							select * from dbo.tUserMaster where blockstate = 0 and logwrite2 = 1 and cashpoint > 0 and cashpoint*4 < cashcost2
 						end
 				end
 		end
@@ -1009,7 +1009,7 @@ Begin
 					select
 						@gameid 	= gameid,
 						@market 	= market
-					from dbo.tFVUserMaster where gameid = @gameid
+					from dbo.tUserMaster where gameid = @gameid
 					--select 'DEBUG ', @gameid gameid, @ikind ikind, @acode acode, @ucode ucode, @market market
 
 					if(@gameid = '')
@@ -1332,7 +1332,7 @@ Begin
 						end
 					else
 						begin
-							select @recepushid = pushid, @market = market from dbo.tFVUserMaster
+							select @recepushid = pushid, @market = market from dbo.tUserMaster
 							where gameid = @gameid
 						end
 
@@ -1408,7 +1408,7 @@ Begin
 							set @cnt2 = 0
 							-- receid > gameid가 들어가야하나 중복이 발생때문에 adminid로 대처한다.
 							insert into dbo.tUserPushiPhone(recepushid,   sendid, receid, sendkind, msgpush_id, msgtitle, msgmsg, msgaction)
-								select distinct                 pushid, @adminid, rtrim(gameid),     @p3_,         99,    @ps3_,  @ps4_,     @ps5_ from dbo.tFVUserMaster
+								select distinct                 pushid, @adminid, rtrim(gameid),     @p3_,         99,    @ps3_,  @ps4_,     @ps5_ from dbo.tUserMaster
 									where market = @p4_ and pushid is not null and len(pushid) > 20 and blockstate = 0
 									and phone not in (select phone from dbo.tFVPushBlackList)
 									and concode = @p5_
@@ -1428,7 +1428,7 @@ Begin
 							set @cnt2 = 0
 							-- receid > gameid가 들어가야하나 중복이 발생때문에 adminid로 대처한다.
 							insert into dbo.tFVUserPushAndroid(recepushid,   sendid, receid, sendkind, msgpush_id, msgtitle, msgmsg, msgaction)
-								select distinct                pushid,     @adminid, rtrim(gameid), @p3_,             99,    @ps3_,  @ps4_,     @ps5_ from dbo.tFVUserMaster
+								select distinct                pushid,     @adminid, rtrim(gameid), @p3_,             99,    @ps3_,  @ps4_,     @ps5_ from dbo.tUserMaster
 									where market != @IPHONE and pushid is not null and len(pushid) > 20 and blockstate = 0
 									and phone not in (select phone from dbo.tFVPushBlackList)
 									and concode = @p5_
@@ -1635,7 +1635,7 @@ Begin
 				end
 			else if(@subkind = 11)
 				begin
-					if(not exists(select top 1 * from dbo.tFVUserMaster where gameid = @gameid))
+					if(not exists(select top 1 * from dbo.tUserMaster where gameid = @gameid))
 						begin
 							set @nResult = @RESULT_ERROR_NOT_FOUND_GAMEID
 						end
@@ -1658,7 +1658,7 @@ Begin
 				end
 			else if(@subkind = 12)
 				begin
-					if(not exists(select top 1 * from dbo.tFVUserMaster where gameid = @gameid))
+					if(not exists(select top 1 * from dbo.tUserMaster where gameid = @gameid))
 						begin
 							set @nResult = @RESULT_ERROR_NOT_FOUND_GAMEID
 						end
