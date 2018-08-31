@@ -1,23 +1,22 @@
-use Farm
+use GameMTBaseball
 GO
+
 /*
-
-
-exec spu_FVServerTime 'xxxx2', '049000s1i0n7t8445289', -1			-- 정상유저
+exec spu_ServerTime 'xxxx2', '049000s1i0n7t8445289', -1			-- 정상유저
 */
 
-IF OBJECT_ID ( 'dbo.spu_FVServerTime', 'P' ) IS NOT NULL
-    DROP PROCEDURE dbo.spu_FVServerTime;
+IF OBJECT_ID ( 'dbo.spu_ServerTime', 'P' ) IS NOT NULL
+    DROP PROCEDURE dbo.spu_ServerTime;
 GO
 
 ------------------------------------------------
 --	1. 프로시져 생성
 ------------------------------------------------
-create procedure dbo.spu_FVServerTime
+create procedure dbo.spu_ServerTime
 	@gameid_								varchar(60),					-- 게임아이디
 	@password_								varchar(20),
 	@nResult_								int					OUTPUT
-	--WITH ENCRYPTION -- 프로시져를 암호화함.
+	WITH ENCRYPTION -- 프로시져를 암호화함.
 as
 	------------------------------------------------
 	--	2-1. 코드값자리

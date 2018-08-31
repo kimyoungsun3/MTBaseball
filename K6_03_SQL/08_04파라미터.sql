@@ -19,7 +19,7 @@ create procedure dbo.spu_UserParam
 	@mode_									int,
 	@listset_								varchar(256),
 	@nResult_								int					OUTPUT
-	--WITH ENCRYPTION -- 프로시져를 암호화함.
+	WITH ENCRYPTION -- 프로시져를 암호화함.
 as
 	------------------------------------------------
 	--	2-1. 코드값자리
