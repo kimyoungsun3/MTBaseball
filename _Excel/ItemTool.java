@@ -28,7 +28,7 @@ public class ItemTool{
 		ItemTool tool = new ItemTool();
 		tool.textTobyte("tooltip.csv");
 		tool.itemTobyte("iteminfo.csv", 1, true, true);
-		tool.itemTobyte("gameinfo.csv", 2, true, true);
+		tool.itemTobyte("gameinfo.csv", 2, true, false);
 		//tool.itemTobyte2("package.csv", 1, true);
 		//tool.itemTobyte2("yabau.csv", 4, true);
 		//tool.itemTobyte4("roulette.csv", 1, true, 7);
@@ -127,16 +127,16 @@ public class ItemTool{
 			_query = "use GameMTBaseball\nGO\n\n";
 			_queryHeader = "insert into dbo.tItemInfo(";
 			String[] _pp = {
-						"labelname", 	"itemcode", 	"category", 	"subcategory", 	"equpslot",
-						"itemname", "activate", 	"toplist", 	"grade",		"discount",
-						"icon", 	"playerlv", 	"houselv", 	"gamecost", 	"cashcost",
+						"labelname","itemcode", 	"category", 	"subcategory", 	"equpslot",
+						"itemname", "activate", 	"toplist", 		"grade",		"discount",
+						"icon", 	"playerlv", 	"multistate", 	"gamecost", 	"cashcost",
 						"buyamount", "sellcost", 	"description",
-						"param1", 	"param2", 		"param3", 	"param4", 	"param5",
-						"param6", 	"param7", 		"param8", 	"param9", 	"param10",
-						"param11", 	"param12", 		"param13", 	"param14", 	"param15",
-						"param16", 	"param17", 		"param18", 	"param19", 	"param20",
-						"param21", 	"param22", 		"param23", 	"param24", 	"param25",
-						"param26", 	"param27", 		"param28", 	"param29", 	"param30"
+						"param1", 	"param2", 		"param3", 		"param4", 		"param5",
+						"param6", 	"param7", 		"param8", 		"param9", 		"param10",
+						"param11", 	"param12", 		"param13", 		"param14", 		"param15",
+						"param16", 	"param17", 		"param18", 		"param19", 		"param20",
+						"param21", 	"param22", 		"param23", 		"param24", 		"param25",
+						"param26", 	"param27", 		"param28", 		"param29", 		"param30"
 					};
 			_queryParams = _pp;
 		}else if(_kind == 2){	//gameinfo

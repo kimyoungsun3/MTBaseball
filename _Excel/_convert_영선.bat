@@ -4,7 +4,7 @@ del data\*.*/q
 cls
 path="D:\devtool\jdk1.8\bin";
 set classpath = .;"D:\devtool\jdk1.8\lib\tools.jar";"D:\devtool\jdk1.8\lib\dt.jar";
-javac ItemTool.java
+rem javac ItemTool.java
 java ItemTool
 
 
@@ -12,20 +12,20 @@ java ItemTool
 @echo ======================================
 @echo 		Client File Move
 @echo ======================================
-copy iteminfo.xml		..\MokJang521_NGUI270_54\MokJang_\Assets\Resources\txt\iteminfo.xml
+copy iteminfo.xml		..\K6_NetClient\K6_NetClient\Assets\Resources\txt\iteminfo.xml
 
-copy gameinfo.xml		..\MokJang521_NGUI270_54\MokJang_\Assets\Resources\txt\gameinfo.xml
+copy gameinfo.xml		..\K6_NetClient\K6_NetClient\Assets\Resources\txt\gameinfo.xml
 
-copy tooltip.xml		..\MokJang521_NGUI270_54\MokJang_\Assets\Resources\txt\tooltip.xml
+copy tooltip.xml		..\K6_NetClient\K6_NetClient\Assets\Resources\txt\tooltip.xml
 
 
 
 @echo ======================================
 @echo 		Server File
 @echo ======================================
-
-rem del ..\_SQL\00_03Table_iteminfodata.sql
-rem copy iteminfoQuery.sql				..\_SQL\00_03Table_iteminfodata.sql
+00_02_00Table_iteminfo
+del ..\_SQL\00_02_01Table_iteminfo.sql
+copy iteminfoQuery.sql				..\_SQL\00_02_01Table_iteminfo.sql
 
 rem del ..\_SQL\00_05Table_gameinfosub.sql
 rem copy gameinfoQuerySub.sql			..\_SQL\00_05Table_gameinfosub.sql
