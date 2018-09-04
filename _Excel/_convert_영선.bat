@@ -4,7 +4,7 @@ del data\*.*/q
 cls
 path="D:\devtool\jdk1.8\bin";
 set classpath = .;"D:\devtool\jdk1.8\lib\tools.jar";"D:\devtool\jdk1.8\lib\dt.jar";
-rem javac ItemTool.java
+javac ItemTool.java
 java ItemTool
 
 
@@ -12,18 +12,18 @@ java ItemTool
 @echo ======================================
 @echo 		Client File Move
 @echo ======================================
-copy iteminfo.xml		..\K6_NetClient\K6_NetClient\Assets\Resources\txt\iteminfo.xml
+copy iteminfo.xml		..\_NetClient\_NetClient\Assets\Resources\txt\iteminfo.xml
 
-copy gameinfo.xml		..\K6_NetClient\K6_NetClient\Assets\Resources\txt\gameinfo.xml
+copy gameinfo.xml		..\_NetClient\_NetClient\Assets\Resources\txt\gameinfo.xml
 
-copy tooltip.xml		..\K6_NetClient\K6_NetClient\Assets\Resources\txt\tooltip.xml
+copy tooltip.xml		..\_NetClient\_NetClient\Assets\Resources\txt\tooltip.xml
 
 
 
 @echo ======================================
 @echo 		Server File
 @echo ======================================
-00_02_00Table_iteminfo
+
 del ..\_SQL\00_02_01Table_iteminfo.sql
 copy iteminfoQuery.sql				..\_SQL\00_02_01Table_iteminfo.sql
 
