@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/ZTest/StaticClass/_test.unity
+- path: Assets/ZTest/ScrollBar/_Test.unity
   isLoaded: 1
   isActive: 1

@@ -16,10 +16,8 @@ public class Constant
 {
 	
 	#region 샘플용....
-	public const float SERVER_RESPONES_TIME			= 60*5f;//5분에 한번씩 콜...
-	//public const long HEART_MAX 					= 400;
-	//public const int ITEMCODE_COIN_HOUSE 		= 60000;
-	//public const int ITEMCODE_COIN_TANK 		= 60001;
+	public const float GAME_PLAY_TIME = 60;//60*5f;//5분에 한번씩 콜...
+	public const float GAME_SAFE_TIME			= 30f;
 	#endregion
 
 

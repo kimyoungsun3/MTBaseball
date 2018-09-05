@@ -60,6 +60,7 @@
      <Compile Include="Assets\ZTest\PopupPopup\GameManager.cs" />
      <Compile Include="Assets\ZTest\PopupPopup\T2.cs" />
      <Compile Include="Assets\ZTest\RigidbodyVelocityMove\RigidbodyVelocityMove.cs" />
+     <Compile Include="Assets\ZTest\ScrollBar\TimeTest.cs" />
      <Compile Include="Assets\ZTest\StaticClass\GameData.cs" />
      <Compile Include="Assets\ZTest\StaticClass\GameManager.cs" />
      <None Include="Assets\Resources\txt\iteminfo.xml" />
