@@ -8216,7 +8216,7 @@
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
 	</piecepart>
-	<spendable>
+	<piecebox>
 		<itemcode>4000</itemcode>
 		<category>40</category>
 		<subcategory>40</subcategory>
@@ -8235,8 +8235,8 @@
 		<sellcost>0</sellcost>
 		<description>나무 조각의상 52종 중 랜덤 하나</description>
 		<additemcode>-1</additemcode>
-	</spendable>
-	<spendable>
+	</piecebox>
+	<piecebox>
 		<itemcode>4001</itemcode>
 		<category>40</category>
 		<subcategory>40</subcategory>
@@ -8255,8 +8255,8 @@
 		<sellcost>0</sellcost>
 		<description>동 조각의상 52종이나 응원의 소리 중 랜덤 하나</description>
 		<additemcode>4600</additemcode>
-	</spendable>
-	<spendable>
+	</piecebox>
+	<piecebox>
 		<itemcode>4002</itemcode>
 		<category>40</category>
 		<subcategory>40</subcategory>
@@ -8275,8 +8275,8 @@
 		<sellcost>0</sellcost>
 		<description>은 조각의상 52종이나 응원의 소리 중 랜덤 하나</description>
 		<additemcode>4600</additemcode>
-	</spendable>
-	<spendable>
+	</piecebox>
+	<piecebox>
 		<itemcode>4003</itemcode>
 		<category>40</category>
 		<subcategory>40</subcategory>
@@ -8295,8 +8295,8 @@
 		<sellcost>0</sellcost>
 		<description>금 조각의상 52종이나 응원의 소리 중 랜덤 하나</description>
 		<additemcode>4600</additemcode>
-	</spendable>
-	<spendable>
+	</piecebox>
+	<piecebox>
 		<itemcode>4004</itemcode>
 		<category>40</category>
 		<subcategory>40</subcategory>
@@ -8315,8 +8315,8 @@
 		<sellcost>0</sellcost>
 		<description>티타늄 조각의상 52종이나 응원의 소리 중 랜덤 하나</description>
 		<additemcode>4600</additemcode>
-	</spendable>
-	<spendable>
+	</piecebox>
+	<wearbox>
 		<itemcode>4100</itemcode>
 		<category>40</category>
 		<subcategory>41</subcategory>
@@ -8334,8 +8334,8 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>나무 완성의상 13종 중 랜덤 하나</description>
-	</spendable>
-	<spendable>
+	</wearbox>
+	<wearbox>
 		<itemcode>4101</itemcode>
 		<category>40</category>
 		<subcategory>41</subcategory>
@@ -8353,8 +8353,8 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>동 완성의상 13종 중 랜덤 하나</description>
-	</spendable>
-	<spendable>
+	</wearbox>
+	<wearbox>
 		<itemcode>4102</itemcode>
 		<category>40</category>
 		<subcategory>41</subcategory>
@@ -8372,8 +8372,8 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>은 완성의상 13종 중 랜덤 하나</description>
-	</spendable>
-	<spendable>
+	</wearbox>
+	<wearbox>
 		<itemcode>4103</itemcode>
 		<category>40</category>
 		<subcategory>41</subcategory>
@@ -8391,8 +8391,8 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>금 완성의상 13종 중 랜덤 하나</description>
-	</spendable>
-	<spendable>
+	</wearbox>
+	<wearbox>
 		<itemcode>4104</itemcode>
 		<category>40</category>
 		<subcategory>41</subcategory>
@@ -8410,8 +8410,8 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>티타늄 완성의상 13종 중 랜덤 하나</description>
-	</spendable>
-	<spendable>
+	</wearbox>
+	<advicebox>
 		<itemcode>4200</itemcode>
 		<category>40</category>
 		<subcategory>42</subcategory>
@@ -8435,7 +8435,7 @@
 		<itemp1>4601</itemp1>
 		<itemp2>4602</itemp2>
 		<itemp3>-1</itemp3>
-	</spendable>
+	</advicebox>
 	<spendable>
 		<itemcode>4500</itemcode>
 		<category>40</category>
@@ -8491,9 +8491,9 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>1</sellcost>
-		<description>싱글 모드에서 배팅시 수수료 2% 차감해준다.</description>
+		<description>싱글 모드에서 배팅시 수수료 3% 차감해준다.</description>
 		<gamemode>1</gamemode>
-		<tax100>200</tax100>
+		<tax100>300</tax100>
 	</spendable>
 	<spendable>
 		<itemcode>4601</itemcode>
