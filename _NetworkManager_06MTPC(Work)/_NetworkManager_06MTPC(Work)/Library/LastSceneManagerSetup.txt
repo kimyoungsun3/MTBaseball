@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/ZTest/StaticClassExpLevel/_test.unity
+- path: Assets/_Scene/NetworkTest.unity
   isLoaded: 1
   isActive: 1

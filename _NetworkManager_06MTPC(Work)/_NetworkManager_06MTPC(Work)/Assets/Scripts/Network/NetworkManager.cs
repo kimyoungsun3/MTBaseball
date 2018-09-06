@@ -31,7 +31,7 @@ public class NetworkManager : MonoBehaviour {
 
 	#if NET_DEBUG_MODE
 	private string strDebugMsg = "";
-	private bool bNetDebug = true;
+	private bool bNetDebug = false;
 	void OnGUI(){
 		//int _idx = 0;
 		string _str;
