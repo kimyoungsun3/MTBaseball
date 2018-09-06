@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/_Scene/XMLParsing2.unity
-  isLoaded: 1
-  isActive: 1
