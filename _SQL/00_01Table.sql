@@ -1,4 +1,3 @@
-
 use GameMTBaseball
 GO
 
@@ -25,9 +24,6 @@ create table dbo.tAdminUser(
 --insert into tAdminUser(gameid, password) values('blackm', 'a1s2d3f4')
 
 
-
-/*
-
 -- 잘못해서 테이블을 전체 건드릴수 있어서 주석처리로 막아둔다.(전에 실수한적이 있어서)
 -- 입력 < 검색(우선순위)
 -- 데이타베이스 대소문자 구분안함(새로 세팅된 서버 확인필요)
@@ -43,332 +39,40 @@ create table dbo.tUserMaster(
 	idx			int 					IDENTITY(1, 1),
 	gameid		varchar(20),
 	password	varchar(20),									-- 암호화해서저장, 유저패스워가 해킹당해도 안전
-	market		int						default(1),				-- (구매처코드) MARKET_SKT
-	buytype		int						default(0),				-- (무료/유료코드)
-	platform	int						default(1),				-- (플랫폼)
-	ukey		varchar(256),									-- UKey
-	version		int						default(101),			-- 클라버젼
-	pushid		varchar(256)			default(''),
-	phone		varchar(20)				default(''),
-	country		int						default(1),				-- 한국(1), 영어(2)
+	sid			int						default(100),			-- 접속 세션번호.
 
-	--(유저정보)
+	username	varchar(60),									-- 홍길동
+	birthday	varchar(8),										-- 19900801
+																-- 20000801
+	email		varchar(60),									-- ai@aidata.com
+	nickname	varchar(60),									-- 길동닉네임...
+	phone		varchar(60),									-- 01012345678 -> >5SEF5ES6Q7E
+	connectip	varchar(20)				default(''),			-- 접속시 사용되는 ip
+	version		int						default(100),			-- 가입버젼.
+
+	--(생성정보)
 	regdate		datetime				default(getdate()),		-- 최초가입일
 	condate		datetime				default(getdate()),		-- (로그인시마다 매번업데이트)
-	constate	int						default(1),				-- 0:장기푸쉬미발송, 1:발송
 	concnt		int						default(1),				-- 접속횟수
-	deletestate	int						default(0),				-- 0 : 삭제상태아님, 1 : 삭제상태
-	blockstate	int						default(0),				-- 0 : 블럭상태아님, 1 : 블럭상태
+	logindate	varchar(8)				default('20100101'),	-- 로그인일자.
+
+	-- (블럭정보)
+	blockstate	int						default(0),				-- 블럭아님(0), 블럭상태(1)
 	cashcopy	int						default(0),				-- 캐쉬불법카피시 +1추가된다.
 	resultcopy	int						default(0),				-- 로그결과카피시 +1추가된다.
-	attenddate	datetime				default(getdate() - 1),		-- 출석일
-	attendcnt	int						default(0),				-- 출석횟수(연속), 최대 28일까지만 기록됨
-	mboardstate	int						default(0),				-- (0) 미작성, (1) 작성후 지급함
 
-	-- 복귀 정보.
-	rtngameid	varchar(20)				default(''),			-- 요청아이디.
-	rtndate		datetime				default(getdate() - 1),	-- 요청날짜.
-	rtnstep		int						default(-1),			-- 복귀스텝. (-1 : 복귀상태아님), (>=1 : 복귀상태로 진행)
-	rtnplaycnt	int						default(0),				-- 복귀플레이카운터(x번째에 복귀선물).
+	-- (사이버머니)
+	cashcost	int						default(0),				-- 다이아.
+	cashpoint	int						default(0),				-- 캐쉬 구매하면 누적.
+	cashreceivetotal	int				default(0),				-- 선물, 관리자 받은 누적금액.
+	cashbuytotal		int				default(0),				-- 구매한 누적금액.
+	pieceboxopencnt		int				default(0),				-- 조각오픈수량.
+	wearboxopencnt		int				default(0),				-- 의상오픈수량.
+	adviceboxopencnt	int				default(0),				-- 조언오픈수량.
+	combinatecnt		int				default(0),				-- 조각의상 조합수량.
+	evolutioncnt		int				default(0),				-- 완성의상초월수량.
 
-	-- (일반정보2)
-	nickname	varchar(20)				default(''),			-- 별칭(닉네임)
-	tutorial	int						default(0),				-- 진행번호 기록(0, 1, 2...) old모델.
-	tutostep	int						default(5500),			-- 튜토리얼 진행번호 5500 -> 5501 -> ... -1.(미사용)
-	comreward	int						default(90106),			-- 경쟁모드번호.
-	picture		varchar(128)			default('-1'),
-	petlistidx		int					default(-1),			-- 펫 장착된 리스트 번호 없음(-1), 존재(>=0).
-	petitemcode		int					default(-1),			--    아이템코드 정보.
-	petcooltime		int					default(0),				--    장착하고 지나간 시간.
-	pettodayitemcode	int				default(100005),		--    오늘만 판매되는 펫.
-	pettodayitemcode2	int				default(100005),		--    			 체험 펫.
-	anireplistidx	int					default(0),				-- 대표동물 내부인덱스번호(이번호에 해당하는 tUserItem > listidx or 없으면 기본)
-	anirepitemcode	int					default(1),				-- 대표동물 아이템코드 및 악세사리 정보.
-	anirepacc1		int					default(-1),			--
-	anirepacc2		int					default(-1),			--
-	anirepmsg	varchar(40)				default('내가 최고'),
-	gameyear	int						default(2013),			-- 게임시작 2013년 3월부터 시작(봄)
-	gamemonth	int						default(3),				--
-	frametime	int						default(0),				-- 한달타임
-	tradecnt	int						default(0),				-- 연속거래 성공횟수
-	tradefailcnt	int					default(0),				--          실패횟수
-	tradesuccesscnt		int				default(0),				-- 거래성공횟수.
-	tradeclosedealer	int				default(-1),			-- 잠김상인번호.
-	tradestate		int					default(1),				-- 상인정보 잠김(-1), 오픈(1)
-	prizecnt	int						default(0),				-- 상장횟수
-	tradecntold	int						default(0),				--
-	prizecntold	int						default(0),				--
-	fame		int						default(0),				-- 명성도
-	famebg		int						default(0),				-- 명성도임시백엄
-	famelv		int						default(1),				-- 명성도레벨
-	famelvbest	int						default(1),
-	contestcnt	int						default(0),				-- 대회참여횟수
-	farmcnt		int						default(1),				-- 보유농장수
-	fevergauge	int						default(0),				-- 피버게이지.
-	adidx		int						default(0),				-- 광고번호.
-	logindate	varchar(8)				default('20100101'),	-- 로그인일자.
-	boardwrite	datetime				default(getdate() - 1),		-- 			오늘 날짜.
-	star		int						default(0),
-	settlestep	int						default(0),				-- 정착지원금.
-
-	-- 필드정보.
-	field0		int						default(1),				-- 필드0 ~ 8번. 미사용(-1), 사용(1)
-	field1		int						default(1),				--
-	field2		int						default(1),				--
-	field3		int						default(1),				--
-	field4		int						default(1),				--
-	field5		int						default(-1),			--
-	field6		int						default(-1),			--
-	field7		int						default(-1),			--
-	field8		int						default(-1),			--
-
-	--(인벤)
-	invenanimalmax		int				default(50),			-- 동물인벤개수	(가입, 로그인 부분도 수정해야함.)
-	invenanimalbase		int				default(50),			--         Base.
-	invenanimalstep		int				default(0),				-- 		   단계.
-	invencustommax		int				default(15),			-- 소비인벤개수	(가입, 로그인 부분도 수정해야함.)
-	invencustombase		int				default(15),			-- 		   Base
-	invencustomstep		int				default(0),				-- 		   단계
-	invenaccmax			int				default(6),				-- 악세인벤개수	(가입, 로그인 부분도 수정해야함.)
-	invenaccbase		int				default(6),				-- 		   Base
-	invenaccstep		int				default(0),				-- 		   단계
-	invenstemcellmax	int				default(50),			-- 줄기세포인벤Max
-	invenstemcellbase	int				default(50),			-- 		   Base
-	invenstemcellstep	int				default(0),				-- 		   단계
-	inventreasuremax	int				default(50),			-- 보물인벤Max
-	inventreasurebase	int				default(50),			-- 	   Base
-	inventreasurestep	int				default(0),				-- 	   단계
-	tempitemcode		int				default(-1),			-- 임시아이템 (-1 : 존재안함, > 0 : 특정아이템 코드) > 상인거래후 획득 : 확장팝업 > Yes / No
-	tempcnt				int				default(0),				-- 임시아이템갯수
-
-	--(SMS)
-	smssendcnt	int						default(0), 			-- SMS발송
-	smsjoincnt	int						default(0), 			-- SMS추천후 가입유저카운터
-
-	--(사이버머니)
-	cashcost	int						default(5),				-- 500캐쉬
-	gamecost	int						default(100),			-- 게임머니
-	feed		int						default(20),			-- 건초
-	feedmax		int						default(20),			-- 건초Max. 직접 구매시에는 초과할 수 있음.
-	fpoint		int						default(100),			-- 우정포인트.
-	fpointmax	int						default(500),			-- 99개까지만 모음.
-	fmonth		int						default(0),				-- 우정포인트 사용한달(중복사용방지).
-	cashpoint	int						default(0),				-- 캐쉬 구매내영.
-	goldticket		int					default(40),			-- 황금티켓
-	goldticketmax	int					default(40),			--
-	goldtickettime	datetime			default(getdate()),		--
-	battleticket		int				default(40),			-- 배틀티켓
-	battleticketmax		int				default(40),			--
-	battletickettime	datetime		default(getdate()),		--
-
-	-- 목장배틀정보.
-	battlefarmidx		int				default(6900),			-- 어디까지 클리어했는가?
-	battleanilistidx1	int				default(-1),			-- 세팅된 덩물 인덱스 1 ~ 5
-	battleanilistidx2	int				default(-1),
-	battleanilistidx3	int				default(-1),
-	battleanilistidx4	int				default(-1),
-	battleanilistidx5	int				default(-1),
-	battleflag			int				default(0),				-- 배틀플래그 (0)미진행, (1)진행중.
-
-	-- 유저배틀정보.
-	userbattleanilistidx1	int			default(-1),			-- 세팅된 덩물 인덱스 1 ~ 5
-	userbattleanilistidx2	int			default(-1),
-	userbattleanilistidx3	int			default(-1),
-	userbattleflag			int			default(0),				-- 배틀플래그 (0)미진행, (1)진행중.
-	userbattleresult		int			default(0),
-	userbattlepoint			int			default(0),
-
-	-- 유저배틀로 획득한 박스정보.
-	trophy				int				default(0),				-- 트로피정보.
-	tier				int				default(1),				--
-	trophybest			int				default(0),				--
-	boxrotidx			int				default(-4),			-- 박스 로테이션 번호.
-	boxslot1			int				default(-1),			--
-	boxslot2			int				default(-1),			--
-	boxslot3			int				default(-1),			--
-	boxslot4			int				default(-1),			--
-	boxslotidx			int				default(-1),			-- 박스 슬롯이 작동되는 번호 (-1)미작동, 1~ 4작동번호.
-	boxslottime			datetime		default(getdate()),		-- 박스 슬로 완료예정시간.
-
-	--(하트)
-	heart		int						default(120),			-- 하트(작물 > 수확 100하트, 친구추천 > 5하트)
-	heartmax	int						default(500),			-- 하트맥스
-	heartget	int						default(0),				-- 하트받은개수(친구전송, 교배)
-	heartsenddate	datetime			default(getdate() - 1),	-- 하트출석일
-	heartsendcnt	int					default(0),				-- 하트 1일 수량.
-
-	-- 동물구매.
-	anibuydate		datetime			default(getdate() - 1),	-- 동물 1일.
-	anibuycnt		int					default(0),				-- 동물 1일 수량.
-
-	-- (뽑기(중복구매방지))
-	randserial	varchar(20)				default('-1'),			--패키지, 뽑기, 합성등 유일한 구매의 랜덤씨리얼
-	sid			int						default(0),				-- 접속 세션번호.
-	bgroul1		int						default(-1),			-- 마지막 뽑은것 임시저장하는곳.
-	bgroul2		int						default(-1),
-	bgroul3		int						default(-1),
-	bgroul4		int						default(-1),
-	bgroul5		int						default(-1),
-	bgroul6		int						default(-1),
-	bgroul7		int						default(-1),
-	bgroul8		int		 				default(-1),
-	bgroul9		int						default(-1),
-	bgroul10	int						default(-1),
-	bgroul11	int						default(-1),
-	bgroul12	int						default(-1),
-	bgroul13	int						default(-1),
-	bgroul14	int						default(-1),
-	bgroul15	int						default(-1),
-	bgroul16	int						default(-1),
-	bgroul17	int						default(-1),
-	bgroul18	int		 				default(-1),
-	bgroul19	int						default(-1),
-	bgroul20	int						default(-1),
-
-	-- 동물뽑기.
-	anigrade1cnt	int					default(0),				--
-	anigrade2cnt	int					default(0),				--  B, A
-	anigrade4cnt	int					default(0),				--  A, S(10 + 1)
-	anigrade2gauage	int					default(0),				-- 프리미엄 게이지 B, A.
-	anigrade4gauage	int					default(0),				--          게이지 A, S(10 + 1)
-
-	-- 보물뽑기.
-	tsgrade1cnt	int						default(0),				-- 일반     뽑기 횟수 D, C
-	tsgrade2cnt	int						default(0),				-- 프리미엄 뽑기 횟수 B, A
-	tsgrade4cnt	int						default(0),				--          뽑기 횟수 A, S(10 + 1)
-	tsgrade2gauage	int					default(0),				-- 프리미엄 게이지 B, A.
-	tsgrade4gauage	int					default(0),				--          게이지 A, S(10 + 1)
-	tsupgraderesult	int					default(0),				-- 결과. 0실패, 1성공
-	tsupcnt		int						default(0),				-- 누적보물강화횟수(109).
-	tslistidx1	int						default(-1),			-- 보물리스트 번호.
-	tslistidx2	int						default(-1),			--
-	tslistidx3	int						default(-1),			--
-	tslistidx4	int						default(-1),			--
-	tslistidx5	int						default(-1),			--
-	tsskillcashcost	int					default(0),				-- 보물보유효과 루비생산(50)
-	tsskillheart	int					default(0),				-- 				하트생산(51).
-	tsskillgamecost	int					default(0),				-- 				코인생산(52).
-	tsskillfpoint	int					default(0),				-- 				우포생산(53).
-	tsskillrebirth	int					default(0),				-- 				부활생산(54).
-	tsskillalba		int					default(0),				-- 				알바생산(55).
-	tsskillbullet	int					default(0),				-- 				특수탄 생산(56).
-	tsskillvaccine	int					default(0),				-- 				슈퍼백신생산(57)
-	tsskillfeed		int					default(0),				-- 				건초생산(58)
-	tsskillbooster	int					default(0),				-- 				특수촉진제생산(59)
-	tsskillbottlelittle	int				default(0),				-- 보물장착효과 양동이의 크기를 늘려준다(25)
-
-	-- 분해.
-	apartbuycnt		int					default(0),				-- 동물, 보물중에 구매(1), 지원(17)은 1500이 쌓이면 세포가 나온다.
-
-	-- 배틀참여, 강화
-	bgbattlecnt		int					default(0),				-- 누적배틀참여().
-	bganiupcnt		int					default(0),				-- 누적동물강화(107).
-	anifirstfullupreward	int			default(0),				-- 최초 강화 풀업 보상이전(0), 이후(1)
-
-	trade0		tinyint					default(0),
-	trade1		tinyint					default(1),
-	trade2		tinyint					default(2),
-	trade3		tinyint					default(3),
-	trade4		tinyint					default(4),
-	trade5		tinyint					default(5),
-	trade6		tinyint					default(6),
-	tradedummy	tinyint					default(0),				-- 더미공간.
-
-	-- 합성, 승급.
-	bgcomposeic	int						default(-1),			-- 합성의 성공한 아이템코드값
-	bgcomposert	int						default(0),				-- 합성 실패(0), 성공(1)
-	bgcomposewt	datetime				default(getdate()), 	-- 합성의 남은시간.
-	bgcomposecc	int						default(0),				-- 합성 초기화 비용.
-	bgpromoteic	int						default(-1),			-- 승급 성공한 아이템코드값
-
-	bgacc1listidx	int					default(-1),
-	bgacc2listidx	int					default(-1),
-	bgacc1listidxdel	int				default(-1),
-	bgacc2listidxdel	int				default(-1),
-
-	-- (악세4개)
-	acc1		int						default(-1),			--악세1(-1:빈곳, 아이템코드)
-	acc2		int						default(-1),			--악세2(-1:빈곳, 아이템코드)
-	acc3		int						default(-1),			--악세3(-1:빈곳, 아이템코드)
-	acc4		int						default(-1),			--악세4(-1:빈곳, 아이템코드)
-
-	--(소모착용소모4개)
-	bulletlistidx	int					default(-1),			-- 총알(-1:빈곳, 아이템코드)
-	vaccinelistidx	int					default(-1),			-- 백신(-1:빈곳, 아이템코드)
-	boosterlistidx	int					default(-1),			-- 촉진제(부스터)(-1:빈곳, 아이템코드)
-	albalistidx		int					default(-1),			-- 알바(-1:빈곳, 아이템코드)
-	--bulletcnt		int					default(0),				--     (장착수량)
-	--vaccinecnt	int					default(0),				--     (장착수량)
-	--boostercnt	int					default(0),				--     (장착수량)
-	--albacnt		int					default(0),				--     (장착수량)
-	boosteruse		int					default(-1),			-- 촉진제사용여부(-1:미사용, 1:아이템코드번호)
-	albause			int					default(-1),			-- 알바제사용여부(-1:미사용, 1:아이템코드번호)
-	albausesecond	int					default(-1),			--
-	albausethird	int					default(-1),			--
-	wolfappear		int					default(-1),			-- 늑대존재여부(-1:미존재, 1존재)
-
-	--(기본정보4)
-	bottlelittle	int					default(0),				--[양동이] 보유량 총리터
-	bottlefresh		int					default(0),				--         보유 총신선도
-	tanklittle		int					default(0),				--[탱크] 보유량 총리터
-	tankfresh		int					default(0),				--       보유 총신선도
-
-	--(시설업글)
-	housestep		int					default(0),				--집
-	housestate		int					default(-1),			--다음단계진행여부(-1:미진행, 완료중, 1:다음단계진행중)
-	housetime		datetime			default(getdate()),		--다음단계시간
-	tankstep		int					default(0),				--우유탱크
-	tankstate		int					default(-1),			--다음단계진행여부(-1:미진행, 완료중, 1:다음단계진행중)
-	tanktime		datetime			default(getdate()),		--다음단계시간
-	bottlestep		int					default(0),				--양동이
-	bottlestate		int					default(-1),			--다음단계진행여부(-1:미진행, 완료중, 1:다음단계진행중)
-	bottletime		datetime			default(getdate()),		--다음단계시간
-	pumpstep		int					default(0),				--착유기
-	pumpstate		int					default(-1),			--다음단계진행여부(-1:미진행, 완료중, 1:다음단계진행중)
-	pumptime		datetime			default(getdate()),		--다음단계시간
-	transferstep	int					default(0),				--주입기
-	transferstate	int					default(-1),			--다음단계진행여부(-1:미진행, 완료중, 1:다음단계진행중)
-	transfertime	datetime			default(getdate()),		--다음단계시간
-	purestep		int					default(0),				--정화시설
-	purestate		int					default(-1),			--다음단계진행여부(-1:미진행, 완료중, 1:다음단계진행중)
-	puretime		datetime			default(getdate()),		--다음단계시간
-	freshcoolstep	int					default(0),				--저온보관
-	freshcoolstate	int					default(-1),			--다음단계진행여부(-1:미진행, 완료중, 1:다음단계진행중)
-	freshcooltime	datetime			default(getdate()),		--다음단계시간
-
-	-- 분기별 자료.
-	qtsalebarrel	int					default(0),
-	qtsalecoin		int					default(0),
-	qtfame			int					default(0),
-	qtfeeduse		int					default(0),
-	qttradecnt		int					default(0),
-	qtsalecoinbest	int					default(0),
-
-	--(경쟁모드) > 클라이언트 필요에 의해 삭제됨.
-																-- 업그레이드 	> 로그인.
-																-- 획득동물		> 도감.
-	bktwolfkillcnt	int					default(0),				-- 누적늑대잡이.
-	bktsalecoin		int					default(0),				-- 누적판매금액.
-	bkheart			int					default(0),				-- 누적하트획득
-	bkfeed			int					default(0),				-- 누적건초획득
-	bkbarrel		int					default(0),				-- 누적배럴.
-	bktsuccesscnt	int					default(0),				-- 연속성공횟수
-	bktbestfresh	int					default(0),				-- 최고신선도
-	bktbestbarrel	int					default(0),				-- 최고배럴
-	bktbestcoin		int					default(0),				-- 최고판매금액
-	bkcrossnormal	int					default(0),				-- 누적일반교배
-	bkcrosspremium	int					default(0),				-- 누적프리미엄교배
-	bktsgrade1cnt	int					default(0),				-- 임시일반보물뽑기(23).
-	bktsgrade2cnt	int					default(0),				-- 임시프림보물뽑기(24).
-	bktsupcnt		int					default(0),				-- 임시보물강화횟수(25).
-	bkbattlecnt		int					default(0),				-- 임시배틀참여횟수(26).
-	bkaniupcnt		int					default(0),				-- 임시동물강화(27).
-	bkapartani		int					default(0),				-- 임시동물분해(28).
-	bkapartts		int					default(0),				-- 임시보물분해(29).
-	bkcomposecnt	int					default(0),				-- 임시동물합성(20).
-	bkpromotecnt	int					default(0),				-- 임시동물승급(20).
-
-	--(기타정보)
+	-- (게임변수 : 팔라미터)
 	param0			int					default(0),				--클라이언트정보.
 	param1			int					default(0),
 	param2			int					default(0),
@@ -380,45 +84,34 @@ create table dbo.tUserMaster(
 	param8			int					default(0),
 	param9			int					default(0),
 
-	-- 학교대항전.
-	schoolidx			int				default(-1),		-- 가입한 각교번호.
-															-- 남은시간은 매주 일요일 오후 11.59분.
-	schoolresult		int				default(-1),		--  1: 읽어라   > 보여주삼. ,
-															-- -1: 읽어감	> 이젠 안보여줘도됨.
+	-- (게임변수 : 일반정보2)
+	level			int					default(1),
+	exp				int					default(0),				--
+	commission		float				default(7.00), 			-- 수수료... (기본 7%를 지급) -> 보는 용도일뿐이다.
+	tutorial		int					default(0),				-- 안봄(0), 봄(1)
+	randserial		varchar(20)			default('-1'),			-- 아이템구매, 박스까기, 조각조합, 의상초월등의 유일한 구매의 랜덤씨리얼
 
-	-- (랭킹산출용 데이타) > 일주일 데몬에 의해서 정리됨.
-	ttsalecoin		int					default(0),				-- 누적판매금액. (자주갱신이 되니까 인덱싱 안걸었음)
-	ttsalecoinbkup	bigint				default(0),				-- 누적판매금액백엄(스케쥴에 의해서백업).
+	-- (게임변수 : 싱글게임변수)
+	sflag			int					default(0),				-- 싱글미진행(0), 진행중(1).
+	strycnt			int					default(0),				-- 싱글횟수.
+	ssuccesscnt		int					default(0),				--   성공횟수.
+	sfailcnt		int					default(0),				--   실패횟수.
+	serrorcnt		int					default(0),				--   오류횟수.
 
-	lmsalecoin		int					default(0),				-- 지난 내점수.
-	lmrank			int					default(1),				-- 지난 나의 순위.
-	lmcnt			int					default(1),				-- 지난 나의 친구들.
-
-	l1gameid		varchar(20)			default(''),			-- 지난 1위 친구.
-	l1itemcode		int					default(1),				-- 			대표 동물.
-	l1acc1			int					default(-1),			-- 			대표 악세.
-	l1acc2			int					default(-1),			-- 			대표 악세.
-	l1salecoin		int					default(0),				-- 			점수.
-	l1kakaonickname	varchar(40)			default(''),			--          닉네임
-	l1kakaoprofile	varchar(512)		default(''),			--          사진
-	l2gameid		varchar(20)			default(''),			-- 지난 2위 친구.
-	l2itemcode		int					default(1),				-- 			대표 동물.
-	l2acc1			int					default(-1),			-- 			대표 악세.
-	l2acc2			int					default(-1),			-- 			대표 악세.
-	l2salecoin		int					default(0),				-- 			점수.
-	l2kakaonickname	varchar(40)			default(''),			--          닉네임
-	l2kakaoprofile	varchar(512)		default(''),			--          사진
-	l3gameid		varchar(20)			default(''),			-- 지난 3위 친구.
-	l3itemcode		int					default(1),				-- 			대표 동물.
-	l3acc1			int					default(-1),			-- 			대표 악세.
-	l3acc2			int					default(-1),			-- 			대표 악세.
-	l3salecoin		int					default(0),				-- 			점수.
-	l3kakaonickname	varchar(40)			default(''),			--          닉네임
-	l3kakaoprofile	varchar(512)		default(''),			--          사진
-
-	-- 엔딩모드.
-	etsalecoin		int					default(0),				-- 에피소드 누적판매금액.
-	etremain		int					default(-1),			--	        남은시간.
+	-- (게임변수 : 착용아이템 인덱스리스트)
+	helmetlistidx		int 			default(-1),
+	shirtlistidx		int 			default(-1),
+	pantslistidx		int 			default(-1),
+	gloveslistidx		int 			default(-1),
+	shoeslistidx		int 			default(-1),
+	batlistidx			int 			default(-1),
+	balllistidx			int 			default(-1),
+	gogglelistidx		int 			default(-1),
+	wristbandlistidx	int 			default(-1),
+	elbowpadlistidx		int 			default(-1),
+	beltlistidx			int 			default(-1),
+	kneepadlistidx		int 			default(-1),
+	sockslistidx		int 			default(-1),
 
 	-- 이벤트.
 	eventspot01		int					default(0),				-- 로그인사용(1~5).
@@ -432,131 +125,41 @@ create table dbo.tUserMaster(
 	eventspot09		int					default(0),				-- 미사용
 	eventspot10		int					default(0),				-- 미사용
 
-	-- 영구 누적정보.
-																-- 일반 교배 횟수(위에것).
-																-- 프리미엄 교배 횟수(위에것).
-	bgtradecnt		int					default(0),				-- 거래 성고 누적 횟수.
-	bgcttradecnt	int					default(0),				-- 거래성공횟수.
-	bgcomposecnt 	int					default(0),				-- 합성 포인수 누적.(n/100)
-	bgpromotecnt	int					default(0),				-- 승급 횟수.
-
-	-- 행운의집
-	yabauidx		int					default(1),				-- 행운의 집 정보.
-	yabaustep		int					default(0),				--
-	yabaunum		int					default(0),				--
-	yabauresult		int					default(0),				-- 주사위 결과. 0실패, 1성공
-	yabaucount		int					default(0),				-- 굴린포인트값.
-
-	-- 회전판 정보.
-	wheeltodaydate	datetime			default(getdate() - 1),	-- 무료휠 1일.
-	wheeltodaycnt	int					default(0),				-- 오늘무료룰렛 돌린횟수 0이면 돌릴수 있음
-	wheelgauage		int					default(0),				-- 회전판(게이지값)
-	wheelfree		int					default(0),				-- 1이면 무료회전.
-	bkwheelcnt		int					default(0),				-- 전체 룰렛 횟수.
-
-	-- 랭킹 홀짝전.
-	rkstartstate	int					default(0),				-- 랭킹대전 참여여부 미참여(0), 참여(1) -> 이번주에 룰렛 한번만 돌리면된다.
-	rkstartdate		datetime			default(getdate()),		-- 랭킹대전 참여날.
-	rkteam			int					default(-1),			-- 1홀, 2짝
-	rksalemoney		bigint				default(0),				-- 판매수익(0).
-	rksalebarrel	bigint				default(0),				-- 생산배럴(30).
-	rkbattlecnt		bigint				default(0),				-- 배틀횟수(31).
-	rkbogicnt		bigint				default(0),				-- 동물교배,보물뽑기(32).
-	rkfriendpoint	bigint				default(0),				-- 친구포인트(자동수집).
-	rkroulettecnt	bigint				default(0),				-- 룰렛횟수(20, 21).
-	rkwolfcnt		bigint				default(0),				-- 늑대잡기(33).
-	rktotal			bigint				default(0),				-- > 랭킹대전의 가산점을 적용해서 들어간값(다음날 계산된것임)
-	rksalemoneybk	bigint				default(0),				-- 백업
-	rksalebarrelbk	bigint				default(0),
-	rkbattlecntbk	bigint				default(0),
-	rkbogicntbk		bigint				default(0),
-	rkfriendpointbk	bigint				default(0),
-	rkroulettecntbk	bigint				default(0),
-	rkwolfcntbk		bigint				default(0),
-	rktotalbk		bigint				default(0),
-
-	-- 짜요장터.
-	salefresh		int					default(0),				-- 거래신선도
-	zcpplus			int					default(0),				-- 확률상승값
-	zcpchance		int					default(-1),			-- 짜요쿠폰조각 기회
-	zcpappearcnt	int					default(0),				-- 1일 등장횟수.(로그인때 일이 바뀌면 초기화됨)
-	bkzcpcntfree	int					default(0),				-- 무료돌린횟수.
-	bkzcpcntcash	int					default(0),				-- 유료돌린횟수.
-
-	-- 배송정보.
-	phone2			varchar(20)			default(''),			-- phone2 유저가 입력한 번호
-																-- phone  시스템이 추출이고,
-	zipcode			varchar(6)			default(''),									-- 우편번호.
-	address1		varchar(256)		default(''),
-	address2		varchar(256)		default(''),
-
 	-- Constraint
-	CONSTRAINT pk_tUserMaster_gameid	PRIMARY KEY(gameid)
+	CONSTRAINT pk_tUserMaster_idx		PRIMARY KEY(idx)
 )
 GO
 -- alter table dbo.tUserMaster add randserial			varchar(20)		default('-1')
--- alter table dbo.tUserMaster add invenanimalstep		int				default(0)
--- alter table dbo.tUserMaster add invencustomstep		int				default(0)
--- alter table dbo.tUserMaster add invenaccstep			int				default(0)
--- alter table dbo.tUserMaster add feedmax		int						default(10)
 -- 데이타 10만건 강제로 넣어서 쿼리해보기(상상ID로 만든 유저를 입력한다.)
 -- 가입시 gameid 쿼리 > PRIMARY KEY(gameid) > 인덱싱
 
-
-
--- 폰인덱싱
-IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tUserMaster_phone_deletestate')
-    DROP INDEX tUserMaster.idx_tUserMaster_phone_deletestate
+-- 인덱싱
+IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tUserMaster_gameid')
+   DROP INDEX tUserMaster.idx_tUserMaster_gameid
 GO
-CREATE INDEX idx_tUserMaster_phone_deletestate ON tUserMaster (phone, deletestate)
+CREATE INDEX idx_tUserMaster_gameid ON tUserMaster (gameid)
 GO
 
-IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tUserMaster_idx')
-   DROP INDEX tUserMaster.idx_tUserMaster_idx
+IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tUserMaster_email')
+    DROP INDEX tUserMaster.idx_tUserMaster_email
 GO
-CREATE INDEX idx_tUserMaster_idx ON tUserMaster (idx)
-GO
-
-IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tUserMaster_kakaonickname')
-   DROP INDEX tUserMaster.idx_tUserMaster_kakaonickname
-GO
-CREATE INDEX idx_tUserMaster_kakaonickname ON tUserMaster (kakaonickname)
+CREATE INDEX idx_tUserMaster_email ON tUserMaster (email)
 GO
 
--- 카카오회원번호 인덱싱.
-IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tUserMaster_kakaouserid')
-   DROP INDEX tUserMaster.idx_tUserMaster_kakaouserid
+IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tUserMaster_nickname')
+   DROP INDEX tUserMaster.idx_tUserMaster_nickname
 GO
-CREATE INDEX idx_tUserMaster_kakaouserid ON tUserMaster (kakaouserid)
-GO
-
--- 카카오게임아이디 인덱싱.
-IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tUserMaster_kakaogameid')
-   DROP INDEX tUserMaster.idx_tUserMaster_kakaogameid
-GO
-CREATE INDEX idx_tUserMaster_kakaogameid ON tUserMaster (kakaogameid)
+CREATE INDEX idx_tUserMaster_nickname ON tUserMaster (nickname)
 GO
 
-IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tUserMaster_kakaotalkid')
-   DROP INDEX tUserMaster.idx_tUserMaster_kakaotalkid
+IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tUserMaster_phone')
+    DROP INDEX tUserMaster.idx_tUserMaster_phone
 GO
-CREATE INDEX idx_tUserMaster_kakaotalkid ON tUserMaster (kakaotalkid)
+CREATE INDEX idx_tUserMaster_phone ON tUserMaster (phone)
 GO
-
-IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tUserMaster_ttsalecoin')
-   DROP INDEX tUserMaster.idx_tUserMaster_ttsalecoin
-GO
-CREATE INDEX idx_tUserMaster_ttsalecoin ON tUserMaster (ttsalecoin)
-GO
-
---IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tUserMaster_pushid')
---    DROP INDEX tUserMaster.idx_tUserMaster_pushid
---GO
---CREATE INDEX idx_tUserMaster_pushid ON tUserMaster (pushid)
---GO
 
 -- insert into dbo.tUserMaster(gameid, password, market, buytype, platform, ukey, version, pushid, phone) values('xxxx', 'pppp', 1, 0, 1, 'uuuu', 101, 'pushidxxxx', '01011112222')
--- select * from dbo.tUserMaster where gameid = 'xxxx' and password = 'pppp'
+-- select * from dbo.tUserMaster where gameid = 'xxxx'
 -- update dbo.tUserMaster set market = 1 where gameid = 'xxxx'
 
 ---------------------------------------------
@@ -572,41 +175,13 @@ create table dbo.tUserItem(
 	gameid			varchar(20),									--
 	listidx			int,											-- 리스트인덱스(각개인별로 별개)
 
-	invenkind		int					default(1),					--대분류(가축(1), 소모품(3), 액세서리(4))
+	invenkind		int					default(1),					--대분류(장착인벤(1), 조각인벤(2), 소비인벤(3))
 	itemcode		int,
 	cnt				int					default(1),					--보유량
 
-	farmnum			int					default(-1),				-- 농장번호(-1:농장없음, 0~50:농장번호)
-	fieldidx		int					default(-1),				-- 필드(-2:병원, -1:창고, 0~8:필드)
-	anistep			int					default(5),					-- 현재단계(0 ~ 12단계)
-	manger			int					default(25),				-- 여물통(건초:1 > 여물:20)
-	diseasestate	int					default(0),					-- 질병상태(0:노질병, 질병 >=0 걸림)
-	acc1			int					default(-1),				-- 악세(모자:아이템코드)
-	acc2			int					default(-1),				-- 악세(등:아이템코드)
-
-	upcnt			int					default(0),					--
-	upstepmax		int					default(0),					--
-	freshstem100	int					default(0),					--
-	attstem100		int					default(0),					--
-	timestem100		int					default(0),					--
-	defstem100		int					default(0),					--
-	hpstem100		int					default(0),					--
-	usedheart		int					default(0),					--
-	usedgamecost	int					default(0),					--
-
 	randserial		varchar(20)			default('-1'),				--랜던씨리얼(클라이언트에서 만들어서옴)
 	writedate		datetime			default(getdate()),			--구매일/획득일
-	gethow			int					default(0),					--획득방식(0:구매, 1:경작, 2:교배/뽑기, 3:검색)
-
-	diedate			datetime,
-	diemode			int					default(-1),				-- -1:아님, 1:눌러,텨저, 2:늑대
-	needhelpcnt		int					default(0),					-- 병원에 있을때 자동 부활용으로 사용된다.(부활석 개수만큼)
-
-	petupgrade		int					default(1),					-- 펫업그레이드 하기.
-	treasureupgrade	int					default(0),					-- 보물업그레이드 하기.
-
-	expirekind		int					default(-1),				-- 만기템 X(-1), O(1).
-	expiredate		smalldatetime,									-- 만기일.
+	gethow			int					default(0),					--획득방식
 
 	-- Constraint
 	CONSTRAINT	pk_tUserItem_gameid_listidx	PRIMARY KEY(gameid, listidx)
@@ -627,18 +202,10 @@ CREATE INDEX idx_tUserItem_gameid_itemcode ON tUserItem (gameid, itemcode)
 GO
 
 -- select isnull(max(listidx), 0) from dbo.tUserItem where gameid = 'xxxx'	--트리거 사용하면 원하지 않는 결과가 나오는군(insert:inserted, update:deleted/inserted, delete:deleted)
--- insert into dbo.tUserItem(gameid, listidx, itemcode, cnt, farmnum, fieldidx, category, randserial) values('xxxx', 0, 1, 1, 0, 0, 1, 1001) -- 동물
--- insert into dbo.tUserItem(gameid, listidx, itemcode, cnt, farmnum, fieldidx, category, randserial) values('xxxx', 1, 1, 1, 0, 1, 1, 1002) -- 동물
--- insert into dbo.tUserItem(gameid, listidx, itemcode, cnt, farmnum, fieldidx, category, randserial) values('xxxx', 2, 1, 1, 0, 2, 1, 1003) -- 동물
--- insert into dbo.tUserItem(gameid, listidx, itemcode, cnt, farmnum, fieldidx, category, randserial) values('xxxx', 3, 1, 1, 0, 3, 1, 1004) -- 동물
--- insert into dbo.tUserItem(gameid, listidx, itemcode, cnt, farmnum, fieldidx, category, randserial) values('xxxx', 4, 1, 1, 0, 4, 1, 1005) -- 동물
--- insert into dbo.tUserItem(gameid, listidx, itemcode, cnt, farmnum, fieldidx, category, randserial) values('xxxx', 5, 1, 1, 0, 5, 1, 1006) -- 동물
--- insert into dbo.tUserItem(gameid, listidx, itemcode, cnt, farmnum, fieldidx, category, randserial) values('xxxx', 6, 1, 1, 0, 6, 1, 1007) -- 동물
--- insert into dbo.tUserItem(gameid, listidx, itemcode, cnt, farmnum, fieldidx, category, randserial) values('xxxx', 10, 700, 5, 0, 0, 3, 1010) -- 소모
+-- insert into dbo.tUserItem(gameid, listidx, itemcode, cnt, farmnum, fieldidx, category, randserial) values('xxxx', 0, 1, 1, 0, 0, 1, 1001)
 -- select top 1 * from dbo.tUserItem where gameid = 'xxxx' and randserial = 1010
 -- update dbo.tUserItem set fieldidx = 0 where gameid = 'xxxx' and listidx = 1
 -- select * from dbo.tUserItem where gameid = 'xxxx' and category in (1, 3, 4)
-
 
 ---------------------------------------------
 --		아이템 보유정보 > 동물 정보만 삭제백업
@@ -653,44 +220,16 @@ create table dbo.tUserItemDel(
 	gameid			varchar(20),									--
 	listidx			int,											-- 리스트인덱스(각개인별로 별개)
 
-	invenkind		int					default(1),					--대분류(가축(1), 소모품(3), 액세서리(4))
+	invenkind		int					default(1),
 	itemcode		int,
 	cnt				int					default(1),					--보유량
-
-	farmnum			int					default(-1),				-- 농장번호(-1:농장없음, 0~50:농장번호)
-	fieldidx		int					default(-1),				-- 필드(-2:병원, -1:창고, 0~8:필드)
-	anistep			int					default(5),					-- 현재단계(0 ~ 12단계)
-	manger			int					default(25),				-- 여물통(건초:1 > 여물:20)
-	diseasestate	int					default(0),					-- 질병상태(0:노질병, 질병 >=0 걸림)
-	acc1			int					default(-1),				-- 악세(모자:아이템코드)
-	acc2			int					default(-1),				-- 악세(등:아이템코드)
-
-	upcnt			int					default(0),					--
-	upstepmax		int					default(0),					--
-	freshstem100	int					default(0),					--
-	attstem100		int					default(0),					--
-	timestem100		int					default(0),					--
-	defstem100		int					default(0),					--
-	hpstem100		int					default(0),					--
-	usedheart		int					default(0),					--
-	usedgamecost	int					default(0),					--
 
 	randserial		varchar(20)			default(-1),				--랜던씨리얼(클라이언트에서 만들어서옴)
 	writedate		datetime			default(getdate()),			--구매일/획득일
 	gethow			int					default(0),					--획득방식(0:구매, 1:경작, 2:교배/뽑기, 3:검색)
 
-	diedate			datetime,
-	diemode			int					default(-1),				-- -1:아님, 1:눌러,텨저, 2:늑대
-	needhelpcnt		int					default(0),					-- 병원에 있을때 자동 부활용으로 사용된다.(부활석 개수만큼)
-
-	petupgrade		int					default(1),					-- 펫업그레이드 하기.
-	treasureupgrade	int					default(0),					-- 보물업그레이드 하기.
-
-	expirekind		int					default(-1),				-- 만기템 X(-1), O(1).
-	expiredate		smalldatetime,									-- 만기일.
-
-	idx2			int,
-	writedate2		datetime			default(getdate()),			--삭제일.
+	idx2			int,											-- 전의 idx번호가 들어간다(추적용으로)
+	writedate2		datetime			default(getdate()),			-- 삭제일.
 	state			int					default(0),					-- 0:병원에서, 1:판매, 2:우편함
 
 	-- Constraint
@@ -702,6 +241,268 @@ GO
 CREATE INDEX idx_tUserItemDel_gameid_idx2 ON tUserItemDel (gameid, idx2)
 GO
 
+---------------------------------------------
+--		구매했던 로그(개인)
+---------------------------------------------
+IF OBJECT_ID (N'dbo.tUserItemBuyLog', N'U') IS NOT NULL
+	DROP TABLE dbo.tUserItemBuyLog;
+GO
+
+create table dbo.tUserItemBuyLog(
+	idx			int					IDENTITY(1,1), 					-- 번호
+
+	gameid		varchar(20), 										-- 유저id
+	idx2		int,
+	itemcode	int, 												-- 아이템코드, 중복 구매기록한다.
+	buydate2	varchar(8),											-- 구매일20131010
+	cnt			int					default(1), 					--
+
+	cashcost	int					default(0), 					-- 구매가격(세일할수있어서)
+	buydate		datetime			default(getdate()), 			-- 구매일
+
+	-- Constraint
+	CONSTRAINT	pk_tUserItemBuyLog_idx	PRIMARY KEY(idx)
+)
+-- select top 1 * from dbo.tUserItemBuyLog
+--select top 20 * from dbo.tUserItemBuyLog a join dbo.tItemInfo b on a.itemcode = b.itemcode where gameid = 'xxxx' order by a.idx desc
+--select top 20 a.idx 'idx', gameid, a.itemcode 'itemcode', a.cashcost 'cashcost', a.gamecost 'gamecost', a.buydate, b.itemname, b.gamecost 'coinball2', b.cashcost 'milkball2', b.period, b.explain from dbo.tUserItemBuyLog a join dbo.tItemInfo b on a.itemcode = b.itemcode where gameid = 'Marbles' order by a.idx desc
+--select top 20 * from dbo.tUserItemBuyLog where buydate between '2012-08-09 00:00:01' and '2012-08-10 00:00:01' order by idx desc
+--insert into dbo.tUserItemBuyLog(gameid, itemcode, cashcost) values('xxxx', 1, 5)
+--insert into dbo.tUserItemBuyLog(gameid, itemcode, cashcost) values('xxxx', 1, 0)
+
+--유저 검색용 인덱스
+IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tUserItemBuyLog_gameid_idx')
+    DROP INDEX tUserItemBuyLog.idx_tUserItemBuyLog_gameid_idx
+GO
+CREATE INDEX idx_tUserItemBuyLog_gameid_idx ON tUserItemBuyLog (gameid, idx)
+GO
+
+IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tUserItemBuyLog_gameid_idx2')
+    DROP INDEX tUserItemBuyLog.idx_tUserItemBuyLog_gameid_idx2
+GO
+CREATE INDEX idx_tUserItemBuyLog_gameid_idx2 ON tUserItemBuyLog (gameid, idx2)
+GO
+
+IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tUserItemBuyLog_gameid_buydate2_itemcode')
+    DROP INDEX tUserItemBuyLog.idx_tUserItemBuyLog_gameid_buydate2_itemcode
+GO
+CREATE INDEX idx_tUserItemBuyLog_gameid_buydate2_itemcode ON tUserItemBuyLog (gameid, buydate2, itemcode)
+GO
+
+
+---------------------------------------------
+-- 	구매했던 로그(월별 Master)
+---------------------------------------------
+IF OBJECT_ID (N'dbo.tUserItemBuyLogTotalMaster', N'U') IS NOT NULL
+	DROP TABLE dbo.tUserItemBuyLogTotalMaster;
+GO
+
+create table dbo.tUserItemBuyLogTotalMaster(
+	idx				int				identity(1, 1),
+	dateid8			char(8),							-- 20101210
+
+	cashcost		bigint			default(0),
+	cnt				int				default(0),
+
+	-- Constraint
+	CONSTRAINT	pk_tUserItemBuyLogTotalMaster_dateid	PRIMARY KEY(dateid8)
+)
+-- select         * from dbo.tUserItemBuyLogTotalMaster
+-- select top 1   * from dbo.tUserItemBuyLogTotalMaster where dateid8 = '20120818'
+-- insert into dbo.tUserItemBuyLogTotalMaster(dateid8, gamecost, cashcost, cnt) values('20120818', 100, 0, 1)
+--update dbo.tUserItemBuyLogTotalMaster
+--	set
+--		gamecost = gamecost + 1,
+--		cnt = cnt + 1
+--where dateid8 = '20120818'
+
+
+---------------------------------------------
+-- 	구매했던 로그(월별 Sub)
+---------------------------------------------
+IF OBJECT_ID (N'dbo.tUserItemBuyLogTotalSub', N'U') IS NOT NULL
+	DROP TABLE dbo.tUserItemBuyLogTotalSub;
+GO
+
+create table dbo.tUserItemBuyLogTotalSub(
+	idx				int				identity(1, 1),
+
+	dateid8			char(8),							-- 20101210
+	itemcode		int,
+
+	cashcost		int				default(0),
+	cnt				int				default(0),
+
+	-- Constraint
+	CONSTRAINT	pk_tUserItemBuyLogTotalSub_dateid8_itemcode	PRIMARY KEY(dateid8, itemcode)
+)
+-- select top 100 * from dbo.tUserItemBuyLogTotalSub order by dateid8 desc, itemcode desc
+-- select         * from dbo.tUserItemBuyLogTotalSub where dateid8 = '20120818'
+-- select top 1   * from dbo.tUserItemBuyLogTotalSub where dateid8 = '20120818' and itemcode = 1
+--update dbo.tUserItemBuyLogTotalSub
+--	set
+--		gamecost = gamecost + 1,
+--		cnt = cnt + 1
+--where dateid8 = '20120818' and itemcode = 1
+-- insert into dbo.tUserItemBuyLogTotalSub(dateid8, itemcode, cashcost, cnt) values('20120818', 1, 100, 1)
+
+
+---------------------------------------------
+-- 	구매했던 로그(월별 누적)
+---------------------------------------------
+IF OBJECT_ID (N'dbo.tUserItemBuyLogMonth', N'U') IS NOT NULL
+	DROP TABLE dbo.tUserItemBuyLogMonth;
+GO
+
+create table dbo.tUserItemBuyLogMonth(
+	idx				int				identity(1, 1),
+
+	dateid6			char(6),							-- 201012
+	itemcode		int,
+
+	cashcost		bigint			default(0),
+	cnt				int				default(0),
+
+	-- Constraint
+	CONSTRAINT	pk_tUserItemBuyLogMonth_dateid6_itemcode	PRIMARY KEY(dateid6, itemcode)
+)
+-- select top 100 * from dbo.tUserItemBuyLogMonth order by dateid6 desc, itemcode desc
+-- select         * from dbo.tUserItemBuyLogMonth where dateid6 = '201309'
+-- select top 1   * from dbo.tUserItemBuyLogMonth where dateid6 = '201309' and itemcode = 1
+-- insert into dbo.tUserItemBuyLogMonth(dateid6, itemcode, gamecost, cnt) values('201309', 1, 100, 1)
+--update dbo.tUserItemBuyLogMonth
+--	set
+--		gamecost = gamecost + 1,
+--		cnt = cnt + 1
+--where dateid6 = '201309' and itemcode = 1
+
+---------------------------------------------
+--		유저 블럭킹
+---------------------------------------------
+IF OBJECT_ID (N'dbo.tUserBlockLog', N'U') IS NOT NULL
+	DROP TABLE dbo.tUserBlockLog;
+GO
+
+create table dbo.tUserBlockLog(
+	idx				int				IDENTITY(1,1),
+	gameid			varchar(20), 							-- 아이디
+	comment			varchar(512), 							-- 시스템코멘트
+	writedate		datetime		default(getdate()), 	-- 블록일
+	blockstate		int				default(1), 			-- 블럭상태 	0 : 블럭상태아님	1 : 블럭상태
+
+	adminid			varchar(20),
+	adminip			varchar(40),
+	comment2		varchar(512),							-- 코멘트
+	releasedate		datetime								-- 해제일
+
+	-- Constraint
+	CONSTRAINT pk_tUserBlockLog_idx PRIMARY KEY(idx)
+)
+IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tUserBlockLog_gameid_idx')
+    DROP INDEX tUserBlockLog.idx_tUserBlockLog_gameid_idx
+GO
+CREATE INDEX idx_tUserBlockLog_gameid_idx ON tUserBlockLog(gameid, idx)
+GO
+-- 블럭 당하는 유저가 중복이 발생할 수 있다. 한번 블럭당하고 또 블럭당한다. 즉 중복 블럭을 당한다.
+-- insert into dbo.tUserBlockLog(gameid, comment) values(@gameid_, '아이템를 '+ltrim(rtrim(str(@cashcopy)))+'회 이상 카피를 해서 로그인시 시스템에서 블럭 처리했습니다.')
+-- update dbo.tUserMaster set blockstate = '0' where gameid = 'DD0'
+-- update dbo.tUserBlockLog set blockstate = 0, adminid = 'Marbles', adminip = '172.0.0.1', comment2 = '풀어주었다.', releasedate = getdate() where idx = 17
+-- select * from dbo.tUserBlockLog order by idx desc
+-- select idx, gameid, comment, writedate, blockstate, adminid, comment2, releasedate from dbo.tUserBlockLog order by idx desc
+-- select top 20 * from dbo.tUserBlockLog where gameid = 'DD0' order by idx desc
+
+
+
+
+---------------------------------------------
+--		PC방정보...
+---------------------------------------------
+IF OBJECT_ID (N'dbo.tPCRoomIP', N'U') IS NOT NULL
+	DROP TABLE dbo.tPCRoomIP;
+GO
+
+create table dbo.tPCRoomIP(
+	idx				int					IDENTITY(1,1),
+
+	gameid			varchar(20),
+	pcip			varchar(20),
+
+	writedate		datetime			default(getdate()),			-- 등록일..
+
+	-- Constraint
+	CONSTRAINT	pk_tPCRoomIP_gameid_pcip	PRIMARY KEY(gameid, pcip),
+	CONSTRAINT	uk_tPCRoomIP_pcip			UNIQUE( pcip )
+)
+
+-- insert into dbo.tPCRoomIP(gameid, pcip) values('xxxx', '127.0.0.1')
+-- insert into dbo.tPCRoomIP(gameid, pcip) values('xxxx', '127.0.0.2')
+-- insert into dbo.tPCRoomIP(gameid, pcip) values('xxxx', '127.0.0.3')
+-- insert into dbo.tPCRoomIP(gameid, pcip) values('xxxx2', '127.0.0.3')		--error 가 정상이다.
+-- select top 1 * from dbo.tPCRoomIP where pcip = '127.0.0.1'
+-- select * from dbo.tPCRoomIP where gameid = 'xxxx'
+-- update dbo.tPCRoomIP set pcip = '127.0.0.1' where gameid = 'xxxx' and pcip = '127.0.0.1'
+
+
+
+---------------------------------------------
+--	유니크 가입현황파악하기
+---------------------------------------------
+IF OBJECT_ID (N'dbo.tUserPhone', N'U') IS NOT NULL
+	DROP TABLE dbo.tUserPhone;
+GO
+
+create table dbo.tUserPhone(
+	idx					int 				IDENTITY(1, 1),
+
+	phone				varchar(20),
+	joincnt				int					default(1),
+	writedate			datetime			default(getdate()),
+
+	-- Constraint
+	CONSTRAINT	pk_tUserPhone_idx	PRIMARY KEY(idx)
+)
+-- 폰인덱싱
+IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tUserPhone_phone')
+    DROP INDEX tUserPhone.idx_tUserPhone_phone
+GO
+CREATE INDEX idx_tUserPhone_phone ON tUserPhone (phone)
+GO
+-- select top 1 * from dbo.tUserPhone
+
+
+---------------------------------------------
+-- 	블럭폰번호 > 가입시 블럭처리자
+---------------------------------------------
+IF OBJECT_ID (N'dbo.tUserBlockPhone', N'U') IS NOT NULL
+	DROP TABLE dbo.tUserBlockPhone;
+GO
+
+create table dbo.tUserBlockPhone(
+	idx			int 					IDENTITY(1, 1),
+
+	phone			varchar(20),
+	comment			varchar(1024),
+	writedate		datetime		default(getdate()),
+
+	-- Constraint
+	CONSTRAINT	pk_tUserBlockPhone_phone	PRIMARY KEY(phone)
+)
+
+-- insert into dbo.tUserBlockPhone(phone, comment) values('01022223333', '아이템카피')
+-- insert into dbo.tUserBlockPhone(phone, comment) values('01092443174', '환전버그카피')
+-- select top 100 * from dbo.tUserBlockPhone order by writedate desc
+-- select top 1   * from dbo.tUserBlockPhone where phone = '01022223333'
+
+-- 센드키 충돌검사
+IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tUserBlockPhone_idx')
+    DROP INDEX tUserBlockPhone.idx_tUserBlockPhone_idx
+GO
+CREATE INDEX idx_tUserBlockPhone_idx ON tUserBlockPhone (idx)
+GO
+
+
+
+/*
 
 ---------------------------------------------
 --		경작지
@@ -756,55 +557,6 @@ GO
 --	ON a.itemcode = b.itemcode
 --where gameid = 'xxxx' order by seedidx asc
 
-
----------------------------------------------
---		전국목장
----------------------------------------------
-IF OBJECT_ID (N'dbo.tUserGameMTBaseball', N'U') IS NOT NULL
-	DROP TABLE dbo.tUserGameMTBaseball;
-GO
-
-create table dbo.tUserGameMTBaseball(
-	idx				int					IDENTITY(1,1),
-
-	gameid			varchar(20),									--
-	farmidx			int,											-- 농장번호
-	itemcode		int,											-- 아이템코드
-	incomedate		datetime			default(getdate()),			-- 회수일.
-	incomett		int					default(0),
-	buycount		int					default(0),
-	star			int					default(0),
-	playcnt			int					default(10),				-- 플레이 할수 있는 횟수.
-																	-- 5는 음...
-																	-- 10은 40에 10이니까 많음..
-																	-- 6이 어떤가?생각중...
-
-	buystate 		int					default(-1),				-- 비구매(-1), 구매중(1)
-	buydate			datetime			default(getdate()),			-- 구매일.
-	buywhere		int					default(1),					-- 1 직접구매, 2 에피소드
-
-	-- Constraint
-	CONSTRAINT	pk_tUserGameMTBaseball_gameid_farmidx	PRIMARY KEY(gameid, farmidx)
-)
---
--- 이미만들어진것은 커서를 돌면서 입력하기.
--- insert into dbo.tUserGameMTBaseball(gameid, farmidx) select 'xxxx2', itemcode from dbo.tItemInfo where subcategory = 69 order by itemcode asc
--- select * from dbo.tUserGameMTBaseball where gameid = 'xxxx2' order by farmidx asc
--- update dbo.tUserGameMTBaseball set buystate =  1 where gameid = 'xxxx2' and farmidx = 6900				-- 구매
--- update dbo.tUserGameMTBaseball set buystate = -1 where gameid = 'xxxx2' and farmidx = 6900				-- 판매
--- update dbo.tUserGameMTBaseball set incomedate = getdate(), incomett = incomett + 100 where gameid = 'xxxx2' and farmidx = 6900	-- 수입
---                   DATEDIFF(datepart , @incomedate , getdate() )
--- select getdate(), DATEDIFF(hh, '2013-11-23 12:00', '2013-11-23 11:00') -- -60	> -1
--- select getdate(), DATEDIFF(hh, '2013-11-23 12:00', '2013-11-23 12:59') -- +59	> 0
--- select getdate(), DATEDIFF(hh, '2013-11-23 12:00', '2013-11-23 13:00') -- +60	> 1
--- select getdate(), DATEDIFF(hh, '2013-11-23 12:00', '2013-11-23 13:01') -- +61	> 1
--- select max(idx) from dbo.tUserGameMTBaseball
---select a.*, b.itemname, b.param1 hourcoin, b.param2 maxcoin, b.param3 raiseyear, b.param4 raisepercent
---	from dbo.tUserGameMTBaseball a
---	LEFT JOIN
---	(select * from dbo.tItemInfo where subcategory = 69) b
---	ON a.farmidx = b.itemcode
---where gameid = 'xxxx2' order by farmidx asc
 
 ---------------------------------------------
 --		아이템 구매 (통합로그)
@@ -1066,71 +818,6 @@ GO
 -- delete from dbo.tUserPay where idx = 1
 
 
----------------------------------------------
--- 	블럭폰번호 > 가입시 블럭처리자
----------------------------------------------
-IF OBJECT_ID (N'dbo.tUserBlockPhone', N'U') IS NOT NULL
-	DROP TABLE dbo.tUserBlockPhone;
-GO
-
-create table dbo.tUserBlockPhone(
-	idx			int 					IDENTITY(1, 1),
-
-	phone			varchar(20),
-	comment			varchar(1024),
-	writedate		datetime		default(getdate()),
-
-	-- Constraint
-	CONSTRAINT	pk_tUserBlockPhone_phone	PRIMARY KEY(phone)
-)
-
--- insert into dbo.tUserBlockPhone(phone, comment) values('01022223333', '아이템카피')
--- insert into dbo.tUserBlockPhone(phone, comment) values('01092443174', '환전버그카피')
--- select top 100 * from dbo.tUserBlockPhone order by writedate desc
--- select top 1   * from dbo.tUserBlockPhone where phone = '01022223333'
-
--- 센드키 충돌검사
-IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tUserBlockPhone_idx')
-    DROP INDEX tUserBlockPhone.idx_tUserBlockPhone_idx
-GO
-CREATE INDEX idx_tUserBlockPhone_idx ON tUserBlockPhone (idx)
-GO
-
----------------------------------------------
---		유저 블럭킹
----------------------------------------------
-IF OBJECT_ID (N'dbo.tUserBlockLog', N'U') IS NOT NULL
-	DROP TABLE dbo.tUserBlockLog;
-GO
-
-create table dbo.tUserBlockLog(
-	idx				int				IDENTITY(1,1),
-	gameid			varchar(20), 							-- 아이디
-	comment			varchar(512), 							-- 시스템코멘트
-	writedate		datetime		default(getdate()), 	-- 블록일
-	blockstate		int				default(1), 			-- 블럭상태 	0 : 블럭상태아님	1 : 블럭상태
-
-	adminid			varchar(20),
-	adminip			varchar(40),
-	comment2		varchar(512),							-- 코멘트
-	releasedate		datetime								-- 해제일
-
-	-- Constraint
-	CONSTRAINT pk_tUserBlockLog_idx PRIMARY KEY(idx)
-)
-IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tUserBlockLog_gameid_idx')
-    DROP INDEX tUserBlockLog.idx_tUserBlockLog_gameid_idx
-GO
-CREATE INDEX idx_tUserBlockLog_gameid_idx ON tUserBlockLog(gameid, idx)
-GO
--- 블럭 당하는 유저가 중복이 발생할 수 있다. 한번 블럭당하고 또 블럭당한다. 즉 중복 블럭을 당한다.
--- insert into dbo.tUserBlockLog(gameid, comment) values(@gameid_, '아이템를 '+ltrim(rtrim(str(@cashcopy)))+'회 이상 카피를 해서 로그인시 시스템에서 블럭 처리했습니다.')
--- update dbo.tUserMaster set blockstate = '0' where gameid = 'DD0'
--- update dbo.tUserBlockLog set blockstate = 0, adminid = 'Marbles', adminip = '172.0.0.1', comment2 = '풀어주었다.', releasedate = getdate() where idx = 17
--- select * from dbo.tUserBlockLog order by idx desc
--- select idx, gameid, comment, writedate, blockstate, adminid, comment2, releasedate from dbo.tUserBlockLog order by idx desc
--- select top 20 * from dbo.tUserBlockLog where gameid = 'DD0' order by idx desc
-
 
 ---------------------------------------------
 --		유저가 삭제 요청에 의한 삭제
@@ -1384,189 +1071,6 @@ GO
 -- select * from dbo.tGiftList where gameid = 'xxxx' order by idx desc
 -- insert into dbo.tGiftList(gameid, giftkind, message) values('xxxx', 1, 'Shot message');
 -- insert into dbo.tGiftList(gameid, giftkind, itemcode, giftid) values('xxxx', 2, 1, 'Marbles');
-
-
----------------------------------------------
---	유니크 가입현황파악하기
----------------------------------------------
-IF OBJECT_ID (N'dbo.tUserPhone', N'U') IS NOT NULL
-	DROP TABLE dbo.tUserPhone;
-GO
-
-create table dbo.tUserPhone(
-	idx					int 				IDENTITY(1, 1),
-
-	phone				varchar(20),
-	market				int					default(1),
-	joincnt				int					default(1),
-	writedate			datetime			default(getdate()),
-
-	-- Constraint
-	CONSTRAINT	pk_tUserPhone_idx	PRIMARY KEY(idx)
-)
--- 폰인덱싱
-IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tUserPhone_phone')
-    DROP INDEX tUserPhone.idx_tUserPhone_phone
-GO
-CREATE INDEX idx_tUserPhone_phone ON tUserPhone (phone)
-GO
--- select top 1 * from dbo.tUserPhone
-
-
-
----------------------------------------------
---		구매했던 로그(개인)
----------------------------------------------
-IF OBJECT_ID (N'dbo.tUserItemBuyLog', N'U') IS NOT NULL
-	DROP TABLE dbo.tUserItemBuyLog;
-GO
-
-create table dbo.tUserItemBuyLog(
-	idx			int					IDENTITY(1,1), 					-- 번호
-	idx2		int,
-
-	gameid		varchar(20), 										-- 유저id
-	itemcode	int, 												-- 아이템코드, 중복 구매기록한다.
-	buydate2	varchar(8),											-- 구매일20131010
-	cnt			int					default(1), 					--
-
-	cashcost	int					default(0), 					-- 구매가격(세일할수있어서)
-	gamecost	int					default(0),
-	heart		int					default(0),
-	buydate		datetime			default(getdate()), 			-- 구매일
-
-	-- Constraint
-	CONSTRAINT	pk_tUserItemBuyLog_idx	PRIMARY KEY(idx)
-)
--- select top 1 * from dbo.tUserItemBuyLog
---select top 20 * from dbo.tUserItemBuyLog a join dbo.tItemInfo b on a.itemcode = b.itemcode where gameid = 'xxxx' order by a.idx desc
---select top 20 a.idx 'idx', gameid, a.itemcode 'itemcode', a.cashcost 'cashcost', a.gamecost 'gamecost', a.buydate, b.itemname, b.gamecost 'coinball2', b.cashcost 'milkball2', b.period, b.explain from dbo.tUserItemBuyLog a join dbo.tItemInfo b on a.itemcode = b.itemcode where gameid = 'Marbles' order by a.idx desc
---select top 20 * from dbo.tUserItemBuyLog where buydate between '2012-08-09 00:00:01' and '2012-08-10 00:00:01' order by idx desc
---insert into dbo.tUserItemBuyLog(gameid, itemcode, cashcost, gamecost) values('xxxx', 1, 5,  0)
---insert into dbo.tUserItemBuyLog(gameid, itemcode, cashcost, gamecost) values('xxxx', 1, 0, 50)
---통계용 인덱스
---IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tUserItemBuyLog_buydate')
---    DROP INDEX tUserItemBuyLog.idx_tUserItemBuyLog_buydate
---GO
---CREATE INDEX idx_tUserItemBuyLog_buydate ON tUserItemBuyLog (buydate)
---GO
-
---유저 검색용 인덱스
-IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tUserItemBuyLog_gameid_idx')
-    DROP INDEX tUserItemBuyLog.idx_tUserItemBuyLog_gameid_idx
-GO
-CREATE INDEX idx_tUserItemBuyLog_gameid_idx ON tUserItemBuyLog (gameid, idx)
-GO
-
-IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tUserItemBuyLog_gameid_idx2')
-    DROP INDEX tUserItemBuyLog.idx_tUserItemBuyLog_gameid_idx2
-GO
-CREATE INDEX idx_tUserItemBuyLog_gameid_idx2 ON tUserItemBuyLog (gameid, idx2)
-GO
-
-IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tUserItemBuyLog_gameid_buydate2_itemcode')
-    DROP INDEX tUserItemBuyLog.idx_tUserItemBuyLog_gameid_buydate2_itemcode
-GO
-CREATE INDEX idx_tUserItemBuyLog_gameid_buydate2_itemcode ON tUserItemBuyLog (gameid, buydate2, itemcode)
-GO
-
-
----------------------------------------------
--- 	구매했던 로그(월별 Master)
----------------------------------------------
-IF OBJECT_ID (N'dbo.tUserItemBuyLogTotalMaster', N'U') IS NOT NULL
-	DROP TABLE dbo.tUserItemBuyLogTotalMaster;
-GO
-
-create table dbo.tUserItemBuyLogTotalMaster(
-	idx				int				identity(1, 1),
-	dateid8			char(8),							-- 20101210
-
-	cashcost		bigint			default(0),
-	gamecost		bigint			default(0),
-	heart		int					default(0),
-	cnt				int				default(0),
-
-	-- Constraint
-	CONSTRAINT	pk_tUserItemBuyLogTotalMaster_dateid	PRIMARY KEY(dateid8)
-)
--- select         * from dbo.tUserItemBuyLogTotalMaster
--- select top 1   * from dbo.tUserItemBuyLogTotalMaster where dateid8 = '20120818'
--- insert into dbo.tUserItemBuyLogTotalMaster(dateid8, gamecost, cashcost, cnt) values('20120818', 100, 0, 1)
---update dbo.tUserItemBuyLogTotalMaster
---	set
---		gamecost = gamecost + 1,
---		cashcost = cashcost + 1,
---		cnt = cnt + 1
---where dateid8 = '20120818'
-
-
----------------------------------------------
--- 	구매했던 로그(월별 Sub)
----------------------------------------------
-IF OBJECT_ID (N'dbo.tUserItemBuyLogTotalSub', N'U') IS NOT NULL
-	DROP TABLE dbo.tUserItemBuyLogTotalSub;
-GO
-
-create table dbo.tUserItemBuyLogTotalSub(
-	idx				int				identity(1, 1),
-
-	dateid8			char(8),							-- 20101210
-	itemcode		int,
-
-	cashcost		int				default(0),
-	gamecost		int				default(0),
-	heart		int					default(0),
-	cnt				int				default(0),
-
-	-- Constraint
-	CONSTRAINT	pk_tUserItemBuyLogTotalSub_dateid8_itemcode	PRIMARY KEY(dateid8, itemcode)
-)
--- select top 100 * from dbo.tUserItemBuyLogTotalSub order by dateid8 desc, itemcode desc
--- select         * from dbo.tUserItemBuyLogTotalSub where dateid8 = '20120818'
--- select top 1   * from dbo.tUserItemBuyLogTotalSub where dateid8 = '20120818' and itemcode = 1
---update dbo.tUserItemBuyLogTotalSub
---	set
---		gamecost = gamecost + 1,
---		cashcost = cashcost + 1,
---		cnt = cnt + 1
---where dateid8 = '20120818' and itemcode = 1
--- insert into dbo.tUserItemBuyLogTotalSub(dateid8, itemcode, cashcost, gamecost, cnt) values('20120818', 1, 100, 0, 1)
-
-
----------------------------------------------
--- 	구매했던 로그(월별 누적)
----------------------------------------------
-IF OBJECT_ID (N'dbo.tUserItemBuyLogMonth', N'U') IS NOT NULL
-	DROP TABLE dbo.tUserItemBuyLogMonth;
-GO
-
-create table dbo.tUserItemBuyLogMonth(
-	idx				int				identity(1, 1),
-
-	dateid6			char(6),							-- 201012
-	itemcode		int,
-
-	cashcost		bigint			default(0),
-	gamecost		bigint			default(0),
-	heart		int					default(0),
-	cnt				int				default(0),
-
-	-- Constraint
-	CONSTRAINT	pk_tUserItemBuyLogMonth_dateid6_itemcode	PRIMARY KEY(dateid6, itemcode)
-)
--- select top 100 * from dbo.tUserItemBuyLogMonth order by dateid6 desc, itemcode desc
--- select         * from dbo.tUserItemBuyLogMonth where dateid6 = '201309'
--- select top 1   * from dbo.tUserItemBuyLogMonth where dateid6 = '201309' and itemcode = 1
--- insert into dbo.tUserItemBuyLogMonth(dateid6, itemcode, gamecost, cashcost, cnt) values('201309', 1, 100, 0, 1)
---update dbo.tUserItemBuyLogMonth
---	set
---		gamecost = gamecost + 1,
---		cashcost = cashcost + 1,
---		cnt = cnt + 1
---where dateid6 = '201309' and itemcode = 1
-
-
 
 ---------------------------------------------
 -- 	구매했던 로그(월별 Master)
