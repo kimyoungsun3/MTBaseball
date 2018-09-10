@@ -50,7 +50,7 @@
 					boolean isInMemory 	= fileItem.isInMemory();
 					long sizeInBytes	= fileItem.getSize();
 					//out.print("颇老 [fieldName] : "+ fieldName +"<br/>");
-					out.print("颇老 [fileName] : http://"+strIP+":"+strPort+"/Game4FarmVill5/etc/_ad/"+ fileName +"<br><br>");
+					out.print("颇老 [fileName] : http://"+strIP+":"+strPort+"/GameMTBaseball/etc/_ad/"+ fileName +"<br><br>");
 					//out.print("颇老 [contentType] : "+ contentType +"<br/>");
 					//out.print("颇老 [isInMemory] : "+ isInMemory +"<br/>");
 					//out.print("颇老 [sizeInBytes] : "+ sizeInBytes +"<br/>");

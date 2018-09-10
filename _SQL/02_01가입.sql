@@ -153,7 +153,7 @@ Begin
 	------------------------------------------------
 	set nocount on
 	set @nResult_ = @RESULT_ERROR
-	select 'DEBUG 1-1 입력정보', @gameid_ gameid_, @password_ password_, @username_ username_, @birthday_ birthday_,  @phone_ phone_, @email_ email_, @nickname_ nickname_, @version_ version_
+	--select 'DEBUG 1-1 입력정보', @gameid_ gameid_, @password_ password_, @username_ username_, @birthday_ birthday_,  @phone_ phone_, @email_ email_, @nickname_ nickname_, @version_ version_
 
 	------------------------------------------------
 	-- 핸드폰으로 생성된 아이디기 갯수 파악
@@ -161,7 +161,7 @@ Begin
 	select
 		@joincnt = joincnt
 	from tUserPhone where phone = @phone_
-	select 'DEBUG 1-2  핸드폰별 가입자:', @phone_ phone_, @joincnt joincnt
+	--select 'DEBUG 1-2  핸드폰별 가입자:', @phone_ phone_, @joincnt joincnt
 
 
 	------------------------------------------------
@@ -172,37 +172,37 @@ Begin
 			-- 블럭유저인가?
 			set @nResult_ 	= @RESULT_ERROR_BLOCK_USER
 			set @comment 	= '블럭처리된 아이디입니다.'
-			select 'DEBUG 2-1', @comment
+			--select 'DEBUG 2-1', @comment
 		end
 	else if exists (select top 1 * from tUserMaster where gameid = @gameid_)
 		begin
 			set @nResult_ = @RESULT_ERROR_ID_DUPLICATE
 			set @comment = '(생성)아이디가 중복되었습니다.'
-			select 'DEBUG 2-2', @comment
+			--select 'DEBUG 2-2', @comment
 		end
 	else if(@joincnt >= @ID_MAX)
 		begin
 			set @nResult_ = @RESULT_ERROR_ID_CREATE_MAX
 			set @comment = '생성개수 ' + ltrim(str(@ID_MAX)) + '개까지만(삭제는제외)'
-			select 'DEBUG 2-3', @comment
+			--select 'DEBUG 2-3', @comment
 		end
 	else if exists (select top 1 * from tUserMaster where email = @email_)
 		begin
 			set @nResult_ = @RESULT_ERROR_EMAIL_DUPLICATE
 			set @comment = '이메일이 중복되었습니다.'
-			select 'DEBUG 2-4', @comment
+			--select 'DEBUG 2-4', @comment
 		end
 	else if exists (select top 1 * from tUserMaster where nickname = @nickname_)
 		begin
 			set @nResult_ = @RESULT_ERROR_NICKNAME_DUPLICATE
 			set @comment = '닉네임이 중복되었습니다.'
-			select 'DEBUG 2-5', @comment
+			--select 'DEBUG 2-5', @comment
 		end
 	else
 		begin
 			set @nResult_ = @RESULT_SUCCESS
 			set @comment = '(생성)가입을 축하합니다.'
-			select 'DEBUG 3-1', @comment
+			--select 'DEBUG 3-1', @comment
 
 			-------------------------------------------
 			-- 1. 초기 지급 > 없음.
@@ -215,7 +215,7 @@ Begin
 			------------------------------------------------
 			-- 3. 착용장비 지급...
 			------------------------------------------------
-			select 'DEBUG 3-4 아이템지급 > 착용템지급'
+			--select 'DEBUG 3-4 아이템지급 > 착용템지급'
 			set @listidx		= 0
 			set @itemcode		= 1
 
@@ -261,7 +261,7 @@ Begin
 			---------------------------------------------
 			-- 유저 정보 입력하기
 			---------------------------------------------
-			select 'DEBUG 3-5 유저 정보 입력'
+			--select 'DEBUG 3-5 유저 정보 입력'
 			insert into dbo.tUserMaster(
 										gameid, 		password,
 										username, 		birthday, 		phone, 		email, 	nickname, 	version,
@@ -279,7 +279,7 @@ Begin
 			------------------------------------
 			-- 가입 통계를 작성한다.(일반, 게스트)
 			------------------------------------
-			select 'DEBUG > 3-7-2 아이디입력방식 생성'
+			--select 'DEBUG > 3-7-2 아이디입력방식 생성'
 			--exec spu_DayLogInfoStatic 10, 1
 
 			----------------------------------------------
@@ -287,7 +287,7 @@ Begin
 			----------------------------------------------
 			if(@joincnt = 0)
 				begin
-					select 'DEBUG > 3-8 핸드폰별 가입 카운터'
+					--select 'DEBUG > 3-8 핸드폰별 가입 카운터'
 					--exec spu_DayLogInfoStatic 11, 1
 
 					insert into dbo.tUserPhone(phone, joincnt) values(@phone_, 1)

@@ -32,9 +32,9 @@
 
 	try{
 		//2. 데이타 조작
-		//exec spu_FarmD 27, 11,  1, -1, -1, -1, -1, -1, -1, -1, 'adminid', 'xxxx', '', '', '', '', '', '', '', ''				-- 선물하기
-		//exec spu_FarmD 27, 12, -1, -1, -1, -1, -1, -1, -1, -1, 'adminid', 'xxxx', '메세지내용', '', '', '', '', '', '', ''	-- 메세지보내기
-		query.append("{ call dbo.spu_FarmD (?, ?, ?, ?, ?,  ?, ?, ?, ?, ?,  ?, ?, ?, ?, ?,  ?, ?, ?, ?, ?)} ");
+		//exec spu_GameMTBaseballD 27, 11,  1, -1, -1, -1, -1, -1, -1, -1, 'adminid', 'xxxx', '', '', '', '', '', '', '', ''				-- 선물하기
+		//exec spu_GameMTBaseballD 27, 12, -1, -1, -1, -1, -1, -1, -1, -1, 'adminid', 'xxxx', '메세지내용', '', '', '', '', '', '', ''	-- 메세지보내기
+		query.append("{ call dbo.spu_GameMTBaseballD (?, ?, ?, ?, ?,  ?, ?, ?, ?, ?,  ?, ?, ?, ?, ?,  ?, ?, ?, ?, ?)} ");
 		cstmt = conn.prepareCall(query.toString());
 		cstmt.setInt(idxColumn++, 27);
 		cstmt.setInt(idxColumn++, subkind);

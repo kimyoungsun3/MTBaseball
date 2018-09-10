@@ -78,8 +78,8 @@ function checkForm2(f) {
 	        					<select name="itemcode">
 									<%
 									//2. 데이타 조작
-									//exec spu_FarmD 27, 1,  -1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''							-- 선물 가능한 리스트
-									query.append("{ call dbo.spu_FarmD (?, ?, ?, ?, ?,  ?, ?, ?, ?, ?,  ?, ?, ?, ?, ?,  ?, ?, ?, ?, ?)} ");
+									//exec spu_GameMTBaseballD 27, 1,  -1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''							-- 선물 가능한 리스트
+									query.append("{ call dbo.spu_GameMTBaseballD (?, ?, ?, ?, ?,  ?, ?, ?, ?, ?,  ?, ?, ?, ?, ?,  ?, ?, ?, ?, ?)} ");
 									cstmt = conn.prepareCall(query.toString());
 									cstmt.setInt(idxColumn++, 27);
 									cstmt.setInt(idxColumn++, 1);

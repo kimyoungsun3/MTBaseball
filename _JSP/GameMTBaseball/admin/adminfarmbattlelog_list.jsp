@@ -63,9 +63,9 @@ function f_Submit(f) {
 					<%
 
 					//2. 데이타 조작
-					//exec spu_FarmD 19, 68,  2, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''						-- 			   리스트.
-					//exec spu_FarmD 19, 68,  2, -1, -1, -1, -1, -1, -1, -1, 'xxxx2', '', '', '', '', '', '', '', '', ''				-- 				검색.
-					query.append("{ call dbo.spu_FarmD (?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?)} ");
+					//exec spu_GameMTBaseballD 19, 68,  2, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''						-- 			   리스트.
+					//exec spu_GameMTBaseballD 19, 68,  2, -1, -1, -1, -1, -1, -1, -1, 'xxxx2', '', '', '', '', '', '', '', '', ''				-- 				검색.
+					query.append("{ call dbo.spu_GameMTBaseballD (?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?)} ");
 					cstmt = conn.prepareCall(query.toString());
 					cstmt.setInt(idxColumn++, 19);
 					cstmt.setInt(idxColumn++, 68);

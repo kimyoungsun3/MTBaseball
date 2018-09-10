@@ -58,8 +58,8 @@ function f_Submit(f) {
 				<table border=1>
 					<%
 					//2. 데이타 조작
-					//exec spu_FarmD 19, 98,  2, -1, -1, -1, -1, -1, -1, -1, '', '', '20140404', '', '', '', '', '', '', ''				--         레벨분포, 레벨통신사.
-					query.append("{ call dbo.spu_FarmD (?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?)} ");
+					//exec spu_GameMTBaseballD 19, 98,  2, -1, -1, -1, -1, -1, -1, -1, '', '', '20140404', '', '', '', '', '', '', ''				--         레벨분포, 레벨통신사.
+					query.append("{ call dbo.spu_GameMTBaseballD (?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?)} ");
 					cstmt = conn.prepareCall(query.toString());
 					cstmt.setInt(idxColumn++, 19);
 					cstmt.setInt(idxColumn++, 98);

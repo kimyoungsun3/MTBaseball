@@ -24,7 +24,7 @@
 
 	try{
 		//2. 데이타 조작
-		//exec spu_FarmD 25, 2, -1, -1, -1, -1, -1, -1, -1, -1, 'blackm', 'a1s2d3f4', '', '', '', '', '', '', '', ''			-- 관리자 로그인
+		//exec spu_GameMTBaseballD 25, 2, -1, -1, -1, -1, -1, -1, -1, -1, 'blackm', 'a1s2d3f4', '', '', '', '', '', '', '', ''			-- 관리자 로그인
 		query.append("{ call dbo.spu_GameMTBaseballD (?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?)} ");
 
 		cstmt = conn.prepareCall(query.toString());

@@ -67,9 +67,9 @@ function f_Submit(f) {
 			<table border=1>
 				<%
 				//2. 데이타 조작
-				//exec spu_FarmD 21, 21,-1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''						-- 유저환전로그
-				//exec spu_FarmD 21, 21,-1, -1, -1, -1, -1, -1, -1, -1, 'xxxx', '', '', '', '', '', '', '', '', ''					-- 유저환전로그
-				query.append("{ call dbo.spu_FarmD (?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?)} ");
+				//exec spu_GameMTBaseballD 21, 21,-1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''						-- 유저환전로그
+				//exec spu_GameMTBaseballD 21, 21,-1, -1, -1, -1, -1, -1, -1, -1, 'xxxx', '', '', '', '', '', '', '', '', ''					-- 유저환전로그
+				query.append("{ call dbo.spu_GameMTBaseballD (?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?)} ");
 				cstmt = conn.prepareCall(query.toString());
 				cstmt.setInt(idxColumn++, 21);
 				cstmt.setInt(idxColumn++, 21);

@@ -14,12 +14,6 @@
 	StringBuffer msg 			= new StringBuffer();
 	int idxColumn				= 1;
 
-	String market[] = {
-			""+SKT, 		"SKT(" + SKT + ")",
-			""+GOOGLE, 		"GOOGLE(" + GOOGLE + ")",
-			""+IPHONE,		"IPHONE(" + IPHONE + ")",
-			""+NHN,			"NHN(" + NHN + ")"
-	};
 
 	int idx 					= util.getParamInt(request, "idx", -1);
 
@@ -52,7 +46,6 @@ function f_Submit(f) {
 				<table>
 				<form name="GIFTFORM" method="post" action="notice_ok.jsp" onsubmit="return f_Submit(this);">
 				<input type="hidden" name="subkind" value="0">
-				<input type="hidden" name="buytype" value="0">
 					<tr>
 						<td>
 							[공지사항]
@@ -61,14 +54,6 @@ function f_Submit(f) {
 					<tr>
 						<td>
 							<font color=red>- 상태:점검중으로 선택하면 해당 통신사 모든 유저 로그인불가</font><br>
-							<!--<a href=fileupload.jsp>이미지UpLoad(PNG)</a> <br><br>-->
-
-							판매처 :
-							<select name="market" >
-								<%for(int i = 0; i < market.length; i+=2){%>
-									<option value="<%=market[i]%>"><%=market[i+1]%></option>
-								<%}%>
-							</select>
 
 							상태 :
 							<select name="syscheck" >
@@ -76,10 +61,8 @@ function f_Submit(f) {
 								<option value="1">점검중..(1)</option>
 							</select>
 
-							버젼 : <input name="version" type="text" value="101" maxlength="3" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;width:100px;"><br>
+							버젼 : <input name="version" type="text" value="100" maxlength="3" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;width:100px;"><br>
 
-							iteminfo version : <input name="iteminfover" type="text" value="101" maxlength="3" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;width:100px;"><br>
-							<!--iteminfo URL	: <input name="iteminfourl" type="text" value="" maxlength="512" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;width:450px;">-->
 							<a href=fileupload.jsp target=_blank>(파일올리기)</a>
 							<br>
 							<br>
@@ -87,25 +70,19 @@ function f_Submit(f) {
 					</tr>
 					<tr>
 						<td>
-							공지 이미지		: <input name="comfile" type="text" value="" maxlength="512" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;width:450px;"><br>
-							공지 URL		: <input name="comurl" type="text" value="" maxlength="512" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;width:450px;"><a href=fileupload.jsp target=_blank>(파일올리기)</a><br>
-							공지2 이미지	: <input name="comfile2" type="text" value="" maxlength="512" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;width:450px;"><br>
-							공지2 URL		: <input name="comurl2" type="text" value="" maxlength="512" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;width:450px;"><a href=fileupload.jsp target=_blank>(파일올리기)</a><br>
-							공지3 이미지	: <input name="comfile3" type="text" value="" maxlength="512" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;width:450px;"><br>
-							공지3 URL		: <input name="comurl3" type="text" value="" maxlength="512" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;width:450px;"><a href=fileupload.jsp target=_blank>(파일올리기)</a><br>
-							공지4 이미지	: <input name="comfile4" type="text" value="" maxlength="512" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;width:450px;"><br>
-							공지4 URL		: <input name="comurl4" type="text" value="" maxlength="512" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;width:450px;"><a href=fileupload.jsp target=_blank>(파일올리기)</a><br>
-							공지5 이미지	: <input name="comfile5" type="text" value="" maxlength="512" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;width:450px;"><br>
-							공지5 URL		: <input name="comurl5" type="text" value="" maxlength="512" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;width:450px;"><a href=fileupload.jsp target=_blank>(파일올리기)</a><br>
+							광고1 이미지	: <input name="comfile1" type="text" value="" maxlength="512" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;width:450px;"><br>
+							광고1 URL		: <input name="comurl1" type="text" value="" maxlength="512" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;width:450px;"><a href=fileupload.jsp target=_blank>(파일올리기)</a><br>
+							광고2 이미지	: <input name="comfile2" type="text" value="" maxlength="512" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;width:450px;"><br>
+							광고2 URL		: <input name="comurl2" type="text" value="" maxlength="512" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;width:450px;"><a href=fileupload.jsp target=_blank>(파일올리기)</a><br>
+							광고3 이미지	: <input name="comfile3" type="text" value="" maxlength="512" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;width:450px;"><br>
+							광고3 URL		: <input name="comurl3" type="text" value="" maxlength="512" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;width:450px;"><a href=fileupload.jsp target=_blank>(파일올리기)</a><br>
+							광고4 이미지	: <input name="comfile4" type="text" value="" maxlength="512" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;width:450px;"><br>
+							광고4 URL		: <input name="comurl4" type="text" value="" maxlength="512" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;width:450px;"><a href=fileupload.jsp target=_blank>(파일올리기)</a><br>
+							광고5 이미지	: <input name="comfile5" type="text" value="" maxlength="512" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;width:450px;"><br>
+							광고5 URL		: <input name="comurl5" type="text" value="" maxlength="512" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;width:450px;"><a href=fileupload.jsp target=_blank>(파일올리기)</a><br>
 
 							패치URL			: <input name="patchurl" type="text" value="" maxlength="512" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;width:450px;"><br>
-							게시판URL		: <input name="recurl" type="text" value="" maxlength="512" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;width:450px;"><br>
-							커뮤니티URL		: <input name="communityurl" type="text" value="" maxlength="512" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;width:450px;"><br>
-							잦은질문URL		: <input name="serviceurl" type="text" value="" maxlength="512" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;width:450px;"><br>
-							<!--
-							SMSURL			: <input name="smsurl" type="text" value="" maxlength="512" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;width:450px;"><br>
-							SMS내용			: <input name="smscom" type="text" value="" maxlength="512" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;width:450px;"><br>
-							-->
+
 						</td>
 					</tr>
 					<tr>
@@ -121,9 +98,9 @@ function f_Submit(f) {
 				</div>
 				<table border=1>
 					<%
-					//exec spu_FarmD2 20, 2, -1, -1, -1,  -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''			-- 리스트
+					//exec spu_GameMTBaseballD2 20, 2, -1, -1, -1,  -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''			-- 리스트
 					//2. 데이타 조작
-					query.append("{ call dbo.spu_FarmD2 (?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?)} ");
+					query.append("{ call dbo.spu_GameMTBaseballD2 (?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?)} ");
 					cstmt = conn.prepareCall(query.toString());
 					cstmt.setInt(idxColumn++, KIND_NOTICE_SETTING);
 					cstmt.setInt(idxColumn++, 2);
@@ -169,11 +146,8 @@ function f_Submit(f) {
 							<form name="GIFTFORM" method="post" action="notice_ok.jsp" onsubmit="return f_Submit(this);">
 							<input type="hidden" name="subkind" value="1">
 	        				<input type="hidden" name="idx" value="<%=result.getString("idx")%>">
-	        				<input type="hidden" name="market" value="<%=result.getString("market")%>">
-	        				<input type="hidden" name="buytype" value="<%=result.getString("buytype")%>">
-	        				<input type="hidden" name="iteminfourl" value="<%=result.getString("iteminfourl")%>">
 							<td <%=getCheckValueOri(result.getInt("idx"), idx, "bgcolor=#ffe020", "")%> valign=top>
-								<%=getTel(result.getInt("market"))%><a name="<%=result.getString("idx")%>"></a>
+								<a name="<%=result.getString("idx")%>"></a>
 							</td>
 							<td>
 								<table <%=getCheckValueOri(result.getInt("syscheck"), 1, "bgcolor=#aa00aa", "")%> valign=top>
@@ -194,21 +168,15 @@ function f_Submit(f) {
 										</td>
 									</tr>
 									<tr>
-										<td>iteminfo version</td>
+										<td>광고1</td>
 										<td>
-											<input name="iteminfover" type="text" value="<%=result.getString("iteminfover")%>" size="3" maxlength="3" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;">
+											<input name="comfile1" type="text" value="<%=result.getString("comfile1")%>" size="100" maxlength="512" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;"><a href=fileupload.jsp target=_blank>(파일올리기)</a><br>
+											<input name="comurl1" type="text" value="<%=result.getString("comurl1")%>" size="100" maxlength="512" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;"><br>
+											<%=result.getString("comurl1").equals("")?"":"<a href="+(result.getString("comurl1") + " target=_blank>")%><img src="<%=result.getString("comfile1")%>"></a>
 										</td>
 									</tr>
 									<tr>
-										<td>공지1</td>
-										<td>
-											<input name="comfile" type="text" value="<%=result.getString("comfile")%>" size="100" maxlength="512" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;"><a href=fileupload.jsp target=_blank>(파일올리기)</a><br>
-											<input name="comurl" type="text" value="<%=result.getString("comurl")%>" size="100" maxlength="512" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;"><br>
-											<%=result.getString("comurl").equals("")?"":"<a href="+(result.getString("comurl") + " target=_blank>")%><img src="<%=result.getString("comfile")%>"></a>
-										</td>
-									</tr>
-									<tr>
-										<td>공지2</td>
+										<td>광고2</td>
 										<td>
 											<input name="comfile2" type="text" value="<%=result.getString("comfile2")%>" size="100" maxlength="512" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;"><a href=fileupload.jsp target=_blank>(파일올리기)</a><br>
 											<input name="comurl2" type="text" value="<%=result.getString("comurl2")%>" size="100" maxlength="512" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;"><br>
@@ -216,7 +184,7 @@ function f_Submit(f) {
 										</td>
 									</tr>
 									<tr>
-										<td>공지3</td>
+										<td>광고3</td>
 										<td>
 											<input name="comfile3" type="text" value="<%=result.getString("comfile3")%>" size="100" maxlength="512" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;"><a href=fileupload.jsp target=_blank>(파일올리기)</a><br>
 											<input name="comurl3" type="text" value="<%=result.getString("comurl3")%>" size="100" maxlength="512" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;"><br>
@@ -224,7 +192,7 @@ function f_Submit(f) {
 										</td>
 									</tr>
 									<tr>
-										<td>공지4</td>
+										<td>광고4</td>
 										<td>
 											<input name="comfile4" type="text" value="<%=result.getString("comfile4")%>" size="100" maxlength="512" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;"><a href=fileupload.jsp target=_blank>(파일올리기)</a><br>
 											<input name="comurl4" type="text" value="<%=result.getString("comurl4")%>" size="100" maxlength="512" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;"><br>
@@ -232,7 +200,7 @@ function f_Submit(f) {
 										</td>
 									</tr>
 									<tr>
-										<td>공지5</td>
+										<td>광고5</td>
 										<td>
 											<input name="comfile5" type="text" value="<%=result.getString("comfile5")%>" size="100" maxlength="512" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;"><a href=fileupload.jsp target=_blank>(파일올리기)</a><br>
 											<input name="comurl5" type="text" value="<%=result.getString("comurl5")%>" size="100" maxlength="512" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;"><br>
@@ -243,25 +211,6 @@ function f_Submit(f) {
 										<td>패치 URL</td>
 										<td>
 											<input name="patchurl" type="text" value="<%=result.getString("patchurl")%>" size="100" maxlength="512" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;">
-										</td>
-									</tr>
-									<tr>
-										<td>추천 게시판URL</td>
-										<td>
-											<input name="recurl" type="text" value="<%=result.getString("recurl")%>" size="100" maxlength="512" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;"><br>
-
-										</td>
-									</tr>
-									<tr>
-										<td>커뮤니티URL</td>
-										<td>
-											<input name="communityurl" type="text" value="<%=result.getString("communityurl")%>" size="100" maxlength="512" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;">
-										</td>
-									</tr>
-									<tr>
-										<td>잦은질문URL</td>
-										<td>
-											<input name="serviceurl" type="text" value="<%=result.getString("serviceurl")%>" size="100" maxlength="512" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;">
 										</td>
 									</tr>
 									<tr>

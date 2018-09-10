@@ -63,8 +63,8 @@
 
 	try{
 		//2. 데이타 조작
-		//exec spu_FarmD 27, 21, -1,  1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''							-- 선물, 메세지 삭제
-		query.append("{ call dbo.spu_FarmD (?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?)} ");
+		//exec spu_GameMTBaseballD 27, 21, -1,  1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''							-- 선물, 메세지 삭제
+		query.append("{ call dbo.spu_GameMTBaseballD (?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?)} ");
 		cstmt = conn.prepareCall(query.toString());
 		cstmt.setInt(idxColumn++, p1);
 		cstmt.setInt(idxColumn++, p2);

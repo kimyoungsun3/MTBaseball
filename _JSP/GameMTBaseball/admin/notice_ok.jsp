@@ -21,13 +21,11 @@
 	//1-2. 데이타 받기
 	int subkind 		= util.getParamInt(request, "subkind", 0);
 	int idx				= util.getParamInt(request, "idx", 0);
-	int market 			= util.getParamInt(request, "market", SKT);
-	int buytype 		= util.getParamInt(request, "buytype", 0);
 	int version 		= util.getParamInt(request, "version", 0);
 	int syscheck 		= util.getParamInt(request, "syscheck", 0);
 
-	String comfile 		= util.getParamStr(request, "comfile", "");
-	String comurl 		= util.getParamStr(request, "comurl", "");
+	String comfile1 	= util.getParamStr(request, "comfile1", "");
+	String comurl1 		= util.getParamStr(request, "comurl1", "");
 	String comfile2 	= util.getParamStr(request, "comfile2", "");
 	String comurl2 		= util.getParamStr(request, "comurl2", "");
 	String comfile3 	= util.getParamStr(request, "comfile3", "");
@@ -37,15 +35,10 @@
 	String comfile5 	= util.getParamStr(request, "comfile5", "");
 	String comurl5		= util.getParamStr(request, "comurl5", "");
 	String patchurl 	= util.getParamStr(request, "patchurl", "");
-	String recurl		= util.getParamStr(request, "recurl", "");
-	int iteminfover		= util.getParamInt(request, "iteminfover", 100);	//현재 사용안함
-	String iteminfourl	= util.getParamStr(request, "iteminfourl", "");
-	String communityurl	= util.getParamStr(request, "communityurl", "");
-	String serviceurl	= util.getParamStr(request, "serviceurl", "");
 	String comment		= util.getParamStr(request, "comment", "");
 
-	comfile 		= getDBCheckURL(comfile);
-	comurl 			= getDBCheckURL(comurl);
+	comfile1 		= getDBCheckURL(comfile1);
+	comurl1 			= getDBCheckURL(comurl1);
 	comfile2 		= getDBCheckURL(comfile2);
 	comurl2 		= getDBCheckURL(comurl2);
 	comfile3 		= getDBCheckURL(comfile3);
@@ -55,28 +48,22 @@
 	comfile5 		= getDBCheckURL(comfile5);
 	comurl5 		= getDBCheckURL(comurl5);
 	patchurl 		= getDBCheckURL(patchurl);
-	recurl	 		= getDBCheckURL(recurl);
-	iteminfourl	 	= getDBCheckURL(iteminfourl);
-	communityurl	= getDBCheckURL(communityurl);
-	serviceurl	 	= getDBCheckURL(serviceurl);
 	comment	 		= getDBCheckURL(comment);
-	//out.print("<br>iteminfourl:" + iteminfourl);
 	//out.print("<br>comment:" + comment);
 
 	try{
 		//2. 데이타 조작
-		query.append("{ call dbo.spu_FarmD2 (?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?)} ");
+		query.append("{ call dbo.spu_GameMTBaseballD2 (?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?)} ");
 
 		cstmt = conn.prepareCall(query.toString());
 
 		cstmt.setInt(idxColumn++, KIND_NOTICE_SETTING);
 		cstmt.setInt(idxColumn++, subkind);
 		cstmt.setInt(idxColumn++, idx);
-		cstmt.setInt(idxColumn++, market);
-		cstmt.setInt(idxColumn++, buytype);
+		cstmt.setInt(idxColumn++, -1);
+		cstmt.setInt(idxColumn++, -1);
 		cstmt.setInt(idxColumn++, version);
 		cstmt.setInt(idxColumn++, syscheck);
-		cstmt.setInt(idxColumn++, iteminfover);
 		cstmt.setInt(idxColumn++, -1);
 		cstmt.setInt(idxColumn++, -1);
 		cstmt.setInt(idxColumn++, -1);
@@ -84,8 +71,9 @@
 		cstmt.setInt(idxColumn++, -1);
 		cstmt.setInt(idxColumn++, -1);
 		cstmt.setInt(idxColumn++, -1);
-		cstmt.setString(idxColumn++, comfile);
-		cstmt.setString(idxColumn++, comurl);
+		cstmt.setInt(idxColumn++, -1);
+		cstmt.setString(idxColumn++, comfile1);
+		cstmt.setString(idxColumn++, comurl1);
 		cstmt.setString(idxColumn++, comfile2);
 		cstmt.setString(idxColumn++, comurl2);
 		cstmt.setString(idxColumn++, comfile3);
@@ -96,10 +84,10 @@
 		cstmt.setString(idxColumn++, comurl5);
 		cstmt.setString(idxColumn++, "");
 		cstmt.setString(idxColumn++, patchurl);
-		cstmt.setString(idxColumn++, recurl);
-		cstmt.setString(idxColumn++, iteminfourl);
-		cstmt.setString(idxColumn++, communityurl);
-		cstmt.setString(idxColumn++, serviceurl);
+		cstmt.setString(idxColumn++, "");
+		cstmt.setString(idxColumn++, "");
+		cstmt.setString(idxColumn++, "");
+		cstmt.setString(idxColumn++, "");
 		cstmt.setString(idxColumn++, "");
 		cstmt.setString(idxColumn++, "");
 		cstmt.setString(idxColumn++, "");

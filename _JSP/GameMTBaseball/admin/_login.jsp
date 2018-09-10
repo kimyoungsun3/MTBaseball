@@ -43,7 +43,7 @@ function f_Submit(f) {
 					<form name="GIFTFORM" method="post" action="_login_ok.jsp" onsubmit="return f_Submit(this);">
 					<tr>
 						<td colspan=2>
-							<%=servername%><%=strIP%><br><br>
+							<%=servername%><br><br>
 						</td>
 					</tr>
 					<tr>

@@ -1,7 +1,7 @@
 ﻿
 --공지사항작성(20)
---exec spu_GameMTBaseballD2 20, 0, -1,  1,  0, 101,  0, -1, -1, -1, -1, -1, -1, -1, -1, 'http://203.234.238.249:40009/Game4GameMTBaseball/etc/_ad/top_ad_image01.png', 'http://m.naver.com', 'http://203.234.238.249:40009/Game4GameMTBaseball/etc/_ad/top_ad_image02.png', 'http://m.daum.com', 'http://203.234.238.249:40009/Game4GameMTBaseball/etc/_ad/top_ad_image03.png', 'http://m.hungryapp.co.kr',	'http://www.ubx.co.kr', 'http://clien.career.co.kr', '', '', '', '', '', '', '', '', '', '', '', '공지내용'		-- 작성
---exec spu_GameMTBaseballD2 20, 1,  6,  1,  0, 101,  0, -1, -1, -1, -1, -1, -1, -1, -1, 'http://203.234.238.249:40009/Game4GameMTBaseball/etc/_ad/top_ad_image01.png', 'http://m.naver.com', 'http://203.234.238.249:40009/Game4GameMTBaseball/etc/_ad/top_ad_image02.png', 'http://m.daum.com', 'http://203.234.238.249:40009/Game4GameMTBaseball/etc/_ad/top_ad_image03.png', 'http://m.hungryapp.co.kr',	'http://www.ubx.co.kr', 'http://clien.career.co.kr', '', '', '', '', '', '', '', '', '', '', '', '공지내용'		-- 루비
+--exec spu_GameMTBaseballD2 20, 0, -1, -1, -1, 100,  0, -1, -1, -1, -1, -1, -1, -1, -1, 'http://49.247.202.212:8086/GameMTBaseball/etc/_ad/1.PNG', 'http://m.naver.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '공지내용'		-- 작성
+--exec spu_GameMTBaseballD2 20, 1,  1, -1, -1, 100,  0, -1, -1, -1, -1, -1, -1, -1, -1, 'http://49.247.202.212:8086/GameMTBaseball/etc/_ad/1.PNG', 'http://m.daum.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '공지내용'		-- 작성
 --exec spu_GameMTBaseballD2 20, 2, -1, -1, -1,  -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''			-- 리스트
 
 use GameMTBaseball
@@ -59,16 +59,6 @@ as
 	------------------------------------------------
 	declare @KIND_NOTICE_SETTING				int				set @KIND_NOTICE_SETTING				= 20
 
-
-	-- 통신사 구분값
-	declare @SKT 							int					set @SKT						= 1
-	declare @KT 							int					set @KT							= 2
-	declare @LGT 							int					set @LGT						= 3
-	declare @GOOGLE 						int					set @GOOGLE						= 5
-	declare @NHN	 						int					set @NHN						= 6
-	declare @IPHONE							int					set @IPHONE						= 7
-
-
 	------------------------------------------------
 	--	일반변수선언
 	------------------------------------------------
@@ -77,13 +67,9 @@ as
 	declare @idx 			int				set @idx 			= @p3_
 	declare @idx2 			int
 
-
 	declare @comment4		varchar(8000)
 	declare @syscheck		int
-	declare @market			int				set @market = 1
-	declare @buytype		int
 	declare @version		int
-	declare @iteminfover	int
 
 Begin
 	------------------------------------------------
@@ -96,34 +82,25 @@ Begin
 	------------------------------------------------
 	if(@kind = @KIND_NOTICE_SETTING)
 		begin
-			set @subkind 	= @p2_
-			set @idx		= @p3_
-			set @market		= @p4_
-			set @buytype	= @p5_
 			set @version	= @p6_
 			set @syscheck	= @p7_
-			set @iteminfover= @p8_
 			set @comment4	= @ps20_
 
 			if(@subkind = 0)
 				begin
-					insert into dbo.tNotice(market,  buytype,  comfile, comurl, comfile2, comurl2, comfile3, comurl3, comfile4, comurl4, comfile5, comurl5,  version,  patchurl,  recurl,   comment,   syscheck,  iteminfover,  iteminfourl, communityurl, serviceurl)
-					values(                @market, @buytype,  @ps1_,   @ps2_,  @ps3_,    @ps4_,   @ps5_,    @ps6_,   @ps7_,    @ps8_,   @ps9_,    @ps10_,  @version,    @ps12_,  @ps13_,  @comment4, @syscheck, @iteminfover,       @ps14_,       @ps15_,     @ps16_)
+					insert into dbo.tNotice(comfile1, comurl1, comfile2, comurl2, comfile3, comurl3, comfile4, comurl4, comfile5, comurl5,  version,  patchurl,  comment,   syscheck)
+					values(                @ps1_,     @ps2_,   @ps3_,    @ps4_,   @ps5_,    @ps6_,   @ps7_,    @ps8_,   @ps9_,    @ps10_,  @version, @ps12_,    @comment4, @syscheck)
 
 					-- 종류별 공지사항.
 					select * from dbo.tNotice
-					where idx in (select max(idx) from dbo.tNotice where market in (@SKT, @GOOGLE, @IPHONE) group by market, buytype)
-					order by market, buytype asc
+					order by idx asc
 				end
 			else if(@subkind = 1)
 				begin
 					update dbo.tNotice
 						set
-							market		= @market,
-							buytype		= @buytype,
-
-							comfile		= @ps1_,
-							comurl 		= @ps2_,
+							comfile1	= @ps1_,
+							comurl1		= @ps2_,
 							comfile2	= @ps3_,
 							comurl2 	= @ps4_,
 							comfile3	= @ps5_,
@@ -132,32 +109,22 @@ Begin
 							comurl4		= @ps8_,
 							comfile5	= @ps9_,
 							comurl5		= @ps10_,
-							communityurl= @ps15_,
-							serviceurl	= @ps16_,
 
 							version		= @version,
-
 							patchurl	= @ps12_,
-							recurl	 	= @ps13_,
 							comment	 	= @comment4,
-							iteminfover = @iteminfover,
-							iteminfourl = @ps14_,
-
 							syscheck 	= @syscheck
 					where idx = @idx
 
-
 					-- 종류별 공지사항.
-					select * from dbo.tNotice
-					where idx in (select max(idx) from dbo.tNotice where market in (@SKT, @GOOGLE, @IPHONE, @NHN) group by market, buytype)
-					order by market, buytype asc
+					select top 1 * from dbo.tNotice
+					order by idx asc
 				end
 			else if(@subkind = 2)
 				begin
 					-- 종류별 공지사항.
-					select * from dbo.tNotice
-					where idx in (select max(idx) from dbo.tNotice where market in (@SKT, @GOOGLE, @IPHONE, @NHN) group by market, buytype)
-					order by market, buytype asc
+					select top 1 * from dbo.tNotice
+					order by idx asc
 				end
 		end
 

@@ -24,8 +24,8 @@
 
 	try{
 		//2. 데이타 조작
-		//exec spu_FarmD 20, -1, -1, 31, -1, -1, -1, -1, -1, -1, '', '', '', '01011112222', '아이템카피'		--블럭처리.
-		query.append("{ call dbo.spu_FarmD (?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?)} ");
+		//exec spu_GameMTBaseballD 20, -1, -1, 31, -1, -1, -1, -1, -1, -1, '', '', '', '01011112222', '아이템카피'		--블럭처리.
+		query.append("{ call dbo.spu_GameMTBaseballD (?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?)} ");
 		cstmt = conn.prepareCall(query.toString());
 		cstmt.setInt(idxColumn++, 20);
 		cstmt.setInt(idxColumn++, -1);

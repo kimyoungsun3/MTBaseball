@@ -28,8 +28,8 @@
 
 	try{
 		//2. 데이타 조작
-		//exec spu_FarmD 30, 11, -1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''								-- 패키지상품(아이템리스트).
-		query.append("{ call dbo.spu_FarmD (?, ?, ?, ?, ?,  ?, ?, ?, ?, ?,  ?, ?, ?, ?, ?,  ?, ?, ?, ?, ?)} ");
+		//exec spu_GameMTBaseballD 30, 11, -1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''								-- 패키지상품(아이템리스트).
+		query.append("{ call dbo.spu_GameMTBaseballD (?, ?, ?, ?, ?,  ?, ?, ?, ?, ?,  ?, ?, ?, ?, ?,  ?, ?, ?, ?, ?)} ");
 		cstmt = conn.prepareCall(query.toString());
 		cstmt.setInt(idxColumn++, 30);
 		cstmt.setInt(idxColumn++, 11);

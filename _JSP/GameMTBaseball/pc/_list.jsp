@@ -11,42 +11,26 @@
 
 
 <table border=1 align=center>
-	<!--
 	<tr>
 		<td>
-			newstart.jsp
+			createid.jsp(이걸로 계정생성)
 		</td>
 		<td>
-			<a href=newstart.jsp?gameid=xxxx2&password=049000s1i0n7t8445289&kakaouserid=kakaouseridxxxx2>계정정지</a><br>
+			<a href=createid.jsp?gameid=mtxxxx&password=049000s1i0n7t8445289&username=mtusername&birthday=19980101&phone=01011112222&email=mtxxx@xxx.xxx&nickname=mtnickname&version=100>mtxxxx생성</a><br>
+			
 		</td>
-		<td>
-			gameid=xxxx            <br>
-			password=xxxx          <br>
-			kakaouserid=xxxx       <br>
-		</td>
-	</tr>
-	-->
-	<tr>
-		<td>
-			create.jsp(이걸로 계정생성)
-		</td>
-		<td>
-			<a href=createguest.jsp?gameid=farm&password=049000s1i0n7t8445289&market=5&buytype=0&platform=1&ukey=xxxxx&version=101&phone=01011112222&pushid=>farm아이디생성</a><br>
-			<a href=createguest.jsp?gameid=farm&password=049000s1i0n7t8445289&market=5&buytype=0&platform=1&ukey=xxxxx&version=101&phone=01011112222&pushid=&kakaotalkid=kakaotalkidxxxx2>farm 재연결</a><br>
-			gameid에 farm라고만하면 자동으로 생성한다.
-		</td>
-		<td>
-			gameid=farm           <br>
-			password=(클라자동생성)<br>
-			market=1               <br>
-			buytype=0              <br>
-			platform=1             <br>
-			ukey=xxxxx             <br>
-			version=101      	   <br>
+		<td>			
+			gameid=mtxxxx          <br>
+			password=(암호화되어서전송됨) <br>
+			username=mtusername    <br>
+			birthday=19980101      <br>
 			phone=01011112222      <br>
-			pushid=xxxx            <br>
+			email=mtxxx@xxx.xxx    <br>
+			nickname=mtnickname    <br>
+			version=100      	   <br>
 		</td>
 	</tr>
+	<!--
 	<tr>
 		<td>
 			login.jsp
@@ -61,6 +45,7 @@
 			version=101				<br>
 		</td>
 	</tr>
+	-->
 	
 	<%/*%>
 	<!--

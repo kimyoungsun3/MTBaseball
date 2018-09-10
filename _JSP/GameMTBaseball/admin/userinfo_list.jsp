@@ -22,28 +22,18 @@
 
 	String gameid 				= util.getParamStr(request, "gameid", "");
 	String phone 				= util.getParamStr(request, "phone", "");
-	String kakaouserid			= util.getParamStr(request, "kakaouserid", "");
-	String kakaotalkid			= util.getParamStr(request, "kakaotalkid", "");
-	String kakaogameid			= util.getParamStr(request, "kakaogameid", "");
-	int kakaomsginvitecnt		= 0;
-	int questing = 0, questwait = 0, questend = 0, total = 0;
 	boolean bList;
-	if(gameid.equals("") && phone.equals("") && kakaouserid.equals("") && kakaotalkid.equals("") && kakaogameid.equals("")){
+	if(gameid.equals("") && phone.equals("")){
 		bList = true;
 	}else{
 		bList = false;
 	}
 
-	int anireplistidx			= -1;
 	int comreward				= -1;
 	int num						= 0;
 	int earncoin				= 0;
-	int schoolidx				= -1;
 	int famelv					= 0;
 	int kind					= 0;
-	int battleanilistidx[]		= {-1, -1, -1};
-	int userbattleanilistidx[]	= {-1, -1, -1};
-
 	try{
 %>
 <html><head>
@@ -74,7 +64,6 @@ function f_Submit(f) {
 					<tr>
 						<td colspan=3>
 							유저 아이디를 정확히 입력하세요.<br>
-							(상제 유저정보를 컨트롤 가능합니다. 유저수는 farm_유저수(나머지)_더미(3자리))<br>
 							<font color=red>과금 기록 없이 2000루비/100만코인 이상 이면 블럭계정, 블럭핸드폰, 블럭카톡(자동이니까 유의하세요.)</font>
 							<a href=userinfo_list.jsp><img src=images/refresh2.png alt="화면갱신"></a>
 						</td>
@@ -92,39 +81,15 @@ function f_Submit(f) {
 						<td><input name="phone" type="text" value="<%=phone%>" maxlength="16" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;width:300px;"></td>
 						<td style="padding-left:5px;"><input name="image" type="image" src="images/btn_send.gif" border="0" tabindex="3"></td>
 					</tr>
-					<tr>
-						<td>
-							카톡회원번호(>17자리)<br>
-							카톡-> 설정 -> 정보검색용(kakaouserid)
-						</td>
-						<td><input name="kakaouserid" type="text" value="<%=kakaouserid%>" maxlength="60" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;width:300px;"></td>
-						<td style="padding-left:5px;"><input name="image" type="image" src="images/btn_send.gif" border="0" tabindex="3"></td>
-					</tr>
-					<tr>
-						<td>
-							uuid(>30여자리)<br>
-							카톡-> 친구연결정보
-							</td>
-						<td><input name="kakaotalkid" type="text" value="<%=kakaotalkid%>" maxlength="60" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;width:300px;"></td>
-						<td style="padding-left:5px;"><input name="image" type="image" src="images/btn_send.gif" border="0" tabindex="3"></td>
-					</tr>
-					<tr>
-						<td>
-							kakaogameid(>약13여자리)<br>
-							게임 -> 설정 -> 1xxx숫자로된것
-							</td>
-						<td><input name="kakaogameid" type="text" value="<%=kakaogameid%>" maxlength="60" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;width:300px;"></td>
-						<td style="padding-left:5px;"><input name="image" type="image" src="images/btn_send.gif" border="0" tabindex="3"></td>
-					</tr>
 					</form>
 				</table>
 				<table border=1>
 					<%
 					//2. 데이타 조작
-					//exec spu_FarmD 7, -1, -1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''
-					//exec spu_FarmD 7, -1, -1, -1, -1, -1, -1, -1, -1, -1, 'SangSang', '', '', '', '', '', '', '', '', ''
-					//exec spu_FarmD 7, -1, -1, -1, -1, -1, -1, -1, -1, -1, '', '01022223333', '', '', '', '', '', '', '', ''
-					query.append("{ call dbo.spu_FarmD (?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?)} ");
+					//exec spu_GameMTBaseballD 7, -1, -1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''
+					//exec spu_GameMTBaseballD 7, -1, -1, -1, -1, -1, -1, -1, -1, -1, 'SangSang', '', '', '', '', '', '', '', '', ''
+					//exec spu_GameMTBaseballD 7, -1, -1, -1, -1, -1, -1, -1, -1, -1, '', '01022223333', '', '', '', '', '', '', '', ''
+					query.append("{ call dbo.spu_GameMTBaseballD (?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?)} ");
 					cstmt = conn.prepareCall(query.toString());
 					cstmt.setInt(idxColumn++, 7);
 					cstmt.setInt(idxColumn++, -1);
@@ -138,9 +103,9 @@ function f_Submit(f) {
 					cstmt.setInt(idxColumn++, idxPage);
 					cstmt.setString(idxColumn++, gameid);
 					cstmt.setString(idxColumn++, phone);
-					cstmt.setString(idxColumn++, kakaouserid);
-					cstmt.setString(idxColumn++, kakaotalkid);
-					cstmt.setString(idxColumn++, kakaogameid);
+					cstmt.setString(idxColumn++, "");
+					cstmt.setString(idxColumn++, "");
+					cstmt.setString(idxColumn++, "");
 					cstmt.setString(idxColumn++, "");
 					cstmt.setString(idxColumn++, "");
 					cstmt.setString(idxColumn++, "");
@@ -165,11 +130,6 @@ function f_Submit(f) {
 					<%
 					while(result.next()){
 						if(gameid.equals(result.getString("gameid"))){
-							anireplistidx = result.getInt("anireplistidx");
-							for(int jj = 1; jj <= 3; jj++){
-								battleanilistidx[ jj - 1 ] 		= result.getInt("battleanilistidx" + jj);
-								userbattleanilistidx[ jj - 1 ] 	= result.getInt("userbattleanilistidx" + jj);
-							}
 						}
 					%>
 						<tr>
@@ -260,84 +220,11 @@ function f_Submit(f) {
 										out.print( result.getString("param" + i) + "/");
 									}%><br>
 
-								광고번호 :
-									<a href=usersetting_ok.jsp?p1=19&p2=64&p3=31&ps1=<%=result.getString("gameid")%>&ps2=<%=adminid%>&branch=userinfo_list&gameid=<%=result.getString("gameid")%>>
-										<%=result.getString("adidx")%>
-									</a><br>
-								학교가입현황:
-
-
-									<%
-									schoolidx = result.getInt("schoolidx");
-									out.print(schoolidx);
-									%><br>
-									<a href=usersetting_ok.jsp?p1=19&p2=94&p3=1&ps1=<%=result.getString("gameid")%>&ps2=<%=adminid%>&branch=userinfo_list&gameid=<%=result.getString("gameid")%>>
-										학교강제탈퇴
-									</a> /
-									<a href=schooluser_list.jsp?schoolidx=<%=result.getInt("schoolidx")%>>학교보기</a>
-									<br>
-									<a href=usersetting_ok.jsp?p1=19&p2=94&p3=8&ps1=<%=result.getString("gameid")%>&ps2=<%=adminid%>&branch=userinfo_list&gameid=<%=result.getString("gameid")%>>
-										학교지난 다시보기(<%=result.getInt("schoolresult")%>)
-									</a><br><br>
-
-									카톡 userId 	: <a href=userinfo_list.jsp?kakaouserid=<%=result.getString("kakaouserid")%>><%=result.getString("kakaouserid")%></a><br>
-									카톡 talkId 	: <a href=userinfo_list.jsp?kakaotalkid=<%=result.getString("kakaotalkid")%>><%=result.getString("kakaotalkid")%></a><br>
-									카톡 gameid 	: <a href=userinfo_list.jsp?kakaogameid=<%=result.getString("kakaogameid")%>><%=result.getString("kakaogameid")%></a><br>
-									카톡 nickName 	: <%=result.getString("kakaonickname")%>
-													<a href=usersetting_ok.jsp?p1=19&p2=64&p3=56&ps1=<%=gameid%>&ps2=<%=adminid%>&gameid=<%=result.getString("gameid")%>&title=>
-														( <%=result.getString("nicknamechange")%>회)
-													</a>
-													<br>
-									카톡 profile 	: <img src=<%=result.getString("kakaoprofile")%>><br>
-									카톡 메세지블럭 : <a href=usersetting_ok.jsp?p1=19&p2=88&p3=10&ps1=<%=gameid%>&ps2=<%=adminid%>&gameid=<%=gameid%>&title=><%=getKakaoMessageBlocked(result.getInt("kakaomsgblocked"))%></a><br>
-									카톡 현재상태 	:
-										<a href=usersetting_ok.jsp?p1=19&p2=88&p3=12&ps1=<%=gameid%>&ps2=<%=adminid%>&gameid=<%=result.getString("gameid")%>&title=>
-											<%=getKakaoStatus(result.getInt("kakaostatus"))%>
-										</a><br>
-									카톡 초대인원수: <a href=userminus_form3.jsp?p1=19&p2=88&p3=1&ps1=<%=gameid%>&ps2=<%=adminid%>&gameid=<%=gameid%>&title=kakaomsgInviteCount><%=(kakaomsginvitecnt = result.getInt("kakaomsginvitecnt"))%></a>명을 초대<br>
-									카톡 1일초대인원: <a href=userminus_form3.jsp?p1=19&p2=88&p3=8&ps1=<%=gameid%>&ps2=<%=adminid%>&gameid=<%=gameid%>&title=kakaomsgInviteTodayCnt><%=result.getInt("kakaomsginvitetodaycnt")%></a><br>
-									카톡 1일초대날짜 : <a href=usersetting_ok.jsp?p1=19&p2=88&p3=9&ps1=<%=gameid%>&ps2=<%=adminid%>&gameid=<%=gameid%>&title=kakaomsgInviteTodayCnt><%=getDate19(result.getString("kakaomsginvitetodaydate"))%></a><br>
-									카톡 부활팝업 : <a href=usersetting_ok.jsp?p1=19&p2=88&p3=15&ps1=<%=gameid%>&ps2=<%=adminid%>&gameid=<%=gameid%>><%=result.getInt("kkhelpalivecnt")%></a><br>
 
 								<br>
 							</td>
 							<td>
-								루비(캐쉬) : <a href=userminus_form.jsp?gameid=<%=result.getString("gameid")%>&mode=0><%=result.getString("cashcost")%></a><br>
-								코인 : <a href=userminus_form.jsp?gameid=<%=result.getString("gameid")%>&mode=1><%=result.getString("gamecost")%></a><br>
-								건초 : <a href=userminus_form.jsp?gameid=<%=result.getString("gameid")%>&mode=2><%=result.getString("feed")%></a>
-									(<a href=userminus_form3.jsp?p1=19&p2=86&p3=1&ps1=<%=result.getString("gameid")%>&ps2=<%=adminid%>&branch=userinfo_list&gameid=<%=result.getString("gameid")%>><%=result.getString("feedmax")%></a>)
-									<br>
-								하트 : <a href=userminus_form.jsp?gameid=<%=result.getString("gameid")%>&mode=3><%=result.getString("heart")%></a>
-									(<a href=userminus_form3.jsp?p1=19&p2=86&p3=2&ps1=<%=result.getString("gameid")%>&ps2=<%=adminid%>&branch=userinfo_list&gameid=<%=result.getString("gameid")%>><%=result.getString("heartmax")%></a>)
-									<br>
-								하트 1일전송 :
-												<a href=userminus_form3.jsp?p1=19&p2=87&p3=57&ps1=<%=gameid%>&ps2=<%=adminid%>&gameid=<%=gameid%>&title=heartsendcnt><%=result.getString("heartsendcnt")%></a>
-											   (<%=getDate10(result.getString("heartsenddate"))%>)<br>
-
-								우정포인트 : <a href=userminus_form3.jsp?p1=19&p2=86&p3=13&ps1=<%=result.getString("gameid")%>&ps2=<%=adminid%>&gameid=<%=result.getString("gameid")%>><%=result.getString("fpoint")%></a>
-											(<%=result.getString("fpointmax")%>)<br>
-								황금티켓 : <a href=userminus_form3.jsp?p1=19&p2=86&p3=21&ps1=<%=result.getString("gameid")%>&ps2=<%=adminid%>&gameid=<%=result.getString("gameid")%>>
-												<%=result.getString("goldticket")%>
-											</a>
-											/<a href=userminus_form3.jsp?p1=19&p2=86&p3=22&ps1=<%=result.getString("gameid")%>&ps2=<%=adminid%>&gameid=<%=result.getString("gameid")%>>
-												<%=result.getString("goldticketmax")%>
-											</a>
-											(<a href=usersetting_ok.jsp?p1=19&p2=86&p3=23&ps1=<%=result.getString("gameid")%>&ps2=<%=adminid%>&branch=userinfo_list&gameid=<%=result.getString("gameid")%>>
-												<%=getDateShort2(result.getString("goldtickettime"))%>
-											</a>)<br>
-								싸움티켓 : <a href=userminus_form3.jsp?p1=19&p2=86&p3=31&ps1=<%=result.getString("gameid")%>&ps2=<%=adminid%>&gameid=<%=result.getString("gameid")%>>
-												<%=result.getString("battleticket")%>
-											</a>
-											/<a href=userminus_form3.jsp?p1=19&p2=86&p3=32&ps1=<%=result.getString("gameid")%>&ps2=<%=adminid%>&gameid=<%=result.getString("gameid")%>>
-												<%=result.getString("battleticketmax")%>
-											</a>
-											(<a href=usersetting_ok.jsp?p1=19&p2=86&p3=33&ps1=<%=result.getString("gameid")%>&ps2=<%=adminid%>&branch=userinfo_list&gameid=<%=result.getString("gameid")%>>
-												<%=getDateShort2(result.getString("battletickettime"))%>
-											</a>)<br>
-								싸움목장: <%=result.getString("battlefarmidx")%>(<%=result.getString("battleanilistidx1")%>/<%=result.getString("battleanilistidx2")%>/<%=result.getString("battleanilistidx3")%>/<%=result.getString("battleanilistidx4")%>/<%=result.getString("battleanilistidx5")%>)
-											<br>
-								star : <%=result.getString("star")%><br>
-								분해 : <%=result.getString("apartbuycnt")%><br>
+								캐쉬 : <a href=userminus_form.jsp?gameid=<%=result.getString("gameid")%>&mode=0><%=result.getString("cashcost")%></a><br>
 
 								<br>
 
@@ -391,8 +278,6 @@ function f_Submit(f) {
 
 							</td>
 							<td>
-								대표동물: <%=result.getString("anireplistidx")%>(<%=result.getString("anirepitemcode")%> / <%=result.getString("anirepacc1")%> / <%=result.getString("anirepacc2")%>)<br>
-								대표멘트: <%=result.getString("anirepmsg")%><br>
 								게임년월:
 									<a href="userminus_form3.jsp?p1=19&p2=65&p3=1&ps1=<%=result.getString("gameid")%>&ps2=<%=adminid%>&gameid=<%=result.getString("gameid")%>&title=Change Game Year(2013 ~ 2999)">
 										<%=result.getString("gameyear")%>
@@ -456,34 +341,9 @@ function f_Submit(f) {
 										<%=result.getString("famelvbest")%>
 									</a>
 									)<br>
-									<!--
-									<a href="userminus_form3.jsp?p1=19&p2=65&p3=5&ps1=<%=result.getString("gameid")%>&ps2=<%=adminid%>&gameid=<%=result.getString("gameid")%>&title=Change Fame LV(1 ~ 50)">
-										<%=result.getString("famelv")%>
-									</a><br>
-									-->
-								알바템 사용: <%=result.getInt("albause")%> / <%=result.getInt("albausesecond")%> / <%=result.getInt("albausethird")%><br>
-								촉진템 사용: <%=result.getInt("boosteruse")%><br>
-								늑대 출현: <%=result.getInt("wolfappear")%><br>
-								교배/하트선물(받기대기중):<%=result.getString("heartget")%><br>
-								(로그인하면 알려주는 용도임)<br><br>
 
-								펫 정보		: <%=result.getInt("petitemcode")%>(<%=result.getInt("petlistidx")%>)
-												<a href=usersetting_ok.jsp?p1=19&p2=64&p3=54&ps1=<%=result.getString("gameid")%>&ps2=<%=adminid%>&branch=userinfo_list&gameid=<%=result.getString("gameid")%>>
-													개발재연결
-												</a>
-												<br>
-								펫 쿨타임	: <%=result.getInt("petcooltime")%><br>
-								펫(할인)	: <%=result.getInt("pettodayitemcode")%><br>
-								펫(체험)	: <a href=usersetting_ok.jsp?p1=19&p2=64&p3=5&ps1=<%=result.getString("gameid")%>&ps2=<%=adminid%>&branch=userinfo_list&gameid=<%=result.getString("gameid")%>>
-												<%=result.getInt("pettodayitemcode2")%>
-											  </a><br>
 							</td>
 							<td>
-								총알 : <%=result.getString("bulletlistidx")%>(번)<br>
-								백신 : <%=result.getString("vaccinelistidx")%>(번)<br>
-								알바 : <%=result.getString("albalistidx")%>(번)<br>
-								촉진제 : <%=result.getString("boosterlistidx")%>(번)<br><br>
-
 								[분기별내역]<br>
 								판매배럴(분기) 		: <%=result.getString("qtsalebarrel")%><br>
 								판매수익(분기) 		: <%=result.getString("qtsalecoin")%><br>
@@ -503,7 +363,6 @@ function f_Submit(f) {
 												famelv = famelv * famelv * 100;
 												out.println(famelv);
 											%><br>
-								현재단계 	: <%=result.getInt("yabaustep")%><br>
 								방금돌린주사위: <%=result.getInt("yabaunum")%><br>
 								시도횟수	:
 									         <a href=userminus_form3.jsp?p1=19&p2=64&p3=53&ps1=<%=result.getString("gameid")%>&ps2=<%=adminid%>&gameid=<%=result.getString("gameid")%>&title=Yabauistrycount>
@@ -553,109 +412,8 @@ function f_Submit(f) {
 
 							</td>
 							<td>
-								집 :
-									<a href=userminus_form.jsp?gameid=<%=result.getString("gameid")%>&mode=51><%=result.getString("housestep")%></a>
-									/
-									<a href=usersetting_ok.jsp?p1=19&p2=50&ps1=<%=result.getString("gameid")%>&ps2=<%=adminid%>&branch=userinfo_list&gameid=<%=result.getString("gameid")%>>
-										<%=getUpgradeState(result.getInt("housestate"))%>
-									</a>
-									/
-									<%=getDate19(result.getString("housetime"))%><br>
-								탱크 :
-									<a href=userminus_form.jsp?gameid=<%=result.getString("gameid")%>&mode=53><%=result.getString("tankstep")%></a>
-									/
-									<a href=usersetting_ok.jsp?p1=19&p2=52&ps1=<%=result.getString("gameid")%>&ps2=<%=adminid%>&branch=userinfo_list&gameid=<%=result.getString("gameid")%>>
-										<%=getUpgradeState(result.getInt("tankstate"))%>
-									</a>
-									/
-									<%=getDate19(result.getString("tanktime"))%><br>
-								양동이 :
-									<a href=userminus_form.jsp?gameid=<%=result.getString("gameid")%>&mode=55><%=result.getString("bottlestep")%></a>
-									/
-									<a href=usersetting_ok.jsp?p1=19&p2=54&ps1=<%=result.getString("gameid")%>&ps2=<%=adminid%>&branch=userinfo_list&gameid=<%=result.getString("gameid")%>>
-										<%=getUpgradeState(result.getInt("bottlestate"))%>
-									</a> /
-									<%=getDate19(result.getString("bottletime"))%><br>
-								착유기 :
-									<a href=userminus_form.jsp?gameid=<%=result.getString("gameid")%>&mode=57><%=result.getString("pumpstep")%></a>
-									/
-									<a href=usersetting_ok.jsp?p1=19&p2=56&ps1=<%=result.getString("gameid")%>&ps2=<%=adminid%>&branch=userinfo_list&gameid=<%=result.getString("gameid")%>>
-										<%=getUpgradeState(result.getInt("pumpstate"))%>
-									</a> /
-									<%=getDate19(result.getString("pumptime"))%><br>
-								주입기 :
-									<a href=userminus_form.jsp?gameid=<%=result.getString("gameid")%>&mode=59><%=result.getString("transferstep")%></a>
-									/
-									<a href=usersetting_ok.jsp?p1=19&p2=58&ps1=<%=result.getString("gameid")%>&ps2=<%=adminid%>&branch=userinfo_list&gameid=<%=result.getString("gameid")%>>
-										<%=getUpgradeState(result.getInt("transferstate"))%>
-									</a> /
-									<%=getDate19(result.getString("transfertime"))%><br>
-								축사 환경 개선 :
-									<a href=userminus_form.jsp?gameid=<%=result.getString("gameid")%>&mode=61><%=result.getString("purestep")%></a>
-									/
-									<a href=usersetting_ok.jsp?p1=19&p2=60&ps1=<%=result.getString("gameid")%>&ps2=<%=adminid%>&branch=userinfo_list&gameid=<%=result.getString("gameid")%>>
-										<%=getUpgradeState(result.getInt("purestate"))%>
-									</a> /
-									<%=getDate19(result.getString("puretime"))%><br>
-								품질향상 :
-									<a href=userminus_form.jsp?gameid=<%=result.getString("gameid")%>&mode=63><%=result.getString("freshcoolstep")%></a>
-									/
-									<a href=usersetting_ok.jsp?p1=19&p2=62&ps1=<%=result.getString("gameid")%>&ps2=<%=adminid%>&branch=userinfo_list&gameid=<%=result.getString("gameid")%>>
-										<%=getUpgradeState(result.getInt("freshcoolstate"))%>
-									</a> /
-									<%=getDate19(result.getString("freshcooltime"))%><br>
 
-								합성대기 :
-									<a href=usersetting_ok.jsp?p1=19&p2=64&p3=44&ps1=<%=result.getString("gameid")%>&ps2=<%=adminid%>&branch=userinfo_list&gameid=<%=result.getString("gameid")%>>
-										<%=getDate(result.getString("bgcomposewt"))%>
-									</a><br><br>
 
-								[영구누정정보(신규목장구매조건)]<br>
-									일반교배		:
-														<a href=userminus_form3.jsp?p1=19&p2=87&p3=41&ps1=<%=gameid%>&ps2=<%=adminid%>&gameid=<%=gameid%>&title=anigrade1cnt><%=result.getString("anigrade1cnt")%></a><br>
-									프리미엄교배(횟수/게이지)	:
-														<a href=userminus_form3.jsp?p1=19&p2=87&p3=42&ps1=<%=gameid%>&ps2=<%=adminid%>&gameid=<%=gameid%>&title=anigrade2cnt><%=result.getString("anigrade2cnt")%></a> /
-														<a href=userminus_form3.jsp?p1=19&p2=87&p3=45&ps1=<%=gameid%>&ps2=<%=adminid%>&gameid=<%=gameid%>&title=anigrade2gauage><%=result.getString("anigrade2gauage")%></a><br>
-									프리미엄10교배(횟수/게이지)	:
-														<a href=userminus_form3.jsp?p1=19&p2=87&p3=46&ps1=<%=gameid%>&ps2=<%=adminid%>&gameid=<%=gameid%>&title=anigrade4cnt><%=result.getString("anigrade4cnt")%></a> /
-														<a href=userminus_form3.jsp?p1=19&p2=87&p3=47&ps1=<%=gameid%>&ps2=<%=adminid%>&gameid=<%=gameid%>&title=anigrade4gauage><%=result.getString("anigrade4gauage")%></a><br>
-									<br>
-
-									일반보물 뽑기:		<a href=usersetting_ok.jsp?p1=19&p2=64&p3=100&ps1=<%=gameid%>&ps2=<%=adminid%>&branch=userinfo_list&gameid=<%=gameid%>><%=result.getString("tsgrade1cnt")%></a><br>
-									프리미엄 보물뽑기(횟수/게이지):
-														<a href=usersetting_ok.jsp?p1=19&p2=64&p3=101&ps1=<%=gameid%>&ps2=<%=adminid%>&branch=userinfo_list&gameid=<%=gameid%>><%=result.getString("tsgrade2cnt")%></a> /
-														<a href=usersetting_ok.jsp?p1=19&p2=64&p3=102&ps1=<%=gameid%>&ps2=<%=adminid%>&branch=userinfo_list&gameid=<%=gameid%>><%=result.getString("tsgrade2gauage")%></a><br>
-									프리미엄10 보물뽑기(횟수/게이지):
-														<a href=usersetting_ok.jsp?p1=19&p2=64&p3=103&ps1=<%=gameid%>&ps2=<%=adminid%>&branch=userinfo_list&gameid=<%=gameid%>><%=result.getString("tsgrade4cnt")%></a> /
-														<a href=usersetting_ok.jsp?p1=19&p2=64&p3=104&ps1=<%=gameid%>&ps2=<%=adminid%>&branch=userinfo_list&gameid=<%=gameid%>><%=result.getString("tsgrade4gauage")%></a><br>
-									누적보물강화횟수	: <a href=userminus_form3.jsp?p1=19&p2=87&p3=53&ps1=<%=gameid%>&ps2=<%=adminid%>&gameid=<%=gameid%>&title=bkaniupcnt><%=result.getString("tsupcnt")%></a><br><br>
-
-									누적배틀참여		: <a href=userminus_form3.jsp?p1=19&p2=87&p3=54&ps1=<%=gameid%>&ps2=<%=adminid%>&gameid=<%=gameid%>&title=bkaniupcnt><%=result.getString("bgbattlecnt")%></a><br>
-									누적동물강화		: <a href=userminus_form3.jsp?p1=19&p2=87&p3=55&ps1=<%=gameid%>&ps2=<%=adminid%>&gameid=<%=gameid%>&title=bkaniupcnt><%=result.getString("bganiupcnt")%></a><br><br>
-
-									보물슬롯	: 	<%=result.getString("tslistidx1")%> /
-													<%=result.getString("tslistidx2")%> /
-													<%=result.getString("tslistidx3")%> /
-													<%=result.getString("tslistidx4")%> /
-													<%=result.getString("tslistidx5")%>
-									<br><br>
-
-									합성횟수	:<a href=userminus_form3.jsp?p1=19&p2=87&p3=43&ps1=<%=gameid%>&ps2=<%=adminid%>&gameid=<%=gameid%>&title=bgcomposecnt><%=result.getString("bgcomposecnt")%></a><br>
-									누적거래	:<a href=userminus_form3.jsp?p1=19&p2=87&p3=44&ps1=<%=gameid%>&ps2=<%=adminid%>&gameid=<%=gameid%>&title=bgtradecnt><%=result.getString("bgtradecnt")%></a><br>
-									최고연속거래:<a href=userminus_form3.jsp?p1=19&p2=87&p3=56&ps1=<%=gameid%>&ps2=<%=adminid%>&gameid=<%=gameid%>&title=bgcttradecnt><%=result.getString("bgcttradecnt")%></a><br>
-									<br>
-
-									[보물 보유효과]<br>
-									루배생산 : <%=result.getString("tsskillcashcost")%>&nbsp;&nbsp;&nbsp;
-									하트생산 : <%=result.getString("tsskillheart")%><br>
-									코인생산 : <%=result.getString("tsskillgamecost")%>&nbsp;&nbsp;&nbsp;
-									우포생산 : <%=result.getString("tsskillfpoint")%><br>
-									부활생산 : <%=result.getString("tsskillrebirth")%>&nbsp;&nbsp;&nbsp;
-									알바생산 : <%=result.getString("tsskillalba")%><br>
-									특수탄생산 : <%=result.getString("tsskillbullet")%>&nbsp;&nbsp;&nbsp;
-									슈퍼백신생산 : <%=result.getString("tsskillvaccine")%><br>
-									건초생산 : <%=result.getString("tsskillfeed")%>&nbsp;&nbsp;&nbsp;
-									특수촉진제생산 : <%=result.getString("tsskillbooster")%><br>
 							</td>
 							<td>
 								경쟁모드(
@@ -704,27 +462,6 @@ function f_Submit(f) {
 								명성레벨(31)			<br>
 								친구추가(32)			<br>
 								친구하트선물(33)		<br><br>
-
-								경작지확장(40)			<br>
-								동물인벤확장(41)		<br>
-								소비인벤확장(42)		<br>
-								악세인벤확장(43)		<br><br>
-
-								집(50)					<br>
-								탱크(51)				<br>
-								양동이(52)				<br>
-								착유기(53)				<br>
-								주입기(54)				<br>
-								정화시설(55)			<br>
-								저온보관(56)			<br><br>
-
-								소모템일반 촉진제(61)	<br>
-								소모템일반 치료제(62)	<br>
-								소모템농부(63)			<br>
-								소모템늑대용 공포탄(64)	<br>
-								소모템긴급지원(65)		<br><br>
-
-								필드에 동물배치(70)		<br>
 							</td>
 						</tr>
 						<tr>
@@ -749,81 +486,6 @@ function f_Submit(f) {
 						</tr>
 					<%}%>
 				</table>
-
-				<%if(cstmt.getMoreResults()){
-					result = cstmt.getResultSet();%>
-					<br><br>유저 카톡 정보
-					<table border=1>
-						<tr>
-							<td></td>
-							<td>kakaouserid</td>
-							<td>kakaotalkid</td>
-							<td>gameid</td>
-							<td></td>
-							<td>kakaodata</td>
-							<td>가입일</td>
-							<td>삭제일(클릭시 재가입초기화)</td>
-						</tr>
-						<%while(result.next()){%>
-							<tr>
-								<td><%=result.getString("idx")%></td>
-								<td><%=result.getString("kakaouserid")%></td>
-								<td><%=result.getString("kakaotalkid")%></td>
-								<td><%=result.getString("gameid")%></td>
-								<td><%=result.getString("cnt")%> / <%=result.getString("cnt2")%></td>
-								<td><%=result.getString("kakaodata")%></td>
-								<td><%=getDate(result.getString("writedate"))%></td>
-								<td>
-									<a href=usersetting_ok.jsp?p1=19&p2=64&p3=41&p4=<%=result.getString("idx")%>&ps1=<%=result.getString("gameid")%>&ps2=<%=adminid%>&branch=userinfo_list&gameid=<%=gameid%>>
-										<%=getDate(result.getString("deldate"))%>
-									</a> /
-									<%if(gameid.equals(result.getString("gameid"))){%>
-										<font color=blue>활성계정상태</a>
-										<a href=usersetting_ok.jsp?p1=19&p2=64&p3=43&ps1=<%=gameid%>&ps2=<%=adminid%>&ps3=<%=result.getString("kakaouserid")%>&branch=userinfo_list&gameid=<%=gameid%>>
-											(연결끊기)
-										</a>
-									<%}else{%>
-										<a href=usersetting_ok.jsp?p1=19&p2=64&p3=42&ps1=<%=gameid%>&ps2=<%=adminid%>&ps3=<%=result.getString("kakaouserid")%>&branch=userinfo_list&gameid=<%=gameid%>>
-											재연결(조심히 사용하삼)
-										</a>
-									<%}%>
-								</td>
-							</tr>
-						<%}%>
-					</table>
-				<%}%>
-
-
-				<%if(cstmt.getMoreResults()){
-					result = cstmt.getResultSet();%>
-					<br><br>유저 마켓이동.
-					<table border=1>
-						<tr>
-							<td></td>
-							<td>전마켓</td>
-							<td></td>
-							<td>새마켓</td>
-							<td>버젼</td>
-							<td>레벨</td>
-							<td>베스트레벨</td>
-							<td>년/월</td>
-							<td></td>
-						</tr>
-						<%while(result.next()){%>
-							<tr>
-								<td><%=result.getString("idx")%></td>
-								<td><%=getTel(result.getInt("market"))%></td>
-								<td>-></td>
-								<td><%=getTel(result.getInt("marketnew"))%></td>
-								<td><%=result.getString("version")%></td>
-								<td><%=result.getString("famelv")%>(<%=result.getString("fame")%>)</td>
-								<td><%=result.getString("famelvbest")%></td>
-								<td><%=result.getString("gameyear")%>년 <%=result.getString("gamemonth")%>월</td>
-								<td><%=getDate(result.getString("changedate"))%></td>
-							</tr>
-						<%}%>
-					</table>
-				<%}%>
 
 				<%if(cstmt.getMoreResults()){
 					result = cstmt.getResultSet();%>
@@ -852,10 +514,7 @@ function f_Submit(f) {
 							<td>사용하트/코인</td>
 						</tr>
 						<%while(result.next()){%>
-							<tr <%=getCheckValueOri(anireplistidx, result.getInt("listidx"), "bgcolor=#ffe020", "")%>
-								<%=getCheckValueOri2(userbattleanilistidx, result.getInt("listidx"), "bgcolor=#ff80a0", "")%>
-								<%=getCheckValueOri2(battleanilistidx, result.getInt("listidx"), "bgcolor=#ff8020", "")%>
-								>
+							<tr>
 								<td><%=result.getString("listidx")%></td>
 								<td><%=result.getString("itemname")%>(<%=result.getString("itemcode")%>)</td>
 								<td>
@@ -869,13 +528,6 @@ function f_Submit(f) {
 								<td><%=getGetHow(result.getInt("gethow"))%></td>
 								<td><%=getDate(result.getString("writedate"))%></td>
 								<td><%=result.getString("randserial")%></td>
-
-								<td><%=getFieldIdx(result.getInt("fieldidx"))%></td>
-								<td><%=result.getString("anistep")%></td>
-								<td><%=result.getString("manger")%></td>
-								<td>
-									<%=getDiseasestate(result.getInt("diseasestate"))%>
-								</td>
 								<td><%=getDieMode(result.getInt("diemode"))%></td>
 								<td><%=checkNeedHelpCNT(result.getInt("fieldidx"), result.getInt("needhelpcnt"))%></td>
 								<td>
@@ -1545,118 +1197,6 @@ function f_Submit(f) {
 
 				<%if(cstmt.getMoreResults()){
 					result = cstmt.getResultSet();%>
-					<br><br><a href=userkakaoinvite_list.jsp?gameid=<%=gameid%> target=_blank>카톡 친구 초대(<%=kakaomsginvitecnt%>명 초대중)</a>
-					<table border=1>
-						<tr>
-							<td>idx</td>
-							<td>gameid</td>
-							<td>receuuid</td>
-							<td>cnt</td>
-							<td>senddate</td>
-							<td></td>
-						</tr>
-						<%while(result.next()){%>
-							<tr>
-								<td><%=result.getString("idx")%></td>
-								<td><%=result.getString("gameid")%></td>
-								<td><%=result.getString("receuuid")%></td>
-								<td><%=result.getString("cnt")%></td>
-								<td>
-									<a href=usersetting_ok.jsp?p1=19&p2=88&p3=2&p4=<%=result.getString("idx")%>&ps1=<%=gameid%>&ps2=<%=adminid%>&gameid=<%=gameid%>&title=kakaomsgInviteCount><%=getDate(result.getString("senddate"))%></a>
-								</td>
-								<td>
-									<a href=usersetting_ok.jsp?p1=19&p2=88&p3=3&p4=<%=result.getString("idx")%>&ps1=<%=gameid%>&ps2=<%=adminid%>&gameid=<%=gameid%>&title=kakaomsgInviteCount>개발삭제</a>
-								</td>
-							</tr>
-						<%}%>
-					</table>
-				<%}%>
-
-				<%if(cstmt.getMoreResults()){
-					result = cstmt.getResultSet();%>
-					<br><br>카톡 도와줘 친구야(대기[내가 <- 다른친구])
-					<table border=1>
-						<tr>
-							<td>gameid</td>
-							<td>friendid</td>
-							<td>listidx</td>
-							<td>helpdate</td>
-							<td></td>
-						</tr>
-						<%while(result.next()){%>
-							<tr>
-								<td><%=result.getString("gameid")%></td>
-								<td><%=result.getString("friendid")%></td>
-								<td><%=result.getString("listidx")%></td>
-								<td>
-									<a href=usersetting_ok.jsp?p1=19&p2=88&p3=6&p4=<%=result.getString("idx")%>&ps1=<%=gameid%>&ps2=<%=adminid%>&gameid=<%=gameid%>&title=kakaomsgInviteCount><%=getDate(result.getString("helpdate"))%></a>
-								</td>
-								<td>
-									<a href=usersetting_ok.jsp?p1=19&p2=88&p3=7&p4=<%=result.getString("idx")%>&ps1=<%=gameid%>&ps2=<%=adminid%>&gameid=<%=gameid%>&title=kakaomsgInviteCount>개발삭제</a>
-								</td>
-							</tr>
-						<%}%>
-					</table>
-				<%}%>
-
-				<%if(cstmt.getMoreResults()){
-					result = cstmt.getResultSet();%>
-					<br><br><a href=userroullog_list.jsp?gameid=<%=gameid%> target=_blank>동물뽑기(교배:더보기)</a>
-					<table border=1>
-						<tr>
-							<td>idx</td>
-							<td>kind</td>
-							<td></td>
-							<td>명성도</td>
-							<td></td>
-							<td>루비/코인/하트</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<%while(result.next()){%>
-							<tr>
-								<td><%=result.getString("idx")%></td>
-								<td><%=getCheckRoulMode(result.getInt("kind"))%></td>
-								<td><%=result.getString("gameyear")%>년 <%=result.getString("gamemonth")%>월</td>
-								<td><%=result.getString("framelv")%></td>
-								<td><%=result.getString("itemcodename")%>(<%=result.getString("itemcode")%>)</td>
-								<td>
-									<%=result.getString("cashcost")%>
-									/ <%=result.getString("gamecost")%>
-									/ <%=result.getString("heart")%>
-								</td>
-								<td><%=result.getString("itemcode0name")%>(<%=result.getString("itemcode0")%>)</td>
-								<td><%=result.getString("itemcode1name")%>(<%=result.getString("itemcode1")%>)</td>
-								<td><%=result.getString("itemcode2name")%>(<%=result.getString("itemcode2")%>)</td>
-								<td><%=result.getString("itemcode3name")%>(<%=result.getString("itemcode3")%>)</td>
-								<td><%=result.getString("itemcode4name")%>(<%=result.getString("itemcode4")%>)</td>
-								<td><%=result.getString("itemcode5name")%>(<%=result.getString("itemcode5")%>)</td>
-								<td><%=result.getString("itemcode6name")%>(<%=result.getString("itemcode6")%>)</td>
-								<td><%=result.getString("itemcode7name")%>(<%=result.getString("itemcode7")%>)</td>
-								<td><%=result.getString("itemcode8name")%>(<%=result.getString("itemcode8")%>)</td>
-								<td><%=result.getString("itemcode9name")%>(<%=result.getString("itemcode9")%>)</td>
-								<td><%=result.getString("itemcode10name")%>(<%=result.getString("itemcode10")%>)</td>
-								<td><%=result.getString("frienditemname")%>(<%=result.getString("frienditemcode")%>)</td>
-								<td><%=getDate(result.getString("writedate"))%></td>
-							</tr>
-						<%}%>
-					</table>
-				<%}%>
-
-
-				<%if(cstmt.getMoreResults()){
-					result = cstmt.getResultSet();%>
 					<br><br><a href=usertreasurelog_list.jsp?gameid=<%=gameid%> target=_blank>보물뽑기(더보기)</a>
 					<table border=1>
 						<tr>
@@ -1883,7 +1423,6 @@ function f_Submit(f) {
 									<td></td>
 									<td></td>
 									<td></td>
-									<td><%=result.getString("yabaustep")%></td>
 								<%}else if(kind == 3 || kind == 2){%>
 									<td><%=result.getString("pack11")%></td>
 									<td><%=result.getString("pack21")%></td>
@@ -1894,7 +1433,6 @@ function f_Submit(f) {
 									<td><%=getYabauResult(result.getInt("result"))%></td>
 									<td><%=result.getString("cashcost")%></td>
 									<td><%=result.getString("gamecost")%></td>
-									<td><%=result.getString("yabaustep")%></td>
 								<%}%>
 								<td><%=result.getString("yabauchange")%></td>
 								<td><%=result.getString("yabaucount")%></td>
@@ -1972,52 +1510,7 @@ function f_Submit(f) {
 					</table>
 				<%}%>
 
-				<%if(cstmt.getMoreResults()){
-					result = cstmt.getResultSet();%>
-					<br><br>
-					학교대항(10명만 나옴)
-					<%if(schoolidx != -1){%>
-						<a href=schooluser_list.jsp?schoolidx=<%=schoolidx%> target=_blank>(더보기)</a>
-					<%}%>
-					<table border=1>
-						<tr>
-							<td>이름</td>
-							<td>계정</td>
-							<td>인원</td>
-							<td>점수</td>
-							<td><a href=usersetting_ok.jsp?p1=19&p2=94&p3=1&ps1=<%=gameid%>&ps2=<%=adminid%>&branch=userinfo_list&gameid=<%=gameid%>>개발탈퇴</a></td>
-						</tr>
-						<%while(result.next()){%>
-							<tr>
-								<td><%=result.getString("schoolname")%>(<%=result.getString("schoolidx")%>)[<%=result.getString("schoolarea")%> , <%=getSchoolKind(result.getInt("schoolkind"))%>]</td>
-								<td><%=result.getString("gameid")%></td>
-								<td><%=result.getString("cnt")%></td>
-								<td><%=result.getString("point2")%></td>
-								<td></td>
-							</tr>
-						<%}%>
-					</table>
-				<%}%>
 
-				<%if(cstmt.getMoreResults()){
-					result = cstmt.getResultSet();%>
-					<br><br>
-					학교 대항 개인정보
-					<table border=1>
-						<tr>
-							<td>학교번호</td>
-							<td>누적거래</td>
-							<td>최근거래</td>
-						</tr>
-						<%while(result.next()){%>
-							<tr>
-								<td><%=result.getString("schoolidx")%></td>
-								<td><%=result.getString("point")%></td>
-								<td><%=result.getString("joindate")%></td>
-							</tr>
-						<%}%>
-					</table>
-				<%}%>
 
 				<%if(cstmt.getMoreResults()){
 					num = 1;

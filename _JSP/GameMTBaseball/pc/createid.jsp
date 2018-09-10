@@ -19,13 +19,12 @@
 	//1-2. 데이타 받기
 	String gameid 		= util.getParamStr(request, "gameid", "");
 	String password 	= util.getParamStr(request, "password", "");
-	String market		= util.getParamStr(request, "market", "1");
-	String buytype 		= util.getParamStr(request, "buytype", "0");
-	String platform 	= util.getParamStr(request, "platform", "1");
-	String ukey 		= util.getParamStr(request, "ukey", "ukey");
-	String version 		= util.getParamStr(request, "version", "101");
+	String username 	= util.getParamStr(request, "username", "");
+	String birthday 	= util.getParamStr(request, "birthday", "");
 	String phone 		= util.getParamStr(request, "phone", "");
-	String pushid 		= util.getParamStr(request, "pushid", "");
+	String email 		= util.getParamStr(request, "email", "");
+	String nickname 	= util.getParamStr(request, "nickname", "");
+	String version 		= util.getParamStr(request, "version", "100");
 	/////////////////////////////////////////////////////////////////////
 	//		파라미터 받기
 	/////////////////////////////////////////////////////////////////////
@@ -33,13 +32,12 @@
 		DEBUG_LOG_STR.append(this);
 		DEBUG_LOG_STR.append("\r\n gameid:" 	+ gameid);
 		DEBUG_LOG_STR.append("\r\n password:" 	+ password);
-		DEBUG_LOG_STR.append("\r\n market:" 	+ market);
-		DEBUG_LOG_STR.append("\r\n buytype:" 	+ buytype);
-		DEBUG_LOG_STR.append("\r\n platform:" 	+ platform);
-		DEBUG_LOG_STR.append("\r\n ukey:" 		+ ukey);
-		DEBUG_LOG_STR.append("\r\n version:" 	+ version);
+		DEBUG_LOG_STR.append("\r\n username:" 	+ username);
+		DEBUG_LOG_STR.append("\r\n birthday:" 	+ birthday);
 		DEBUG_LOG_STR.append("\r\n phone:" 		+ phone);
-		DEBUG_LOG_STR.append("\r\n pushid:" 	+ pushid);
+		DEBUG_LOG_STR.append("\r\n email:" 		+ email);
+		DEBUG_LOG_STR.append("\r\n nickname:" 	+ nickname);
+		DEBUG_LOG_STR.append("\r\n version:" 	+ version);
 		System.out.println(DEBUG_LOG_STR.toString());
 	}
 	/////////////////////////////////////////////////////////////////////
@@ -49,19 +47,18 @@
 		phone 	= getDencode4(phone, 14+14, "-1");
 
 		//2. 데이타 조작
-		//exec spu_UserCreate 'superman',  '049000s1i0n7t8445289', 1, 0, 1, 'ukukukuk', 101, '01011112221', '', -1
-		query.append("{ call dbo.spu_UserCreate (?, ?, ?, ?, ?,  	?, ?, ?, ?, ?)} ");
+		//exec spu_UserCreate 'xxxx',    '049000s1i0n7t8445289', '길동1',  '19980101', '01011112221', 'xxxx@gmail.com',     '길동1닉네임', 100, -1
+		query.append("{ call dbo.spu_UserCreate (?, ?, ?, ?, ?,  	?, ?, ?, ?)} ");
 		cstmt = conn.prepareCall(query.toString());
 
-		cstmt.setString(idxColumn++, gameid);
+		cstmt.setString(idxColumn++, gameid);		
 		cstmt.setString(idxColumn++, password);
-		cstmt.setString(idxColumn++, market);
-		cstmt.setString(idxColumn++, buytype);
-		cstmt.setString(idxColumn++, platform);
-		cstmt.setString(idxColumn++, ukey);
-		cstmt.setString(idxColumn++, version);
+		cstmt.setString(idxColumn++, username);
+		cstmt.setString(idxColumn++, birthday);
 		cstmt.setString(idxColumn++, phone);
-		cstmt.setString(idxColumn++, pushid);
+		cstmt.setString(idxColumn++, email);
+		cstmt.setString(idxColumn++, nickname);
+		cstmt.setString(idxColumn++, version);
 		cstmt.registerOutParameter(idxColumn++, java.sql.Types.INTEGER);
 
 		//2-2. 스토어즈 프로시져 실행하기
@@ -85,13 +82,8 @@
 		DEBUG_LOG_STR.append(this);
 		DEBUG_LOG_STR.append("\r\n gameid:" 	+ gameid);
 		DEBUG_LOG_STR.append("\r\n password:" 	+ password);
-		DEBUG_LOG_STR.append("\r\n market:" 	+ market);
-		DEBUG_LOG_STR.append("\r\n buytype:" 	+ buytype);
-		DEBUG_LOG_STR.append("\r\n platform:" 	+ platform);
-		DEBUG_LOG_STR.append("\r\n ukey:" 		+ ukey);
 		DEBUG_LOG_STR.append("\r\n version:" 	+ version);
 		DEBUG_LOG_STR.append("\r\n phone:" 		+ phone);
-		DEBUG_LOG_STR.append("\r\n pushid:" 	+ pushid);
 		System.out.println(DEBUG_LOG_STR.toString());
 	}
     /**/
