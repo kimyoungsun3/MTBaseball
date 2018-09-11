@@ -65,10 +65,10 @@ function f_Submit(f) {
 					<%
 
 					//2. 데이타 조작
-					//exec spu_GameMTBaseballD 19, 200,-1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''						-- 관리자 액션정보리스트
+					//exec spu_GameMTBaseballD 25, 200,-1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''							-- 관리자 액션정보리스트
 					query.append("{ call dbo.spu_GameMTBaseballD (?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?)} ");
 					cstmt = conn.prepareCall(query.toString());
-					cstmt.setInt(idxColumn++, 19);
+					cstmt.setInt(idxColumn++, 25);
 					cstmt.setInt(idxColumn++, 200);
 					cstmt.setInt(idxColumn++, -1);
 					cstmt.setInt(idxColumn++, -1);

@@ -12,11 +12,11 @@ java ItemTool
 @echo ======================================
 @echo 		Client File Move
 @echo ======================================
-copy iteminfo.xml		..\_NetClient\_NetClient\Assets\Resources\txt\iteminfo.xml
+copy iteminfo.xml		..\..\MTBaseball_NetworkManager\MTBaseball_NetworkManager\Assets\Resources\txt\iteminfo.xml
 
-copy gameinfo.xml		..\_NetClient\_NetClient\Assets\Resources\txt\gameinfo.xml
+copy gameinfo.xml		..\..\MTBaseball_NetworkManager\MTBaseball_NetworkManager\Assets\Resources\txt\gameinfo.xml
 
-copy tooltip.xml		..\_NetClient\_NetClient\Assets\Resources\txt\tooltip.xml
+copy tooltip.xml		..\..\MTBaseball_NetworkManager\MTBaseball_NetworkManager\Assets\Resources\txt\tooltip.xml
 
 
 

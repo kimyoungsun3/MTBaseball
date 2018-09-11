@@ -1,6 +1,7 @@
 ﻿
 --################################################################
 /*
+SELECT * FROM dbo.fnu_SplitTwo(';', ':', '0:1;1:2;2:3;3:4;')
 SELECT * FROM dbo.fnu_SplitTwo(';', ':', '0:1;1:2;2:3;3:4;4:5;5:6;6:12;7:13;8:14')
 SELECT * FROM dbo.fnu_SplitTwo(';', ':', '0:1;2:3')
 SELECT * FROM dbo.fnu_SplitTwo(';', ':', '0:1;2:3;')

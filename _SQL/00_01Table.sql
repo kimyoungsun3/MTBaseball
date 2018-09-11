@@ -256,6 +256,7 @@ create table dbo.tUserItemBuyLog(
 	cnt			int					default(1), 					--
 
 	cashcost	int					default(0), 					-- 구매가격(세일할수있어서)
+	gamecost	int					default(0),
 	buydate		datetime			default(getdate()), 			-- 구매일
 
 	-- Constraint
@@ -300,6 +301,7 @@ create table dbo.tUserItemBuyLogTotalMaster(
 	dateid8			char(8),							-- 20101210
 
 	cashcost		bigint			default(0),
+	gamecost	int					default(0),
 	cnt				int				default(0),
 
 	-- Constraint
@@ -329,6 +331,7 @@ create table dbo.tUserItemBuyLogTotalSub(
 	itemcode		int,
 
 	cashcost		int				default(0),
+	gamecost	int					default(0),
 	cnt				int				default(0),
 
 	-- Constraint
@@ -359,6 +362,7 @@ create table dbo.tUserItemBuyLogMonth(
 	itemcode		int,
 
 	cashcost		bigint			default(0),
+	gamecost	int					default(0),
 	cnt				int				default(0),
 
 	-- Constraint
@@ -546,6 +550,7 @@ create table dbo.tDayLogInfoStatic(
 
 	joinukcnt		int				default(0),					-- 일 유니크 가입
 	logincnt		int				default(0),					-- 일 로그인
+	logincnt2		int				default(0),					-- 일 로그인(유니크)
 
 	pieceboxcnt		int				default(0),					-- 일 조각박스 열기
 	clothesboxcnt	int				default(0),					-- 일 의상박스 열기
@@ -553,6 +558,8 @@ create table dbo.tDayLogInfoStatic(
 	practicecnt		int				default(0),					--
 	singlecnt		int				default(0),					--
 	multicnt		int				default(0),					--
+
+	certnocnt		int				default(0),					--
 
 	-- Constraint
 	CONSTRAINT	pk_tDayLogInfoStatic_idx	PRIMARY KEY(idx)
@@ -600,16 +607,28 @@ GO
 -- insert into dbo.tDayLogInfoSubStatic(dateid10) values('20130827')
 -- select top 100 * from dbo.tDayLogInfoSubStatic order by idx desc
 
+---------------------------------------------
+-- 	관리자 정보(행동정보)
+---------------------------------------------
+IF OBJECT_ID (N'dbo.tMessageAdmin', N'U') IS NOT NULL
+	DROP TABLE dbo.tMessageAdmin;
+GO
 
-/*
+create table dbo.tMessageAdmin(
+	idx			int					IDENTITY(1,1),
+	adminid		varchar(20),
+	gameid		varchar(20),
+	comment		varchar(1024),
 
----------------------------------------------
---		아이템 구매 (통합로그)
----------------------------------------------
+	writedate	datetime			default(getdate()),
 
----------------------------------------------
---		통계자료 (통합로그)
----------------------------------------------
+	-- Constraint
+	CONSTRAINT	pk_tMessageAdmin_idx	PRIMARY KEY(idx)
+)
+
+-- insert into dbo.tMessageAdmin(adminid, gameid, comment) values('black4', 'guest', '골드지급')
+-- select top 100 * from dbo.tMessageAdmin order by idx desc
+
 
 ---------------------------------------------
 --	비정삭적인 행동을 할려고 하는 유저체킹 > 블럭처리
@@ -675,29 +694,112 @@ GO
 -- select top 20 * from dbo.tUserUnusualLog2 where gameid = 'sususu' order by idx desc
 
 
+
+
 ---------------------------------------------
--- 	관리자 정보(행동정보)
+-- 이벤트 인증키값
 ---------------------------------------------
-IF OBJECT_ID (N'dbo.tMessageAdmin', N'U') IS NOT NULL
-	DROP TABLE dbo.tMessageAdmin;
+IF OBJECT_ID (N'dbo.tEventCertNo', N'U') IS NOT NULL
+	DROP TABLE dbo.tEventCertNo;
 GO
 
-create table dbo.tMessageAdmin(
-	idx			int					IDENTITY(1,1),
-	adminid		varchar(20),
+create table dbo.tEventCertNo(
+	idx			int				identity(1, 1),
+	certno		varchar(16),
+
+	itemcode1	int				default(-1),
+	itemcode2	int				default(-1),
+	itemcode3	int				default(-1),
+	cnt1		int				default(0),
+	cnt2		int				default(0),
+	cnt3		int				default(0),
+
+	mode		int				default(1),		-- 1: 1인1매형, 2:공용형
+	kind		int				default(0),		-- 제작요청한 회사번호.
+
+	CONSTRAINT	pk_tEventCertNo_idx	PRIMARY KEY(idx)
+)
+-- 인증번호 인덱싱
+IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tEventCertNo_certno')
+    DROP INDEX tEventCertNo.idx_tEventCertNo_certno
+GO
+CREATE INDEX idx_tEventCertNo_certno ON tEventCertNo (certno)
+GO
+
+---------------------------------------------
+-- 이벤트 인증키값(백업)
+-- 누구에게 무슨아이템을 지급했다.
+---------------------------------------------
+IF OBJECT_ID (N'dbo.tEventCertNoBack', N'U') IS NOT NULL
+	DROP TABLE dbo.tEventCertNoBack;
+GO
+
+create table dbo.tEventCertNoBack(
+	idx			int				identity(1, 1),
+	certno		varchar(16),
+
 	gameid		varchar(20),
-	comment		varchar(1024),
+	itemcode1	int				default(-1),
+	itemcode2	int				default(-1),
+	itemcode3	int				default(-1),
+	usedtime	datetime		default(getdate()),
+	kind		int				default(0),
 
-	writedate	datetime			default(getdate()),
-
-	-- Constraint
-	CONSTRAINT	pk_tMessageAdmin_idx	PRIMARY KEY(idx)
+	CONSTRAINT	pk_tEventCertNoBack_idx	PRIMARY KEY(idx)
 )
 
--- insert into dbo.tMessageAdmin(adminid, gameid, comment) values('black4', 'guest', '골드지급')
--- select top 100 * from dbo.tMessageAdmin order by idx desc
+-- 인증번호 인덱싱
+--IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tEventCertNoBack_certno')
+--    DROP INDEX tEventCertNoBack.idx_tEventCertNoBack_certno
+--GO
+--CREATE INDEX idx_tEventCertNoBack_certno ON tEventCertNoBack (certno)
+--GO
+
+IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tEventCertNoBack_gameid_certno')
+    DROP INDEX tEventCertNoBack.idx_tEventCertNoBack_gameid_certno
+GO
+CREATE INDEX idx_tEventCertNoBack_gameid_certno ON tEventCertNoBack (gameid, certno)
+GO
 
 
+---------------------------------------------
+-- 유저문의
+---------------------------------------------
+IF OBJECT_ID (N'dbo.tSysInquire', N'U') IS NOT NULL
+	DROP TABLE dbo.tSysInquire;
+GO
+
+create table dbo.tSysInquire(
+	idx					int 				IDENTITY(1, 1),
+
+	gameid				varchar(20),
+	state				int					default(0),				-- 요청대기[0], 체킹중[1], 완료[2]
+	comment				varchar(1024)		default(''),
+	writedate			datetime			default(getdate()),
+
+	adminid				varchar(20)			default(''),
+	comment2			varchar(1024)		default(''),
+	dealdate			datetime			default(getdate()),
+
+	-- Constraint
+	CONSTRAINT	pk_tSysInquire_idx	PRIMARY KEY(idx)
+)
+-- select top 10 * from dbo.tSysInquire order by idx desc
+-- insert into dbo.tSysInquire(gameid, comment) values(1, '잘안됩니다.')
+-- update dbo.tSysInquire set state = 1, dealdate = getdate(), comment2 = '진행중입니다.' where idx = 1
+-- update dbo.tSysInquire set state = 2, dealdate = getdate(), comment2 = '처리했습니다.' where idx = 1
+-- if(2)쪽지로 발송된다.
+
+
+
+
+---------------------------------------------
+--		아이템 구매 (통합로그)
+---------------------------------------------
+
+---------------------------------------------
+--		통계자료 (통합로그)
+---------------------------------------------
 
 
 ---------------------------------------------
@@ -810,7 +912,6 @@ create table dbo.tUserItemUpgradeLogMonth(
 )
 
 
-
 ---------------------------------------------
 -- 	캐쉬관련(개인로그)
 ---------------------------------------------
@@ -821,7 +922,7 @@ GO
 create table dbo.tCashLog(
 	idx				int				identity(1, 1),
 	gameid			varchar(20)		not null, 				-- 구매자
-	lv				int				default(1),
+	level			int				default(1),
 
 	giftid			varchar(20), 							-- 선물받은사람
 	acode			varchar(256), 							-- 승인코드() 사용안함.ㅠㅠ
@@ -884,6 +985,46 @@ create table dbo.tCashTotal(
 -- select top 1 * from dbo.tCashTotal where dateid = '20120818' and cashkind = 2000
 -- update dbo.tCashTotal set cashcost = cashcost + 21, cash = cash + 2000, cnt = cnt + 1 where dateid = '20120818' and cashkind = 2000
 
+---------------------------------------------
+--	통계자료(캐쉬 마스터)
+---------------------------------------------
+IF OBJECT_ID (N'dbo.tStaticCashMaster', N'U') IS NOT NULL
+	DROP TABLE dbo.tStaticCashMaster;
+GO
+
+create table dbo.tStaticCashMaster(
+	idx				int					identity(1, 1),
+
+	dateid			varchar(8),									-- 20121118
+	step 			int					default(1),				-- famelv(1), tel(2)
+	writedate		datetime			default(getdate()), 	-- 작성일
+
+	-- Constraint
+	CONSTRAINT pk_tStaticCashMaster_dateid	PRIMARY KEY(dateid)
+)
+GO
+
+---------------------------------------------
+--	통계자료(캐쉬 서브)
+---------------------------------------------
+IF OBJECT_ID (N'dbo.tStaticCashUnique', N'U') IS NOT NULL
+	DROP TABLE dbo.tStaticCashUnique;
+GO
+
+create table dbo.tStaticCashUnique(
+	idx						int					IDENTITY(1,1),
+
+	dateid					varchar(8),
+	cash					int,
+	cnt						int,
+	writedate				datetime			default(getdate()),
+
+	-- Constraint
+	CONSTRAINT	pk_tStaticCashUnique_idx		PRIMARY KEY(idx)
+)
+
+
+/*
 
 ---------------------------------------------
 --		게시판 정보(글쓰기에 우선순위를 올림).
@@ -943,102 +1084,6 @@ create table dbo.tStaticTime(
 
 
 
-
----------------------------------------------
--- 이벤트 인증키값
----------------------------------------------
-IF OBJECT_ID (N'dbo.tEventCertNo', N'U') IS NOT NULL
-	DROP TABLE dbo.tEventCertNo;
-GO
-
-create table dbo.tEventCertNo(
-	idx			int				identity(1, 1),
-	certno		varchar(16),
-
-	itemcode1	int				default(-1),
-	itemcode2	int				default(-1),
-	itemcode3	int				default(-1),
-	cnt1		int				default(0),
-	cnt2		int				default(0),
-	cnt3		int				default(0),
-
-	mode		int				default(1),		-- 1: 1인1매형, 2:공용형
-	kind		int				default(0),		-- 제작요청한 회사번호.
-
-	CONSTRAINT	pk_tEventCertNo_idx	PRIMARY KEY(idx)
-)
--- 인증번호 인덱싱
-IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tEventCertNo_certno')
-    DROP INDEX tEventCertNo.idx_tEventCertNo_certno
-GO
-CREATE INDEX idx_tEventCertNo_certno ON tEventCertNo (certno)
-GO
-
----------------------------------------------
--- 이벤트 인증키값(백업)
--- 누구에게 무슨아이템을 지급했다.
----------------------------------------------
-IF OBJECT_ID (N'dbo.tEventCertNoBack', N'U') IS NOT NULL
-	DROP TABLE dbo.tEventCertNoBack;
-GO
-
-create table dbo.tEventCertNoBack(
-	idx			int				identity(1, 1),
-	certno		varchar(16),
-
-	gameid		varchar(20),
-	itemcode1	int				default(-1),
-	itemcode2	int				default(-1),
-	itemcode3	int				default(-1),
-	usedtime	datetime		default(getdate()),
-	kind		int				default(0),
-
-	CONSTRAINT	pk_tEventCertNoBack_idx	PRIMARY KEY(idx)
-)
-
--- 인증번호 인덱싱
-IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tEventCertNoBack_certno')
-    DROP INDEX tEventCertNoBack.idx_tEventCertNoBack_certno
-GO
---CREATE INDEX idx_tEventCertNoBack_certno ON tEventCertNoBack (certno)
---GO
-
-IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tEventCertNoBack_gameid_certno')
-    DROP INDEX tEventCertNoBack.idx_tEventCertNoBack_gameid_certno
-GO
-CREATE INDEX idx_tEventCertNoBack_gameid_certno ON tEventCertNoBack (gameid, certno)
-GO
-
-
----------------------------------------------
--- 유저문의
----------------------------------------------
-IF OBJECT_ID (N'dbo.tSysInquire', N'U') IS NOT NULL
-	DROP TABLE dbo.tSysInquire;
-GO
-
-create table dbo.tSysInquire(
-	idx					int 				IDENTITY(1, 1),
-
-	gameid				varchar(20),
-	state				int					default(0),				-- 요청대기[0], 체킹중[1], 완료[2]
-	comment				varchar(1024)		default(''),
-	writedate			datetime			default(getdate()),
-
-	adminid				varchar(20)			default(''),
-	comment2			varchar(1024)		default(''),
-	dealdate			datetime			default(getdate()),
-
-	-- Constraint
-	CONSTRAINT	pk_tSysInquire_idx	PRIMARY KEY(idx)
-)
--- select top 10 * from dbo.tSysInquire order by idx desc
--- insert into dbo.tSysInquire(gameid, comment) values(1, '잘안됩니다.')
--- update dbo.tSysInquire set state = 1, dealdate = getdate(), comment2 = '진행중입니다.' where idx = 1
--- update dbo.tSysInquire set state = 2, dealdate = getdate(), comment2 = '처리했습니다.' where idx = 1
--- if(2)쪽지로 발송된다.
-
-
 ---------------------------------------------
 -- 이벤트 진행 정보
 ---------------------------------------------
@@ -1091,44 +1136,6 @@ GO
 -- update dbo.tStaticMaster set step = 2 where dateid = '20140404'
 
 
-
----------------------------------------------
---	통계자료(캐쉬 마스터)
----------------------------------------------
-IF OBJECT_ID (N'dbo.tStaticCashMaster', N'U') IS NOT NULL
-	DROP TABLE dbo.tStaticCashMaster;
-GO
-
-create table dbo.tStaticCashMaster(
-	idx				int					identity(1, 1),
-
-	dateid			varchar(8),									-- 20121118
-	step 			int					default(1),				-- famelv(1), tel(2)
-	writedate		datetime			default(getdate()), 	-- 작성일
-
-	-- Constraint
-	CONSTRAINT pk_tStaticCashMaster_dateid	PRIMARY KEY(dateid)
-)
-GO
-
----------------------------------------------
---	통계자료(캐쉬 서브)
----------------------------------------------
-IF OBJECT_ID (N'dbo.tStaticCashUnique', N'U') IS NOT NULL
-	DROP TABLE dbo.tStaticCashUnique;
-GO
-
-create table dbo.tStaticCashUnique(
-	idx						int					IDENTITY(1,1),
-
-	dateid					varchar(8),
-	cash					int,
-	cnt						int,
-	writedate				datetime			default(getdate()),
-
-	-- Constraint
-	CONSTRAINT	pk_tStaticCashUnique_idx		PRIMARY KEY(idx)
-)
 
 
 ---------------------------------------------

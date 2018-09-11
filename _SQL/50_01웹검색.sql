@@ -1,5 +1,4 @@
-﻿
---관리자 로그인(25)
+﻿--@관리자 로그인(25)
 --exec spu_GameMTBaseballD 25, 1, 1000, -1, -1, -1, -1, -1, -1, -1, 'global', 'qwer1234', '', '', '', '', '', '', '', ''			-- 관리자 생성
 --exec spu_GameMTBaseballD 25, 1, 1000, -1, -1, -1, -1, -1, -1, -1, 'blackm', 'a1s2d3f4', '', '', '', '', '', '', '', ''			-- 관리자 생성
 --exec spu_GameMTBaseballD 25, 1, 1000, -1, -1, -1, -1, -1, -1, -1, 'aidatakr', '12345', '', '', '', '', '', '', '', ''				-- 관리자 생성
@@ -7,24 +6,23 @@
 --exec spu_GameMTBaseballD 25, 3, 1000, -1, -1, -1, -1, -1, -1, -1, 'global', 'qwer1234', '', '', '', '', '', '', '', ''			-- 관리자 등급수정
 --exec spu_GameMTBaseballD 25, 3, 1000, -1, -1, -1, -1, -1, -1, -1, 'blackm', 'qwer1234', '', '', '', '', '', '', '', ''			-- 관리자 등급수정
 --exec spu_GameMTBaseballD 25, 4, -1, -1, -1, -1, -1, -1, -1, -1,   'aaaaaa', 'bbbbbb', '', '', '', '', '', '', '', ''				-- 관리자 삭제
+--exec spu_GameMTBaseballD 25, 200,-1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''							-- 관리자 액션정보리스트
+--exec spu_GameMTBaseballD 25, 200,-1, -1, -1, -1, -1, -1, -1, -1, '', 'admin', '', '', '', '', '', '', '', ''						--
 
 
-
---개발용아이템정보(5)
+--@개발용아이템정보(5)
 --exec spu_GameMTBaseballD 5, 1, -1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''	--전체
---exec spu_GameMTBaseballD 5, 1,  1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''	--특정아이템
+--exec spu_GameMTBaseballD 5, 1,100, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''	--특정아이템
 --exec spu_GameMTBaseballD 5, 1, -1,  1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''	--카테고리
 --exec spu_GameMTBaseballD 5, 1, -1, -1,  1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''	--서브카테고리
---exec spu_GameMTBaseballD 5, 2, -1, -1,  1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''	-- 상인템정보.
 
 --유저검색(7)
 --exec spu_GameMTBaseballD 7, -1, -1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''					-- 유저 리스트
 --exec spu_GameMTBaseballD 7, -1, -1, -1, -1, -1, -1, -1, -1,  2, '', '', '', '', '', '', '', '', '', ''
 --exec spu_GameMTBaseballD 7, -1, -1, -1, -1, -1, -1, -1, -1, -1, 'xxxx2', '', '', '', '', '', '', '', '', ''				-- 유저 검색
 --exec spu_GameMTBaseballD 7, -1, -1, -1, -1, -1, -1, -1, -1, -1, 'superman', '', '', '', '', '', '', '', '', ''
---exec spu_GameMTBaseballD 7, -1, -1, -1, -1, -1, -1, -1, -1, -1, '', '01022223333', '', '', '', '', '', '', '', ''		-- 유저 폰검색
+--exec spu_GameMTBaseballD 7, -1, -1, -1, -1, -1, -1, -1, -1, -1, '', '01022223333', '', '', '', '', '', '', '', ''			-- 유저 폰검색
 --exec spu_GameMTBaseballD 7, -1, -1, -1, -1, -1, -1, -1, -1, -1, '', '01045943736', '', '', '', '', '', '', '', ''
---exec spu_GameMTBaseballD 7, -1, -1, -1, -1, -1, -1, -1, -1, -1, '', '', '0000000000000000000', '', '', '', '', '', '', ''-- 카톡 유저검색
 
 --캐쉬로그삭제
 --exec spu_GameMTBaseballD 17, 1,  6, -1, -1, -1, -1, -1, -1, -1, 'xxxx2', '', '', '', '', '', '', '', '', ''				-- 검색(단일) > 로그삭제, 차감
@@ -34,19 +32,22 @@
 --exec spu_GameMTBaseballD 18, 1, -1, -1, -1, -1, -1, -1, -1, -1, 'xxxx2', '', '', '', '', '', '', '', '', ''				-- 유저삭제
 --exec spu_GameMTBaseballD 18, 2, -1, -1, -1, -1, -1, -1, -1, -1, 'xxxx2', '', '', '', '', '', '', '', '', ''				-- 유저 > 폰번검색 일괄삭제
 
---유저세팅(19)
+
+--@유저세팅(19)
+--exec spu_GameMTBaseballD 19, 1003, -1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''						-- 이상행동정보.
+--exec spu_GameMTBaseballD 19, 1003, -1, -1, -1, -1, -1, -1, -1, -1, 'xxxx2', '', '', '', '', '', '', '', '', ''				--		   검색.
+--exec spu_GameMTBaseballD 19, 1005,  1, -1, -1, -1, -1, -1, -1, -1, 'xxxx2', '', '', '', '', '', '', '', '', ''				--         삭제.
+--exec spu_GameMTBaseballD 19, 1006, -1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''						-- 이상행동2정보.
+--exec spu_GameMTBaseballD 19, 1006, -1, -1, -1, -1,  2, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''						-- 이상행동2정보.
+--exec spu_GameMTBaseballD 19, 1006, -1, -1, -1, -1, -1, -1, -1, -1, 'xxxx2', '', '', '', '', '', '', '', '', ''				--		    검색.
+
+
 --exec spu_GameMTBaseballD 19, 1, -1, -1, -1, -1, -1, -1, -1, -1, 'dd23', 'admin', '', '', '', '', '', '', '', ''				-- 블럭처리/해제, 기록남김
 --exec spu_GameMTBaseballD 19, 2, -1, -1, -1, -1, -1, -1, -1, -1, 'dd23', 'admin', '', '', '', '', '', '', '', ''				-- 블럭처리(일괄핸드폰 > 관련계정모두)
 --exec spu_GameMTBaseballD 19, 3, 12, -1, -1, -1, -1, -1, -1, -1, 'dd23', 'admin', '192.168.0.1', '', '', '', '', '', '', ''	-- 블럭해제
 --exec spu_GameMTBaseballD 19, 4, -1, -1, -1, -1, -1, -1, -1, -1, 'dd23', 'admin', '192.168.0.1', '', '', '', '', '', '', ''	-- 푸쉬발송/해제
---exec spu_GameMTBaseballD 19, 1001, -1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''					-- 블럭리스트
---exec spu_GameMTBaseballD 19, 1001, -1, -1, -1, -1, -1, -1, -1, -1, 'dd23', '', '', '', '', '', '', '', '', ''				--
---exec spu_GameMTBaseballD 19, 1003, -1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''					-- 이상행동정보.
---exec spu_GameMTBaseballD 19, 1003, -1, -1, -1, -1, -1, -1, -1, -1, 'xxxx2', '', '', '', '', '', '', '', '', ''				--		   검색.
---exec spu_GameMTBaseballD 19, 1005,  1, -1, -1, -1, -1, -1, -1, -1, 'xxxx2', '', '', '', '', '', '', '', '', ''				--         삭제.
---exec spu_GameMTBaseballD 19, 1006, -1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''					-- 이상행동2정보.
---exec spu_GameMTBaseballD 19, 1006, -1, -1, -1, -1,  2, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''					-- 이상행동2정보.
---exec spu_GameMTBaseballD 19, 1006, -1, -1, -1, -1, -1, -1, -1, -1, 'xxxx2', '', '', '', '', '', '', '', '', ''				--		    검색.
+--exec spu_GameMTBaseballD 19, 1001, -1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''						-- 블럭리스트
+--exec spu_GameMTBaseballD 19, 1001, -1, -1, -1, -1, -1, -1, -1, -1, 'dd23', '', '', '', '', '', '', '', '', ''					--
 --exec spu_GameMTBaseballD 19, 1007,  1, -1, -1, -1, -1, -1, -1, -1, 'xxxx2', '', '', '', '', '', '', '', '', ''				--          삭제.
 --exec spu_GameMTBaseballD 19, 1008, -1, -1, -1, -1, -1, -1, -1, -1, 'xxxx2', '', '', '', '', '', '', '', '', ''				-- 경쟁모드(퀘스트정보).
 --exec spu_GameMTBaseballD 19, 1004,  1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''					-- 쿠폰리스트.
@@ -65,25 +66,6 @@
 --exec spu_GameMTBaseballD 19, 23, -1, -1, -1, -1, -1, -1, -1, -1, '', '', '01022223333', '', '', '', '', '', '', ''			-- 블럭폰삭제
 --exec spu_GameMTBaseballD 19, 31, 12, -1, -1, -1, -1, -1, -1, -1, 'xxxx', '', '', '', '', '', '', '', '', ''					-- 유저보유템 삭제
 --exec spu_GameMTBaseballD 19, 41, -11, -1, -1, -1, -1, -1, -1, -1, 'xxxx', 'admin', '', '', '', '', '', '', '', ''			-- 캐쉬 +/-
---exec spu_GameMTBaseballD 19, 42, 12, -1, -1, -1, -1, -1, -1, -1, 'xxxx', 'admin', '', '', '', '', '', '', '', ''			-- 코인 +/-
---exec spu_GameMTBaseballD 19, 43, 13, -1, -1, -1, -1, -1, -1, -1, 'xxxx', 'admin', '', '', '', '', '', '', '', ''			-- 건초 +/-
---exec spu_GameMTBaseballD 19, 44, 10, -1, -1, -1, -1, -1, -1, -1, 'xxxx', 'admin', '', '', '', '', '', '', '', ''			-- 하트 +/-
---exec spu_GameMTBaseballD 19, 45,  2, -1, -1, -1, -1, -1, -1, -1, 'xxxx', 'admin', '', '', '', '', '', '', '', ''			-- 동물인벤Max Step
---exec spu_GameMTBaseballD 19, 46,  2, -1, -1, -1, -1, -1, -1, -1, 'xxxx', 'admin', '', '', '', '', '', '', '', ''			-- 소비인벤Max Step
---exec spu_GameMTBaseballD 19, 47,  2, -1, -1, -1, -1, -1, -1, -1, 'xxxx', 'admin', '', '', '', '', '', '', '', ''			-- 악세인벤Max Step
---exec spu_GameMTBaseballD 19, 48,  2, -1, -1, -1, -1, -1, -1, -1, 'xxxx', 'admin', '', '', '', '', '', '', '', ''			-- 하트Max +/-
---exec spu_GameMTBaseballD 19, 50, -1, -1, -1, -1, -1, -1, -1, -1, 'xxxx', 'admin', '', '', '', '', '', '', '', ''			-- 업글(집)
---exec spu_GameMTBaseballD 19, 51,  1, -1, -1, -1, -1, -1, -1, -1, 'xxxx', 'admin', '', '', '', '', '', '', '', ''			--
---exec spu_GameMTBaseballD 19, 52, -1, -1, -1, -1, -1, -1, -1, -1, 'xxxx', 'admin', '', '', '', '', '', '', '', ''			-- 업글(탱크)
---exec spu_GameMTBaseballD 19, 53,  1, -1, -1, -1, -1, -1, -1, -1, 'xxxx', 'admin', '', '', '', '', '', '', '', ''			--
---exec spu_GameMTBaseballD 19, 54, -1, -1, -1, -1, -1, -1, -1, -1, 'xxxx', 'admin', '', '', '', '', '', '', '', ''			-- 업글(양동이)
---exec spu_GameMTBaseballD 19, 54,  1, -1, -1, -1, -1, -1, -1, -1, 'xxxx', 'admin', '', '', '', '', '', '', '', ''			--
---exec spu_GameMTBaseballD 19, 56, -1, -1, -1, -1, -1, -1, -1, -1, 'xxxx', 'admin', '', '', '', '', '', '', '', ''			-- 업글(착유기)
---exec spu_GameMTBaseballD 19, 57,  1, -1, -1, -1, -1, -1, -1, -1, 'xxxx', 'admin', '', '', '', '', '', '', '', ''			--
---exec spu_GameMTBaseballD 19, 58, -1, -1, -1, -1, -1, -1, -1, -1, 'xxxx', 'admin', '', '', '', '', '', '', '', ''			-- 업글(주입기)
---exec spu_GameMTBaseballD 19, 59,  1, -1, -1, -1, -1, -1, -1, -1, 'xxxx', 'admin', '', '', '', '', '', '', '', ''			--
---exec spu_GameMTBaseballD 19, 60, -1, -1, -1, -1, -1, -1, -1, -1, 'xxxx', 'admin', '', '', '', '', '', '', '', ''			-- 업글(정화)
---exec spu_GameMTBaseballD 19, 61,  1, -1, -1, -1, -1, -1, -1, -1, 'xxxx', 'admin', '', '', '', '', '', '', '', ''			--
 --exec spu_GameMTBaseballD 19, 64, 55, -1, -1, -1, -1, -1, -1, -1, 'xxxx2', '', '', '', '', '', '', '', '', ''				-- 정책지원금다시보기.
 --exec spu_GameMTBaseballD 19, 64, 57, -1, -1, -1, -1, -1, -1, -1, 'xxxx2', '', '', '', '', '', '', '', '', ''				-- 1일 동물구매수량초기화.
 --exec spu_GameMTBaseballD 19, 64, 58, -1, -1, -1, -1, -1, -1, -1, 'xxxx2', '', '', '', '', '', '', '', '', ''				-- 1일 동물구매날짜초기화.
@@ -103,75 +85,18 @@
 --exec spu_GameMTBaseballD 19, 66, 11,  1, -1, -1, -1, -1, -1, -1, 'xxxx2', 'admin', '', '', '', '', '', '', '', ''			-- 저장로그     삭제.
 --exec spu_GameMTBaseballD 19, 67,  9,  1, -1, -1, -1, -1, -1, -1, 'xxxx3', 'admin', '', '', '', '', '', '', '', ''			-- 인벤토리 펫업글.
 --exec spu_GameMTBaseballD 19, 68,  1,  1, -1, -1, -1, -1, -1, -1, 'xxxx2', 'admin', '', '', '', '', '', '', '', ''			-- 배틀로그 삭제.
---exec spu_GameMTBaseballD 19, 68,  2, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''						-- 		   리스트.
+--exec spu_GameMTBaseballD 19, 68,  2, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''					-- 		   리스트.
 --exec spu_GameMTBaseballD 19, 68,  2, -1, -1, -1, -1, -1, -1, -1, 'xxxx2', '', '', '', '', '', '', '', '', ''				-- 			검색.
 --exec spu_GameMTBaseballD 19, 69,  9,  1, -1, -1, -1, -1, -1, -1, 'xxxx3', 'admin', '', '', '', '', '', '', '', ''			-- 보물업글.
 --exec spu_GameMTBaseballD 19, 71,  7,  6, -1, -1, -1, -1, -1, -1, 'xxxx', 'admin', '', '', '', '', '', '', '', ''			-- 소모템 개수변경(공포탄 5 -> 6)
---exec spu_GameMTBaseballD 19, 81, 31, -1, -1, -1, -1, -1, -1, -1, 'xxxx', 'admin', '', '', '', '', '', '', '', ''			-- 양동이 리터
---exec spu_GameMTBaseballD 19, 82, 32, -1, -1, -1, -1, -1, -1, -1, 'xxxx', 'admin', '', '', '', '', '', '', '', ''			-- 양동이 신선도
---exec spu_GameMTBaseballD 19, 83, 33, -1, -1, -1, -1, -1, -1, -1, 'xxxx', 'admin', '', '', '', '', '', '', '', ''			-- 탱크 리터
---exec spu_GameMTBaseballD 19, 84, 34, -1, -1, -1, -1, -1, -1, -1, 'xxxx', 'admin', '', '', '', '', '', '', '', ''			-- 탱크 신선도
---exec spu_GameMTBaseballD 19, 85,  1,  1, -1, -1, -1, -1, -1, -1, 'xxxx2', 'admin', '', '', '', '', '', '', '', ''			-- 경작지 비구매.
---exec spu_GameMTBaseballD 19, 85,  2,  1, -1, -1, -1, -1, -1, -1, 'xxxx2', 'admin', '', '', '', '', '', '', '', ''			-- 	      시간리셑.
---exec spu_GameMTBaseballD 19, 86,  1, 20, -1, -1, -1, -1, -1, -1, 'xxxx2', 'admin', '', '', '', '', '', '', '', ''			-- 유저정보 건초맥스.
---exec spu_GameMTBaseballD 19, 86,  2, 10, -1, -1, -1, -1, -1, -1, 'xxxx2', 'admin', '', '', '', '', '', '', '', ''			-- 	        하트맥스.
---exec spu_GameMTBaseballD 19, 86, 13, 10, -1, -1, -1, -1, -1, -1, 'xxxx2', 'admin', '', '', '', '', '', '', '', ''			-- 유저우정포인트수정
---exec spu_GameMTBaseballD 19, 87,  1, 1, -1, -1, -1, -1, -1, -1, 'xxxx2', 'admin', '', '', '', '', '', '', '', ''			-- 누적 늑대잡은횟수(1).
---exec spu_GameMTBaseballD 19, 87, 11,11, -1, -1, -1, -1, -1, -1, 'xxxx2', 'admin', '', '', '', '', '', '', '', ''			--      판매총금액(11).
---exec spu_GameMTBaseballD 19, 87, 12,12, -1, -1, -1, -1, -1, -1, 'xxxx2', 'admin', '', '', '', '', '', '', '', ''			--      획득한하트(12).
---exec spu_GameMTBaseballD 19, 87, 13,13, -1, -1, -1, -1, -1, -1, 'xxxx2', 'admin', '', '', '', '', '', '', '', ''			--      획득한건초(13).
---exec spu_GameMTBaseballD 19, 87, 14,14, -1, -1, -1, -1, -1, -1, 'xxxx2', 'admin', '', '', '', '', '', '', '', ''			--      거래성공횟수(14).
---exec spu_GameMTBaseballD 19, 87, 15,15, -1, -1, -1, -1, -1, -1, 'xxxx2', 'admin', '', '', '', '', '', '', '', ''			--      최고신선도(15).
---exec spu_GameMTBaseballD 19, 87, 16,16, -1, -1, -1, -1, -1, -1, 'xxxx2', 'admin', '', '', '', '', '', '', '', ''			--      최고배럴(16).
---exec spu_GameMTBaseballD 19, 87, 17,17, -1, -1, -1, -1, -1, -1, 'xxxx2', 'admin', '', '', '', '', '', '', '', ''			--      최고판매금액(17).
---exec spu_GameMTBaseballD 19, 87, 18,18, -1, -1, -1, -1, -1, -1, 'xxxx2', 'admin', '', '', '', '', '', '', '', ''			--      누적배럴(18).
---exec spu_GameMTBaseballD 19, 87, 21,21, -1, -1, -1, -1, -1, -1, 'xxxx2', 'admin', '', '', '', '', '', '', '', ''			--      일반교배(21).
---exec spu_GameMTBaseballD 19, 87, 22,22, -1, -1, -1, -1, -1, -1, 'xxxx2', 'admin', '', '', '', '', '', '', '', ''			--      프리미엄교배(22).
---exec spu_GameMTBaseballD 19, 87, 31,22, -1, -1, -1, -1, -1, -1, 'xxxx2', 'admin', '', '', '', '', '', '', '', ''			-- 친구랭킹포인트.
---exec spu_GameMTBaseballD 19, 87, 32,22, -1, -1, -1, -1, -1, -1, 'xxxx2', 'admin', '', '', '', '', '', '', '', ''			-- 에피소드포인트.
---exec spu_GameMTBaseballD 19, 87, 41, 1, -1, -1, -1, -1, -1, -1, 'xxxx2', 'admin', '', '', '', '', '', '', '', ''			-- 영구누적 일반교배.
---exec spu_GameMTBaseballD 19, 87, 42, 1, -1, -1, -1, -1, -1, -1, 'xxxx2', 'admin', '', '', '', '', '', '', '', ''			-- 영구누적 프리미엄교배.
---exec spu_GameMTBaseballD 19, 87, 43, 1, -1, -1, -1, -1, -1, -1, 'xxxx2', 'admin', '', '', '', '', '', '', '', ''			-- 영구누적 합성횟수.
---exec spu_GameMTBaseballD 19, 87, 44, 1, -1, -1, -1, -1, -1, -1, 'xxxx2', 'admin', '', '', '', '', '', '', '', ''			-- 영구누적 거래성공횟수.
 --exec spu_GameMTBaseballD 19, 87, 45, 1, -1, -1, -1, -1, -1, -1, 'xxxx2', 'admin', '', '', '', '', '', '', '', ''			-- 프리미엄 게이지.
---exec spu_GameMTBaseballD 19, 88,  1, 10, -1, -1, -1, -1, -1, -1, 'xxxx2', 'admin', '', '', '', '', '', '', '', ''			-- 카카오톡 초대인원변경.
---exec spu_GameMTBaseballD 19, 88,  2, -1, -1, -1, -1, -1, -1, -1, 'xxxx2', 'admin', '', '', '', '', '', '', '', ''			--          초대날자 31일뒤로 변경.
---exec spu_GameMTBaseballD 19, 88,  3,  1, -1, -1, -1, -1, -1, -1, 'xxxx2', 'admin', '', '', '', '', '', '', '', ''			--          해당 정보 삭제.
---exec spu_GameMTBaseballD 19, 88,  4,  1, -1, -1, -1, -1, -1, -1, 'xxxx2', 'admin', '', '', '', '', '', '', '', ''			--          [요청]초대날자 10일뒤로 변경
---exec spu_GameMTBaseballD 19, 88, 11,  1, -1, -1, -1, -1, -1, -1, 'xxxx2', 'admin', '', '', '', '', '', '', '', ''			--          [친구동물빌리기]
---exec spu_GameMTBaseballD 19, 88,  6,  1, -1, -1, -1, -1, -1, -1, 'xxxx2', 'admin', '', '', '', '', '', '', '', ''			--          [대기]초대날자 10일뒤로 변경
---exec spu_GameMTBaseballD 19, 88,  7,  1, -1, -1, -1, -1, -1, -1, 'xxxx2', 'admin', '', '', '', '', '', '', '', ''			--          [대기]해당 정보 삭제.
---exec spu_GameMTBaseballD 19, 88,  8,  1, -1, -1, -1, -1, -1, -1, 'xxxx2', 'admin', '', '', '', '', '', '', '', ''			--          1일 초대인원수변경.
---exec spu_GameMTBaseballD 19, 88,  9, -1, -1, -1, -1, -1, -1, -1, 'xxxx2', 'admin', '', '', '', '', '', '', '', ''			--          1일 초대인원날자변경.
---exec spu_GameMTBaseballD 19, 88, 10, -1, -1, -1, -1, -1, -1, -1, 'xxxx2', 'admin', '', '', '', '', '', '', '', ''			--          블럭 해제, 설정.
---exec spu_GameMTBaseballD 19, 88, 11, -1, -1, -1, -1, -1, -1, -1, 'xxxx2', 'admin', '', '', '', '', '', '', '', ''			--
---exec spu_GameMTBaseballD 19, 88, 12, -1, -1, -1, -1, -1, -1, -1, 'iuest116025', 'admin', '', '', '', '', '', '', '', ''		--   		탈퇴처리.
---exec spu_GameMTBaseballD 19, 88, 13, -1, -1, -1, -1, -1, -1, -1, 'xxxx2', 'admin', '', '', '', '', '', '', '', ''			--          캐쉬카피초기화.
---exec spu_GameMTBaseballD 19, 88, 14, -1, -1, -1, -1, -1, -1, -1, 'xxxx2', 'admin', '', '', '', '', '', '', '', ''			--          결과카피초기화.
---exec spu_GameMTBaseballD 19, 88, 15, -1, -1, -1, -1, -1, -1, -1, 'xxxx2', 'admin', '', '', '', '', '', '', '', ''			--          카톡 부활팝업.
---exec spu_GameMTBaseballD 19, 89,  1,  1, -1, -1, -1, -1, -1, -1, 'xxxx2', 'admin', '', '', '', '', '', '', '', ''			-- 복귀 단계.
---exec spu_GameMTBaseballD 19, 89,  2,  1, -1, -1, -1, -1, -1, -1, 'xxxx2', 'admin', '', '', '', '', '', '', '', ''			-- 복귀 진행달.
---exec spu_GameMTBaseballD 19, 90,  1, -1, -1, -1, -1, -1, -1, -1, 'xxxx', '', '', '', '', '', '', '', '', ''					-- 도감 : 리스트
---exec spu_GameMTBaseballD 19, 91,  1, -1, -1, -1, -1, -1, -1, -1, 'xxxx', '', '', '', '', '', '', '', '', ''					--        보상
---exec spu_GameMTBaseballD 19, 92,100000, -1, -1, -1, -1, -1, -1, -1, 'xxxx3', '', '', '', '', '', '', '', '', ''				-- 펫도감삭제.
---exec spu_GameMTBaseballD 19, 94,  1, -1, -1, -1, -1, -1, -1, -1, 'xxxx2', '', '', '', '', '', '', '', '', ''				-- 학교대항삭제
---exec spu_GameMTBaseballD 19, 94,  2, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''						-- 학교대항 마스터 리스트(랭킹) 실시간
---exec spu_GameMTBaseballD 19, 94,  3, -1, -1, -1, -1, -1, -1, -1, 'xxxx2', '', '', '', '', '', '', '', '', ''				-- 학교대항 서브 리스트(유저)
---exec spu_GameMTBaseballD 19, 94,  4,  1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''						-- 학교대항 서브 리스트(학교)
---exec spu_GameMTBaseballD 19, 94,  5, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''						-- 학교대항 지난리스트.
---exec spu_GameMTBaseballD 19, 94,  6, -1, -1, -1, -1, -1, -1, -1, '', '', '20131227', '', '', '', '', '', '', ''				-- 학교대항 20131227일 학교 랭킹
---exec spu_GameMTBaseballD 19, 94,  7,  1, -1, -1, -1, -1, -1, -1, '', '', '20131227', '', '', '', '', '', '', ''				-- 학교대항 20131227일 학교 랭킹 > 유저 랭킹
---exec spu_GameMTBaseballD 19, 94,  8, -1, -1, -1, -1, -1, -1, -1, 'xxxx2', '', '', '', '', '', '', '', '', ''				-- 학교대항 지난결과 다시보기
---exec spu_GameMTBaseballD 19, 95,  1, -1, -1, -1, -1, -1, -1, -1, 'xxxx', '', '', '', '', '', '', '', '', ''					-- 경쟁모드      보상 삭제
---exec spu_GameMTBaseballD 19, 96,  1, -1, -1, -1, -1, -1, -1, -1, 'xxxx', '', '', '', '', '', '', '', '', ''					-- 튜토리얼(new) 보상 삭제
---exec spu_GameMTBaseballD 19, 97,  1, -1, -1, -1, -1, -1, -1, -1, 'xxxx2', 'xxxx3', '', '', '', '', '', '', '', ''			-- 상호친구 삭제.
---exec spu_GameMTBaseballD 19, 97,  2, -1, -1, -1, -1, -1, -1, -1, 'xxxx2', 'xxxx3', '', '', '', '', '', '', '', ''			--          승인.
---exec spu_GameMTBaseballD 19, 98,  1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''						-- 유저통계마스터.
---exec spu_GameMTBaseballD 19, 98,  2, -1, -1, -1, -1, -1, -1, -1, '', '', '20140404', '', '', '', '', '', '', ''				--         레벨분포, 레벨통신사.
+--exec spu_GameMTBaseballD 19, 90,  1, -1, -1, -1, -1, -1, -1, -1, 'xxxx', '', '', '', '', '', '', '', '', ''				-- 도감 : 리스트
+--exec spu_GameMTBaseballD 19, 91,  1, -1, -1, -1, -1, -1, -1, -1, 'xxxx', '', '', '', '', '', '', '', '', ''				--        보상
+--exec spu_GameMTBaseballD 19, 92,100000, -1, -1, -1, -1, -1, -1, -1, 'xxxx3', '', '', '', '', '', '', '', '', ''			-- 펫도감삭제.
+--exec spu_GameMTBaseballD 19, 98,  1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''					-- 유저통계마스터.
+--exec spu_GameMTBaseballD 19, 98,  2, -1, -1, -1, -1, -1, -1, -1, '', '', '20140404', '', '', '', '', '', '', ''			--         레벨분포, 레벨통신사.
 --exec spu_GameMTBaseballD 19, 98,  3, -1, -1, -1, -1, -1, -1, -1, '', '', '201404', '', '', '', '', '', '', ''				--         레벨분포.
 --exec spu_GameMTBaseballD 19, 98,  4, -1, -1, -1, -1, -1, -1, -1, '', '', '201404', '', '', '', '', '', '', ''				--         레벨통신사.
---exec spu_GameMTBaseballD 19, 200,-1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''						-- 관리자 액션정보리스트
---exec spu_GameMTBaseballD 19, 200,-1, -1, -1, -1, -1, -1, -1, -1, '', 'admin', '', '', '', '', '', '', '', ''				--
 --exec spu_GameMTBaseballD 19, 300,-1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''						-- 유니크 가입폰리스트
 --exec spu_GameMTBaseballD 19, 300,-1, -1, -1, -1, -1, -1, -1, -1, '', '', '01011112223', '', '', '', '', '', '', ''			--
 --exec spu_GameMTBaseballD 19, 400,-1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''						-- 유저 구매리스트
@@ -181,25 +106,6 @@
 --exec spu_GameMTBaseballD 19, 402,-1, -1, -1, -1, -1, -1, -1, -1, '', '20130909', '', '', '', '', '', '', '', ''				-- 유저 월서브 통계
 --exec spu_GameMTBaseballD 19, 403,-1, -1, -1, -1, -1, -1, -1, -1, '', '201309', '', '', '', '', '', '', '', ''				-- 유저 월아이템 통계
 --exec spu_GameMTBaseballD 19, 404,-1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''						-- 유저 뽑기 광고리스트
---exec spu_GameMTBaseballD 19, 405,-1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''						-- 유저 동물죽은 로그
---exec spu_GameMTBaseballD 19, 405,-1, -1, -1, -1, -1, -1, -1, -1, 'xxxx2', '', '', '', '', '', '', '', '', ''				--
---exec spu_GameMTBaseballD 19, 406,-1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''						-- 유저 동물부활 로그
---exec spu_GameMTBaseballD 19, 406,-1, -1, -1, -1, -1, -1, -1, -1, 'xxxx2', '', '', '', '', '', '', '', '', ''				--
---exec spu_GameMTBaseballD 19, 410,-1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''						-- 유저 동물뽑기리스트
---exec spu_GameMTBaseballD 19, 410,-1, -1, -1, -1, -1, -1, -1, -1, 'xxxx2', '', '', '', '', '', '', '', '', ''				--
---exec spu_GameMTBaseballD 19, 411,-1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''						-- 유저 동물뽑기월토탈 통계
---exec spu_GameMTBaseballD 19, 411,-1, -1, -1, -1, -1, -1, -1, -1, '', '20131111', '', '', '', '', '', '', '', ''				--
---exec spu_GameMTBaseballD 19, 412,-1, -1, -1, -1, -1, -1, -1, -1, '', '20131111', '', '', '', '', '', '', '', ''				-- 유저 동물뽑기월서브 통계
---exec spu_GameMTBaseballD 19, 433,-1, -1, -1, -1, -1, -1, -1, -1, '', '20131111', '', '', '', '', '', '', '', ''				-- 유저 보물뽑기월서브 통계
---exec spu_GameMTBaseballD 19, 430,-1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''						-- 유저 보물뽑기리스트
---exec spu_GameMTBaseballD 19, 430,-1, -1, -1, -1, -1, -1, -1, -1, 'xxxx2', '', '', '', '', '', '', '', '', ''				--
---exec spu_GameMTBaseballD 19, 431,-1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''						-- 유저 보물뽑기월토탈 통계
---exec spu_GameMTBaseballD 19, 431,-1, -1, -1, -1, -1, -1, -1, -1, '', '20131111', '', '', '', '', '', '', '', ''				--
---exec spu_GameMTBaseballD 19, 432,-1, -1, -1, -1, -1, -1, -1, -1, '', '20131111', '', '', '', '', '', '', '', ''				-- 유저 보물뽑기월서브 통계
---exec spu_GameMTBaseballD 19, 413,-1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''						-- 유저 친구초대 리스트.
---exec spu_GameMTBaseballD 19, 413,-1, -1, -1, -1, -1, -1, -1, -1, 'xxxx2', '', '', '', '', '', '', '', '', ''				--
---exec spu_GameMTBaseballD 19, 414,-1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''						-- 유저 악세뽑기리스트
---exec spu_GameMTBaseballD 19, 414,-1, -1, -1, -1, -1, -1, -1, -1, 'xxxx2', '', '', '', '', '', '', '', '', ''				--
 --exec spu_GameMTBaseballD 19, 415,-1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''						-- 합성
 --exec spu_GameMTBaseballD 19, 415,-1, -1, -1, -1, -1, -1, -1, -1, 'xxxx2', '', '', '', '', '', '', '', '', ''				--
 --exec spu_GameMTBaseballD 19, 420,-1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''						-- 승급
@@ -214,30 +120,10 @@
 
 
 --공지사항작성(20)
--- 다른데로 이동 --exec spu_GameMTBaseballD 20, 0, -1, 1, 0, 101, 0, -1, -1, -1, 'http://203.234.238.249:40009/Game4GameMTBaseball/etc/_ad/top_ad_image01.png', 'http://m.naver.com', 'http://203.234.238.249:40009/Game4GameMTBaseball/etc/_ad/top_ad_image02.png', 'http://m.daum.com', 'http://203.234.238.249:40009/Game4GameMTBaseball/etc/_ad/top_ad_image03.png', 'http://m.hungryapp.co.kr',	'http://www.ubx.co.kr', 'http://clien.career.co.kr', '', '공지내용'		-- 작성
--- 다른데로 이동 --exec spu_GameMTBaseballD 20, 1,  6, 1, 0, 101, 0, -1, -1, -1, 'http://203.234.238.249:40009/Game4GameMTBaseball/etc/_ad/top_ad_image01.png', 'http://m.naver.com', 'http://203.234.238.249:40009/Game4GameMTBaseball/etc/_ad/top_ad_image02.png', 'http://m.daum.com', 'http://203.234.238.249:40009/Game4GameMTBaseball/etc/_ad/top_ad_image03.png', 'http://m.hungryapp.co.kr',	'http://www.ubx.co.kr', 'http://clien.career.co.kr', '', '공지내용'		-- 루비
--- 다른데로 이동 --exec spu_GameMTBaseballD 20, 2, -1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''			-- 리스트
---exec spu_GameMTBaseballD 20, 11, 1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''			-- 게시판 읽기.
---exec spu_GameMTBaseballD 20, 11, 2,  1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', '글쓰기'	--        글쓰기.
---exec spu_GameMTBaseballD 20, 11, 3, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''			--        삭제.
---exec spu_GameMTBaseballD 20, 21, 1,  1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''			-- 문의글 읽기.
---exec spu_GameMTBaseballD 20, 21, 1,  1, -1, -1, -1, -1, -1, -1, 'xxxx2', '', '', '', '', '', '', '', '', ''		--        계정.
---exec spu_GameMTBaseballD 20, 21, 1,  1,  1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''			--		  상태.
---exec spu_GameMTBaseballD 20, 21, 2,  1, 20,  2,  1, -1, -1, -1, '', 'adminid', '', '', '', '', '', '', '', ''	--      상태변경, 코멘트추가(유저에게 쪽지발송가능).
---exec spu_GameMTBaseballD 20, 21, 2,  1, 20,  2,  1, -1, -1, -1, '', 'adminid', '', '', '', '', '', '', '', ''	--      상태변경, 코멘트추가(유저에게 쪽지발송가능).
---exec spu_GameMTBaseballD 20, 31, 1,  0, -1,  0, -1, -1, -1, -1, '', 'adminid', '2014-05-05 10:00', '2014-05-06 10:00', '', '', '', '', '제목', '내용'	-- 이벤트 글쓰기.
---exec spu_GameMTBaseballD 20, 31, 2,  0,  1,  0, -1, -1, -1, -1, '', 'adminid', '2014-05-05 10:00', '2014-05-06 10:00', '', '', '', '', '제목2', '내용2'	--        루비.
---exec spu_GameMTBaseballD 20, 31, 3,  0, -1, -1,  1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''													--        리스트(0번상태).
---exec spu_GameMTBaseballD 20, 31, 3, -1, -1, -1,  1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''													--        리스트(전체).
---exec spu_GameMTBaseballD 20, 41, 1,  1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''			-- 주문글 읽기.
---exec spu_GameMTBaseballD 20, 41, 1,  1, -1, -1, -1, -1, -1, -1, 'xxxx2', '', '', '', '', '', '', '', '', ''		--        계정.
---exec spu_GameMTBaseballD 20, 41, 1,  1,  1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''			--		  상태.
---exec spu_GameMTBaseballD 20, 41, 2,  1, 20,  2,  1, -1, -1, -1, '', 'adminid', '', '', '', '', '', '', '', ''	--      상태변경, 코멘트추가(유저에게 쪽지발송가능).
---exec spu_GameMTBaseballD 20, 41, 2,  1, 20,  2,  1, -1, -1, -1, '', 'adminid', '', '', '', '', '', '', '', ''	--      상태변경, 코멘트추가(유저에게 쪽지발송가능).
+-- 다른데로 이동
 
 
-
--- 통계자료(21)
+--@통계자료(21)
 --exec spu_GameMTBaseballD 21, 1, -1,  1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''						-- 일별통계
 --exec spu_GameMTBaseballD 21, 11,-1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''						-- 캐쉬판매로그
 --exec spu_GameMTBaseballD 21, 11, 1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''						--
@@ -254,8 +140,6 @@
 --exec spu_GameMTBaseballD 21, 14,-1, -1, -1, -1, -1, -1, -1, -1, '', '20140501', '', '', '', '', '', '', '', ''				--
 --exec spu_GameMTBaseballD 21, 21,-1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''						-- 유저환전로그
 --exec spu_GameMTBaseballD 21, 21,-1, -1, -1, -1, -1, -1, -1, -1, 'xxxx', '', '', '', '', '', '', '', '', ''					--
---exec spu_GameMTBaseballD 21, 22,-1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''						-- 유저환전통계
---exec spu_GameMTBaseballD 21, 22,-1, -1, -1, -1, -1, -1, -1, -1, '', '20130910', '', '', '', '', '', '', '', ''				--
 --exec spu_GameMTBaseballD 21, 23,   3300, -1, -1, -1, -1, -1, -1, -1, 'xxxx2', 'adminid', '12999763169054705758.1313833651566741', '', '', '', '', '', '', '' -- 캐쉬구매처리.
 --exec spu_GameMTBaseballD 21, 23,   5500, -1, -1, -1, -1, -1, -1, -1, 'xxxx2', 'adminid', '12999763169054705758.1313833651566742', '', '', '', '', '', '', ''
 --exec spu_GameMTBaseballD 21, 23,  11000, -1, -1, -1, -1, -1, -1, -1, 'xxxx2', 'adminid', '12999763169054705758.1313833651566743', '', '', '', '', '', '', ''
@@ -342,13 +226,11 @@
 --exec spu_GameMTBaseballD 30, 60, -1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''			-- 목장배틀
 --exec spu_GameMTBaseballD 30, 61, 6903, -1, -1, -1, -1, -1, -1, -1, '', '', '1:0;2:1;3:4;4:4;5:3;6:0;', '', '', '', '', '', '', ''
 
---exec spu_GameMTBaseballD 30, 70, -1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''			-- VIP 포이튼
---exec spu_GameMTBaseballD 30, 71,  1, -1, -1, -1, -1, -1, -1, -1, '', '', '1:0;2:1;3:4;4:4;5:3;6:0;', '', '', '', '', '', '', ''
-
 --exec spu_GameMTBaseballD 30, 80, -1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''
 --exec spu_GameMTBaseballD 30, 80,  1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''
 --exec spu_GameMTBaseballD 30, 81, -1, -1, -1, -1, -1, -1, -1, -1, '문화 상품권', 'http://121.138.201.251:40012/Game4GameMTBaseballVill5/etc/_ad/gift_card.png', '', '간략설명', '상세설명', '2016-05-25', '2016-05-31', '',    '1:1;2:-1;3:-1;4:15;5:50;6:0;7:1;8:10;', ''
 --exec spu_GameMTBaseballD 30, 82,  5, -1, -1, -1, -1, -1, -1, -1, '문화 상품권2', 'http://121.138.201.251:40012/Game4GameMTBaseballVill5/etc/_ad/gift_card.png', '', '간략설명2', '상세설명2', '2016-05-25', '2016-05-31', '', '1:1;2:-1;3:-1;4:15;5:50;6:0;7:1;8:10;', ''
+
 
 use GameMTBaseball
 GO
@@ -393,21 +275,20 @@ as
 	------------------------------------------------
 	--	프로시져 종류
 	------------------------------------------------
+	declare @KIND_ADMIN_LOGIN					int				set @KIND_ADMIN_LOGIN					= 25
 	declare @KIND_NOTICE_SETTING				int				set @KIND_NOTICE_SETTING				= 20
-	declare @KIND_USER_SEARCH					int				set @KIND_USER_SEARCH					= 7
-	declare @KIND_USER_DELETEID					int				set @KIND_USER_DELETEID					= 18
+	declare @KIND_SEARCH_ITEMINFO				int				set @KIND_SEARCH_ITEMINFO				= 5
 	declare @KIND_USER_SETTING					int				set @KIND_USER_SETTING					= 19
 	declare @KIND_STATISTICS_INFO				int				set @KIND_STATISTICS_INFO				= 21
+
+	declare @KIND_USER_SEARCH					int				set @KIND_USER_SEARCH					= 7
+	declare @KIND_USER_DELETEID					int				set @KIND_USER_DELETEID					= 18
 	declare @KIND_USER_GIFT						int				set @KIND_USER_GIFT						= 27
-	declare @KIND_ADMIN_LOGIN					int				set @KIND_ADMIN_LOGIN					= 25
-	declare @KIND_SEARCH_ITEMINFO				int				set @KIND_SEARCH_ITEMINFO				= 5
 	declare @KIND_SYSTEMINFO_SETTING			int				set @KIND_SYSTEMINFO_SETTING			= 30
 	declare @KIND_USER_CASH_LOG_DELETE			int				set @KIND_USER_CASH_LOG_DELETE			= 17
-
 	declare @KIND_USER_BLOCK_LOG				int				set @KIND_USER_BLOCK_LOG				= 2
 	declare @KIND_USER_BLOCK_RELEASE			int				set @KIND_USER_BLOCK_RELEASE			= 8
 	declare @KIND_USER_DELETE_LOG				int				set @KIND_USER_DELETE_LOG				= 10
-	declare @KIND_USER_DELETE_RELEASE			int				set @KIND_USER_DELETE_RELEASE			= 11
 	declare @KIND_USER_UNUSUAL_LOG				int				set @KIND_USER_UNUSUAL_LOG				= 4
 	declare @KIND_ITEM_BUY_LOG					int				set @KIND_ITEM_BUY_LOG					= 6
 	declare @KIND_USER_ITEM_UPGRADE				int				set @KIND_USER_ITEM_UPGRADE 			= 9
@@ -415,7 +296,6 @@ as
 	declare @KIND_USER_CASH_BUY					int				set @KIND_USER_CASH_BUY					= 13
 	declare @KIND_USER_CASH_PLUS				int				set @KIND_USER_CASH_PLUS				= 16
 	declare @KIND_USER_CASH_MINUS				int				set @KIND_USER_CASH_MINUS				= 23
-	declare @KIND_OPEN_TEST						int				set @KIND_OPEN_TEST						= 22
 	declare @KIND_NEWINFO_LIST					int				set @KIND_NEWINFO_LIST					= 26
 
 	-- 상태값.
@@ -427,25 +307,6 @@ as
 	-- 체킹
 	declare @INFOMATION_NO						int					set @INFOMATION_NO					= -1
 	declare @INFOMATION_YES						int					set @INFOMATION_YES					=  1
-
-	-- 통신사 구분값
-	declare @SKT 							int					set @SKT						= 1
-	declare @GOOGLE 						int					set @GOOGLE						= 5
-	declare @NHN	 						int					set @NHN						= 6
-	declare @IPHONE							int					set @IPHONE						= 7
-
-	-- 아이템
-	declare @ITEM_SUBCATEGORY_UPGRADE_HOUSE		int					set @ITEM_SUBCATEGORY_UPGRADE_HOUSE 		= 60 -- 집
-	declare @ITEM_SUBCATEGORY_UPGRADE_TANK		int					set @ITEM_SUBCATEGORY_UPGRADE_TANK 			= 61 -- 탱크
-	declare @ITEM_SUBCATEGORY_UPGRADE_FRESHCOOL	int					set @ITEM_SUBCATEGORY_UPGRADE_FRESHCOOL 	= 62 -- 저온보관
-	declare @ITEM_SUBCATEGORY_UPGRADE_PURE		int					set @ITEM_SUBCATEGORY_UPGRADE_PURE 			= 63 -- 정화시설
-	declare @ITEM_SUBCATEGORY_UPGRADE_BOTTLE	int					set @ITEM_SUBCATEGORY_UPGRADE_BOTTLE 		= 64 -- 양동이
-	declare @ITEM_SUBCATEGORY_UPGRADE_PUMP		int					set @ITEM_SUBCATEGORY_UPGRADE_PUMP 			= 65 -- 착유기
-	declare @ITEM_SUBCATEGORY_UPGRADE_TRANSFER	int					set @ITEM_SUBCATEGORY_UPGRADE_TRANSFER 		= 66 -- 주입기
-	declare @ITEM_SUBCATEGORY_INVEN				int					set @ITEM_SUBCATEGORY_INVEN 				= 67 -- 인벤확장
-	declare @ITEM_SUBCATEGORY_SEEDFIELD			int					set @ITEM_SUBCATEGORY_SEEDFIELD 			= 68 -- 경작지확장
-	declare @ITEM_SUBCATEGORY_DOGAM				int					set @ITEM_SUBCATEGORY_DOGAM 				= 818 -- 도감
-	declare @ITEM_SUBCATEGORY_SYSINFO			int					set @ITEM_SUBCATEGORY_SYSINFO 				= 500 -- 정보수집
 
 	-- 선물 관련 정의값
 	declare @GIFTLIST_GIFT_KIND_MESSAGE			int					set @GIFTLIST_GIFT_KIND_MESSAGE				= 1
@@ -462,7 +323,7 @@ as
 
 
 	declare @PAGE_CASH_LIST						int					set @PAGE_CASH_LIST							= 25
-	declare @LV_MAX								int					set @LV_MAX									= 60
+	declare @LV_MAX								int					set @LV_MAX									= 650
 	------------------------------------------------
 	--	일반변수선언
 	------------------------------------------------
@@ -493,8 +354,6 @@ as
 	declare @dateid19 		varchar(19) 	set @dateid19 		= Convert(varchar(19), Getdate(),120)
 
 	declare @syscheck		int
-	declare @market			int				set @market = 1
-	declare @buytype		int
 	declare @version		int
 	declare @iteminfover	int
 	declare @iteminfourl	varchar(512)
@@ -517,19 +376,6 @@ as
 	declare @val			int
 	declare @val2			int
 	declare @cash			int
-
-	declare @housestepmax		int,
-			@tankstepmax		int,
-			@bottlestepmax		int,
-			@pumpstepmax		int,
-			@transferstepmax	int,
-			@purestepmax		int,
-			@freshcoolstepmax	int,
-
-			@invenstepmax		int,
-			@invencountmax		int,
-			@seedfieldmax		int
-
 
 	declare @pack1			int		set @pack1 		= -1
 	declare @pack2			int		set @pack2 		= -1
@@ -596,7 +442,6 @@ as
 	declare @famelv			int,
 			@fame			int
 	declare @total			int	set @total 			= 0
-	declare @schoolidx		int	set @schoolidx 		= -1
 	declare @point			int	set @point 			= 0
 
 	-- 유저문의.
@@ -605,7 +450,6 @@ as
 	declare @PAGE_LINE50	int						set @PAGE_LINE50	= 50
 	declare @PAGE_LINE		int						set @PAGE_LINE		= 100
 	declare @page			int						set @page			= 1
-
 
 	-- 쿠폰정보.
 	declare @itemcode1		int						set @itemcode1		= -1
@@ -636,88 +480,141 @@ as
 	declare @eventstarthour	int
 	declare @eventendhour	int
 
-	-- 복귀플래그.
-	declare @rtnflag		int
 
-	declare @yabau			varchar(256)
-	declare @pack51			int, @pack52			int, @pack53			int, @pack54			int,
-			@pack61			int, @pack62			int, @pack63			int, @pack64			int
-
-	declare @roulflag			int					set @roulflag		= -1
-	declare @roulstart			datetime			set @roulstart 		= '2014-01-01'
-	declare @roulend			datetime			set @roulend 		= '2024-01-01'
-	declare @roulani1			int					set @roulani1		= -1
-	declare @roulani2			int					set @roulani2 		= -1
-	declare @roulani3			int					set @roulani3 		= -1
-	declare @roulreward1		int					set @roulreward1	= -1
-	declare @roulreward2		int					set @roulreward2 	= -1
-	declare @roulreward3		int					set @roulreward3 	= -1
-	declare @roulrewardcnt1		int					set @roulrewardcnt1	=  0
-	declare @roulrewardcnt2		int					set @roulrewardcnt2 =  0
-	declare @roulrewardcnt3		int					set @roulrewardcnt3 =  0
-	declare @roulname1			varchar(20)			set @roulname1 		= ''
-	declare @roulname2			varchar(20)			set @roulname2 		= ''
-	declare @roulname3			varchar(20)			set @roulname3 		= ''
-
-	declare @roultimeflag		int					set @roultimeflag 	= -1
-	declare @roultimetime1		int					set @roultimetime1 	= -1
-	declare @roultimetime2		int					set @roultimetime2 	= -1
-	declare @roultimetime3		int					set @roultimetime3 	= -1
-	declare @roultimetime4		int					set @roultimetime4 	= -1
-
-	declare @roulsaleflag		int					set @roulsaleflag 	= -1
-	declare @roulsalevalue		int					set @roulsalevalue 	= 0
-
-	declare @pmgauageflag		int					set @pmgauageflag 	= -1
-	declare @pmgauagepoint		int					set @pmgauagepoint	= 10
-	declare @pmgauagemax		int					set @pmgauagemax 	= 100
-
-	-- 보물강화할인.
-	declare @tsupgradesaleflag		int				set @tsupgradesaleflag	= -1
-	declare @tsupgradesalevalue		int				set @tsupgradesalevalue	=  0
-
-	declare @idxmin				int					set @idxmin				= 0
-	declare @idxmax				int					set @idxmax				= 0
-
-	-- VIP info
-	declare @vip_cashpoint		int					set @vip_cashpoint		= 0
-	declare @vip_cashplus		int					set @vip_cashplus		= 0
-	declare @vip_gamecost		int					set @vip_gamecost		= 0
-	declare @vip_heart			int					set @vip_heart			= 0
-	declare @vip_animal10		int					set @vip_animal10		= 0
-	declare @vip_wheel10		int					set @vip_wheel10		= 0
-	declare @vip_treasure10		int					set @vip_treasure10		= 0
-	declare @vip_box			int					set @vip_box			= 0
-	declare @vip_fbplus			int					set @vip_fbplus			= 0
-
-	-- 짜요장터정보.
-	declare @zcpfile			varchar(512)		set @zcpfile 			= ''
-	declare @zcpurl				varchar(512)		set @zcpurl 			= ''
-	declare @commentsimple		varchar(512)		set @commentsimple 		= ''
-	declare @commentdesc		varchar(2048)		set @commentdesc 		= ''
-	declare @opendate			varchar(16)			set @opendate 			= '2016-01-01'
-	declare @expiredate			varchar(16)			set @expiredate			= '2016-01-01'
-	declare @bestmark			int,
-			@newmark			int,
-			@needcnt			int,
-			@firstcnt			int,
-			@zcpflag			int,
-			@zcporder			int
 Begin
 	------------------------------------------------
 	--	초기화
 	------------------------------------------------
 	set nocount on
 
+	-----------------------------------------------------
+	--	관리자 로그인
+	-----------------------------------------------------
+	if(@kind = @KIND_ADMIN_LOGIN)
+		begin
+			set @subkind = @p2_
+			if(@subkind	= 1)
+				begin
+					if(not exists(select * from dbo.tAdminUser where gameid = @ps1_))
+						begin
+							if(@p3_ = -1)
+								begin
+									set @p3_ = 0
+								end
+							insert into tAdminUser(gameid, password, grade) values(@ps1_, @ps2_, @p3_)
+							select 1 'rtn'
+						end
+					else
+						begin
+							select -1 'rtn'
+						end
+				end
+			else if(@subkind = 2)
+				begin
+					set @grade = -1
+					select @grade = grade from dbo.tAdminUser where gameid = @ps1_ and password = @ps2_
+					if(@grade != -1)
+						begin
+							select 1 'rtn', @grade grade, '입력'
+						end
+					else
+						begin
+							select -1 'rtn', 0 grade, '입력'
+						end
+				end
+			else if(@subkind = 3)
+				begin
+					set @grade = -1
+					select @grade = grade from dbo.tAdminUser where gameid = @ps1_
+					if(@grade != -1)
+						begin
+							update dbo.tAdminUser
+								set
+									password 	= @ps2_,
+									grade 		= @p3_
+							where gameid = @ps1_
+
+							select 1 'rtn', @grade grade, '(루비)'
+						end
+					else
+						begin
+							select -1 'rtn', 0 grade, '(루비)'
+						end
+				end
+			else if(@subkind = 4)
+				begin
+					delete from dbo.tAdminUser where gameid = @ps1_ and password = @ps2_
+					select 1 'rtn', 0, '(삭제)'
+				end
+			else if(@subkind = 200)
+				begin
+					-----------------------------------
+					-- 관리자 행동정보
+					-----------------------------------
+					if(isnull(@ps2_, '') = '')
+						begin
+							set @idxPage	= @p7_
+							select @idx = (isnull(max(idx), 1)) from dbo.tMessageAdmin
+
+							set @maxPage	= @idx / @PAGE_LINE50
+							set @maxPage 	= @maxPage + case when (@idx % @PAGE_LINE50 != 0) then 1 else 0 end
+							set @page		= case
+												when (@idxPage <= 0)			then 1
+												when (@idxPage >  @maxPage)	then @maxPage
+												else @idxPage
+											end
+							set @idx		= @idx - (@page - 1) * @PAGE_LINE50
+
+							select top 50 @maxPage maxPage, @page page, * from dbo.tMessageAdmin
+							where idx <= @idx order by idx desc
+							--select top 100 * from dbo.tMessageAdmin order by idx desc
+						end
+					else
+						begin
+							set @maxPage	= 1
+							set @page		= 1
+							select top 100 @maxPage maxPage, @page page, * from dbo.tMessageAdmin where adminid = @ps2_ order by idx desc
+						end
+				end
+		end
+
+	-----------------------------------------------------
+	--	아이템정보
+	-----------------------------------------------------
+	else if(@kind in (@KIND_SEARCH_ITEMINFO))
+		begin
+			set @subkind 	= @p2_
+			set @itemcode	= @p3_
+			set @category	= @p4_
+			set @subcategory= @p5_
+			if(@subkind	= 1)
+				begin
+					if(@itemcode != -1)
+						begin
+							select * from dbo.tItemInfo where itemcode = @itemcode order by itemcode asc
+						end
+					else if(@category != -1)
+						begin
+							select * from dbo.tItemInfo where category = @category
+						end
+					else if(@subcategory != -1)
+						begin
+							select * from dbo.tItemInfo where subcategory = @subcategory
+						end
+					else
+						begin
+							select * from dbo.tItemInfo order by itemcode asc
+						end
+				end
+		end
 	------------------------------------------------
 	--	각상태분기
 	------------------------------------------------
 /*
-	if(@kind = @KIND_NOTICE_SETTING)
+	else if(@kind = @KIND_NOTICE_SETTING)
 		begin
 			set @subkind 	= @p2_
 			set @idx		= @p3_
-			set @buytype	= @p5_
 			set @version	= @p6_
 			set @syscheck	= @p7_
 			set @iteminfover= @p8_
@@ -1066,7 +963,10 @@ Begin
 					order by idx desc
 				end
 		end
-
+*/
+	-----------------------------------------------------
+	--	유저로그
+	-----------------------------------------------------
 	else if(@kind = @KIND_USER_SETTING)
 		begin
 			set @gameid		= @ps1_
@@ -1172,7 +1072,7 @@ Begin
 			else if(@p2_ =  1003)
 				begin
 					--------------------------------------------
-					-- 상세하기
+					-- @상세하기
 					--------------------------------------------
 					if(isnull(@gameid, '') = '')
 						begin
@@ -1251,57 +1151,23 @@ Begin
 						end
 					select @RESULT_SUCCESS 'rtn'
 				end
-			else if(@p2_ =  1008)
-				begin
-					--------------------------------------------
-					-- 상세하기
-					--------------------------------------------
-					if(isnull(@gameid, '') = '')
-						begin
-							set @idxPage	= @p7_
-							select @idx = (isnull(max(idx), 1)) from dbo.tComReward
-
-							set @maxPage	= @idx / @PAGE_LINE
-							set @maxPage 	= @maxPage + case when (@idx % @PAGE_LINE != 0) then 1 else 0 end
-							set @page		= case
-												when (@idxPage <= 0)			then 1
-												when (@idxPage >  @maxPage)	then @maxPage
-												else @idxPage
-											end
-							set @idx		= @idx - (@page - 1) * @PAGE_LINE
-
-							select top 100 @maxPage maxPage, @page page, u.*, i.*
-							from dbo.tComReward u JOIN dbo.tItemInfo i ON i.itemcode = u.itemcode
-							where u.idx <= @idx order by u.idx desc
-						end
-					else
-						begin
-							set @maxPage	= 1
-							set @page		= 1
-
-							select top 100 @maxPage maxPage, @page page, u.*, i.*
-							from dbo.tComReward u JOIN dbo.tItemInfo i ON i.itemcode = u.itemcode
-							where gameid = @gameid
-							order by u.idx desc
-						end
-				end
 			else if(@p2_ =  1004)
 				begin
 					if(@p3_ = 1)
 						begin
 							-- 쿠폰정보
-							select top 10 * from dbo.tEventCertNo where mainkind = 2 order by idx desc
+							select top 10 * from dbo.tEventCertNo where mode = 2 order by idx desc
 
-							select top 10 * from dbo.tEventCertNo where mainkind = 1 order by idx desc
+							select top 10 * from dbo.tEventCertNo where mode = 1 order by idx desc
 
 							select top 10 * from dbo.tEventCertNoBack order by idx desc
 						end
 					else if(@p3_ = 2)
 						begin
 							-- 쿠폰정보
-							select top 10 * from dbo.tEventCertNo where mainkind = 2 and certno = @ps10_ order by idx desc
+							select top 10 * from dbo.tEventCertNo where mode = 2 and certno = @ps10_ order by idx desc
 
-							select top 10 * from dbo.tEventCertNo where mainkind = 1 and certno = @ps10_ order by idx desc
+							select top 10 * from dbo.tEventCertNo where mode = 1 and certno = @ps10_ order by idx desc
 
 							select top 10 * from dbo.tEventCertNoBack where certno = @ps10_ order by idx desc
 						end
@@ -1461,315 +1327,12 @@ Begin
 					exec spu_AdminAction @ps2_, @gameid, @comment
 					select 1 rtn
 				end
-			else if(@p2_ = 42)
-				begin
-					update dbo.tUserMaster set gamecost = gamecost + @p3_ where gameid = @gameid
-					set @comment = '코인 ' +
-								+ case when @p3_ >= 0 then ' 추가:' else ' 삭감' end
-								+ ltrim(rtrim(str(@p3_)))
-					exec spu_AdminAction @ps2_, @gameid, @comment
-					select 1 rtn
-				end
-			else if(@p2_ = 43)
-				begin
-					update dbo.tUserMaster set feed = feed + @p3_ where gameid = @gameid
-					set @comment = '건초 ' +
-								+ case when @p3_ >= 0 then ' 추가:' else ' 삭감' end
-								+ ltrim(rtrim(str(@p3_)))
-					exec spu_AdminAction @ps2_, @gameid, @comment
-					select 1 rtn
-				end
-			else if(@p2_ = 44)
-				begin
-					update dbo.tUserMaster set heart = heart + @p3_ where gameid = @gameid
-					set @comment = '하트 ' +
-								+ case when @p3_ >= 0 then ' 추가:' else ' 삭감' end
-								+ ltrim(rtrim(str(@p3_)))
-					exec spu_AdminAction @ps2_, @gameid, @comment
-					select 1 rtn
-				end
-			else if(@p2_ = 45)
-				begin
-					set @p3_ = CASE
-									WHEN @p3_ < 0 THEN 0
-									WHEN @p3_ >= 15 THEN 15
-									ELSE @p3_ END
-
-					update dbo.tUserMaster
-						set
-							invenanimalmax = invenanimalbase + 10 * @p3_,
-							invenanimalstep = @p3_
-					where gameid = @gameid
-
-					set @comment = '동물인벤Max step' + ltrim(rtrim(str(@p3_)))
-					exec spu_AdminAction @ps2_, @gameid, @comment
-					select 1 rtn
-				end
-			else if(@p2_ = 46)
-				begin
-					set @p3_ = CASE
-									WHEN @p3_ < 0 THEN 0
-									WHEN @p3_ >= 15 THEN 15
-									ELSE @p3_ END
-
-					update dbo.tUserMaster
-						set
-							invencustommax = invencustombase + 10 * @p3_,
-							invencustomstep = @p3_
-					where gameid = @gameid
-
-					set @comment = '소비인벤Max step' + ltrim(rtrim(str(@p3_)))
-					exec spu_AdminAction @ps2_, @gameid, @comment
-					select 1 rtn
-				end
-			else if(@p2_ = 47)
-				begin
-					set @p3_ = CASE
-									WHEN @p3_ < 0 THEN 0
-									WHEN @p3_ >= 15 THEN 15
-									ELSE @p3_ END
-
-					update dbo.tUserMaster
-						set
-							invenstemcellmax = invenstemcellbase + 10 * @p3_,
-							invenstemcellstep = @p3_
-					where gameid = @gameid
-					select 1 rtn
-				end
-			else if(@p2_ = 49)
-				begin
-					set @p3_ = CASE
-									WHEN @p3_ < 0 THEN 0
-									WHEN @p3_ >= 15 THEN 15
-									ELSE @p3_ END
-
-					update dbo.tUserMaster
-						set
-							inventreasuremax = inventreasurebase + 10 * @p3_,
-							inventreasurestep = @p3_
-					where gameid = @gameid
-					select 1 rtn
-				end
-			else if(@p2_ = 48)
-				begin
-					update dbo.tUserMaster set heartmax = heartmax + @p3_ where gameid = @gameid
-					set @comment = ' 하트Max' +
-								+ case when @p3_ >= 0 then ' 추가:' else ' 삭감' end
-								+ ltrim(rtrim(str(@p3_)))
-					exec spu_AdminAction @ps2_, @gameid, @comment
-					select 1 rtn
-				end
-			else if(@p2_ = 50)
-				begin
-					update dbo.tUserMaster set housestate  = @USERMASTER_UPGRADE_STATE_ING, housetime = getdate() where gameid = @gameid
-
-					set @comment = ' 업글(집)진행으로 변경, 시간초기화'
-					exec spu_AdminAction @ps2_, @gameid, @comment
-					select 1 rtn
-				end
-			else if(@p2_ = 52)
-				begin
-					update dbo.tUserMaster set tankstate 	= @USERMASTER_UPGRADE_STATE_ING, tanktime 	= getdate() where gameid = @gameid
-
-					set @comment = ' 업글(탱크)진행으로 변경, 시간초기화'
-					exec spu_AdminAction @ps2_, @gameid, @comment
-					select 1 rtn
-				end
-			else if(@p2_ = 54)
-				begin
-					update dbo.tUserMaster set bottlestate 	= @USERMASTER_UPGRADE_STATE_ING, bottletime 	= getdate() where gameid = @gameid
-
-					set @comment = ' 업글(양동이)진행으로 변경, 시간초기화'
-					exec spu_AdminAction @ps2_, @gameid, @comment
-					select 1 rtn
-				end
-			else if(@p2_ = 56)
-				begin
-					update dbo.tUserMaster set pumpstate 	= @USERMASTER_UPGRADE_STATE_ING, pumptime 	= getdate() where gameid = @gameid
-
-					set @comment = ' 업글(착유기)진행으로 변경, 시간초기화'
-					exec spu_AdminAction @ps2_, @gameid, @comment
-					select 1 rtn
-				end
-			else if(@p2_ = 58)
-				begin
-					update dbo.tUserMaster set transferstate 	= @USERMASTER_UPGRADE_STATE_ING, transfertime 	= getdate() where gameid = @gameid
-
-					set @comment = ' 업글(주입기)진행으로 변경, 시간초기화'
-					exec spu_AdminAction @ps2_, @gameid, @comment
-					select 1 rtn
-				end
-			else if(@p2_ = 60)
-				begin
-					update dbo.tUserMaster set purestate 	= @USERMASTER_UPGRADE_STATE_ING, puretime 	= getdate() where gameid = @gameid
-
-					set @comment = ' 업글(정화)진행으로 변경, 시간초기화'
-					exec spu_AdminAction @ps2_, @gameid, @comment
-					select 1 rtn
-				end
-			else if(@p2_ = 62)
-				begin
-					update dbo.tUserMaster set freshcoolstate 	= @USERMASTER_UPGRADE_STATE_ING, freshcooltime 	= getdate() where gameid = @gameid
-
-					set @comment = ' 업글(저온보관)진행으로 변경, 시간초기화'
-					exec spu_AdminAction @ps2_, @gameid, @comment
-					select 1 rtn
-				end
 			else if(@p2_ = 64)
 				begin
-					if(@p3_ = 1)
-						begin
-							set @comment = '  일일출석 날짜 -1 일전으로 이동'
-							update dbo.tUserMaster set attenddate  = attenddate - 1 where gameid = @gameid
-						end
-					else if(@p3_ = 2)
-						begin
-							set @comment = '  일일출석 카운터 +=1'
-							select @val = max(param1) from dbo.tItemInfo where subcategory = 900
-
-							update dbo.tUserMaster
-								set attendcnt  = CASE
-													WHEN (attendcnt + 1 > @val) then 0
-													else                             ( attendcnt + 1 )
-												 end
-							where gameid = @gameid
-						end
-					else if(@p3_ = 4)
+					if(@p3_ = 4)
 						begin
 							set @comment = ' 튜토리얼 초기화'
 							update dbo.tUserMaster set tutorial  = 0 where gameid = @ps1_
-						end
-					else if(@p3_ = 5)
-						begin
-							set @comment = ' 펫체험 초기화'
-							update dbo.tUserMaster set pettodayitemcode2 = pettodayitemcode where gameid = @ps1_
-						end
-					else if(@p3_ = 6)
-						begin
-							set @comment = '  접속일 -30갱신'
-							update dbo.tUserMaster set condate  = condate - 1 where gameid = @gameid
-						end
-					else if(@p3_ = 11)
-						begin
-							set @comment = '  동물부활 날짜 -7 일전으로 이동'
-							update dbo.tUserItem set diedate  = isnull(diedate, getdate()) - 7 where gameid = @gameid and listidx = @p4_
-						end
-					else if(@p3_ = 31)
-						begin
-							set @comment = '  광고리스트 번호 클리어.'
-							update dbo.tUserMaster set adidx  = 0 where gameid = @ps1_
-						end
-					else if(@p3_ = 44)
-						begin
-							set @comment = '  합성시간 초기화-1 일전으로 이동'
-							update dbo.tUserMaster set bgcomposewt  = bgcomposewt - 1 where gameid = @gameid
-						end
-					else if(@p3_ = 45)
-						begin
-							set @comment = ' 경쟁모드 번호세팅'
-							if(exists(select top 1 * from dbo.tItemInfo where itemcode = @p4_ and subcategory = 901))
-								begin
-									update dbo.tUserMaster set comreward = @p4_ where gameid = @gameid
-								end
-						end
-					else if(@p3_ = 51)
-						begin
-							set @comment = '  상인변경.'
-
-							update dbo.tUserMaster
-								set
-									trade0  = case when (@p4_ = 0) then (case when (trade0 = 0) then 7  else 0 end) else trade0 end,
-									trade1  = case when (@p4_ = 1) then (case when (trade1 = 1) then 8  else 1 end) else trade1 end,
-									trade2  = case when (@p4_ = 2) then (case when (trade2 = 2) then 9  else 2 end) else trade2 end,
-									trade3  = case when (@p4_ = 3) then (case when (trade3 = 3) then 10 else 3 end) else trade3 end,
-									trade4  = case when (@p4_ = 4) then (case when (trade4 = 4) then 11 else 4 end) else trade4 end,
-									trade5  = case when (@p4_ = 5) then (case when (trade5 = 5) then 12 else 5 end) else trade5 end,
-									trade6  = case when (@p4_ = 6) then (case when (trade6 = 6) then 13 else 6 end) else trade6 end
-							where gameid = @gameid
-						end
-					else if(@p3_ = 52)
-						begin
-							set @comment = ' 행운의 주사위 변경'
-							update dbo.tUserMaster set yabauidx = -1 where gameid = @gameid
-						end
-					else if(@p3_ = 53)
-						begin
-							set @comment = ' 행운의 주사위 시도횟수'
-							update dbo.tUserMaster set yabaucount = @p4_ where gameid = @gameid
-						end
-					else if(@p3_ = 54)
-						begin
-							set @val = -1
-							select top 1 @val = listidx from dbo.tUserItem where gameid = @gameid and itemcode >= 100000 and itemcode <= 100099
-							update dbo.tUserMaster set petlistidx = @val where gameid = @gameid
-						end
-					else if(@p3_ = 56)
-						begin
-							update dbo.tUserMaster
-								set
-									nicknamechange = 0
-							where gameid = @gameid
-						end
-					else if(@p3_ = 57)
-						begin
-							update dbo.tUserMaster set anibuycnt = 0 where gameid = @gameid
-						end
-					else if(@p3_ = 58)
-						begin
-							update dbo.tUserMaster set anibuydate = anibuydate - 1 where gameid = @gameid
-						end
-					else if(@p3_ = 59)
-						begin
-							set @p4_ = case
-											when @p4_ < 0    then 0
-											when @p4_ > 3000 then 3000
-											else @p4_
-										end
-
-							update dbo.tUserMaster
-								set
-									trophy 	= @p4_,
-									tier 	= dbo.fun_GetTier( @p4_ )
-							where gameid = @gameid
-						end
-					else if(@p3_ = 60)
-						begin
-							select @idxmin = min(idx), @idxmax = max(idx) from dbo.tSystemBattleBox
-							update dbo.tUserMaster
-								set
-									boxrotidx = case
-														when @p4_ < @idxmin then @idxmin
-														when @p4_ > @idxmax then @idxmax
-														else @p4_
-												end
-							where gameid = @gameid
-						end
-					else if(@p3_ = 101)
-						begin
-							update dbo.tUserMaster set tsgrade1cnt = 0 where gameid = @gameid
-						end
-					else if(@p3_ = 101)
-						begin
-							update dbo.tUserMaster set tsgrade2cnt = 0 where gameid = @gameid
-						end
-					else if(@p3_ = 102)
-						begin
-							update dbo.tUserMaster set tsgrade2gauage = 100 where gameid = @gameid
-						end
-					else if(@p3_ = 103)
-						begin
-							update dbo.tUserMaster set tsgrade4cnt = 0 where gameid = @gameid
-						end
-					else if(@p3_ = 104)
-						begin
-							update dbo.tUserMaster set tsgrade4gauage = 100 where gameid = @gameid
-						end
-					else if(@p3_ = 110)
-						begin
-							update dbo.tUserItem
-								set
-									expiredate = expiredate - 61
-							where gameid = @gameid and listidx = @p4_
 						end
 					select 1 rtn
 				end
@@ -1780,485 +1343,11 @@ Begin
 							set @comment = '  레벨 변경'
 							update dbo.tUserMaster
 								set
-									lv  = CASE
+									level  = CASE
 													WHEN (@p4_ > @LV_MAX) then @LV_MAX
 													WHEN (@p4_ < 1) then 1
 													else @p4_ end
 							where gameid = @gameid
-						end
-					else if(@p3_ = 6)
-						begin
-							set @comment = '  거래성공 변경'
-							update dbo.tUserMaster
-								set
-									tradecnt  = CASE
-													WHEN (@p4_ < 0) then 0
-													else @p4_
-												end,
-									prizecnt  = @p4_ / 6,
-									tradefailcnt = 0
-							where gameid = @gameid
-						end
-					else if(@p3_ = 7)
-						begin
-							set @comment = '  상장횟수 변경'
-							update dbo.tUserMaster
-								set
-									tradecnt  = @p4_ * 6,
-									prizecnt  = CASE
-													WHEN (@p4_ > 99999) then 99999
-													WHEN (@p4_ < 0) then 0
-													else @p4_
-												end,
-									tradefailcnt = 0
-							where gameid = @gameid
-						end
-					else if(@p3_ = 8)
-						begin
-							set @comment	= '  최고명성도 변경'
-							set @p4_		= CASE
-													WHEN (@p4_ > @LV_MAX) then @LV_MAX
-													WHEN (@p4_ < 1) then 1
-													else @p4_
-											end
-
-							update dbo.tUserMaster
-								set
-									famelvbest = @p4_
-							where gameid = @gameid
-						end
-					else if(@p3_ = 9)
-						begin
-							set @comment = '  거래실패 변경'
-							if(@p4_ > 0)
-								begin
-									update dbo.tUserMaster
-										set
-											tradefailcnt  	= @p4_,
-											tradecnt  		= 0,
-											prizecnt  		= 0,
-											tradecntold 	= tradecnt,
-											prizecntold		= prizecnt
-									where gameid = @gameid
-								end
-							else
-								begin
-									update dbo.tUserMaster
-										set
-											tradefailcnt  	= 0
-									where gameid = @gameid
-								end
-						end
-					else if(@p3_ = 10)
-						begin
-							set @comment = '  거래성공횟수 변경'
-							update dbo.tUserMaster
-								set
-									tradesuccesscnt  = @p4_
-							where gameid = @gameid
-						end
-					select 1 rtn
-				end
-			else if(@p2_ = 67)
-				begin
-					-----------------------------------------------
-					--	인벤토리 펫업글.
-					-----------------------------------------------
-					set @comment = '  인벤토리 펫업글'
-					update dbo.tUserItem
-						set
-							petupgrade = case
-											when @p4_  < 1 then 1
-											when @p4_ >= 6 then 6
-											else                @p4_
-										end
-					where gameid = @gameid and listidx = @p3_
-
-					select 1 rtn
-				end
-			else if(@p2_ = 68)
-				begin
-					if(@p3_ = 1)
-						begin
-							-----------------------------------------------
-							--	배틀로그 삭제
-							-----------------------------------------------
-							delete from dbo.tBattleLog where gameid = @gameid and idx2 = @p4_
-
-							select 1 rtn
-						end
-					else if(@p3_ = 2)
-						begin
-							-----------------------------------------------
-							--	거래정보 검색.
-							-----------------------------------------------
-							set @comment = '  검색'
-							if(isnull(@ps1_, '') = '')
-								begin
-									select top 50 * from dbo.tBattleLog
-									order by idx desc
-								end
-
-							else
-								begin
-									select top 500 * from dbo.tBattleLog
-									where gameid = @ps1_
-									order by idx desc
-								end
-						end
-				end
-			else if(@p2_ = 73)
-				begin
-					if(@p3_ = 1)
-						begin
-							-----------------------------------------------
-							--	배틀로그 삭제
-							-----------------------------------------------
-							delete from dbo.tUserBattleBank where gameid = @gameid and idx2 = @p4_
-
-							select 1 rtn
-						end
-					else if(@p3_ = 2)
-						begin
-							-----------------------------------------------
-							--	거래정보 검색.
-							-----------------------------------------------
-							set @comment = '  검색'
-							if( @p4_ != -1 )
-								begin
-									select top 50 * from dbo.tUserBattleBank
-									where idx = @p4_
-								end
-							else if(isnull(@ps1_, '') = '')
-								begin
-									select top 50 * from dbo.tUserBattleBank
-									order by idx desc
-								end
-							else
-								begin
-									select top 500 * from dbo.tUserBattleBank
-									where gameid = @ps1_
-									order by idx desc
-								end
-						end
-				end
-			else if(@p2_ = 69)
-				begin
-					update dbo.tUserItem
-						set
-							treasureupgrade = case
-													when @p4_ <= 0 			then 0
-													when @p4_ >= upstepmax 	then upstepmax
-													else                		 @p4_
-												end
-					where gameid = @gameid and listidx = @p3_
-
-					select 1 rtn
-				end
-			else if(@p2_ = 70)
-				begin
-					update dbo.tUserItem
-						set
-							upstepmax = case
-												when @p4_ <= 7  then 7
-												when @p4_ >= 99	then 99
-												else            	 @p4_
-											end
-					where gameid = @gameid and listidx = @p3_
-
-					select 1 rtn
-				end
-			else if(@p2_ = 71)
-				begin
-					-- 소모템 개수변경
-					if(@p4_ < 0)
-						begin
-							set @p4_ = 0
-						end
-					else if(@p4_ >= 99999)
-						begin
-							set @p4_ = 99999
-						end
-					update dbo.tUserItem set cnt = @p4_ where gameid = @gameid and listidx = @p3_
-
-					select 1 rtn
-				end
-			else if(@p2_ = 81)
-				begin
-					-- 양동이 리터
-					update dbo.tUserMaster set bottlelittle  = bottlelittle + @p3_ where gameid = @gameid
-					select 1 rtn
-				end
-			else if(@p2_ = 82)
-				begin
-					-- 양동이 신선도
-					update dbo.tUserMaster set bottlefresh  = bottlefresh + @p3_ where gameid = @gameid
-					select 1 rtn
-				end
-			else if(@p2_ = 83)
-				begin
-					-- 탱크 리터
-					update dbo.tUserMaster set tanklittle  = tanklittle + @p3_ where gameid = @gameid
-					select 1 rtn
-				end
-			else if(@p2_ = 84)
-				begin
-					-- 탱크 신선도
-					update dbo.tUserMaster set tankfresh  = tankfresh + @p3_ where gameid = @gameid
-					select 1 rtn
-				end
-			else if(@p2_ = 86)
-				begin
-					if(@p3_ = 1)
-						begin
-							update dbo.tUserMaster set feedmax = @p4_ where gameid = @gameid
-						end
-					else if(@p3_ = 2)
-						begin
-							update dbo.tUserMaster set heartmax = @p4_ where gameid = @gameid
-						end
-					else if(@p3_ = 13)
-						begin
-							--update dbo.tUserMaster set fpoint = case when @p4_ > fpointmax then fpointmax else @p4_ end where gameid = @gameid
-							update dbo.tUserMaster set fpoint = case when @p4_ > 9999 then 9999 else @p4_ end where gameid = @gameid
-						end
-					else if(@p3_ = 21)
-						begin
-							update dbo.tUserMaster set goldticket = case when @p4_ > 9999 then 9999 else @p4_ end where gameid = @gameid
-						end
-					else if(@p3_ = 22)
-						begin
-							update dbo.tUserMaster set goldticketmax = case when @p4_ > 9999 then 9999 else @p4_ end where gameid = @gameid
-						end
-					else if(@p3_ = 23)
-						begin
-							update dbo.tUserMaster
-								set
-									goldtickettime = case
-														when goldtickettime >= getdate() then (getdate() - 0.01)
-														else							       goldtickettime - 0.01
-													end
-							where gameid = @gameid
-						end
-					else if(@p3_ = 31)
-						begin
-							update dbo.tUserMaster set battleticket = case when @p4_ > 9999 then 9999 else @p4_ end where gameid = @gameid
-						end
-					else if(@p3_ = 32)
-						begin
-							update dbo.tUserMaster set battleticketmax = case when @p4_ > 9999 then 9999 else @p4_ end where gameid = @gameid
-						end
-					else if(@p3_ = 33)
-						begin
-							update dbo.tUserMaster
-								set
-									battletickettime = case
-														when battletickettime >= getdate() then (getdate() - 0.01)
-														else							         battletickettime - 0.01
-													end
-							where gameid = @gameid
-						end
-					else if(@p3_ = 41)
-						begin
-							update dbo.tUserMaster
-								set
-									boxslottime = DATEADD(hh, -1, boxslottime)
-							where gameid = @gameid
-						end
-					else if(@p3_ = 42)
-						begin
-							update dbo.tUserMaster
-								set
-									boxslot1 = case when (@p4_ = 1) then -1 else boxslot1 end,
-									boxslot2 = case when (@p4_ = 2) then -1 else boxslot2 end,
-									boxslot3 = case when (@p4_ = 3) then -1 else boxslot3 end,
-									boxslot4 = case when (@p4_ = 4) then -1 else boxslot4 end,
-
-									boxslotidx = case
-													when (@p4_ = 1 and boxslotidx = 1) then -1
-													when (@p4_ = 2 and boxslotidx = 2) then -1
-													when (@p4_ = 3 and boxslotidx = 3) then -1
-													when (@p4_ = 4 and boxslotidx = 4) then -1
-													else 									boxslotidx
-												 end
-
-							where gameid = @gameid
-						end
-					else if(@p3_ = 50)
-						begin
-							update dbo.tUserMaster set wheeltodaycnt = 0 where gameid = @gameid
-						end
-					else if(@p3_ = 51)
-						begin
-							update dbo.tUserMaster set wheeltodaydate = wheeltodaydate - 1 where gameid = @gameid
-						end
-					else if(@p3_ = 52)
-						begin
-							update dbo.tUserMaster
-								set
-									wheelgauage = case when ( wheelgauage + 10 ) >= 100 then 0 else ( wheelgauage + 10 ) end,
-									wheelfree 	= case when ( wheelgauage + 10 ) >= 100 then 1 else wheelfree end
-							where gameid = @gameid
-						end
-					else if(@p3_ = 53)
-						begin
-							update dbo.tUserMaster set wheelfree = case when wheelfree = 1 then 0 else 1 end where gameid = @gameid
-						end
-					else if(@p3_ = 60)
-						begin
-							update dbo.tUserMaster set rkteam = -1, rkstartstate = 0 where gameid = @gameid
-						end
-					else if(@p3_ = 61)
-						begin
-							update dbo.tUserMaster set zcpchance = case when zcpchance = 1 then -1 else 1 end where gameid = @gameid
-						end
-					else if(@p3_ = 62)
-						begin
-							update dbo.tUserMaster set zcpappearcnt = case when ( zcpappearcnt >= 20 ) then 0 else ( zcpappearcnt + 1 ) end where gameid = @gameid
-						end
-					select 1 rtn
-				end
-			else if(@p2_ = 87)
-				begin
-					if(@p3_ = 1)
-						begin
-							update dbo.tUserMaster set bktwolfkillcnt = @p4_ where gameid = @gameid
-						end
-					else if(@p3_ = 11)
-						begin
-							update dbo.tUserMaster set bktsalecoin = @p4_ where gameid = @gameid
-						end
-					else if(@p3_ = 12)
-						begin
-							update dbo.tUserMaster set bkheart = @p4_ where gameid = @gameid
-						end
-					else if(@p3_ = 13)
-						begin
-							update dbo.tUserMaster set bkfeed = @p4_ where gameid = @gameid
-						end
-					else if(@p3_ = 14)
-						begin
-							update dbo.tUserMaster set bktsuccesscnt = @p4_ where gameid = @gameid
-						end
-					else if(@p3_ = 15)
-						begin
-							update dbo.tUserMaster set bktbestfresh = @p4_ where gameid = @gameid
-						end
-					else if(@p3_ = 16)
-						begin
-							update dbo.tUserMaster set bktbestbarrel = @p4_ where gameid = @gameid
-						end
-					else if(@p3_ = 17)
-						begin
-							update dbo.tUserMaster set bktbestcoin = @p4_ where gameid = @gameid
-						end
-					else if(@p3_ = 18)
-						begin
-							update dbo.tUserMaster set bkbarrel = @p4_ where gameid = @gameid
-						end
-					else if(@p3_ = 21)
-						begin
-							update dbo.tUserMaster set bkcrossnormal = @p4_ where gameid = @gameid
-						end
-					else if(@p3_ = 22)
-						begin
-							update dbo.tUserMaster set bkcrosspremium = @p4_ where gameid = @gameid
-						end
-					else if(@p3_ = 31)
-						begin
-							update dbo.tUserMaster set ttsalecoin = @p4_ where gameid = @gameid
-						end
-					else if(@p3_ = 32)
-						begin
-							update dbo.tUserMaster set etsalecoin = @p4_ where gameid = @gameid
-						end
-					else if(@p3_ = 43)
-						begin
-							update dbo.tUserMaster set bgcomposecnt = @p4_ where gameid = @gameid
-						end
-					else if(@p3_ = 44)
-						begin
-							update dbo.tUserMaster set bgtradecnt = @p4_ where gameid = @gameid
-						end
-					else if(@p3_ = 41)
-						begin
-							update dbo.tUserMaster set anigrade1cnt = @p4_ where gameid = @gameid
-						end
-					else if(@p3_ = 42)
-						begin
-							update dbo.tUserMaster set anigrade2cnt = @p4_ where gameid = @gameid
-						end
-					else if(@p3_ = 45)
-						begin
-							update dbo.tUserMaster set anigrade2gauage = @p4_ where gameid = @gameid
-						end
-					else if(@p3_ = 46)
-						begin
-							update dbo.tUserMaster set anigrade4cnt = @p4_ where gameid = @gameid
-						end
-					else if(@p3_ = 47)
-						begin
-							update dbo.tUserMaster set anigrade4gauage = @p4_ where gameid = @gameid
-						end
-					else if(@p3_ = 48)
-						begin
-							update dbo.tUserMaster set bktsgrade1cnt = @p4_ where gameid = @gameid
-						end
-					else if(@p3_ = 49)
-						begin
-							update dbo.tUserMaster set bktsgrade2cnt = @p4_ where gameid = @gameid
-						end
-					else if(@p3_ = 50)
-						begin
-							update dbo.tUserMaster set bktsupcnt = @p4_ where gameid = @gameid
-						end
-					else if(@p3_ = 51)
-						begin
-							update dbo.tUserMaster set bkbattlecnt = @p4_ where gameid = @gameid
-						end
-					else if(@p3_ = 52)
-						begin
-							update dbo.tUserMaster set bkaniupcnt = @p4_ where gameid = @gameid
-						end
-					else if(@p3_ = 53)
-						begin
-							update dbo.tUserMaster set tsupcnt = @p4_ where gameid = @gameid
-						end
-					else if(@p3_ = 54)
-						begin
-							update dbo.tUserMaster set bgbattlecnt = @p4_ where gameid = @gameid
-						end
-					else if(@p3_ = 55)
-						begin
-							update dbo.tUserMaster set bganiupcnt = @p4_ where gameid = @gameid
-						end
-					else if(@p3_ = 56)
-						begin
-							update dbo.tUserMaster set bgcttradecnt = @p4_ where gameid = @gameid
-						end
-					else if(@p3_ = 57)
-						begin
-							update dbo.tUserMaster set heartsendcnt = @p4_ where gameid = @gameid
-						end
-					else if(@p3_ = 57)
-						begin
-							update dbo.tUserMaster set heartsendcnt = @p4_ where gameid = @gameid
-						end
-					else if(@p3_ = 58)
-						begin
-							update dbo.tUserMaster set bkapartani = @p4_ where gameid = @gameid
-						end
-					else if(@p3_ = 59)
-						begin
-							update dbo.tUserMaster set bkapartts = @p4_ where gameid = @gameid
-						end
-					else if(@p3_ = 60)
-						begin
-							update dbo.tUserMaster set cashpoint = @p4_ where gameid = @gameid
-						end
-					else if(@p3_ = 61)
-						begin
-							update dbo.tUserMaster set bkcomposecnt = @p4_ where gameid = @gameid
 						end
 					select 1 rtn
 				end
@@ -2272,72 +1361,7 @@ Begin
 						begin
 							update dbo.tUserMaster set resultcopy = 0 where gameid = @gameid
 						end
-					else if(@p3_ = 15)
-						begin
-							update dbo.tUserMaster set kkhelpalivecnt = kkhelpalivecnt + 1 where gameid = @gameid
-						end
 					select 1 rtn
-				end
-			else if(@p2_ = 89)
-				begin
-					if(@p3_ = 1)
-						begin
-							set @p4_ = case
-											when @p4_ < -1 then -1
-											when @p4_ > 14 then 14
-											else @p4_
-										end
-							update dbo.tUserMaster set rtnstep = @p4_ where gameid = @gameid
-						end
-					else if(@p3_ = 2)
-						begin
-							set @p4_ = case
-											when @p4_ < 0 then 0
-											else @p4_
-										end
-							update dbo.tUserMaster set rtnplaycnt = @p4_ where gameid = @gameid
-						end
-					select 1 rtn
-				end
-			else if(@p2_ = 95)
-				begin
-					-- 경쟁모드 보상 삭제
-					if(@p3_ != -1)
-						begin
-							update dbo.tUserMaster set comreward = @p3_ where gameid = @ps1_
-						end
-					delete from dbo.tComReward where gameid = @ps1_ and itemcode >= @p3_
-					select 1 rtn
-				end
-			else if(@p2_ = 200)
-				begin
-					-----------------------------------
-					-- 관리자 행동정보
-					-----------------------------------
-					if(isnull(@ps2_, '') = '')
-						begin
-							set @idxPage	= @p7_
-							select @idx = (isnull(max(idx), 1)) from dbo.tMessageAdmin
-
-							set @maxPage	= @idx / @PAGE_LINE50
-							set @maxPage 	= @maxPage + case when (@idx % @PAGE_LINE50 != 0) then 1 else 0 end
-							set @page		= case
-												when (@idxPage <= 0)			then 1
-												when (@idxPage >  @maxPage)	then @maxPage
-												else @idxPage
-											end
-							set @idx		= @idx - (@page - 1) * @PAGE_LINE50
-
-							select top 50 @maxPage maxPage, @page page, * from dbo.tMessageAdmin
-							where idx <= @idx order by idx desc
-							--select top 100 * from dbo.tMessageAdmin order by idx desc
-						end
-					else
-						begin
-							set @maxPage	= 1
-							set @page		= 1
-							select top 100 @maxPage maxPage, @page page, * from dbo.tMessageAdmin where adminid = @ps2_ order by idx desc
-						end
 				end
 			else if(@p2_ = 300)
 				begin
@@ -2468,125 +1492,7 @@ Begin
 					where dateid6 = @ps2_
 					order by a.cashcost desc, a.gamecost desc
 				end
-			else if(@p2_ = 404)
-				begin
-					-- 뽑기 광고리스트
-					select top 300 * from dbo.tUserAdLog
-					order by idx desc
-				end
-			else if(@p2_ = 412)
-				begin
-					-- 유저 월서브 통계
-					set @ps2_ = isnull(@ps2_, '')
-
-					select top 1000 u.*, (param19 + param20 * 8) fresh, case when normalcnt != 0 then normalcnt*(param19 + param20 * 8) else premiumcnt*i.param19 end '총신선도' from dbo.tRouletteLogTotalSub u join
-						(select * from dbo.tItemInfo) i
-							on u.itemcode = i.itemcode
-					where dateid8 = @ps2_
-					order by 8 asc, premiumcnt desc, normalcnt desc
-
-					---------------------------
-					-- 평균신선도 계산하기.
-					---------------------------
-					declare curRoulInfo Cursor for
-					select u.itemcode itemcode,
-						   case when normalcnt != 0 then normalcnt else premiumcnt end cnt,
-						   (param19 + param20 * 8) fresh from dbo.tRouletteLogTotalSub u join
-						(select * from dbo.tItemInfo) i
-							on u.itemcode = i.itemcode
-					where dateid8 = @ps2_
-
-					-- 2. 커서오픈
-					open curRoulInfo
-
-					set @cnt2 	= 0
-					set @val	= 0
-					set @val2	= 0
-					-- 3. 커서 사용
-					Fetch next from curRoulInfo into @itemcode, @cnt, @fresh
-					while @@Fetch_status = 0
-						Begin
-							if(@itemcode < 300)
-								begin
-									set @cnt2 	= @cnt2 + @cnt
-									set @val 	= @val + @fresh * @cnt
-									set @val2 	= case when @fresh > @val2 then @fresh else @val2 end
-								end
-							Fetch next from curRoulInfo into @itemcode, @cnt, @fresh
-						end
-
-					-- 4. 커서닫기
-					close curRoulInfo
-					Deallocate curRoulInfo
-
-					select @cnt2 '동물수량', @val / @cnt2 '평균신선도', @val2 '최대신선도'
-
-					--select top 100 * from dbo.tRouletteLogTotalSub
-					--where dateid8 = @ps2_
-					--order by premiumcnt desc, normalcnt desc
-				end
-			else if(@p2_ = 433)
-				begin
-					-- 유저 월서브 통계
-					select top 100 * from dbo.tTreasureLogTotalSub
-					where dateid8 = @ps2_
-					order by itemcode desc
-					--order by premiumcnt4 desc, premiumcnt desc, normalcnt desc
-				end
-			else if(@p2_ = 431)
-				begin
-					-- 유저 월토탈 통계
-					if(isnull(@ps2_, '') = '')
-						begin
-							select top 300 * from dbo.tTreasureLogTotalMaster order by dateid8 desc
-						end
-					else
-						begin
-							select top 300 * from dbo.tTreasureLogTotalMaster where dateid8 = @ps2_ order by dateid8 desc
-						end
-				end
-			else if(@p2_ = 432)
-				begin
-					-- 유저 월서브 통계
-					set @ps2_ = isnull(@ps2_, '')
-
-					select top 1000 u.* from dbo.tTreasureLogTotalSub u join
-						(select * from dbo.tItemInfo) i
-							on u.itemcode = i.itemcode
-					where dateid8 = @ps2_
-					order by premiumcnt desc, normalcnt desc
-
-				end
-			else if(@p2_ = 415)
-				begin
-					-- 유저 구매리스트
-					if(isnull(@ps1_, '') = '')
-						begin
-							set @idxPage	= @p7_
-							select @idx = (isnull(max(idx), 1)) from dbo.tComposeLogPerson
-
-							set @maxPage	= @idx / @PAGE_LINE50
-							set @maxPage 	= @maxPage + case when (@idx % @PAGE_LINE50 != 0) then 1 else 0 end
-							set @page		= case
-												when (@idxPage <= 0)			then 1
-												when (@idxPage >  @maxPage)	then @maxPage
-												else @idxPage
-											end
-							set @idx		= @idx - (@page - 1) * @PAGE_LINE50
-
-							select top 50 @maxPage maxPage, @page page, * from dbo.tComposeLogPerson
-							where idx <= @idx order by idx desc
-							--select top 300 * from dbo.tComposeLogPerson order by idx desc
-						end
-					else
-						begin
-							set @maxPage	= 1
-							set @page		= 1
-							select top 500 @maxPage maxPage, @page page, * from dbo.tComposeLogPerson where gameid = @ps1_ order by idx desc
-						end
-				end
 		end
-*/
 	-----------------------------------------------------
 	--	유저삭제
 	-----------------------------------------------------
@@ -2613,7 +1519,6 @@ Begin
 					delete from dbo.tCashLog where gameid = @gameid
 					delete from dbo.tUserBoard where gameid = @gameid
 					delete from dbo.tComposeLogPerson where gameid = @gameid
-					delete from dbo.tUserAdLog where gameid = @gameid
 					delete from dbo.tSchoolUser where gameid = @gameid
 					delete from dbo.tSchoolBackUser where gameid = @gameid
 					delete from dbo.tEventCertNoBack where gameid = @gameid
@@ -2644,21 +1549,7 @@ Begin
 			set @comment 	= @ps3_
 			if(@subkind	= 1)
 				begin
-					          select * from dbo.tItemInfo where                      itemcode = 5000	-- 루비
-					union all select * from dbo.tItemInfo where                      itemcode = 5100	-- 코인
-					union all select * from dbo.tItemInfo where                      itemcode = 3900	-- cashpoint
-					union all select * from dbo.tItemInfo where                      itemcode = 2000	-- 하트
-					union all select * from dbo.tItemInfo where                      itemcode =  900	-- 건초
-					union all select * from dbo.tItemInfo where                      itemcode = 1900	-- 우정포인트
-					union all select * from dbo.tItemInfo where                      itemcode = 3000	-- 황금티켓.
-					union all select * from dbo.tItemInfo where                      itemcode = 3100	-- 싸움티켓.
-					union all select * from dbo.tItemInfo where						 itemcode = 1200	-- 부활석
-					union all select * from dbo.tItemInfo where	subcategory = 38 						-- 짜요쿠폰.
-					--union all select * from dbo.tItemInfo where					 itemcode = 1600	-- 합성
-					union all select * from dbo.tItemInfo where						 itemcode = 2100	-- 긴급요청 티켓
-					union all select * from dbo.tItemInfo where						 itemcode = 2200	-- 일반 교배 티켓
-					union all select * from dbo.tItemInfo where						 itemcode = 2300	-- 프리미엄 교배 티켓
-					union all select * from dbo.tItemInfo where						 itemcode = 2500	-- 보물일반티켓
+					          select * from dbo.tItemInfo where                      itemcode = 4000	-- 캐쉬
 					union all select * from dbo.tItemInfo where						 itemcode = 2600	-- 보물프림티켓
 					union all select * from dbo.tItemInfo where						 itemcode = 3500	-- 합성의 훈장
 					union all select * from dbo.tItemInfo where						 itemcode = 3600	-- 승급의 꽃
@@ -2802,7 +1693,6 @@ Begin
 			--	end
 		end
 */
-/*
 	-----------------------------------------------------
 	--	통계자료
 	-----------------------------------------------------
@@ -2950,7 +1840,7 @@ Begin
 						begin
 							select @RESULT_ERROR 'rtn', '영수증 번호가 없습니다.'
 						end
-					else if(@cashkind not in (5000, 5001, 5002, 5003, 5004, 5005, 5050, 5051, 5052, 5053, 5054, 5055))
+					else if(@cashkind not in (5000, 5001, 5002, 5003, 5004, 5005, 5006))
 						begin
 							select @RESULT_ERROR 'rtn', '금액이 잘못 되었습니다.'
 						end
@@ -2998,132 +1888,12 @@ Begin
 								end
 						end
 				end
-			else if(@p2_ = 31)
-				begin
-					select top 100 rank() over(order by ttsalecoin desc) as rank, *
-					from dbo.tUserMaster
-					where ttsalecoin > 0 and deletestate = 0
-				end
-			else if(@p2_ = 32)
-				begin
-					select top 100 rank() over(order by trophy desc) as rank, *
-					from dbo.tUserMaster
-					where trophy > 0 and deletestate = 0
-				end
-			else if(@p2_ = 33)
-				begin
-					select top 50 * from dbo.tUserRankMaster order by dateid desc
-				end
-			else if(@p2_ = 34)
-				begin
-					select * from dbo.tUserRankSub where dateid8 = @ps3_
-				end
 		end
-*/
-	-----------------------------------------------------
-	--	관리자 로그인
-	-----------------------------------------------------
-	/*
-	else
-	*/
-	if(@kind = @KIND_ADMIN_LOGIN)
-		begin
-			set @subkind = @p2_
-			if(@subkind	= 1)
-				begin
-					if(not exists(select * from dbo.tAdminUser where gameid = @ps1_))
-						begin
-							if(@p3_ = -1)
-								begin
-									set @p3_ = 0
-								end
-							insert into tAdminUser(gameid, password, grade) values(@ps1_, @ps2_, @p3_)
-							select 1 'rtn'
-						end
-					else
-						begin
-							select -1 'rtn'
-						end
-				end
-			else if(@subkind = 2)
-				begin
-					set @grade = -1
-					select @grade = grade from dbo.tAdminUser where gameid = @ps1_ and password = @ps2_
-					if(@grade != -1)
-						begin
-							select 1 'rtn', @grade grade, '입력'
-						end
-					else
-						begin
-							select -1 'rtn', 0 grade, '입력'
-						end
-				end
-			else if(@subkind = 3)
-				begin
-					set @grade = -1
-					select @grade = grade from dbo.tAdminUser where gameid = @ps1_
-					if(@grade != -1)
-						begin
-							update dbo.tAdminUser
-								set
-									password 	= @ps2_,
-									grade 		= @p3_
-							where gameid = @ps1_
 
-							select 1 'rtn', @grade grade, '(루비)'
-						end
-					else
-						begin
-							select -1 'rtn', 0 grade, '(루비)'
-						end
-				end
-			else if(@subkind = 4)
-				begin
-					delete from dbo.tAdminUser where gameid = @ps1_ and password = @ps2_
-					select 1 'rtn', 0, '(삭제)'
-				end
-		end
-/*
-	-----------------------------------------------------
-	--	아이템정보
-	-----------------------------------------------------
-	else if(@kind in (@KIND_SEARCH_ITEMINFO))
-		begin
-			set @subkind 	= @p2_
-			set @itemcode	= @p3_
-			set @category	= @p4_
-			set @subcategory= @p5_
-			if(@subkind	= 1)
-				begin
-					if(@itemcode != -1)
-						begin
-							select * from dbo.tItemInfo where itemcode = @itemcode order by itemcode asc
-						end
-					else if(@category != -1)
-						begin
-							select * from dbo.tItemInfo where category = @category
-						end
-					else if(@subcategory != -1)
-						begin
-							select * from dbo.tItemInfo where subcategory = @subcategory
-						end
-					else
-						begin
-							select * from dbo.tItemInfo order by itemcode asc
-						end
-				end
-			else if(@subkind	= 2)
-				begin
-					select u.*, i.itemname from dbo.tUserSaleRewardItemCode u
-						join
-							(select * from dbo.tItemInfo) i
-						on u.itemcode = i.itemcode
-					order by itemcode asc
-				end
-		end
 	-----------------------------------------------------
 	--	캐쉬삭제
 	-----------------------------------------------------
+/*
 	else if(@kind = @KIND_USER_CASH_LOG_DELETE)
 		begin
 			--if(isnull(@gameid, '') = '')
@@ -3197,9 +1967,11 @@ Begin
 				end
 
 		end
+*/
 	-----------------------------------------------------
 	--	캐쉬삭제
 	-----------------------------------------------------
+/*
 	else if(@kind = @KIND_SYSTEMINFO_SETTING)
 		begin
 			-----------------------------------
@@ -3482,121 +2254,6 @@ Begin
 					select @RESULT_SUCCESS 'rtn'
 				end
 
-			else if(@p2_ = 45)
-				begin
-					-- 1. 커서 생성
-					declare curYabauInsert Cursor for
-					select * FROM dbo.fnu_SplitTwoStr(';', ':', @ps3_)
-
-					-- 2. 커서오픈.
-					open curYabauInsert
-
-					-- 3. 커서 사용
-					Fetch next from curYabauInsert into @packkind, @yabau
-					while @@Fetch_status = 0
-						Begin
-							--select 'DEBUG ', @packkind packkind, @yabau yabau
-							if(@packkind = 1)
-								begin
-									select @pack11 = listidx from dbo.fnu_SplitOne(':', @yabau) where idx = 0
-									select @pack12 = listidx from dbo.fnu_SplitOne(':', @yabau) where idx = 1
-									select @pack13 = listidx from dbo.fnu_SplitOne(':', @yabau) where idx = 2
-									select @pack14 = listidx from dbo.fnu_SplitOne(':', @yabau) where idx = 3
-								end
-							else if(@packkind = 2)
-								begin
-									select @pack21 = listidx from dbo.fnu_SplitOne(':', @yabau) where idx = 0
-									select @pack22 = listidx from dbo.fnu_SplitOne(':', @yabau) where idx = 1
-									select @pack23 = listidx from dbo.fnu_SplitOne(':', @yabau) where idx = 2
-									select @pack24 = listidx from dbo.fnu_SplitOne(':', @yabau) where idx = 3
-								end
-							else if(@packkind = 3)
-								begin
-									select @pack31 = listidx from dbo.fnu_SplitOne(':', @yabau) where idx = 0
-									select @pack32 = listidx from dbo.fnu_SplitOne(':', @yabau) where idx = 1
-									select @pack33 = listidx from dbo.fnu_SplitOne(':', @yabau) where idx = 2
-									select @pack34 = listidx from dbo.fnu_SplitOne(':', @yabau) where idx = 3
-								end
-							else if(@packkind = 4)
-								begin
-									select @pack41 = listidx from dbo.fnu_SplitOne(':', @yabau) where idx = 0
-									select @pack42 = listidx from dbo.fnu_SplitOne(':', @yabau) where idx = 1
-									select @pack43 = listidx from dbo.fnu_SplitOne(':', @yabau) where idx = 2
-									select @pack44 = listidx from dbo.fnu_SplitOne(':', @yabau) where idx = 3
-								end
-							else if(@packkind = 5)
-								begin
-									select @pack51 = listidx from dbo.fnu_SplitOne(':', @yabau) where idx = 0
-									select @pack52 = listidx from dbo.fnu_SplitOne(':', @yabau) where idx = 1
-									select @pack53 = listidx from dbo.fnu_SplitOne(':', @yabau) where idx = 2
-									select @pack54 = listidx from dbo.fnu_SplitOne(':', @yabau) where idx = 3
-								end
-							else if(@packkind = 6)
-								begin
-									select @pack61 = listidx from dbo.fnu_SplitOne(':', @yabau) where idx = 0
-									select @pack62 = listidx from dbo.fnu_SplitOne(':', @yabau) where idx = 1
-									select @pack63 = listidx from dbo.fnu_SplitOne(':', @yabau) where idx = 2
-									select @pack64 = listidx from dbo.fnu_SplitOne(':', @yabau) where idx = 3
-								end
-							Fetch next from curYabauInsert into @packkind, @yabau
-						end
-
-					-- 4. 커서닫기
-					close curYabauInsert
-					Deallocate curYabauInsert
-
-
-					if(exists(select top 1 * from dbo.tSystemYabau where ukcode = @ps2_))
-						begin
-							--select 'DEBUG > 수정모드'
-							update dbo.tSystemYabau
-								set
-									famelvmin	= @p4_,	--
-									famelvmax	= @p5_, --
-									saleper		= @p7_, --
-									packstate	= @p8_, --
-									packname	= @ps1_, --
-									comment		= @ps2_,
-									packstr		= @ps3_, --
-									pack11	= @pack11, pack12	= @pack12, pack13	= @pack13, pack14	= @pack14,
-									pack21	= @pack21, pack22	= @pack22, pack23	= @pack23, pack24	= @pack24,
-									pack31	= @pack31, pack32	= @pack32, pack33	= @pack33, pack34	= @pack34,
-									pack41	= @pack41, pack42	= @pack42, pack43	= @pack43, pack44	= @pack44,
-									pack51	= @pack51, pack52	= @pack52, pack53	= @pack53, pack54	= @pack54,
-									pack61	= @pack61, pack62	= @pack62, pack63	= @pack63, pack64	= @pack64
-							where ukcode = @ps2_
-
-							set @itemcode = 70000
-							select @itemcode = max(itemcode) + 1 from dbo.tItemInfo where subcategory = 700
-
-							if(not exists(select top 1 * from dbo.tItemInfo where itemcode = @itemcode))
-								begin
-									--select 'DEBUG > 입력모드'
-									insert into dbo.tItemInfo(labelname,     itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, houselv, gamecost, cashcost, buyamount, sellcost, description)
-									                   values('staticinfo', @itemcode, '700',    '700',       '0',      @ps1_,    '0',      '0',     '0',   '0',      '16', '0',      '0',     '0',      '0',      '0',       '0',      @ps2_)
-								end
-						end
-					else if(not exists(select top 1 * from dbo.tSystemYabau where packstr = @ps3_))
-						begin
-							--select 'DEBUG 시스템 야바위추가.'
-							-- 정보수집용 추가 > 아이템 테이블 추가하기.
-							set @itemcode = 70000
-							select @itemcode = max(itemcode) + 1 from dbo.tItemInfo where subcategory = 700
-
-							if(not exists(select top 1 * from dbo.tItemInfo where itemcode = @itemcode))
-								begin
-									--select 'DEBUG > 입력모드'
-									insert into dbo.tItemInfo(labelname,     itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, houselv, gamecost, cashcost, buyamount, sellcost, description)
-									                   values('staticinfo', @itemcode, '700',    '700',       '0',      @ps1_,    '0',      '0',     '0',   '0',      '16', '0',      '0',     '0',      '0',      '0',       '0',      @ps2_)
-
-									insert into dbo.tSystemYabau(itemcode, famelvmin, famelvmax, saleper, packstate, packname,  ukcode, packstr, pack11, pack12, pack13, pack14, pack21, pack22, pack23, pack24, pack31, pack32, pack33, pack34, pack41, pack42, pack43, pack44, pack51, pack52, pack53, pack54, pack61, pack62, pack63, pack64)
-									values(                     @itemcode, @p4_,      @p5_,      @p7_,         @p8_,    @ps1_,   @ps2_,   @ps3_,  @pack11,@pack12,@pack13,@pack14,@pack21,@pack22,@pack23,@pack24,@pack31,@pack32,@pack33,@pack34,@pack41,@pack42,@pack43,@pack44,@pack51,@pack52,@pack53,@pack54,@pack61,@pack62,@pack63,@pack64)
-
-								end
-						end
-
-					select @RESULT_SUCCESS 'rtn'
-				end
 			else if(@p2_ = 50)
 				begin
 					-------------------------------------------------
@@ -3761,55 +2418,6 @@ Begin
 							param19	= @pack5,
 							param20	= @pack6
 					where itemcode = @p3_
-
-					select @RESULT_SUCCESS 'rtn'
-				end
-			else if(@p2_ = 71)
-				begin
-					-------------------------------------------------
-					-- VIP 포인트 수정.
-					-------------------------------------------------
-					-- 1. 커서 생성
-					declare curVIPList Cursor for
-					select * FROM dbo.fnu_SplitTwo(';', ':', @ps3_)
-
-					-- 2. 커서오픈
-					open curVIPList
-
-					-- 3. 커서 사용
-					Fetch next from curVIPList into @packkind, @packvalue
-					while @@Fetch_status = 0
-						Begin
-							--select 'DEBUG ', @packkind packkind, @packvalue packvalue
-								 if(@packkind = 1) 	set @vip_cashpoint 	= @packvalue
-							else if(@packkind = 2) 	set @vip_cashplus 	= @packvalue
-							else if(@packkind = 3) 	set @vip_gamecost 	= @packvalue
-							else if(@packkind = 4) 	set @vip_heart 		= @packvalue
-							else if(@packkind = 5) 	set @vip_animal10 	= @packvalue
-							else if(@packkind = 6) 	set @vip_wheel10 	= @packvalue
-							else if(@packkind = 7) 	set @vip_treasure10 = @packvalue
-							else if(@packkind = 8) 	set @vip_box 		= @packvalue
-							else if(@packkind = 9) 	set @vip_fbplus 	= @packvalue
-
-							Fetch next from curVIPList into @packkind, @packvalue
-						end
-
-					-- 4. 커서닫기
-					close curVIPList
-					Deallocate curVIPList
-
-					update dbo.tSystemVIPInfo
-						set
-							vip_cashpoint	= @vip_cashpoint,
-							vip_cashplus	= @vip_cashplus,
-							vip_gamecost	= @vip_gamecost,
-							vip_heart		= @vip_heart,
-							vip_animal10	= @vip_animal10,
-							vip_wheel10		= @vip_wheel10,
-							vip_treasure10	= @vip_treasure10,
-							vip_box			= @vip_box,
-							vip_fbplus		= @vip_fbplus
-					where idx = @p3_
 
 					select @RESULT_SUCCESS 'rtn'
 				end

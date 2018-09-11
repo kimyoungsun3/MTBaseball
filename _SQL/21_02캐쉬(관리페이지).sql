@@ -31,7 +31,6 @@ create procedure dbo.spu_CashBuyAdmin
 	@password_								varchar(20),
 	@acode_									varchar(256),					-- indexing
 	@ucode_									varchar(256),
-	@market_								int,
 		@summary_								int,
 	@itemcode_								int,
 	@cashcost_								int,
@@ -41,9 +40,8 @@ create procedure dbo.spu_CashBuyAdmin
 	@ikind_									varchar(256),
 	@idata_									varchar(4096),
 	@idata2_								varchar(4096),
-	@kakaogameid_							varchar(60),
 	@nResult_								int					OUTPUT
-	--WITH ENCRYPTION -- 프로시져를 암호화함.
+	WITH ENCRYPTION -- 프로시져를 암호화함.
 as
 	------------------------------------------------
 	--	2-1. 코드값자리
@@ -77,13 +75,6 @@ as
 	------------------------------------------------
 	--	2-2. 상태값
 	------------------------------------------------
-	-- 구매처코드
-	-- 구매처코드
-	--declare @MARKET_SKT						int				set @MARKET_SKT							= 1
-	declare @MARKET_GOOGLE						int				set @MARKET_GOOGLE						= 5
-	declare @MARKET_NHN							int				set @MARKET_NHN							= 6
-	--declare @MARKET_IPHONE					int				set @MARKET_IPHONE						= 7
-
 	-- 상태값.
 	declare @BLOCK_STATE_NO						int				set	@BLOCK_STATE_NO						= 0				-- 블럭상태아님
 	declare @BLOCK_STATE_YES					int				set	@BLOCK_STATE_YES					= 1				-- 블럭상태
@@ -128,7 +119,6 @@ as
 	declare @comment2			varchar(80)
 	declare @gameid				varchar(20)		set @gameid			= ''
 	declare @blockstate			int
-	declare @market				int				set @market			= @MARKET_GOOGLE
 	declare @giftid				varchar(20)
 	declare @buycashcost		int				set @buycashcost	= 0
 	declare @buycashcostorg		int				set @buycashcostorg	= 0
@@ -143,29 +133,23 @@ as
 
 	declare @kakaouk			varchar(19)		set @kakaouk		= substring(Convert(varchar(10),Getdate(),112), 3, 8) + Replace(Convert(varchar(12),Getdate(),114),':','') + Convert(varchar(4), Convert(int, ceiling(RAND() * 9980))+10)
 
-	declare @gameyear			int				set @gameyear		= 2013
-	declare @gamemonth			int				set @gamemonth		= 3
-	declare @famelv				int				set @famelv			= 1
-	declare @eventspot07		int				set @eventspot07	= 1
-	declare @firsttime			int				set @firsttime		= 0
+	declare @level				int				set @level			= 1
 
 	-- VIP효과.
 	declare @cashpoint			int				set @cashpoint		= 0
-	declare @vip_plus			int				set @vip_plus		= 0
 Begin
 	------------------------------------------------
 	--	3-1. 초기화
 	------------------------------------------------
 	set nocount on
-	--select 'DEBUG 입력값', @mode_ mode_, @gameid_ gameid_, @giftid_ giftid_, @password_ password_, @acode_ acode_, @ucode_ ucode_, @market_ market_, @summary_ summary_, @itemcode_ itemcode_, @cashcost_ cashcost_, @cash_ cash_, @cashcost2_ cashcost2_, @cash2_ cash2_, @ikind_ ikind_, @idata_ idata_, @idata2_ idata2_
+	--select 'DEBUG 입력값', @mode_ mode_, @gameid_ gameid_, @giftid_ giftid_, @password_ password_, @acode_ acode_, @ucode_ ucode_, @summary_ summary_, @itemcode_ itemcode_, @cashcost_ cashcost_, @cash_ cash_, @cashcost2_ cashcost2_, @cash2_ cash2_, @ikind_ ikind_, @idata_ idata_, @idata2_ idata2_
 
 	------------------------------------------------
 	--	3-2. 연산수행
 	------------------------------------------------
 	select
-		@gameid 	= gameid,		@market		= market,		@cashpoint	= cashpoint,
-		@gameyear	= gameyear,		@gamemonth	= gamemonth,
-		@famelv		= famelv,		@eventspot07= eventspot07,
+		@gameid 	= gameid,		@cashpoint	= cashpoint,
+		@level		= level,
 		@blockstate	= blockstate
 	from dbo.tUserMaster where gameid = @gameid_ and password = @password_
 
@@ -186,8 +170,7 @@ Begin
 		@buycashcost 	= buyamount,	-- 캐쉬
 		@buycashcostorg = buyamount,
 		@eventplus		= param3,
-		@productid		= param4,
-		@firsttime		= param10
+		@productid		= param4
 	from dbo.tItemInfo
 	where itemcode = @itemcode_ and subcategory = @ITEM_MAINCATEGORY_CASHCOST
 
@@ -312,70 +295,40 @@ Begin
 						end
 				end
 
-			----------------------------------------------
-			-- EVENT 7.24 ~ 8.6
-			----------------------------------------------
-			-- 금액 얼마 더주는 내용.
-			if( @firsttime = 1 )
-				begin
-					--select 'DEBUG 생애결제로고'
-					set @buycashcost = 2 *@buycashcostorg
-				end
-			else if( @eventplus = 1 and @pluscashcost > 0 and @pluscashcost <= 100)
-				begin
-					set @buycashcost = @buycashcostorg + (@buycashcostorg * @pluscashcost / 100)
-				end
-
-			set @vip_plus = dbo.fun_GetVIPPlus( 1, @cashpoint, @buycashcostorg) -- 캐쉬구매.
-			set @buycashcost = @buycashcost + @vip_plus
 
 			if(@mode_ = @CASH_MODE_BUYMODE)
 				begin
-					---------------------------------------------------
-					-- 5만원 이상 구매시 일꾼 인형(100005)
-					---------------------------------------------------
-					if( @eventspot07 = 0 and @cash_ >= 55000 )
-						begin
-							exec spu_SubGiftSendNew @GIFTLIST_GIFT_KIND_GIFT, 100005, 1, '캐쉬 이벤트', @gameid_, ''
-							set @eventspot07 = @eventspot07 + 1
-						end
-
 					---------------------------------------------------
 					-- 직접구매 > 캐쉬Pluse
 					---------------------------------------------------
 					update dbo.tUserMaster
 						set
-							--cashcost 	= cashcost + @buycashcost,
-							eventspot07	= @eventspot07,
 							cashpoint 	= cashpoint + @buycash
 					where gameid = @gameid_
 
 					---------------------------------------------------
 					-- 직접구매 > 구매기록하기
 					---------------------------------------------------
-					insert into dbo.tCashLog(gameid,   acode,   ucode,      cashcost,     cash,  market,   ikind,   idata,   idata2,   kakaogameid,   kakaouk,  gameyear,  gamemonth,  famelv,  productid)
-					values(                 @gameid_, @acode_, @ucode_, @buycashcost, @buycash, @market_, @ikind_, @idata_, @idata2_, @kakaogameid_, @kakaouk, @gameyear, @gamemonth, @famelv, @productid)
+					insert into dbo.tCashLog(gameid,   acode,   ucode,      cashcost,     cash,  ikind,   idata,   idata2,   level,  productid)
+					values(                 @gameid_, @acode_, @ucode_, @buycashcost, @buycash, @ikind_, @idata_, @idata2_, @level, @productid)
 
 
 
 					---------------------------------------------------
 					-- 생애첫결제로고.
 					---------------------------------------------------
-					if( @firsttime = 1 )
+					--	begin
+					--		--select 'DEBUG 생애결제로고'
+					--		insert into dbo.tCashFirstTimeLog(gameid,   itemcode)
+					--		values(                          @gameid_, @itemcode_)
+					--		set @comment2 = ltrim(rtrim(str(@buycashcost))) +  '루비을 지급하였습니다.(생애첫결제)'
+					--		exec spu_DayLogInfoStatic 82, 1				-- 일 캐쉬구매(생애)
+					--	end
+					--else
 						begin
-							--select 'DEBUG 생애결제로고'
-							insert into dbo.tCashFirstTimeLog(gameid,   itemcode)
-							values(                          @gameid_, @itemcode_)
+							set @comment2 = ltrim(rtrim(str(@buycashcost))) +  '다이라를 지급하였습니다.'
 
-							set @comment2 = ltrim(rtrim(str(@buycashcost))) +  '루비을 지급하였습니다.(생애첫결제)'
-
-							exec spu_DayLogInfoStatic @market_, 82, 1				-- 일 캐쉬구매(생애)
-						end
-					else
-						begin
-							set @comment2 = ltrim(rtrim(str(@buycashcost))) +  '루비을 지급하였습니다.'
-
-							exec spu_DayLogInfoStatic @market_, 81, 1				-- 일 캐쉬구매(일반)
+							exec spu_DayLogInfoStatic 81, 1				-- 일 캐쉬구매(일반)
 						end
 
 					-----------------------------------------------------
@@ -403,8 +356,8 @@ Begin
 					---------------------------------------------------
 					-- 구매자 > 구매기록하기
 					---------------------------------------------------
-					insert into dbo.tCashLog(gameid,   acode,   ucode,      cashcost,     cash,  giftid,   market,   ikind,   idata,   idata2,   kakaogameid,   kakaouk,  gameyear,  gamemonth,  famelv,  productid)
-					values(                 @gameid_, @acode_, @ucode_, @buycashcost, @buycash, @giftid_, @market_, @ikind_, @idata_, @idata2_, @kakaogameid_, @kakaouk, @gameyear, @gamemonth, @famelv, @productid)
+					insert into dbo.tCashLog(gameid,   acode,   ucode,      cashcost,     cash,  giftid,   ikind,   idata,   idata2,   level,  productid)
+					values(                 @gameid_, @acode_, @ucode_, @buycashcost, @buycash, @giftid_, @ikind_, @idata_, @idata2_, @level, @productid)
 
 					---------------------------------------------------
 					-- 구매자와 선물자에게 쪽지 남겨주기
@@ -419,19 +372,19 @@ Begin
 			---------------------------------------------------
 			-- 토탈로그 기록하기
 			---------------------------------------------------
-			if(exists(select top 1 * from dbo.tCashTotal where dateid = @dateid and cashkind = @buycash and market = @market_))
+			if(exists(select top 1 * from dbo.tCashTotal where dateid = @dateid and cashkind = @buycash))
 				begin
 					update dbo.tCashTotal
 						set
 							cashcost 	= cashcost 	+ @buycashcost,
 							cash 		= cash 		+ @buycash,
 							cnt 		= cnt 		+ 1
-					where dateid = @dateid and cashkind = @buycash and market = @market_
+					where dateid = @dateid and cashkind = @buycash
 				end
 			else
 				begin
-					insert into dbo.tCashTotal(dateid, cashkind,  market,      cashcost,     cash)
-					values(                   @dateid, @buycash, @market_, @buycashcost, @buycash)
+					insert into dbo.tCashTotal(dateid, cashkind,     cashcost,     cash)
+					values(                   @dateid, @buycash, @buycashcost, @buycash)
 				end
 
 			--유저 루비과 실버볼 갱신해주기

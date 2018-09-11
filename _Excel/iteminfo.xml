@@ -18,9 +18,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>기본으로 지급되는 장비</description>
+		<getbox>-1</getbox>
+		<getpercent1000>0</getpercent1000>
 		<expincrease100>0</expincrease100>
 		<setcode>-1</setcode>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>0</evolsuccess>
+		<evolfailkeep>1000</evolfailkeep>
+		<evolfaildestroy>0</evolfaildestroy>
+		<evolgetitem>-1</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>101</itemcode>
@@ -40,9 +46,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>나무 조각으로 조합한 장비</description>
+		<getbox>4100</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>35</expincrease100>
 		<setcode>0</setcode>
 		<setplusexp100>45</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>102</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>102</itemcode>
@@ -62,9 +74,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>동 조각으로 조합한 장비</description>
+		<getbox>4101</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>70</expincrease100>
 		<setcode>1</setcode>
 		<setplusexp100>90</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>103</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>103</itemcode>
@@ -84,9 +102,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>은 조각으로 조합한 장비</description>
+		<getbox>4102</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>105</expincrease100>
 		<setcode>2</setcode>
 		<setplusexp100>135</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>104</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>104</itemcode>
@@ -106,9 +130,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>금 조각으로 조합한 장비</description>
+		<getbox>4103</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>140</expincrease100>
 		<setcode>3</setcode>
 		<setplusexp100>180</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>105</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>105</itemcode>
@@ -128,9 +158,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>티타늄 조각으로 조합한 장비</description>
+		<getbox>4104</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>210</expincrease100>
 		<setcode>4</setcode>
 		<setplusexp100>270</setplusexp100>
+		<evolsuccess>0</evolsuccess>
+		<evolfailkeep>1000</evolfailkeep>
+		<evolfaildestroy>0</evolfaildestroy>
+		<evolgetitem>-1</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>200</itemcode>
@@ -150,9 +186,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>기본으로 지급되는 장비</description>
+		<getbox>-1</getbox>
+		<getpercent1000>0</getpercent1000>
 		<expincrease100>0</expincrease100>
 		<setnum>-1</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>0</evolsuccess>
+		<evolfailkeep>1000</evolfailkeep>
+		<evolfaildestroy>0</evolfaildestroy>
+		<evolgetitem>-1</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>201</itemcode>
@@ -172,9 +214,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>나무 조각으로 조합한 장비</description>
+		<getbox>4100</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>35</expincrease100>
 		<setnum>0</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>202</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>202</itemcode>
@@ -194,9 +242,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>동 조각으로 조합한 장비</description>
+		<getbox>4101</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>70</expincrease100>
 		<setnum>1</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>203</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>203</itemcode>
@@ -216,9 +270,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>은 조각으로 조합한 장비</description>
+		<getbox>4102</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>105</expincrease100>
 		<setnum>2</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>204</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>204</itemcode>
@@ -238,9 +298,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>금 조각으로 조합한 장비</description>
+		<getbox>4103</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>140</expincrease100>
 		<setnum>3</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>205</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>205</itemcode>
@@ -260,9 +326,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>티타늄 조각으로 조합한 장비</description>
+		<getbox>4104</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>210</expincrease100>
 		<setnum>4</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>0</evolsuccess>
+		<evolfailkeep>1000</evolfailkeep>
+		<evolfaildestroy>0</evolfaildestroy>
+		<evolgetitem>-1</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>300</itemcode>
@@ -282,9 +354,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>기본으로 지급되는 장비</description>
+		<getbox>-1</getbox>
+		<getpercent1000>0</getpercent1000>
 		<expincrease100>0</expincrease100>
 		<setnum>-1</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>0</evolsuccess>
+		<evolfailkeep>1000</evolfailkeep>
+		<evolfaildestroy>0</evolfaildestroy>
+		<evolgetitem>-1</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>301</itemcode>
@@ -304,9 +382,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>나무 조각으로 조합한 장비</description>
+		<getbox>4100</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>35</expincrease100>
 		<setnum>0</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>302</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>302</itemcode>
@@ -326,9 +410,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>동 조각으로 조합한 장비</description>
+		<getbox>4101</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>70</expincrease100>
 		<setnum>1</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>303</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>303</itemcode>
@@ -348,9 +438,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>은 조각으로 조합한 장비</description>
+		<getbox>4102</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>105</expincrease100>
 		<setnum>2</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>304</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>304</itemcode>
@@ -370,9 +466,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>금 조각으로 조합한 장비</description>
+		<getbox>4103</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>140</expincrease100>
 		<setnum>3</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>305</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>305</itemcode>
@@ -392,9 +494,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>티타늄 조각으로 조합한 장비</description>
+		<getbox>4104</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>210</expincrease100>
 		<setnum>4</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>0</evolsuccess>
+		<evolfailkeep>1000</evolfailkeep>
+		<evolfaildestroy>0</evolfaildestroy>
+		<evolgetitem>-1</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>400</itemcode>
@@ -414,9 +522,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>기본으로 지급되는 장비</description>
+		<getbox>-1</getbox>
+		<getpercent1000>0</getpercent1000>
 		<expincrease100>0</expincrease100>
 		<setnum>-1</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>0</evolsuccess>
+		<evolfailkeep>1000</evolfailkeep>
+		<evolfaildestroy>0</evolfaildestroy>
+		<evolgetitem>-1</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>401</itemcode>
@@ -436,9 +550,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>나무 조각으로 조합한 장비</description>
+		<getbox>4100</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>35</expincrease100>
 		<setnum>0</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>402</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>402</itemcode>
@@ -458,9 +578,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>동 조각으로 조합한 장비</description>
+		<getbox>4101</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>70</expincrease100>
 		<setnum>1</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>403</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>403</itemcode>
@@ -480,9 +606,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>은 조각으로 조합한 장비</description>
+		<getbox>4102</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>105</expincrease100>
 		<setnum>2</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>404</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>404</itemcode>
@@ -502,9 +634,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>금 조각으로 조합한 장비</description>
+		<getbox>4103</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>140</expincrease100>
 		<setnum>3</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>405</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>405</itemcode>
@@ -524,9 +662,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>티타늄 조각으로 조합한 장비</description>
+		<getbox>4104</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>210</expincrease100>
 		<setnum>4</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>0</evolsuccess>
+		<evolfailkeep>1000</evolfailkeep>
+		<evolfaildestroy>0</evolfaildestroy>
+		<evolgetitem>-1</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>500</itemcode>
@@ -546,9 +690,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>기본으로 지급되는 장비</description>
+		<getbox>-1</getbox>
+		<getpercent1000>0</getpercent1000>
 		<expincrease100>0</expincrease100>
 		<setnum>-1</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>0</evolsuccess>
+		<evolfailkeep>1000</evolfailkeep>
+		<evolfaildestroy>0</evolfaildestroy>
+		<evolgetitem>-1</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>501</itemcode>
@@ -568,9 +718,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>나무 조각으로 조합한 장비</description>
+		<getbox>4100</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>35</expincrease100>
 		<setnum>0</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>502</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>502</itemcode>
@@ -590,9 +746,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>동 조각으로 조합한 장비</description>
+		<getbox>4101</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>70</expincrease100>
 		<setnum>1</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>503</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>503</itemcode>
@@ -612,9 +774,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>은 조각으로 조합한 장비</description>
+		<getbox>4102</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>105</expincrease100>
 		<setnum>2</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>504</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>504</itemcode>
@@ -634,9 +802,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>금 조각으로 조합한 장비</description>
+		<getbox>4103</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>140</expincrease100>
 		<setnum>3</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>505</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>505</itemcode>
@@ -656,9 +830,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>티타늄 조각으로 조합한 장비</description>
+		<getbox>4104</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>210</expincrease100>
 		<setnum>4</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>0</evolsuccess>
+		<evolfailkeep>1000</evolfailkeep>
+		<evolfaildestroy>0</evolfaildestroy>
+		<evolgetitem>-1</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>600</itemcode>
@@ -678,9 +858,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>기본으로 지급되는 장비</description>
+		<getbox>-1</getbox>
+		<getpercent1000>0</getpercent1000>
 		<expincrease100>0</expincrease100>
 		<setnum>-1</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>0</evolsuccess>
+		<evolfailkeep>1000</evolfailkeep>
+		<evolfaildestroy>0</evolfaildestroy>
+		<evolgetitem>-1</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>601</itemcode>
@@ -700,9 +886,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>나무 조각으로 조합한 장비</description>
+		<getbox>4100</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>35</expincrease100>
 		<setnum>0</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>602</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>602</itemcode>
@@ -722,9 +914,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>동 조각으로 조합한 장비</description>
+		<getbox>4101</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>70</expincrease100>
 		<setnum>1</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>603</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>603</itemcode>
@@ -744,9 +942,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>은 조각으로 조합한 장비</description>
+		<getbox>4102</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>105</expincrease100>
 		<setnum>2</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>604</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>604</itemcode>
@@ -766,9 +970,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>금 조각으로 조합한 장비</description>
+		<getbox>4103</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>140</expincrease100>
 		<setnum>3</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>605</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>605</itemcode>
@@ -788,9 +998,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>티타늄 조각으로 조합한 장비</description>
+		<getbox>4104</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>210</expincrease100>
 		<setnum>4</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>0</evolsuccess>
+		<evolfailkeep>1000</evolfailkeep>
+		<evolfaildestroy>0</evolfaildestroy>
+		<evolgetitem>-1</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>700</itemcode>
@@ -810,9 +1026,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>기본으로 지급되는 장비</description>
+		<getbox>-1</getbox>
+		<getpercent1000>0</getpercent1000>
 		<expincrease100>0</expincrease100>
 		<setnum>-1</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>0</evolsuccess>
+		<evolfailkeep>1000</evolfailkeep>
+		<evolfaildestroy>0</evolfaildestroy>
+		<evolgetitem>-1</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>701</itemcode>
@@ -832,9 +1054,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>나무 조각으로 조합한 장비</description>
+		<getbox>4100</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>35</expincrease100>
 		<setnum>0</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>702</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>702</itemcode>
@@ -854,9 +1082,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>동 조각으로 조합한 장비</description>
+		<getbox>4101</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>70</expincrease100>
 		<setnum>1</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>703</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>703</itemcode>
@@ -876,9 +1110,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>은 조각으로 조합한 장비</description>
+		<getbox>4102</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>105</expincrease100>
 		<setnum>2</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>704</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>704</itemcode>
@@ -898,9 +1138,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>금 조각으로 조합한 장비</description>
+		<getbox>4103</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>140</expincrease100>
 		<setnum>3</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>705</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>705</itemcode>
@@ -920,9 +1166,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>티타늄 조각으로 조합한 장비</description>
+		<getbox>4104</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>210</expincrease100>
 		<setnum>4</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>0</evolsuccess>
+		<evolfailkeep>1000</evolfailkeep>
+		<evolfaildestroy>0</evolfaildestroy>
+		<evolgetitem>-1</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>800</itemcode>
@@ -942,9 +1194,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>기본으로 지급되는 장비</description>
+		<getbox>-1</getbox>
+		<getpercent1000>0</getpercent1000>
 		<expincrease100>0</expincrease100>
 		<setnum>-1</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>0</evolsuccess>
+		<evolfailkeep>1000</evolfailkeep>
+		<evolfaildestroy>0</evolfaildestroy>
+		<evolgetitem>-1</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>801</itemcode>
@@ -964,9 +1222,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>나무 조각으로 조합한 장비</description>
+		<getbox>4100</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>35</expincrease100>
 		<setnum>0</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>802</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>802</itemcode>
@@ -986,9 +1250,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>동 조각으로 조합한 장비</description>
+		<getbox>4101</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>70</expincrease100>
 		<setnum>1</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>803</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>803</itemcode>
@@ -1008,9 +1278,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>은 조각으로 조합한 장비</description>
+		<getbox>4102</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>105</expincrease100>
 		<setnum>2</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>804</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>804</itemcode>
@@ -1030,9 +1306,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>금 조각으로 조합한 장비</description>
+		<getbox>4103</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>140</expincrease100>
 		<setnum>3</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>805</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>805</itemcode>
@@ -1052,9 +1334,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>티타늄 조각으로 조합한 장비</description>
+		<getbox>4104</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>210</expincrease100>
 		<setnum>4</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>0</evolsuccess>
+		<evolfailkeep>1000</evolfailkeep>
+		<evolfaildestroy>0</evolfaildestroy>
+		<evolgetitem>-1</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>900</itemcode>
@@ -1074,9 +1362,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>기본으로 지급되는 장비</description>
+		<getbox>-1</getbox>
+		<getpercent1000>0</getpercent1000>
 		<expincrease100>0</expincrease100>
 		<setnum>-1</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>0</evolsuccess>
+		<evolfailkeep>1000</evolfailkeep>
+		<evolfaildestroy>0</evolfaildestroy>
+		<evolgetitem>-1</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>901</itemcode>
@@ -1096,9 +1390,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>나무 조각으로 조합한 장비</description>
+		<getbox>4100</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>35</expincrease100>
 		<setnum>0</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>902</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>902</itemcode>
@@ -1118,9 +1418,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>동 조각으로 조합한 장비</description>
+		<getbox>4101</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>70</expincrease100>
 		<setnum>1</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>903</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>903</itemcode>
@@ -1140,9 +1446,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>은 조각으로 조합한 장비</description>
+		<getbox>4102</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>105</expincrease100>
 		<setnum>2</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>904</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>904</itemcode>
@@ -1162,9 +1474,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>금 조각으로 조합한 장비</description>
+		<getbox>4103</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>140</expincrease100>
 		<setnum>3</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>905</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>905</itemcode>
@@ -1184,9 +1502,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>티타늄 조각으로 조합한 장비</description>
+		<getbox>4104</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>210</expincrease100>
 		<setnum>4</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>0</evolsuccess>
+		<evolfailkeep>1000</evolfailkeep>
+		<evolfaildestroy>0</evolfaildestroy>
+		<evolgetitem>-1</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>1000</itemcode>
@@ -1206,9 +1530,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>기본으로 지급되는 장비</description>
+		<getbox>-1</getbox>
+		<getpercent1000>0</getpercent1000>
 		<expincrease100>0</expincrease100>
 		<setnum>-1</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>0</evolsuccess>
+		<evolfailkeep>1000</evolfailkeep>
+		<evolfaildestroy>0</evolfaildestroy>
+		<evolgetitem>-1</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>1001</itemcode>
@@ -1228,9 +1558,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>나무 조각으로 조합한 장비</description>
+		<getbox>4100</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>35</expincrease100>
 		<setnum>0</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>1002</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>1002</itemcode>
@@ -1250,9 +1586,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>동 조각으로 조합한 장비</description>
+		<getbox>4101</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>70</expincrease100>
 		<setnum>1</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>1003</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>1003</itemcode>
@@ -1272,9 +1614,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>은 조각으로 조합한 장비</description>
+		<getbox>4102</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>105</expincrease100>
 		<setnum>2</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>1004</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>1004</itemcode>
@@ -1294,9 +1642,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>금 조각으로 조합한 장비</description>
+		<getbox>4103</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>140</expincrease100>
 		<setnum>3</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>1005</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>1005</itemcode>
@@ -1316,9 +1670,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>티타늄 조각으로 조합한 장비</description>
+		<getbox>4104</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>210</expincrease100>
 		<setnum>4</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>0</evolsuccess>
+		<evolfailkeep>1000</evolfailkeep>
+		<evolfaildestroy>0</evolfaildestroy>
+		<evolgetitem>-1</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>1100</itemcode>
@@ -1338,9 +1698,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>기본으로 지급되는 장비</description>
+		<getbox>-1</getbox>
+		<getpercent1000>0</getpercent1000>
 		<expincrease100>0</expincrease100>
 		<setnum>-1</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>0</evolsuccess>
+		<evolfailkeep>1000</evolfailkeep>
+		<evolfaildestroy>0</evolfaildestroy>
+		<evolgetitem>-1</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>1101</itemcode>
@@ -1360,9 +1726,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>나무 조각으로 조합한 장비</description>
+		<getbox>4100</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>35</expincrease100>
 		<setnum>0</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>1102</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>1102</itemcode>
@@ -1382,9 +1754,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>동 조각으로 조합한 장비</description>
+		<getbox>4101</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>70</expincrease100>
 		<setnum>1</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>1103</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>1103</itemcode>
@@ -1404,9 +1782,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>은 조각으로 조합한 장비</description>
+		<getbox>4102</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>105</expincrease100>
 		<setnum>2</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>1104</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>1104</itemcode>
@@ -1426,9 +1810,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>금 조각으로 조합한 장비</description>
+		<getbox>4103</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>140</expincrease100>
 		<setnum>3</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>1105</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>1105</itemcode>
@@ -1448,9 +1838,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>티타늄 조각으로 조합한 장비</description>
+		<getbox>4104</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>210</expincrease100>
 		<setnum>4</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>0</evolsuccess>
+		<evolfailkeep>1000</evolfailkeep>
+		<evolfaildestroy>0</evolfaildestroy>
+		<evolgetitem>-1</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>1200</itemcode>
@@ -1470,9 +1866,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>기본으로 지급되는 장비</description>
+		<getbox>-1</getbox>
+		<getpercent1000>0</getpercent1000>
 		<expincrease100>0</expincrease100>
 		<setnum>-1</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>0</evolsuccess>
+		<evolfailkeep>1000</evolfailkeep>
+		<evolfaildestroy>0</evolfaildestroy>
+		<evolgetitem>-1</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>1201</itemcode>
@@ -1492,9 +1894,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>나무 조각으로 조합한 장비</description>
+		<getbox>4100</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>35</expincrease100>
 		<setnum>0</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>1202</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>1202</itemcode>
@@ -1514,9 +1922,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>동 조각으로 조합한 장비</description>
+		<getbox>4101</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>70</expincrease100>
 		<setnum>1</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>1203</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>1203</itemcode>
@@ -1536,9 +1950,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>은 조각으로 조합한 장비</description>
+		<getbox>4102</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>105</expincrease100>
 		<setnum>2</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>1204</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>1204</itemcode>
@@ -1558,9 +1978,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>금 조각으로 조합한 장비</description>
+		<getbox>4103</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>140</expincrease100>
 		<setnum>3</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>1205</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>1205</itemcode>
@@ -1580,9 +2006,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>티타늄 조각으로 조합한 장비</description>
+		<getbox>4104</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>210</expincrease100>
 		<setnum>4</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>0</evolsuccess>
+		<evolfailkeep>1000</evolfailkeep>
+		<evolfaildestroy>0</evolfaildestroy>
+		<evolgetitem>-1</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>1300</itemcode>
@@ -1602,9 +2034,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>기본으로 지급되는 장비</description>
+		<getbox>-1</getbox>
+		<getpercent1000>0</getpercent1000>
 		<expincrease100>0</expincrease100>
 		<setnum>-1</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>0</evolsuccess>
+		<evolfailkeep>1000</evolfailkeep>
+		<evolfaildestroy>0</evolfaildestroy>
+		<evolgetitem>-1</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>1301</itemcode>
@@ -1624,9 +2062,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>나무 조각으로 조합한 장비</description>
+		<getbox>4100</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>35</expincrease100>
 		<setnum>0</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>1302</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>1302</itemcode>
@@ -1646,9 +2090,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>동 조각으로 조합한 장비</description>
+		<getbox>4101</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>70</expincrease100>
 		<setnum>1</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>1303</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>1303</itemcode>
@@ -1668,9 +2118,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>은 조각으로 조합한 장비</description>
+		<getbox>4102</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>105</expincrease100>
 		<setnum>2</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>1304</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>1304</itemcode>
@@ -1690,9 +2146,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>금 조각으로 조합한 장비</description>
+		<getbox>4103</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>140</expincrease100>
 		<setnum>3</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>10</evolsuccess>
+		<evolfailkeep>495</evolfailkeep>
+		<evolfaildestroy>495</evolfaildestroy>
+		<evolgetitem>1305</evolgetitem>
 	</wearpart>
 	<wearpart>
 		<itemcode>1305</itemcode>
@@ -1712,9 +2174,15 @@
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>티타늄 조각으로 조합한 장비</description>
+		<getbox>4104</getbox>
+		<getpercent1000>1</getpercent1000>
 		<expincrease100>210</expincrease100>
 		<setnum>4</setnum>
 		<setplusexp100>0</setplusexp100>
+		<evolsuccess>0</evolsuccess>
+		<evolfailkeep>1000</evolfailkeep>
+		<evolfaildestroy>0</evolfaildestroy>
+		<evolgetitem>-1</evolgetitem>
 	</wearpart>
 	<piecepart>
 		<itemcode>1500</itemcode>
@@ -8674,7 +9142,7 @@
 		<itemcode>50000</itemcode>
 		<category>500</category>
 		<subcategory>500</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>캐쉬 구매</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -8693,7 +9161,7 @@
 		<itemcode>50001</itemcode>
 		<category>500</category>
 		<subcategory>500</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>조각 의상 박스오픈</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -8712,7 +9180,7 @@
 		<itemcode>50002</itemcode>
 		<category>500</category>
 		<subcategory>500</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>완성 의상박스 오픈</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -8731,7 +9199,7 @@
 		<itemcode>50003</itemcode>
 		<category>500</category>
 		<subcategory>500</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>초월 사용횟수</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -8750,7 +9218,7 @@
 		<itemcode>51000</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상1</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -8772,7 +9240,7 @@
 		<itemcode>51001</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상2</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -8794,7 +9262,7 @@
 		<itemcode>51002</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상3</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -8816,7 +9284,7 @@
 		<itemcode>51003</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상4</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -8838,7 +9306,7 @@
 		<itemcode>51004</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상5</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -8860,7 +9328,7 @@
 		<itemcode>51005</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상6</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -8882,7 +9350,7 @@
 		<itemcode>51006</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상7</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -8904,7 +9372,7 @@
 		<itemcode>51007</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상8</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -8926,7 +9394,7 @@
 		<itemcode>51008</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상9</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -8948,7 +9416,7 @@
 		<itemcode>51009</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상10</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -8970,7 +9438,7 @@
 		<itemcode>51010</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상11</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -8992,7 +9460,7 @@
 		<itemcode>51011</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상12</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -9014,7 +9482,7 @@
 		<itemcode>51012</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상13</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -9036,7 +9504,7 @@
 		<itemcode>51013</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상14</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -9058,7 +9526,7 @@
 		<itemcode>51014</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상15</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -9080,7 +9548,7 @@
 		<itemcode>51015</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상16</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -9102,7 +9570,7 @@
 		<itemcode>51016</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상17</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -9124,7 +9592,7 @@
 		<itemcode>51017</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상18</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -9146,7 +9614,7 @@
 		<itemcode>51018</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상19</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -9168,7 +9636,7 @@
 		<itemcode>51019</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상20</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -9190,7 +9658,7 @@
 		<itemcode>51020</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상21</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -9212,7 +9680,7 @@
 		<itemcode>51021</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상22</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -9234,7 +9702,7 @@
 		<itemcode>51022</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상23</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -9256,7 +9724,7 @@
 		<itemcode>51023</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상24</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -9278,7 +9746,7 @@
 		<itemcode>51024</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상25</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -9300,7 +9768,7 @@
 		<itemcode>51025</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상26</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -9322,7 +9790,7 @@
 		<itemcode>51026</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상27</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -9344,7 +9812,7 @@
 		<itemcode>51027</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상28</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -9366,7 +9834,7 @@
 		<itemcode>51028</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상29</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -9388,7 +9856,7 @@
 		<itemcode>51029</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상30</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -9410,7 +9878,7 @@
 		<itemcode>51030</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상31</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -9432,7 +9900,7 @@
 		<itemcode>51031</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상32</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -9454,7 +9922,7 @@
 		<itemcode>51032</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상33</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -9476,7 +9944,7 @@
 		<itemcode>51033</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상34</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -9498,7 +9966,7 @@
 		<itemcode>51034</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상35</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -9520,7 +9988,7 @@
 		<itemcode>51035</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상36</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -9542,7 +10010,7 @@
 		<itemcode>51036</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상37</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -9564,7 +10032,7 @@
 		<itemcode>51037</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상38</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -9586,7 +10054,7 @@
 		<itemcode>51038</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상39</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -9608,7 +10076,7 @@
 		<itemcode>51039</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상40</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -9630,7 +10098,7 @@
 		<itemcode>51040</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상41</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -9652,7 +10120,7 @@
 		<itemcode>51041</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상42</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -9674,7 +10142,7 @@
 		<itemcode>51042</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상43</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -9696,7 +10164,7 @@
 		<itemcode>51043</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상44</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -9718,7 +10186,7 @@
 		<itemcode>51044</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상45</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -9740,7 +10208,7 @@
 		<itemcode>51045</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상46</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -9762,7 +10230,7 @@
 		<itemcode>51046</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상47</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -9784,7 +10252,7 @@
 		<itemcode>51047</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상48</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -9806,7 +10274,7 @@
 		<itemcode>51048</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상49</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -9828,7 +10296,7 @@
 		<itemcode>51049</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상50</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -9850,7 +10318,7 @@
 		<itemcode>51050</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상51</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -9872,7 +10340,7 @@
 		<itemcode>51051</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상52</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -9894,7 +10362,7 @@
 		<itemcode>51052</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상53</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -9916,7 +10384,7 @@
 		<itemcode>51053</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상54</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -9938,7 +10406,7 @@
 		<itemcode>51054</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상55</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -9960,7 +10428,7 @@
 		<itemcode>51055</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상56</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -9982,7 +10450,7 @@
 		<itemcode>51056</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상57</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -10004,7 +10472,7 @@
 		<itemcode>51057</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상58</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -10026,7 +10494,7 @@
 		<itemcode>51058</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상59</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -10048,7 +10516,7 @@
 		<itemcode>51059</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상60</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -10070,7 +10538,7 @@
 		<itemcode>51060</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상61</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -10092,7 +10560,7 @@
 		<itemcode>51061</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상62</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -10114,7 +10582,7 @@
 		<itemcode>51062</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상63</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -10136,7 +10604,7 @@
 		<itemcode>51063</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상64</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
@@ -10158,7 +10626,7 @@
 		<itemcode>51064</itemcode>
 		<category>510</category>
 		<subcategory>510</subcategory>
-		<equpslot>0</equpslot>
+		<equpslot>60</equpslot>
 		<itemname>레벨업보상65</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>

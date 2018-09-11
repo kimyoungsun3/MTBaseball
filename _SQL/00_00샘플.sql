@@ -192,7 +192,6 @@ as
 	declare @DEFINE_HOW_GET_COMBINATE			int 				set @DEFINE_HOW_GET_COMBINATE				= 23 	-- Á¶ÇÕÀ¸·Î È¹µæ.
 	declare @DEFINE_HOW_GET_EVOLUTION			int 				set @DEFINE_HOW_GET_EVOLUTION				= 24 	-- ÃÊ¿ù·Î È¹µæ.
 
-
 	------------------------------------------------
 	--	2-3. ³»ºÎ»ç¿ë º¯¼ö
 	------------------------------------------------

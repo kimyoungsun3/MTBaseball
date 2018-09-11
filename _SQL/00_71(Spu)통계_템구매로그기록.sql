@@ -1,10 +1,8 @@
 ﻿/*
 -- 구매로그 기록(할인 될 수도 있어 직접 입력하는 형태로 한다. 30 -> 25)
-exec spu_UserItemBuyLogNew 'xxxx', 1, 30, 0, 0
-exec spu_UserItemBuyLogNew 'xxxx', 1, 30, 0, 0
-exec spu_UserItemBuyLogNew 'xxxx', 3,  0, 3, 0
+exec spu_UserItemBuyLogNew 'xxxx', 4001, 1000
 
-select top  20 * from dbo.tUserItemBuyLog where gameid = 'guest90909' order by idx desc
+select top  20 * from dbo.tUserItemBuyLog where gameid = 'xxxx' order by idx desc
 select top 100 * from dbo.tUserItemBuyLogTotalMaster order by dateid8
 select top 100 * from dbo.tUserItemBuyLogTotalSub order by dateid8 desc, itemcode desc
 select top 100 * from dbo.tUserItemBuyLogMonth order by dateid6 desc, itemcode desc
@@ -19,9 +17,7 @@ GO
 create procedure dbo.spu_UserItemBuyLogNew
 	@gameid_								varchar(20),		-- 게임아이디
 	@itemcode_								int,
-	@gamecost_								int,
-	@cashcost_								int,
-	@heart_									int
+	@cashcost_								int
 	--WITH ENCRYPTION -- 프로시져를 암호화함.
 as
 	------------------------------------------------
@@ -42,7 +38,7 @@ Begin
 	--	3-1. 초기화
 	------------------------------------------------
 	set nocount on
-	--select 'DEBUG 구매', @gameid_ gameid_, @itemcode_ itemcode_, @gamecost_ gamecost_, @cashcost_ cashcost_, @heart_ heart_
+	--select 'DEBUG 구매', @gameid_ gameid_, @itemcode_ itemcode_, @cashcost_ cashcost_
 
 	------------------------------------------------
 	--	3-2-1. 구매했던 로그(개인)
@@ -60,16 +56,14 @@ Begin
 
 	if(@idx = -1)
 		begin
-			insert into dbo.tUserItemBuyLog(gameid,   itemcode,   gamecost,   cashcost,   heart,   idx2, buydate2)
-			values(                        @gameid_, @itemcode_, @gamecost_, @cashcost_, @heart_, @idx2, @dateid8)
+			insert into dbo.tUserItemBuyLog(gameid,   itemcode,   cashcost,   idx2, buydate2)
+			values(                        @gameid_, @itemcode_, @cashcost_, @idx2, @dateid8)
 		end
 	else
 		begin
 			update dbo.tUserItemBuyLog
 				set
-					gamecost 	= gamecost + @gamecost_,
 					cashcost 	= cashcost + @cashcost_,
-					heart		= heart + @heart_,
 					cnt 		= cnt + 1
 			where idx = @idx
 		end
@@ -81,13 +75,13 @@ Begin
 	------------------------------------------------
 	--	3-2-2. 구매했던 로그(월별 Master)
 	------------------------------------------------
-	--select 'DEBUG 구매했던 로그(월별 Master) ', @dateid8 dateid8, @gamecost_ gamecost_, @cashcost_ cashcost_
+	--select 'DEBUG 구매했던 로그(월별 Master) ', @dateid8 dateid8, @cashcost_ cashcost_
 	if(not exists(select top 1 * from dbo.tUserItemBuyLogTotalMaster where dateid8 = @dateid8))
 		begin
 			--select 'DEBUG > insert'
 
-			insert into dbo.tUserItemBuyLogTotalMaster(dateid8,  gamecost,   cashcost,   heart, cnt)
-			values(                                   @dateid8, @gamecost_, @cashcost_, @heart_,  1)
+			insert into dbo.tUserItemBuyLogTotalMaster(dateid8,  cashcost,  cnt)
+			values(                                   @dateid8, @cashcost_,   1)
 		end
 	else
 		begin
@@ -95,9 +89,7 @@ Begin
 
 			update dbo.tUserItemBuyLogTotalMaster
 				set
-					gamecost = gamecost + @gamecost_,
 					cashcost = cashcost + @cashcost_,
-					heart	= heart + @heart_,
 					cnt = cnt + 1
 			where dateid8 = @dateid8
 		end
@@ -106,13 +98,13 @@ Begin
 	------------------------------------------------
 	--	3-2-3. 일별로그 > 세부기록
 	------------------------------------------------
-	--select 'DEBUG 일별로그 > 세부기록', @dateid8 dateid8, @itemcode_ itemcode_, @gamecost_ gamecost_, @cashcost_ cashcost_
+	--select 'DEBUG 일별로그 > 세부기록', @dateid8 dateid8, @itemcode_ itemcode_, @cashcost_ cashcost_
 	if(not exists(select top 1 * from dbo.tUserItemBuyLogTotalSub where dateid8 = @dateid8 and itemcode = @itemcode_))
 		begin
 			--select 'DEBUG > insert'
 
-			insert into dbo.tUserItemBuyLogTotalSub(dateid8,  itemcode,   gamecost,   cashcost,   heart, cnt)
-			values(                                @dateid8, @itemcode_, @gamecost_, @cashcost_, @heart_,  1)
+			insert into dbo.tUserItemBuyLogTotalSub(dateid8,  itemcode,   cashcost,  cnt)
+			values(                                @dateid8, @itemcode_, @cashcost_,   1)
 		end
 	else
 		begin
@@ -120,9 +112,7 @@ Begin
 
 			update dbo.tUserItemBuyLogTotalSub
 				set
-					gamecost = gamecost + @gamecost_,
 					cashcost = cashcost + @cashcost_,
-					heart 	= heart + @heart_,
 					cnt = cnt + 1
 			where dateid8 = @dateid8 and itemcode = @itemcode_
 		end
@@ -131,12 +121,12 @@ Begin
 	------------------------------------------------
 	--	3-2-4. 월별(아이템)
 	------------------------------------------------
-	--select 'DEBUG 월별(아이템)', @dateid6 dateid6, @itemcode_ itemcode_, @gamecost_ gamecost_, @cashcost_ cashcost_
+	--select 'DEBUG 월별(아이템)', @dateid6 dateid6, @itemcode_ itemcode_, @cashcost_ cashcost_
 	if(not exists(select top 1 * from dbo.tUserItemBuyLogMonth where dateid6 = @dateid6 and itemcode = @itemcode_))
 		begin
 			--select 'DEBUG 월별(아이템) insert'
-			insert into dbo.tUserItemBuyLogMonth(dateid6,  itemcode,   gamecost,   cashcost,   heart, cnt)
-			values(                             @dateid6, @itemcode_, @gamecost_, @cashcost_, @heart_,  1)
+			insert into dbo.tUserItemBuyLogMonth(dateid6,  itemcode,   cashcost,  cnt)
+			values(                             @dateid6, @itemcode_, @cashcost_,   1)
 		end
 	else
 		begin
@@ -144,9 +134,7 @@ Begin
 
 			update dbo.tUserItemBuyLogMonth
 				set
-					gamecost = gamecost + @gamecost_,
 					cashcost = cashcost + @cashcost_,
-					heart 	= heart + @heart_,
 					cnt = cnt + 1
 			where dateid6 = @dateid6 and itemcode = @itemcode_
 		end

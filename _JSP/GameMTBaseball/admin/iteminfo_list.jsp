@@ -53,6 +53,7 @@ function f_Submit(f) {
 	<tr>
 		<td align="center">
 			<a href=iteminfo_list.jsp?view=1>이미지보기</a>
+			<a href=iteminfo_list.jsp?view=0>이미지보기X</a>
 			<div  style="border:1px solid #D7D6D6;background:#FCFCFC;padding:36px 0;">
 				<table>
 					<tr>
@@ -124,7 +125,7 @@ function f_Submit(f) {
 							<td>discount</td>
 							<td>icon</td>
 							<td>playerlv</td>
-							<td>houselv</td>
+							<td>multistate</td>
 							<td>gamecost</td>
 							<td>cashcost</td>
 							<td>buyamount</td>
@@ -164,15 +165,9 @@ function f_Submit(f) {
 
 					<%while(result.next()){%>
 						<tr>
-							<!--
-							<td><%=result.getString("itemcode")%></td>
-							<td><%=result.getString("itemname")%></td>
-							<td><%=result.getString("param6")%></td>
-							-->
-
 							<td>
 								<%=result.getString("labelname")%>
-								<%=getDanilga(result.getInt("subcategory"), result.getInt("gamecost"), result.getInt("cashcost"), result.getInt("buyamount"), result.getInt("sellcost"))%>
+								
 							</td>
 							<td><a href=iteminfo_list.jsp?itemcode=<%=result.getString("itemcode")%>&view=<%=view%>><%=result.getString("itemcode")%></a></td>
 
@@ -185,27 +180,11 @@ function f_Submit(f) {
 										iccode[iclen]	= result.getInt("itemcode");
 										iclen++;
 									}
-
-									if( _category == 1010 )
-									{
-										icic = result.getInt("param12");
-										for( int i = 0; i < iclen; i++ )
-										{
-											if( iccode[i] == icic)
-											{
-												out.println( "<br>" + icname[i] );
-											}
-										}
-									}
 								%>
 							</td>
 							<%if(view == 1){%>
 								<td>
-									<% if( _category == 1010 ){ %>
-										<%=checkImgParam(view, result.getInt("subcategory"), 12, result.getString("param12"), imgroot)%>
-									<%}else{%>
-										<img src=<%=imgroot%>/<%=result.getInt("itemcode")%>.png> <%=result.getInt("itemcode")%>
-									<%}%>
+									<img src=<%=imgroot%>/<%=result.getInt("itemcode")%>.png> <%=result.getInt("itemcode")%>
 								</td>
 							<%}%>
 							<td>
@@ -219,21 +198,14 @@ function f_Submit(f) {
 							<td><%=result.getString("discount")%></td>
 							<td><%=result.getString("icon")%></td>
 							<td><%=result.getString("playerlv")%></td>
-							<td><%=result.getString("houselv")%></td>
+							<td><%=result.getString("multistate")%></td>
 							<td><%=result.getString("gamecost")%></td>
 							<td><%=result.getString("cashcost")%></td>
 							<td><%=result.getString("buyamount")%></td>
 							<td><%=result.getString("sellcost")%></td>
 							<td><%=result.getString("description")%></td>
 							<td><%=checkImgParam(view, result.getInt("subcategory"), 1, result.getString("param1"), imgroot)%></td>
-							<td>
-								<%=
-								( ( result.getInt("subcategory") == 901 )?
-								    checkImgParam2(view, result.getInt("subcategory"), 2, result.getString("param2"), imgroot, result.getInt("param1"))
-								    :
-								    checkImgParam(view, result.getInt("subcategory"), 2, result.getString("param2"), imgroot)
-								 )%>
-							</td>
+							<td><%=checkImgParam(view, result.getInt("subcategory"), 1, result.getString("param2"), imgroot)%></td>
 							<td><%=checkImgParam(view, result.getInt("subcategory"), 3, result.getString("param3"), imgroot)%></td>
 							<td><%=checkImgParam(view, result.getInt("subcategory"), 4, result.getString("param4"), imgroot)%></td>
 							<td><%=checkImgParam(view, result.getInt("subcategory"), 5, result.getString("param5"), imgroot)%></td>

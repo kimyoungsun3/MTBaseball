@@ -127,8 +127,6 @@ create procedure dbo.spu_GiftGainNew
 																-- -3:선물받아감
 	@idx_					bigint,								-- 선물인덱스
 	@listidx_				int,								--
-	@fieldidx_				int,								--
-	@quickkind_				int,								--
 	@nResult_				int					OUTPUT
 	--WITH ENCRYPTION
 as
@@ -233,15 +231,6 @@ as
 	declare @DEFINE_HOW_GET_SEARCH				int					set @DEFINE_HOW_GET_SEARCH					= 4	--검색
 	declare @DEFINE_HOW_GET_GIFT				int					set @DEFINE_HOW_GET_GIFT					= 5	--검색
 
-	-- 동물정보.
-	-- 필드동물 0 ~ 8.
-	declare @USERITEM_FIELDIDX_INVEN			int					set @USERITEM_FIELDIDX_INVEN				= -1	-- 창고.
-	declare @USERITEM_FIELDIDX_HOSPITAL			int					set @USERITEM_FIELDIDX_HOSPITAL				= -2	-- 병원.
-
-	-- 소모템 > 퀵슬롯에 착용위치.
-	declare @USERMASTER_QUICKKIND_NON			int					set @USERMASTER_QUICKKIND_NON				= -1 --없음.
-	declare @USERMASTER_QUICKKIND_SETTING		int					set @USERMASTER_QUICKKIND_SETTING			=  1 --총알, 백신, 촉진, 알바.
-
 	-- 펫기타 정보
 	declare @USERITEM_PET_UPGRADE_MAX			int					set @USERITEM_PET_UPGRADE_MAX				= 6	-- 업그레이드 맥스.
 	declare @USERITEM_TREASURE_UPGRADE_MAX		int					set @USERITEM_TREASURE_UPGRADE_MAX			= 7	-- max강화.
@@ -257,19 +246,8 @@ as
 	declare @itemcode		int
 	declare @giftkind		int				set @giftkind 	= -1
 	declare @cashcost		int				set @cashcost 	= 0
-	declare @gamecost		int				set @gamecost 	= 0
-	declare @heart			int				set @heart 		= 0
-	declare @feed			int				set @feed 		= 0
-	declare @fpoint			int				set @fpoint		= 0
-	declare @goldticket		int				set @goldticket	= 0
-	declare @battleticket	int				set @battleticket= 0
 	declare @cashpoint		int				set @cashpoint 	= 0
 
-	declare @invenanimalmax	int
-	declare @invencustommax int
-	declare @invenaccmax	int
-	declare @invenstemcellmax	int
-	declare @inventreasuremax	int
 
 	declare @subcategory 	int,
 			@buyamount		int,
@@ -284,36 +262,13 @@ as
 	declare @cnt2 			int				set @cnt2			=  0
 	declare @listidx2		int				set @listidx2		=  -1
 	declare @upstepmax		int				set @upstepmax		=  8
-	declare @listidxtreasure	int			set @listidxtreasure= -1
 	declare @sendcnt 		int				set @sendcnt		=  0
 	declare @listidxnew 	int				set @listidxnew		= -1
 	declare @listidxcust 	int				set @listidxcust	= -1
 	declare @listidxpet 	int				set @listidxpet		= -1
-	declare @petupgradeinit	int				set @petupgradeinit	=  1
 	declare @listidxrtn 	int				set @listidxrtn		= -1
-	declare @fieldidx 		int
 
 	declare @dummy	 		int
-	declare @sellcost		int				set @sellcost		= 0
-
-	-- 유저배틀박스
-	declare @boxslotidx		int				set @boxslotidx		= -1
-	declare @boxslottime	datetime		set @boxslottime	= getdate()
-	declare @boxslot1 		int				set @boxslot1		= -1
-	declare @boxslot2 		int				set @boxslot2		= -1
-	declare @boxslot3 		int				set @boxslot3		= -1
-	declare @boxslot4 		int				set @boxslot4		= -1
-
-	-- 필드오픈.
-	declare @field0			int				set @field0			= -1
-	declare @field1			int				set @field1			= -1
-	declare @field2			int				set @field2			= -1
-	declare @field3			int				set @field3			= -1
-	declare @field4			int				set @field4			= -1
-	declare @field5			int				set @field5			= -1
-	declare @field6			int				set @field6			= -1
-	declare @field7			int				set @field7			= -1
-	declare @field8			int				set @field8			= -1
 
 	DECLARE @tTempTable TABLE(
 		listidx		int
@@ -325,33 +280,16 @@ Begin
 	set nocount on
 	set @nResult_ = @RESULT_ERROR
 	set @comment  = '알수 없는 오류가 발생했습니다.'
-	--select 'DEBUG 1-1 입력값', @gameid_ gameid_, @password_ password_, @giftkind_ giftkind_, @idx_ idx_, @listidx_ listidx_, @fieldidx_ fieldidx_, @quickkind_ quickkind_
-
-	if(@fieldidx_ < -1 or @fieldidx_ >= 9)
-		begin
-			--select 'DEBUG 1-2 인벤번호가 잘못되어서 인벤으로 루비.'
-			set @fieldidx_ = @USERITEM_FIELDIDX_INVEN
-		end
+	--select 'DEBUG 1-1 입력값', @gameid_ gameid_, @password_ password_, @giftkind_ giftkind_, @idx_ idx_, @listidx_ listidx_
 
 	------------------------------------------------
 	--	3-2. 연산수행(유저정보, 선물정보, 아이템 종류)
 	------------------------------------------------
 	select
 		@gameid 		= gameid,
-		@cashcost		= cashcost,			@gamecost		= gamecost,			@heart			= heart,			@cashpoint		= cashpoint,
-		@feed			= feed,				@fpoint			= fpoint,			@goldticket 	= goldticket, 		@battleticket	= battleticket,
-		@invenanimalmax	= invenanimalmax,
-		@invencustommax = invencustommax,
-		@invenaccmax 	= invenaccmax,
-		@invenstemcellmax= invenstemcellmax,@inventreasuremax = inventreasuremax,
-		@boxslotidx		= boxslotidx,		@boxslottime	= boxslottime,
-		@boxslot1		= boxslot1,			@boxslot2		= boxslot2,			@boxslot3		= boxslot3,			@boxslot4		= boxslot4,
-
-		@field0			= field0,			@field1			= field1,			@field2			= field2,
-		@field3			= field3,			@field4			= field4,			@field5			= field5,
-		@field6			= field6,			@field7			= field7,			@field8			= field8
+		@cashcost		= cashcost
 	from dbo.tUserMaster where gameid = @gameid_ and password = @password_
-	--select 'DEBUG 1-3 유저정보', @gameid gameid, @cashcost cashcost, @gamecost gamecost, @heart heart, @feed feed, @fpoint fpoint, @invenanimalmax invenanimalmax, @invencustommax invencustommax, @invenaccmax invenaccmax
+	--select 'DEBUG 1-3 유저정보', @gameid gameid, @cashcost cashcost
 
 	select
 		@giftkind 	= giftkind,
@@ -411,35 +349,6 @@ Begin
 
 			update dbo.tGiftList set giftkind = @giftkind_ where idx = @idx_
 		END
-	else if(@giftkind_ = @GIFTLIST_GIFT_KIND_GIFT_SELL)
-		BEGIN
-			set @nResult_ = @RESULT_SUCCESS
-			set @comment = 'SUCCESS 선물함을 물건을 팔아라.'
-			--select 'DEBUG ' + @comment
-
-			------------------------------------------
-			-- 아이템을 판매하는 형태.
-			------------------------------------------
-			select
-				@buyamount 	= buyamount,
-				@sellcost 	= sellcost
-			from dbo.tItemInfo where itemcode = @itemcode
-
-			if(@sendcnt > 0)
-				begin
-					set @gamecost = @gamecost + @sellcost * @sendcnt
-				end
-			else
-				begin
-					set @gamecost = @gamecost + @sellcost * @buyamount
-				end
-
-			update dbo.tGiftList set giftkind = @giftkind_ where idx = @idx_
-			update dbo.tUserMaster
-				set
-					gamecost = @gamecost
-			where gameid = @gameid_
-		END
 	else if(@giftkind_ = @GIFTLIST_GIFT_KIND_GIFT_GET)
 		BEGIN
 			set @nResult_ = @RESULT_SUCCESS
@@ -467,57 +376,17 @@ Begin
 					from dbo.tUserItem
 					where gameid = @gameid_
 						  and invenkind = @invenkind
-						  and fieldidx != @USERITEM_FIELDIDX_HOSPITAL
-					--select 'DEBUG 4-2 동물(1)인벤넣기', @cnt cnt, @invenanimalmax invenanimalmax
+					--select 'DEBUG 4-2 동물(1)인벤넣기', @cnt cnt
 
 					--------------------------------------------------------------
 					-- 소,양,산양			-> 동물 아이템
 					--------------------------------------------------------------
-					if(@cnt >= @invenanimalmax)
-						begin
-							set @nResult_ = @RESULT_ERROR_INVEN_FULL
-							set @comment = 'ERROR 동물 인벤이 풀입니다.'
-							--select 'DEBUG ' + @comment, @cnt cnt, @invenanimalmax invenanimalmax
-						end
-					else
 						begin
 							--select 'DEBUG 4-2-2 선물 > 인벤 or 필드, 이벤 지급 상태로 변경', @gameid_ gameid_, @listidxnew listidxnew, @itemcode itemcode, @idx_ idx_
-							if(@fieldidx_ = -1)
-								begin
-									set @fieldidx = @fieldidx_
-									--select 'DEBUG 4-2-3 선물 > 필드풀이라서 인벤에 넣어두라(클라에서 요청함).', @fieldidx fieldidx
-								end
-							else if(exists(select top 1 * from dbo.tUserItem where gameid = @gameid_ and fieldidx = @fieldidx_))
-								begin
-									---------------------------------------------------
-									-- 빈자리 찾기 커서
-									-- 0   2 3 4 5 		 >  1
-									-- 0 1 2 3 4 5 		 >  6
-									-- 0 1 2 3 4 5 6 7 8 > -1
-									---------------------------------------------------
-									set @fieldidx = dbo.fun_getUserItemFieldIdxAni(@gameid_)
-									--select 'DEBUG 4-2-3 선물 > 지정(충돌)', @fieldidx fieldidx
-								end
-							else
-								begin
-									set @fieldidx = @fieldidx_
-									--select 'DEBUG 4-2-3 선물 > 필드가 유효해서 그대로 넣어라.', @fieldidx fieldidx
-								end
-
-							-- 필드가 허용하는 범위인가?
-							--select 'DEBUG (전)', @fieldidx fieldidx, @field0 field0, @field1 field1, @field2 field2, @field3 field3, @field4 field4, @field5 field5, @field6 field6, @field7 field7, @field8 field8
-							set @fieldidx = dbo.fun_getUserItemFieldCheck(@fieldidx,
-																		  @field0, @field1, @field2,
-																		  @field3, @field4, @field5,
-																		  @field6, @field7, @field8)
-							--select 'DEBUG (후)', @fieldidx fieldidx, @field0 field0, @field1 field1, @field2 field2, @field3 field3, @field4 field4, @field5 field5, @field6 field6, @field7 field7, @field8 field8
 
 							-- 해당아이템 인벤에 지급
-							insert into dbo.tUserItem(gameid,      listidx,  itemcode, cnt, farmnum,  fieldidx,  invenkind,  upstepmax, gethow)		-- 동물.
-							values(					 @gameid_, @listidxnew, @itemcode,   1,       0, @fieldidx, @invenkind, @upstepmax, @DEFINE_HOW_GET_GIFT)
-
-							-- 도감기록
-							exec spu_DogamListLog @gameid_, @itemcode
+							insert into dbo.tUserItem(gameid,      listidx,  itemcode, cnt, invenkind,  gethow)		-- 동물.
+							values(					 @gameid_, @listidxnew, @itemcode,   1, @invenkind, @DEFINE_HOW_GET_GIFT)
 
 							-- 아이템 가져간 상태로 돌려둔다.
 							update dbo.tGiftList set giftkind = @GIFTLIST_GIFT_KIND_GIFT_GET, gaindate = getdate() where idx = @idx_
@@ -525,7 +394,7 @@ Begin
 							-- 변경된 아이템 리스트인덱스
 							set @listidxrtn	= @listidxnew
 
-							--select 'DEBUG ', @listidxrtn listidxrtn, @fieldidx fieldidx
+							--select 'DEBUG ', @listidxrtn listidxrtn
 						end
 				end
 			else if(@invenkind = @USERITEM_INVENKIND_CONSUME and @itemcode = @ITEM_ZCP_PIECE_MOTHER )
@@ -546,7 +415,7 @@ Begin
 						@listidxcust 	= listidx
 					from dbo.tUserItem
 					where gameid = @gameid_ and itemcode = @itemcode
-					--select 'DEBUG 4-3 짜요쿠폰조각 인벤넣기', @gameid_ gameid_, @subcategory subcategory, @itemcode itemcode, @cnt2 cnt2, @listidxcust listidxcust, @cnt cnt, @invencustommax invencustommax
+					--select 'DEBUG 4-3 짜요쿠폰조각 인벤넣기', @gameid_ gameid_, @subcategory subcategory, @itemcode itemcode, @cnt2 cnt2, @listidxcust listidxcust, @cnt cnt
 
 					-------------------------------------------------
 					-- 링크 번호 오류에 대한 방어코드.
@@ -564,71 +433,64 @@ Begin
 					-------------------------------------------------
 					-- 결과전송.
 					-------------------------------------------------
-					if(@listidxcust = -1 and (@cnt >= (@invencustommax + 4)))
-						begin
-							set @nResult_ = @RESULT_ERROR_INVEN_FULL
-							set @comment = 'ERROR 소비 인벤이 풀입니다.'
-							--select 'DEBUG ' + @comment
-						end
-					else
-						begin
-							--select 'DEBUG 4-3-2 선물 > 인벤으로 이동, 이벤 지급 상태로 변경'
-							---------------------------------------------------
-							-- 빈자리 찾기 커서
-							-- 0 [1] 2 3 4 5 	> [1] > update
-							-- 0 1 2 3 4 5 6  	> 없음 > insert
-							-- @listidxcust = @listidx_ (동일함)
-							---------------------------------------------------
-							if(@listidxcust = -1)
-								begin
-									--select 'DEBUG 소비 추가', @gameid_ gameid_, @listidxnew listidxnew, @itemcode itemcode, @buyamount buyamount
+					begin
+						--select 'DEBUG 4-3-2 선물 > 인벤으로 이동, 이벤 지급 상태로 변경'
+						---------------------------------------------------
+						-- 빈자리 찾기 커서
+						-- 0 [1] 2 3 4 5 	> [1] > update
+						-- 0 1 2 3 4 5 6  	> 없음 > insert
+						-- @listidxcust = @listidx_ (동일함)
+						---------------------------------------------------
+						if(@listidxcust = -1)
+							begin
+								--select 'DEBUG 소비 추가', @gameid_ gameid_, @listidxnew listidxnew, @itemcode itemcode, @buyamount buyamount
 
-									insert into dbo.tUserItem(gameid,      listidx,  itemcode,        cnt,  invenkind, gethow)
-									values(					@gameid_,  @listidxnew, @itemcode, @buyamount, @invenkind, @DEFINE_HOW_GET_GIFT)
+								insert into dbo.tUserItem(gameid,      listidx,  itemcode,        cnt,  invenkind, gethow)
+								values(					@gameid_,  @listidxnew, @itemcode, @buyamount, @invenkind, @DEFINE_HOW_GET_GIFT)
 
-									-- 변경된 아이템 리스트인덱스
-									set @listidxrtn	= @listidxnew
-								end
-							else
-								begin
-									--select 'DEBUG 소비 보유템에 누적', @gameid_ gameid_, @listidxcust listidxcust, @buyamount buyamount
+								-- 변경된 아이템 리스트인덱스
+								set @listidxrtn	= @listidxnew
+							end
+						else
+							begin
+								--select 'DEBUG 소비 보유템에 누적', @gameid_ gameid_, @listidxcust listidxcust, @buyamount buyamount
 
-									update dbo.tUserItem
-										set
-											cnt = cnt + @buyamount
-									where gameid = @gameid_ and listidx = @listidxcust
+								update dbo.tUserItem
+									set
+										cnt = cnt + @buyamount
+								where gameid = @gameid_ and listidx = @listidxcust
 
-									-- 변경된 아이템 리스트인덱스
-									set @listidxrtn	= @listidxcust
-								end
+								-- 변경된 아이템 리스트인덱스
+								set @listidxrtn	= @listidxcust
+							end
 
 
-							---------------------------------------------------
-							-- 아이템 직접지급
-							-- 99개를 나누는 방식으로 차감.
-							---------------------------------------------------
-							select @cnt2 = cnt from dbo.tUserItem where gameid = @gameid_ and listidx = @listidxrtn
-							--select 'DEBUG ', @cnt2 cnt2
-							while( @cnt2 >= 99 )
-								begin
-									--select 'DEBUG 짜요쿠폰조각(99개) -> 짜요쿠폰 (1개)'
-									exec spu_SetDirectItemNew @gameid_, @ITEM_ZCP_TICKET_MOTHER, 1, @DEFINE_HOW_GET_GIFT, @rtn_ = @listidx2 OUTPUT
-									insert into @tTempTable( listidx ) values( @listidx2 )
+						---------------------------------------------------
+						-- 아이템 직접지급
+						-- 99개를 나누는 방식으로 차감.
+						---------------------------------------------------
+						select @cnt2 = cnt from dbo.tUserItem where gameid = @gameid_ and listidx = @listidxrtn
+						--select 'DEBUG ', @cnt2 cnt2
+						while( @cnt2 >= 99 )
+							begin
+								--select 'DEBUG 짜요쿠폰조각(99개) -> 짜요쿠폰 (1개)'
+								exec spu_SetDirectItemNew @gameid_, @ITEM_ZCP_TICKET_MOTHER, 1, @DEFINE_HOW_GET_GIFT, @rtn_ = @listidx2 OUTPUT
+								insert into @tTempTable( listidx ) values( @listidx2 )
 
-									-- 수량감소후에 개수 갱신해주기.
-									set @cnt2 = @cnt2 - 99
+								-- 수량감소후에 개수 갱신해주기.
+								set @cnt2 = @cnt2 - 99
 
-									update dbo.tUserItem
-										set
-											cnt = @cnt2
-									where gameid = @gameid_ and listidx = @listidxrtn
-								end
+								update dbo.tUserItem
+									set
+										cnt = @cnt2
+								where gameid = @gameid_ and listidx = @listidxrtn
+							end
 
 
-							-- 아이템 가져간 상태로 돌려둔다.
-							--select 'DEBUG > ', @idx_ idx_
-							update dbo.tGiftList set giftkind = @GIFTLIST_GIFT_KIND_GIFT_GET, gaindate = getdate() where idx = @idx_
-						end
+						-- 아이템 가져간 상태로 돌려둔다.
+						--select 'DEBUG > ', @idx_ idx_
+						update dbo.tGiftList set giftkind = @GIFTLIST_GIFT_KIND_GIFT_GET, gaindate = getdate() where idx = @idx_
+					end
 				end
 			else if(@invenkind = @USERITEM_INVENKIND_CONSUME and @itemcode = @ITEM_ZCP_TICKET_MOTHER )
 				begin
@@ -674,7 +536,7 @@ Begin
 						@listidxcust = listidx
 					from dbo.tUserItem
 					where gameid = @gameid_ and itemcode = @itemcode
-					--select 'DEBUG 4-3 소비(n)인벤넣기', @gameid_ gameid_, @subcategory subcategory, @itemcode itemcode, @listidxcust listidxcust, @cnt cnt, @invencustommax invencustommax
+					--select 'DEBUG 4-3 소비(n)인벤넣기', @gameid_ gameid_, @subcategory subcategory, @itemcode itemcode, @listidxcust listidxcust, @cnt cnt
 
 					-------------------------------------------------
 					-- 링크 번호 오류에 대한 방어코드.
@@ -685,13 +547,7 @@ Begin
 							set @listidx_ = @listidxcust
 						end
 
-					if(@listidxcust = -1 and (@cnt >= (@invencustommax + 4)))
-						begin
-							set @nResult_ = @RESULT_ERROR_INVEN_FULL
-							set @comment = 'ERROR 소비 인벤이 풀입니다.'
-							--select 'DEBUG ' + @comment
-						end
-					else if(@listidx_ !=  @listidxcust)
+					if(@listidx_ !=  @listidxcust)
 						begin
 							-- and @subcategory in (@ITEM_SUBCATEGORY_BULLET, @ITEM_SUBCATEGORY_VACCINE, @ITEM_SUBCATEGORY_ALBA, @ITEM_SUBCATEGORY_BOOSTER)
 							set @nResult_ = @RESULT_ERROR_NOT_MATCH
@@ -730,17 +586,6 @@ Begin
 									set @listidxrtn	= @listidxcust
 								end
 
-							if(@quickkind_ = @USERMASTER_QUICKKIND_SETTING)
-								begin
-									--select 'DEBUG > 세팅을 추가한다.'
-									update dbo.tUserMaster
-										set
-											bulletlistidx 	= case when (@subcategory = @ITEM_SUBCATEGORY_BULLET) 	then @listidxrtn else bulletlistidx end,
-											vaccinelistidx	= case when (@subcategory = @ITEM_SUBCATEGORY_VACCINE) 	then @listidxrtn else vaccinelistidx end,
-											boosterlistidx	= case when (@subcategory = @ITEM_SUBCATEGORY_BOOSTER)	then @listidxrtn else boosterlistidx end,
-											albalistidx		= case when (@subcategory = @ITEM_SUBCATEGORY_ALBA) 	then @listidxrtn else albalistidx end
-									where gameid = @gameid_
-								end
 
 							-- 아이템 가져간 상태로 돌려둔다.
 							--select 'DEBUG > ', @idx_ idx_
@@ -760,14 +605,7 @@ Begin
 					--------------------------------------------------------------
 					-- 줄기세포					-> 줄기세포 아이템
 					--------------------------------------------------------------
-					--select 'DEBUG 4-4 줄기세포 인벤넣기', @cnt cnt, @invenstemcellmax invenstemcellmax
-					if(@cnt >= @invenstemcellmax)
-						begin
-							set @nResult_ = @RESULT_ERROR_INVEN_FULL
-							set @comment = 'ERROR 줄기세포 인벤이 풀입니다.'
-							--select 'DEBUG ' + @comment, @invenstemcellmax invenstemcellmax
-						end
-					else
+					--select 'DEBUG 4-4 줄기세포 인벤넣기', @cnt cnt
 						begin
 							--select 'DEBUG 4-4-2 선물 > 인벤으로 이동, 이벤 지급 상태로 변경', @gameid_ gameid_, @listidxnew listidxnew, @itemcode itemcode
 
@@ -793,146 +631,25 @@ Begin
 					--------------------------------------------------------------
 					-- 보물					-> 보물 아이템
 					--------------------------------------------------------------
-					--select 'DEBUG 4-4 보물 인벤넣기', @cnt cnt, @inventreasuremax inventreasuremax, @listidxtreasure listidxtreasure
-					if( @cnt >= @inventreasuremax )
-						begin
-							set @nResult_ = @RESULT_ERROR_INVEN_FULL
-							set @comment = 'ERROR 보물 인벤이 풀입니다.'
-							--select 'DEBUG ' + @comment, @inventreasuremax inventreasuremax
-						end
-					else
-						begin
-							--select 'DEBUG 4-4-1 선물 > 보물지급'
+					--select 'DEBUG 4-4 보물 인벤넣기', @cnt cnt
+					begin
+						--select 'DEBUG 4-4-1 선물 > 보물지급'
 
-							insert into dbo.tUserItem(gameid,      listidx,  itemcode,  invenkind,                      upstepmax, gethow)
-							values(					 @gameid_, @listidxnew, @itemcode, @invenkind, @USERITEM_TREASURE_UPGRADE_MAX, @DEFINE_HOW_GET_GIFT)
+						insert into dbo.tUserItem(gameid,      listidx,  itemcode,  invenkind,                      upstepmax, gethow)
+						values(					 @gameid_, @listidxnew, @itemcode, @invenkind, @USERITEM_TREASURE_UPGRADE_MAX, @DEFINE_HOW_GET_GIFT)
 
-							-- 변경된 아이템 리스트인덱스
-							set @listidxrtn	= @listidxnew
+						-- 변경된 아이템 리스트인덱스
+						set @listidxrtn	= @listidxnew
 
-							---------------------------------
-							-- 보물 보유효과 세팅.
-							---------------------------------
-							exec spu_TSRetentionEffect @gameid_, @itemcode
-						end
+						---------------------------------
+						-- 보물 보유효과 세팅.
+						---------------------------------
+						exec spu_TSRetentionEffect @gameid_, @itemcode
+					end
 
 
 					-- 아이템 가져간 상태로 돌려둔다.
 					update dbo.tGiftList set giftkind = @GIFTLIST_GIFT_KIND_GIFT_GET, gaindate = getdate() where idx = @idx_
-				end
-			else if(@invenkind = @USERITEM_INVENKIND_PET)
-				begin
-					--------------------------------------------------------------
-					-- 펫					-> 펫 아이템
-					--------------------------------------------------------------
-					--select 'DEBUG 4-4-2 선물 > 펫인벤으로 이동, 이벤 지급 상태로 변경', @gameid_ gameid_, @listidxnew listidxnew, @itemcode itemcode
-
-					select
-						@listidxpet = listidx
-					from dbo.tUserItem
-					where gameid = @gameid_ and itemcode = @itemcode
-					--select 'DEBUG >', @listidxpet listidxpet, @listidx_ listidx_
-
-					-------------------------------------------------
-					-- 링크 번호 오류에 대한 방어코드.
-					-------------------------------------------------
-					if(@listidx_ =  -1 and @listidxpet != -1)
-						begin
-							-- 링크 번호가 없다고 하는데 링크 번호가 있네요. > 재세팅.
-							set @listidx_ = @listidxpet
-						end
-
-					if(@listidx_ !=  @listidxpet)
-						begin
-							set @nResult_ = @RESULT_ERROR_NOT_MATCH
-							set @comment = 'ERROR 펫 지정리스트('+ltrim(rtrim(str(@listidx_)))+') 내부존재번호('+ltrim(rtrim(str(@listidxpet)))+')가 불일치.'
-							--select 'DEBUG ' + @comment
-						end
-					else
-						begin
-							select
-								@petupgradeinit		= param5
-							from dbo.tItemInfo where itemcode = @itemcode and subcategory = @ITEM_SUBCATEGORY_PET
-							--select 'DEBUG >', @petupgradeinit petupgradeinit
-
-							if(@listidxpet = -1)
-								begin
-									--select 'DEBUG 펫 추가', @gameid_ gameid_, @listidxnew listidxnew, @itemcode itemcode, @buyamount buyamount
-									insert into dbo.tUserItem(gameid,      listidx,  itemcode, invenkind,       petupgrade,      gethow)		-- 펫
-									values(					 @gameid_, @listidxnew, @itemcode, @invenkind, @petupgradeinit, @DEFINE_HOW_GET_GIFT)
-
-									-- 펫도감기록.
-									exec spu_DogamListPetLog @gameid_, @itemcode
-
-									-- 변경된 아이템 리스트인덱스
-									set @listidxrtn	= @listidxnew
-								end
-							else
-								begin
-									--select 'DEBUG 펫 업그레이드', @gameid_ gameid_, @listidxpet listidxpet
-
-									update dbo.tUserItem
-										set
-											petupgrade = case
-															when (petupgrade + 1 >= @USERITEM_PET_UPGRADE_MAX) then @USERITEM_PET_UPGRADE_MAX
-															else													petupgrade + 1
-														end
-									where gameid = @gameid_ and listidx = @listidxpet
-
-									-- 변경된 아이템 리스트인덱스
-									set @listidxrtn	= @listidxpet
-								end
-
-							-- 아이템 가져간 상태로 돌려둔다.
-							update dbo.tGiftList set giftkind = @GIFTLIST_GIFT_KIND_GIFT_GET, gaindate = getdate() where idx = @idx_
-						end
-				end
-			else if(@subcategory = @ITEM_SUBCATEGORY_USERBATTLEBOX)
-				begin
-					---------------------------------------------------------------
-					--select 'DEBUG 유저배틀박스'
-					---------------------------------------------------------------
-					set @dummy = -1
-					if( @boxslot1 = -1 )
-						begin
-							set @boxslot1 		= @itemcode
-							set @dummy 			= 1
-						end
-					else if( @boxslot2 = -1 )
-						begin
-							set @boxslot2 		= @itemcode
-							set @dummy 			= 1
-						end
-					else if( @boxslot3 = -1 )
-						begin
-							set @boxslot3 		= @itemcode
-							set @dummy 			= 1
-						end
-					else if( @boxslot4 = -1 )
-						begin
-							set @boxslot4 		= @itemcode
-							set @dummy 			= 1
-						end
-
-					if(@dummy = -1)
-						begin
-							set @nResult_ = @RESULT_ERROR_INVEN_FULL
-							set @comment = 'ERROR 인벤이 풀입니다.'
-						end
-					else
-						begin
-							-- 아이템을 직접 넣어줌
-							update dbo.tUserMaster
-								set
-									boxslot1	= @boxslot1,
-									boxslot2	= @boxslot2,
-									boxslot3	= @boxslot3,
-									boxslot4	= @boxslot4
-							where gameid = @gameid_
-
-							-- 아이템 가져간 상태로 돌려둔다.
-							update dbo.tGiftList set giftkind = @GIFTLIST_GIFT_KIND_GIFT_GET, gaindate = getdate() where idx = @idx_
-						end
 				end
 			else if(@subcategory = @ITEM_SUBCATEGORY_CASHCOST)
 				begin
@@ -946,91 +663,6 @@ Begin
 					update dbo.tUserMaster
 					set
 						cashcost = @cashcost
-					where gameid = @gameid_
-
-					-- 아이템 가져간 상태로 돌려둔다.
-					update dbo.tGiftList set giftkind = @GIFTLIST_GIFT_KIND_GIFT_GET, gaindate = getdate() where idx = @idx_
-				end
-			else if(@subcategory = @ITEM_SUBCATEGORY_GAMECOST)
-				begin
-					--select 'DEBUG 4-5-2 gamecost(코인)	-> 바로적용', @gamecost gamecost, @buyamount buyamount
-					set @plus		= isnull(@buyamount, 0)
-					set @gamecost	= @gamecost + @plus
-
-					update dbo.tUserMaster
-					set
-						gamecost = @gamecost
-					where gameid = @gameid_
-
-					-- 아이템 가져간 상태로 돌려둔다.
-					update dbo.tGiftList set giftkind = @GIFTLIST_GIFT_KIND_GIFT_GET, gaindate = getdate() where idx = @idx_
-				end
-			else if(@subcategory = @ITEM_SUBCATEGORY_FPOINT)
-				begin
-					--select 'DEBUG 4-5-3 우정포인트 -> 바로적용', @fpoint fpoint, @buyamount buyamount
-					set @plus		= isnull(@buyamount, 0)
-					set @fpoint		= @fpoint + @plus
-
-					update dbo.tUserMaster
-					set
-						fpoint = @fpoint
-					where gameid = @gameid_
-
-					-- 아이템 가져간 상태로 돌려둔다.
-					update dbo.tGiftList set giftkind = @GIFTLIST_GIFT_KIND_GIFT_GET, gaindate = getdate() where idx = @idx_
-				end
-			else if(@subcategory = @ITEM_SUBCATEGORY_GOLDTICKET)
-				begin
-					--select 'DEBUG 4-6 황금티켓  -> 바로적용', @goldticket goldticket, @buyamount buyamount
-					set @plus		= isnull(@buyamount, 0)
-					set @goldticket	= @goldticket + @plus
-
-					update dbo.tUserMaster
-						set
-							goldticket = @goldticket
-					where gameid = @gameid_
-
-					-- 아이템 가져간 상태로 돌려둔다.
-					update dbo.tGiftList set giftkind = @GIFTLIST_GIFT_KIND_GIFT_GET, gaindate = getdate() where idx = @idx_
-				end
-			else if(@subcategory = @ITEM_SUBCATEGORY_BATTLETICKET)
-				begin
-					--select 'DEBUG 4-7 싸움티켓  -> 바로적용', @battleticket battleticket, @buyamount buyamount
-					set @plus		= isnull(@buyamount, 0)
-					set @battleticket= @battleticket + @plus
-
-					update dbo.tUserMaster
-						set
-							battleticket = @battleticket
-					where gameid = @gameid_
-
-					-- 아이템 가져간 상태로 돌려둔다.
-					update dbo.tGiftList set giftkind = @GIFTLIST_GIFT_KIND_GIFT_GET, gaindate = getdate() where idx = @idx_
-				end
-			else if(@subcategory = @ITEM_SUBCATEGORY_HEART)
-				begin
-					--select 'DEBUG 4-5-3 하트 -> 바로적용', @heart heart, @buyamount buyamount
-					set @plus		= isnull(@buyamount, 0)
-					set @heart		= @heart + @plus
-
-					update dbo.tUserMaster
-					set
-						heart = @heart
-					where gameid = @gameid_
-
-					-- 아이템 가져간 상태로 돌려둔다.
-					update dbo.tGiftList set giftkind = @GIFTLIST_GIFT_KIND_GIFT_GET, gaindate = getdate() where idx = @idx_
-				end
-			else if(@subcategory = @ITEM_SUBCATEGORY_FEED)
-				begin
-					-- 맥스 초과되더라더 초과해서 들어간다.
-					--select 'DEBUG 4-5-4 건초 -> 바로적용', @feed feed, @buyamount buyamount
-					set @plus		= isnull(@buyamount, 0)
-					set @feed		= @feed + @plus
-
-					update dbo.tUserMaster
-					set
-						feed = @feed
 					where gameid = @gameid_
 
 					-- 아이템 가져간 상태로 돌려둔다.
@@ -1074,9 +706,7 @@ Begin
 	------------------------------------------------
 	set nocount off
 
-	select @nResult_ rtn, @comment comment, @cashcost cashcost, @gamecost gamecost, @heart heart, @feed feed, @fpoint fpoint, @goldticket goldticket, @battleticket battleticket,
-		   @boxslotidx boxslotidx, @boxslottime boxslottime, @cashpoint cashpoint,
-		   @boxslot1 boxslot1, @boxslot2 boxslot2, @boxslot3 boxslot3, @boxslot4 boxslot4
+	select @nResult_ rtn, @comment comment, @cashcost cashcost
 
 	if(@nResult_ = @RESULT_SUCCESS)
 		begin

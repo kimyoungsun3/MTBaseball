@@ -20,8 +20,8 @@ as
 Begin
 	set nocount on
 
-	insert into dbo.tMessageAdmin(adminid, gameid, comment)
-	values(@adminid_, @gameid_, @comment_)
+	insert into dbo.tMessageAdmin(adminid,   gameid,   comment)
+	values(                      @adminid_, @gameid_, @comment_)
 
 	set nocount off
 End
