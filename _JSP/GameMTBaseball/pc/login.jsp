@@ -19,8 +19,8 @@
 	//1-2. 데이타 받기
 	String gameid 		= util.getParamStr(request, "gameid", "gameid");
 	String password 	= util.getParamStr(request, "password", "password");
-	String market		= util.getParamStr(request, "market", "1");
 	String version 		= util.getParamStr(request, "version", "100");
+	String connectip	= util.getParamStr(request, "connectip", "1");
 	/////////////////////////////////////////////////////////////////////
 	//		파라미터 받기
 	/////////////////////////////////////////////////////////////////////
@@ -28,21 +28,21 @@
 		DEBUG_LOG_STR.append(this);
 		DEBUG_LOG_STR.append("\r\n gameid=" 	+ gameid);
 		DEBUG_LOG_STR.append("\r\n password=" 	+ password);
-		DEBUG_LOG_STR.append("\r\n market=" 	+ market);
 		DEBUG_LOG_STR.append("\r\n version=" 	+ version);
+		DEBUG_LOG_STR.append("\r\n connectip=" 	+ connectip);
 		System.out.println(DEBUG_LOG_STR.toString());
 	}
 	/////////////////////////////////////////////////////////////////////
 
 	try{
 		//2. 데이타 조작
-		//exec spu_Login 'xxxx2', '049000s1i0n7t8445289', 1, 101, '', '', -1			-- 정상유저
-		query.append("{ call dbo.spu_Login (?, ?, ?, ?, ?, ?, ?)} ");
+		//exec spu_Login 'mtxxxx3', '049000s1i0n7t8445289', 100, '192.168.0.8', -1	-- 정상유저
+		query.append("{ call dbo.spu_Login (?, ?, ?, ?, ?)} ");
 		cstmt = conn.prepareCall(query.toString());
 		cstmt.setString(idx++, gameid);
 		cstmt.setString(idx++, password);
-		cstmt.setString(idx++, market);
 		cstmt.setString(idx++, version);
+		cstmt.setString(idx++, connectip);
 		cstmt.registerOutParameter(idx++, Types.INTEGER);
 
 		//2-2. 스토어즈 프로시져 실행하기
@@ -71,17 +71,35 @@
 					msg.append("	<userinfo>\n");
 
 					//유저기본정보
+					msg.append("		<curdate>");		msg.append(result.getString("curdate"));		msg.append("</curdate>\n");
 					msg.append("		<cashcost>");		msg.append(result.getString("cashcost"));    	msg.append("</cashcost>\n");
-					msg.append("		<tutorial>");		msg.append(result.getString("tutorial"));   	msg.append("</tutorial>\n");
-					msg.append("		<tutostep>");		msg.append(result.getString("tutostep"));   	msg.append("</tutostep>\n");
 					msg.append("		<sid>");			msg.append(result.getString("sid"));			msg.append("</sid>\n");
+					msg.append("		<level>");			msg.append(result.getString("level"));			msg.append("</level>\n");
+					msg.append("		<exp>");			msg.append(result.getString("exp"));			msg.append("</exp>\n");
+					msg.append("		<commission>");		msg.append(result.getString("commission"));		msg.append("</commission>\n");
+					msg.append("		<tutorial>");		msg.append(result.getString("tutorial"));		msg.append("</tutorial>\n");
+					
+					//개인정보.
+					msg.append("		<username>");		msg.append(result.getString("username"));		msg.append("</username>\n");
+					msg.append("		<birthday>");		msg.append(result.getString("birthday"));		msg.append("</birthday>\n");
+					msg.append("		<email>");			msg.append(result.getString("email"));			msg.append("</email>\n");
+					msg.append("		<nickname>");		msg.append(result.getString("nickname"));		msg.append("</nickname>\n");
+					msg.append("		<phone>");			msg.append(result.getString("phone"));			msg.append("</phone>\n");
 
-					//게임정보(소모)
-					msg.append("		<bulletlistidx>");	msg.append(result.getString("bulletlistidx"));  msg.append("</bulletlistidx>\n");
-					msg.append("		<vaccinelistidx>");	msg.append(result.getString("vaccinelistidx")); msg.append("</vaccinelistidx>\n");
-					msg.append("		<boosterlistidx>");	msg.append(result.getString("boosterlistidx")); msg.append("</boosterlistidx>\n");
-					msg.append("		<albalistidx>");	msg.append(result.getString("albalistidx"));   	msg.append("</albalistidx>\n");
-
+					//(게임변수 : 착용아이템 인덱스리스트)
+					msg.append("		<helmetlistidx>");	msg.append(result.getString("helmetlistidx"));	msg.append("</helmetlistidx>\n");
+					msg.append("		<shirtlistidx>");	msg.append(result.getString("shirtlistidx"));	msg.append("</shirtlistidx>\n");
+					msg.append("		<pantslistidx>");	msg.append(result.getString("pantslistidx"));	msg.append("</pantslistidx>\n");
+					msg.append("		<gloveslistidx>");	msg.append(result.getString("gloveslistidx"));	msg.append("</gloveslistidx>\n");
+					msg.append("		<shoeslistidx>");	msg.append(result.getString("shoeslistidx"));	msg.append("</shoeslistidx>\n");
+					msg.append("		<batlistidx>");		msg.append(result.getString("batlistidx"));		msg.append("</batlistidx>\n");
+					msg.append("		<balllistidx>");	msg.append(result.getString("balllistidx"));	msg.append("</balllistidx>\n");
+					msg.append("		<gogglelistidx>");	msg.append(result.getString("gogglelistidx"));	msg.append("</gogglelistidx>\n");
+					msg.append("		<wristbandlistidx>");msg.append(result.getString("wristbandlistidx"));msg.append("</wristbandlistidx>\n");
+					msg.append("		<elbowpadlistidx>");msg.append(result.getString("elbowpadlistidx"));msg.append("</elbowpadlistidx>\n");
+					msg.append("		<beltlistidx>");	msg.append(result.getString("beltlistidx"));	msg.append("</beltlistidx>\n");
+					msg.append("		<kneepadlistidx>");	msg.append(result.getString("kneepadlistidx"));	msg.append("</kneepadlistidx>\n");
+					msg.append("		<sockslistidx>");	msg.append(result.getString("sockslistidx"));	msg.append("</sockslistidx>\n");
 
 					//클라이언트정보저장.
 					msg.append("		<param0>");			msg.append(result.getString("param0"));   		msg.append("</param0>\n");
@@ -129,7 +147,28 @@
 					msg.append("	</giftitem>\n");
 				}
 			}
-
+			
+			//2-3-2. 공지사항 받기(1개)
+			if(cstmt.getMoreResults()){
+				result = cstmt.getResultSet();
+				if(result.next()){
+					msg.append("	<notice>\n");
+					msg.append("		<comfile>");		msg.append((result.getString("comfile")));   				msg.append("</comfile>\n");
+					msg.append("		<comurl>");			msg.append((result.getString("comurl")));   				msg.append("</comurl>\n");
+					msg.append("		<comfile2>");		msg.append((result.getString("comfile2")));   				msg.append("</comfile2>\n");
+					msg.append("		<comurl2>");		msg.append((result.getString("comurl2")));   				msg.append("</comurl2>\n");
+					msg.append("		<comfile3>");		msg.append((result.getString("comfile3")));   				msg.append("</comfile3>\n");
+					msg.append("		<comurl3>");		msg.append((result.getString("comurl3")));   				msg.append("</comurl3>\n");
+					msg.append("		<comfile4>");		msg.append((result.getString("comfile4")));   				msg.append("</comfile4>\n");
+					msg.append("		<comurl4>");		msg.append((result.getString("comurl4")));   				msg.append("</comurl4>\n");
+					msg.append("		<comfile5>");		msg.append((result.getString("comfile5")));   				msg.append("</comfile5>\n");
+					msg.append("		<comurl5>");		msg.append((result.getString("comurl5")));   				msg.append("</comurl5>\n");
+	
+					msg.append("		<comment>");		msg.append((result.getString("comment")));   				msg.append("</comment>\n");
+					msg.append("		<patchurl>");		msg.append((result.getString("patchurl")));   				msg.append("</patchurl>\n");
+					msg.append("	</notice>\n");
+				}
+			}
 		}
 	    msg.append("</rows>\n");
 	}catch(Exception e){
@@ -139,7 +178,7 @@
 		DEBUG_LOG_STR.append(this);
 		DEBUG_LOG_STR.append("\r\n gameid=" 	+ gameid);
 		DEBUG_LOG_STR.append("\r\n password=" 	+ password);
-		DEBUG_LOG_STR.append("\r\n market=" 	+ market);
+		DEBUG_LOG_STR.append("\r\n connectip=" 	+ connectip);
 		DEBUG_LOG_STR.append("\r\n version=" 	+ version);
 		System.out.println(DEBUG_LOG_STR.toString());
 	}

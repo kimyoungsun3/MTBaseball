@@ -1,28 +1,18 @@
 /*
-select * from dbo.tUserMaster where gameid = 'xxxx'
-exec spu_Login 'xxxx', '049000s1i0n7t8445289', 101, '', -1, -1				-- 정상유저
-exec spu_Login 'xxxx', '049000s1i0n7t8445288', 1, 101, '', -1, -1			-- 비번틀림
-exec spu_Login 'xxxx0', '049000s1i0n7t8445289', 1, 101, '', -1, -1			-- 없는유저
-exec spu_Login 'xxxx', '049000s1i0n7t8445289', 1, 100, '',  -1, -1			-- 마켓버젼낮음
-exec spu_Login 'xxxx3', '049000s1i0n7t8445289', 1, 101, '', -1, -1			-- 블럭유저
-exec spu_Login 'xxxx4', '049000s1i0n7t8445289', 1, 101, '', -1, -1			-- 삭제유저
-update dbo.tUserMaster set cashcopy = 3 where gameid = 'xxxx5'		-- 캐쉬카피 > 블럭처리
-exec spu_Login 'xxxx5', '049000s1i0n7t8445289', 1, 101, '', -1,  -1
-update dbo.tUserMaster set resultcopy = 100 where gameid = 'xxxx6'	-- 결과키피 > 블럭처리
-exec spu_Login 'xxxx7', '049000s1i0n7t8445289', 1, 101, '', -1, -1
+exec spu_Login 'mtxxxx3', '049000s1i0n7t8445289', 100, '192.168.0.8', -1	-- 정상유저
+exec spu_Login 'xxxx', '049000s1i0n7t8445288', 100, '192.168.0.8', -1		-- 비번틀림
+exec spu_Login 'xxxx0','049000s1i0n7t8445289', 100, '192.168.0.8', -1		-- 없는유저
+exec spu_Login 'xxxx', '049000s1i0n7t8445289',  99, '192.168.0.8', -1		-- 마켓버젼낮음
+exec spu_Login 'xxxx3','049000s1i0n7t8445289', 100, '192.168.0.8', -1		-- 블럭유저
+update dbo.tUserMaster set cashcopy = 3 where gameid = 'xxxx5'				-- 캐쉬카피 > 블럭처리
+exec spu_Login 'xxxx5', '049000s1i0n7t8445289', 100, '192.168.0.8', -1
+update dbo.tUserMaster set resultcopy = 100 where gameid = 'xxxx6'			-- 결과키피 > 블럭처리
+exec spu_Login 'xxxx6', '049000s1i0n7t8445289', 100, '192.168.0.8', -1
 
-exec spu_Login 'xxxx', '049000s1i0n7t8445289', 1, 199, '', -1, -1			-- 정상유저
-exec spu_Login 'xxxx2', '049000s1i0n7t8445289', 5, 119, '', -1, -1			-- 정상유저
-exec spu_Login 'xxxx3', '049000s1i0n7t8445289', 1, 199, '', -1, -1			-- 정상유저
-exec spu_Login 'xxxx6', '049000s1i0n7t8445289', 1, 199, '', -1, -1			-- 정상유저
-
-update dbo.tUserMaster set attenddate = getdate() - 20 where gameid = 'xxxx2'
-delete from dbo.tGiftList where gameid = 'xxxx2'
-exec spu_Login 'xxxx2', '049000s1i0n7t8445289', 1, 110, '', -1, -1			-- 정상유저
-
-update dbo.tUserMaster set attenddate = getdate() - 1 where gameid = 'xxxx2'
-exec spu_Login 'xxxx2', '049000s1i0n7t8445289', 1, 103, '', -1, -1			-- 정상유저
-
+exec spu_Login 'xxxx', '049000s1i0n7t8445289', 199, '192.168.0.8', -1		-- 정상유저
+exec spu_Login 'xxxx2', '049000s1i0n7t8445289',119, '192.168.0.8', -1		-- 정상유저
+exec spu_Login 'xxxx3', '049000s1i0n7t8445289',199, '192.168.0.8', -1		-- 정상유저
+exec spu_Login 'xxxx6', '049000s1i0n7t8445289',199, '192.168.0.8', -1		-- 정상유저
 */
 use GameMTBaseball
 Go
@@ -38,9 +28,9 @@ create procedure dbo.spu_Login
 	@gameid_								varchar(20),					-- 게임아이디
 	@password_								varchar(20),					-- 암호화해서저장, 유저패스워가 해킹당해도 안전
 	@version_								int,							-- 클라버젼
-	@connectip_								int,							-- 접속 IP
+	@connectip_								varchar(60),					-- 접속 IP
 	@nResult_								int					OUTPUT
-	--WITH ENCRYPTION -- 프로시져를 암호화함.
+	WITH ENCRYPTION -- 프로시져를 암호화함.
 as
 	------------------------------------------------
 	--	2-1. 코드값자리
@@ -74,32 +64,26 @@ as
 	declare @USERITEM_INVENKIND_WEAR			int 				set @USERITEM_INVENKIND_WEAR				= 1
 	declare @USERITEM_INVENKIND_PIECE			int 				set @USERITEM_INVENKIND_PIECE				= 2
 	declare @USERITEM_INVENKIND_CONSUME			int 				set @USERITEM_INVENKIND_CONSUME				= 3
-	declare @USERITEM_INVENKIND_NON				int 				set @USERITEM_INVENKIND_NON					= 0
-	declare @USERITEM_INVENKIND_INFO			int 				set @USERITEM_INVENKIND_INFO				= 60
-
 
 	------------------------------------------------
 	--	2-1. 내부사용 변수
 	------------------------------------------------
 	declare @comment				varchar(512)			set @comment		= '로그인'
-	declare @gameid 				varchar(20)
-	declare @password 				varchar(20)
+	declare @gameid					varchar(20)				set @gameid			= ''
+	declare @password				varchar(20)				set @password		= ''
 	declare @blockstate				int
 	declare @cashcopy				int
 	declare @resultcopy				int
-	declare @cashcost				int
-
 	declare @version				int						set @version		= 100
-
 
 	declare @curversion				int						set @curversion		= -1
 	declare @cursyscheck			int
 
 	-- 일반변수값
-	declare @dw						int
 	declare @logindate				varchar(8)				set @logindate		= '20100101'
-	declare @dateid10 				varchar(10) 			set @dateid10 		= Convert(varchar(8), Getdate(),112) + Convert(varchar(2), Getdate(), 108)
+	--declare @dateid10 			varchar(10) 			set @dateid10 		= Convert(varchar(8), Getdate(),112) + Convert(varchar(2), Getdate(), 108)
 	declare @dateid8 				varchar(8) 				set @dateid8 		= Convert(varchar(8), Getdate(),112)
+	declare @curdate				datetime				set @curdate		= getdate()
 	declare @rand					int
 
 
@@ -109,7 +93,7 @@ Begin
 	------------------------------------------------
 	set nocount on
 	set @nResult_ = @RESULT_ERROR
-	select 'DEBUG 입력정보', @gameid_ gameid_, @password_ password_, @version_ version_, @connectip_ connectip_
+	--select 'DEBUG 입력정보', @gameid_ gameid_, @password_ password_, @version_ version_, @connectip_ connectip_
 
 	------------------------------------------------
 	--	3-2. 연산수행
@@ -118,58 +102,49 @@ Begin
 		@gameid 		= gameid,			@password		= password,
 		@blockstate 	= blockstate,
 		@cashcopy 		= cashcopy, 		@resultcopy 	= resultcopy,
-		@cashcost 		= cashcost,
 		@logindate		= logindate
 	from dbo.tUserMaster
 	where gameid = @gameid_
-	select 'DEBUG 유저정보', @gameid gameid, @password password, @blockstate blockstate, @cashcopy cashcopy, @resultcopy resultcopy, @cashcost cashcost, @logindate logindate
+	--select 'DEBUG 유저정보', @gameid gameid, @password password, @blockstate blockstate, @cashcopy cashcopy, @resultcopy resultcopy, @logindate logindate
 
 	------------------------------------------------
 	--	3-3. 공지사항 체크
 	------------------------------------------------
 	select top 1 @cursyscheck = syscheck, @curversion = version from dbo.tNotice
 	order by idx desc
-	select 'DEBUG 공지사항', @cursyscheck cursyscheck, @curversion curversion
+	--select 'DEBUG 공지사항', @cursyscheck cursyscheck, @curversion curversion
 
 	if(@cursyscheck = @SYSCHECK_YES)
 		BEGIN
 			set @nResult_ 	= @RESULT_ERROR_SERVER_CHECKING
 			set @comment 	= 'DEBUG 시스템 점검중입니다.'
-			select 'DEBUG ', @comment
+			--select 'DEBUG ', @comment
 		END
-	else if(isnull(@gameid, '') = '')
+	else if(@gameid = '' or @password != @password_)
 		BEGIN
-			-- 아이디가 존재하지않는가??
 			set @nResult_ 	= @RESULT_ERROR_NOT_FOUND_GAMEID
 			set @comment 	= '아이디가 존재하지 않는다. > 아이디를 확인해라.'
-			select 'DEBUG ', @comment
-		END
-	else if(isnull(@password, '') = '' or @password != @password_)
-		BEGIN
-			-- 아이디 & 패스워드 존재하지않는가??
-			set @nResult_ 	= @RESULT_ERROR_NOT_FOUND_PASSWORD
-			set @comment 	= '패스워드 틀렸다. > 패스워드 확인해라'
-			select 'DEBUG ', @comment
+			--select 'DEBUG ', @comment
 		END
 	else if(@version_ < @curversion)
 		BEGIN
 			-- 마켓별 버젼이 틀리다
 			set @nResult_ 	= @RESULT_NEWVERION_CLIENT_DOWNLOAD
 			set @comment 	= '마켓별 버젼이 틀리다. > 다시받아라.'
-			select 'DEBUG ', @comment
+			--select 'DEBUG ', @comment
 		END
 	else if (@blockstate = @BLOCK_STATE_YES)
 		BEGIN
 			-- 블럭유저인가?
 			set @nResult_ 	= @RESULT_ERROR_BLOCK_USER
 			set @comment 	= '블럭처리된 아이디입니다.'
-			select 'DEBUG ', @comment
+			--select 'DEBUG ', @comment
 		END
 	else if(@cashcopy >= 2)
 		BEGIN
 			set @nResult_ 	= @RESULT_ERROR_BLOCK_USER
 			set @comment 	= '캐쉬결재카피를 '+ltrim(rtrim(str(@cashcopy)))+'회 이상했다. > 블럭처리하자!!'
-			select 'DEBUG ', @comment
+			--select 'DEBUG ', @comment
 
 			-- xx회 이상카피행동 > 블럭처리, 블럭로그기록
 			update dbo.tUserMaster
@@ -186,7 +161,7 @@ Begin
 		BEGIN
 			set @nResult_ 	= @RESULT_ERROR_BLOCK_USER
 			set @comment 	= '경기결과복제를 '+ltrim(rtrim(str(@resultcopy)))+'회이상 시도했다. > 블럭처리하자!!'
-			select 'DEBUG ', @comment
+			--select 'DEBUG ', @comment
 
 			--결과복제를 xx회 이상했다. > 블럭처리, 블럭로그기록
 			update dbo.tUserMaster
@@ -203,7 +178,7 @@ Begin
 		BEGIN
 			set @nResult_ 	= @RESULT_SUCCESS
 			set @comment 	= '로그인 정상처리'
-			select 'DEBUG ', @comment
+			--select 'DEBUG ', @comment
 		END
 
 
@@ -219,8 +194,8 @@ Begin
 			------------------------------------------------------------------
 			if(@logindate != @dateid8)
 				begin
-					exec spu_DayLogInfoStatic 14, 1               -- 일 로그인(유니크)
 					exec spu_DayLogInfoStatic 12, 1               -- 일 로그인(중복)
+					exec spu_DayLogInfoStatic 14, 1               -- 일 로그인(유니크)
 				end
 			else
 				begin
@@ -234,9 +209,10 @@ Begin
 			update dbo.tUserMaster
 				set
 					version			= @version_,
+					connectip		= @connectip_,
 					logindate		= @logindate,	-- 로그인날짜별.
 
-					sid				= sid + 1,
+					sid				= dbo.fnu_GetRandom( 100, 10000),
 
 					condate			= getdate(),	-- 최종접속일
 					concnt			= concnt + 1	-- 접속횟수 +1
@@ -245,20 +221,27 @@ Begin
 			----------------------------------------------
 			-- 유저 정보
 			---------------------------------------------
-			select * from dbo.tUserMaster where gameid = @gameid_
+			select
+				*, @curdate curdate
+			 from dbo.tUserMaster where gameid = @gameid_
 
 			--------------------------------------------------------------
 			-- 유저 보유템 전체 리스트
 			-- 동물(동물병원[최근것], 인벤, 필드, 대표), 소비템, 악세사리
 			--------------------------------------------------------------
 			select * from dbo.tUserItem
-			where gameid = @gameid_ and invenkind in (@USERITEM_INVENKIND_ANI, @USERITEM_INVENKIND_CONSUME, @USERITEM_INVENKIND_PET, @USERITEM_INVENKIND_STEMCELL, @USERITEM_INVENKIND_TREASURE )
-			order by diedate desc, invenkind, fieldidx, itemcode
+			where gameid = @gameid_ and invenkind in (@USERITEM_INVENKIND_WEAR, @USERITEM_INVENKIND_PIECE, @USERITEM_INVENKIND_CONSUME )
+			order by invenkind, itemcode
 
 			--------------------------------------------------------------
 			-- 유저 선물/쪽지(존재, 쪽지기능보유 통합)
 			--------------------------------------------------------------
 			exec spu_GiftList @gameid_
+
+			------------------------------------------------------------------
+			-- 공지사항
+			------------------------------------------------------------------
+			select top 1 * from dbo.tNotice order by idx desc
 
 		END
 

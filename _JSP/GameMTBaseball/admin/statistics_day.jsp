@@ -77,46 +77,15 @@ function f_Submit(f) {
 					%>
 						<tr>
 							<td>날짜</td>
-							<td>마켓</td>
-
-							<td>계정생성</td>
-							<td>유니크가입<br>(폰당)</td>
+							<td>유니크가입</td>
 							<td>로그인<br>(중복)</td>
 							<td>로그인<br>(비중복)</td>
-							<td bgcolor=yellow>카카오<br>초대/하트전송/도와줘</td>
 
-							<td>하트사용량</td>
-							<td>동물뽑기<br>(일/프/프10)</td>
-							<td>보물뽑기<br>(일/프/프10)</td>
-							<td>강화<br>(동물/보물하트/보물캐쉬)</td>
-							<td>합성<br>(코인/캐쉬)</td>
-							<td>승급</td>
-							<td>부활<br>(템/루비)</td>
-							<td>Push<br>(A/I)</td>
-							<td>쿠폰등록</td>
-							<td>복귀<br>요청/복귀</td>
-
-							<td>거래수/배틀/횟수구매/유저배틀</td>
-							<td>
-								캐쉬구매<br>
-								일반/생애
-							</td>
-							<td>
-								박스오픈<br>
-								시간/단축/3배
-							</td>
-							<td>
-								룰렛<br>
-								무료/캐쉬/캐무
-							</td>
-							<td>
-								짜요쿠폰조각<br>
-								무료/캐쉬
-							</td>
-							<td>
-								짜요쿠폰조각등장<br>
-								거래/박스/건초/하트
-							</td>
+							<td>조각박스 오픈</td>
+							<td>의상박스 오픈</td>
+							<td>캐쉬구매</td>
+							<td>연습모드</td>
+							<td>싱글모드</td>
 						</tr>
 
 					<%
@@ -131,78 +100,15 @@ function f_Submit(f) {
 						%>
 						<tr>
 							<td><%=_str2%></td>
-							<td><%=getTel(result.getInt("market"))%></td>
-
-							<td>
-								<!--<%=result.getString("joinplayercnt")%>-->
-								<%=result.getString("joinguestcnt")%>
-							</td>
 							<td><%=result.getString("joinukcnt")%></td>
 							<td><%=result.getString("logincnt")%></td>
 							<td><%=result.getString("logincnt2")%></td>
-							<td bgcolor=yellow>
-								<%=result.getString("invitekakao")%>
-								/ <%=result.getString("kakaoheartcnt")%>
-								/ <%=result.getString("kakaohelpcnt")%>
-							</td>
-
-
-							<td><%=result.getString("heartusecnt")%></td>
-							<td>
-								<%=result.getString("freeroulettcnt")%> / <%=result.getString("payroulettcnt")%> / <%=result.getString("payroulettcnt2")%>
-							</td>
-							<td>
-								<%=result.getString("freetreasurecnt")%> / <%=result.getString("paytreasurecnt")%> / <%=result.getString("paytreasurecnt2")%>
-							</td>
-							<td>
-								<%=result.getString("aniupgradecnt")%> / <%=result.getString("tsupgradenor")%> / <%=result.getString("tsupgradepre")%>
-							</td>
-							<td>
-								<%=result.getString("freeanicomposecnt")%>
-								/ <%=result.getString("payanicomposecnt")%>
-							</td>
-							<td>
-								<%=result.getString("anipromotecnt")%>
-							</td>
-							<td>
-								<%=result.getString("revivalcnt")%>
-								/ <%=result.getString("revivalcntcash")%>
-							</td>
-
-							<td><%=result.getString("pushandroidcnt")%> / <%=result.getString("pushiphonecnt")%> </td>
-							<td><%=result.getString("certnocnt")%></td>
-							<td><%=result.getString("rtnrequest")%>/<%=result.getString("rtnrejoin")%></td>
-
-							<td>
-								<%=result.getString("tradecnt")%> /
-								<%=result.getString("battlecnt")%> /
-								<%=result.getString("playcntbuy")%> /
-								<%=result.getString("userbattlecnt")%>
-							</td>
-							<td>
-								<%=result.getString("cashcnt")%> /
-								<%=result.getString("cashcnt2")%>
-							</td>
-							<td>
-								<%=result.getString("boxopenopen")%> /
-								<%=result.getString("boxopencash")%> /
-								<%=result.getString("boxopentriple")%>
-							</td>
-							<td>
-								<%=result.getString("wheelnor")%> /
-								<%=result.getString("wheelpre")%> /
-								<%=result.getString("wheelprefree")%>
-							</td>
-							<td>
-								<%=result.getString("zcpcntfree")%> /
-								<%=result.getString("zcpcntcash")%>
-							</td>
-							<td>
-								<%=result.getString("zcpappeartradecnt")%> /
-								<%=result.getString("zcpappearboxcnt")%> /
-								<%=result.getString("zcpappearfeedcnt")%> /
-								<%=result.getString("zcpappearheartcnt")%>
-							</td>
+							
+							<td><%=result.getString("pieceboxcnt")%></td>
+							<td><%=result.getString("clothesboxcnt")%></td>
+							<td><%=result.getString("cashcnt")%></td>
+							<td><%=result.getString("practicecnt")%></td>
+							<td><%=result.getString("singlecnt")%></td>
 						</tr>
 						<%
 							maxPage = result.getInt("maxPage");

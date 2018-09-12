@@ -92,9 +92,10 @@ function f_Submit(f) {
 					result = cstmt.executeQuery();
 					%>
 						<tr>
-							<td></td>
+							
+							<td></td>		
 							<td>아이디</td>
-							<td>listidx</td>
+							<td>listidx[idx]</td>
 							<td>이름</td>
 							<td>개수</td>
 							<td>인벤종류</td>
@@ -102,39 +103,24 @@ function f_Submit(f) {
 							<td>획득일</td>
 							<td>랜덤씨리얼</td>
 
-							<td>필드번호</td>
 							<td>단계</td>
-							<td>여물통상태</td>
-							<td>질병상태</td>
-							<td>죽음상태</td>
-							<td>머리악세</td>
-							<td>꼬리악세</td>
 							<td>업글</td>
-							<td>줄기세포(신/공/타/방/HP)</td>
 							<td>삭제순번</td>
-							<td></td>
+							<td></td>							
 						</tr>
 
 					<%while(result.next()){%>
-						<tr>
+						<tr>							
 							<td><%=result.getString("idx")%></td>
-							<td><a href=userdellog_list.jsp?gameid=<%=result.getString("gameid")%>><%=result.getString("gameid")%></a></td>
-							<td><%=result.getString("listidx")%> </td>
+							<td><a href=userdellog_list.jsp?gameid=<%=result.getString("gameid")%>><%=result.getString("gameid")%></a></td>							
+							<td><%=result.getString("listidx")%> </td>							
 							<td><%=result.getString("itemname")%>(<%=result.getString("itemcode")%>)</td>
 							<td><%=result.getString("cnt")%></td>
 							<td><%=getInvenKind(result.getInt("invenkind"))%></td>
 							<td><%=getGetHow(result.getInt("gethow"))%></td>
 							<td><%=getDate(result.getString("writedate"))%></td>
 							<td><%=result.getString("randserial")%></td>
-							<td><%=getFieldIdx(result.getInt("fieldidx"))%></td>
-							<td><%=result.getString("anistep")%></td>
-							<td><%=result.getString("manger")%></td>
-							<td><%=getDiseasestate(result.getInt("diseasestate"))%></td>
-							<td><%=getDieMode(result.getInt("diemode"))%></td>
-							<td><%=result.getString("acc1")%></td>
-							<td><%=result.getString("acc2")%></td>
-							<td><%=getStemCellUpgrade( result.getInt("invenkind"), result.getInt("upcnt"), result.getInt("upstepmax") )%></td>
-							<td><%=getStemCellInfo( result.getInt("invenkind"), result.getInt("freshstem100"), result.getInt("attstem100"), result.getInt("timestem100"), result.getInt("defstem100"), result.getInt("hpstem100") )%></td>
+							
 							<td><%=result.getString("idx2")%>(<%=getDate(result.getString("writedate2"))%>)</td>
 							<td><%=getUserItemState(result.getInt("state"))%></td>
 						</tr>

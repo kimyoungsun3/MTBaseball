@@ -1,7 +1,7 @@
 ﻿/*
 exec spu_DayLogInfoStatic 11, 1             -- 일 유니크 가입(O)
-exec spu_DayLogInfoStatic 12, 1             -- 일 로그인(O)
-exec spu_DayLogInfoStatic 13, 1             -- 일 로그인 유니크
+exec spu_DayLogInfoStatic 12, 1             -- 일 로그인(중복)
+exec spu_DayLogInfoStatic 14, 1             -- 일 로그인(유니크)
 
 exec spu_DayLogInfoStatic 21, 1				-- 일 조각박스 열기
 exec spu_DayLogInfoStatic 22, 1				-- 일 의상박스 열기
@@ -54,7 +54,6 @@ Begin
 			joinukcnt 		= joinukcnt 		+ CASE WHEN @mode_ = 11 then @cnt_ else 0 end,		-- 일 유니크 가입
 			logincnt 		= logincnt 			+ CASE WHEN @mode_ = 12 then @cnt_ else 0 end,		-- 일 로그인
 			logincnt2 		= logincnt2			+ CASE WHEN @mode_ = 14 then @cnt_ else 0 end,		-- 일 로그인(유니크)
-
 
 			pieceboxcnt 	= pieceboxcnt  		+ CASE WHEN @mode_ = 21 then @cnt_ else 0 end,		-- 일 조각박스 열기
 			clothesboxcnt 	= clothesboxcnt 	+ CASE WHEN @mode_ = 22 then @cnt_ else 0 end,		-- 일 의상박스 열기

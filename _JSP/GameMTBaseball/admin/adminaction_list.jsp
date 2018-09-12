@@ -103,7 +103,7 @@ function f_Submit(f) {
 					<%while(result.next()){%>
 							<td><%=result.getString("idx")%></td>
 							<td><a href=adminaction_list.jsp?gameid=<%=result.getString("adminid")%>><%=result.getString("adminid")%></a></td>
-							<td><%=result.getString("gameid")%></td>
+							<td><a href=userinfo_list.jsp?gameid=<%=result.getString("gameid")%>><%=result.getString("gameid")%></a></td>
 							<td><%=result.getString("comment")%></td>
 							<td><%=result.getString("writedate")%></td>
 							<%

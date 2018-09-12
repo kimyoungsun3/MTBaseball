@@ -1,32 +1,6 @@
 use GameMTBaseball
 GO
 
-
----------------------------------------------
---  관리자 정보
----------------------------------------------
-IF OBJECT_ID (N'dbo.tAdminUser', N'U') IS NOT NULL
-	DROP TABLE dbo.tAdminUser;
-GO
-
-create table dbo.tAdminUser(
-	idx				int 				IDENTITY(1, 1),
-	gameid			varchar(20),
-	password		varchar(20),
-	writedate		datetime			default(getdate()),
-	grade			int					default(0),
-
-	-- Constraint
-	CONSTRAINT	pk_tAdminUser_idx	PRIMARY KEY(gameid)
-)
-
---select * from dbo.tAdminUser
---insert into tAdminUser(gameid, password) values('blackm', 'a1s2d3f4')
-
-
--- 잘못해서 테이블을 전체 건드릴수 있어서 주석처리로 막아둔다.(전에 실수한적이 있어서)
--- 입력 < 검색(우선순위)
--- 데이타베이스 대소문자 구분안함(새로 세팅된 서버 확인필요)
 ---------------------------------------------
 --		유저정보
 ---------------------------------------------
@@ -50,6 +24,7 @@ create table dbo.tUserMaster(
 	connectip	varchar(20)				default(''),			-- 접속시 사용되는 ip
 	version		int						default(100),			-- 가입버젼.
 
+
 	--(생성정보)
 	regdate		datetime				default(getdate()),		-- 최초가입일
 	condate		datetime				default(getdate()),		-- (로그인시마다 매번업데이트)
@@ -58,6 +33,7 @@ create table dbo.tUserMaster(
 
 	-- (블럭정보)
 	blockstate	int						default(0),				-- 블럭아님(0), 블럭상태(1)
+	deletestate	int						default(0),				-- 0 : 삭제상태아님, 1 : 삭제상태
 	cashcopy	int						default(0),				-- 캐쉬불법카피시 +1추가된다.
 	resultcopy	int						default(0),				-- 로그결과카피시 +1추가된다.
 
@@ -204,6 +180,32 @@ GO
 -- select top 1 * from dbo.tUserItem where gameid = 'xxxx' and randserial = 1010
 -- update dbo.tUserItem set fieldidx = 0 where gameid = 'xxxx' and listidx = 1
 -- select * from dbo.tUserItem where gameid = 'xxxx' and category in (1, 3, 4)
+
+---------------------------------------------
+--  관리자 정보
+---------------------------------------------
+IF OBJECT_ID (N'dbo.tAdminUser', N'U') IS NOT NULL
+	DROP TABLE dbo.tAdminUser;
+GO
+
+create table dbo.tAdminUser(
+	idx				int 				IDENTITY(1, 1),
+	gameid			varchar(20),
+	password		varchar(20),
+	writedate		datetime			default(getdate()),
+	grade			int					default(0),
+
+	-- Constraint
+	CONSTRAINT	pk_tAdminUser_idx	PRIMARY KEY(gameid)
+)
+
+--select * from dbo.tAdminUser
+--insert into tAdminUser(gameid, password) values('blackm', 'a1s2d3f4')
+
+
+-- 잘못해서 테이블을 전체 건드릴수 있어서 주석처리로 막아둔다.(전에 실수한적이 있어서)
+-- 입력 < 검색(우선순위)
+-- 데이타베이스 대소문자 구분안함(새로 세팅된 서버 확인필요)
 
 ---------------------------------------------
 --		아이템 보유정보 > 동물 정보만 삭제백업
@@ -555,11 +557,11 @@ create table dbo.tDayLogInfoStatic(
 	pieceboxcnt		int				default(0),					-- 일 조각박스 열기
 	clothesboxcnt	int				default(0),					-- 일 의상박스 열기
 	cashcnt			int				default(0),					-- 일 캐쉬구매(일반
-	practicecnt		int				default(0),					--
-	singlecnt		int				default(0),					--
+	practicecnt		int				default(0),					--   연습모드횟수
+	singlecnt		int				default(0),					--   싱글모드횟수
 	multicnt		int				default(0),					--
 
-	certnocnt		int				default(0),					--
+	certnocnt		int				default(0),					--   쿠폰사용횟수
 
 	-- Constraint
 	CONSTRAINT	pk_tDayLogInfoStatic_idx	PRIMARY KEY(idx)

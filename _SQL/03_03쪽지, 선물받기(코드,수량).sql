@@ -120,6 +120,7 @@ GO
 create procedure dbo.spu_GiftGainNew
 	@gameid_				varchar(20),						-- 게임아이디
 	@password_				varchar(20),						-- 암호화해서저장, 유저패스워가 해킹당해도 안전
+	@sid_					int,
 	@giftkind_				int,								--  1:메시지
 																--  2:선물
 																-- -1:메시지삭제

@@ -59,9 +59,7 @@ function checkForm2(f) {
 	        					<td colspan=3>
 	        						<font color=red>
 	        							1. 선물만 발송이 됩니다.(쪽지와 혼동 하시지 말아주세요. )<br>
-	        							2. 특수탄 x 10발 > 특수탄 선택후 10을 입력해주세요.<br>
-	        							3. 짜요쿠폰조각(최대99), 짜요쿠폰(최대1개)까지만 선물됩니다.<br>
-	        							4. 동물, 세포, 보물을 최대수량은 1개까지만 선물됩니다.<br>
+	        							2. 템들의 수량을 발송은 1개가 기본입니다.<br>
 	        						</font>
 	        					</td>
 	        				</tr>
@@ -112,10 +110,6 @@ function checkForm2(f) {
 											[<%=getCategory(result.getInt("category"))%> / <%=getSubCategory(result.getInt("subcategory"))%>]&nbsp;&nbsp;
 
 											<%=result.getString("itemname")%>
-											<!--&nbsp;
-											(구매:<%=getPrice(result.getInt("gamecost"), result.getInt("cashcost"))%> /
-											판매:<%=result.getInt("sellcost")%>코인)&nbsp;
-											-->
 											<br>
 										</option>
 									<%}%>

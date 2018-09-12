@@ -66,7 +66,6 @@ function f_Submit2(f) {
 							<a href=sysinquire_list.jsp?stateCode=1>확인중(노랑)</a>,
 							<a href=sysinquire_list.jsp?stateCode=2>처리완료(회색)</a>,
 							<a href=sysinquire_list.jsp><img src=images/refresh2.png alt="화면갱신"></a>
-							<a href=https://play.google.com/store/apps/details?id=com.marbles.farmvill5gg target=_blank>Google Site</a>
 							<a href=sysinquire_info.txt target=_blank>문의 샘플</a>
 						</td>
 					</tr>

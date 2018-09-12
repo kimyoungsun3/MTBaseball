@@ -43,7 +43,7 @@
 --exec spu_FarmD 19, 1009, -1, -1, -1, -1,  1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''					-- 마켓 이동정보.
 --exec spu_FarmD 19, 1009, -1, -1, -1, -1,  1, -1, -1, -1, 'xxxx2', '', '', '', '', '', '', '', '', ''				--
 --exec spu_FarmD 19, 1109, -1, -1, -1, -1,  1, -1, -1, -1, 'xxxx2', '', '', '', '', '', '', '', '', ''				-- 닉네임변경.
---exec spu_FarmD 19, 1110, -1, -1, -1, -1,  1, -1, -1, -1, 'xxxx2', '', '', '', '', '', '', '', '', ''				-- 판매,합성,분해된리스트.
+
 --exec spu_FarmD 19, 10, -1, -1, -1, -1, -1, -1, -1, -1, 'dd23', 'admin', '', '', '', '', '', '', '', ''			-- 삭제처리, 기록남김
 --exec spu_FarmD 19, 1002, -1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''					-- 삭제리스트
 --exec spu_FarmD 19, 1002, -1, -1, -1, -1, -1, -1, -1, -1, 'dd23', '', '', '', '', '', '', '', '', ''				--
@@ -1979,41 +1979,6 @@ Begin
 							select top 100 @maxPage maxPage, @page page, * from dbo.tUserNickNameChange
 							where gameid = @gameid
 							order by idx desc
-						end
-				end
-			else if(@p2_ =  1110)
-				begin
-					--------------------------------------------
-					-- 상세하기
-					--------------------------------------------
-					if(isnull(@gameid, '') = '')
-						begin
-							set @idxPage	= @p7_
-							select @idx = (isnull(max(idx), 1)) from dbo.tUserItemDel
-
-
-							set @maxPage	= @idx / @PAGE_LINE
-							set @maxPage 	= @maxPage + case when (@idx % @PAGE_LINE != 0) then 1 else 0 end
-							set @page		= case
-												when (@idxPage <= 0)			then 1
-												when (@idxPage >  @maxPage)	then @maxPage
-												else @idxPage
-											end
-							set @idx		= @idx - (@page - 1) * @PAGE_LINE
-
-							select top 100 @maxPage maxPage, @page page, u.*, i.itemname from dbo.tUserItemDel
-							u join (select * from dbo.tItemInfo) i on u.itemcode = i.itemcode
-							where u.idx <= @idx order by u.idx desc
-						end
-					else
-						begin
-							set @maxPage	= 1
-							set @page		= 1
-
-							select top 100 @maxPage maxPage, @page page, u.*, i.itemname from dbo.tUserItemDel
-							u join (select * from dbo.tItemInfo) i on u.itemcode = i.itemcode
-							where gameid = @gameid
-							order by u.idx desc
 						end
 				end
 			else if(@p2_ = 10)
