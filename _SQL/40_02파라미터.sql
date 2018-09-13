@@ -1,7 +1,7 @@
 /*
-exec spu_UserParam 'xxxx2', '049000s1i0n7t8445289', 1, '0:0;1:1;2:2;3:3;4:4;5:5;6:6;7:7;8:8;9:9;', -1	-- 저장.
-exec spu_UserParam 'xxxx2', '049000s1i0n7t8445289', 1, '0:9;1:8;2:7;3:6;4:5;5:4;6:3;7:2;8:1;9:0;', -1	--
-exec spu_UserParam 'xxxx2', '049000s1i0n7t8445289', 2, '', -1											-- 읽기.
+exec spu_UserParam 'mtxxxx3', '049000s1i0n7t8445289', 1, '0:0;1:1;2:2;3:3;4:4;5:5;6:6;7:7;8:8;9:9;', -1	-- 저장.
+exec spu_UserParam 'mtxxxx3', '049000s1i0n7t8445289', 1, '0:9;1:8;2:7;3:6;4:5;5:4;6:3;7:2;8:1;9:0;', -1	--
+exec spu_UserParam 'mtxxxx3', '049000s1i0n7t8445289', 2, '', -1											-- 읽기.
 */
 use GameMTBaseball
 GO
@@ -44,13 +44,14 @@ as
 	------------------------------------------------
 	--	2-2. 상태값
 	------------------------------------------------
-	declare @MODE_SAVE							int				set @MODE_SAVE							= 1			-- 저장, 읽기모드.
-	declare @MODE_READ							int				set @MODE_READ							= 2			--
+	declare @USERPARAM_MODE_SAVE				int				set @USERPARAM_MODE_SAVE				= 1			-- 저장, 읽기모드.
+	declare @USERPARAM_MODE_READ				int				set @USERPARAM_MODE_READ				= 2			--
 
 	------------------------------------------------
 	--	2-1. 내부사용 변수
 	------------------------------------------------
-	declare @gameid 				varchar(20)		set @gameid				= ''
+	declare @gameid					varchar(20)		set @gameid			= ''
+	declare @password				varchar(20)		set @password		= ''
 	declare @comment				varchar(512)
 	declare @kind				int,
 			@info				int,
@@ -101,13 +102,13 @@ Begin
 			set @comment 	= '아이디가 존재하지 않는다.'
 			--select 'DEBUG ', @comment
 		END
-	else if(@mode_ not in (@MODE_SAVE, @MODE_READ))
+	else if(@mode_ not in (@USERPARAM_MODE_SAVE, @USERPARAM_MODE_READ))
 		BEGIN
 			set @nResult_ 	= @RESULT_ERROR_NOT_SUPPORT_MODE
 			set @comment 	= '지원하지 않는 모드입니다.'
 			--select 'DEBUG ' + @comment
 		END
-	else if(@mode_ = @MODE_SAVE and (@listset_ = '' or LEN(@listset_) < 3 or CHARINDEX(':', @listset_) < 2))
+	else if(@mode_ = @USERPARAM_MODE_SAVE and (@listset_ = '' or LEN(@listset_) < 3 or CHARINDEX(':', @listset_) < 2))
 		BEGIN
 			set @nResult_ 	= @RESULT_ERROR_NOT_ENOUGH
 			set @comment 	= '정보가 불충분합니다.'
@@ -118,7 +119,7 @@ Begin
 			set @comment 	= 'DEBUG 정상처리했습니다.'
 			--select 'DEBUG ', @comment
 
-			if(@mode_ = @MODE_SAVE)
+			if(@mode_ = @USERPARAM_MODE_SAVE)
 				begin
 					-- 1. 커서 생성
 					declare curUserInfo Cursor for

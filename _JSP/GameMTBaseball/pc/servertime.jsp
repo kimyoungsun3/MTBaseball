@@ -14,7 +14,7 @@
 	StringBuffer msg 			= new StringBuffer();
 	int resultCode				= -1;
 	StringBuffer resultMsg		= new StringBuffer();
-	int idx						= 1;
+	int idx						= 1; 
 
 	//1-2. 데이타 받기
 	String gameid 		= util.getParamStr(request, "gameid", "");
@@ -31,9 +31,10 @@
 	/////////////////////////////////////////////////////////////////////
 	try{
 		//2. 데이타 조작
-		//exec spu_FVServerTime 'xxxx2', '049000s1i0n7t8445289', -1			-- 정상유저
-		query.append("{ call dbo.spu_FVServerTime (?, ?, ?)} ");
+		//exec spu_ServerTime 'xxxx2', '049000s1i0n7t8445289', -1			-- 정상유저
+		query.append("{ call dbo.spu_ServerTime (?, ?, ?)} ");
 		cstmt = conn.prepareCall(query.toString());
+		
 		cstmt.setString(idx++, gameid);
 		cstmt.setString(idx++, password);
 		cstmt.registerOutParameter(idx++, Types.INTEGER);
