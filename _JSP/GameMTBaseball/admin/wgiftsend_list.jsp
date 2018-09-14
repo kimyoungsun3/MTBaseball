@@ -60,9 +60,7 @@ function f_Submit(f) {
 					<tr>
 						<td colspan=5>
 							<a href=wgiftsend_list.jsp><img src=images/refresh2.png alt="화면갱신"></a>
-							 캐쉬선물, 쿠폰선물, 교배지급, 퀘스트지급, 랭킹보상, 로그인보상, 출석보상, 교배하트보상, 도감보상<br>
-							 튜토리얼보상, 농장수확물, 대회보상, 상인보상, 패키지구매, 초대 보상, 친구도움, 친구도움보상<br>
-							 액세서리뽑기, 오픈이벤트, 레벨업이벤트, 어린이날보상, 석가탄신보상<br>
+							 캐쉬선물, 박스, 의상, 조각등등 선물<br>
 						</td>
 					</td>
 				</table>
@@ -140,7 +138,7 @@ function f_Submit(f) {
 								<!--
 								<td>
 									<%if(result.getInt("gainstate") == 0){%>
-										<a href=/Game4/hlskt/giftgain.jsp?idx=<%=result.getString("idxt")%>>선물강제받기</a>
+										<a href=/pc/giftgain.jsp?idx=<%=result.getString("idxt")%>>선물강제받기</a>
 									<%}else{%>
 										<%=getGainState(result.getInt("gainstate"))%>
 									<%}%>

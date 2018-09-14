@@ -257,7 +257,7 @@ function f_Submit(f) {
 								<td><%=result.getString("listidx")%></td>
 								<td><%=result.getString("itemname")%>(<%=result.getString("itemcode")%>)</td>
 								<td>
-									<%if(result.getInt("invenkind") == 3){%>
+									<%if(getInvenKindCountDisplay(result.getInt("invenkind"))){%>
 										<a href=userminus_form2.jsp?p1=19&p2=71&p3=<%=result.getString("listidx")%>&p4=<%=result.getString("cnt")%>&gameid=<%=result.getString("gameid")%>>
 											<%=result.getString("cnt")%>
 										</a>

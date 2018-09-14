@@ -73,29 +73,40 @@
 			listset=xxx				<br>
 		</td>
 	</tr>
-	<%/*%>		
-	<!--
 	<tr>
 		<td>
 			giftgain.jsp
 		</td>
 		<td>
-			<a href=giftgain.jsp?gameid=xxxx6&password=049000s1i0n7t8445289&giftkind=-1&idx=75&listidx=-1&fieldidx=-1&quickkind=-1>쪽지받기</a><br>
-			<a href=giftgain.jsp?gameid=xxxx6&password=049000s1i0n7t8445289&giftkind=-3&idx=60&listidx=-1&fieldidx=-1&quickkind=-1>소받기</a><br>
-			<a href=giftgain.jsp?gameid=xxxx6&password=049000s1i0n7t8445289&giftkind=-3&idx=61&listidx=-1&fieldidx=0&quickkind=-1>양(자리지정)</a><br>
-			<a href=giftgain.jsp?gameid=xxxx6&password=049000s1i0n7t8445289&giftkind=-3&idx=69&listidx=-1&fieldidx=-1&quickkind=-1>악세받기</a><br>
-			<a href=giftgain.jsp?gameid=xxxx6&password=049000s1i0n7t8445289&giftkind=-3&idx=63&listidx=-1&fieldidx=-1&quickkind=-1>총알받기</a><br>
-			<a href=giftgain.jsp?gameid=xxxx6&password=049000s1i0n7t8445289&giftkind=-3&idx=63&listidx=24&fieldidx=-1&quickkind=1>총알받기(누적, 링크번호 확인요)</a><br>
-			<a href=giftgain.jsp?gameid=xxxx6&password=049000s1i0n7t8445289&giftkind=-3&idx=70&listidx=-1&fieldidx=-1&quickkind=-1>하트받기</a><br>
-			<a href=giftgain.jsp?gameid=xxxx6&password=049000s1i0n7t8445289&giftkind=-3&idx=74&listidx=-1&fieldidx=-1&quickkind=-1>대회티켓B받기</a><br>
-			<a href=giftgain.jsp?gameid=xxxx6&password=049000s1i0n7t8445289&giftkind=-5&idx=-1&listidx=-1&fieldidx=-1&quickkind=-1>리스트보기</a><br>
+			<a href=giftgain.jsp?gameid=xxxx2&password=049000s1i0n7t8445289&sid=333&giftkind=-1&idx=1>쪽지받기(삭제)</a><br>
+			<a href=giftgain.jsp?gameid=xxxx2&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=2>나무헬멧</a><br>
+			<a href=giftgain.jsp?gameid=xxxx2&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=3>나무 헬멧 조각A</a><br>
+			<a href=giftgain.jsp?gameid=xxxx2&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=4>나무 조각 랜덤박스</a><br>
+			<a href=giftgain.jsp?gameid=xxxx2&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=5>나무 의상 랜덤박스</a><br>
+			<a href=giftgain.jsp?gameid=xxxx2&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=6>조언 패키지 박스</a><br>
+			<a href=giftgain.jsp?gameid=xxxx2&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=7>조합 주문서</a><br>
+			<a href=giftgain.jsp?gameid=xxxx2&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=8>초월 주문서</a><br>
+			<a href=giftgain.jsp?gameid=xxxx2&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=9>응원의 소리</a><br>
+			<a href=giftgain.jsp?gameid=xxxx2&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=10>코치의 조언 주문서</a><br>
+			<a href=giftgain.jsp?gameid=xxxx2&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=11>감독의 조언 주문서</a><br>
+			<a href=giftgain.jsp?gameid=xxxx2&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=12>다이아 (5000 / 11개)</a><br>
+			<a href=giftgain.jsp?gameid=xxxx2&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=13>다이아 (5001 / 100개)</a><br>
+			<a href=giftgain.jsp?gameid=xxxx2&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=14>다이아 (5002 / 1000개)</a><br>
+			<a href=giftgain.jsp?gameid=xxxx2&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=15>다이아 (5003 / 2500개)</a><br>
+			<a href=giftgain.jsp?gameid=xxxx2&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=16>다이아 (5004 / 4000개)</a><br>
+			<a href=giftgain.jsp?gameid=xxxx2&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=17>다이아 (5005 / 10000)</a><br>
+			<a href=giftgain.jsp?gameid=xxxx2&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=18>다이아 (5005 / 20000)</a>
 		</td>
 		<td>
-			gameid=mtxxxx3           	<br>
-			password=				<br>
-			idx=45
+			gameid=xxxx3           	<br>
+			password=xxx			<br>
+			sid=xxxx(로그인에 할당받은)	<br>
+			giftkind=xxxx			<br>
+			idx=xxx(선물인덱스)			<br>
 		</td>
 	</tr>
+	<%/*%>		
+	<!--
 	<tr>
 		<td>
 			itembuy.jsp

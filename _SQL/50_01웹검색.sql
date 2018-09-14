@@ -48,6 +48,8 @@
 --exec spu_GameMTBaseballD 19,2000, 23, -1, -1, -1, -1, -1, -1, -1, 'xxxx', 'admin', '', '', '', '', '', '', '', ''				-- 블럭처리(일괄핸드폰 > 관련계정모두)
 --exec spu_GameMTBaseballD 19,2000, 24, -1, -1, -1, -1, -1, -1, -1, 'xxxx', 'admin', '192.168.0.1', '', '', '', '', '', '', ''	-- 블럭해제
 --exec spu_GameMTBaseballD 19,1110, -1, -1, -1, -1,  1, -1, -1, -1, 'xxxx2', '', '', '', '', '', '', '', '', ''					-- 판매,합성,분해된리스트.
+--exec spu_GameMTBaseballD 19, 71,  7,  6, -1, -1, -1, -1, -1, -1, 'xxxx', 'admin', '', '', '', '', '', '', '', ''				-- 소모템 개수변경(공포탄 5 -> 6)
+--exec spu_GameMTBaseballD 19, 31, 12, -1, -1, -1, -1, -1, -1, -1, 'xxxx', '', '', '', '', '', '', '', '', ''					-- 유저보유템 삭제
 
 
 
@@ -65,9 +67,7 @@
 --exec spu_GameMTBaseballD 19, 21, -1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''						-- 블럭폰리스트
 --exec spu_GameMTBaseballD 19, 22, -1, -1, -1, -1, -1, -1, -1, -1, '', '', '01022223333', '', '', '', '', '', '', 'msg'			-- 블럭폰등록
 --exec spu_GameMTBaseballD 19, 23, -1, -1, -1, -1, -1, -1, -1, -1, '', '', '01022223333', '', '', '', '', '', '', ''			-- 블럭폰삭제
---exec spu_GameMTBaseballD 19, 31, 12, -1, -1, -1, -1, -1, -1, -1, 'xxxx', '', '', '', '', '', '', '', '', ''					-- 유저보유템 삭제
 --exec spu_GameMTBaseballD 19, 65,  5,  1, -1, -1, -1, -1, -1, -1, 'xxxx', 'admin', '', '', '', '', '', '', '', ''				--      레벨
---exec spu_GameMTBaseballD 19, 71,  7,  6, -1, -1, -1, -1, -1, -1, 'xxxx', 'admin', '', '', '', '', '', '', '', ''				-- 소모템 개수변경(공포탄 5 -> 6)
 --exec spu_GameMTBaseballD 19, 98,  1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''						-- 유저통계마스터.
 --exec spu_GameMTBaseballD 19, 98,  2, -1, -1, -1, -1, -1, -1, -1, '', '', '20140404', '', '', '', '', '', '', ''				--         레벨분포, 레벨통신사.
 --exec spu_GameMTBaseballD 19, 98,  3, -1, -1, -1, -1, -1, -1, -1, '', '', '201404', '', '', '', '', '', '', ''					--         레벨분포.
@@ -1070,6 +1070,32 @@ Begin
 							where idx = @p3_
 						end
 					select 1 rtn
+				end
+			else if(@p2_ =  71)
+				begin
+					-- 소모템 개수변경
+					if(@p4_ < 0)
+						begin
+							set @p4_ = 0
+						end
+					else if(@p4_ >= 99999)
+						begin
+							set @p4_ = 99999
+						end
+
+					update dbo.tUserItem
+						set
+							@itemcode 	= itemcode,
+							@cnt2		= cnt,
+							@cnt3 		= @p4_,
+							cnt 		= @p4_
+					where gameid = @gameid and listidx = @p3_
+
+					--메세지 기록하기.
+					set @comment = dbo.fnu_GetMessageInt('관리자가(#1)이 (#2)에게 아이템(#3:#4 -> #5) 수량변경했습니다.', @adminid, @gameid, @itemcode, @cnt2, @cnt3)
+					exec spu_AdminActionBlock @adminid, @gameid, @comment
+
+					select @RESULT_SUCCESS 'rtn'
 				end
 			else if(@p2_ =  1007)
 				begin
