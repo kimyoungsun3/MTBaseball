@@ -434,7 +434,8 @@ Begin
 					-- 아이템을 직접 넣어줌
 					update dbo.tUserMaster
 					set
-						cashcost = @cashcost
+						cashcost = @cashcost,
+						cashreceivetotal = cashreceivetotal + @plus
 					where gameid = @gameid_
 
 					-- 아이템 가져간 상태로 돌려둔다.

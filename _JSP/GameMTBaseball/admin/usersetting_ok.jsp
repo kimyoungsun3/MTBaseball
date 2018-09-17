@@ -121,6 +121,10 @@
 		}
 	}else if(resultCode == -1){
 		out.print("<script language='javascript'>alert('정보가 부정확합니다.'); history.back(-1);</script>");
+	}else if(resultCode == -13){
+		out.print("<script language='javascript'>alert('계정 정보가 존재하지 않습니다.'); history.back(-1);</script>");
+	}else if(resultCode == -201){
+		out.print("<script language='javascript'>alert('ip가 중복입니다.'); history.back(-1);</script>");
 	}
 	/**/
 %>

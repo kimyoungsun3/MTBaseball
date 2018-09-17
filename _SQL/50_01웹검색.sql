@@ -83,8 +83,18 @@
 --exec spu_GameMTBaseballD 19, 404,-1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''						-- 유저 뽑기 광고리스트
 
 
---공지사항작성(20)
--- 다른데로 이동
+--@공지사항작성(20)
+--exec spu_GameMTBaseballD 20, 21, 1,  1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''			-- 문의글 읽기.
+--exec spu_GameMTBaseballD 20, 21, 1,  1, -1, -1, -1, -1, -1, -1, 'xxxx2', '', '', '', '', '', '', '', '', ''		--        계정.
+--exec spu_GameMTBaseballD 20, 21, 1,  1,  1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''			--		  상태.
+--exec spu_GameMTBaseballD 20, 21, 2,  1, 20,  2,  1, -1, -1, -1, '', 'adminid', '', '', '', '', '', '', '', ''		--      상태변경, 코멘트추가(유저에게 쪽지발송가능).
+--exec spu_GameMTBaseballD 20, 21, 2,  1, 20,  2,  1, -1, -1, -1, '', 'adminid', '', '', '', '', '', '', '', ''		--      상태변경, 코멘트추가(유저에게 쪽지발송가능).
+
+--exec spu_GameMTBaseballD 20, 22, 1,  1, -1, -1, -1, -1, -1, -1, 'xxxx', '', '', '', '', '', '', '', '', ''		-- PC방 정보 읽기.
+--exec spu_GameMTBaseballD 20, 22, 1,  1,  1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''			--
+--exec spu_GameMTBaseballD 20, 22, 2,  1, -1, -1, -1, -1, -1, -1, 'xxxx', 'adminid', '127.0.0.1', '', '', '', '', '', '', ''--      등록.
+--exec spu_GameMTBaseballD 20, 22, 2,  2,  1, -1, -1, -1, -1, -1, 'xxxx', 'adminid', '127.0.0.1', '', '', '', '', '', '', ''--      수정.
+--exec spu_GameMTBaseballD 20, 22, 2,  3,  1, -1, -1, -1, -1, -1, 'xxxx', 'adminid', '127.0.0.1', '', '', '', '', '', '', ''--      삭제.
 
 
 --@통계자료(21)
@@ -234,7 +244,8 @@ as
 	declare @RESULT_SUCCESS						int				set @RESULT_SUCCESS						=  1
 	declare @RESULT_ERROR						int				set @RESULT_ERROR						= -1
 	declare @RESULT_ERROR_NOT_FOUND_GAMEID		int				set @RESULT_ERROR_NOT_FOUND_GAMEID		= -13	--해당유저를 찾지 못함
-	declare @RESULT_ERROR_NOT_FOUND_ITEMCODE	int				set @RESULT_ERROR_NOT_FOUND_ITEMCODE	= -50	-- 아이템코드못찾음
+	declare @RESULT_ERROR_NOT_FOUND_ITEMCODE	int				set @RESULT_ERROR_NOT_FOUND_ITEMCODE	= -50	-- 아이템코드못
+	declare @RESULT_ERROR_DOUBLE_IP				int				set @RESULT_ERROR_DOUBLE_IP				= -201	-- IP중복...찾음
 
 	------------------------------------------------
 	--	프로시져 종류
@@ -684,9 +695,94 @@ Begin
 												end
 										end
 								end
-
-
 							select @RESULT_SUCCESS 'rtn'
+						end
+				end
+
+			else if(@subkind = 22)
+				begin
+					if(@p3_ = 1)
+						begin
+							if(@ps1_ != '')
+								begin
+									set @maxPage	= 1
+									set @page		= 1
+
+									select top 100 @maxPage maxPage, @page page, * from dbo.tPCRoomIP
+									where gameid = @ps1_ order by idx desc
+								end
+							else
+								begin
+									-- 읽기.
+									set @idxPage	= @p4_
+									select @idx = (isnull(max(idx), 1)) from dbo.tPCRoomIP
+
+									set @maxPage	= @idx / @PAGE_LINE
+									set @maxPage 	= @maxPage + case when (@idx % @PAGE_LINE != 0) then 1 else 0 end
+									set @page		= case
+														when (@idxPage <= 0)			then 1
+														when (@idxPage >  @maxPage)	then @maxPage
+														else @idxPage
+													end
+									set @idx		= @idx - (@page - 1) * @PAGE_LINE
+
+									select top 100 @maxPage maxPage, @page page, * from dbo.tPCRoomIP
+									where idx <= @idx order by idx desc
+								end
+						end
+					else if(@p3_ = 2)
+						begin
+							-- 입력.
+							if(@p4_ = 1)
+								begin
+									if(not exists(select top 1   * from dbo.tUserMaster where gameid = @ps1_))
+										begin
+											select @RESULT_ERROR_NOT_FOUND_GAMEID 'rtn'
+										end
+									else if(exists(select top 1   * from dbo.tPCRoomIP where gameid = @ps1_ and pcip = @ps3_))
+										begin
+											select @RESULT_ERROR_DOUBLE_IP 'rtn'
+										end
+									else
+										begin
+											--  유저 존재 -> 등록안된 ip
+											insert into dbo.tPCRoomIP(gameid,  pcip, adminid)
+											values(					   @ps1_, @ps3_,   @ps2_)
+
+											select @RESULT_SUCCESS 'rtn'
+										end
+								end
+							else if(@p4_ = 2)
+								begin
+
+									if(not exists(select top 1   * from dbo.tUserMaster where gameid = @ps1_))
+										begin
+											select @RESULT_ERROR_NOT_FOUND_GAMEID 'rtn'
+										end
+									else if(exists(select top 1   * from dbo.tPCRoomIP where gameid = @ps1_ and pcip = @ps3_))
+										begin
+											select @RESULT_ERROR_DOUBLE_IP 'rtn'
+										end
+									else
+										begin
+											--  유저 존재 -> 등록안된 ip
+
+											update dbo.tPCRoomIP
+												set
+													gameid 		= @ps1_,
+													pcip		= @ps3_,
+													adminid 	= @ps2_
+											where idx = @p5_
+
+											select @RESULT_SUCCESS 'rtn'
+										end
+								end
+							else if(@p4_ = 3)
+								begin
+									delete from dbo.tPCRoomIP where idx = @p5_
+
+									select @RESULT_SUCCESS 'rtn'
+								end
 						end
 				end
 		end

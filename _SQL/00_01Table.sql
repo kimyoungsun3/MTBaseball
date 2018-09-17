@@ -432,6 +432,7 @@ create table dbo.tPCRoomIP(
 	pcip			varchar(20),
 
 	writedate		datetime			default(getdate()),			-- µÓ∑œ¿œ..
+	adminid			varchar(20),
 
 	-- Constraint
 	CONSTRAINT	pk_tPCRoomIP_gameid_pcip	PRIMARY KEY(gameid, pcip),

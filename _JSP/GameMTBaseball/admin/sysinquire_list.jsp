@@ -178,21 +178,14 @@ function f_Submit2(f) {
 							<td>
 								<a href=wgiftsend_form.jsp?gameid=<%=result.getString("gameid")%> target=_blank>선물/쪽지</a><br>
 								<a href=wgiftsend_list.jsp?gameid=<%=result.getString("gameid")%> target=_blank>선물리스트</a><br>
-								<a href=push_list.jsp?gameid=<%=result.getString("gameid")%>&personal=1 target=_blank>푸쉬발송</a><br>
 								<a href=userinfo_list.jsp?gameid=<%=result.getString("gameid")%> target=_blank><%=result.getString("gameid")%></a><br>
-								<a href=useritembuylog_list.jsp?gameid=<%=result.getString("gameid")%> target=_blank>구매로그</a><br>
+								<!--<a href=useritembuylog_list.jsp?gameid=<%=result.getString("gameid")%> target=_blank>구매로그</a><br>
 								<a href=certno_list.jsp?gameid=<%=result.getString("gameid")%> target=_blank>쿠폰검사</a><br>
 								<a href=certno_form.jsp?gameid=<%=result.getString("gameid")%> target=_blank>쿠폰강제입력</a><br>
 								<a href=cashbuy_list.jsp?gameid=<%=result.getString("gameid")%> target=_blank>캐쉬검사</a><br>
-								<a href=cash_form.jsp?gameid=<%=result.getString("gameid")%> target=_blank>캐쉬강제입력</a><br>
+								<a href=cash_form.jsp?gameid=<%=result.getString("gameid")%> target=_blank>캐쉬강제입력</a><br>-->
 								<a href=unusual_list.jsp?gameid=<%=result.getString("gameid")%> target=_blank>비정상검색(일반)</a><br>
 								<a href=unusual_list2.jsp?gameid=<%=result.getString("gameid")%> target=_blank>비정상검색(교배)</a><br>
-								<a href=userdielog_list.jsp?gameid=<%=result.getString("gameid")%> target=_blank>동물죽음</a><br>
-								<a href=useralivelog_list.jsp?gameid=<%=result.getString("gameid")%> target=_blank>동물부활</a><br>
-								<a href=usercomplog_list.jsp?gameid=<%=result.getString("gameid")%> target=_blank>동물합성</a><br>
-								<a href=userroullog_list3.jsp?gameid=<%=result.getString("gameid")%> target=_blank>행운의 주사위</a><br>
-								<a href=usermarket_list.jsp?gameid=<%=result.getString("gameid")%> target=_blank>마켓이동</a><br>
-								<a href=userdellog_list.jsp?gameid=<%=result.getString("gameid")%> target=_blank>판매/합성/분해로고</a><br>
 							</td>
 							<%
 								maxPage = result.getInt("maxPage");

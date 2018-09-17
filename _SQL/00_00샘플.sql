@@ -92,6 +92,7 @@ as
 	declare @RESULT_ERROR_PRODUCT_EXHAUSTED		int				set @RESULT_ERROR_PRODUCT_EXHAUSTED		= -166			-- 해당상품이 모두 판매되었거나 및 조기종영되었습니다.
 	declare @RESULT_ERROR_NOT_FOUND_OTHERID		int				set @RESULT_ERROR_NOT_FOUND_OTHERID		= -83			--
 	declare @RESULT_ERROR_SESSION_ID_EXPIRE		int				set @RESULT_ERROR_SESSION_ID_EXPIRE		= -151			-- 세션이 만료되었습니다.
+	declare @RESULT_ERROR_DOUBLE_IP				int				set @RESULT_ERROR_DOUBLE_IP				= -201			-- IP중복...
 
 	------------------------------------------------
 	--	2-2. 정의값
