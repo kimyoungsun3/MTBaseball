@@ -1,11 +1,7 @@
 
 import java.util.Random;
 
-class KakaoUtil{
-
-
-
-
+class PowerUtil{
 	public static String getParseInfo(String _tar, int _len, String _str){
 		int _startIdx = _str.indexOf(_tar);
 		//System.out.println(" _startIdx:" + _startIdx);

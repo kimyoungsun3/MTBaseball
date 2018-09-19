@@ -1,4 +1,4 @@
-public class KakaoData {
+public class PowerData {
 	int idx;
 	String kakaogameid;
 	String platform;

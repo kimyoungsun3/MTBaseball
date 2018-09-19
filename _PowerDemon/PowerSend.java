@@ -8,20 +8,20 @@ import com.google.android.gcm.server.Message;
 import com.google.android.gcm.server.MulticastResult;
 import com.google.android.gcm.server.Sender;
 
-public class KakaoSend extends Thread{
+public class PowerSend extends Thread{
 	////////////////////////////////////////////////
 	//데몬 정의값들
 	Connection conn 			= null;
 	public int nConnectMode;
 	public String strDataBase;
 	public int nSleepTime 		= 20 * 1000;				//     5 * 1000; 5초
-	ArrayList<KakaoData> listKakaoData = new ArrayList<KakaoData>();
+	ArrayList<PowerData> listPowerData = new ArrayList<PowerData>();
 
 	public static void main(String[] args) throws UnsupportedEncodingException {
 		if(args.length != 1){
 			System.out.println("error - REAL or TEST");
 		}else{
-			KakaoSend _send = new KakaoSend();
+			PowerSend _send = new PowerSend();
 			_send.mode(args[0]);
 			_send.start();
 		}
@@ -31,11 +31,11 @@ public class KakaoSend extends Thread{
 		if(_mode.equals("TEST")){
 			nConnectMode = Constant.CONNECT_MODE_TEST;
 			strDataBase = Constant.DB_PUB_TEST;
-			System.out.println("Connect test > kakao");
+			System.out.println("Connect test > power");
 		}else{
 			nConnectMode = Constant.CONNECT_MODE_REAL;
 			strDataBase = Constant.DB_PUB_REAL;
-			System.out.println("Connect real > kakao");
+			System.out.println("Connect real > power");
 		}
 	}
 
@@ -47,11 +47,11 @@ public class KakaoSend extends Thread{
 				//System.out.println("strKakaoMsgTitle : " + strKakaoMsgTitle);
 
 				connDB();			//1. 접속.
-				kakaoSendRead();	//2. 데이타 읽기.
-				kakaoSend();		//3. GCM 전송하기.
-				kakaoSendLog();  	//4. 푸시 발송 이력처리.
+				powerSendRead();	//2. 데이타 읽기.
+				powerSend();		//3. GCM 전송하기.
+				powerSendLog();  	//4. 푸시 발송 이력처리.
 				disconnect();		//5. db정리.
-				System.out.println("Total Count >>> "+ listKakaoData.size());
+				System.out.println("Total Count >>> "+ listPowerData.size());
 
 				sleep(nSleepTime);
 			}
@@ -75,15 +75,15 @@ public class KakaoSend extends Thread{
 	}
 
 	// 상상게이트에서 디비에서 푸시 데이터를 가져온다.
-	public void kakaoSendRead(){
-		if(Constant.DEBUG_MODE)System.out.println("kakaoSendRead");
+	public void powerSendRead(){
+		if(Constant.DEBUG_MODE)System.out.println("powerSendRead");
 		CallableStatement _cstmt	 	= null;
 		StringBuffer _query 			= new StringBuffer();
 		ResultSet _result 				= null;
 		int _idxColumn					= 1;
 		int _resultCode					= -1;
-		KakaoData _data;
-		listKakaoData.clear();
+		PowerData _data;
+		listPowerData.clear();
 
 		try{
 			//exec spu_KakaoPayment 1, -1,  '', '', -1						-- 검색
@@ -109,7 +109,7 @@ public class KakaoSend extends Thread{
 					_result = _cstmt.getResultSet();
 					int _cash, _market;
 					while(_result.next()){
-						_data 	= new KakaoData();
+						_data 	= new PowerData();
 
 						_data.idx 			= _result.getInt("idx");
 						_cash	 			= _result.getInt("cash");
@@ -144,7 +144,7 @@ public class KakaoSend extends Thread{
 							}
 							_data.currency		= "USD";
 						}
-						listKakaoData.add(_data);
+						listPowerData.add(_data);
 					}
 				}
 			}
@@ -201,10 +201,10 @@ public class KakaoSend extends Thread{
 		//3-1단계 kakao. 단말 API KEY
 		StringBuffer _sb = new StringBuffer();
 
-		KakaoData _data;
-		int _cnt = listKakaoData.size();
+		PowerData _data;
+		int _cnt = listPowerData.size();
 		for(int i = 0; i < _cnt ; i++){
-			_data = listKakaoData.get(i);
+			_data = listPowerData.get(i);
 			_sb.setLength(0);
 			_sb.append("partner_order_id=" 	+ _data.buy_no);
 			_sb.append("&os=" 				+ _data.os);
@@ -224,28 +224,28 @@ public class KakaoSend extends Thread{
 	}
 
 	public void kakaoSendLog(){
-		if(listKakaoData.size() <= 0) return;
+		if(listPowerData.size() <= 0) return;
 
-		if(Constant.DEBUG_MODE)System.out.println("kakaoSendLog");
+		if(Constant.DEBUG_MODE)System.out.println("powerSendLog");
 		CallableStatement _cstmt	 	= null;
 		StringBuffer _query 			= new StringBuffer();
 		ResultSet _result 				= null;
 		int _idxColumn					= 1;
 		int _resultCode					= -1;
-		KakaoData _data;
+		PowerData _data;
 		int _point 						= -1;
 		int _cnt 						= 0;
 		StringBuffer _paramsuc				= new StringBuffer("");
 		StringBuffer _paramerr				= new StringBuffer("");
 
 
-		if(listKakaoData.size() == 0){
+		if(listPowerData.size() == 0){
 			if(Constant.DEBUG_MODE)System.out.println(" > 처리건수 없음");
 			_point = -1;
 		}else{
-			_cnt = listKakaoData.size();
+			_cnt = listPowerData.size();
 			for(int i = 0; i < _cnt ; i++){
-				_data = listKakaoData.get(i);
+				_data = listPowerData.get(i);
 				if(_data.rtn){
 					_paramsuc.append(_data.idx);
 					if(i + 1 != _cnt){
@@ -286,7 +286,7 @@ public class KakaoSend extends Thread{
 					}
 				}
 			}catch(SQLException _e){
-				System.out.println("kakaoSendRead error:" + _e);
+				System.out.println("powerSendRead error:" + _e);
 			}
 		}
 	}
@@ -307,5 +307,5 @@ public class KakaoSend extends Thread{
 			_ie.printStackTrace();
 		}
 	}
-
 }
+
