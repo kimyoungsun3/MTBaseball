@@ -13,11 +13,10 @@ public class Constant{
 	public final static int CONNECT_MODE_REAL 		= 3;
 
 
-	public final static int KAKAO_MODE_LIST 		=	 1;
-	public final static int KAKAO_MODE_SENDED 		= 2;
+	public final static int LOTTO_MODE_READ 		= 1;
+	public final static int LOTTO_MODE_WRITE 		= 2;
 
 
-	//public final static String CLIENT_ID			= "f96bbc532e14acdc6557edff72662fc6";
 	public final static String ADMIN_KEY			= "ddd606f85a057f556194531400cc88d4";
 	public final static String KAKAOSERVER			= "http://www.nlotto.co.kr/gameInfo.do?method=powerWinNoList";
 	public final static String KAKAO_OK_MSG			= "{\"code\":200,\"msg\":\"Payment Log submitted\"}";

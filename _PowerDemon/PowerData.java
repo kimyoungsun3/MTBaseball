@@ -1,14 +1,13 @@
 public class PowerData {
-	int idx;
-	String kakaogameid;
-	String platform;
-	String os;
-	String country_ios;
-	String price;
-	String currency;
-	String buy_no;
-	String productid;
-	String purchasetoken;
+	int curTurnTime;
+	int passTime;
+
+	int curTurnNum1;
+	int curTurnNum2;
+	int curTurnNum3;
+	int curTurnNum4;
+	int curTurnNum5;
+	int curTurnNum6;
 
 	boolean rtn;
 }

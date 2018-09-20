@@ -2,13 +2,15 @@
 --################################################################
 /*
 -- 게임배치
-SELECT * FROM dbo.fnu_GetNextTimeInfo(1, 2     )	-- 0일차 > +2초기본갭
-SELECT * FROM dbo.fnu_GetNextTimeInfo(1, 2+5   )	-- 1일차 > +2초기본갭 + 5
-SELECT * FROM dbo.fnu_GetNextTimeInfo(1, 2+5+7   )	-- 2일차 > +2초기본갭 + 5+7
+SELECT * FROM dbo.fnu_GetNextTimeInfo(1, 2     )		-- 0일차 > +2초기본갭
+--SELECT * FROM dbo.fnu_GetNextTimeInfo(1, 2+5   )		-- 1일차 > +2초기본갭 + 5
+--SELECT * FROM dbo.fnu_GetNextTimeInfo(1, 2+5+7   )	-- 2일차 > +2초기본갭 + 5+7
+SELECT * FROM dbo.fnu_GetNextTimeInfo(1, 2+5+7+8 )		-- 3일차 > +2초기본갭 + 5+7+6
 
-SELECT * FROM dbo.fnu_GetNextTimeInfo(2, 2000     )	-- 0일차 > +2초기본갭
-SELECT * FROM dbo.fnu_GetNextTimeInfo(2, 2000+5000)	-- 1일차 > +2초기본갭 + 5
-SELECT * FROM dbo.fnu_GetNextTimeInfo(2, 2000+12000)-- 2일차 > +2초기본갭 + 5+7
+SELECT * FROM dbo.fnu_GetNextTimeInfo(2, 2000     )		-- 0일차 > +2초기본갭
+--SELECT * FROM dbo.fnu_GetNextTimeInfo(2, 2000+5000)	-- 1일차 > +2초기본갭 + 5
+--SELECT * FROM dbo.fnu_GetNextTimeInfo(2, 2000+12000)	-- 2일차 > +2초기본갭 + 5+7
+SELECT * FROM dbo.fnu_GetNextTimeInfo(2, 2000+19500)	-- 3일차 > +2초기본갭 + 5+7+6
 */
 --################################################################
 use GameMTBaseball

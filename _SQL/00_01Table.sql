@@ -1027,6 +1027,49 @@ create table dbo.tStaticCashUnique(
 )
 
 
+---------------------------------------------
+--	로또 파워볼 마스터 타임 테이블.
+---------------------------------------------
+IF OBJECT_ID (N'dbo.tLottoInfo', N'U') IS NOT NULL
+	DROP TABLE dbo.tLottoInfo;
+GO
+
+create table dbo.tLottoInfo(
+	idx						int					IDENTITY(1,1),
+
+	-- 현재회차 정보.
+	curturntime				int,				-- 나눔로또의 정보.
+	curturndate				datetime,			-- 이것이 작성될때의 시간.
+	curturnnum1				int,				-- 일반볼.
+	curturnnum2				int,
+	curturnnum3				int,
+	curturnnum4				int,
+	curturnnum5				int,
+	curturnnum6				int,				-- 파워볼.
+
+	-- 파워볼에 의한 정보.
+	pbgrade					int,				-- 파워볼 등급.
+	pbevenodd				int,				-- 파워볼 홀짝.
+	pbunderover				int,				-- 파워볼 언오.
+
+	-- 합볼에 대한 정보.
+	totalball				int,				-- 일반볼 합(1 ~ 5번까지)
+	tbgrade					int,				-- 합볼등급.
+	tbevenodd				int,				-- 합볼홀짝.
+	tbunderover				int,				-- 합볼언오.
+	tbgrade2				int,				-- 합볼소중대.
+
+	-- 다음회차 정보
+	nextturntime			int,
+	nextturndate			datetime,
+
+	writedate				datetime			default(getdate()),
+	adminid					varchar(20)			default('demon'),
+
+	-- Constraint
+	CONSTRAINT	pk_tLottoInfo_nextturntime		PRIMARY KEY(curturntime)
+)
+
 /*
 
 ---------------------------------------------

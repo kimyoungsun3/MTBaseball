@@ -7,9 +7,9 @@ set classpath=.;.\javalib\tools.jar;.\javalib\dt.jar;.\gcmlib\gcm.jar;.\gcmlib\g
 
 
 javac PowerDemon.java
-java PowerDemon
+java PowerDemon TEST
 
 
-Pause
+rem Pause
 
 

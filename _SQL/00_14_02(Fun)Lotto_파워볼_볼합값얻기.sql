@@ -49,21 +49,21 @@ BEGIN
 			if(@kind_ = @KIND_GRADE)
 				begin
 					set @rtn = case
-									when @ball_ <= 2 then 	0
-									when @ball_ <= 4 then 	1
-									when @ball_ <= 6 then 	2
-									else 					3
+									when @ball_ <= 2 then 	0		-- A(0)
+									when @ball_ <= 4 then 	1		-- B(1)
+									when @ball_ <= 6 then 	2		-- C(2)
+									else 					3		-- D(3)
 								end
 				end
 			else if(@kind_ = @KIND_EVENODD)
 				begin
-					set @rtn = @ball_ % 2
+					set @rtn = @ball_ % 2							-- 짝(0), 홀(1)
 				end
 			else if(@kind_ = @KIND_UNDEROVER)
 				begin
 					set @rtn = case
-									when @ball_ <= 4 then 	0
-									else 					1
+									when @ball_ <= 4 then 	0		-- 언더(0)
+									else 					1		-- 오버(1)
 								end
 				end
 		end
@@ -72,31 +72,31 @@ BEGIN
 			if(@kind_ = @KIND_GRADE)
 				begin
 					set @rtn = case
-									when @ball_ <= 35 then 	0
-									when @ball_ <= 49 then 	1
-									when @ball_ <= 57 then 	2
-									when @ball_ <= 65 then 	3
-									when @ball_ <= 78 then 	4
-									else 					5
+									when @ball_ <= 35 then 	0		-- A(0)
+									when @ball_ <= 49 then 	1		-- B(1)
+									when @ball_ <= 57 then 	2		-- C(2)
+									when @ball_ <= 65 then 	3		-- D(3)
+									when @ball_ <= 78 then 	4		-- E(4)
+									else 					5		-- F(5)
 								end
 				end
 			else if(@kind_ = @KIND_EVENODD)
 				begin
-					set @rtn = @ball_ % 2
+					set @rtn = @ball_ % 2							-- 짝(0), 홀(1)
 				end
 			else if(@kind_ = @KIND_UNDEROVER)
 				begin
 					set @rtn = case
-									when @ball_ <= 72 then 	0
-									else 					1
+									when @ball_ <= 72 then 	0		-- 언더(0)
+									else 					1		-- 오버(1)
 								end
 				end
 			else if(@kind_ = @KIND_GRADE2)
 				begin
 					set @rtn = case
-									when @ball_ <= 64 then 	0
-									when @ball_ <= 80 then 	1
-									else 					2
+									when @ball_ <= 64 then 	0		-- 소(0)
+									when @ball_ <= 80 then 	1		-- 중(1)
+									else 					2		-- 대(2)
 								end
 				end
 		end

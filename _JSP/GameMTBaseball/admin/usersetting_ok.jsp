@@ -16,6 +16,7 @@
 	int resultCode				= -1;
 	StringBuffer resultMsg		= new StringBuffer();
 	int idxColumn				= 1;
+	String resultComment		= "";
 
 	//1-2. 데이타 받기
 	String gameid 			= util.getParamStr(request, "gameid", "");
@@ -92,7 +93,8 @@
 
 		//2-3-1. 코드결과값 받기(1개)
 		if(result.next()){
-			resultCode = result.getInt("rtn");
+			resultCode 		= result.getInt("rtn");
+			resultComment	= result.getString("commentX");
 		}
 
   	}catch(Exception e){
@@ -120,7 +122,11 @@
 			}
 		}
 	}else if(resultCode == -1){
-		out.print("<script language='javascript'>alert('정보가 부정확합니다.'); history.back(-1);</script>");
+		if(!resultComment.equals("")){
+			out.print("<script language='javascript'>alert('"+resultComment+"'); history.back(-1);</script>");
+		}else{
+			out.print("<script language='javascript'>alert('정보가 부정확합니다.'); history.back(-1);</script>");
+		}
 	}else if(resultCode == -13){
 		out.print("<script language='javascript'>alert('계정 정보가 존재하지 않습니다.'); history.back(-1);</script>");
 	}else if(resultCode == -201){

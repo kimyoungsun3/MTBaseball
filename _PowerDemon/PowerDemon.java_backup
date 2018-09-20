@@ -14,7 +14,7 @@ public class PowerSend extends Thread{
 	Connection conn 			= null;
 	public int nConnectMode;
 	public String strDataBase;
-	public int nSleepTime 		= 20 * 1000;				//     5 * 1000; 5초
+	public int nSleepTime 		= 2 * 1000;				//     2 * 1000; 2초
 	ArrayList<PowerData> listPowerData = new ArrayList<PowerData>();
 
 	public static void main(String[] args) throws UnsupportedEncodingException {
@@ -29,12 +29,12 @@ public class PowerSend extends Thread{
 
 	public void mode(String _mode){
 		if(_mode.equals("TEST")){
-			nConnectMode = Constant.CONNECT_MODE_TEST;
-			strDataBase = Constant.DB_PUB_TEST;
+			nConnectMode 	= Constant.CONNECT_MODE_TEST;
+			strDataBase 	= Constant.DB_PUB_TEST;
 			System.out.println("Connect test > power");
 		}else{
-			nConnectMode = Constant.CONNECT_MODE_REAL;
-			strDataBase = Constant.DB_PUB_REAL;
+			nConnectMode 	= Constant.CONNECT_MODE_REAL;
+			strDataBase 	= Constant.DB_PUB_REAL;
 			System.out.println("Connect real > power");
 		}
 	}
@@ -71,7 +71,6 @@ public class PowerSend extends Thread{
 		} catch (Exception _e) {
 			if(Constant.DEBUG_DBCONNECT)System.out.println("DB Connect error:" + _e);
 		}
-
 	}
 
 	// 상상게이트에서 디비에서 푸시 데이터를 가져온다.

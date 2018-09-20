@@ -84,17 +84,21 @@
 
 
 --@공지사항작성(20)
---exec spu_GameMTBaseballD 20, 21, 1,  1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''			-- 문의글 읽기.
---exec spu_GameMTBaseballD 20, 21, 1,  1, -1, -1, -1, -1, -1, -1, 'xxxx2', '', '', '', '', '', '', '', '', ''		--        계정.
---exec spu_GameMTBaseballD 20, 21, 1,  1,  1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''			--		  상태.
---exec spu_GameMTBaseballD 20, 21, 2,  1, 20,  2,  1, -1, -1, -1, '', 'adminid', '', '', '', '', '', '', '', ''		--      상태변경, 코멘트추가(유저에게 쪽지발송가능).
---exec spu_GameMTBaseballD 20, 21, 2,  1, 20,  2,  1, -1, -1, -1, '', 'adminid', '', '', '', '', '', '', '', ''		--      상태변경, 코멘트추가(유저에게 쪽지발송가능).
-
---exec spu_GameMTBaseballD 20, 22, 1,  1, -1, -1, -1, -1, -1, -1, 'xxxx', '', '', '', '', '', '', '', '', ''		-- PC방 정보 읽기.
---exec spu_GameMTBaseballD 20, 22, 1,  1,  1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''			--
+--exec spu_GameMTBaseballD 20, 21, 1,  1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''					-- 문의글 읽기.
+--exec spu_GameMTBaseballD 20, 21, 1,  1, -1, -1, -1, -1, -1, -1, 'xxxx2', '', '', '', '', '', '', '', '', ''				--        계정.
+--exec spu_GameMTBaseballD 20, 21, 1,  1,  1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''					--		  상태.
+--exec spu_GameMTBaseballD 20, 21, 2,  1, 20,  2,  1, -1, -1, -1, '', 'adminid', '', '', '', '', '', '', '', ''				--      상태변경, 코멘트추가(유저에게 쪽지발송가능).
+--exec spu_GameMTBaseballD 20, 21, 2,  1, 20,  2,  1, -1, -1, -1, '', 'adminid', '', '', '', '', '', '', '', ''				--      상태변경, 코멘트추가(유저에게 쪽지발송가능).
+--exec spu_GameMTBaseballD 20, 22, 1,  1, -1, -1, -1, -1, -1, -1, 'xxxx', '', '', '', '', '', '', '', '', ''				-- PC방 정보 읽기.
+--exec spu_GameMTBaseballD 20, 22, 1,  1,  1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''					--
 --exec spu_GameMTBaseballD 20, 22, 2,  1, -1, -1, -1, -1, -1, -1, 'xxxx', 'adminid', '127.0.0.1', '', '', '', '', '', '', ''--      등록.
 --exec spu_GameMTBaseballD 20, 22, 2,  2,  1, -1, -1, -1, -1, -1, 'xxxx', 'adminid', '127.0.0.1', '', '', '', '', '', '', ''--      수정.
 --exec spu_GameMTBaseballD 20, 22, 2,  3,  1, -1, -1, -1, -1, -1, 'xxxx', 'adminid', '127.0.0.1', '', '', '', '', '', '', ''--      삭제.
+--exec spu_GameMTBaseballD 20, 23, 1,  1, -1, -1, -1, -1, -1, -1, '', '', '821730', '', '', '', '', '', '', ''				-- 나눔로또 정보.
+--exec spu_GameMTBaseballD 20, 23, 1,  1,  1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''					--
+--exec spu_GameMTBaseballD 20, 23, 2,  1,  1,  2,  3,  4,  5,  6, '', 'adminid', '821731', '', '', '', '', '', '', ''		--       기록.
+--exec spu_GameMTBaseballD 20, 23, 2,  2, 11, 12, 13, 14, 15, 16, '', 'adminid', '821731', '', '', '', '', '', '', ''		--       수정.
+--exec spu_GameMTBaseballD 20, 23, 2,  3, -1, -1, -1, -1, -1, -1, '', '', '821731', '', '', '', '', '', '', ''				--       삭제.
 
 
 --@통계자료(21)
@@ -299,9 +303,24 @@ as
 
 	declare @PAGE_CASH_LIST						int					set @PAGE_CASH_LIST							= 25
 	declare @LV_MAX								int					set @LV_MAX									= 650
+
+	-- lotto mode
+	declare @MODE_POWERBALL						int				set	@MODE_POWERBALL						= 1;
+	declare @MODE_TOTALBALL						int				set	@MODE_TOTALBALL						= 2;
+
+	-- lotto kind
+	declare @KIND_GRADE							int				set	@KIND_GRADE							= 1;
+	declare @KIND_EVENODD						int				set	@KIND_EVENODD						= 2;
+	declare @KIND_UNDEROVER						int				set	@KIND_UNDEROVER						= 3;
+	declare @KIND_GRADE2						int				set	@KIND_GRADE2						= 4;
+
+	-- lotto second
+	declare @TURNTIME_SECOND					int				set @TURNTIME_SECOND					= 5 * 60
+
 	------------------------------------------------
 	--	일반변수선언
 	------------------------------------------------
+	declare @commentX		varchar(1024)	set @commentX 		= ''
 	declare @kind			int				set @kind			= @p1_
 	declare @subkind		int				set @subkind		= @p2_
 	declare @idx 			int				set @idx 			= @p3_
@@ -458,6 +477,19 @@ as
 	declare @eventstarthour	int
 	declare @eventendhour	int
 
+	-- lotto info
+	declare @curturntime	int
+	declare @curturnnum1	int
+	declare @curturnnum2	int
+	declare @curturnnum3	int
+	declare @curturnnum4	int
+	declare @curturnnum5	int
+	declare @curturnnum6	int
+	declare @nextturntime	int
+	declare @nextturndate	datetime
+	declare @totalball		int
+
+
 
 Begin
 	------------------------------------------------
@@ -480,11 +512,11 @@ Begin
 									set @p3_ = 0
 								end
 							insert into tAdminUser(gameid, password, grade) values(@ps1_, @ps2_, @p3_)
-							select 1 'rtn'
+							select 1 'rtn', @commentX commentX
 						end
 					else
 						begin
-							select -1 'rtn'
+							select -1 'rtn', @commentX commentX
 						end
 				end
 			else if(@subkind = 2)
@@ -493,11 +525,11 @@ Begin
 					select @grade = grade from dbo.tAdminUser where gameid = @ps1_ and password = @ps2_
 					if(@grade != -1)
 						begin
-							select 1 'rtn', @grade grade, '입력'
+							select 1 'rtn', @grade grade, '입력', @commentX commentX
 						end
 					else
 						begin
-							select -1 'rtn', 0 grade, '입력'
+							select -1 'rtn', 0 grade, '입력', @commentX commentX
 						end
 				end
 			else if(@subkind = 3)
@@ -512,17 +544,17 @@ Begin
 									grade 		= @p3_
 							where gameid = @ps1_
 
-							select 1 'rtn', @grade grade, '(루비)'
+							select 1 'rtn', @grade grade, '(루비)', @commentX commentX
 						end
 					else
 						begin
-							select -1 'rtn', 0 grade, '(루비)'
+							select -1 'rtn', 0 grade, '(루비)', @commentX commentX
 						end
 				end
 			else if(@subkind = 4)
 				begin
 					delete from dbo.tAdminUser where gameid = @ps1_ and password = @ps2_
-					select 1 'rtn', 0, '(삭제)'
+					select 1 'rtn', 0, '(삭제)', @commentX commentX
 				end
 			else if(@subkind = 200)
 				begin
@@ -695,10 +727,9 @@ Begin
 												end
 										end
 								end
-							select @RESULT_SUCCESS 'rtn'
+							select @RESULT_SUCCESS 'rtn', @commentX commentX
 						end
 				end
-
 			else if(@subkind = 22)
 				begin
 					if(@p3_ = 1)
@@ -737,11 +768,11 @@ Begin
 								begin
 									if(not exists(select top 1   * from dbo.tUserMaster where gameid = @ps1_))
 										begin
-											select @RESULT_ERROR_NOT_FOUND_GAMEID 'rtn'
+											select @RESULT_ERROR_NOT_FOUND_GAMEID 'rtn', @commentX commentX
 										end
 									else if(exists(select top 1   * from dbo.tPCRoomIP where gameid = @ps1_ and pcip = @ps3_))
 										begin
-											select @RESULT_ERROR_DOUBLE_IP 'rtn'
+											select @RESULT_ERROR_DOUBLE_IP 'rtn', @commentX commentX
 										end
 									else
 										begin
@@ -749,7 +780,7 @@ Begin
 											insert into dbo.tPCRoomIP(gameid,  pcip, adminid)
 											values(					   @ps1_, @ps3_,   @ps2_)
 
-											select @RESULT_SUCCESS 'rtn'
+											select @RESULT_SUCCESS 'rtn', @commentX commentX
 										end
 								end
 							else if(@p4_ = 2)
@@ -757,11 +788,11 @@ Begin
 
 									if(not exists(select top 1   * from dbo.tUserMaster where gameid = @ps1_))
 										begin
-											select @RESULT_ERROR_NOT_FOUND_GAMEID 'rtn'
+											select @RESULT_ERROR_NOT_FOUND_GAMEID 'rtn', @commentX commentX
 										end
 									else if(exists(select top 1   * from dbo.tPCRoomIP where gameid = @ps1_ and pcip = @ps3_))
 										begin
-											select @RESULT_ERROR_DOUBLE_IP 'rtn'
+											select @RESULT_ERROR_DOUBLE_IP 'rtn', @commentX commentX
 										end
 									else
 										begin
@@ -774,14 +805,137 @@ Begin
 													adminid 	= @ps2_
 											where idx = @p5_
 
-											select @RESULT_SUCCESS 'rtn'
+											select @RESULT_SUCCESS 'rtn', @commentX commentX
 										end
 								end
 							else if(@p4_ = 3)
 								begin
 									delete from dbo.tPCRoomIP where idx = @p5_
 
-									select @RESULT_SUCCESS 'rtn'
+									select @RESULT_SUCCESS 'rtn', @commentX commentX
+								end
+						end
+				end
+			else if(@subkind = 23)
+				begin
+					if(@p3_ = 1)
+						begin
+							if(@ps3_ != '')
+								begin
+									set @maxPage	= 1
+									set @page		= 1
+
+									select top 100 @maxPage maxPage, @page page, * from dbo.tLottoInfo
+									where curturntime = CONVERT(int, @ps3_)
+									order by curturntime desc
+								end
+							else
+								begin
+									-- 읽기.
+									set @idxPage	= @p4_
+									select @idx = (isnull(max(idx), 1)) from dbo.tLottoInfo
+
+									set @maxPage	= @idx / @PAGE_LINE
+									set @maxPage 	= @maxPage + case when (@idx % @PAGE_LINE != 0) then 1 else 0 end
+									set @page		= case
+														when (@idxPage <= 0)			then 1
+														when (@idxPage >  @maxPage)	then @maxPage
+														else @idxPage
+													end
+									set @idx		= @idx - (@page - 1) * @PAGE_LINE
+
+									select top 100 @maxPage maxPage, @page page, * from dbo.tLottoInfo
+									where idx <= @idx order by curturntime desc
+								end
+						end
+					else if(@p3_ = 2)
+						begin
+							-- 입력.
+							set @curturntime = CONVERT(int, @ps3_)
+							set @curturnnum1 = @p5_
+							set @curturnnum2 = @p6_
+							set @curturnnum3 = @p7_
+							set @curturnnum4 = @p8_
+							set @curturnnum5 = @p9_
+							set @curturnnum6 = @p10_
+
+							set @nextturntime	= @curturntime + 1
+							set @nextturndate 	= DATEADD(ss, @TURNTIME_SECOND, getdate());
+							set @totalball 		= @curturnnum1 + @curturnnum2 + @curturnnum3 + @curturnnum4 + @curturnnum5
+
+							if(@p4_ = 1)
+								begin
+									if(exists(select top 1 * from dbo.tLottoInfo where curturntime = @curturntime))
+										begin
+											select @RESULT_ERROR 'rtn', '회차가 이미 존재합니다.' commentX
+										end
+									else
+										begin
+											-- 회차존재안함 > 입력...
+
+											insert into dbo.tLottoInfo(
+													curturntime, 	curturndate,
+													curturnnum1, 	curturnnum2, 	curturnnum3, 	curturnnum4, 	curturnnum5, 	curturnnum6,
+													pbgrade, pbevenodd, pbunderover,
+													totalball, tbgrade, tbevenodd, tbunderover, tbgrade2,
+													nextturntime, nextturndate,
+													adminid
+											)
+											values(
+													@curturntime,	getdate(),
+													@curturnnum1, 	@curturnnum2, 	@curturnnum3, 	@curturnnum4, 	@curturnnum5, 	@curturnnum6,
+													dbo.fnu_GetBallInfo(@MODE_POWERBALL, @KIND_GRADE, @curturnnum6),
+													dbo.fnu_GetBallInfo(@MODE_POWERBALL, @KIND_EVENODD, @curturnnum6),
+													dbo.fnu_GetBallInfo(@MODE_POWERBALL, @KIND_UNDEROVER, @curturnnum6),
+													@totalball,
+													dbo.fnu_GetBallInfo(@MODE_TOTALBALL, @KIND_GRADE, @totalball),
+													dbo.fnu_GetBallInfo(@MODE_TOTALBALL, @KIND_EVENODD, @totalball),
+													dbo.fnu_GetBallInfo(@MODE_TOTALBALL, @KIND_UNDEROVER, @totalball),
+													dbo.fnu_GetBallInfo(@MODE_TOTALBALL, @KIND_GRADE2, @totalball),
+													@nextturntime, @nextturndate,
+													@adminid
+											)
+
+											select @RESULT_SUCCESS 'rtn', @commentX commentX
+										end
+								end
+							else if(@p4_ = 2)
+								begin
+									if(not exists(select top 1   * from dbo.tLottoInfo where curturntime = @curturntime))
+										begin
+											select @RESULT_ERROR 'rtn', '회차가 존재하지 않습니다.' commentX
+										end
+									else
+										begin
+											--  유저 존재 -> 갱신
+											update dbo.tLottoInfo
+												set
+													curturndate = getdate(),
+													curturnnum1	= @curturnnum1,		curturnnum2	= @curturnnum2, 	curturnnum3	= @curturnnum3,
+													curturnnum4	= @curturnnum4, 	curturnnum5	= @curturnnum5, 	curturnnum6	= @curturnnum6,
+
+													pbgrade		= dbo.fnu_GetBallInfo(@MODE_POWERBALL, @KIND_GRADE, @curturnnum6),
+													pbevenodd 	= dbo.fnu_GetBallInfo(@MODE_POWERBALL, @KIND_EVENODD, @curturnnum6),
+													pbunderover	= dbo.fnu_GetBallInfo(@MODE_POWERBALL, @KIND_UNDEROVER, @curturnnum6),
+
+													totalball	= @totalball,
+													tbgrade		= dbo.fnu_GetBallInfo(@MODE_TOTALBALL, @KIND_GRADE, @totalball),
+													tbevenodd	= dbo.fnu_GetBallInfo(@MODE_TOTALBALL, @KIND_EVENODD, @totalball),
+													tbunderover	= dbo.fnu_GetBallInfo(@MODE_TOTALBALL, @KIND_UNDEROVER, @totalball),
+													tbgrade2	= dbo.fnu_GetBallInfo(@MODE_TOTALBALL, @KIND_GRADE2, @totalball),
+													nextturntime= @nextturntime,
+													nextturndate= @nextturndate,
+													adminid		= @adminid
+											where curturntime = @curturntime
+
+											select @RESULT_SUCCESS 'rtn', @commentX commentX
+										end
+								end
+							else if(@p4_ = 3)
+								begin
+									delete from dbo.tLottoInfo where curturntime = @curturntime
+
+									select @RESULT_SUCCESS 'rtn', @commentX commentX
 								end
 						end
 				end
@@ -974,7 +1128,7 @@ Begin
 				begin
 					delete from dbo.tUserUnusualLog where gameid = @gameid and idx = @p3_
 
-					select @RESULT_SUCCESS 'rtn'
+					select @RESULT_SUCCESS 'rtn', @commentX commentX
 				end
 			else if(@p2_ =  1006)
 				begin
@@ -1191,7 +1345,7 @@ Begin
 					set @comment = dbo.fnu_GetMessageInt('관리자가(#1)이 (#2)에게 아이템(#3:#4 -> #5) 수량변경했습니다.', @adminid, @gameid, @itemcode, @cnt2, @cnt3)
 					exec spu_AdminActionBlock @adminid, @gameid, @comment
 
-					select @RESULT_SUCCESS 'rtn'
+					select @RESULT_SUCCESS 'rtn', @commentX commentX
 				end
 			else if(@p2_ =  1007)
 				begin
@@ -1203,7 +1357,7 @@ Begin
 						begin
 							delete from dbo.tUserUnusualLog2 where gameid = @gameid
 						end
-					select @RESULT_SUCCESS 'rtn'
+					select @RESULT_SUCCESS 'rtn', @commentX commentX
 				end
 			else if(@p2_ =  1004)
 				begin
@@ -1238,11 +1392,11 @@ Begin
 
 							if(@gameid = '' or @ps10_ = null)
 								begin
-									select @RESULT_ERROR 'rtn'
+									select @RESULT_ERROR 'rtn', @commentX commentX
 								end
 							else if(not exists(select top 1 * from dbo.tUserMaster where gameid = @gameid))
 								begin
-									select @RESULT_ERROR 'rtn'
+									select @RESULT_ERROR 'rtn', @commentX commentX
 								end
 							-- 사전 예약 코드
 							else if(UPPER(@ps10_) = 'LSYOARPUSSDGG796')
@@ -1254,11 +1408,11 @@ Begin
 									-- 공통쿠폰 이벤트.
 									if(@curdate < '2014-05-23 00:01' or @curdate > '2014-06-30 23:59')
 										begin
-											select @RESULT_ERROR 'rtn', '기간만료'
+											select @RESULT_ERROR 'rtn', '기간만료', @commentX commentX
 										end
 									else if(@eventspot06 = 1)
 										begin
-											select @RESULT_ERROR 'rtn', '이미사용'
+											select @RESULT_ERROR 'rtn', '이미사용', @commentX commentX
 										end
 									else
 										begin
@@ -1277,17 +1431,17 @@ Begin
 											---------------------------------------------------
 											exec spu_DayLogInfoStatic 41, 1				-- 일 쿠폰등록수
 
-											select @RESULT_SUCCESS 'rtn'
+											select @RESULT_SUCCESS 'rtn', @commentX commentX
 										end
 								end
 
 							else if(@kind >= 7 and exists(select top 1 * from dbo.tEventCertNoBack where gameid = @gameid and kind = @kind))
 								begin
-									select @RESULT_ERROR 'rtn'
+									select @RESULT_ERROR 'rtn', @commentX commentX
 								end
 							else if(not exists(select top 1 * from dbo.tEventCertNo where certno = @ps10_))
 								begin
-									select @RESULT_ERROR 'rtn'
+									select @RESULT_ERROR 'rtn', @commentX commentX
 								end
 							else
 								begin
@@ -1331,7 +1485,7 @@ Begin
 									---------------------------------------------------
 									exec spu_DayLogInfoStatic 41, 1				-- 일 쿠폰등록수
 
-									select @RESULT_SUCCESS 'rtn'
+									select @RESULT_SUCCESS 'rtn', @commentX commentX
 								end
 
 						end
@@ -1575,7 +1729,7 @@ Begin
 					where phone = (select phone from dbo.tUserMaster where gameid = @gameid)
 
 				end
-			select @RESULT_SUCCESS 'rtn'
+			select @RESULT_SUCCESS 'rtn', @commentX commentX
 		end
 	-----------------------------------------------------
 	--	선물
@@ -1666,7 +1820,7 @@ Begin
 							--values(@gameid, 2, @itemcode, @adminid);
 						end
 
-					select @nResult 'rtn'
+					select @nResult 'rtn', @commentX commentX
 				end
 			else if(@subkind = 12)
 				begin
@@ -1685,7 +1839,7 @@ Begin
 							--values(@gameid, 1, @comment);
 						end
 
-					select @nResult 'rtn'
+					select @nResult 'rtn', @commentX commentX
 				end
 			else if(@subkind = 21)
 				begin
@@ -1698,7 +1852,7 @@ Begin
 										end
 					where idx = @p4_
 
-					select @nResult 'rtn'
+					select @nResult 'rtn', @commentX commentX
 				end
 			else if(@subkind = 22)
 				begin
@@ -1713,13 +1867,13 @@ Begin
 										end
 					where idx = @p4_
 
-					select @nResult 'rtn'
+					select @nResult 'rtn', @commentX commentX
 				end
 			else if(@subkind = 23)
 				begin
 					delete from dbo.tGiftList where idx = @p4_
 
-					select @nResult 'rtn'
+					select @nResult 'rtn', @commentX commentX
 				end
 			--else if(@subkind = 31)
 			--	begin
@@ -1869,23 +2023,23 @@ Begin
 
 					if(@gameid = '' or @password = '')
 						begin
-							select @RESULT_ERROR 'rtn', '계정이 존재하지 않습니다.'
+							select @RESULT_ERROR 'rtn', '계정이 존재하지 않습니다.', @commentX commentX
 						end
 					else if(@acode = '' or @ucode = '')
 						begin
-							select @RESULT_ERROR 'rtn', '영수증 번호가 없습니다.'
+							select @RESULT_ERROR 'rtn', '영수증 번호가 없습니다.', @commentX commentX
 						end
 					else if(@cashkind not in (5000, 5001, 5002, 5003, 5004, 5005, 5006))
 						begin
-							select @RESULT_ERROR 'rtn', '금액이 잘못 되었습니다.'
+							select @RESULT_ERROR 'rtn', '금액이 잘못 되었습니다.', @commentX commentX
 						end
 					else if(exists(select top 1 * from dbo.tCashLog where acode = @acode))
 						begin
-							select @RESULT_ERROR 'rtn', '코드가 중복됩니다.(acode)'
+							select @RESULT_ERROR 'rtn', '코드가 중복됩니다.(acode)', @commentX commentX
 						end
 					else if(exists(select top 1 * from dbo.tCashLog where ucode = @ucode))
 						begin
-							select @RESULT_ERROR 'rtn', '코드가 중복됩니다.(ucode)'
+							select @RESULT_ERROR 'rtn', '코드가 중복됩니다.(ucode)', @commentX commentX
 						end
 					else
 						begin
@@ -1923,7 +2077,7 @@ Begin
 								end
 							else
 								begin
-									select @RESULT_ERROR 'rtn', '오류가 나왔네요'
+									select @RESULT_ERROR 'rtn', '오류가 나왔네요', @commentX commentX
 								end
 						end
 				end
@@ -1937,7 +2091,7 @@ Begin
 		begin
 			--if(isnull(@gameid, '') = '')
 			--	begin
-			--		select @RESULT_ERROR 'rtn'
+			--		select @RESULT_ERROR 'rtn', @commentX commentX
 			--		return
 			--	end
 
@@ -1966,7 +2120,7 @@ Begin
 							cnt = cnt - 1
 					where dateid = @dateid and cashkind = @cash
 
-					select @RESULT_SUCCESS 'rtn'
+					select @RESULT_SUCCESS 'rtn', @commentX commentX
 				end
 			else if(@p2_ = 2)
 				begin
@@ -2002,7 +2156,7 @@ Begin
 					close curCashLog
 					Deallocate curCashLog
 
-					select @RESULT_SUCCESS 'rtn'
+					select @RESULT_SUCCESS 'rtn', @commentX commentX
 				end
 
 		end
@@ -2135,7 +2289,7 @@ Begin
 								end
 						end
 
-					select @RESULT_SUCCESS 'rtn'
+					select @RESULT_SUCCESS 'rtn', @commentX commentX
 				end
 			else if(@p2_ = 23)
 				begin
@@ -2153,7 +2307,7 @@ Begin
 								comment		= @ps2_
 					where idx = @p3_
 
-					select @RESULT_SUCCESS 'rtn'
+					select @RESULT_SUCCESS 'rtn', @commentX commentX
 				end
 			-----------------------------------
 			-- 보물뽑기 25, 26, 27
@@ -2277,7 +2431,7 @@ Begin
 								end
 						end
 
-					select @RESULT_SUCCESS 'rtn'
+					select @RESULT_SUCCESS 'rtn', @commentX commentX
 				end
 			else if(@p2_ = 27)
 				begin
@@ -2290,7 +2444,7 @@ Begin
 								comment		= @ps2_
 					where idx = @p3_
 
-					select @RESULT_SUCCESS 'rtn'
+					select @RESULT_SUCCESS 'rtn', @commentX commentX
 				end
 
 			else if(@p2_ = 50)
@@ -2318,7 +2472,7 @@ Begin
 			else if(@p2_ = 51)
 				begin
 					update dbo.tEventMaster set eventstatemaster = case when eventstatemaster = 0 then 1 else 0 end where idx = 1
-					select @RESULT_SUCCESS 'rtn'
+					select @RESULT_SUCCESS 'rtn', @commentX commentX
 				end
 			else if(@p2_ = 52)
 				begin
@@ -2341,7 +2495,7 @@ Begin
 									insert into dbo.tEventSub(eventitemcode,  eventsender,  eventday,  eventstarthour,  eventendhour,  eventpushtitle,  eventpushmsg,  eventstatedaily,  eventcnt)
 									values(                         @itemcode, @eventsender, @eventday, @eventstarthour, @eventendhour, @eventpushtitle, @eventpushmsg, @eventstatedaily, @eventcnt)
 								end
-							select @RESULT_SUCCESS 'rtn'
+							select @RESULT_SUCCESS 'rtn', @commentX commentX
 						end
 					else if(@subkind = 2)
 						begin
@@ -2359,25 +2513,25 @@ Begin
 									eventpushmsg	= @eventpushmsg
 							where eventidx = @idx
 
-							select @RESULT_SUCCESS 'rtn'
+							select @RESULT_SUCCESS 'rtn', @commentX commentX
 						end
 					else if(@subkind = 3)
 						begin
 							update dbo.tEventSub set eventstatedaily = case when eventstatedaily = 0 then 1 else 0 end where eventidx = @idx
 
-							select @RESULT_SUCCESS 'rtn'
+							select @RESULT_SUCCESS 'rtn', @commentX commentX
 						end
 					else if(@subkind = 4)
 						begin
 							update dbo.tEventSub set eventpushstate = case when eventpushstate = 0 then 1 else 0 end where eventidx = @idx
 
-							select @RESULT_SUCCESS 'rtn'
+							select @RESULT_SUCCESS 'rtn', @commentX commentX
 						end
 					else if(@subkind = 5)
 						begin
 							delete from dbo.tEvnetUserGetLog where idx = @p4_
 
-							select @RESULT_SUCCESS 'rtn'
+							select @RESULT_SUCCESS 'rtn', @commentX commentX
 						end
 				end
 			else if(@p2_ = 53)
@@ -2458,7 +2612,7 @@ Begin
 							param20	= @pack6
 					where itemcode = @p3_
 
-					select @RESULT_SUCCESS 'rtn'
+					select @RESULT_SUCCESS 'rtn', @commentX commentX
 				end
 		end
 */
