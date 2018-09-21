@@ -1047,6 +1047,12 @@ create table dbo.tLottoInfo(
 	curturnnum5				int,
 	curturnnum6				int,				-- 파워볼.
 
+	select1					int,				-- 파워볼홀짝 -> 스트라이크(0)/볼(1)
+	select2					int,				-- 파워볼언오 -> 직구(0), 변화구(1)
+	select3					int,				-- 합볼홀짝 -> 좌(0), 우(1)
+	select4					int,				-- 합볼언오 -> 상(0), 하(1)
+
+
 	-- 파워볼에 의한 정보.
 	pbgrade					int,				-- 파워볼 등급.
 	pbevenodd				int,				-- 파워볼 홀짝.

@@ -5,6 +5,16 @@ exec spu_LottoPowerBallTime 1, -1, -1, -1, -1, -1, -1, -1, -1			-- 남은시간�
 exec spu_LottoPowerBallTime 2, 821730, 19, 12, 15, 09, 10, 04, -1		-- 입력...
 exec spu_LottoPowerBallTime 2, 822250, 06, 13, 16, 23, 27, 07, -1
 exec spu_LottoPowerBallTime 2, 822289, 02, 07, 16, 27, 28, 02, -1
+
+exec spu_LottoPowerBallTime 2, 822297, 01, 01, 01, 01, 01, 01, -1
+exec spu_LottoPowerBallTime 2, 822298, 01, 01, 01, 01, 02, 02, -1
+exec spu_LottoPowerBallTime 2, 822299, 01, 01, 01, 01, 03, 03, -1
+exec spu_LottoPowerBallTime 2, 822300, 01, 01, 01, 01, 04, 04, -1
+exec spu_LottoPowerBallTime 2, 822301, 01, 01, 01, 01, 05, 05, -1
+exec spu_LottoPowerBallTime 2, 822302, 01, 01, 01, 01, 96, 06, -1
+exec spu_LottoPowerBallTime 2, 822303, 01, 01, 01, 01, 97, 07, -1
+exec spu_LottoPowerBallTime 2, 822304, 01, 01, 01, 01, 98, 08, -1
+exec spu_LottoPowerBallTime 2, 822305, 01, 01, 01, 01, 99, 09, -1
 */
 use GameMTBaseball
 GO
@@ -56,10 +66,23 @@ as
 	declare @comment					varchar(512)			set @comment		= 'ERROR 알수없는 오류(-1)'
 	declare @nextturntime				int
 	declare @nextturndate				datetime
-	declare @totalball					int
+
 	declare @curturntime				int 					set @curturntime	= @curturntime_
 	declare @passtime					int						set @passtime		= 0
 
+	declare @pbgrade					int
+	declare @pbevenodd					int
+	declare @pbunderover				int
+	declare @totalball					int
+	declare @tbgrade					int
+	declare @tbevenodd					int
+	declare @tbunderover				int
+	declare @tbgrade2					int
+
+	declare @select1					int
+	declare @select2					int
+	declare @select3					int
+	declare @select4					int
 
 Begin
 	------------------------------------------------
@@ -99,25 +122,33 @@ Begin
 					set @nextturndate 	= DATEADD(ss, @TURNTIME_SECOND, getdate());
 					set @totalball 		= @curturnnum1_ + @curturnnum2_ + @curturnnum3_ + @curturnnum4_ + @curturnnum5_
 
+					set @pbgrade		= dbo.fnu_GetBallInfo(@MODE_POWERBALL, @KIND_GRADE, @curturnnum6_)
+					set @pbevenodd		= dbo.fnu_GetBallInfo(@MODE_POWERBALL, @KIND_EVENODD, @curturnnum6_)
+					set @pbunderover	= dbo.fnu_GetBallInfo(@MODE_POWERBALL, @KIND_UNDEROVER, @curturnnum6_)
+					set @tbgrade		= dbo.fnu_GetBallInfo(@MODE_TOTALBALL, @KIND_GRADE, @totalball)
+					set @tbevenodd		= dbo.fnu_GetBallInfo(@MODE_TOTALBALL, @KIND_EVENODD, @totalball)
+					set @tbunderover	= dbo.fnu_GetBallInfo(@MODE_TOTALBALL, @KIND_UNDEROVER, @totalball)
+					set @tbgrade2		= dbo.fnu_GetBallInfo(@MODE_TOTALBALL, @KIND_GRADE2, @totalball)
+
+					set @select1		= @pbevenodd
+					set @select2		= @pbunderover
+					set @select3		= @tbevenodd
+					set @select4		= @tbunderover
 
 					insert into dbo.tLottoInfo(
 							curturntime, 	curturndate,
 							curturnnum1, 	curturnnum2, 	curturnnum3, 	curturnnum4, 	curturnnum5, 	curturnnum6,
 							pbgrade, pbevenodd, pbunderover,
 							totalball, tbgrade, tbevenodd, tbunderover, tbgrade2,
+							select1, select2, select3, select4,
 							nextturntime, nextturndate
 					)
 					values(
 							@curturntime_,	getdate(),
 							@curturnnum1_, 	@curturnnum2_, 	@curturnnum3_, 	@curturnnum4_, 	@curturnnum5_, 	@curturnnum6_,
-							dbo.fnu_GetBallInfo(@MODE_POWERBALL, @KIND_GRADE, @curturnnum6_),
-							dbo.fnu_GetBallInfo(@MODE_POWERBALL, @KIND_EVENODD, @curturnnum6_),
-							dbo.fnu_GetBallInfo(@MODE_POWERBALL, @KIND_UNDEROVER, @curturnnum6_),
-							@totalball,
-							dbo.fnu_GetBallInfo(@MODE_TOTALBALL, @KIND_GRADE, @totalball),
-							dbo.fnu_GetBallInfo(@MODE_TOTALBALL, @KIND_EVENODD, @totalball),
-							dbo.fnu_GetBallInfo(@MODE_TOTALBALL, @KIND_UNDEROVER, @totalball),
-							dbo.fnu_GetBallInfo(@MODE_TOTALBALL, @KIND_GRADE2, @totalball),
+							@pbgrade, @pbevenodd, @pbunderover,
+							@totalball, @tbgrade, @tbevenodd, @tbunderover, @tbgrade2,
+							@select1, @select2, @select3, @select4,
 							@nextturntime, @nextturndate
 					)
 				END

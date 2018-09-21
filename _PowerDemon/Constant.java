@@ -17,9 +17,7 @@ public class Constant{
 	public final static int LOTTO_MODE_WRITE 		= 2;
 
 
-	public final static String ADMIN_KEY			= "ddd606f85a057f556194531400cc88d4";
-	public final static String KAKAOSERVER			= "http://www.nlotto.co.kr/gameInfo.do?method=powerWinNoList";
-	public final static String KAKAO_OK_MSG			= "{\"code\":200,\"msg\":\"Payment Log submitted\"}";
+	public final static String LOTTO_SERVER			= "http://www.nlotto.co.kr/gameInfo.do?method=powerWinNoList";
 
 
 	public final static String DB_DRIVER 			= "com.microsoft.sqlserver.jdbc.SQLServerDriver";

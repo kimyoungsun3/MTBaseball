@@ -68,7 +68,7 @@ function f_Submit2(f) {
 					</tr>
 					</form>
 				</table>
-				<table border=1 width=1500>
+				<table border=1 width=1800>
 					<%
 					//2. 데이타 조작
 					//exec spu_GameMTBaseballD 20, 23, 1,  1, -1, -1, -1, -1, -1, -1, '', '', '821730', '', '', '', '', '', '', ''				-- 나눔로또 정보.
@@ -111,6 +111,12 @@ function f_Submit2(f) {
 							<td>파워볼등급</td>
 							<td>파워볼홀짝</td>
 							<td>파워볼언더오버</td>
+							<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+							<td>파워볼(홀짝)<br>스트라이크/볼</td>
+							<td>파워볼(언오)<br>직구/변화구</td>
+							<td>볼합(홀짝)<br>좌/우</td>
+							<td>볼합(언오)<br>상/하</td>
+							<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
 							<td>다음회차</td>
 							<td>다음회차시간</td>
 							<td>등록관리자ID</td>
@@ -147,6 +153,12 @@ function f_Submit2(f) {
 							<td bgcolor="#CCFF99"><%=getLottoPBGrade(result.getInt("pbgrade"))%></td>
 							<td bgcolor="#CCFF99"><%=getLottoPBEvenOdd(result.getInt("pbevenodd"))%></td>
 							<td bgcolor="#CCFF99"><%=getLottoPBUnderOver(result.getInt("pbunderover"))%></td>
+							<td></td>
+							<td bgcolor="#00FF00"><%=getLottoSelect1(result.getInt("select1"))%></td>
+							<td bgcolor="#00FF00"><%=getLottoSelect2(result.getInt("select2"))%></td>
+							<td bgcolor="#00FF00"><%=getLottoSelect3(result.getInt("select3"))%></td>
+							<td bgcolor="#00FF00"><%=getLottoSelect4(result.getInt("select4"))%></td>
+							<td></td>
 							<td><%=result.getString("nextturntime")%></td>
 							<td><%=getDate19(result.getString("nextturndate"))%></td>
 							<td><%=result.getString("adminid")%></td>
