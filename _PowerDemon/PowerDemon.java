@@ -14,7 +14,7 @@ public class PowerDemon extends Thread{
 	Connection conn 			= null;
 	public int nConnectMode;
 	public String strDataBase;
-	public int nSleepTime 		= 2 * 1000;				//     2 * 1000; 2초
+	public int nSleepTime 		= 10 * 1000;				//     2 * 1000; 2초
 	PowerData powerData 		= new PowerData();
 
 	public static void main(String[] args) throws UnsupportedEncodingException {
@@ -46,11 +46,13 @@ public class PowerDemon extends Thread{
 				System.out.println("================================================");
 
 				connDB();			//1. 접속.
-				powerFirstRead();	//2. 데이타 읽기.
-				powerSend();		//3. GCM 전송하기.
-				powerSendLog();  	//4. 푸시 발송 이력처리.
+				powerDBRead();		//2. 데이타 읽기.
+				powerWebReadParse();//3. 읽어오기 > 파싱.
+				powerDBWrite();  	//4. 기록하기
 				disconnect();		//5. db정리.
-				System.out.println("현재회차 >>> "+ powerData.curTurnTime + " 지난시간:" + powerData.passTime);
+
+				nSleepTime = PowerUtil.getSleepTime(powerData.passTime);
+				System.out.println("현재회차 >>> "+ powerData.curTurnTime + " 지난시간:" + powerData.passTime + " > " + nSleepTime);
 
 				sleep(nSleepTime);
 			}
@@ -73,8 +75,8 @@ public class PowerDemon extends Thread{
 	}
 
 	//데이터를 가져온다.
-	public void powerFirstRead(){
-		if(Constant.DEBUG_MODE)System.out.println("powerFirstRead");
+	public void powerDBRead(){
+		if(Constant.DEBUG_MODE)System.out.println("powerDBRead");
 		CallableStatement _cstmt	 	= null;
 		StringBuffer _query 			= new StringBuffer();
 		ResultSet _result 				= null;
@@ -106,87 +108,33 @@ public class PowerDemon extends Thread{
 				powerData.curTurnTime	= _result.getInt("curturntime");
 				powerData.passTime		= _result.getInt("passtime");
 			}
-			System.out.println(powerData.curTurnTime + " > " + powerData.passTime);
+			//System.out.println(powerData.curTurnTime + " > " + powerData.passTime);
 		}catch(SQLException _e){
 			System.out.println("kakaoSendRead error:" + _e);
 		}
 	}
 
-	public boolean callWeb(String urlParameters){
-		boolean _rtn = false;
-		/*
-		try{
-			String request = Constant.KAKAOSERVER;
-			URL url = new URL(request);
-			HttpURLConnection connection = (HttpURLConnection)url.openConnection();
-			connection.setDoOutput(true);
-			connection.setDoInput(true);
-			connection.setUseCaches(false);
-			connection.setInstanceFollowRedirects(false);
-			connection.setRequestMethod("POST");
-			connection.setRequestProperty("Connection", "Keep-Alive");
-			connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
-			connection.setRequestProperty("charset", "utf-8");
-			connection.setRequestProperty("Authorization", "KakaoAK " + Constant.ADMIN_KEY);
-			connection.setRequestProperty("Content-Length", "" + Integer.toString(urlParameters.getBytes().length));
-			connection.setUseCaches(false);
 
-			DataOutputStream wr = new DataOutputStream(connection.getOutputStream());
-			wr.writeBytes(urlParameters);
-			wr.flush();
+	public void powerWebReadParse(){
+		String _strPage 		= PowerUtil.getWebRead();
+		String _strLottoPage 	= PowerUtil.getLottoPart(_strPage);
 
+		//System.out.println(
+		//"\n"
+		//+ "\n1:" + PowerUtil.getTurnTime(_strLottoPage)
+		//+ "\n2:" + PowerUtil.getNormalBall(_strLottoPage)
+		//+ "\n3:" + PowerUtil.getPowerBall(_strLottoPage)
+		//+ "\n"
+		//);
 
-			String line;
-			InputStream inputStream = new BufferedInputStream(connection.getInputStream());
-			BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-			while((line = reader.readLine()) != null) {
-				if(Constant.DEBUG_RECE)System.out.println("msg:" + line);
-				if(line.equals(Constant.KAKAO_OK_MSG))
-					_rtn = true;
-				else
-					_rtn = false;
-			}
-			wr.close();
-			reader.close();
-			connection.disconnect();
-		}catch(Exception e){
-			System.out.println("PageCountFilter error"+e);
-		}
-		/**/
-		return _rtn;
+		powerData.curTurnTime = PowerUtil.getTurnTimeInt(_strLottoPage);
+		PowerUtil.getNormalBallParse(_strLottoPage, powerData);
+		powerData.curTurnNum6 = PowerUtil.getPowerBall(_strLottoPage);
+		powerData.display();
 	}
 
-
-	public void powerSend() throws UnsupportedEncodingException{
-		//3-1단계 kakao. 단말 API KEY
-		StringBuffer _sb = new StringBuffer();
-
-		/*
-		PowerData _data;
-		int _cnt = listPowerData.size();
-		for(int i = 0; i < _cnt ; i++){
-			_data = listPowerData.get(i);
-			_sb.setLength(0);
-			_sb.append("partner_order_id=" 	+ _data.buy_no);
-			_sb.append("&os=" 				+ _data.os);
-			_sb.append("&platform=" 		+ _data.platform);
-			_sb.append("&country_iso=" 		+ _data.country_ios);
-			_sb.append("&price=" 			+ _data.price);
-			_sb.append("&currency=" 		+ _data.currency);
-			_sb.append("&user_id=" 			+ _data.kakaogameid);
-			_sb.append("&product_id=" 		+ _data.productid);
-			_sb.append("&purchase_token=" 	+ _data.purchasetoken);
-
-			if(Constant.DEBUG_PARAM)System.out.println(" send:" + _sb.toString());
-			_data.rtn = callWeb(_sb.toString());
-			if(Constant.DEBUG_PARAM)System.out.println(" rece:" + _data.rtn);
-		}
-		/**/
-	}
-
-	public void powerSendLog(){
-
-		if(Constant.DEBUG_MODE)System.out.println("powerSendLog");
+	public void powerDBWrite(){
+		if(Constant.DEBUG_MODE)System.out.println("powerDBWrite");
 		CallableStatement _cstmt	 	= null;
 		StringBuffer _query 			= new StringBuffer();
 		ResultSet _result 				= null;
@@ -200,13 +148,13 @@ public class PowerDemon extends Thread{
 
 			_cstmt.setInt(_idxColumn++, Constant.LOTTO_MODE_WRITE);
 			_cstmt.setInt(_idxColumn++, powerData.curTurnTime);
-			_cstmt.setInt(_idxColumn++, 1);
-			_cstmt.setInt(_idxColumn++, 2);
-			_cstmt.setInt(_idxColumn++, 3);
-			_cstmt.setInt(_idxColumn++, 4);
-			_cstmt.setInt(_idxColumn++, 5);
+			_cstmt.setInt(_idxColumn++, powerData.curTurnNum1);
+			_cstmt.setInt(_idxColumn++, powerData.curTurnNum2);
+			_cstmt.setInt(_idxColumn++, powerData.curTurnNum3);
+			_cstmt.setInt(_idxColumn++, powerData.curTurnNum4);
+			_cstmt.setInt(_idxColumn++, powerData.curTurnNum5);
 
-			_cstmt.setInt(_idxColumn++, 6);
+			_cstmt.setInt(_idxColumn++, powerData.curTurnNum6);
 			_cstmt.registerOutParameter(_idxColumn++, Types.INTEGER);
 
 			//2-2. 스토어즈 프로시져 실행하기
@@ -219,7 +167,7 @@ public class PowerDemon extends Thread{
 				powerData.curTurnTime	= _result.getInt("curturntime");
 				powerData.passTime		= _result.getInt("passtime");
 			}
-			System.out.println(powerData.curTurnTime + " > " + powerData.passTime);
+			//System.out.println(powerData.curTurnTime + " > " + powerData.passTime);
 		}catch(SQLException _e){
 			System.out.println("kakaoSendRead error:" + _e);
 		}
@@ -235,7 +183,7 @@ public class PowerDemon extends Thread{
 
 	public void sleep(int _ms){
 		try{
-			System.out.println("mainSleep : "+(_ms/60000)+"분");
+			System.out.println("mainSleep : "+(_ms/1000)+"초");
 			Thread.sleep(_ms);
 		}catch(InterruptedException _ie){
 			_ie.printStackTrace();
