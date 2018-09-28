@@ -160,42 +160,24 @@ class PowerUtil{
 	//--------------------------------------------------------------
 	public static int getSleepTime(int _passTime){
 		int _rtn = 30 * 1000;
-		if(_passTime < 100){
+		if(      _passTime < 100){
 			_rtn = (int)(30 * 1000);
 		}else if(_passTime < 200){
 			_rtn = (int)(20 * 1000);
-		}else if(_passTime < 210){
-			_rtn = (int)(6 * 1000);
-		}else if(_passTime < 220){
-			_rtn = (int)(5 * 1000);
-		}else if(_passTime < 230){
-			_rtn = (int)(4 * 1000);
-		}else if(_passTime < 240){
-			_rtn = (int)(3.5 * 1000);
-		}else if(_passTime < 250){
-			_rtn = (int)(3 * 1000);
-		}else if(_passTime < 260){
-			_rtn = (int)(2.5 * 1000);
-		}else if(_passTime < 270){
-			_rtn = (int)(2 * 1000);
 		}else if(_passTime < 280){
-			_rtn = (int)(1.5 * 1000);
+			_rtn = (int)(10 * 1000);
 		}else if(_passTime < 290){
-			_rtn = (int)(1.5 * 1000);
-		}else if(_passTime < 293){
-			_rtn = (int)(1 * 1000);
-		}else if(_passTime < 296){
-			_rtn = (int)(0.9 * 1000);
+			_rtn = (int)(3 * 1000);
+		}else if(_passTime < 294){
+			_rtn = (int)(2 * 1000);
 		}else if(_passTime < 298){
-			_rtn = (int)(0.7 * 1000);
-		}else if(_passTime < 296){
-			_rtn = (int)(0.6 * 1000);
+			_rtn = (int)(1 * 1000);
 		}else if(_passTime < 300){
 			_rtn = (int)(0.5 * 1000);
 		}else if(_passTime < 305){
 			_rtn = (int)(0.5 * 1000);
 		}else{
-			_rtn = 1500;
+			_rtn = 2000;
 		}
 
 		return _rtn;

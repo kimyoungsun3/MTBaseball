@@ -185,7 +185,7 @@ function f_Submit2(f) {
 								<a href=cashbuy_list.jsp?gameid=<%=result.getString("gameid")%> target=_blank>캐쉬검사</a><br>
 								<a href=cash_form.jsp?gameid=<%=result.getString("gameid")%> target=_blank>캐쉬강제입력</a><br>-->
 								<a href=unusual_list.jsp?gameid=<%=result.getString("gameid")%> target=_blank>비정상검색(일반)</a><br>
-								<a href=unusual_list2.jsp?gameid=<%=result.getString("gameid")%> target=_blank>비정상검색(교배)</a><br>
+								<a href=unusual_list2.jsp?gameid=<%=result.getString("gameid")%> target=_blank>비정상검색(일반2)</a><br>
 							</td>
 							<%
 								maxPage = result.getInt("maxPage");

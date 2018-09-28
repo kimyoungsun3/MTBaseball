@@ -41,14 +41,15 @@ public class PowerDemon extends Thread{
 
 	// 푸시 실행
 	public void start(){
+		boolean _bParseError;
 		try{
 			while(true){
 				System.out.println("================================================");
 
 				connDB();			//1. 접속.
 				powerDBRead();		//2. 데이타 읽기.
-				powerWebReadParse();//3. 읽어오기 > 파싱.
-				powerDBWrite();  	//4. 기록하기
+				_bParseError = powerWebReadParse();//3. 읽어오기 > 파싱.
+				powerDBWrite(_bParseError);//4. 기록하기
 				disconnect();		//5. db정리.
 
 				nSleepTime = PowerUtil.getSleepTime(powerData.passTime);
@@ -115,9 +116,10 @@ public class PowerDemon extends Thread{
 	}
 
 
-	public void powerWebReadParse(){
+	public boolean powerWebReadParse(){
 		String _strPage 		= PowerUtil.getWebRead();
 		String _strLottoPage 	= PowerUtil.getLottoPart(_strPage);
+		boolean _rtnError 		= false;
 
 		//System.out.println(
 		//"\n"
@@ -126,14 +128,24 @@ public class PowerDemon extends Thread{
 		//+ "\n3:" + PowerUtil.getPowerBall(_strLottoPage)
 		//+ "\n"
 		//);
+		try{
+			powerData.curTurnTime = PowerUtil.getTurnTimeInt(_strLottoPage);
+			PowerUtil.getNormalBallParse(_strLottoPage, powerData);
+			powerData.curTurnNum6 = PowerUtil.getPowerBall(_strLottoPage);
+			powerData.display();
+		}catch(Exception _e){
+			System.out.println("powerWebReadParse error:" + _e);
+			_rtnError = true;
+		}
 
-		powerData.curTurnTime = PowerUtil.getTurnTimeInt(_strLottoPage);
-		PowerUtil.getNormalBallParse(_strLottoPage, powerData);
-		powerData.curTurnNum6 = PowerUtil.getPowerBall(_strLottoPage);
-		powerData.display();
+		return _rtnError;
 	}
 
-	public void powerDBWrite(){
+	public void powerDBWrite(boolean _bParseError){
+		if(_bParseError){
+			if(Constant.DEBUG_MODE)System.out.println("powerDBWrite > Pass");
+			return;
+		}
 		if(Constant.DEBUG_MODE)System.out.println("powerDBWrite");
 		CallableStatement _cstmt	 	= null;
 		StringBuffer _query 			= new StringBuffer();
@@ -161,7 +173,7 @@ public class PowerDemon extends Thread{
 			_result = _cstmt.executeQuery();
 
 			//2-3-1. 코드결과값 받기(1개)
-			PowerData powerData 	= new PowerData();
+			//PowerData powerData 	= new PowerData();
 			if(_result.next()){
 				_resultCode 			= _result.getInt("rtn");
 				powerData.curTurnTime	= _result.getInt("curturntime");

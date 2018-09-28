@@ -33,7 +33,7 @@
 		<category>1</category>
 		<subcategory>1</subcategory>
 		<equpslot>1</equpslot>
-		<itemname>나무 헬멧</itemname>
+		<itemname>돌 헬멧</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -45,7 +45,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 조각으로 조합한 장비</description>
+		<description>돌 조각으로 조합한 장비</description>
 		<getbox>4100</getbox>
 		<getpercent1000>1</getpercent1000>
 		<expincrease100>35</expincrease100>
@@ -201,7 +201,7 @@
 		<category>1</category>
 		<subcategory>2</subcategory>
 		<equpslot>1</equpslot>
-		<itemname>나무 상의</itemname>
+		<itemname>돌 상의</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -213,7 +213,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 조각으로 조합한 장비</description>
+		<description>돌 조각으로 조합한 장비</description>
 		<getbox>4100</getbox>
 		<getpercent1000>1</getpercent1000>
 		<expincrease100>35</expincrease100>
@@ -369,7 +369,7 @@
 		<category>1</category>
 		<subcategory>3</subcategory>
 		<equpslot>1</equpslot>
-		<itemname>나무 하의</itemname>
+		<itemname>돌 하의</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -381,7 +381,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 조각으로 조합한 장비</description>
+		<description>돌 조각으로 조합한 장비</description>
 		<getbox>4100</getbox>
 		<getpercent1000>1</getpercent1000>
 		<expincrease100>35</expincrease100>
@@ -537,7 +537,7 @@
 		<category>1</category>
 		<subcategory>4</subcategory>
 		<equpslot>1</equpslot>
-		<itemname>나무 장갑</itemname>
+		<itemname>돌 장갑</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -549,7 +549,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 조각으로 조합한 장비</description>
+		<description>돌 조각으로 조합한 장비</description>
 		<getbox>4100</getbox>
 		<getpercent1000>1</getpercent1000>
 		<expincrease100>35</expincrease100>
@@ -705,7 +705,7 @@
 		<category>1</category>
 		<subcategory>5</subcategory>
 		<equpslot>1</equpslot>
-		<itemname>나무 신발</itemname>
+		<itemname>돌 신발</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -717,7 +717,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 조각으로 조합한 장비</description>
+		<description>돌 조각으로 조합한 장비</description>
 		<getbox>4100</getbox>
 		<getpercent1000>1</getpercent1000>
 		<expincrease100>35</expincrease100>
@@ -873,7 +873,7 @@
 		<category>1</category>
 		<subcategory>6</subcategory>
 		<equpslot>1</equpslot>
-		<itemname>나무 방망이</itemname>
+		<itemname>돌 방망이</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -885,7 +885,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 조각으로 조합한 장비</description>
+		<description>돌 조각으로 조합한 장비</description>
 		<getbox>4100</getbox>
 		<getpercent1000>1</getpercent1000>
 		<expincrease100>35</expincrease100>
@@ -1041,7 +1041,7 @@
 		<category>1</category>
 		<subcategory>7</subcategory>
 		<equpslot>1</equpslot>
-		<itemname>나무 색깔공</itemname>
+		<itemname>돌 색깔공</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -1053,7 +1053,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 조각으로 조합한 장비</description>
+		<description>돌 조각으로 조합한 장비</description>
 		<getbox>4100</getbox>
 		<getpercent1000>1</getpercent1000>
 		<expincrease100>35</expincrease100>
@@ -1209,7 +1209,7 @@
 		<category>1</category>
 		<subcategory>8</subcategory>
 		<equpslot>1</equpslot>
-		<itemname>나무 고글</itemname>
+		<itemname>돌 고글</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -1221,7 +1221,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 조각으로 조합한 장비</description>
+		<description>돌 조각으로 조합한 장비</description>
 		<getbox>4100</getbox>
 		<getpercent1000>1</getpercent1000>
 		<expincrease100>35</expincrease100>
@@ -1377,7 +1377,7 @@
 		<category>1</category>
 		<subcategory>9</subcategory>
 		<equpslot>1</equpslot>
-		<itemname>나무 손목 아대</itemname>
+		<itemname>돌 손목 아대</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -1389,7 +1389,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 조각으로 조합한 장비</description>
+		<description>돌 조각으로 조합한 장비</description>
 		<getbox>4100</getbox>
 		<getpercent1000>1</getpercent1000>
 		<expincrease100>35</expincrease100>
@@ -1545,7 +1545,7 @@
 		<category>1</category>
 		<subcategory>10</subcategory>
 		<equpslot>1</equpslot>
-		<itemname>나무 팔꿈치 보호대</itemname>
+		<itemname>돌 팔꿈치 보호대</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -1557,7 +1557,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 조각으로 조합한 장비</description>
+		<description>돌 조각으로 조합한 장비</description>
 		<getbox>4100</getbox>
 		<getpercent1000>1</getpercent1000>
 		<expincrease100>35</expincrease100>
@@ -1713,7 +1713,7 @@
 		<category>1</category>
 		<subcategory>11</subcategory>
 		<equpslot>1</equpslot>
-		<itemname>나무 벨트</itemname>
+		<itemname>돌 벨트</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -1725,7 +1725,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 조각으로 조합한 장비</description>
+		<description>돌 조각으로 조합한 장비</description>
 		<getbox>4100</getbox>
 		<getpercent1000>1</getpercent1000>
 		<expincrease100>35</expincrease100>
@@ -1881,7 +1881,7 @@
 		<category>1</category>
 		<subcategory>12</subcategory>
 		<equpslot>1</equpslot>
-		<itemname>나무 무릎 보호대</itemname>
+		<itemname>돌 무릎 보호대</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -1893,7 +1893,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 조각으로 조합한 장비</description>
+		<description>돌 조각으로 조합한 장비</description>
 		<getbox>4100</getbox>
 		<getpercent1000>1</getpercent1000>
 		<expincrease100>35</expincrease100>
@@ -2049,7 +2049,7 @@
 		<category>1</category>
 		<subcategory>13</subcategory>
 		<equpslot>1</equpslot>
-		<itemname>나무 양말</itemname>
+		<itemname>돌 양말</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -2061,7 +2061,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 조각으로 조합한 장비</description>
+		<description>돌 조각으로 조합한 장비</description>
 		<getbox>4100</getbox>
 		<getpercent1000>1</getpercent1000>
 		<expincrease100>35</expincrease100>
@@ -2189,7 +2189,7 @@
 		<category>15</category>
 		<subcategory>15</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 헬멧 조각 A</itemname>
+		<itemname>돌 헬멧 조각 A</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -2201,7 +2201,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>2435</getpercent1000>
 		<combcode>1</combcode>
@@ -2214,7 +2214,7 @@
 		<category>15</category>
 		<subcategory>15</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 헬멧 조각 B</itemname>
+		<itemname>돌 헬멧 조각 B</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -2226,7 +2226,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>2435</getpercent1000>
 		<combcode>1</combcode>
@@ -2239,7 +2239,7 @@
 		<category>15</category>
 		<subcategory>15</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 헬멧 조각 C</itemname>
+		<itemname>돌 헬멧 조각 C</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -2251,7 +2251,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>2435</getpercent1000>
 		<combcode>1</combcode>
@@ -2264,7 +2264,7 @@
 		<category>15</category>
 		<subcategory>15</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 헬멧 조각 D</itemname>
+		<itemname>돌 헬멧 조각 D</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -2276,7 +2276,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>395</getpercent1000>
 		<combcode>1</combcode>
@@ -2689,7 +2689,7 @@
 		<category>15</category>
 		<subcategory>16</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 상의 조각 A</itemname>
+		<itemname>돌 상의 조각 A</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -2701,7 +2701,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>2435</getpercent1000>
 		<combcode>6</combcode>
@@ -2714,7 +2714,7 @@
 		<category>15</category>
 		<subcategory>16</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 상의 조각 B</itemname>
+		<itemname>돌 상의 조각 B</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -2726,7 +2726,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>2435</getpercent1000>
 		<combcode>6</combcode>
@@ -2739,7 +2739,7 @@
 		<category>15</category>
 		<subcategory>16</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 상의 조각 C</itemname>
+		<itemname>돌 상의 조각 C</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -2751,7 +2751,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>2435</getpercent1000>
 		<combcode>6</combcode>
@@ -2764,7 +2764,7 @@
 		<category>15</category>
 		<subcategory>16</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 상의 조각 D</itemname>
+		<itemname>돌 상의 조각 D</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -2776,7 +2776,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>395</getpercent1000>
 		<combcode>6</combcode>
@@ -3189,7 +3189,7 @@
 		<category>15</category>
 		<subcategory>17</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 하의 조각 A</itemname>
+		<itemname>돌 하의 조각 A</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -3201,7 +3201,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>2435</getpercent1000>
 		<combcode>11</combcode>
@@ -3214,7 +3214,7 @@
 		<category>15</category>
 		<subcategory>17</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 하의 조각 B</itemname>
+		<itemname>돌 하의 조각 B</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -3226,7 +3226,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>2435</getpercent1000>
 		<combcode>11</combcode>
@@ -3239,7 +3239,7 @@
 		<category>15</category>
 		<subcategory>17</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 하의 조각 C</itemname>
+		<itemname>돌 하의 조각 C</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -3251,7 +3251,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>2435</getpercent1000>
 		<combcode>11</combcode>
@@ -3264,7 +3264,7 @@
 		<category>15</category>
 		<subcategory>17</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 하의 조각 D</itemname>
+		<itemname>돌 하의 조각 D</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -3276,7 +3276,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>395</getpercent1000>
 		<combcode>11</combcode>
@@ -3689,7 +3689,7 @@
 		<category>15</category>
 		<subcategory>18</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 장갑 조각 A</itemname>
+		<itemname>돌 장갑 조각 A</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -3701,7 +3701,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>2435</getpercent1000>
 		<combcode>16</combcode>
@@ -3714,7 +3714,7 @@
 		<category>15</category>
 		<subcategory>18</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 장갑 조각 B</itemname>
+		<itemname>돌 장갑 조각 B</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -3726,7 +3726,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>2435</getpercent1000>
 		<combcode>16</combcode>
@@ -3739,7 +3739,7 @@
 		<category>15</category>
 		<subcategory>18</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 장갑 조각 C</itemname>
+		<itemname>돌 장갑 조각 C</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -3751,7 +3751,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>2435</getpercent1000>
 		<combcode>16</combcode>
@@ -3764,7 +3764,7 @@
 		<category>15</category>
 		<subcategory>18</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 장갑 조각 D</itemname>
+		<itemname>돌 장갑 조각 D</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -3776,7 +3776,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>395</getpercent1000>
 		<combcode>16</combcode>
@@ -4189,7 +4189,7 @@
 		<category>15</category>
 		<subcategory>19</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 신발 조각 A</itemname>
+		<itemname>돌 신발 조각 A</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -4201,7 +4201,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>2435</getpercent1000>
 		<combcode>21</combcode>
@@ -4214,7 +4214,7 @@
 		<category>15</category>
 		<subcategory>19</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 신발 조각 B</itemname>
+		<itemname>돌 신발 조각 B</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -4226,7 +4226,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>2435</getpercent1000>
 		<combcode>21</combcode>
@@ -4239,7 +4239,7 @@
 		<category>15</category>
 		<subcategory>19</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 신발 조각 C</itemname>
+		<itemname>돌 신발 조각 C</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -4251,7 +4251,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>2435</getpercent1000>
 		<combcode>21</combcode>
@@ -4264,7 +4264,7 @@
 		<category>15</category>
 		<subcategory>19</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 신발 조각 D</itemname>
+		<itemname>돌 신발 조각 D</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -4276,7 +4276,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>395</getpercent1000>
 		<combcode>21</combcode>
@@ -4689,7 +4689,7 @@
 		<category>15</category>
 		<subcategory>20</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 방망이 조각 A</itemname>
+		<itemname>돌 방망이 조각 A</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -4701,7 +4701,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>2435</getpercent1000>
 		<combcode>26</combcode>
@@ -4714,7 +4714,7 @@
 		<category>15</category>
 		<subcategory>20</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 방망이 조각 B</itemname>
+		<itemname>돌 방망이 조각 B</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -4726,7 +4726,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>2435</getpercent1000>
 		<combcode>26</combcode>
@@ -4739,7 +4739,7 @@
 		<category>15</category>
 		<subcategory>20</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 방망이 조각 C</itemname>
+		<itemname>돌 방망이 조각 C</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -4751,7 +4751,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>2435</getpercent1000>
 		<combcode>26</combcode>
@@ -4764,7 +4764,7 @@
 		<category>15</category>
 		<subcategory>20</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 방망이 조각 D</itemname>
+		<itemname>돌 방망이 조각 D</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -4776,7 +4776,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>395</getpercent1000>
 		<combcode>26</combcode>
@@ -5189,7 +5189,7 @@
 		<category>15</category>
 		<subcategory>21</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 색깔공 조각 A</itemname>
+		<itemname>돌 색깔공 조각 A</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -5201,7 +5201,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>2435</getpercent1000>
 		<combcode>31</combcode>
@@ -5214,7 +5214,7 @@
 		<category>15</category>
 		<subcategory>21</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 색깔공 조각 B</itemname>
+		<itemname>돌 색깔공 조각 B</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -5226,7 +5226,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>2435</getpercent1000>
 		<combcode>31</combcode>
@@ -5239,7 +5239,7 @@
 		<category>15</category>
 		<subcategory>21</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 색깔공 조각 C</itemname>
+		<itemname>돌 색깔공 조각 C</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -5251,7 +5251,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>2435</getpercent1000>
 		<combcode>31</combcode>
@@ -5264,7 +5264,7 @@
 		<category>15</category>
 		<subcategory>21</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 색깔공 조각 D</itemname>
+		<itemname>돌 색깔공 조각 D</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -5276,7 +5276,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>395</getpercent1000>
 		<combcode>31</combcode>
@@ -5689,7 +5689,7 @@
 		<category>15</category>
 		<subcategory>22</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 고글 조각 A</itemname>
+		<itemname>돌 고글 조각 A</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -5701,7 +5701,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>2435</getpercent1000>
 		<combcode>36</combcode>
@@ -5714,7 +5714,7 @@
 		<category>15</category>
 		<subcategory>22</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 고글 조각 B</itemname>
+		<itemname>돌 고글 조각 B</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -5726,7 +5726,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>2435</getpercent1000>
 		<combcode>36</combcode>
@@ -5739,7 +5739,7 @@
 		<category>15</category>
 		<subcategory>22</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 고글 조각 C</itemname>
+		<itemname>돌 고글 조각 C</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -5751,7 +5751,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>2435</getpercent1000>
 		<combcode>36</combcode>
@@ -5764,7 +5764,7 @@
 		<category>15</category>
 		<subcategory>22</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 고글 조각 D</itemname>
+		<itemname>돌 고글 조각 D</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -5776,7 +5776,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>395</getpercent1000>
 		<combcode>36</combcode>
@@ -6189,7 +6189,7 @@
 		<category>15</category>
 		<subcategory>23</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 손목 아대 조각 A</itemname>
+		<itemname>돌 손목 아대 조각 A</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -6201,7 +6201,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>2435</getpercent1000>
 		<combcode>41</combcode>
@@ -6214,7 +6214,7 @@
 		<category>15</category>
 		<subcategory>23</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 손목 아대 조각 B</itemname>
+		<itemname>돌 손목 아대 조각 B</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -6226,7 +6226,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>2435</getpercent1000>
 		<combcode>41</combcode>
@@ -6239,7 +6239,7 @@
 		<category>15</category>
 		<subcategory>23</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 손목 아대 조각 C</itemname>
+		<itemname>돌 손목 아대 조각 C</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -6251,7 +6251,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>2435</getpercent1000>
 		<combcode>41</combcode>
@@ -6264,7 +6264,7 @@
 		<category>15</category>
 		<subcategory>23</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 손목 아대 조각 D</itemname>
+		<itemname>돌 손목 아대 조각 D</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -6276,7 +6276,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>395</getpercent1000>
 		<combcode>41</combcode>
@@ -6689,7 +6689,7 @@
 		<category>15</category>
 		<subcategory>24</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 팔꿈치 보호대 조각 A</itemname>
+		<itemname>돌 팔꿈치 보호대 조각 A</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -6701,7 +6701,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>2435</getpercent1000>
 		<combcode>46</combcode>
@@ -6714,7 +6714,7 @@
 		<category>15</category>
 		<subcategory>24</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 팔꿈치 보호대 조각 B</itemname>
+		<itemname>돌 팔꿈치 보호대 조각 B</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -6726,7 +6726,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>2435</getpercent1000>
 		<combcode>46</combcode>
@@ -6739,7 +6739,7 @@
 		<category>15</category>
 		<subcategory>24</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 팔꿈치 보호대 조각 C</itemname>
+		<itemname>돌 팔꿈치 보호대 조각 C</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -6751,7 +6751,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>2435</getpercent1000>
 		<combcode>46</combcode>
@@ -6764,7 +6764,7 @@
 		<category>15</category>
 		<subcategory>24</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 팔꿈치 보호대 조각 D</itemname>
+		<itemname>돌 팔꿈치 보호대 조각 D</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -6776,7 +6776,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>395</getpercent1000>
 		<combcode>46</combcode>
@@ -7189,7 +7189,7 @@
 		<category>15</category>
 		<subcategory>25</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 벨트 조각 A</itemname>
+		<itemname>돌 벨트 조각 A</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -7201,7 +7201,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>2435</getpercent1000>
 		<combcode>51</combcode>
@@ -7214,7 +7214,7 @@
 		<category>15</category>
 		<subcategory>25</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 벨트 조각 B</itemname>
+		<itemname>돌 벨트 조각 B</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -7226,7 +7226,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>2435</getpercent1000>
 		<combcode>51</combcode>
@@ -7239,7 +7239,7 @@
 		<category>15</category>
 		<subcategory>25</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 벨트 조각 C</itemname>
+		<itemname>돌 벨트 조각 C</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -7251,7 +7251,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>2435</getpercent1000>
 		<combcode>51</combcode>
@@ -7264,7 +7264,7 @@
 		<category>15</category>
 		<subcategory>25</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 벨트 조각 D</itemname>
+		<itemname>돌 벨트 조각 D</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -7276,7 +7276,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>395</getpercent1000>
 		<combcode>51</combcode>
@@ -7689,7 +7689,7 @@
 		<category>15</category>
 		<subcategory>26</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 무릎 보호대 조각 A</itemname>
+		<itemname>돌 무릎 보호대 조각 A</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -7701,7 +7701,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>2435</getpercent1000>
 		<combcode>56</combcode>
@@ -7714,7 +7714,7 @@
 		<category>15</category>
 		<subcategory>26</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 무릎 보호대 조각 B</itemname>
+		<itemname>돌 무릎 보호대 조각 B</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -7726,7 +7726,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>2435</getpercent1000>
 		<combcode>56</combcode>
@@ -7739,7 +7739,7 @@
 		<category>15</category>
 		<subcategory>26</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 무릎 보호대 조각 C</itemname>
+		<itemname>돌 무릎 보호대 조각 C</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -7751,7 +7751,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>2435</getpercent1000>
 		<combcode>56</combcode>
@@ -7764,7 +7764,7 @@
 		<category>15</category>
 		<subcategory>26</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 무릎 보호대 조각 D</itemname>
+		<itemname>돌 무릎 보호대 조각 D</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -7776,7 +7776,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>395</getpercent1000>
 		<combcode>56</combcode>
@@ -8189,7 +8189,7 @@
 		<category>15</category>
 		<subcategory>27</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 양말 조각 A</itemname>
+		<itemname>돌 양말 조각 A</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -8201,7 +8201,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>2435</getpercent1000>
 		<combcode>61</combcode>
@@ -8214,7 +8214,7 @@
 		<category>15</category>
 		<subcategory>27</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 양말 조각 B</itemname>
+		<itemname>돌 양말 조각 B</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -8226,7 +8226,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>2435</getpercent1000>
 		<combcode>61</combcode>
@@ -8239,7 +8239,7 @@
 		<category>15</category>
 		<subcategory>27</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 양말 조각 C</itemname>
+		<itemname>돌 양말 조각 C</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -8251,7 +8251,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>2435</getpercent1000>
 		<combcode>61</combcode>
@@ -8264,7 +8264,7 @@
 		<category>15</category>
 		<subcategory>27</subcategory>
 		<equpslot>2</equpslot>
-		<itemname>나무 양말 조각 D</itemname>
+		<itemname>돌 양말 조각 D</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
@@ -8276,7 +8276,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 랜덤박스</description>
+		<description>돌 랜덤박스</description>
 		<getbox>4000</getbox>
 		<getpercent1000>395</getpercent1000>
 		<combcode>61</combcode>
@@ -8689,7 +8689,7 @@
 		<category>40</category>
 		<subcategory>40</subcategory>
 		<equpslot>3</equpslot>
-		<itemname>나무 조각 랜덤박스</itemname>
+		<itemname>돌 조각 랜덤박스</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>0</grade>
@@ -8701,7 +8701,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 조각의상 52종 중 랜덤 하나</description>
+		<description>돌 조각의상 52종 중 랜덤 하나</description>
 		<additemcode>-1</additemcode>
 	</piecebox>
 	<piecebox>
@@ -8789,7 +8789,7 @@
 		<category>40</category>
 		<subcategory>41</subcategory>
 		<equpslot>3</equpslot>
-		<itemname>나무 의상 랜덤박스</itemname>
+		<itemname>돌 의상 랜덤박스</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
 		<grade>0</grade>
@@ -8801,7 +8801,7 @@
 		<cashcost>0</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
-		<description>나무 완성의상 13종 중 랜덤 하나</description>
+		<description>돌 완성의상 13종 중 랜덤 하나</description>
 	</wearbox>
 	<wearbox>
 		<itemcode>4101</itemcode>
@@ -9004,6 +9004,25 @@
 		<description>각 모드에서 배팅시 수수료 3% 차감해준다.</description>
 		<gamemode>3</gamemode>
 		<tax100>300</tax100>
+	</spendable>
+	<spendable>
+		<itemcode>4700</itemcode>
+		<category>40</category>
+		<subcategory>47</subcategory>
+		<equpslot>3</equpslot>
+		<itemname>닉네임 변경권</itemname>
+		<activate>0</activate>
+		<toplist>0</toplist>
+		<grade>1</grade>
+		<discount>0</discount>
+		<icon>orderxx1</icon>
+		<playerlv>0</playerlv>
+		<multistate>0</multistate>
+		<gamecost>0</gamecost>
+		<cashcost>1000</cashcost>
+		<buyamount>1</buyamount>
+		<sellcost>1</sellcost>
+		<description>닉네임을 변경할때 필요한 아이템입니다.</description>
 	</spendable>
 	<cashcoin>
 		<itemcode>5000</itemcode>

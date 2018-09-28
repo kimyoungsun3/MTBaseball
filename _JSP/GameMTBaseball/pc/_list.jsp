@@ -105,6 +105,18 @@
 			idx=xxx(선물인덱스)			<br>
 		</td>
 	</tr>
+	<tr>
+		<td>inquire.jsp</td>
+		<td>
+			<a href=sysinquire.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&message=usermessage>문의하기</a><br>
+		</td>
+		<td>
+			gameid=xxxx			<br>
+			password=			<br>
+			message=			<br>
+		</td>
+	</tr>
+
 	<%/*%>		
 	<!--
 	<tr>
@@ -450,17 +462,6 @@
 			gameid=xxxx			<br>
 			password=			<br>
 			certno=				<br>
-		</td>
-	</tr>
-	<tr>
-		<td>inquire.jsp</td>
-		<td>
-			<a href=sysinquire.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&message=usermessage>문의하기</a><br>
-		</td>
-		<td>
-			gameid=xxxx			<br>
-			password=			<br>
-			message=				<br>
 		</td>
 	</tr>
 	<tr>

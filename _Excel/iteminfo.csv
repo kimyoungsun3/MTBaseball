@@ -400,6 +400,8 @@ label(spendable),itemcode,category,subcategory,equpslot,itemname,activate,toplis
 ,4600,소모품(40),수수료주문서(46),소비인벤(3),응원의 소리,없음(0),0,일반(1),0,orderxx1,0,단일템(0),0,0,1,1,싱글 모드에서 배팅시 수수료 3% 차감해준다.,싱글만(1),300,,,,,,,,,
 ,4601,소모품(40),수수료주문서(46),소비인벤(3),코치의 조언 주문서,없음(0),0,일반(1),0,orderxx1,0,단일템(0),0,0,1,1,각 모드에서 배팅시 수수료 2% 차감해준다.,싱글멀티(3),200,,,,,,,,,
 ,4602,소모품(40),수수료주문서(46),소비인벤(3),감독의 조언 주문서,없음(0),0,일반(1),0,orderxx1,0,단일템(0),0,0,1,1,각 모드에서 배팅시 수수료 3% 차감해준다.,싱글멀티(3),300,,,,,,,,,
+label(spendable),itemcode,category,subcategory,equpslot,itemname,activate,toplist,grade,discount,icon,playerlv,multistate,gamecost,cashcost,buyamount,sellcost,description,,,,,,,,,,,
+,4700,소모품(40),닉네임변경권(47),소비인벤(3),닉네임 변경권,없음(0),0,일반(1),0,orderxx1,0,단일템(0),0,1000,1,1,닉네임을 변경할때 필요한 아이템입니다.,,,,,,,,,,,
 label(cashcoin),itemcode,category,subcategory,equpslot,itemname,activate,toplist,grade,discount,icon,playerlv,multistate,gamecost,cashcost,buyamount,sellcost,description,,,,,,,,,,,
 ,5000,다이아(50),다이아(50),없음(0),다이아,0,0,저급(0),0,crystal00,0,멀티템(1),0,1,1,1,다이아,,,,,,,,,,,
 ,5001,다이아(50),다이아(50),없음(0),다이아 소량,1,0,저급(0),0,crystal01,0,단일템(0),0,100,100,1,다이아 소량,,,,,,,,,,,

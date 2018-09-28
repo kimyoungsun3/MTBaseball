@@ -18,6 +18,7 @@ public class Constant{
 
 
 	public final static String LOTTO_SERVER			= "http://www.nlotto.co.kr/gameInfo.do?method=powerWinNoList";
+	//public final static String LOTTO_SERVER			= "http://www.nlotto.co.kr";
 
 
 	public final static String DB_DRIVER 			= "com.microsoft.sqlserver.jdbc.SQLServerDriver";

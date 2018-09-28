@@ -1,16 +1,12 @@
 ﻿/*
------------------------------------------------------
-select dbo.fnu_GetDatePart('hh', '2013-11-26 12:30:00', '2013-11-26 13:30:00')
-select dbo.fnu_GetDatePart('hh', '2013-11-26 12:30:00', '2013-11-27 13:30:00')
-select dbo.fnu_GetDatePart('hh', '2013-11-26 12:30:00', '2013-11-28 13:30:00')
+select dbo.fnu_GetDatePart('dd', '2018-09-27 12:30:00', '2018-09-28 13:30:00')
+select dbo.fnu_GetDatePart('hh', '2018-09-27 12:30:00', '2018-09-28 13:30:00')
+select dbo.fnu_GetDatePart('mi', '2018-09-27 12:30:00', '2018-09-28 13:30:00')
+select dbo.fnu_GetDatePart('ss', '2018-09-27 12:30:00', '2018-09-28 13:30:00')
+select dbo.fnu_GetDatePart('ms', '2018-09-27 12:30:00', '2018-09-28 13:30:00')
 
-select dbo.fnu_GetDatePart('hh', '2013-11-26 12:30:00', '2013-11-26 13:29:00')
-select dbo.fnu_GetDatePart('hh', '2013-11-26 12:30:00', '2013-11-26 13:30:00')
-select dbo.fnu_GetDatePart('hh', '2013-11-26 12:30:00', '2013-11-26 13:31:00')
-select dbo.fnu_GetDatePart('hh', '2013-11-26 12:30:00', '2013-11-26 14:31:00')
-select dbo.fnu_GetDatePart('hh', '2013-11-26 12:30:00', '2013-11-27 12:30:00')
-select dbo.fnu_GetDatePart('hh', '2013-11-26 12:30:00', '2013-11-27 13:30:00')
------------------------------------------------------
+select dbo.fnu_GetDatePart('ss', '2018-09-27 12:30:00', '2018-09-27 12:30:20')
+select dbo.fnu_GetDatePart('ms', '2018-09-27 12:30:00', '2018-09-27 12:30:20')
 */
 use GameMTBaseball
 GO
@@ -28,17 +24,19 @@ CREATE FUNCTION dbo.fnu_GetDatePart(
 	RETURNS int
 AS
 BEGIN
-	declare @rtn 			int				set @rtn 		= 0
+	declare @rtn 			int				set @rtn 			= 0
 	declare @datedif		datetime
+	declare @milllisecond	bigint			set @milllisecond	= 0
 
 
-	set @rtn = DATEDIFF (s, @startDate_, @endDate_)
+	set @milllisecond = DATEDIFF (ms, @startDate_, @endDate_)
 
 	set @rtn = case
-					when @kind_ = 'dd' then 	@rtn/(60*60*24)
-					when @kind_ = 'hh' then 	@rtn/3600
-					when @kind_ = 'mi' then 	@rtn/60
-					else 						@rtn
+					when @kind_ = 'dd' then 	@milllisecond/(60*60*24*1000)
+					when @kind_ = 'hh' then 	@milllisecond/(60*60*1000)
+					when @kind_ = 'mi' then 	@milllisecond/(60*1000)
+					when @kind_ = 'ss' then 	@milllisecond/(1000)
+					else 						@milllisecond
 				end
 
 	RETURN @rtn
