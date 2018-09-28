@@ -8898,10 +8898,10 @@
 		<sellcost>0</sellcost>
 		<description>코치나 감독의 조언 주문서가 일정 확률로 나온다.</description>
 		<percent1>7</percent1>
-		<percent2>3</percent2>
-		<percent3>90</percent3>
 		<itemp1>4601</itemp1>
+		<percent2>3</percent2>
 		<itemp2>4602</itemp2>
+		<percent3>90</percent3>
 		<itemp3>-1</itemp3>
 	</advicebox>
 	<spendable>
@@ -9023,6 +9023,25 @@
 		<buyamount>1</buyamount>
 		<sellcost>1</sellcost>
 		<description>닉네임을 변경할때 필요한 아이템입니다.</description>
+	</spendable>
+	<spendable>
+		<itemcode>4800</itemcode>
+		<category>40</category>
+		<subcategory>48</subcategory>
+		<equpslot>3</equpslot>
+		<itemname>랜덤 다이아 박스</itemname>
+		<activate>0</activate>
+		<toplist>0</toplist>
+		<grade>1</grade>
+		<discount>0</discount>
+		<icon>orderxx1</icon>
+		<playerlv>0</playerlv>
+		<multistate>0</multistate>
+		<gamecost>0</gamecost>
+		<cashcost>10000</cashcost>
+		<buyamount>1</buyamount>
+		<sellcost>1</sellcost>
+		<description>5000에서 1000만 다이아에 코치의 조언,감독의 조언,응원의 소리 1장씩 지급됩니다.</description>
 	</spendable>
 	<cashcoin>
 		<itemcode>5000</itemcode>

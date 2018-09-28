@@ -93,6 +93,9 @@ as
 	declare @RESULT_ERROR_NOT_FOUND_OTHERID		int				set @RESULT_ERROR_NOT_FOUND_OTHERID		= -83			--
 	declare @RESULT_ERROR_SESSION_ID_EXPIRE		int				set @RESULT_ERROR_SESSION_ID_EXPIRE		= -151			-- 세션이 만료되었습니다.
 	declare @RESULT_ERROR_DOUBLE_IP				int				set @RESULT_ERROR_DOUBLE_IP				= -201			-- IP중복...
+	declare @RESULT_ERROR_WAITTIME_30			int				set @RESULT_ERROR_WAITTIME_30			= -202			-- 지금은 30초전입니다.
+	declare @RESULT_ERROR_TURNTIME_WRONG		int				set @RESULT_ERROR_TURNTIME_WRONG		= -203			-- 회차정보가 잘못되었다
+
 
 	------------------------------------------------
 	--	2-2. 정의값
@@ -114,6 +117,11 @@ as
 	-- MT bool
 	declare @BOOL_TRUE							int					set @BOOL_TRUE								= 1
 	declare @BOOL_FALSE							int					set @BOOL_FALSE								= 0
+
+	-- MT 게임모드.
+	declare @GAME_MODE_PRACTICE					int					set @GAME_MODE_PRACTICE						= 0
+	declare @GAME_MODE_SINGLE					int					set @GAME_MODE_SINGLE						= 1
+	declare @GAME_MODE_MULTI					int					set @GAME_MODE_MULTI						= 2
 
 	-- MT combinate(조합)
 	declare @COMBINATE_RESULT_SUCCESS			int					set @COMBINATE_RESULT_SUCCESS				= 1

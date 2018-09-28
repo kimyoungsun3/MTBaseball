@@ -1394,7 +1394,7 @@ values('wearbox', '4104', '40', '41', '3', '티타늄 의상 랜덤박스', '0', '0', '4'
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
-values('advicebox', '4200', '40', '42', '3', '조언 패키지 박스', '0', '0', '0', '0', 'a', '0', '0', '0', '0', '1', '0', '코치나 감독의 조언 주문서가 일정 확률로 나온다.', '7', '3', '90', '4601', '4602', '-1')
+values('advicebox', '4200', '40', '42', '3', '조언 패키지 박스', '0', '0', '0', '0', 'a', '0', '0', '0', '0', '1', '0', '코치나 감독의 조언 주문서가 일정 확률로 나온다.', '7', '4601', '3', '4602', '90', '-1')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description) 
@@ -1419,6 +1419,10 @@ GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description) 
 values('spendable', '4700', '40', '47', '3', '닉네임 변경권', '0', '0', '1', '0', 'orderxx1', '0', '0', '0', '1000', '1', '1', '닉네임을 변경할때 필요한 아이템입니다.')
+GO
+
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description) 
+values('spendable', '4800', '40', '48', '3', '랜덤 다이아 박스', '0', '0', '1', '0', 'orderxx1', '0', '0', '0', '10000', '1', '1', '5000에서 1000만 다이아에 코치의 조언,감독의 조언,응원의 소리 1장씩 지급됩니다.')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description) 

@@ -164,20 +164,26 @@ class PowerUtil{
 			_rtn = (int)(30 * 1000);
 		}else if(_passTime < 200){
 			_rtn = (int)(20 * 1000);
-		}else if(_passTime < 280){
+		}else if(_passTime < 270){
 			_rtn = (int)(10 * 1000);
+		}else if(_passTime < 280){
+			_rtn = (int)(5 * 1000);
 		}else if(_passTime < 290){
 			_rtn = (int)(3 * 1000);
-		}else if(_passTime < 294){
+		}else if(_passTime < 292){
 			_rtn = (int)(2 * 1000);
+		}else if(_passTime < 294){
+			_rtn = (int)(1.0 * 1000);
+		}else if(_passTime < 296){
+			_rtn = (int)(0.8 * 1000);
 		}else if(_passTime < 298){
-			_rtn = (int)(1 * 1000);
+			_rtn = (int)(0.6 * 1000);
 		}else if(_passTime < 300){
 			_rtn = (int)(0.5 * 1000);
-		}else if(_passTime < 305){
+		}else if(_passTime < 310){
 			_rtn = (int)(0.5 * 1000);
 		}else{
-			_rtn = 2000;
+			_rtn = 1000;
 		}
 
 		return _rtn;

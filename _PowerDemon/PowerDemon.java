@@ -109,7 +109,7 @@ public class PowerDemon extends Thread{
 				powerData.curTurnTime	= _result.getInt("curturntime");
 				powerData.passTime		= _result.getInt("passtime");
 			}
-			//System.out.println(powerData.curTurnTime + " > " + powerData.passTime);
+			System.out.println("R > " + powerData.curTurnTime + " > " + powerData.passTime);
 		}catch(SQLException _e){
 			System.out.println("kakaoSendRead error:" + _e);
 		}
@@ -173,13 +173,12 @@ public class PowerDemon extends Thread{
 			_result = _cstmt.executeQuery();
 
 			//2-3-1. 코드결과값 받기(1개)
-			//PowerData powerData 	= new PowerData();
 			if(_result.next()){
 				_resultCode 			= _result.getInt("rtn");
-				powerData.curTurnTime	= _result.getInt("curturntime");
-				powerData.passTime		= _result.getInt("passtime");
+				//powerData.curTurnTime	= _result.getInt("curturntime");
+				//powerData.passTime	= _result.getInt("passtime");
 			}
-			//System.out.println(powerData.curTurnTime + " > " + powerData.passTime);
+			//System.out.println("W > " + powerData.curTurnTime + " > " + powerData.passTime);
 		}catch(SQLException _e){
 			System.out.println("kakaoSendRead error:" + _e);
 		}
