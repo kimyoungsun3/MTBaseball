@@ -770,15 +770,15 @@ Begin
 										begin
 											select @RESULT_ERROR_NOT_FOUND_GAMEID 'rtn', @commentX commentX
 										end
-									else if(exists(select top 1   * from dbo.tPCRoomIP where gameid = @ps1_ and pcip = @ps3_))
+									else if(exists(select top 1   * from dbo.tPCRoomIP where gameid = @ps1_ and connectip = @ps3_))
 										begin
 											select @RESULT_ERROR_DOUBLE_IP 'rtn', @commentX commentX
 										end
 									else
 										begin
 											--  유저 존재 -> 등록안된 ip
-											insert into dbo.tPCRoomIP(gameid,  pcip, adminid)
-											values(					   @ps1_, @ps3_,   @ps2_)
+											insert into dbo.tPCRoomIP(gameid,  connectip, adminid)
+											values(					   @ps1_,  @ps3_,     @ps2_)
 
 											select @RESULT_SUCCESS 'rtn', @commentX commentX
 										end
@@ -790,7 +790,7 @@ Begin
 										begin
 											select @RESULT_ERROR_NOT_FOUND_GAMEID 'rtn', @commentX commentX
 										end
-									else if(exists(select top 1   * from dbo.tPCRoomIP where gameid = @ps1_ and pcip = @ps3_))
+									else if(exists(select top 1   * from dbo.tPCRoomIP where gameid = @ps1_ and connectip = @ps3_))
 										begin
 											select @RESULT_ERROR_DOUBLE_IP 'rtn', @commentX commentX
 										end
@@ -801,7 +801,7 @@ Begin
 											update dbo.tPCRoomIP
 												set
 													gameid 		= @ps1_,
-													pcip		= @ps3_,
+													connectip	= @ps3_,
 													adminid 	= @ps2_
 											where idx = @p5_
 
@@ -1229,9 +1229,9 @@ Begin
 							set @comment = '  싱글플레이상태 변경'
 							update dbo.tUserMaster
 								set
-									sflag  = CASE
-													WHEN sflag = 0	then 	1
-													else 					0
+									singleflag  = CASE
+													WHEN singleflag = 0	then 	1
+													else 						0
 												end
 							where gameid = @gameid
 						end

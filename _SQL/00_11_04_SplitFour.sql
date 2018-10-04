@@ -1,9 +1,10 @@
 ﻿
 /*
-SELECT * FROM dbo.fnu_SplitFour(';', ':', '0:0:1000:1;1:-1:-1:0;2:-1:-1:0;3:-1:-1:0;')
-SELECT * FROM dbo.fnu_SplitFour(';', ':', '0:1:2:3;1:11:12:13;2:21:22:23;3:31:32:33;')
-SELECT * FROM dbo.fnu_SplitFour(';', ':', '0:1:2:3; 11 : 22 : 33 : 44 ; 111 :222 : 333: 444 ;')
-
+SELECT * FROM dbo.fnu_SplitFour(';', ':', '1:-1:-1:0;2:-1:-1:0;3:-1:-1:0;4:-1:-1:0;')
+SELECT * FROM dbo.fnu_SplitFour(';', ':', '1:0:1600:1;2:-1:-1:0;3:-1:-1:0;4:-1:-1:0;')
+SELECT * FROM dbo.fnu_SplitFour(';', ':', '1:1:2:3;2:11:12:13;3:21:22:23;4:31:32:33;')
+SELECT * FROM dbo.fnu_SplitFour(';', ':', '1:1:2:3; 11 : 22 : 33 : 44 ; 111 :222 : 333: 444 ; 1111 :2222 : 3333: 4444 ;')
+SELECT * FROM dbo.fnu_SplitFour(';', ':', '1:1:2:3; 11 : 22 : 33 : 44 ; 111 :222 : 333: 444 ; 1111 :2222 : 3333: 4444 ;') where param1 = 1
 
 -- 1. 커서 생성
 declare @idx			int,
@@ -12,7 +13,7 @@ declare @idx			int,
 		@cnt			int
 
 declare curTemp Cursor for
-select idx, select, itemcode, cnt FROM dbo.fnu_SplitFour(';', ':', '0:1;2:3')
+select idx, select, itemcode, cnt FROM dbo.fnu_SplitFour(';', ',', '0,1;2,3')
 
 -- 2. 커서오픈
 open curTemp

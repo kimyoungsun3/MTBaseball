@@ -188,14 +188,14 @@ function f_Submit(f) {
 								sockslistidx 	: <%=result.getString("sockslistidx")%><br>
 							</td>
 							<td>
-								sflag 		: 
+								½Ì±ÛÇÃ·¡±× 		: 
 												<a href=usersetting_ok.jsp?p1=19&p2=2000&p3=10&ps1=<%=gameidCurRow%>&ps2=<%=adminid%>&branch=userinfo_list&gameid=<%=gameidCurRow%>>
-													<%=getSingleFlag(result.getInt("sflag"))%>
+													<%=getSingleFlag(result.getInt("singleflag"))%>
 												</a><br>	
-								strycnt 	: <%=result.getString("strycnt")%><br>
-								ssuccesscnt : <%=result.getString("ssuccesscnt")%><br>
-								sfailcnt 	: <%=result.getString("sfailcnt")%><br>
-								serrorcnt 	: <%=result.getString("serrorcnt")%><br>
+								½Ì±Û½ÃµµÈ½¼ö 	: <%=result.getString("singletrycnt")%><br>
+								½Ì±Û¼º°ø		: <%=result.getString("singlesuccesscnt")%><br>
+								½Ì±Û½ÇÆÐ 		: <%=result.getString("singlefailcnt")%><br>
+								½Ì±Û¿À·ù 		: <%=result.getString("singleerrorcnt")%><br>
 							</td>
 							<td>
 								Á¶°¢¹Ú½º¿ÀÇÂ¼ö·® 		: <%=result.getString("pieceboxopencnt")%><br>

@@ -112,11 +112,11 @@ function f_Submit2(f) {
 						<tr>
 							<td><%=result.getString("idx")%></td>
 							<td><a href=pcroom_list.jsp?gameid=<%=result.getString("gameid")%>><%=result.getString("gameid")%></a></td>
-							<td><%=result.getString("pcip")%></td>
+							<td><%=result.getString("connectip")%></td>
 							<td><%=getDate(result.getString("writedate"))%></td>
 							<td>
 								<a href=pcroom_form4.jsp?mode=1&p1=20&p2=22&p3=2&p4=1&ps1=<%=gameidCurRow%>&ps2=<%=adminid%>&gameid=<%=gameidCurRow%>>추가등록</a> / 
-								<a href=pcroom_form4.jsp?mode=2&p1=20&p2=22&p3=2&p4=2&p5=<%=result.getString("idx")%>&ps1=<%=gameidCurRow%>&ps2=<%=adminid%>&ps3=<%=result.getString("pcip")%>&gameid=<%=gameidCurRow%>>수정</a> / 
+								<a href=pcroom_form4.jsp?mode=2&p1=20&p2=22&p3=2&p4=2&p5=<%=result.getString("idx")%>&ps1=<%=gameidCurRow%>&ps2=<%=adminid%>&ps3=<%=result.getString("connectip")%>&gameid=<%=gameidCurRow%>>수정</a> / 
 								<a href=usersetting_ok.jsp?p1=20&p2=22&p3=2&p4=3&p5=<%=result.getString("idx")%>&ps1=<%=gameidCurRow%>&ps2=<%=adminid%>&gameid=<%=gameidCurRow%>&branch=pcroom_list>삭제</a>
 							</td>
 							<td><%=result.getString("adminid")%></td>

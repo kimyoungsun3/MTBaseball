@@ -59,7 +59,7 @@ as
 	declare @KIND_UNDEROVER						int				set	@KIND_UNDEROVER						= 3;
 	declare @KIND_GRADE2						int				set	@KIND_GRADE2						= 4;
 
-	declare @TURNTIME_SECOND					int				set @TURNTIME_SECOND					= 5 * 60
+	declare @TURNTIME_SECOND					int				set @TURNTIME_SECOND					= 5 * 60 + 2
 	------------------------------------------------
 	--	2-3. 내부사용 변수
 	------------------------------------------------

@@ -68,11 +68,11 @@ create table dbo.tUserMaster(
 	randserial		varchar(20)			default('-1'),			-- 아이템구매, 박스까기, 조각조합, 의상초월등의 유일한 구매의 랜덤씨리얼
 
 	-- (게임변수 : 싱글게임변수)
-	sflag			int					default(0),				-- 싱글미진행(0), 진행중(1).
-	strycnt			int					default(0),				-- 싱글횟수.
-	ssuccesscnt		int					default(0),				--   성공횟수.
-	sfailcnt		int					default(0),				--   실패횟수.
-	serrorcnt		int					default(0),				--   오류횟수.
+	singleflag		int					default(0),				-- 싱글미진행(0), 진행중(1).
+	singletrycnt	int					default(0),				-- 싱글횟수.
+	singlesuccesscnt	int				default(0),				--   성공횟수.
+	singlefailcnt		int				default(0),				--   실패횟수.
+	singleerrorcnt		int				default(0),				--   오류횟수(어뷰징).
 
 	-- (게임변수 : 착용아이템 인덱스리스트)
 	helmetlistidx		int 			default(-1),
@@ -428,24 +428,76 @@ GO
 create table dbo.tPCRoomIP(
 	idx				int					IDENTITY(1,1),
 
-	gameid			varchar(20),
-	pcip			varchar(20),
+	gameid			varchar(20),									-- PC방 사장ID
+	connectip		varchar(20),									-- 접속정보
+	cnt				int,											-- 배팅횟수
 
 	writedate		datetime			default(getdate()),			-- 등록일..
 	adminid			varchar(20),
 
 	-- Constraint
-	CONSTRAINT	pk_tPCRoomIP_gameid_pcip	PRIMARY KEY(gameid, pcip),
-	CONSTRAINT	uk_tPCRoomIP_pcip			UNIQUE( pcip )
+	CONSTRAINT	pk_tPCRoomIP_gameid_connectip	PRIMARY KEY(gameid, connectip),
+	CONSTRAINT	uk_tPCRoomIP_connectip			UNIQUE( connectip )
 )
 
--- insert into dbo.tPCRoomIP(gameid, pcip) values('xxxx', '127.0.0.1')
--- insert into dbo.tPCRoomIP(gameid, pcip) values('xxxx', '127.0.0.2')
--- insert into dbo.tPCRoomIP(gameid, pcip) values('xxxx', '127.0.0.3')
--- insert into dbo.tPCRoomIP(gameid, pcip) values('xxxx2', '127.0.0.3')		--error 가 정상이다.
--- select top 1 * from dbo.tPCRoomIP where pcip = '127.0.0.1'
+
+-- insert into dbo.tPCRoomIP(gameid, connectip) values('xxxx', '127.0.0.1')
+-- insert into dbo.tPCRoomIP(gameid, connectip) values('xxxx', '127.0.0.2')
+-- insert into dbo.tPCRoomIP(gameid, connectip) values('xxxx', '127.0.0.3')
+-- insert into dbo.tPCRoomIP(gameid, connectip) values('xxxx2', '127.0.0.3')		--error 가 정상이다.
+-- select top 1 * from dbo.tPCRoomIP where connectip = '127.0.0.1'
 -- select * from dbo.tPCRoomIP where gameid = 'xxxx'
--- update dbo.tPCRoomIP set pcip = '127.0.0.1' where gameid = 'xxxx' and pcip = '127.0.0.1'
+-- update dbo.tPCRoomIP set connectip = '127.0.0.1' where gameid = 'xxxx' and connectip = '127.0.0.1'
+
+
+---------------------------------------------
+-- 	PC방 일별 수익(일별 Master)
+---------------------------------------------
+IF OBJECT_ID (N'dbo.tPCRoomEarnMaster', N'U') IS NOT NULL
+	DROP TABLE dbo.tPCRoomEarnMaster;
+GO
+
+create table dbo.tPCRoomEarnMaster(
+	idx				int				identity(1, 1),
+	dateid8			char(8),							-- 20101210
+	gaincashcost	int				default(0),
+
+	-- Constraint
+	CONSTRAINT	pk_tPCRoomEarnMaster_dateid	PRIMARY KEY(dateid8)
+)
+-- select         * from dbo.tPCRoomEarnMaster
+-- select top 1   * from dbo.tPCRoomEarnMaster where dateid8 = '20120818'
+-- insert into dbo.tPCRoomEarnMaster(dateid8, gaincashcost) values('20120818', 0)
+--update dbo.tPCRoomEarnMaster
+--	set
+--		gaincashcost = gaincashcost + 1
+--where dateid8 = '20120818'
+
+
+---------------------------------------------
+-- 	PC방 일별 수익(개별 Sub)
+---------------------------------------------
+IF OBJECT_ID (N'dbo.tPCRoomEarnSub', N'U') IS NOT NULL
+	DROP TABLE dbo.tPCRoomEarnSub;
+GO
+
+create table dbo.tPCRoomEarnSub(
+	idx				int				identity(1, 1),
+	dateid8			char(8),							-- 20101210
+	gameid			varchar(20),
+	gaincashcost	int				default(0),
+
+	-- Constraint
+	CONSTRAINT	pk_tPCRoomEarnSub_dateid8_itemcode	PRIMARY KEY(dateid8, gameid)
+)
+-- select top 100 * from dbo.tPCRoomEarnSub order by dateid8 desc, itemcode desc
+-- select         * from dbo.tPCRoomEarnSub where dateid8 = '20120818'
+-- select top 1   * from dbo.tPCRoomEarnSub where dateid8 = '20120818' and gameid = 'xxxx'
+-- insert into dbo.tPCRoomEarnSub(dateid8, gameid, gaincashcost) values('20120818', 'xxxx', 0)
+--update dbo.tPCRoomEarnSub
+--	set
+--		gaincashcost = gaincashcost + 1
+--where dateid8 = '20120818' and gameid = 'xxxx'
 
 
 
@@ -1076,6 +1128,117 @@ create table dbo.tLottoInfo(
 	CONSTRAINT	pk_tLottoInfo_nextturntime		PRIMARY KEY(curturntime)
 )
 
+
+---------------------------------------------
+-- 	싱글배팅(ing)
+---------------------------------------------
+IF OBJECT_ID (N'dbo.tSingleGame', N'U') IS NOT NULL
+	DROP TABLE dbo.tSingleGame;
+GO
+
+create table dbo.tSingleGame(
+	idx				int					IDENTITY(1,1),
+
+	gameid			varchar(20),
+	curturntime		int,										-- 나눔로또의 회차.
+
+	-- 유저가 선택한 정보.
+	gamemode		int,										-- 연습(0), 싱글(1), 멀티(2)
+	select1			int					default(-1),			-- 파워볼홀짝 	-> 미선택(-1), 스트라이크(0), 볼(1)
+	itemcode1		int					default(-1),			-- 선택이면 어떤 아이템.
+	cnt1			int 				default(0),				-- 선택이면 선택수량.
+	select2			int					default(-1),			-- 파워볼언오 	-> 미선택(-1), 직구(0), 변화구(1)
+	itemcode2		int					default(-1),
+	cnt2			int 				default(0),
+	select3			int					default(-1),			-- 합볼홀짝 	-> 미선택(-1), 좌(0), 우(1)
+	itemcode3		int					default(-1),
+	cnt3			int 				default(0),
+	select4			int					default(-1),			-- 합볼언오 	-> 미선택(-1), 상(0), 하(1)
+	itemcode4		int					default(-1),
+	cnt4			int 				default(0),
+
+	-- 플레이당시 정보.
+	writedate		datetime			default(getdate()),
+	connectip		varchar(20)			default(''),			-- 접속시 사용되는
+	level			int					default(1),
+	exp				int					default(0),				--
+	commission		float				default(7.00), 			-- 수수료... (기본 7%를 지급) -> 보는 용도일뿐이다.ip
+
+	---- 결과정보.
+	--gameresult	int					default(-1),			-- 진행중(-1)
+	--															-- 아웃(0), 1루타(1), 2루타(2), 3루타(3), 홈런(4)
+	--															-- 재로그인몰수패(-2), 게임취소(-3)
+	--gainexp		int					default(0),				-- 획득경험치
+	--gaincashcost	int 				default(0),				-- 획드다이아
+	--rselect1 		int 				default(-1),			-- 각배팅결과 -> 미선택(-1), 패(0), 승(1)
+	--rselect2 		int 				default(-1),
+	--rselect3 		int 				default(-1),
+	--rselect4 		int 				default(-1),
+
+	-- PC방업주들.
+	--pcgameid		varchar(20),								-- 사장id
+	--pccashcost	int 				default(0),				-- 지급다이아
+	--resultdate	datetime,									-- 결과기록시간
+
+	-- Constraint
+	CONSTRAINT	pk_tSingleGame_curturntime_gameid	PRIMARY KEY(curturntime, gameid)
+)
+
+
+---------------------------------------------
+-- 	싱글배팅로고(Log)
+---------------------------------------------
+IF OBJECT_ID (N'dbo.tSingleGameLog', N'U') IS NOT NULL
+	DROP TABLE dbo.tSingleGameLog;
+GO
+
+create table dbo.tSingleGameLog(
+	idx				int					IDENTITY(1,1),
+
+	gameid			varchar(20),
+	curturntime		int,										-- 나눔로또의 회차.
+
+	-- 유저가 선택한 정보.
+	gamemode		int,										-- 연습(0), 싱글(1), 멀티(2)
+	select1			int					default(-1),			-- 파워볼홀짝 	-> 미선택(-1), 스트라이크(0), 볼(1)
+	itemcode1		int					default(-1),			-- 선택이면 어떤 아이템.
+	cnt1			int 				default(0),				-- 선택이면 선택수량.
+	select2			int					default(-1),			-- 파워볼언오 	-> 미선택(-1), 직구(0), 변화구(1)
+	itemcode2		int					default(-1),
+	cnt2			int 				default(0),
+	select3			int					default(-1),			-- 합볼홀짝 	-> 미선택(-1), 좌(0), 우(1)
+	itemcode3		int					default(-1),
+	cnt3			int 				default(0),
+	select4			int					default(-1),			-- 합볼언오 	-> 미선택(-1), 상(0), 하(1)
+	itemcode4		int					default(-1),
+	cnt4			int 				default(0),
+
+	-- 플레이당시 정보.
+	writedate		datetime			default(getdate()),
+	connectip		varchar(20)			default(''),			-- 접속시 사용되는
+	level			int					default(1),
+	exp				int					default(0),				--
+	commission		float				default(7.00), 			-- 수수료... (기본 7%를 지급) -> 보는 용도일뿐이다.ip
+
+	-- 결과정보.
+	gameresult		int					default(-1),			-- 진행중(-1)
+																-- 아웃(0), 1루타(1), 2루타(2), 3루타(3), 홈런(4)
+																-- 재로그인몰수패(-2), 게임취소(-3)
+	gainexp			int					default(0),				-- 획득경험치
+	gaincashcost	int 				default(0),				-- 획드다이아
+	rselect1 		int 				default(-1),			-- 각배팅결과 -> 미선택(-1), 패(0), 승(1)
+	rselect2 		int 				default(-1),
+	rselect3 		int 				default(-1),
+	rselect4 		int 				default(-1),
+
+	-- PC방업주들.
+	pcgameid		varchar(20),								-- 사장id
+	pccashcost		int 				default(0),				-- 지급다이아
+	resultdate		datetime,									-- 결과기록시간
+
+	-- Constraint
+	CONSTRAINT	pk_tSingleGameLog_curturntime_gameid	PRIMARY KEY(curturntime, gameid)
+)
 
 
 
