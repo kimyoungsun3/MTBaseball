@@ -1127,7 +1127,12 @@ create table dbo.tLottoInfo(
 	-- Constraint
 	CONSTRAINT	pk_tLottoInfo_nextturntime		PRIMARY KEY(curturntime)
 )
-
+--유저로그검색
+IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tLottoInfo_nextturntime')
+    DROP INDEX tLottoInfo.idx_tLottoInfo_nextturntime
+GO
+CREATE INDEX idx_tLottoInfo_nextturntime ON tLottoInfo (nextturntime)
+GO
 
 ---------------------------------------------
 -- 	싱글배팅(ing)
@@ -1163,6 +1168,7 @@ create table dbo.tSingleGame(
 	level			int					default(1),
 	exp				int					default(0),				--
 	commission		float				default(7.00), 			-- 수수료... (기본 7%를 지급) -> 보는 용도일뿐이다.ip
+	randserial		varchar(20)			default('-1'),			--패키지, 뽑기, 합성등 유일한 구매의 랜덤씨리얼
 
 	---- 결과정보.
 	--gameresult	int					default(-1),			-- 진행중(-1)
@@ -1219,6 +1225,7 @@ create table dbo.tSingleGameLog(
 	level			int					default(1),
 	exp				int					default(0),				--
 	commission		float				default(7.00), 			-- 수수료... (기본 7%를 지급) -> 보는 용도일뿐이다.ip
+	randserial		varchar(20)			default('-1'),			--패키지, 뽑기, 합성등 유일한 구매의 랜덤씨리얼
 
 	-- 결과정보.
 	gameresult		int					default(-1),			-- 진행중(-1)

@@ -140,6 +140,7 @@ function f_Submit(f) {
 								PW : <%=result.getString("password")%><br>
 								¹öÁ¯ : <%=result.getString("version")%><br>
 								SID :<%=result.getString("sid")%><br>
+								IP :<%=result.getString("connectip")%><br>
 							</td>
 							<td>
 								Æù:<a href=userinfo_list.jsp?phone=<%=result.getString("phone")%>><%=result.getString("phone")%></a><br>

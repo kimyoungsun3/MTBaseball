@@ -89,7 +89,7 @@ as
 	-- MT 기타오류
 	declare @RESULT_ERROR_NOT_SUPPORT_MODE		int				set @RESULT_ERROR_NOT_SUPPORT_MODE		= -70			-- 지원하지않는모드
 	declare @RESULT_ERROR_NOT_MATCH				int				set @RESULT_ERROR_NOT_MATCH				= -110			-- 무엇인가 매치가 안되었다.
-	declare @RESULT_ERROR_SESSION_ID_EXPIRE		int				set @RESULT_ERROR_SESSION_ID_EXPIRE		= -151			-- 세션이 만료되었습니다.
+	declare @RESULT_ERROR_SESSION_ID_EXPIRE_LOGOUT	int			set @RESULT_ERROR_SESSION_ID_EXPIRE_LOGOUT	= -151		-- 세션이 만료되었습니다.
 
 	------------------------------------------------
 	--	2-2. 정의된값
@@ -225,7 +225,7 @@ Begin
 		END
 	else if(@sid_ != @sid)
 		BEGIN
-			set @nResult_ = @RESULT_ERROR_SESSION_ID_EXPIRE
+			set @nResult_ = @RESULT_ERROR_SESSION_ID_EXPIRE_LOGOUT
 			set @comment 	= 'ERROR 세션이 만기 되었습니다.'
 			--select 'DEBUG ' + @comment
 		END

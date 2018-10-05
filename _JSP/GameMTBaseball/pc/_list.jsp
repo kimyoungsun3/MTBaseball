@@ -116,6 +116,20 @@
 			message=			<br>
 		</td>
 	</tr>
+	<tr>
+		<td>sgready.jsp</td>
+		<td>
+			<a href=sgready.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&gmode=1&listidx=-1>싱글게임(소모템X)</a><br>
+			<a href=sgready.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&gmode=1&listidx=10>싱글게임(코치의 조언)</a><br>
+		</td>
+		<td>
+			gameid=xxxx			<br>
+			password=			<br>
+			sid=				<br>
+			gmode=				<br>
+			listidx=			<br>
+		</td>
+	</tr>
 
 	<%/*%>		
 	<!--

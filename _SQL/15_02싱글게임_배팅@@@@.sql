@@ -1,22 +1,27 @@
 /*
---select * from dbo.tSingleGame			where gameid = 'mtxxxx3' order by curturntime desc
---select * from dbo.tSingleGamelog		where gameid = 'mtxxxx3' order by curturntime desc
---delete from dbo.tSingleGame           where gameid = 'mtxxxx3'
---delete from dbo.tSingleGameLog        where gameid = 'mtxxxx3'
---update dbo.tUserMaster set sid = 333 	where gameid = 'mtxxxx3'
+-- select * from dbo.tSingleGame			where gameid = 'mtxxxx3' order by curturntime desc
+-- select * from dbo.tSingleGamelog		where gameid = 'mtxxxx3' order by curturntime desc
+-- delete from dbo.tSingleGame           where gameid = 'mtxxxx3'
+-- delete from dbo.tSingleGameLog        where gameid = 'mtxxxx3'
+-- update dbo.tUserMaster set sid = 333 	where gameid = 'mtxxxx3'
+-- exec spu_GiftGainNew 'mtxxxx3', '049000s1i0n7t8445289', 333, -3, 40, -1		-- 동 헬멧 조각 B
 -- 착용템 -> 경험치
 -- 레벨  -> 수익변화
 
--- 싱글게임.
-exec spu_SGBet 'mtxxxx3', '049000s1i0n7t8445289', 333, 1, -1, -1		-- 소모템없음
-exec spu_SGBet 'mtxxxx3', '049000s1i0n7t8445289', 333, 1, 10, -1		-- 코치의 조언주문서
-exec spu_SGBet 'mtxxxx3', '049000s1i0n7t8445289', 333, 1, 11, -1		-- 응원의 소리
-exec spu_SGBet 'mtxxxx3', '049000s1i0n7t8445289', 333, 1, 12, -1		-- 감독의 조언 주문서
+-- 싱글게임 배팅 : 동  헬멧 조각 B(1505) x 1 -> OK
+-- select=번호:select:itemcode:cnt;
+--        [1번자리] : STRIKE( 0 ) : [listidx:13]	: 수량(1) )
+declare @curturntime int  		select top 1 @curturntime = nextturntime from tLottoInfo order by curturntime desc
+declare @select varchar(100)	set @select = '1:0:13:1;2:-1:-1:0;3:-1:-1:0;4:-1:-1:0;'
+exec spu_SGBet 'mtxxxx3', '049000s1i0n7t8445289', 333, 1, 11, @curturntime, @select, 7777, -1
 
--- error
-exec spu_SGBet 'mtxxxx3', '049000s1i0n7t8445289', 3331, 1, -1, -1		-- 세션이 만기된경우.
---delete from dbo.tLottoInfo	where curturntime = (select top 1 curturntime from dbo.tLottoInfo order by curturntime desc)
-exec spu_SGBet 'mtxxxx3', '049000s1i0n7t8445289', 333, 1, -1, -1		-- 계산중일때.
+-- 싱글게임 배팅 : 돌 상의 조각 A(1600) x 1	-> 배팅불가
+--        [1번자리] : STRIKE( 0 ) : [listidx:20]	: 수량(1) )
+declare @curturntime int  		select top 1 @curturntime = nextturntime from tLottoInfo order by curturntime desc
+declare @select varchar(100)	set @select = '1:0:20:1;2:-1:-1:0;3:-1:-1:0;4:-1:-1:0;'
+exec spu_SGBet 'mtxxxx3', '049000s1i0n7t8445289', 333, 1, 11, @curturntime, @select, 7777, -1
+
+
 */
 use GameMTBaseball
 GO
@@ -31,8 +36,12 @@ GO
 create procedure dbo.spu_SGBet
 	@gameid_								varchar(20),					-- 게임아이디
 	@password_								varchar(20),
-	@farmidx_								int,
-	@listset_								varchar(256),
+	@sid_									int,
+	@gmode_									int,
+	@listidx_								int,
+	@curturntime_							int,
+	@select_								varchar(100),
+	@randserial_							varchar(20),
 	@nResult_								int					OUTPUT
 	--WITH ENCRYPTION -- 프로시져를 암호화함.
 as
@@ -46,519 +55,247 @@ as
 	-- 로그인 오류.
 	declare @RESULT_ERROR_BLOCK_USER 			int				set @RESULT_ERROR_BLOCK_USER			= -11			--블럭유저 > 팝업처리후 인트로로 빼버린다.
 	declare @RESULT_ERROR_NOT_FOUND_GAMEID		int				set @RESULT_ERROR_NOT_FOUND_GAMEID		= -13			--해당유저를 찾지 못함
+	declare @RESULT_ERROR_SERVER_CHECKING		int				set @RESULT_ERROR_SERVER_CHECKING		= -14			--서버를 점검하고 있다.
 
 	-- 기타오류
-	declare @RESULT_ERROR_INVEN_FULL			int				set @RESULT_ERROR_INVEN_FULL			= -101			-- 인벤부족
-	declare @RESULT_ERROR_LISTIDX_NOT_FOUND		int				set @RESULT_ERROR_LISTIDX_NOT_FOUND		= -114			-- 리스트 번호를 못찾음.
-	declare @RESULT_ERROR_NOT_FOUND_USERFARM	int				set @RESULT_ERROR_NOT_FOUND_USERFARM	= -125			-- 목장리스트가 미구매.
-	declare @RESULT_ERROR_NOT_CLEAR_BEFORE_FARM	int				set @RESULT_ERROR_NOT_CLEAR_BEFORE_FARM	= -149			-- 목장도전불가.
-	declare @RESULT_ERROR_TICKET_LACK			int				set @RESULT_ERROR_TICKET_LACK			= -150			-- 티켓수량부족.
-	declare @RESULT_ERROR_PLAY_COUNT_ZERO		int				set @RESULT_ERROR_PLAY_COUNT_ZERO		= -151			-- 플레이 횟수가 없습니다.
+	declare @RESULT_ERROR_ITEM_LACK				int				set @RESULT_ERROR_ITEM_LACK				= -23			--아이템이부족하다.
+	declare @RESULT_ERROR_NOT_FOUND_ITEMCODE	int				set @RESULT_ERROR_NOT_FOUND_ITEMCODE	= -50			-- 아이템코드못찾음
+	declare @RESULT_ERROR_SESSION_ID_EXPIRE_LOGOUT	int			set @RESULT_ERROR_SESSION_ID_EXPIRE_LOGOUT	= -151		-- 세션이 만료되었습니다.
+	declare @RESULT_ERROR_DOUBLE_IP				int				set @RESULT_ERROR_DOUBLE_IP				= -201			-- IP중복...
+	declare @RESULT_ERROR_TURNTIME_WRONG		int				set @RESULT_ERROR_TURNTIME_WRONG		= -203			-- 회차정보가 잘못되었다
+	declare @RESULT_ERROR_NOT_BET_ITEMLACK		int				set @RESULT_ERROR_NOT_BET_ITEMLACK		= -204			-- 아이템을 배팅하지 않고 배팅할려고하였습니다.
+	declare @RESULT_ERROR_NOT_BET_SAFETIME		int				set @RESULT_ERROR_NOT_BET_SAFETIME		= -205			-- 30초 ~ 결과 ~ 10초 이시간에는 배팅금지
+	declare @RESULT_ERROR_NOT_INPUT_SUPERBALL_5TRY	int			set @RESULT_ERROR_NOT_INPUT_SUPERBALL_5TRY	= -207		-- 슈퍼볼 데이터가 아직 안들어옴… > 5초후에 다시 요청
+	declare @RESULT_ERROR_NOT_ING_TURNTIME			int			set @RESULT_ERROR_NOT_ING_TURNTIME		= -	208			-- 잘못된 턴 타임입니다.
+	declare @RESULT_ERROR_NOT_CALCULATE_LOTTO_WAIT_LOBBY	int	set @RESULT_ERROR_NOT_CALCULATE_LOTTO_WAIT_LOBBY= -209	-- 로또에서 회차 정보가 5분이 되어도 안옴… > 로비에서 대기해주세요.
+	declare @RESULT_ERROR_NOT_CALCULATE_LOTTO_LOGOUT	int		set @RESULT_ERROR_NOT_CALCULATE_LOTTO_LOGOUT= -210		-- 로또에서 회차 정보가 오버타임지나도(5+5분) 안들어옴… > 내부취소마킹, 로그아웃, 점검중…
+
 	------------------------------------------------
 	--	2-2. 상태값
 	------------------------------------------------
-	-- 아이템별 인벤분류
-	declare @USERITEM_INVENKIND_STEMCELL		int 				set @USERITEM_INVENKIND_STEMCELL			= 1040
+	-- MT 블럭상태값.
+	declare @BLOCK_STATE_NO						int					set	@BLOCK_STATE_NO							= 0	-- 블럭상태아님
+	declare @BLOCK_STATE_YES					int					set	@BLOCK_STATE_YES						= 1	-- 블럭상태
 
-	-- 농장(정보).
-	declare @USERFARM_BUYSTATE_NOBUY			int					set @USERFARM_BUYSTATE_NOBUY				= -1	-- (농장)
-	declare @USERFARM_BUYSTATE_BUY				int					set @USERFARM_BUYSTATE_BUY					=  1
+	-- MT 시스템 체킹
+	declare @SYSCHECK_NON						int					set @SYSCHECK_NON							= 0
+	declare @SYSCHECK_YES						int					set @SYSCHECK_YES							= 1
 
-	-- 결과정보.
-	declare @BATTLE_RESULT_WIN					int					set @BATTLE_RESULT_WIN				=  1	-- (농장)
-	declare @BATTLE_RESULT_LOSE					int					set @BATTLE_RESULT_LOSE				= -1
-	declare @BATTLE_RESULT_DRAW					int					set @BATTLE_RESULT_DRAW				=  0
+	-- MT 아이템별 인벤분류
+	declare @USERITEM_INVENKIND_WEAR			int 				set @USERITEM_INVENKIND_WEAR				= 1
+	declare @USERITEM_INVENKIND_PIECE			int 				set @USERITEM_INVENKIND_PIECE				= 2
+	declare @USERITEM_INVENKIND_CONSUME			int 				set @USERITEM_INVENKIND_CONSUME				= 3
 
 	-- 플레그정보.
 	declare @BATTLE_END							int					set @BATTLE_END						= 0
-	declare @BATTLE_READY						int					set @BATTLE_READY					= 1
-
-	declare @DEFINE_TIME_BASE					int					set @DEFINE_TIME_BASE				= 8000 -- 8초
-	--declare @USER_LOG_MAX						int					set @USER_LOG_MAX 					= 50	-- 12개월 * 40년.
-	declare @USER_LOG_MAX						int					set @USER_LOG_MAX 					= 50	-- 테스트용.
+	declare @SELECT_1_NON						int					set @SELECT_1_NON					= -1
+	declare @SELECT_1_STRIKE					int					set @SELECT_1_STRIKE				= 0
+	declare @SELECT_1_BALL						int					set @SELECT_1_BALL					= 1
+	declare @SELECT_2_NON						int					set @SELECT_2_NON					= -1
+	declare @SELECT_2_FAST						int					set @SELECT_2_FAST					= 0
+	declare @SELECT_2_CURVE						int					set @SELECT_2_CURVE					= 1
+	declare @SELECT_3_NON						int					set @SELECT_3_NON					= -1
+	declare @SELECT_3_LEFT						int					set @SELECT_3_LEFT					= 0
+	declare @SELECT_3_RIGHT						int					set @SELECT_3_RIGHT					= 1
+	declare @SELECT_4_NON						int					set @SELECT_4_NON					= -1
+	declare @SELECT_4_UP						int					set @SELECT_4_UP					= 0
+	declare @SELECT_4_DOWN						int					set @SELECT_4_DOWN					= 1
 
 	------------------------------------------------
 	--	2-3. 내부사용 변수
 	------------------------------------------------
 	declare @comment				varchar(512)		set @comment			= ''
 	declare @gameid					varchar(20)			set @gameid				= ''
-	declare @market					int					set @market				= 1
-	declare @cashcost				int					set @cashcost 			= 0
-	declare @gamecost				int					set @gamecost 			= 0
-	declare @heart					int					set @heart 				= 0
-	declare @feed					int					set @feed 				= 0
-	declare @fpoint					int					set @fpoint				= 0
-	declare @goldticket				int					set @goldticket			= 0
-	declare @goldticketmax			int					set @goldticketmax		= 0
-	declare @goldtickettime			datetime			set @goldtickettime		= getdate()
-	declare @battleticket			int					set @battleticket		= 0
-	declare @battleticketmax		int					set @battleticketmax	= 0
-	declare @battletickettime		datetime			set @battletickettime	= getdate()
-	declare @battlefarmidx			int					set @battlefarmidx		= 6900
-	declare @battleanilistidx1		int					set @battleanilistidx1	= -1
-	declare @battleanilistidx2		int					set @battleanilistidx2	= -1
-	declare @battleanilistidx3		int					set @battleanilistidx3	= -1
-	declare @buystate				int					set @buystate			= @USERFARM_BUYSTATE_NOBUY
-	declare @invenstemcellmax		int					set @invenstemcellmax	= 50
+	declare @sid					int					set @sid				= -1
+	declare @cursyscheck			int					set @cursyscheck		= @SYSCHECK_YES
+	declare @blockstate				int					set @blockstate			= @BLOCK_STATE_YES
+	declare @itemcode				int 				set @itemcode 			= -1
 	declare @cnt					int					set @cnt				= 0
-	declare @playcnt				int					set @playcnt			= 0
 
-
-	declare @battleidx2				int					set @battleidx2			= 0
-	declare @needticket				int					set @needticket			= 4
-	declare @enemylv				int					set @enemylv			= 99
-	declare @enemycnt				int					set @enemycnt			= 7
-	declare @stagecnt				int					set @stagecnt			= 6
-	declare @enemyboss				int					set @enemyboss			= 0
-	declare @enemyani				int					set @enemyani			= 7
-	declare @kind					int
-	declare @info					int
-	declare @loop					int
-
-	-- 동물.
-	declare @aniitemcode			int					set @aniitemcode		= -1
-	declare @aniitemname			varchar(40)			set @aniitemname		= ''
-	declare @grade					int					set @grade				=  0
-	declare @upcnt					int					set @upcnt				=  0
-	declare @upstep					int					set @upstep				=  0
-	declare @att					int					set @att				=  0
-	declare @time					int					set @time				=  0
-	declare @def					int					set @def				=  0
-	declare @hp						int					set @hp					=  0
-
-	declare @anidesc1				varchar(120)		set @anidesc1			= '없음'
-	declare @anidesc2				varchar(120)		set @anidesc2			= '없음'
-	declare @anidesc3				varchar(120)		set @anidesc3			= '없음'
+	declare @curdate				datetime			set @curdate			= getdate()
+	declare @curturntime			int					set @curturntime		= -1
+	declare @curturndate			datetime			set @curturndate		= getdate()
+	declare @curturntime2			int					set @curturntime2		= -1
 
 	-- 보물.
-	declare @tslistidx1				int					set @tslistidx1			= -1
-	declare @tslistidx2				int					set @tslistidx2			= -1
-	declare @tslistidx3				int					set @tslistidx3			= -1
-	declare @tslistidx4				int					set @tslistidx4			= -1
-	declare @tslistidx5				int					set @tslistidx5			= -1
+	declare @select1				int					set @select1			= -1
+	declare @select2				int					set @select2			= -1
+	declare @select3				int					set @select3			= -1
+	declare @select4				int					set @select4			= -1
+	declare @listidx1				int					set @listidx1			= -1
+	declare @listidx2				int					set @listidx2			= -1
+	declare @listidx3				int					set @listidx3			= -1
+	declare @listidx4				int					set @listidx4			= -1
+	declare @cnt1					int					set @cnt1				= 0
+	declare @cnt2					int					set @cnt2				= 0
+	declare @cnt3					int					set @cnt3				= 0
+	declare @cnt4					int					set @cnt4				= 0
+	declare @itemcode1				int					set @itemcode1			= -1
+	declare @itemcode2				int					set @itemcode2			= -1
+	declare @itemcode3				int					set @itemcode3			= -1
+	declare @itemcode4				int					set @itemcode4			= -1
+	declare @owncnt1				int					set @owncnt1			= 0
+	declare @owncnt2				int					set @owncnt2			= 0
+	declare @owncnt3				int					set @owncnt3			= 0
+	declare @owncnt4				int					set @owncnt4			= 0
 
-	declare @tsitemname				varchar(40)			set @tsitemname			= ''
-	declare @tsupgrade				int					set @tsupgrade			=  0
-	declare @tsvalue				int					set @tsvalue			=  0
-
-	declare @ts1					varchar(40)			set @ts1				=  '미장착'
-	declare @ts2					varchar(40)			set @ts2				=  '미장착'
-	declare @ts3					varchar(40)			set @ts3				=  '미장착'
-	declare @ts4					varchar(40)			set @ts4				=  '미장착'
-	declare @ts5					varchar(40)			set @ts5				=  '미장착'
-
-	-- 적동물.
-	declare @enemydesc				varchar(120)		set @enemydesc			=  ''
 Begin
 	------------------------------------------------
 	--	3-1. 초기화
 	------------------------------------------------
 	set nocount on
 	set @nResult_ = @RESULT_ERROR
-	--select 'DEBUG 입력정보', @gameid_ gameid_, @password_ password_, @farmidx_ farmidx_, @listset_ listset_
+	select 'DEBUG 입력정보', @gameid_ gameid_, @password_ password_, @sid_ sid_, @gmode_ gmode_, @listidx_ listidx_, @curturntime_ curturntime_, @select_ select_, @randserial_ randserial_
+
 
 	------------------------------------------------
 	--	3-2. 연산수행
 	------------------------------------------------
 	select
-		@gameid 		= gameid,			@market			= market,
-		@cashcost		= cashcost,			@gamecost		= gamecost,			@heart				= heart,			@feed			= feed,				@fpoint			= fpoint,
-		@invenstemcellmax= invenstemcellmax,
-		@battlefarmidx	= battlefarmidx,
-		@tslistidx1 	= tslistidx1,		@tslistidx2 = tslistidx2,			@tslistidx3 = tslistidx3,			@tslistidx4 = tslistidx4,		@tslistidx5 = tslistidx5,
-		@goldticket		= goldticket, 		@goldticketmax 	= goldticketmax, 	@goldtickettime		= goldtickettime,
-		@battleticket	= battleticket, 	@battleticketmax= battleticketmax, 	@battletickettime	= battletickettime
+		@gameid 		= gameid,	@blockstate		= blockstate,
+		@sid			= sid
 	from dbo.tUserMaster
 	where gameid = @gameid_ and password = @password_
-	--select 'DEBUG 유저정보', @gameid gameid, @battlefarmidx battlefarmidx, @goldticket goldticket, @battleticket battleticket
+	select 'DEBUG 3-2 유저정보', @gameid gameid, @sid sid
 
+	--	3-3. 공지사항 체크
+	select top 1 @cursyscheck = syscheck from dbo.tNotice order by idx desc
+	select 'DEBUG 3-3 공지사항', @cursyscheck cursyscheck
+
+	-- 보유템정보.
 	select
-		@buystate		= buystate,		@playcnt		= playcnt
-	from dbo.tUserGameMTBaseball
-	where gameid = @gameid_ and itemcode = @farmidx_
-	--select 'DEBUG 농장 보유정보', @farmidx_ farmidx_, @buystate buystate, @playcnt playcnt
+		@itemcode 	= itemcode,
+		@cnt		= cnt
+	from dbo.tUserItem
+	where gameid = @gameid_ and listidx = @listidx_
+	select 'DEBUG 3-4 보유템정보.', @itemcode itemcode, @cnt cnt
 
+	-- 회차 정보1
 	select
-		@needticket	= param14,
+		@curturntime = nextturntime,
+		@curturndate = nextturndate
+	from dbo.tLottoInfo where nextturntime = @curturntime_
+	select 'DEBUG 3-5 회차정보.', @curturntime curturntime, @curturndate curturndate, @curdate curdate
 
-		@enemyani	= param16,
-		@enemylv	= param17,
-		@enemycnt	= param18,
-		@stagecnt	= param19,
-		@enemyboss	= param20
-	from dbo.tItemInfo
-	where itemcode = @farmidx_
-	--select 'DEBUG 필요수량정보.', @farmidx_ farmidx_, @needticket needticket
+	-- 회차 정보2 > 존재하면 안된다.
+	select
+		@curturntime2 = curturntime
+	from dbo.tLottoInfo where curturntime = @curturntime_
+	select 'DEBUG 3-6 진행중인것 결과치있는가?(들어와 있으면 안됨).', @curturntime_ curturntime_, @curturntime2 curturntime2
 
-	if(@gameid != '')
+	-- 배팅정보 검색.
+	select top 1 * from dbo.tSingleGame where gameid = @gameid_ and curturntime = @curturntime_
+
+	----------------------------------
+	-- 아이템 정보 검색.
+	----------------------------------
+	SELECT @select1 = param2, @listidx1 = param3, @cnt1 = param4  FROM dbo.fnu_SplitFour(';', ':', @select_) where param1 = 1
+	SELECT @select2 = param2, @listidx2 = param3, @cnt2 = param4  FROM dbo.fnu_SplitFour(';', ':', @select_) where param1 = 2
+	SELECT @select3 = param2, @listidx3 = param3, @cnt3 = param4  FROM dbo.fnu_SplitFour(';', ':', @select_) where param1 = 3
+	SELECT @select4 = param2, @listidx4 = param3, @cnt4 = param4  FROM dbo.fnu_SplitFour(';', ':', @select_) where param1 = 4
+	select 'DEBUG 3-7 배팅 템정보.', @select1 select1, @listidx1 listidx2, @cnt1 cnt1, @select2 select2, @listidx2 listidx2, @cnt2 cnt2, @select3 select3, @listidx3 listidx3, @cnt3 cnt3, @select4 select4, @listidx4 listidx4, @cnt4 cnt4
+
+	-- 보유수량..
+	if(@select1 != -1)
 		begin
-			------------------------------------------------
-			-- 티켓 수량 정리.
-			------------------------------------------------
 			select
-				@goldtickettime = rtndate,
-				@goldticket		= rtncount
-			from dbo.fnu_GetActionTime(@goldtickettime, getdate(), @goldticket, @goldticketmax)
-			--select 'DEBUG ', @goldtickettime goldtickettime, @goldticket goldticket, @goldticketmax goldticketmax
-
-			select
-				@battletickettime 	= rtndate,
-				@battleticket		= rtncount
-			from dbo.fnu_GetActionTime(@battletickettime, getdate(), @battleticket, @battleticketmax)
-			--select 'DEBUG ', @battletickettime battletickettime, @battleticket battleticket, @battleticketmax battleticketmax
-
-			------------------------------------------------
-			-- 줄기세포의 수량.
-			------------------------------------------------
-			select @cnt = count(*) from dbo.tUserItem
-			where gameid = @gameid_ and invenkind = @USERITEM_INVENKIND_STEMCELL
-
+				@itemcode1 = itemcode, @owncnt1 = cnt
+			from dbo.tUserItem
+			where gameid = @gameid_ and listidx = @listidx1 and invenkind = @USERITEM_INVENKIND_PIECE
 		end
+	select 'DEBUG 3-7-1 배팅 템정보.', @select1 select1, @itemcode1 itemcode1, @owncnt1 owncnt1, @cnt1 cnt1
+
+	if(@select2 != -1)
+		begin
+			select
+				@itemcode2 = itemcode, @owncnt2 = cnt
+			from dbo.tUserItem
+			where gameid = @gameid_ and listidx = @listidx2 and invenkind = @USERITEM_INVENKIND_PIECE
+		end
+	select 'DEBUG 3-7-2 배팅 템정보.', @select2 select2, @itemcode2 itemcode2, @owncnt2 owncnt2, @cnt2 cnt2
+
+	if(@select3 != -1)
+		begin
+			select
+				@itemcode3 = itemcode, @owncnt3 = cnt
+			from dbo.tUserItem
+			where gameid = @gameid_ and listidx = @listidx3 and invenkind = @USERITEM_INVENKIND_PIECE
+		end
+	select 'DEBUG 3-7-3 배팅 템정보.', @select3 select3, @itemcode3 itemcode3, @owncnt3 owncnt3, @cnt3 cnt3
+
+	if(@select4 != -1)
+		begin
+			select
+				@itemcode4 = itemcode, @owncnt4 = cnt
+			from dbo.tUserItem
+			where gameid = @gameid_ and listidx = @listidx4 and invenkind = @USERITEM_INVENKIND_PIECE
+		end
+	select 'DEBUG 3-7-4 배팅 템정보.', @select4 select4, @itemcode4 itemcode4, @owncnt4 owncnt4, @cnt4 cnt4
+
 
 	------------------------------------------------
 	-- 3-3. 각 조건별 분기
 	------------------------------------------------
-	if( @gameid = '' )
+	if(@cursyscheck = @SYSCHECK_YES)
+		BEGIN
+			set @nResult_ 	= @RESULT_ERROR_SERVER_CHECKING
+			set @comment 	= 'DEBUG 시스템 점검중입니다.'
+			select 'DEBUG ', @comment
+		END
+	else if( @gameid = '' )
 		BEGIN
 			set @nResult_ 	= @RESULT_ERROR_NOT_FOUND_GAMEID
 			set @comment 	= 'ERROR 아이디가 존재하지 않는다.'
-			--select 'DEBUG ' + @comment
+			select 'DEBUG ' + @comment
 		END
-	else if(@buystate != @USERFARM_BUYSTATE_BUY)
+	else if (@blockstate = @BLOCK_STATE_YES)
 		BEGIN
-			set @nResult_ 	= @RESULT_ERROR_NOT_FOUND_USERFARM
-			set @comment 	= 'ERROR 농장을 소유하고 있지 않다.'
-			--select 'DEBUG ' + @comment
+			-- 블럭유저인가?
+			set @nResult_ 	= @RESULT_ERROR_BLOCK_USER
+			set @comment 	= '블럭처리된 아이디입니다.'
+			select 'DEBUG ', @comment
 		END
-	else if ( @farmidx_ > @battlefarmidx + 1 )
+	else if(@sid_ != @sid)
 		BEGIN
-			set @nResult_ 	= @RESULT_ERROR_NOT_CLEAR_BEFORE_FARM
-			set @comment 	= 'ERROR 전목장을 클리어하세요.'
-			--select 'DEBUG ' + @comment
+			set @nResult_ 	= @RESULT_ERROR_SESSION_ID_EXPIRE_LOGOUT
+			set @comment 	= 'ERROR 세션이 만기 되었습니다. (로그아웃 시켜주세요.)'
+			select 'DEBUG ' + @comment
 		END
-	else if(@needticket > @battleticket)
+	--else if(현재배팅 정보가 존재한다?)
+	--	BEGIN
+	--		set @nResult_ 	= @RESULT_ERROR_SESSION_ID_EXPIRE_LOGOUT
+	--		set @comment 	= 'ERROR 세션이 만기 되었습니다.'
+	--		select 'DEBUG ' + @comment
+	--	END
+	else if(@curdate > @curturndate)
 		BEGIN
-			set @nResult_ 	= @RESULT_ERROR_TICKET_LACK
-			set @comment 	= 'ERROR 티켓수량이 부족합니다.'
-			--select 'DEBUG ' + @comment
+			set @nResult_ 	= @RESULT_ERROR_NOT_CALCULATE_LOTTO_WAIT_LOBBY
+			set @comment 	= 'ERROR 결과를 계산중이여서 (로비에서 대기해서 잠시후에 들어와주세요.)'
+			select 'DEBUG ' + @comment
 		END
-	else if(@playcnt <= 0)
+	else if(@listidx_ != -1 and @cnt <= 0)
 		BEGIN
-			set @nResult_ 	= @RESULT_ERROR_PLAY_COUNT_ZERO
-			set @comment 	= 'ERROR 현재 플레이 횟수가 없습니다..'
-			--select 'DEBUG ' + @comment
-		END
-	else if(@cnt >= @invenstemcellmax)
-		BEGIN
-			set @nResult_ 	= @RESULT_ERROR_INVEN_FULL
-			set @comment 	= 'ERROR 동물 인벤이 풀입니다.'
-			--select 'DEBUG ' + @comment
-		END
-	else if ( @listset_ = '' or LEN(@listset_) < 4 )
-		BEGIN
-			set @nResult_ = @RESULT_ERROR_LISTIDX_NOT_FOUND
-			set @comment = 'ERROR 해당 리스트를 찾을수 없습니다.(1)'
-			--select 'DEBUG ' + @comment
+			set @nResult_ 	= @RESULT_ERROR_ITEM_LACK
+			set @comment 	= 'ERROR 아이템이 부족합니다.'
+			select 'DEBUG ' + @comment
 		END
 	else
 		BEGIN
 			set @nResult_ = @RESULT_SUCCESS
 			set @comment = 'SUCCESS 준비했습니다.'
-			----select 'DEBUG ' + @comment
-
-			set @loop	= 1
-			------------------------------------------------------------------
-			-- 정보보기.
-			-- 내동물 로고용~~~
-			------------------------------------------------------------------
-			-- 1. 커서 생성
-			declare curUpgradeInfo Cursor for
-			select * FROM dbo.fnu_SplitTwo(';', ':', @listset_)
-
-			-- 2. 커서오픈
-			open curUpgradeInfo
-
-			-- 3. 커서 사용
-			Fetch next from curUpgradeInfo into @kind, @info
-			while @@Fetch_status = 0
-				Begin
-					set @upcnt			= 0
-					set @upstep			= 0
-					set @aniitemcode 	= -1
-					set @aniitemname	= ''
-					set @grade			= 0
-					set @att			= 0
-					set @time			= 0
-					set @def			= 0
-					set @hp				= 0
-
-					select
-						@upcnt			= upcnt,
-						@upstep			= upstep,
-						@aniitemcode 	= itemcode,
-						@aniitemname	= itemname2,
-						@grade			= grade,
-						@att			= attbase	+ attconst * upcnt / upstep  + attstem100 / 100,
-						@time			= timebase	+ timeconst * upcnt / upstep  + timestem100 / 100,
-						@def			= defbase	+ defconst * upcnt / upstep  + defstem100 / 100,
-						@hp				= hpbase	+ hpconst * upcnt / upstep  + hpstem100 / 100
-					from
-					( select itemcode itemcode2, itemname itemname2, grade, param20 fresconst, param21 attbase, param22 attconst, param23 timebase, param24 timeconst, param25 defbase, param26 defconst, param27 hpbase, param28 hpconst, param29 upstep
-					from dbo.tItemInfo
-					where itemcode = ( select itemcode from dbo.tUserItem where gameid = @gameid_ and listidx = @info ) ) a
-					JOIN
-					(select itemcode, upcnt, attstem100, timestem100, defstem100, hpstem100 from dbo.tUserItem where gameid = @gameid_ and listidx = @info) b
-					ON a.itemcode2 = b.itemcode
-
-					--select 'DEBUG 시간값', @loop loop, @aniitemcode aniitemcode, @upcnt upcnt, @att att,  @time time,  @def def,  @hp hp
-					set @time = @DEFINE_TIME_BASE / (100 + @time/3) * 100
-					--select 'DEBUG 시간', @loop loop, @aniitemcode aniitemcode, @aniitemname aniitemname, @grade grade, @upcnt upcnt, @att att,  @time time,  @def def,  @hp hp
-
-
-					if(@aniitemcode != -1)
-						begin
-							if(@loop = 1)
-								begin
-									set @battleanilistidx1	= @info
-									set @anidesc1		= @aniitemname+ '(' + ltrim(str(@aniitemcode)) + ')'
-															+ ' 등급(' + ltrim(str(@grade)) + ')'
-															+ ' ' + case when @upstep != 0 then (ltrim(str(@upcnt/@upstep + 1)) + 'lv' ) else '' end
-															+ ' ' + (ltrim(str(@upcnt)) + '강')
-															+ ' att:' + ltrim(str(@att))
-															+ ' def:' + ltrim(str(@def))
-															+ ' hp:' + ltrim(str(@hp))
-															+ ' time:' + ltrim(str(@time))
-								end
-							else if(@loop = 2)
-								begin
-									set @battleanilistidx2	= @info
-									set @anidesc2		= @aniitemname+ '(' + ltrim(str(@aniitemcode)) + ')'
-															+ ' 등급(' + ltrim(str(@grade)) + ')'
-															+ ' ' + case when @upstep != 0 then (ltrim(str(@upcnt/@upstep + 1)) + 'lv' ) else '' end
-															+ ' ' + (ltrim(str(@upcnt)) + '강')
-															+ ' att:' + ltrim(str(@att))
-															+ ' def:' + ltrim(str(@def))
-															+ ' hp:' + ltrim(str(@hp))
-															+ ' time:' + ltrim(str(@time))
-								end
-							else if(@loop = 3)
-								begin
-									set @battleanilistidx3	= @info
-									set @anidesc3		= @aniitemname+ '(' + ltrim(str(@aniitemcode)) + ')'
-															+ ' 등급(' + ltrim(str(@grade)) + ')'
-															+ ' ' + case when @upstep != 0 then (ltrim(str(@upcnt/@upstep + 1)) + 'lv' ) else '' end
-															+ ' ' + (ltrim(str(@upcnt)) + '강')
-															+ ' att:' + ltrim(str(@att))
-															+ ' def:' + ltrim(str(@def))
-															+ ' hp:' + ltrim(str(@hp))
-															+ ' time:' + ltrim(str(@time))
-								end
-						end
-
-
-					set @loop = @loop + 1
-					Fetch next from curUpgradeInfo into @kind, @info
-				end
-			-- 4. 커서닫기
-			close curUpgradeInfo
-			Deallocate curUpgradeInfo
-			--select 'DEBUG ', @battleanilistidx1 battleanilistidx1, @battleanilistidx2 battleanilistidx2, @battleanilistidx3 battleanilistidx3
-
-			---------------------------------------------
-			-- 보물능력치계산.
-			-- 내보물 로고용~~~
-			---------------------------------------------
-			if( @tslistidx1 != -1 )
-				begin
-					select
-						@tsitemname		= itemname2,
-						@tsupgrade		= treasureupgrade,
-						@tsvalue		= base_value + treasureupgrade * upgrade_value
-					from
-					( select itemcode itemcode2, itemname itemname2, param2 base_value, param3 upgrade_value
-					from dbo.tItemInfo
-					where itemcode = ( select itemcode from dbo.tUserItem where gameid = @gameid_ and listidx = @tslistidx1 ) ) a
-					JOIN
-					(select itemcode, treasureupgrade from dbo.tUserItem where gameid = @gameid_ and listidx = @tslistidx1) b
-					ON a.itemcode2 = b.itemcode
-
-					set @ts1 = @tsitemname + ' ' + ltrim(str(@tsupgrade)) + '강 ' + ltrim(str(@tsvalue))
-				end
-
-			if( @tslistidx2 != -1 )
-				begin
-					select
-						@tsitemname		= itemname2,
-						@tsupgrade		= treasureupgrade,
-						@tsvalue		= base_value + treasureupgrade * upgrade_value
-					from
-					( select itemcode itemcode2, itemname itemname2, param2 base_value, param3 upgrade_value
-					from dbo.tItemInfo
-					where itemcode = ( select itemcode from dbo.tUserItem where gameid = @gameid_ and listidx = @tslistidx2 ) ) a
-					JOIN
-					(select itemcode, treasureupgrade from dbo.tUserItem where gameid = @gameid_ and listidx = @tslistidx2) b
-					ON a.itemcode2 = b.itemcode
-
-					set @ts2 = @tsitemname + ' ' + ltrim(str(@tsupgrade)) + '강 ' + ltrim(str(@tsvalue))
-				end
-
-			if( @tslistidx3 != -1 )
-				begin
-					select
-						@tsitemname		= itemname2,
-						@tsupgrade		= treasureupgrade,
-						@tsvalue		= base_value + treasureupgrade * upgrade_value
-					from
-					( select itemcode itemcode2, itemname itemname2, param2 base_value, param3 upgrade_value
-					from dbo.tItemInfo
-					where itemcode = ( select itemcode from dbo.tUserItem where gameid = @gameid_ and listidx = @tslistidx3 ) ) a
-					JOIN
-					(select itemcode, treasureupgrade from dbo.tUserItem where gameid = @gameid_ and listidx = @tslistidx3) b
-					ON a.itemcode2 = b.itemcode
-
-					set @ts3 = @tsitemname + ' ' + ltrim(str(@tsupgrade)) + '강 ' + ltrim(str(@tsvalue))
-				end
-
-			if( @tslistidx4 != -1 )
-				begin
-					select
-						@tsitemname		= itemname2,
-						@tsupgrade		= treasureupgrade,
-						@tsvalue		= base_value + treasureupgrade * upgrade_value
-					from
-					( select itemcode itemcode2, itemname itemname2, param2 base_value, param3 upgrade_value
-					from dbo.tItemInfo
-					where itemcode = ( select itemcode from dbo.tUserItem where gameid = @gameid_ and listidx = @tslistidx4 ) ) a
-					JOIN
-					(select itemcode, treasureupgrade from dbo.tUserItem where gameid = @gameid_ and listidx = @tslistidx4) b
-					ON a.itemcode2 = b.itemcode
-
-					set @ts4 = @tsitemname + ' ' + ltrim(str(@tsupgrade)) + '강 ' + ltrim(str(@tsvalue))
-				end
-
-			if( @tslistidx5 != -1 )
-				begin
-					select
-						@tsitemname		= itemname2,
-						@tsupgrade		= treasureupgrade,
-						@tsvalue		= base_value + treasureupgrade * upgrade_value
-					from
-					( select itemcode itemcode2, itemname itemname2, param2 base_value, param3 upgrade_value
-					from dbo.tItemInfo
-					where itemcode = ( select itemcode from dbo.tUserItem where gameid = @gameid_ and listidx = @tslistidx5 ) ) a
-					JOIN
-					(select itemcode, treasureupgrade from dbo.tUserItem where gameid = @gameid_ and listidx = @tslistidx5) b
-					ON a.itemcode2 = b.itemcode
-
-					set @ts5 = @tsitemname + ' ' + ltrim(str(@tsupgrade)) + '강 ' + ltrim(str(@tsvalue))
-				end
-
-			---------------------------------------------
-			-- 적능력치계산.
-			---------------------------------------------
-			set @enemydesc =
-							' 등장:'
-							+ case
-									when @enemyani = 4 then '소'
-									when @enemyani = 2 then '양'
-									when @enemyani = 1 then '산양'
-									when @enemyani = 6 then '소/양'
-									when @enemyani = 5 then '소/산양'
-									when @enemyani = 3 then '양/산양'
-									when @enemyani = 7 then '소/양/산양'
-									else					 '모름'
-							  end
-							+ ' 레벨:' 	+  ltrim(str(@enemylv))
-							+ ' att:' 	+ ltrim(str(13 * @enemylv + 10))
-							+ ' time:' 	+ ltrim(str(11000 / (100  + @enemylv*4) * 100))
-							+ ' DEF:' 	+ ltrim(str(50 + (@enemylv - 2)* 10))
-							+ ' HP:' 	+ ltrim(str(100 + (@enemylv - 2)* 12))
-							+ ' 등장:' + ltrim(str(@enemycnt)) + '/' + ltrim(str(@stagecnt))
-							+ ' BOSS:'
-								+ case
-										when @enemyboss = 0 then '없음(0)'
-										when @enemyboss = 1 then '보스Att(1)'
-										when @enemyboss = 2 then '보스Def(2)'
-										when @enemyboss = 3 then '보스HP(3)'
-										when @enemyboss = 4 then '보스Turn(4)'
-										when @enemyboss = 11 then '보스AD(11)'
-										when @enemyboss = 12 then '보스ah(12)'
-										when @enemyboss = 13 then '보스at(13)'
-										when @enemyboss = 14 then '보스dh(14)'
-										when @enemyboss = 15 then '보스dt(15)'
-										when @enemyboss = 16 then '보스ht(16)'
-										when @enemyboss = 21 then '보스adh(21)'
-										when @enemyboss = 22 then '보스adt(22)'
-										when @enemyboss = 23 then '보스aht(23)'
-										when @enemyboss = 24 then '보스dht(24)'
-										when @enemyboss = 31 then '보스adht(31)'
-										else					 '모름'
-								  end
-
-			---------------------------------------------
-			-- 배틀티켓 사용량 차감.
-			---------------------------------------------
-			set @battleticket = @battleticket - @needticket
-
-			---------------------------------------------
-			-- 기록마킹
-			---------------------------------------------
-			update dbo.tUserMaster
-				set
-					goldticket		= @goldticket,
-					goldtickettime	= @goldtickettime,
-					battleticket	= @battleticket,
-					battletickettime= @battletickettime,
-					battlefarmidx	= case when ( @farmidx_ > battlefarmidx ) then @farmidx_ else battlefarmidx end,
-					battleanilistidx1= @battleanilistidx1, battleanilistidx2= @battleanilistidx2, battleanilistidx3= @battleanilistidx3,
-					battleflag		= @BATTLE_READY
-			where gameid = @gameid_
-
-			---------------------------------------------
-			-- 배틀횟수차감.
-			---------------------------------------------
-			--update dbo.tUserGameMTBaseball
-			--	set
-			--		playcnt = playcnt - 1
-			--where gameid = @gameid_ and itemcode = @farmidx_
-
-
-			---------------------------------------------
-			-- 기록마킹
-			---------------------------------------------
-			set @battleidx2 = 1
-			select @battleidx2 = isnull( max( idx2 ), 0 ) + 1 from dbo.tBattleLog where gameid = @gameid_
-			--select 'DEBUG ', @battleidx2 battleidx2, @farmidx_ farmidx_
-			insert into dbo.tBattleLog(gameid,        idx2,  farmidx,
-												anidesc1,  anidesc2,  anidesc3,
-												ts1name,  ts2name,   ts3name,   ts4name,  ts5name,
-												enemydesc
-												)
-			values(					  @gameid_,@battleidx2, @farmidx_,
-												@anidesc1,  @anidesc2, @anidesc3,
-												@ts1, @ts2, @ts3, @ts4, @ts5,
-												@enemydesc
-												)
-
-			-- 일정수량 이상은 삭제.
-			if(@battleidx2 - @USER_LOG_MAX > 0)
-				begin
-					delete from dbo.tBattleLog where gameid = @gameid_ and idx2 < @battleidx2 - @USER_LOG_MAX
-				end
+			select 'DEBUG ' + @comment
 
 			------------------------------------------------
 			-- 통계정보.
 			------------------------------------------------
-			exec spu_DayLogInfoStatic @market, 32, 1			-- 일 배틀수.
+			--exec spu_DayLogInfoStatic 32, 1
 		END
 
 
 	--------------------------------------------------------------
 	-- 결과전송.
 	--------------------------------------------------------------
-	select @nResult_ rtn, @comment comment, @cashcost cashcost, @gamecost gamecost, @heart heart, @feed feed, @fpoint fpoint, @goldticket goldticket, @battleticket battleticket, @goldtickettime goldtickettime, @battletickettime battletickettime, @battleidx2 battleidx2, @goldticketmax goldticketmax, @battleticketmax battleticketmax,
-		   @enemylv enemylv, @enemycnt enemycnt, @stagecnt stagecnt, @enemyani enemyani, @enemyboss enemyboss
-
+	select @nResult_ rtn, @comment comment, @curdate curdate, @curturntime curturntime, @curturndate curturndate
 
 
 	------------------------------------------------
