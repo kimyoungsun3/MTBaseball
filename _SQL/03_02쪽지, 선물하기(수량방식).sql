@@ -57,6 +57,8 @@ as
 
 	-- MT 아이템 소분류
 	declare @ITEM_SUBCATEGORY_CASHCOST			int					set @ITEM_SUBCATEGORY_CASHCOST				= 50 -- 다이아(50)
+	declare @ITEM_SUBCATEGORY_GAMECOST			int					set @ITEM_SUBCATEGORY_GAMECOST				= 60 -- 볼(60)
+
 
 	------------------------------------------------
 	declare @idx2			int			set @idx2 			= 0
@@ -92,6 +94,7 @@ Begin
 						when @adminid_ = 'SysCert' 		then '쿠폰선물'
 						when @adminid_ = 'SysLevelUp' 	then '레벨업지급'
 						when @adminid_ = 'SysLogin' 	then '로그인보상'
+						when @adminid_ = 'SysBetRoll' 	then '배팅롤백'
 						else @adminid_
 					end
 
@@ -99,7 +102,7 @@ Begin
 	--	3-4. 캐쉬는 수량을 검사한다.
 	------------------------------------------------
 	select @subcategory = subcategory, @multistate = multistate from dbo.tItemInfo where itemcode = @itemcode_
-	if( @subcategory = @ITEM_SUBCATEGORY_CASHCOST and @multistate = 0 )
+	if( @subcategory in ( @ITEM_SUBCATEGORY_CASHCOST, @ITEM_SUBCATEGORY_GAMECOST ) and @multistate = 0 )
 		begin
 			--select 'DEBUG 캐쉬 수량 무시하는 놈들임'
 			set @cnt_ = 1

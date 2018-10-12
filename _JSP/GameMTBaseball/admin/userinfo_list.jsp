@@ -139,7 +139,8 @@ function f_Submit(f) {
 								ID : <a href=userinfo_list.jsp?gameid=<%=result.getString("gameid")%>><%=result.getString("gameid")%></a><br>
 								PW : <%=result.getString("password")%><br>
 								버젼 : <%=result.getString("version")%><br>
-								SID :<%=result.getString("sid")%><br>
+								SID :<%=result.getString("sid")%>
+								(<a href=usersetting_ok.jsp?p1=19&p2=2000&p3=9&ps1=<%=gameidCurRow%>&ps2=<%=adminid%>&branch=userinfo_list&gameid=<%=gameidCurRow%>>초기화</a>)<br>
 								IP :<%=result.getString("connectip")%><br>
 							</td>
 							<td>
@@ -151,16 +152,16 @@ function f_Submit(f) {
 								connectip :<%=result.getString("connectip")%><br>
 							</td>
 							<td>
-								보유캐쉬 : <a href=userminus_form.jsp?gameid=<%=result.getString("gameid")%>&mode=0><%=result.getString("cashcost")%></a><br>								
-								누적캐쉬 : <%=result.getString("cashbuytotal")%><br>
-								받은캐쉬 : <%=result.getString("cashreceivetotal")%><br>
+								보유캐쉬(다이아) 	: <a href=userminus_form.jsp?gameid=<%=result.getString("gameid")%>&mode=0><%=result.getString("cashcost")%></a><br>								
+								보유코인(볼) 	: <a href=userminus_form.jsp?gameid=<%=result.getString("gameid")%>&mode=3><%=result.getString("gamecost")%></a><br>								
+								누적캐쉬 		: <%=result.getString("cashbuytotal")%><br>
+								받은캐쉬 		: <%=result.getString("cashreceivetotal")%><br>
 							</td>
 							<td>
-								레벨 : <!--<a href=userminus_form4.jsp?mode=0&p1=19&p2=65&p3=1&ps1=<%=gameidCurRow%>&ps2=<%=adminid%>&gameid=<%=gameidCurRow%>&title=LevelUpDown><%=result.getString("level")%></a><br>-->
-									  <%=result.getString("level")%><br>
-								exp : <a href=userminus_form4.jsp?mode=1&p1=19&p2=65&p3=2&ps1=<%=gameidCurRow%>&ps2=<%=adminid%>&gameid=<%=gameidCurRow%>&title=Experience><%=result.getString("exp")%></a><br>
-								<br>
+								exp :<a href=userminus_form4.jsp?mode=1&p1=19&p2=65&p3=2&ps1=<%=gameidCurRow%>&ps2=<%=adminid%>&gameid=<%=gameidCurRow%>&title=Experience&strlen=12><%=result.getString("exp")%></a><br>
+								레벨 : <%=result.getString("level")%><br>
 								수수료 : <%=(float)result.getInt("commission")/100%>%<br>
+								<br>
 								tutorial : 
 								<a href=usersetting_ok.jsp?p1=19&p2=2000&p3=1&ps1=<%=gameidCurRow%>&ps2=<%=adminid%>&branch=userinfo_list&gameid=<%=gameidCurRow%>>
 									<%=getTutorial(result.getInt("tutorial"))%>
@@ -212,7 +213,7 @@ function f_Submit(f) {
 											<%=getBlockState(result.getInt("blockstate"))%>
 									   </a><br>
 								<a href=usersetting_ok.jsp?p1=19&p2=2000&p3=23&ps1=<%=gameidCurRow%>&ps2=<%=adminid%>&branch=userinfo_list&gameid=<%=gameidCurRow%>>일괄블럭</a><br>
-								<a href=usersetting_ok.jsp?p1=18&p2=1&ps1=<%=gameidCurRow%>&branch=userinfo_list&gameid=<%=gameidCurRow%>>개발진짜삭제</a><br>
+								<a href=usersetting_ok.jsp?p1=18&p2=1&ps1=<%=gameidCurRow%>&ps2=<%=adminid%>&branch=userinfo_list&gameid=<%=gameidCurRow%>>개발진짜삭제</a><br>
 								<a href=wgiftsend_form.jsp?gameid=<%=gameidCurRow%> target=_blank>선물/쪽지</a><br>
 							</td>
 							<td>							
@@ -445,7 +446,175 @@ function f_Submit(f) {
 					</table>
 				<%}%>
 				-->
-
+				<%if(cstmt.getMoreResults()){
+					result = cstmt.getResultSet();%>
+					<br><br><a href=sgbet_list.jsp?gameid=<%=gameid%> target=_blank>배팅중(더보기)</a>
+					<table border=1>
+						<tr>
+							<td colspan=2></td>
+							<td colspan=2>배팅</td>
+							<td></td>
+							<td>파워볼</td>
+							<td></td>
+							<td>합볼</td>
+							<td></td>
+							<td colspan=4>배팅시 정보</td>
+							<td colspan=4></td>
+						</tr>
+						<tr>
+							<td>인덱스</td>
+							<td></td>
+							<td>회차</td>
+							<td>들어올예정시간</td>
+							<td>게임모드</td>
+							<td>스트라이크/볼</td>
+							<td>직구/변화구</td>
+							<td>좌/우</td>
+							<td>상/하</td>
+							<td>접속IP</td>
+							<td>레벨</td>
+							<td>경험치</td>
+							<td>수수료차감값</td>
+							<td>소모템</td>
+							<td>배팅상태</td>
+							<td></td>
+							<td></td>
+						</tr>
+					<%while(result.next()){%>
+						<tr>
+							<td><%=result.getString("idx")%></td>
+							<td><%=result.getString("gameid")%></td>
+							<td><%=result.getString("curturntime")%></td>
+							<td><%=getDate19(result.getString("curturndate"))%></td>
+							<td><%=getGameMode(result.getInt("gamemode"))%></td>
+							<td>
+								<%=getSelectMode(1, result.getInt("select1"))%> / 
+								<%=result.getInt("cnt1")%> /
+							</td>
+							<td>
+								<%=getSelectMode(2, result.getInt("select2"))%> / 
+								<%=result.getInt("cnt2")%> /
+							</td>
+							<td>
+								<%=getSelectMode(3, result.getInt("select3"))%> /
+								<%=result.getInt("cnt3")%> /
+							</td>
+							<td>
+								<%=getSelectMode(4, result.getInt("select4"))%> / 
+								<%=result.getInt("cnt4")%> /
+							</td>
+							<td><%=result.getString("connectip")%></td>
+							<td><%=result.getInt("level")%></td>
+							<td><%=result.getInt("exp")%></td>
+							<td><%=(float)result.getInt("commission")/100%>%</td>
+							<td><%=result.getInt("consumeitemcode")%></td>
+							<td>
+								<a href=usersetting_ok.jsp?p1=19&p2=2000&p3=28&p4=<%=result.getInt("idx")%>&ps1=<%=result.getString("gameid")%>&ps2=<%=adminid%>&gameid=<%=result.getString("gameid")%>&branch=userinfo_list>
+									<%=getGameState(result.getInt("gamestate"))%>
+								</a>
+							</td>
+							<td><%=getDate19(result.getString("writedate"))%></td>
+							<td>
+								<a href=usersetting_ok.jsp?p1=19&p2=2000&p3=25&p4=<%=result.getInt("idx")%>&ps1=<%=result.getString("gameid")%>&ps2=<%=adminid%>&gameid=<%=result.getString("gameid")%>&branch=userinfo_list>강제삭제</a>
+								<a href=usersetting_ok.jsp?p1=19&p2=2000&p3=26&p4=<%=result.getInt("idx")%>&ps1=<%=result.getString("gameid")%>&ps2=<%=adminid%>&gameid=<%=result.getString("gameid")%>&branch=userinfo_list>강제롤백</a>
+							</td>
+						</tr>
+					<%}%>
+					</table>
+				<%}%>
+				
+				<%if(cstmt.getMoreResults()){
+					result = cstmt.getResultSet();%>
+					<br><br><a href=sgresult_list.jsp?gameid=<%=gameid%> target=_blank>배팅결과(더보기)</a>
+					<table border=1>
+						<tr>
+							<td colspan=2></td>
+							<td colspan=2>배팅</td>
+							<td></td>
+							<td>파워볼</td>
+							<td></td>
+							<td>합볼</td>
+							<td></td>
+							<td colspan=4>배팅시 정보</td>
+							<td colspan=4></td>
+						</tr>
+						<tr>
+							<td>인덱스</td>
+							<td></td>
+							<td>회차</td>
+							<td>들어올예정시간</td>
+							<td>게임모드<br>결과</td>
+							<td>스트라이크/볼<br>결과</td>
+							<td>직구/변화구<br>결과</td>
+							<td>좌/우<br>결과</td>
+							<td>상/하<br>결과</td>
+							<td>접속IP<br>PC방gameid</td>
+							<td>레벨<br>PC방획득캐쉬</td>
+							<td>경험치<br>기록일</td>
+							<td>수수료차감값<br>유저획득경험치</td>
+							<td>소모템<br>유저획득캐쉬</td>
+							<td>배팅상태</td>
+							<td></td>
+							<td></td>
+						</tr>
+					<%while(result.next()){%>
+						<tr>
+							<td><%=result.getString("idx")%>(<%=result.getString("idx2")%>)</td>
+							<td><%=result.getString("gameid")%></td>
+							<td><%=result.getString("curturntime")%></td>
+							<td><%=getDate19(result.getString("curturndate"))%></td>
+							<td><%=getGameMode(result.getInt("gamemode"))%></td>
+							<td>
+								<%=getSelectMode(1, result.getInt("select1"))%> / 
+								<%=result.getInt("cnt1")%> /
+							</td>
+							<td>
+								<%=getSelectMode(2, result.getInt("select2"))%> / 
+								<%=result.getInt("cnt2")%> /
+							</td>
+							<td>
+								<%=getSelectMode(3, result.getInt("select3"))%> / 
+								<%=result.getInt("cnt3")%> /
+							</td>
+							<td>
+								<%=getSelectMode(4, result.getInt("select4"))%> / 
+								<%=result.getInt("cnt4")%> /
+							</td>
+							<td><%=result.getString("connectip")%></td>
+							<td><%=result.getInt("level")%></td>
+							<td><%=result.getInt("exp")%></td>
+							<td><%=(float)result.getInt("commission")/100%>%</td>
+							<td><%=result.getInt("consumeitemcode")%></td>
+							<td><%=getGameState(result.getInt("gamestate"))%></td>
+							<td><%=getDate19(result.getString("writedate"))%></td>
+							<td>
+								<a href=usersetting_ok.jsp?p1=19&p2=2000&p3=27&p4=<%=result.getInt("idx")%>&ps1=<%=result.getString("gameid")%>&ps2=<%=adminid%>&gameid=<%=result.getString("gameid")%>&branch=userinfo_list>강제삭제</a>							
+							</td>
+						</tr>
+						<tr>
+							<td colspan=4></td>
+							<td><%=getGameResult(result.getInt("gameresult"))%></td>							
+							<td><%=getRSelect(result.getInt("rselect1"))%></td>
+							<td><%=getRSelect(result.getInt("rselect2"))%></td>
+							<td><%=getRSelect(result.getInt("rselect3"))%></td>
+							<td><%=getRSelect(result.getInt("rselect4"))%></td>
+							
+							
+							<td><%=result.getString("pcgameid")%></td>
+							<td><%=result.getString("pccashcost")%></td>
+							<td><%=getDate19(result.getString("resultdate"))%></td>
+							<td><%=result.getInt("gainexp")%></td>
+							<td><%=result.getInt("gaincashcost")%></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							
+						</tr>
+					<%}%>
+					</table>
+				<%}%>
+				
 
 				<%if(cstmt.getMoreResults()){
 					result = cstmt.getResultSet();%>

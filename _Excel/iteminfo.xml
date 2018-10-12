@@ -2208,6 +2208,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1501</itemcode>
@@ -2233,6 +2234,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1502</itemcode>
@@ -2258,6 +2260,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1503</itemcode>
@@ -2283,6 +2286,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1504</itemcode>
@@ -2308,6 +2312,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1505</itemcode>
@@ -2333,6 +2338,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1506</itemcode>
@@ -2358,6 +2364,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1507</itemcode>
@@ -2383,6 +2390,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1508</itemcode>
@@ -2408,6 +2416,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1509</itemcode>
@@ -2433,6 +2442,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1510</itemcode>
@@ -2458,6 +2468,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1511</itemcode>
@@ -2483,6 +2494,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1512</itemcode>
@@ -2508,6 +2520,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1513</itemcode>
@@ -2533,6 +2546,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1514</itemcode>
@@ -2558,6 +2572,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1515</itemcode>
@@ -2583,6 +2598,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1516</itemcode>
@@ -2608,6 +2624,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1517</itemcode>
@@ -2633,6 +2650,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1518</itemcode>
@@ -2658,6 +2676,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1519</itemcode>
@@ -2683,6 +2702,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1600</itemcode>
@@ -2708,6 +2728,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1601</itemcode>
@@ -2733,6 +2754,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1602</itemcode>
@@ -2758,6 +2780,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1603</itemcode>
@@ -2783,6 +2806,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1604</itemcode>
@@ -2808,6 +2832,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1605</itemcode>
@@ -2833,6 +2858,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1606</itemcode>
@@ -2858,6 +2884,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1607</itemcode>
@@ -2883,6 +2910,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1608</itemcode>
@@ -2908,6 +2936,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1609</itemcode>
@@ -2933,6 +2962,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1610</itemcode>
@@ -2958,6 +2988,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1611</itemcode>
@@ -2983,6 +3014,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1612</itemcode>
@@ -3008,6 +3040,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1613</itemcode>
@@ -3033,6 +3066,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1614</itemcode>
@@ -3058,6 +3092,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1615</itemcode>
@@ -3083,6 +3118,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1616</itemcode>
@@ -3108,6 +3144,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1617</itemcode>
@@ -3133,6 +3170,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1618</itemcode>
@@ -3158,6 +3196,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1619</itemcode>
@@ -3183,6 +3222,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1700</itemcode>
@@ -3208,6 +3248,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1701</itemcode>
@@ -3233,6 +3274,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1702</itemcode>
@@ -3258,6 +3300,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1703</itemcode>
@@ -3283,6 +3326,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1704</itemcode>
@@ -3308,6 +3352,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1705</itemcode>
@@ -3333,6 +3378,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1706</itemcode>
@@ -3358,6 +3404,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1707</itemcode>
@@ -3383,6 +3430,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1708</itemcode>
@@ -3408,6 +3456,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1709</itemcode>
@@ -3433,6 +3482,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1710</itemcode>
@@ -3458,6 +3508,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1711</itemcode>
@@ -3483,6 +3534,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1712</itemcode>
@@ -3508,6 +3560,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1713</itemcode>
@@ -3533,6 +3586,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1714</itemcode>
@@ -3558,6 +3612,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1715</itemcode>
@@ -3583,6 +3638,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1716</itemcode>
@@ -3608,6 +3664,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1717</itemcode>
@@ -3633,6 +3690,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1718</itemcode>
@@ -3658,6 +3716,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1719</itemcode>
@@ -3683,6 +3742,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1800</itemcode>
@@ -3708,6 +3768,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1801</itemcode>
@@ -3733,6 +3794,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1802</itemcode>
@@ -3758,6 +3820,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1803</itemcode>
@@ -3783,6 +3846,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1804</itemcode>
@@ -3808,6 +3872,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1805</itemcode>
@@ -3833,6 +3898,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1806</itemcode>
@@ -3858,6 +3924,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1807</itemcode>
@@ -3883,6 +3950,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1808</itemcode>
@@ -3908,6 +3976,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1809</itemcode>
@@ -3933,6 +4002,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1810</itemcode>
@@ -3958,6 +4028,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1811</itemcode>
@@ -3983,6 +4054,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1812</itemcode>
@@ -4008,6 +4080,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1813</itemcode>
@@ -4033,6 +4106,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1814</itemcode>
@@ -4058,6 +4132,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1815</itemcode>
@@ -4083,6 +4158,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1816</itemcode>
@@ -4108,6 +4184,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1817</itemcode>
@@ -4133,6 +4210,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1818</itemcode>
@@ -4158,6 +4236,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1819</itemcode>
@@ -4183,6 +4262,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1900</itemcode>
@@ -4208,6 +4288,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1901</itemcode>
@@ -4233,6 +4314,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1902</itemcode>
@@ -4258,6 +4340,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1903</itemcode>
@@ -4283,6 +4366,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1904</itemcode>
@@ -4308,6 +4392,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1905</itemcode>
@@ -4333,6 +4418,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1906</itemcode>
@@ -4358,6 +4444,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1907</itemcode>
@@ -4383,6 +4470,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1908</itemcode>
@@ -4408,6 +4496,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1909</itemcode>
@@ -4433,6 +4522,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1910</itemcode>
@@ -4458,6 +4548,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1911</itemcode>
@@ -4483,6 +4574,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1912</itemcode>
@@ -4508,6 +4600,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1913</itemcode>
@@ -4533,6 +4626,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1914</itemcode>
@@ -4558,6 +4652,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1915</itemcode>
@@ -4583,6 +4678,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1916</itemcode>
@@ -4608,6 +4704,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1917</itemcode>
@@ -4633,6 +4730,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1918</itemcode>
@@ -4658,6 +4756,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>1919</itemcode>
@@ -4683,6 +4782,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2000</itemcode>
@@ -4708,6 +4808,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2001</itemcode>
@@ -4733,6 +4834,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2002</itemcode>
@@ -4758,6 +4860,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2003</itemcode>
@@ -4783,6 +4886,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2004</itemcode>
@@ -4808,6 +4912,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2005</itemcode>
@@ -4833,6 +4938,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2006</itemcode>
@@ -4858,6 +4964,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2007</itemcode>
@@ -4883,6 +4990,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2008</itemcode>
@@ -4908,6 +5016,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2009</itemcode>
@@ -4933,6 +5042,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2010</itemcode>
@@ -4958,6 +5068,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2011</itemcode>
@@ -4983,6 +5094,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2012</itemcode>
@@ -5008,6 +5120,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2013</itemcode>
@@ -5033,6 +5146,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2014</itemcode>
@@ -5058,6 +5172,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2015</itemcode>
@@ -5083,6 +5198,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2016</itemcode>
@@ -5108,6 +5224,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2017</itemcode>
@@ -5133,6 +5250,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2018</itemcode>
@@ -5158,6 +5276,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2019</itemcode>
@@ -5183,6 +5302,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2100</itemcode>
@@ -5208,6 +5328,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2101</itemcode>
@@ -5233,6 +5354,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2102</itemcode>
@@ -5258,6 +5380,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2103</itemcode>
@@ -5283,6 +5406,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2104</itemcode>
@@ -5308,6 +5432,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2105</itemcode>
@@ -5333,6 +5458,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2106</itemcode>
@@ -5358,6 +5484,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2107</itemcode>
@@ -5383,6 +5510,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2108</itemcode>
@@ -5408,6 +5536,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2109</itemcode>
@@ -5433,6 +5562,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2110</itemcode>
@@ -5458,6 +5588,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2111</itemcode>
@@ -5483,6 +5614,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2112</itemcode>
@@ -5508,6 +5640,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2113</itemcode>
@@ -5533,6 +5666,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2114</itemcode>
@@ -5558,6 +5692,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2115</itemcode>
@@ -5583,6 +5718,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2116</itemcode>
@@ -5608,6 +5744,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2117</itemcode>
@@ -5633,6 +5770,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2118</itemcode>
@@ -5658,6 +5796,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2119</itemcode>
@@ -5683,6 +5822,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2200</itemcode>
@@ -5708,6 +5848,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2201</itemcode>
@@ -5733,6 +5874,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2202</itemcode>
@@ -5758,6 +5900,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2203</itemcode>
@@ -5783,6 +5926,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2204</itemcode>
@@ -5808,6 +5952,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2205</itemcode>
@@ -5833,6 +5978,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2206</itemcode>
@@ -5858,6 +6004,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2207</itemcode>
@@ -5883,6 +6030,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2208</itemcode>
@@ -5908,6 +6056,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2209</itemcode>
@@ -5933,6 +6082,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2210</itemcode>
@@ -5958,6 +6108,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2211</itemcode>
@@ -5983,6 +6134,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2212</itemcode>
@@ -6008,6 +6160,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2213</itemcode>
@@ -6033,6 +6186,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2214</itemcode>
@@ -6058,6 +6212,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2215</itemcode>
@@ -6083,6 +6238,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2216</itemcode>
@@ -6108,6 +6264,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2217</itemcode>
@@ -6133,6 +6290,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2218</itemcode>
@@ -6158,6 +6316,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2219</itemcode>
@@ -6183,6 +6342,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2300</itemcode>
@@ -6208,6 +6368,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2301</itemcode>
@@ -6233,6 +6394,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2302</itemcode>
@@ -6258,6 +6420,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2303</itemcode>
@@ -6283,6 +6446,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2304</itemcode>
@@ -6308,6 +6472,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2305</itemcode>
@@ -6333,6 +6498,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2306</itemcode>
@@ -6358,6 +6524,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2307</itemcode>
@@ -6383,6 +6550,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2308</itemcode>
@@ -6408,6 +6576,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2309</itemcode>
@@ -6433,6 +6602,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2310</itemcode>
@@ -6458,6 +6628,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2311</itemcode>
@@ -6483,6 +6654,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2312</itemcode>
@@ -6508,6 +6680,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2313</itemcode>
@@ -6533,6 +6706,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2314</itemcode>
@@ -6558,6 +6732,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2315</itemcode>
@@ -6583,6 +6758,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2316</itemcode>
@@ -6608,6 +6784,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2317</itemcode>
@@ -6633,6 +6810,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2318</itemcode>
@@ -6658,6 +6836,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2319</itemcode>
@@ -6683,6 +6862,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2400</itemcode>
@@ -6708,6 +6888,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2401</itemcode>
@@ -6733,6 +6914,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2402</itemcode>
@@ -6758,6 +6940,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2403</itemcode>
@@ -6783,6 +6966,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2404</itemcode>
@@ -6808,6 +6992,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2405</itemcode>
@@ -6833,6 +7018,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2406</itemcode>
@@ -6858,6 +7044,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2407</itemcode>
@@ -6883,6 +7070,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2408</itemcode>
@@ -6908,6 +7096,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2409</itemcode>
@@ -6933,6 +7122,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2410</itemcode>
@@ -6958,6 +7148,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2411</itemcode>
@@ -6983,6 +7174,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2412</itemcode>
@@ -7008,6 +7200,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2413</itemcode>
@@ -7033,6 +7226,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2414</itemcode>
@@ -7058,6 +7252,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2415</itemcode>
@@ -7083,6 +7278,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2416</itemcode>
@@ -7108,6 +7304,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2417</itemcode>
@@ -7133,6 +7330,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2418</itemcode>
@@ -7158,6 +7356,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2419</itemcode>
@@ -7183,6 +7382,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2500</itemcode>
@@ -7208,6 +7408,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2501</itemcode>
@@ -7233,6 +7434,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2502</itemcode>
@@ -7258,6 +7460,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2503</itemcode>
@@ -7283,6 +7486,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2504</itemcode>
@@ -7308,6 +7512,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2505</itemcode>
@@ -7333,6 +7538,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2506</itemcode>
@@ -7358,6 +7564,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2507</itemcode>
@@ -7383,6 +7590,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2508</itemcode>
@@ -7408,6 +7616,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2509</itemcode>
@@ -7433,6 +7642,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2510</itemcode>
@@ -7458,6 +7668,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2511</itemcode>
@@ -7483,6 +7694,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2512</itemcode>
@@ -7508,6 +7720,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2513</itemcode>
@@ -7533,6 +7746,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2514</itemcode>
@@ -7558,6 +7772,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2515</itemcode>
@@ -7583,6 +7798,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2516</itemcode>
@@ -7608,6 +7824,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2517</itemcode>
@@ -7633,6 +7850,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2518</itemcode>
@@ -7658,6 +7876,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2519</itemcode>
@@ -7683,6 +7902,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2600</itemcode>
@@ -7708,6 +7928,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2601</itemcode>
@@ -7733,6 +7954,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2602</itemcode>
@@ -7758,6 +7980,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2603</itemcode>
@@ -7783,6 +8006,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2604</itemcode>
@@ -7808,6 +8032,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2605</itemcode>
@@ -7833,6 +8058,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2606</itemcode>
@@ -7858,6 +8084,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2607</itemcode>
@@ -7883,6 +8110,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2608</itemcode>
@@ -7908,6 +8136,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2609</itemcode>
@@ -7933,6 +8162,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2610</itemcode>
@@ -7958,6 +8188,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2611</itemcode>
@@ -7983,6 +8214,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2612</itemcode>
@@ -8008,6 +8240,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2613</itemcode>
@@ -8033,6 +8266,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2614</itemcode>
@@ -8058,6 +8292,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2615</itemcode>
@@ -8083,6 +8318,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2616</itemcode>
@@ -8108,6 +8344,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2617</itemcode>
@@ -8133,6 +8370,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2618</itemcode>
@@ -8158,6 +8396,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2619</itemcode>
@@ -8183,6 +8422,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2700</itemcode>
@@ -8208,6 +8448,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2701</itemcode>
@@ -8233,6 +8474,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2702</itemcode>
@@ -8258,6 +8500,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2703</itemcode>
@@ -8283,6 +8526,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2704</itemcode>
@@ -8308,6 +8552,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2705</itemcode>
@@ -8333,6 +8578,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2706</itemcode>
@@ -8358,6 +8604,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2707</itemcode>
@@ -8383,6 +8630,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2708</itemcode>
@@ -8408,6 +8656,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2709</itemcode>
@@ -8433,6 +8682,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2710</itemcode>
@@ -8458,6 +8708,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2711</itemcode>
@@ -8483,6 +8734,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2712</itemcode>
@@ -8508,6 +8760,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2713</itemcode>
@@ -8533,6 +8786,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2714</itemcode>
@@ -8558,6 +8812,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2715</itemcode>
@@ -8583,6 +8838,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2716</itemcode>
@@ -8608,6 +8864,7 @@
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2717</itemcode>
@@ -8633,6 +8890,7 @@
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2718</itemcode>
@@ -8658,6 +8916,7 @@
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecepart>
 		<itemcode>2719</itemcode>
@@ -8683,6 +8942,7 @@
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
 		<failpercent>99</failpercent>
+		<apartpercent>80</apartpercent>
 	</piecepart>
 	<piecebox>
 		<itemcode>4000</itemcode>
@@ -9176,6 +9436,139 @@
 		<sellcost>1</sellcost>
 		<description>대형 다이아 상자</description>
 	</cashcoin>
+	<gamecost>
+		<itemcode>6000</itemcode>
+		<category>60</category>
+		<subcategory>60</subcategory>
+		<equpslot>0</equpslot>
+		<itemname>볼</itemname>
+		<activate>0</activate>
+		<toplist>0</toplist>
+		<grade>0</grade>
+		<discount>0</discount>
+		<icon>ball00</icon>
+		<playerlv>0</playerlv>
+		<multistate>1</multistate>
+		<gamecost>0</gamecost>
+		<cashcost>1</cashcost>
+		<buyamount>1</buyamount>
+		<sellcost>1</sellcost>
+		<description>볼</description>
+	</gamecost>
+	<gamecost>
+		<itemcode>6001</itemcode>
+		<category>60</category>
+		<subcategory>60</subcategory>
+		<equpslot>0</equpslot>
+		<itemname>볼 소량</itemname>
+		<activate>1</activate>
+		<toplist>0</toplist>
+		<grade>0</grade>
+		<discount>0</discount>
+		<icon>ball01</icon>
+		<playerlv>0</playerlv>
+		<multistate>0</multistate>
+		<gamecost>0</gamecost>
+		<cashcost>100</cashcost>
+		<buyamount>100</buyamount>
+		<sellcost>1</sellcost>
+		<description>볼 소량</description>
+	</gamecost>
+	<gamecost>
+		<itemcode>6002</itemcode>
+		<category>60</category>
+		<subcategory>60</subcategory>
+		<equpslot>0</equpslot>
+		<itemname>볼 뭉치</itemname>
+		<activate>1</activate>
+		<toplist>0</toplist>
+		<grade>0</grade>
+		<discount>0</discount>
+		<icon>ball02</icon>
+		<playerlv>0</playerlv>
+		<multistate>0</multistate>
+		<gamecost>0</gamecost>
+		<cashcost>1000</cashcost>
+		<buyamount>1000</buyamount>
+		<sellcost>1</sellcost>
+		<description>볼 뭉치</description>
+	</gamecost>
+	<gamecost>
+		<itemcode>6003</itemcode>
+		<category>60</category>
+		<subcategory>60</subcategory>
+		<equpslot>0</equpslot>
+		<itemname>볼 주머니</itemname>
+		<activate>1</activate>
+		<toplist>0</toplist>
+		<grade>0</grade>
+		<discount>0</discount>
+		<icon>ball03</icon>
+		<playerlv>0</playerlv>
+		<multistate>0</multistate>
+		<gamecost>0</gamecost>
+		<cashcost>2500</cashcost>
+		<buyamount>2500</buyamount>
+		<sellcost>1</sellcost>
+		<description>볼 주머니</description>
+	</gamecost>
+	<gamecost>
+		<itemcode>6004</itemcode>
+		<category>60</category>
+		<subcategory>60</subcategory>
+		<equpslot>0</equpslot>
+		<itemname>작은 볼 상자</itemname>
+		<activate>1</activate>
+		<toplist>0</toplist>
+		<grade>0</grade>
+		<discount>0</discount>
+		<icon>ball04</icon>
+		<playerlv>0</playerlv>
+		<multistate>0</multistate>
+		<gamecost>0</gamecost>
+		<cashcost>4000</cashcost>
+		<buyamount>4000</buyamount>
+		<sellcost>1</sellcost>
+		<description>작은 볼 상자</description>
+	</gamecost>
+	<gamecost>
+		<itemcode>6005</itemcode>
+		<category>60</category>
+		<subcategory>60</subcategory>
+		<equpslot>0</equpslot>
+		<itemname>큰 볼 상자</itemname>
+		<activate>1</activate>
+		<toplist>0</toplist>
+		<grade>0</grade>
+		<discount>0</discount>
+		<icon>ball05</icon>
+		<playerlv>0</playerlv>
+		<multistate>0</multistate>
+		<gamecost>0</gamecost>
+		<cashcost>10000</cashcost>
+		<buyamount>10000</buyamount>
+		<sellcost>1</sellcost>
+		<description>큰 볼 상자</description>
+	</gamecost>
+	<gamecost>
+		<itemcode>6006</itemcode>
+		<category>60</category>
+		<subcategory>60</subcategory>
+		<equpslot>0</equpslot>
+		<itemname>대형 볼 상자</itemname>
+		<activate>1</activate>
+		<toplist>0</toplist>
+		<grade>0</grade>
+		<discount>0</discount>
+		<icon>ball06</icon>
+		<playerlv>0</playerlv>
+		<multistate>0</multistate>
+		<gamecost>0</gamecost>
+		<cashcost>20000</cashcost>
+		<buyamount>20000</buyamount>
+		<sellcost>1</sellcost>
+		<description>대형 볼 상자</description>
+	</gamecost>
 	<staticinfo>
 		<itemcode>50000</itemcode>
 		<category>500</category>

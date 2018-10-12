@@ -135,6 +135,7 @@ as
 	declare @ITEM_SUBCATEGORY_SCROLL_EVOLUTION	int					set @ITEM_SUBCATEGORY_SCROLL_EVOLUTION		= 45 -- 합성초월주문서(45)
 	declare @ITEM_SUBCATEGORY_SCROLL_COMMISSION	int					set @ITEM_SUBCATEGORY_SCROLL_COMMISSION		= 46 -- 수수료주문서(46)
 	declare @ITEM_SUBCATEGORY_CASHCOST			int					set @ITEM_SUBCATEGORY_CASHCOST				= 50 -- 다이아(50)
+	declare @ITEM_SUBCATEGORY_GAMECOST			int					set @ITEM_SUBCATEGORY_GAMECOST				= 60 -- 볼(60)
 	--declare @ITEM_SUBCATEGORY_STATICINFO		int					set @ITEM_SUBCATEGORY_STATICINFO			= 500 -- 정보수집(500)
 	--declare @ITEM_SUBCATEGORY_LEVELUPREWARD		int					set @ITEM_SUBCATEGORY_LEVELUPREWARD			= 900 --레벨업 보상(510)
 
@@ -169,6 +170,7 @@ as
 	declare @itemcode		int				set @itemcode 	= -1
 	declare @giftkind		int				set @giftkind 	= -1
 	declare @cashcost		int				set @cashcost 	= 0
+	declare @gamecost		int				set @gamecost 	= 0
 
 	declare @subcategory 	int
 	declare	@buyamount		int				set @buyamount		= 0
@@ -203,9 +205,9 @@ Begin
 	------------------------------------------------
 	select
 		@gameid 		= gameid,		@sid		= sid,
-		@cashcost		= cashcost
+		@cashcost		= cashcost,		@gamecost	= gamecost
 	from dbo.tUserMaster where gameid = @gameid_ and password = @password_
-	--select 'DEBUG 1-3 유저정보', @gameid gameid, @cashcost cashcost, @sid sid
+	--select 'DEBUG 1-3 유저정보', @gameid gameid, @cashcost cashcost, @sid sid, @gamecost gamecost
 
 	select
 		@giftkind 	= giftkind,
@@ -441,6 +443,36 @@ Begin
 					-- 아이템 가져간 상태로 돌려둔다.
 					update dbo.tGiftList set giftkind = @GIFTLIST_GIFT_KIND_GIFT_GET, gaindate = getdate() where idx = @idx_
 				end
+			else if(@subcategory = @ITEM_SUBCATEGORY_GAMECOST)
+				begin
+					---------------------------------------------------------------
+					-- 선물, 거래소에서 수량으로 거래후 거래 가격이 우편함으로 들어간다.
+					-- 구매 	-> 우편함 or 직접
+					-- 거래소 	-> 우편함
+					---------------------------------------------------------------
+					--select 'DEBUG 4-5-1 gamecost(볼)	-> 바로적용', @multistate multistate, @gamecost gamecost, @sendcnt sendcnt, @buyamount buyamount
+					if(@multistate = @DEFINE_MULTISTATE_GIFTCNT)
+						begin
+							set @plus		= @sendcnt
+							--select 'DEBUG 4-6 볼 -> 보낸수량', @sendcnt sendcnt
+						end
+					else
+						begin
+							set @plus		= @buyamount2
+							--select 'DEBUG 4-6 볼 -> 엑셀수량', @buyamount2 buyamount2
+						end
+					set @plus 		= case when @plus < 0 then 0 else @plus end
+					set @gamecost	= @gamecost + @plus
+
+					-- 아이템을 직접 넣어줌
+					update dbo.tUserMaster
+					set
+						gamecost = @gamecost
+					where gameid = @gameid_
+
+					-- 아이템 가져간 상태로 돌려둔다.
+					update dbo.tGiftList set giftkind = @GIFTLIST_GIFT_KIND_GIFT_GET, gaindate = getdate() where idx = @idx_
+				end
 			else
 				begin
 					--------------------------------------------------------------
@@ -465,7 +497,7 @@ Begin
 	------------------------------------------------
 	set nocount off
 
-	select @nResult_ rtn, @comment comment, @cashcost cashcost
+	select @nResult_ rtn, @comment comment, @cashcost cashcost, @gamecost gamecost
 
 	if(@nResult_ = @RESULT_SUCCESS)
 		begin

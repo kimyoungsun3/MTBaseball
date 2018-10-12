@@ -38,6 +38,7 @@
 --exec spu_GameMTBaseballD 19, 1006, -1, -1, -1, -1,  2, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''						-- 이상행동2정보.
 --exec spu_GameMTBaseballD 19, 1006, -1, -1, -1, -1, -1, -1, -1, -1, 'xxxx2', '', '', '', '', '', '', '', '', ''				--		    검색.
 --exec spu_GameMTBaseballD 19, 41, -11, -1, -1, -1, -1, -1, -1, -1, 'xxxx', 'admin', '', '', '', '', '', '', '', ''				-- 캐쉬 +/-
+--exec spu_GameMTBaseballD 19, 44, -11, -1, -1, -1, -1, -1, -1, -1, 'xxxx', 'admin', '', '', '', '', '', '', '', ''				-- 볼 +/-
 --exec spu_GameMTBaseballD 19,  65,  1,  1, -1, -1, -1, -1, -1, -1, 'xxxx', 'admin', '', '', '', '', '', '', '', ''				-- 유저 레벨
 --exec spu_GameMTBaseballD 19,  65,  2,  1, -1, -1, -1, -1, -1, -1, 'xxxx', 'admin', '', '', '', '', '', '', '', ''				--    경험치
 --exec spu_GameMTBaseballD 19,2000,  1, -1, -1, -1, -1, -1, -1, -1, 'xxxx', 'admin', '', '', '', '', '', '', '', ''				-- 상태값 변경.
@@ -46,11 +47,15 @@
 --exec spu_GameMTBaseballD 19,2000, 21, -1, -1, -1, -1, -1, -1, -1, 'xxxx', 'admin', '', '', '', '', '', '', '', ''				-- 결과카피 클리어.
 --exec spu_GameMTBaseballD 19,2000, 22, -1, -1, -1, -1, -1, -1, -1, 'xxxx', 'admin', '', '', '', '', '', '', '', ''				-- 블럭처리/해제, 기록남김
 --exec spu_GameMTBaseballD 19,2000, 23, -1, -1, -1, -1, -1, -1, -1, 'xxxx', 'admin', '', '', '', '', '', '', '', ''				-- 블럭처리(일괄핸드폰 > 관련계정모두)
---exec spu_GameMTBaseballD 19,2000, 24, -1, -1, -1, -1, -1, -1, -1, 'xxxx', 'admin', '192.168.0.1', '', '', '', '', '', '', ''	-- 블럭해제
 --exec spu_GameMTBaseballD 19,1110, -1, -1, -1, -1,  1, -1, -1, -1, 'xxxx2', '', '', '', '', '', '', '', '', ''					-- 판매,합성,분해된리스트.
 --exec spu_GameMTBaseballD 19, 71,  7,  6, -1, -1, -1, -1, -1, -1, 'xxxx', 'admin', '', '', '', '', '', '', '', ''				-- 소모템 개수변경(공포탄 5 -> 6)
 --exec spu_GameMTBaseballD 19, 31, 12, -1, -1, -1, -1, -1, -1, -1, 'xxxx', '', '', '', '', '', '', '', '', ''					-- 유저보유템 삭제
-
+--exec spu_GameMTBaseballD 19,2000, 25,  1, -1, -1, -1, -1, -1, -1, 'xxxx', '', '', '', '', '', '', '', '', ''					-- 배팅정보 강제삭제.
+--exec spu_GameMTBaseballD 19,2000, 26, 10, -1, -1, -1, -1, -1, -1, 'mtxxxx3', 'admin', '', '', '', '', '', '', '', ''			-- 배팅정보 강제롤백.
+--exec spu_GameMTBaseballD 19,2000, 27, 10, -1, -1, -1, -1, -1, -1, 'mtxxxx3', 'admin', '', '', '', '', '', '', '', ''			-- 상태변경.
+--exec spu_GameMTBaseballD 19,2000, 28, 10, -1, -1, -1, -1, -1, -1, 'mtxxxx3', 'admin', '', '', '', '', '', '', '', ''			-- 상태변경.
+--exec spu_GameMTBaseballD 19,1010, -1, -1, -1, -1,  1, -1, -1, -1, 'mtxxxx3', '', '', '', '', '', '', '', '', ''				-- 배팅정보 리스트.
+--exec spu_GameMTBaseballD 19,1011, -1, -1, -1, -1,  1, -1, -1, -1, 'mtxxxx3', '', '', '', '', '', '', '', '', ''				-- 배팅결과 리스트.
 
 
 --exec spu_GameMTBaseballD 19, 1001, -1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''						-- 블럭리스트
@@ -488,8 +493,6 @@ as
 	declare @nextturntime	int
 	declare @nextturndate	datetime
 	declare @totalball		int
-
-
 
 Begin
 	------------------------------------------------
@@ -1034,6 +1037,17 @@ Begin
 					where gameid = @gameid
 					order by idx desc
 
+					-----------------------------------------------
+					---- 배팅로고
+					-----------------------------------------------
+					select top 10 * from dbo.tSingleGame
+					where gameid = @gameid
+					order by idx desc
+
+					select top 10 * from dbo.tSingleGameLog
+					where gameid = @gameid
+					order by idx desc
+
 					---------------------------------------------
 					-- 비정상행동
 					---------------------------------------------
@@ -1159,13 +1173,87 @@ Begin
 							order by idx desc
 						end
 				end
+			--------------------------------------------
+			-- 배팅 / 로고.
+			--------------------------------------------
+			else if(@p2_ =  1010)
+				begin
+					if(isnull(@gameid, '') = '')
+						begin
+							set @idxPage	= @p7_
+							select @idx = (isnull(max(idx), 1)) from dbo.tSingleGame
+
+							set @maxPage	= @idx / @PAGE_LINE
+							set @maxPage 	= @maxPage + case when (@idx % @PAGE_LINE != 0) then 1 else 0 end
+							set @page		= case
+												when (@idxPage <= 0)			then 1
+												when (@idxPage >  @maxPage)	then @maxPage
+												else @idxPage
+											end
+							set @idx		= @idx - (@page - 1) * @PAGE_LINE
+
+							select top 100 @maxPage maxPage, @page page, * from dbo.tSingleGame
+							where idx <= @idx order by idx desc
+						end
+					else
+						begin
+							set @maxPage	= 1
+							set @page		= 1
+
+							select top 100 @maxPage maxPage, @page page, * from dbo.tSingleGame
+							where gameid = @gameid
+							order by idx desc
+						end
+				end
+			else if(@p2_ =  1011)
+				begin
+					if(isnull(@gameid, '') = '')
+						begin
+							set @idxPage	= @p7_
+							select @idx = (isnull(max(idx), 1)) from dbo.tSingleGameLog
+
+							set @maxPage	= @idx / @PAGE_LINE
+							set @maxPage 	= @maxPage + case when (@idx % @PAGE_LINE != 0) then 1 else 0 end
+							set @page		= case
+												when (@idxPage <= 0)			then 1
+												when (@idxPage >  @maxPage)	then @maxPage
+												else @idxPage
+											end
+							set @idx		= @idx - (@page - 1) * @PAGE_LINE
+
+							select top 100 @maxPage maxPage, @page page, * from dbo.tSingleGameLog
+							where idx <= @idx order by idx desc
+						end
+					else
+						begin
+							set @maxPage	= 1
+							set @page		= 1
+
+							select top 100 @maxPage maxPage, @page page, * from dbo.tSingleGameLog
+							where gameid = @gameid
+							order by idx desc
+						end
+				end
 			----------------------------------------------------
 			-- 캐쉬수정
 			----------------------------------------------------
 			else if(@p2_ = 41)
 				begin
 					update dbo.tUserMaster set cashcost = cashcost + @p3_ where gameid = @gameid
-					set @comment = '캐쉬 ' +
+					set @comment = '다이아 ' +
+								+ case when @p3_ >= 0 then ' 추가:' else ' 삭감' end
+								+ ltrim(rtrim(str(@p3_)))
+
+					exec spu_AdminAction @ps2_, @gameid, @comment
+					select 1 rtn
+				end
+			----------------------------------------------------
+			-- gamecost 수정
+			----------------------------------------------------
+			else if(@p2_ = 44)
+				begin
+					update dbo.tUserMaster set gamecost = gamecost + @p3_ where gameid = @gameid
+					set @comment = '볼 ' +
 								+ case when @p3_ >= 0 then ' 추가:' else ' 삭감' end
 								+ ltrim(rtrim(str(@p3_)))
 
@@ -1196,7 +1284,7 @@ Begin
 											WHEN (@exp < 0) 		then 0
 											else @exp
 										end
-							set @level = dbo.fnu_GetLevel(@exp)
+							set @level 		= dbo.fnu_GetLevel(@exp)
 							set @commission = dbo.fnu_GetTax100FromLevel(@level)
 
 							update dbo.tUserMaster
@@ -1223,6 +1311,11 @@ Begin
 													else 						0
 												end
 							where gameid = @gameid
+						end
+					else if(@p3_ = 9)
+						begin
+							set @comment = '세션ID강제변경.'
+							update dbo.tUserMaster set sid = 333 where gameid = @gameid
 						end
 					else if(@p3_ = 10)
 						begin
@@ -1300,24 +1393,42 @@ Begin
 									exec spu_AdminActionBlock @adminid, @gameid, @comment
 								end
 						end
-					else if(@p3_ = 24)
+					else if(@p3_ = 25)
 						begin
-							-------------------------------------
-							-- 블럭해제
-							-------------------------------------
-							update dbo.tUserMaster
-								set
-									blockstate = @BLOCK_STATE_NO
-							where gameid = @gameid
+							-- 삭제처리하기.
+							exec dbo.spu_BetRollBack 12, @gameid, @p4_	-- -1 -> 12 관리자 강제삭제
 
-							update dbo.tUserBlockLog
+							set @comment = '관리자(' + @gameid + ')가 배팅데이타를 강제 삭제처리 했습니다.'
+							exec spu_AdminActionBlock @adminid, @gameid, @comment
+						end
+					else if(@p3_ = 26)
+						begin
+							-- 롤백처리하기.
+							exec dbo.spu_BetRollBack 13, @gameid, @p4_	-- -1 -> 13 관리자 강제롤백
+
+							set @comment = '관리자(' + @gameid + ')가 배팅데이타를 강제 롤백처리, 선물함으로 복구 했습니다.'
+							exec spu_AdminActionBlock @adminid, @gameid, @comment
+						end
+					else if(@p3_ = 27)
+						begin
+							-- 로고삭제.
+							delete from dbo.tSingleGameLog where idx = @p4_
+
+							set @comment = '관리자(' + @gameid + ')가 배팅로고 영구삭제 했습니다.'
+							exec spu_AdminActionBlock @adminid, @gameid, @comment
+						end
+					else if(@p3_ = 28)
+						begin
+							update dbo.tSingleGame
 								set
-									blockstate = @BLOCK_STATE_NO,
-									adminid = @ps2_,
-									adminip = @ps3_,
-									comment2 = '해제',
-									releasedate = getdate()
-							where idx = @p3_
+									gamestate 	= CASE
+														when gamestate = -1		then -2
+														else						 -1
+												  END
+							where gameid = @gameid and idx = @p4_
+
+							set @comment = '관리자(' + @gameid + ')가 배팅상태를 변경했습니다.'
+							exec spu_AdminActionBlock @adminid, @gameid, @comment
 						end
 					select 1 rtn
 				end
@@ -1719,6 +1830,8 @@ Begin
 					delete from dbo.tGiftList where gameid = @gameid
 					delete from dbo.tCashLog where gameid = @gameid
 					delete from dbo.tSysInquire where gameid = @gameid
+					delete from dbo.tSingleGame where gameid = @gameid
+					delete from dbo.tSingleGameLog where gameid = @gameid
 
 					set @comment = ('개발자가 '+@gameid+'계정을 삭제하면서 자료까지 삭제했습니다.')
 					exec spu_AdminAction @adminid, @gameid, @comment
@@ -1744,6 +1857,7 @@ Begin
 			if(@subkind	= 1)
 				begin
 					          select * from dbo.tItemInfo where                      itemcode = 5000	-- 캐쉬
+					union all select * from dbo.tItemInfo where						 itemcode = 6000	--
 					union all select * from dbo.tItemInfo where						 itemcode = 3600	--
 					union all select * from dbo.tItemInfo where subcategory = 45 						-- 조합주문서
 					union all select * from dbo.tItemInfo where subcategory = 46 						-- 수수료주문서
@@ -2453,10 +2567,10 @@ Begin
 					-- 패키지 상품정보.(상품, 등록리스트)
 					-------------------------------------------------
 					select count(*) cnt from dbo.tItemInfo
-					where subcategory in (1, 2, 3, 8, 9, 44, 11, 12, 13, 40, 41, 42, 50, 51, 22, 23, 16, 19)
+					where subcategory in (1, 2, 3, 8, 9, 44, 11, 12, 13, 40, 41, 42, 50, 51, 60, 22, 23, 16, 19)
 
 					select * from dbo.tItemInfo
-					where subcategory in (1, 2, 3, 8, 9, 44, 11, 12, 13, 40, 41, 42, 50, 51, 22, 23, 16, 19)
+					where subcategory in (1, 2, 3, 8, 9, 44, 11, 12, 13, 40, 41, 42, 50, 51, 60, 22, 23, 16, 19)
 					order by itemcode asc
 
 					-------------------------------------------------

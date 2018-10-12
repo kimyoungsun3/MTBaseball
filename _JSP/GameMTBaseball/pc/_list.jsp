@@ -78,24 +78,27 @@
 			giftgain.jsp
 		</td>
 		<td>
-			<a href=giftgain.jsp?gameid=xxxx2&password=049000s1i0n7t8445289&sid=333&giftkind=-1&idx=1>쪽지받기(삭제)</a><br>
-			<a href=giftgain.jsp?gameid=xxxx2&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=2>나무헬멧</a><br>
-			<a href=giftgain.jsp?gameid=xxxx2&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=3>나무 헬멧 조각A</a><br>
-			<a href=giftgain.jsp?gameid=xxxx2&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=4>나무 조각 랜덤박스</a><br>
-			<a href=giftgain.jsp?gameid=xxxx2&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=5>나무 의상 랜덤박스</a><br>
-			<a href=giftgain.jsp?gameid=xxxx2&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=6>조언 패키지 박스</a><br>
-			<a href=giftgain.jsp?gameid=xxxx2&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=7>조합 주문서</a><br>
-			<a href=giftgain.jsp?gameid=xxxx2&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=8>초월 주문서</a><br>
-			<a href=giftgain.jsp?gameid=xxxx2&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=9>응원의 소리</a><br>
-			<a href=giftgain.jsp?gameid=xxxx2&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=10>코치의 조언 주문서</a><br>
-			<a href=giftgain.jsp?gameid=xxxx2&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=11>감독의 조언 주문서</a><br>
-			<a href=giftgain.jsp?gameid=xxxx2&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=12>다이아 (5000 / 11개)</a><br>
-			<a href=giftgain.jsp?gameid=xxxx2&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=13>다이아 (5001 / 100개)</a><br>
-			<a href=giftgain.jsp?gameid=xxxx2&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=14>다이아 (5002 / 1000개)</a><br>
-			<a href=giftgain.jsp?gameid=xxxx2&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=15>다이아 (5003 / 2500개)</a><br>
-			<a href=giftgain.jsp?gameid=xxxx2&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=16>다이아 (5004 / 4000개)</a><br>
-			<a href=giftgain.jsp?gameid=xxxx2&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=17>다이아 (5005 / 10000)</a><br>
-			<a href=giftgain.jsp?gameid=xxxx2&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=18>다이아 (5005 / 20000)</a>
+			<a href=giftgain.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&giftkind=-1&idx=1>쪽지받기(삭제)</a><br>
+			<a href=giftgain.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=2>나무헬멧</a><br>
+			<a href=giftgain.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=3>나무 헬멧 조각A</a><br>
+			<a href=giftgain.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=4>나무 조각 랜덤박스</a><br>
+			<a href=giftgain.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=5>나무 의상 랜덤박스</a><br>
+			<a href=giftgain.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=6>조언 패키지 박스</a><br>
+			<a href=giftgain.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=7>조합 주문서</a><br>
+			<a href=giftgain.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=8>초월 주문서</a><br>
+			<a href=giftgain.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=9>응원의 소리</a><br>
+			<a href=giftgain.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=10>코치의 조언 주문서</a><br>
+			<a href=giftgain.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=11>감독의 조언 주문서</a><br>
+			<a href=giftgain.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=12>다이아 (5000 / 11개)</a><br>
+			<a href=giftgain.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=13>다이아 (5001 / 100개)</a><br>
+			<a href=giftgain.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=14>다이아 (5002 / 1000개)</a><br>
+			<a href=giftgain.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=15>다이아 (5003 / 2500개)</a><br>
+			<a href=giftgain.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=16>다이아 (5004 / 4000개)</a><br>
+			<a href=giftgain.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=17>다이아 (5005 / 10000)</a><br>
+			<a href=giftgain.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=18>다이아 (5005 / 20000)</a><br>
+			<a href=giftgain.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=237>볼 (6000 / x1 개)</a><br>
+			<a href=giftgain.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=238>볼 (6000 / x100 개)</a><br>
+			<a href=giftgain.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&giftkind=-3&idx=239>볼 (6000 / x10000 개)</a><br>
 		</td>
 		<td>
 			gameid=xxxx3           	<br>
@@ -128,6 +131,23 @@
 			sid=				<br>
 			gmode=				<br>
 			listidx=			<br>
+		</td>
+	</tr>
+	<tr>
+		<td>sgbet.jsp</td>
+		<td>
+			<a href=sgbet.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&gmode=1&listidx=11&curturntime=-1&select=1:0:21:1;2:-1:-1:0;3:-1:-1:0;4:-1:-1:0;>배팅x1</a><br>
+			<a href=sgbet.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&gmode=1&listidx=11&curturntime=-1&select=1:0:21:1;2:0:13:1;3:0:22:1;4:0:23:1;>배팅x4</a><br>
+			<a href=sgbet.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&gmode=1&listidx=-1&curturntime=-1&select=>보기만</a><br>
+		</td>
+		<td>
+			gameid=xxxx			<br>
+			password=			<br>
+			sid=				<br>
+			gmode=				<br>
+			listidx=			<br>
+			curturntime=		<br>
+			select=				<br>
 		</td>
 	</tr>
 

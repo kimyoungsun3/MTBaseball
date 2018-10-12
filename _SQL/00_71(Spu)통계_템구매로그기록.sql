@@ -17,7 +17,8 @@ GO
 create procedure dbo.spu_UserItemBuyLogNew
 	@gameid_								varchar(20),		-- 게임아이디
 	@itemcode_								int,
-	@cashcost_								int
+	@cashcost_								int,
+	@gamecost_								int
 	--WITH ENCRYPTION -- 프로시져를 암호화함.
 as
 	------------------------------------------------
@@ -38,7 +39,7 @@ Begin
 	--	3-1. 초기화
 	------------------------------------------------
 	set nocount on
-	--select 'DEBUG 구매', @gameid_ gameid_, @itemcode_ itemcode_, @cashcost_ cashcost_
+	--select 'DEBUG 구매', @gameid_ gameid_, @itemcode_ itemcode_, @cashcost_ cashcost_, @gamecost_ gamecost_
 
 	------------------------------------------------
 	--	3-2-1. 구매했던 로그(개인)
@@ -56,14 +57,15 @@ Begin
 
 	if(@idx = -1)
 		begin
-			insert into dbo.tUserItemBuyLog(gameid,   itemcode,   cashcost,   idx2, buydate2)
-			values(                        @gameid_, @itemcode_, @cashcost_, @idx2, @dateid8)
+			insert into dbo.tUserItemBuyLog(gameid,   itemcode,   cashcost,   gamecost,   idx2, buydate2)
+			values(                        @gameid_, @itemcode_, @cashcost_, @gamecost_, @idx2, @dateid8)
 		end
 	else
 		begin
 			update dbo.tUserItemBuyLog
 				set
 					cashcost 	= cashcost + @cashcost_,
+					gamecost 	= gamecost + @gamecost_,
 					cnt 		= cnt + 1
 			where idx = @idx
 		end
@@ -80,8 +82,8 @@ Begin
 		begin
 			--select 'DEBUG > insert'
 
-			insert into dbo.tUserItemBuyLogTotalMaster(dateid8,  cashcost,  cnt)
-			values(                                   @dateid8, @cashcost_,   1)
+			insert into dbo.tUserItemBuyLogTotalMaster(dateid8,  cashcost,   gamecost,  cnt)
+			values(                                   @dateid8, @cashcost_, @gamecost_,   1)
 		end
 	else
 		begin
@@ -90,6 +92,7 @@ Begin
 			update dbo.tUserItemBuyLogTotalMaster
 				set
 					cashcost = cashcost + @cashcost_,
+					gamecost = gamecost + @gamecost_,
 					cnt = cnt + 1
 			where dateid8 = @dateid8
 		end
@@ -103,8 +106,8 @@ Begin
 		begin
 			--select 'DEBUG > insert'
 
-			insert into dbo.tUserItemBuyLogTotalSub(dateid8,  itemcode,   cashcost,  cnt)
-			values(                                @dateid8, @itemcode_, @cashcost_,   1)
+			insert into dbo.tUserItemBuyLogTotalSub(dateid8,  itemcode,   cashcost,   gamecost,  cnt)
+			values(                                @dateid8, @itemcode_, @cashcost_, @gamecost_,  1)
 		end
 	else
 		begin
@@ -113,6 +116,7 @@ Begin
 			update dbo.tUserItemBuyLogTotalSub
 				set
 					cashcost = cashcost + @cashcost_,
+					gamecost = gamecost + @gamecost_,
 					cnt = cnt + 1
 			where dateid8 = @dateid8 and itemcode = @itemcode_
 		end
@@ -125,8 +129,8 @@ Begin
 	if(not exists(select top 1 * from dbo.tUserItemBuyLogMonth where dateid6 = @dateid6 and itemcode = @itemcode_))
 		begin
 			--select 'DEBUG 월별(아이템) insert'
-			insert into dbo.tUserItemBuyLogMonth(dateid6,  itemcode,   cashcost,  cnt)
-			values(                             @dateid6, @itemcode_, @cashcost_,   1)
+			insert into dbo.tUserItemBuyLogMonth(dateid6,  itemcode,   cashcost,    gamecost, cnt)
+			values(                             @dateid6, @itemcode_, @cashcost_, @gamecost_,  1)
 		end
 	else
 		begin
@@ -135,6 +139,7 @@ Begin
 			update dbo.tUserItemBuyLogMonth
 				set
 					cashcost = cashcost + @cashcost_,
+					gamecost = gamecost + @gamecost_,
 					cnt = cnt + 1
 			where dateid6 = @dateid6 and itemcode = @itemcode_
 		end

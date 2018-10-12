@@ -39,6 +39,7 @@ create table dbo.tUserMaster(
 
 	-- (사이버머니)
 	cashcost	int						default(0),				-- 다이아.
+	gamecost	int						default(0),				-- 볼.
 	cashpoint	int						default(0),				-- 캐쉬 구매하면 누적.
 	cashreceivetotal	int				default(0),				-- 선물, 관리자 받은 누적금액.
 	cashbuytotal		int				default(0),				-- 구매한 누적금액.
@@ -63,7 +64,7 @@ create table dbo.tUserMaster(
 	-- (게임변수 : 일반정보2)
 	level			int					default(1),
 	exp				int					default(0),				--
-	commission		float				default(7.00), 			-- 수수료... (기본 7%를 지급) -> 보는 용도일뿐이다.
+	commission		int					default(0), 			-- 레벨의 수수료차감(기본 7% - 레벨 - 소모템)
 	tutorial		int					default(0),				-- 안봄(0), 봄(1)
 	randserial		varchar(20)			default('-1'),			-- 아이템구매, 박스까기, 조각조합, 의상초월등의 유일한 구매의 랜덤씨리얼
 
@@ -303,7 +304,7 @@ create table dbo.tUserItemBuyLogTotalMaster(
 	dateid8			char(8),							-- 20101210
 
 	cashcost		bigint			default(0),
-	gamecost	int					default(0),
+	gamecost		int				default(0),
 	cnt				int				default(0),
 
 	-- Constraint
@@ -333,7 +334,7 @@ create table dbo.tUserItemBuyLogTotalSub(
 	itemcode		int,
 
 	cashcost		int				default(0),
-	gamecost	int					default(0),
+	gamecost		int				default(0),
 	cnt				int				default(0),
 
 	-- Constraint
@@ -1143,37 +1144,38 @@ GO
 
 create table dbo.tSingleGame(
 	idx				int					IDENTITY(1,1),
+	--idx2			int,
 
 	gameid			varchar(20),
 	curturntime		int,										-- 나눔로또의 회차.
+	curturndate		datetime,
 
 	-- 유저가 선택한 정보.
 	gamemode		int,										-- 연습(0), 싱글(1), 멀티(2)
+	consumeitemcode	int					default(-1),			-- 수수료 차감용 선택소모탬.
 	select1			int					default(-1),			-- 파워볼홀짝 	-> 미선택(-1), 스트라이크(0), 볼(1)
-	itemcode1		int					default(-1),			-- 선택이면 어떤 아이템.
 	cnt1			int 				default(0),				-- 선택이면 선택수량.
 	select2			int					default(-1),			-- 파워볼언오 	-> 미선택(-1), 직구(0), 변화구(1)
-	itemcode2		int					default(-1),
 	cnt2			int 				default(0),
 	select3			int					default(-1),			-- 합볼홀짝 	-> 미선택(-1), 좌(0), 우(1)
-	itemcode3		int					default(-1),
 	cnt3			int 				default(0),
 	select4			int					default(-1),			-- 합볼언오 	-> 미선택(-1), 상(0), 하(1)
-	itemcode4		int					default(-1),
 	cnt4			int 				default(0),
+	selectdata		varchar(100),
 
 	-- 플레이당시 정보.
 	writedate		datetime			default(getdate()),
 	connectip		varchar(20)			default(''),			-- 접속시 사용되는
 	level			int					default(1),
 	exp				int					default(0),				--
-	commission		float				default(7.00), 			-- 수수료... (기본 7%를 지급) -> 보는 용도일뿐이다.ip
-	randserial		varchar(20)			default('-1'),			--패키지, 뽑기, 합성등 유일한 구매의 랜덤씨리얼
+	commission		int					default(700), 			-- 수수료... (기본 7%를 지급) -> 보는 용도일뿐이다.
 
-	---- 결과정보.
+	-- 결과정보.
+	gamestate		int					default(-1),			-- (-1) 게임 진행중임   > 정상처리 (0)
+																--                 > 재로그인으로몰수(10)
+																-- (-2) 10동안 안들어옴 > 재로그인으로롤백(11)
 	--gameresult	int					default(-1),			-- 진행중(-1)
 	--															-- 아웃(0), 1루타(1), 2루타(2), 3루타(3), 홈런(4)
-	--															-- 재로그인몰수패(-2), 게임취소(-3)
 	--gainexp		int					default(0),				-- 획득경험치
 	--gaincashcost	int 				default(0),				-- 획드다이아
 	--rselect1 		int 				default(-1),			-- 각배팅결과 -> 미선택(-1), 패(0), 승(1)
@@ -1190,6 +1192,18 @@ create table dbo.tSingleGame(
 	CONSTRAINT	pk_tSingleGame_curturntime_gameid	PRIMARY KEY(curturntime, gameid)
 )
 
+IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tSingleGame_idx')
+    DROP INDEX tSingleGame.idx_tSingleGame_idx
+GO
+CREATE INDEX idx_tSingleGame_idx ON tSingleGame (idx)
+GO
+
+--IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tSingleGame_gameid_idx')
+--   DROP INDEX tSingleGame.idx_tSingleGame_gameid_idx
+--GO
+--CREATE INDEX idx_tSingleGame_gameid_idx ON tSingleGame (gameid, idx)
+--GO
+
 
 ---------------------------------------------
 -- 	싱글배팅로고(Log)
@@ -1200,37 +1214,38 @@ GO
 
 create table dbo.tSingleGameLog(
 	idx				int					IDENTITY(1,1),
+	idx2			int,
 
 	gameid			varchar(20),
 	curturntime		int,										-- 나눔로또의 회차.
+	curturndate		datetime,
 
 	-- 유저가 선택한 정보.
 	gamemode		int,										-- 연습(0), 싱글(1), 멀티(2)
+	consumeitemcode	int					default(-1),			-- 수수료 차감용 선택소모탬.
 	select1			int					default(-1),			-- 파워볼홀짝 	-> 미선택(-1), 스트라이크(0), 볼(1)
-	itemcode1		int					default(-1),			-- 선택이면 어떤 아이템.
 	cnt1			int 				default(0),				-- 선택이면 선택수량.
 	select2			int					default(-1),			-- 파워볼언오 	-> 미선택(-1), 직구(0), 변화구(1)
-	itemcode2		int					default(-1),
 	cnt2			int 				default(0),
 	select3			int					default(-1),			-- 합볼홀짝 	-> 미선택(-1), 좌(0), 우(1)
-	itemcode3		int					default(-1),
 	cnt3			int 				default(0),
 	select4			int					default(-1),			-- 합볼언오 	-> 미선택(-1), 상(0), 하(1)
-	itemcode4		int					default(-1),
 	cnt4			int 				default(0),
+	selectdata		varchar(100),
 
 	-- 플레이당시 정보.
 	writedate		datetime			default(getdate()),
 	connectip		varchar(20)			default(''),			-- 접속시 사용되는
 	level			int					default(1),
 	exp				int					default(0),				--
-	commission		float				default(7.00), 			-- 수수료... (기본 7%를 지급) -> 보는 용도일뿐이다.ip
-	randserial		varchar(20)			default('-1'),			--패키지, 뽑기, 합성등 유일한 구매의 랜덤씨리얼
+	commission		int					default(700), 			-- 수수료... (기본 7%를 지급) -> 보는 용도일뿐이다.
 
 	-- 결과정보.
+	gamestate		int					default(-1),			-- (-1) 게임 진행중임   > 정상처리 (0)
+																--                 > 재로그인으로몰수(10)
+																-- (-2) 10동안 안들어옴 > 재로그인으로롤백(11)
 	gameresult		int					default(-1),			-- 진행중(-1)
 																-- 아웃(0), 1루타(1), 2루타(2), 3루타(3), 홈런(4)
-																-- 재로그인몰수패(-2), 게임취소(-3)
 	gainexp			int					default(0),				-- 획득경험치
 	gaincashcost	int 				default(0),				-- 획드다이아
 	rselect1 		int 				default(-1),			-- 각배팅결과 -> 미선택(-1), 패(0), 승(1)
@@ -1247,6 +1262,17 @@ create table dbo.tSingleGameLog(
 	CONSTRAINT	pk_tSingleGameLog_curturntime_gameid	PRIMARY KEY(curturntime, gameid)
 )
 
+IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tSingleGameLog_idx')
+    DROP INDEX tSingleGameLog.idx_tSingleGameLog_idx
+GO
+CREATE INDEX idx_tSingleGameLog_idx ON tSingleGameLog (idx)
+GO
+
+IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tSingleGameLog_gameid_idx')
+    DROP INDEX tSingleGameLog.idx_tSingleGameLog_gameid_idx
+GO
+CREATE INDEX idx_tSingleGameLog_gameid_idx ON tSingleGameLog (gameid, idx)
+GO
 
 
 /*

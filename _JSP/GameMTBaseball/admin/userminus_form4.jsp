@@ -14,6 +14,7 @@
 	String ps1 			= util.getParamStr(request, "ps1", "");
 	String ps2			= util.getParamStr(request, "ps2", "");
 	String gameid 		= util.getParamStr(request, "gameid", "");
+	int strlen			= util.getParamInt(request, "strlen", 9);
 %>
 <html><head>
 <title></title>
@@ -53,7 +54,7 @@ function f_Submit(f) {
 							</td>
 						</tr>
 						<tr>
-							<td><input name="p4" type="text" value="" maxlength="9" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;width:400px;"></td>
+							<td><input name="p4" type="text" value="" maxlength="<%=strlen%>" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;width:400px;"></td>
 							<td style="padding-left:5px;"><input name="image" type="image" src="images/btn_send.gif" border="0" tabindex="3"></td>
 						</tr>
 					</table>
@@ -80,7 +81,7 @@ function f_Submit(f) {
 							</td>
 						</tr>
 						<tr>
-							<td><input name="p4" type="text" value="" maxlength="9" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;width:400px;"></td>
+							<td><input name="p4" type="text" value="" maxlength="<%=strlen%>" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;width:400px;"></td>
 							<td style="padding-left:5px;"><input name="image" type="image" src="images/btn_send.gif" border="0" tabindex="3"></td>
 						</tr>
 					</table>

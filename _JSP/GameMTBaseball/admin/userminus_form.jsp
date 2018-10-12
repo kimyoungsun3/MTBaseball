@@ -95,7 +95,7 @@ function f_Submit(f) {
 					<table>
 						<tr>
 							<td colspan=3>
-								<%=gameid%>님에게 하트(+/-)지급 하시겠습니까? <font color=red>로그기록에 남습니다.</font>
+								<%=gameid%>님에게 볼(+/-)지급 하시겠습니까? <font color=red>로그기록에 남습니다.</font>
 							</td>
 						</tr>
 						<tr>

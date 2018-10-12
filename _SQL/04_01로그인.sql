@@ -65,6 +65,14 @@ as
 	declare @USERITEM_INVENKIND_PIECE			int 				set @USERITEM_INVENKIND_PIECE				= 2
 	declare @USERITEM_INVENKIND_CONSUME			int 				set @USERITEM_INVENKIND_CONSUME				= 3
 
+	-- 배팅상태.
+	declare @GAME_STATE_ING						int					set @GAME_STATE_ING							= -1	-- 게임진행중.
+	declare @GAME_STATE_ROLLBACK				int					set @GAME_STATE_ROLLBACK					= -2	-- 롤백예정임.
+	declare @GAME_STATE_SUCCESS					int					set @GAME_STATE_SUCCESS						= 0		-- 정상처리.
+	declare @GAME_STATE_FAIL_LOGIN_MOLSU		int					set @GAME_STATE_FAIL_LOGIN_MOLSU			= 10	-- 재로그인으로 몰수.
+	declare @GAME_STATE_FAIL_LOGIN_ROLLBACK		int					set @GAME_STATE_FAIL_LOGIN_ROLLBACK			= 11	-- 재로그인으로 롤백
+	declare @GAME_STATE_FAIL_ADMIN_DEL			int					set @GAME_STATE_FAIL_ADMIN_DEL				= 12	-- 관리자가 삭제함.
+	declare @GAME_STATE_FAIL_ADMIN_ROLLBACK		int					set @GAME_STATE_FAIL_ADMIN_ROLLBACK			= 13	-- 관리자가 롤백처리.
 	------------------------------------------------
 	--	2-1. 내부사용 변수
 	------------------------------------------------
@@ -86,7 +94,9 @@ as
 	declare @curdate				datetime				set @curdate		= getdate()
 	declare @rand					int
 
-
+	-- 싱글게임 몰수, 롤백처리.
+	declare @idx					int						set @idx			= -1
+	declare @gamestate				int						set @gamestate		= @GAME_STATE_ING
 Begin
 	------------------------------------------------
 	--	3-1. 초기화
@@ -204,15 +214,42 @@ Begin
 			set @logindate = @dateid8
 
 			-----------------------------------------------
-			-- 모든 소모템들 중에서 수량이 없는 것은 정리 대상이 된다.
+			-- * 로그인할때 소모템 없으면 정리제거한다.
 			-----------------------------------------------
 			delete from dbo.tUserItem where gameid = @gameid and invenkind = @USERITEM_INVENKIND_CONSUME and cnt <= 0
 
 
 			-----------------------------------------------
-			-- @@@@ 기존에 배팅되어 있는 게임이 있으면 패처리해버린다.
-			-- > 접속 IP의 로고 기록(관리해준다)
+			-- * 기존에 배팅검사
+			--	-1 -> 재로그인으로몰수(10)
+			--		  전부 환수 처리해버림…
+			--	-2 -> 재로그인으로롤백(11)
+			--		  전부(소모템, 조각) 롤백처리해서 돌려줌.
 			-----------------------------------------------
+			declare curSingleGame Cursor for
+			select idx, gamestate from dbo.tSingleGame where gameid = @gameid_ order by idx asc
+
+			Open curSingleGame
+			Fetch next from curSingleGame into @idx, @gamestate
+			while @@Fetch_status = 0
+				Begin
+					--select 'DEBUG 싱글처리', @idx idx, @gamestate gamestate
+					if( @gamestate = @GAME_STATE_ING )
+						begin
+							--select 'DEBUG -1 > 몰수처리', @idx idx, @gamestate gamestate
+							exec dbo.spu_BetRollBack @GAME_STATE_FAIL_LOGIN_MOLSU, @gameid_, @idx
+						end
+					else if( @gamestate = @GAME_STATE_ROLLBACK )
+						begin
+							--select 'DEBUG -2 > 롤백처리', @idx idx, @gamestate gamestate
+							exec dbo.spu_BetRollBack @GAME_STATE_FAIL_LOGIN_ROLLBACK, @gameid_, @idx
+						end
+					Fetch next from curSingleGame into @idx, @gamestate
+				end
+			close curSingleGame
+			Deallocate curSingleGame
+
+
 
 
 
