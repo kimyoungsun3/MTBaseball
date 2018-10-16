@@ -41,7 +41,7 @@ insert into tSingleGame (
 							select2, cnt2,
 							select3, cnt3,
 							select4, cnt4,
-							selectdata, writedate, connectip, level, exp, commission, gamestate
+							selectdata, writedate, connectip, level, exp, commissionbet, gamestate
 						)
 select
 							'mtxxxx3',
@@ -49,7 +49,7 @@ select
 							select2, cnt2,
 							select3, cnt3,
 							select4, cnt4,
-							selectdata, writedate, connectip, level, exp, commission, gamestate
+							selectdata, writedate, connectip, level, exp, commissionbet, gamestate
 from dbo.tSingleGame where gameid = 'mtxxxx2'
 */
 use GameMTBaseball
@@ -133,25 +133,6 @@ as
 	declare @SINGLE_FLAG_PLAY					int					set @SINGLE_FLAG_PLAY						= 1
 	declare @SINGLE_FLAG_END					int					set @SINGLE_FLAG_END						= 0
 
-	-- 플레그정보.
-	declare @SELECT_1							int					set @SELECT_1						= 1		-- 스트라이크, 볼.
-	declare @SELECT_2							int					set @SELECT_2						= 2		-- 직구, 변화구.
-	declare @SELECT_3							int					set @SELECT_3						= 3		-- 좌, 우.
-	declare @SELECT_4							int					set @SELECT_4						= 4		-- 상, 하.
-	declare @BATTLE_END							int					set @BATTLE_END						= 0
-	declare @SELECT_1_NON						int					set @SELECT_1_NON					= -1
-	declare @SELECT_1_STRIKE					int					set @SELECT_1_STRIKE				= 0
-	declare @SELECT_1_BALL						int					set @SELECT_1_BALL					= 1
-	declare @SELECT_2_NON						int					set @SELECT_2_NON					= -1
-	declare @SELECT_2_FAST						int					set @SELECT_2_FAST					= 0
-	declare @SELECT_2_CURVE						int					set @SELECT_2_CURVE					= 1
-	declare @SELECT_3_NON						int					set @SELECT_3_NON					= -1
-	declare @SELECT_3_LEFT						int					set @SELECT_3_LEFT					= 0
-	declare @SELECT_3_RIGHT						int					set @SELECT_3_RIGHT					= 1
-	declare @SELECT_4_NON						int					set @SELECT_4_NON					= -1
-	declare @SELECT_4_UP						int					set @SELECT_4_UP					= 0
-	declare @SELECT_4_DOWN						int					set @SELECT_4_DOWN					= 1
-
 	-- 기타정보.
 	declare @BET_TIME_START						int					set @BET_TIME_START					= -5 * 60 + 10
 	declare @BET_TIME_END						int					set @BET_TIME_END					=         - 30
@@ -161,6 +142,7 @@ as
 	declare @OVER_TIME_END						int					set @OVER_TIME_END					= +5 * 60
 
 	declare @GAMECOST_MINIMUM_CNT				int					set @GAMECOST_MINIMUM_CNT			= 100	--최소배팅카운터.
+	declare @COMMISSION_BASE					int					set @COMMISSION_BASE				= 700
 	------------------------------------------------
 	--	2-3. 내부사용 변수
 	------------------------------------------------
@@ -173,10 +155,12 @@ as
 	declare @blockstate				int					set @blockstate			= @BLOCK_STATE_YES
 	declare @consumeitemcode		int 				set @consumeitemcode	= -1
 	declare @consumecnt				int					set @consumecnt			= 0
+	declare @consumegetpercent		int					set @consumegetpercent	= 0
 	declare @connectip				varchar(20)			set @connectip			= ''
 	declare @level					int					set @level				= 1
 	declare @exp					int					set @exp				= 0
-	declare @commission				int					set @commission			= 700
+	declare @commission				int					set @commission			= @COMMISSION_BASE
+	declare @commissionbet			int					set @commissionbet		= 0
 
 	declare @curdate				datetime			set @curdate			= getdate()
 	declare @curturntime			int					set @curturntime		= -1
@@ -228,7 +212,7 @@ Begin
 				@consumecnt			= cnt
 			from dbo.tUserItem
 			where gameid = @gameid_ and listidx = @listidx_ and invenkind = @USERITEM_INVENKIND_CONSUME
-			--select 'DEBUG 3-4 소모템 보유현황.', @consumeitemcode consumeitemcode, @consumecnt consumecnt
+			--select 'DEBUG 3-4 소모템 보유현황.', @listidx_ listidx_, @consumeitemcode consumeitemcode, @consumecnt consumecnt
 		end
 
 	-- 진행중인 회차 정보
@@ -362,7 +346,7 @@ Begin
 			set @comment 	= 'ERROR 아이템이 부족합니다.(소모템)'
 			--select 'DEBUG ' + @comment
 		END
-	else if ( exists( select top 1 * from dbo.tSingleGame where gameid = @gameid_ and curturntime = @curturntime_ ) )
+	else if ( exists( select top 1 * from dbo.tSingleGame where gameid = @gameid_ and curturntime = @curturntime_ and gamemode = @gmode_) )
 		BEGIN
 			set @nResult_ = @RESULT_SUCCESS
 			set @comment = 'SUCCESS 배팅했습니다.(중복)'
@@ -374,15 +358,34 @@ Begin
 			set @comment = 'SUCCESS 배팅했습니다.'
 			--select 'DEBUG ' + @comment
 
-			set @level 		= dbo.fnu_GetLevel( @exp )
-			set @commission = dbo.fnu_GetTax100FromLevel( @level )
-			--select 'DEBUG ', @exp exp, @level level, @commission commission
+			-- 소모템 차감값
+			if( @consumeitemcode != -1 )
+				begin
+					select @consumegetpercent = param2 from dbo.tItemInfo where itemcode = @consumeitemcode
+					--select 'DEBUG 소모템 수수료 차감값 적용', @consumeitemcode consumeitemcode, @consumegetpercent consumegetpercent
+				end
+
+			set @level 			= dbo.fnu_GetLevel( @exp )
+			set @commission 	= @COMMISSION_BASE - dbo.fnu_GetTax100FromLevel( @level )
+			set @commissionbet 	= @COMMISSION_BASE - dbo.fnu_GetTax100FromLevel( @level ) - @consumegetpercent
+			--select 'DEBUG (보정전)', @exp exp, @level level, @COMMISSION_BASE COMMISSION_BASE, dbo.fnu_GetTax100FromLevel( @level ) levelcommission, @consumegetpercent consumegetpercent, @commission commission, @commissionbet commissionbet
+
+			set @commission = CASE
+									WHEN @commission < 0 THEN 	0
+									ELSE						@commission
+							  END
+
+			set @commissionbet = CASE
+									WHEN @commissionbet < 0 THEN 	0
+									ELSE						@commissionbet
+							  END
+			--select 'DEBUG (보정후)', @exp exp, @level level, @COMMISSION_BASE COMMISSION_BASE, dbo.fnu_GetTax100FromLevel( @level ) levelcommission, @consumegetpercent consumegetpercent, @commission commission, @commissionbet commissionbet
 
 			------------------------------------------------
 			-- 배팅 테이블에 gameid에 따른 배팅기록, 다음예정완료시간기록.
 			------------------------------------------------
 			insert into dbo.tSingleGame(
-						gameid, connectip, exp, level, commission,
+						gameid, connectip, exp, level, commissionbet,
 						curturntime, curturndate,
 						gamemode,
 						consumeitemcode,
@@ -393,7 +396,7 @@ Begin
 						select4, cnt4
 			)
 			values (
-						@gameid, @connectip, @exp, @level, @commission,
+						@gameid, @connectip, @exp, @level, @commissionbet,
 						@curturntime, @curturndate,
 						@gmode_,
 						@consumeitemcode,

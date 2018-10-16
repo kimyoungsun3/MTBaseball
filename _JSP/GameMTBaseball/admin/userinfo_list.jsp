@@ -141,7 +141,7 @@ function f_Submit(f) {
 								버젼 : <%=result.getString("version")%><br>
 								SID :<%=result.getString("sid")%>
 								(<a href=usersetting_ok.jsp?p1=19&p2=2000&p3=9&ps1=<%=gameidCurRow%>&ps2=<%=adminid%>&branch=userinfo_list&gameid=<%=gameidCurRow%>>초기화</a>)<br>
-								IP :<%=result.getString("connectip")%><br>
+								connectip : <a href=pcroom_list.jsp?connectip=<%=result.getString("connectip")%>><%=result.getString("connectip")%></a><br>
 							</td>
 							<td>
 								폰:<a href=userinfo_list.jsp?phone=<%=result.getString("phone")%>><%=result.getString("phone")%></a><br>
@@ -149,7 +149,6 @@ function f_Submit(f) {
 								생일 :<%=result.getString("birthday")%><br>
 								email :<%=result.getString("email")%><br>
 								nickname :<%=result.getString("nickname")%><br>
-								connectip :<%=result.getString("connectip")%><br>
 							</td>
 							<td>
 								보유캐쉬(다이아) 	: <a href=userminus_form.jsp?gameid=<%=result.getString("gameid")%>&mode=0><%=result.getString("cashcost")%></a><br>								
@@ -160,7 +159,8 @@ function f_Submit(f) {
 							<td>
 								exp :<a href=userminus_form4.jsp?mode=1&p1=19&p2=65&p3=2&ps1=<%=gameidCurRow%>&ps2=<%=adminid%>&gameid=<%=gameidCurRow%>&title=Experience&strlen=12><%=result.getString("exp")%></a><br>
 								레벨 : <%=result.getString("level")%><br>
-								수수료 : <%=(float)result.getInt("commission")/100%>%<br>
+								레벨수수료 : <%=(float)result.getInt("commission")/100%>%<br>
+								(7% - 레벨수수료 - 소모템)<br>
 								<br>
 								tutorial : 
 								<a href=usersetting_ok.jsp?p1=19&p2=2000&p3=1&ps1=<%=gameidCurRow%>&ps2=<%=adminid%>&branch=userinfo_list&gameid=<%=gameidCurRow%>>
@@ -506,7 +506,7 @@ function f_Submit(f) {
 							<td><%=result.getString("connectip")%></td>
 							<td><%=result.getInt("level")%></td>
 							<td><%=result.getInt("exp")%></td>
-							<td><%=(float)result.getInt("commission")/100%>%</td>
+							<td><%=(float)result.getInt("commissionbet")/100%>%</td>
 							<td><%=result.getInt("consumeitemcode")%></td>
 							<td>
 								<a href=usersetting_ok.jsp?p1=19&p2=2000&p3=28&p4=<%=result.getInt("idx")%>&ps1=<%=result.getString("gameid")%>&ps2=<%=adminid%>&gameid=<%=result.getString("gameid")%>&branch=userinfo_list>
@@ -549,10 +549,10 @@ function f_Submit(f) {
 							<td>좌/우<br>결과</td>
 							<td>상/하<br>결과</td>
 							<td>접속IP<br>PC방gameid</td>
-							<td>레벨<br>PC방획득캐쉬</td>
+							<td>레벨<br>PC방획득볼</td>
 							<td>경험치<br>기록일</td>
 							<td>수수료차감값<br>유저획득경험치</td>
-							<td>소모템<br>유저획득캐쉬</td>
+							<td>소모템<br>유저획득볼</td>
 							<td>배팅상태</td>
 							<td></td>
 							<td></td>
@@ -583,7 +583,7 @@ function f_Submit(f) {
 							<td><%=result.getString("connectip")%></td>
 							<td><%=result.getInt("level")%></td>
 							<td><%=result.getInt("exp")%></td>
-							<td><%=(float)result.getInt("commission")/100%>%</td>
+							<td><%=(float)result.getInt("commissionbet")/100%>%</td>
 							<td><%=result.getInt("consumeitemcode")%></td>
 							<td><%=getGameState(result.getInt("gamestate"))%></td>
 							<td><%=getDate19(result.getString("writedate"))%></td>
@@ -601,10 +601,10 @@ function f_Submit(f) {
 							
 							
 							<td><%=result.getString("pcgameid")%></td>
-							<td><%=result.getString("pccashcost")%></td>
+							<td><%=result.getString("pcgamecost")%></td>
 							<td><%=getDate19(result.getString("resultdate"))%></td>
 							<td><%=result.getInt("gainexp")%></td>
-							<td><%=result.getInt("gaincashcost")%></td>
+							<td><%=result.getInt("gaingamecost")%></td>
 							<td></td>
 							<td></td>
 							<td></td>

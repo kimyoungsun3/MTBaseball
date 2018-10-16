@@ -87,22 +87,6 @@ as
 	declare @GAME_MODE_SINGLE					int					set @GAME_MODE_SINGLE						= 1
 	declare @GAME_MODE_MULTI					int					set @GAME_MODE_MULTI						= 2
 
-	-- 플레그정보.
-	declare @BATTLE_END							int					set @BATTLE_END						= 0
-	declare @SELECT_1_NON						int					set @SELECT_1_NON					= -1
-	declare @SELECT_1_STRIKE					int					set @SELECT_1_STRIKE				= 0
-	declare @SELECT_1_BALL						int					set @SELECT_1_BALL					= 1
-	declare @SELECT_2_NON						int					set @SELECT_2_NON					= -1
-	declare @SELECT_2_FAST						int					set @SELECT_2_FAST					= 0
-	declare @SELECT_2_CURVE						int					set @SELECT_2_CURVE					= 1
-	declare @SELECT_3_NON						int					set @SELECT_3_NON					= -1
-	declare @SELECT_3_LEFT						int					set @SELECT_3_LEFT					= 0
-	declare @SELECT_3_RIGHT						int					set @SELECT_3_RIGHT					= 1
-	declare @SELECT_4_NON						int					set @SELECT_4_NON					= -1
-	declare @SELECT_4_UP						int					set @SELECT_4_UP					= 0
-	declare @SELECT_4_DOWN						int					set @SELECT_4_DOWN					= 1
-
-
 
 	------------------------------------------------
 	--	2-3. 내부사용 변수

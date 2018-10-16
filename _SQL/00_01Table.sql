@@ -75,6 +75,9 @@ create table dbo.tUserMaster(
 	singlefailcnt		int				default(0),				--   실패횟수.
 	singleerrorcnt		int				default(0),				--   오류횟수(어뷰징).
 
+	gaingamecost		int				default(0),				-- 개인이 배팅해서 획득한 코인수량.
+	gaingamecostpc		int				default(0),				-- pc방 업주로써 획득한 코인.
+
 	-- (게임변수 : 착용아이템 인덱스리스트)
 	helmetlistidx		int 			default(-1),
 	shirtlistidx		int 			default(-1),
@@ -89,6 +92,7 @@ create table dbo.tUserMaster(
 	beltlistidx			int 			default(-1),
 	kneepadlistidx		int 			default(-1),
 	sockslistidx		int 			default(-1),
+	wearplusexp			int 			default(0),				--착용템의 레벨업 +능력
 
 	-- 이벤트.
 	eventspot01		int					default(0),				-- 로그인사용(1~5).
@@ -432,6 +436,7 @@ create table dbo.tPCRoomIP(
 	gameid			varchar(20),									-- PC방 사장ID
 	connectip		varchar(20),									-- 접속정보
 	cnt				int,											-- 배팅횟수
+	gaingamecost	int					default(0)					-- 누적수량...
 
 	writedate		datetime			default(getdate()),			-- 등록일..
 	adminid			varchar(20),
@@ -460,18 +465,22 @@ GO
 
 create table dbo.tPCRoomEarnMaster(
 	idx				int				identity(1, 1),
+
 	dateid8			char(8),							-- 20101210
-	gaincashcost	int				default(0),
+
+	cashcost	int				default(0),
+	gamecost	int				default(0),
+	cnt			int				default(0),
 
 	-- Constraint
 	CONSTRAINT	pk_tPCRoomEarnMaster_dateid	PRIMARY KEY(dateid8)
 )
 -- select         * from dbo.tPCRoomEarnMaster
 -- select top 1   * from dbo.tPCRoomEarnMaster where dateid8 = '20120818'
--- insert into dbo.tPCRoomEarnMaster(dateid8, gaincashcost) values('20120818', 0)
+-- insert into dbo.tPCRoomEarnMaster(dateid8, cashcost) values('20120818', 0)
 --update dbo.tPCRoomEarnMaster
 --	set
---		gaincashcost = gaincashcost + 1
+--		cashcost = cashcost + 1
 --where dateid8 = '20120818'
 
 
@@ -484,9 +493,13 @@ GO
 
 create table dbo.tPCRoomEarnSub(
 	idx				int				identity(1, 1),
+
 	dateid8			char(8),							-- 20101210
 	gameid			varchar(20),
-	gaincashcost	int				default(0),
+
+	cashcost	int				default(0),
+	gamecost	int				default(0),
+	cnt			int				default(0),
 
 	-- Constraint
 	CONSTRAINT	pk_tPCRoomEarnSub_dateid8_itemcode	PRIMARY KEY(dateid8, gameid)
@@ -497,7 +510,7 @@ create table dbo.tPCRoomEarnSub(
 -- insert into dbo.tPCRoomEarnSub(dateid8, gameid, gaincashcost) values('20120818', 'xxxx', 0)
 --update dbo.tPCRoomEarnSub
 --	set
---		gaincashcost = gaincashcost + 1
+--		cashcost = cashcost + 1
 --where dateid8 = '20120818' and gameid = 'xxxx'
 
 
@@ -1126,7 +1139,7 @@ create table dbo.tLottoInfo(
 	adminid					varchar(20)			default('demon'),
 
 	-- Constraint
-	CONSTRAINT	pk_tLottoInfo_nextturntime		PRIMARY KEY(curturntime)
+	CONSTRAINT	pk_tLottoInfo_curturntime		PRIMARY KEY(curturntime)
 )
 --유저로그검색
 IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tLottoInfo_nextturntime')
@@ -1168,7 +1181,7 @@ create table dbo.tSingleGame(
 	connectip		varchar(20)			default(''),			-- 접속시 사용되는
 	level			int					default(1),
 	exp				int					default(0),				--
-	commission		int					default(700), 			-- 수수료... (기본 7%를 지급) -> 보는 용도일뿐이다.
+	commissionbet	int					default(700), 			-- 수수료... (기본 7%를 지급) -> 보는 용도일뿐이다.
 
 	-- 결과정보.
 	gamestate		int					default(-1),			-- (-1) 게임 진행중임   > 정상처리 (0)
@@ -1177,7 +1190,7 @@ create table dbo.tSingleGame(
 	--gameresult	int					default(-1),			-- 진행중(-1)
 	--															-- 아웃(0), 1루타(1), 2루타(2), 3루타(3), 홈런(4)
 	--gainexp		int					default(0),				-- 획득경험치
-	--gaincashcost	int 				default(0),				-- 획드다이아
+	--gaingamecost	int 				default(0),				-- 획득볼.
 	--rselect1 		int 				default(-1),			-- 각배팅결과 -> 미선택(-1), 패(0), 승(1)
 	--rselect2 		int 				default(-1),
 	--rselect3 		int 				default(-1),
@@ -1185,7 +1198,7 @@ create table dbo.tSingleGame(
 
 	-- PC방업주들.
 	--pcgameid		varchar(20),								-- 사장id
-	--pccashcost	int 				default(0),				-- 지급다이아
+	--pcgamecost	int 				default(0),				-- 지급다이아
 	--resultdate	datetime,									-- 결과기록시간
 
 	-- Constraint
@@ -1238,7 +1251,7 @@ create table dbo.tSingleGameLog(
 	connectip		varchar(20)			default(''),			-- 접속시 사용되는
 	level			int					default(1),
 	exp				int					default(0),				--
-	commission		int					default(700), 			-- 수수료... (기본 7%를 지급) -> 보는 용도일뿐이다.
+	commissionbet	int					default(700), 			-- 수수료... (기본 7%를 지급) -> 보는 용도일뿐이다.
 
 	-- 결과정보.
 	gamestate		int					default(-1),			-- (-1) 게임 진행중임   > 정상처리 (0)
@@ -1247,7 +1260,7 @@ create table dbo.tSingleGameLog(
 	gameresult		int					default(-1),			-- 진행중(-1)
 																-- 아웃(0), 1루타(1), 2루타(2), 3루타(3), 홈런(4)
 	gainexp			int					default(0),				-- 획득경험치
-	gaincashcost	int 				default(0),				-- 획드다이아
+	gaingamecost	int 				default(0),				-- 획득볼.
 	rselect1 		int 				default(-1),			-- 각배팅결과 -> 미선택(-1), 패(0), 승(1)
 	rselect2 		int 				default(-1),
 	rselect3 		int 				default(-1),
@@ -1255,7 +1268,7 @@ create table dbo.tSingleGameLog(
 
 	-- PC방업주들.
 	pcgameid		varchar(20),								-- 사장id
-	pccashcost		int 				default(0),				-- 지급다이아
+	pcgamecost		int 				default(0),				-- 지급다이아
 	resultdate		datetime,									-- 결과기록시간
 
 	-- Constraint

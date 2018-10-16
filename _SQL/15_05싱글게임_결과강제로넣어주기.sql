@@ -83,12 +83,12 @@ Begin
 						idx2,
 						gameid, curturntime, curturndate, gamemode, consumeitemcode,
 						select1, cnt1, select2, cnt2, select3, cnt3, select4, cnt4,
-						selectdata, writedate, connectip, level, exp, commission, gamestate
+						selectdata, writedate, connectip, level, exp, commissionbet, gamestate
 			)
 			select 		@idx2,
 						gameid, curturntime, curturndate, gamemode, consumeitemcode,
 						select1, cnt1, select2, cnt2, select3, cnt3, select4, cnt4,
-						selectdata, writedate, connectip, level, exp, commission, @state_
+						selectdata, writedate, connectip, level, exp, commissionbet, @state_
 			from dbo.tSingleGame
 			where gameid = @gameid_ and idx = @idx_
 
@@ -185,12 +185,12 @@ Begin
 						idx2,
 						gameid, curturntime, curturndate, gamemode, consumeitemcode,
 						select1, cnt1, select2, cnt2, select3, cnt3, select4, cnt4,
-						selectdata, writedate, connectip, level, exp, commission, gamestate
+						selectdata, writedate, connectip, level, exp, commissionbet, gamestate
 			)
 			select 		@idx2,
 						gameid, curturntime, curturndate, gamemode, consumeitemcode,
 						select1, cnt1, select2, cnt2, select3, cnt3, select4, cnt4,
-						selectdata, writedate, connectip, level, exp, commission, @state_
+						selectdata, writedate, connectip, level, exp, commissionbet, @state_
 			from dbo.tSingleGame
 			where gameid = @gameid_ and idx = @idx_
 

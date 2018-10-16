@@ -16,12 +16,15 @@
 	ResultSet result 			= null;
 	StringBuffer query 			= new StringBuffer();
 	StringBuffer msg 			= new StringBuffer();
-	String gameid 				= util.getParamStr(request, "gameid", "");
+	String gameid 				= util.getParamStr(request, "gameid", "");	
 	int idxColumn				= 1;
 	int idxPage					= FormUtil.getParamInt(request, "idxPage", 1);
 	int maxPage					= 1;
 	int stateCode 				= util.getParamInt(request, "stateCode", -1);
 	String gameidCurRow			= "";
+	
+	
+	String connectip			= util.getParamStr(request, "connectip", "");	
 	try{
 %>
 
@@ -66,6 +69,12 @@ function f_Submit2(f) {
 							<input name="image" type="image" src="images/btn_send.gif" border="0" tabindex="3">
 						</td>
 					</tr>
+					<tr>
+						<td>
+							<input name="connectip" type="text" value="<%=connectip%>" size="20" maxlength="256" tabindex="1" style="border:1px solid #EBEBEB;background:#FFFFFF;">
+							<input name="image" type="image" src="images/btn_send.gif" border="0" tabindex="3">
+						</td>
+					</tr>
 					</form>
 				</table>
 				<table border=1 width=1300>
@@ -86,7 +95,7 @@ function f_Submit2(f) {
 					cstmt.setInt(idxColumn++, -1);
 					cstmt.setString(idxColumn++, gameid);
 					cstmt.setString(idxColumn++, "");
-					cstmt.setString(idxColumn++, "");
+					cstmt.setString(idxColumn++, connectip);
 					cstmt.setString(idxColumn++, "");
 					cstmt.setString(idxColumn++, "");
 					cstmt.setString(idxColumn++, "");
@@ -102,6 +111,7 @@ function f_Submit2(f) {
 							<td></td>
 							<td>PC방 사장ID</td>
 							<td>PC방 IP</td>
+							<td>누적수입</td>
 							<td>등록일</td>
 							<td></td>
 							<td>등록관리자ID</td>
@@ -112,7 +122,8 @@ function f_Submit2(f) {
 						<tr>
 							<td><%=result.getString("idx")%></td>
 							<td><a href=pcroom_list.jsp?gameid=<%=result.getString("gameid")%>><%=result.getString("gameid")%></a></td>
-							<td><%=result.getString("connectip")%></td>
+							<td><a href=pcroom_list.jsp?connectip=<%=result.getString("connectip")%>><%=result.getString("connectip")%></a></td>
+							<td><%=result.getString("gaingamecost")%></td>
 							<td><%=getDate(result.getString("writedate"))%></td>
 							<td>
 								<a href=pcroom_form4.jsp?mode=1&p1=20&p2=22&p3=2&p4=1&ps1=<%=gameidCurRow%>&ps2=<%=adminid%>&gameid=<%=gameidCurRow%>>추가등록</a> / 

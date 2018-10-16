@@ -310,17 +310,20 @@ as
 	declare @LV_MAX								int					set @LV_MAX									= 650
 
 	-- lotto mode
-	declare @MODE_POWERBALL						int				set	@MODE_POWERBALL						= 1;
-	declare @MODE_TOTALBALL						int				set	@MODE_TOTALBALL						= 2;
+	declare @MODE_POWERBALL						int					set	@MODE_POWERBALL						= 1;
+	declare @MODE_TOTALBALL						int					set	@MODE_TOTALBALL						= 2;
 
 	-- lotto kind
-	declare @KIND_GRADE							int				set	@KIND_GRADE							= 1;
-	declare @KIND_EVENODD						int				set	@KIND_EVENODD						= 2;
-	declare @KIND_UNDEROVER						int				set	@KIND_UNDEROVER						= 3;
-	declare @KIND_GRADE2						int				set	@KIND_GRADE2						= 4;
+	declare @KIND_GRADE							int					set	@KIND_GRADE							= 1;
+	declare @KIND_EVENODD						int					set	@KIND_EVENODD						= 2;
+	declare @KIND_UNDEROVER						int					set	@KIND_UNDEROVER						= 3;
+	declare @KIND_GRADE2						int					set	@KIND_GRADE2						= 4;
 
 	-- lotto second
-	declare @TURNTIME_SECOND					int				set @TURNTIME_SECOND					= 5 * 60
+	declare @TURNTIME_SECOND					int					set @TURNTIME_SECOND					= 5 * 60
+
+	-- 기타상수.
+	declare @COMMISSION_BASE					int					set @COMMISSION_BASE				= 700
 
 	------------------------------------------------
 	--	일반변수선언
@@ -342,6 +345,7 @@ as
 	declare @level			int
 	declare @exp			int
 	declare @commission		int
+	declare @commissionbet	int
 
 	declare @comment		varchar(2048)
 	declare @cashcost 		int
@@ -744,6 +748,14 @@ Begin
 
 									select top 100 @maxPage maxPage, @page page, * from dbo.tPCRoomIP
 									where gameid = @ps1_ order by idx desc
+								end
+							else if(@ps3_ != '')
+								begin
+									set @maxPage	= 1
+									set @page		= 1
+
+									select top 100 @maxPage maxPage, @page page, * from dbo.tPCRoomIP
+									where connectip = @ps3_ order by idx desc
 								end
 							else
 								begin
@@ -1285,7 +1297,7 @@ Begin
 											else @exp
 										end
 							set @level 		= dbo.fnu_GetLevel(@exp)
-							set @commission = dbo.fnu_GetTax100FromLevel(@level)
+							set @commission = @COMMISSION_BASE - dbo.fnu_GetTax100FromLevel( @level )
 
 							update dbo.tUserMaster
 								set

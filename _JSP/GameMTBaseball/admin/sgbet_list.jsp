@@ -149,7 +149,7 @@ function f_Submit(f) {
 							<td><%=result.getString("connectip")%></td>
 							<td><%=result.getInt("level")%></td>
 							<td><%=result.getInt("exp")%></td>
-							<td><%=(float)result.getInt("commission")/100%>%</td>
+							<td><%=(float)result.getInt("commissionbet")/100%>%</td>
 							<td><%=result.getInt("consumeitemcode")%></td>
 							<td><%=getGameState(result.getInt("gamestate"))%></td>
 							<td><%=getDate19(result.getString("writedate"))%></td>

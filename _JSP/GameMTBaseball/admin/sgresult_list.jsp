@@ -114,10 +114,10 @@ function f_Submit(f) {
 							<td>좌/우<br>결과</td>
 							<td>상/하<br>결과</td>
 							<td>접속IP<br>PC방gameid</td>
-							<td>레벨<br>PC방획득캐쉬</td>
+							<td>레벨<br>PC방획득볼</td>
 							<td>경험치<br>기록일</td>
 							<td>수수료차감값<br>유저획득경험치</td>
-							<td>소모템<br>유저획득캐쉬</td>
+							<td>소모템<br>유저획득볼</td>
 							<td>배팅상태</td>
 							<td></td>
 							<td></td>
@@ -150,7 +150,7 @@ function f_Submit(f) {
 							<td><%=result.getString("connectip")%></td>
 							<td><%=result.getInt("level")%></td>
 							<td><%=result.getInt("exp")%></td>
-							<td><%=(float)result.getInt("commission")/100%>%</td>
+							<td><%=(float)result.getInt("commissionbet")/100%>%</td>
 							<td><%=result.getInt("consumeitemcode")%></td>
 							<td><%=getGameState(result.getInt("gamestate"))%></td>
 							<td><%=getDate19(result.getString("writedate"))%></td>
@@ -168,10 +168,10 @@ function f_Submit(f) {
 							
 							
 							<td><%=result.getString("pcgameid")%></td>
-							<td><%=result.getString("pccashcost")%></td>
+							<td><%=result.getString("pcgamecost")%></td>
 							<td><%=getDate19(result.getString("resultdate"))%></td>
 							<td><%=result.getInt("gainexp")%></td>
-							<td><%=result.getInt("gaincashcost")%></td>
+							<td><%=result.getInt("gaingamecost")%></td>
 							<td></td>
 							<td></td>
 							<td></td>
