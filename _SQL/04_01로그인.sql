@@ -68,11 +68,13 @@ as
 	-- 배팅상태.
 	declare @GAME_STATE_ING						int					set @GAME_STATE_ING							= -1	-- 게임진행중.
 	declare @GAME_STATE_ROLLBACK				int					set @GAME_STATE_ROLLBACK					= -2	-- 롤백예정임.
+	declare @GAME_STATE_ROLLBACK_CHECK			int					set @GAME_STATE_ROLLBACK_CHECK				= -3	-- 시스템점검예정.
 	declare @GAME_STATE_SUCCESS					int					set @GAME_STATE_SUCCESS						= 0		-- 정상처리.
 	declare @GAME_STATE_FAIL_LOGIN_MOLSU		int					set @GAME_STATE_FAIL_LOGIN_MOLSU			= 10	-- 재로그인으로 몰수.
 	declare @GAME_STATE_FAIL_LOGIN_ROLLBACK		int					set @GAME_STATE_FAIL_LOGIN_ROLLBACK			= 11	-- 재로그인으로 롤백
 	declare @GAME_STATE_FAIL_ADMIN_DEL			int					set @GAME_STATE_FAIL_ADMIN_DEL				= 12	-- 관리자가 삭제함.
 	declare @GAME_STATE_FAIL_ADMIN_ROLLBACK		int					set @GAME_STATE_FAIL_ADMIN_ROLLBACK			= 13	-- 관리자가 롤백처리.
+	declare @GAME_STATE_FAIL_CHECK_ROLLBACK		int					set @GAME_STATE_FAIL_CHECK_ROLLBACK			= 14	-- 시스템 롤백.
 	------------------------------------------------
 	--	2-1. 내부사용 변수
 	------------------------------------------------
@@ -244,6 +246,13 @@ Begin
 							--select 'DEBUG -2 > 롤백처리', @idx idx, @gamestate gamestate
 							exec dbo.spu_BetRollBack @GAME_STATE_FAIL_LOGIN_ROLLBACK, @gameid_, @idx
 						end
+					else if( @gamestate = @GAME_STATE_ROLLBACK_CHECK )
+						begin
+							--select 'DEBUG -3 > 롤백처리', @idx idx, @gamestate gamestate
+							exec dbo.spu_BetRollBack @GAME_STATE_FAIL_CHECK_ROLLBACK, @gameid_, @idx
+						end
+
+
 					Fetch next from curSingleGame into @idx, @gamestate
 				end
 			close curSingleGame

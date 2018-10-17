@@ -1,6 +1,6 @@
 ﻿/*
 --							gameid, 캐쉬, 볼
-exec dbo.spu_SingleGameBetLog   'xxxx', 0,  100
+exec dbo.spu_SinglePCRoomLog   'xxxx', '127.0.0.1', 0,  100
 
 select * from dbo.tPCRoomEarnMaster
 select * from dbo.tPCRoomEarnSub
@@ -8,12 +8,13 @@ select * from dbo.tPCRoomEarnSub
 use GameMTBaseball
 GO
 
-IF OBJECT_ID ( 'dbo.spu_SingleGameBetLog', 'P' ) IS NOT NULL
-    DROP PROCEDURE dbo.spu_SingleGameBetLog;
+IF OBJECT_ID ( 'dbo.spu_SinglePCRoomLog', 'P' ) IS NOT NULL
+    DROP PROCEDURE dbo.spu_SinglePCRoomLog;
 GO
 
-create procedure dbo.spu_SingleGameBetLog
+create procedure dbo.spu_SinglePCRoomLog
 	@gameid_								varchar(20),					-- 게임아이디
+	@connectip_								varchar(20),
 	@cashcost_								int,
 	@gamecost_								int
 	--WITH ENCRYPTION -- 프로시져를 암호화함.
@@ -30,6 +31,19 @@ Begin
 	------------------------------------------------
 	set nocount on
 	--select 'DEBUG 구매', @gameid_ gameid_, @cashcost_ cashcost_, @gamecost_ gamecost_
+
+
+	------------------------------------------------
+	--	3-2-1. 룸정보 업데이트
+	------------------------------------------------
+	--if( exists( select top 1 * from dbo.tPCRoomIP where connectip = @connectip_ ) )
+	--	begin
+	--		update dbo.tPCRoomIP
+	--			set
+	--				cnt 			= cnt + 1,
+	--				gaingamecost 	= gaingamecost + @gamecost_
+	--		 where connectip = @connectip_
+	--	end
 
 	------------------------------------------------
 	--	3-2-2. 업글 로그(월별 Master)

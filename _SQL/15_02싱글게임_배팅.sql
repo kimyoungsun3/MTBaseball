@@ -8,7 +8,9 @@
 declare @curturntime int  		select top 1 @curturntime = nextturntime from tLottoInfo order by curturntime desc
 --declare @select varchar(100)	set @select = '1:-1:0; 2:-1:0; 3:-1:0; 4:-1:0;'	-- 0개 배팅
 --declare @select varchar(100)	set @select = '1:0:100;2:-1:0; 3:-1:0; 4:-1:0;'	-- 1개 배팅
-declare @select varchar(100)	set @select = '1:0:100;2:0:100;3:0:100;4:0:100;'	-- 4개 배팅
+--declare @select varchar(100)	set @select = '1:0:100;2:0:100;3:-1:0; 4:-1:0;'	-- 2개 배팅
+declare @select varchar(100)	set @select = '1:0:100;2:0:100;3:0:100; 4:-1:0;'	-- 3개 배팅
+--declare @select varchar(100)	set @select = '1:0:100;2:0:100;3:0:100;4:0:100;'	-- 4개 배팅
 
 --delete from dbo.tSingleGame      	where gameid = 'mtxxxx3' and curturntime = (select top 1 nextturntime from tLottoInfo order by curturntime desc)
 --delete from dbo.tSingleGameLog   	where gameid = 'mtxxxx3' and curturntime = (select top 1 nextturntime from tLottoInfo order by curturntime desc)

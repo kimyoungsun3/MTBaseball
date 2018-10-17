@@ -30,11 +30,13 @@ as
 	-- 배팅상태.
 	declare @GAME_STATE_ING						int					set @GAME_STATE_ING							= -1	-- 게임진행중.
 	declare @GAME_STATE_ROLLBACK				int					set @GAME_STATE_ROLLBACK					= -2	-- 롤백예정임.
+	declare @GAME_STATE_ROLLBACK_CHECK			int					set @GAME_STATE_ROLLBACK_CHECK				= -3	-- 시스템점검예정.
 	declare @GAME_STATE_SUCCESS					int					set @GAME_STATE_SUCCESS						= 0		-- 정상처리.
 	declare @GAME_STATE_FAIL_LOGIN_MOLSU		int					set @GAME_STATE_FAIL_LOGIN_MOLSU			= 10	-- 재로그인으로 몰수.
 	declare @GAME_STATE_FAIL_LOGIN_ROLLBACK		int					set @GAME_STATE_FAIL_LOGIN_ROLLBACK			= 11	-- 재로그인으로 롤백
 	declare @GAME_STATE_FAIL_ADMIN_DEL			int					set @GAME_STATE_FAIL_ADMIN_DEL				= 12	-- 관리자가 삭제함.
 	declare @GAME_STATE_FAIL_ADMIN_ROLLBACK		int					set @GAME_STATE_FAIL_ADMIN_ROLLBACK			= 13	-- 관리자가 롤백처리.
+	declare @GAME_STATE_FAIL_CHECK_ROLLBACK		int					set @GAME_STATE_FAIL_CHECK_ROLLBACK			= 14	-- 시스템 롤백.
 
 	declare @SINGLE_GAME_LOG_MAX				int					set @SINGLE_GAME_LOG_MAX 					= 200
 	declare @ITEM_GAMECOST_MOTHER				int 				set @ITEM_GAMECOST_MOTHER					= 6000
@@ -111,7 +113,7 @@ Begin
 
 
 		end
-	else if(@state_ in ( @GAME_STATE_FAIL_ADMIN_ROLLBACK, @GAME_STATE_FAIL_LOGIN_ROLLBACK ) )
+	else if(@state_ in ( @GAME_STATE_FAIL_ADMIN_ROLLBACK, @GAME_STATE_FAIL_LOGIN_ROLLBACK, @GAME_STATE_FAIL_CHECK_ROLLBACK ) )
 		begin
 
 			------------------------------------------------

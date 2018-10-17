@@ -1266,6 +1266,14 @@ create table dbo.tSingleGameLog(
 	rselect3 		int 				default(-1),
 	rselect4 		int 				default(-1),
 
+	ltselect1		int					default(-1),										-- 로또의 정보.
+	ltselect2		int					default(-1),
+	ltselect3		int					default(-1),
+	ltselect4		int					default(-1),
+
+	betgamecostorg	int					default(0),				-- 단순하게 배팅금액, 획득금액
+	betgamecostearn	int					default(0),
+
 	-- PC방업주들.
 	pcgameid		varchar(20),								-- 사장id
 	pcgamecost		int 				default(0),				-- 지급다이아
@@ -1286,6 +1294,45 @@ IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tSingleGameLog_gameid
 GO
 CREATE INDEX idx_tSingleGameLog_gameid_idx ON tSingleGameLog (gameid, idx)
 GO
+
+
+---------------------------------------------
+-- 	배팅일일 정보.
+---------------------------------------------
+IF OBJECT_ID (N'dbo.tSingleGameEarnLogMaster', N'U') IS NOT NULL
+	DROP TABLE dbo.tSingleGameEarnLogMaster;
+GO
+
+create table dbo.tSingleGameEarnLogMaster(
+	idx				int				identity(1, 1),
+
+	dateid8			char(8),							-- 20101210
+	cnt				int				default(0),
+
+	selecttry1		int				default(0),
+	selecttry2		int				default(0),
+	selecttry3		int				default(0),
+	selecttry4		int				default(0),
+
+	selectsuccess1	int				default(0),
+	selectsuccess2	int				default(0),
+	selectsuccess3	int				default(0),
+	selectsuccess4	int				default(0),
+
+	betgamecostorg	int				default(0),				-- 단순하게 배팅금액, 획득금액
+	betgamecostearn	int				default(0),
+
+
+	-- Constraint
+	CONSTRAINT	pk_tSingleGameEarnLogMaster_dateid	PRIMARY KEY(dateid8)
+)
+-- select         * from dbo.tSingleGameEarnLogMaster
+-- select top 1   * from dbo.tSingleGameEarnLogMaster where dateid8 = '20120818'
+-- insert into dbo.tSingleGameEarnLogMaster(dateid8, cashcost) values('20120818', 0)
+--update dbo.tSingleGameEarnLogMaster
+--	set
+--		cashcost = cashcost + 1
+--where dateid8 = '20120818'
 
 
 /*
