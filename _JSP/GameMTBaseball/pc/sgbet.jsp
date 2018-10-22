@@ -76,7 +76,6 @@
 		msg.append("		<curturndate>");	msg.append(result.getString("curturndate").substring(0, 19));msg.append("</curturndate>\n");
 		msg.append("		<cashcost>");		msg.append(result.getString("cashcost")); msg.append("</cashcost>\n");		
 		msg.append("		<gamecost>");		msg.append(result.getString("gamecost")); msg.append("</gamecost>\n");		
-
 		msg.append("	</result>\n");
 
 	    if(resultCode == 1){

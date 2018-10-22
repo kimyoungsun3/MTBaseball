@@ -131,19 +131,19 @@ function f_Submit(f) {
 							<td><%=getDate19(result.getString("curturndate"))%></td>
 							<td><%=getGameMode(result.getInt("gamemode"))%></td>
 							<td>
-								<%=getSelectMode(1, result.getInt("select1"))%> / 
+								<%=getSelectMode(1, result.getInt("select1"), -1)%> / 
 								<%=result.getInt("cnt1")%> /
 							</td>
 							<td>
-								<%=getSelectMode(2, result.getInt("select2"))%> / 
+								<%=getSelectMode(2, result.getInt("select2"), -1)%> / 
 								<%=result.getInt("cnt2")%> /
 							</td>
 							<td>
-								<%=getSelectMode(3, result.getInt("select3"))%> / 
+								<%=getSelectMode(3, result.getInt("select3"), -1)%> / 
 								<%=result.getInt("cnt3")%> /
 							</td>
 							<td>
-								<%=getSelectMode(4, result.getInt("select4"))%> / 
+								<%=getSelectMode(4, result.getInt("select4"), -1)%> / 
 								<%=result.getInt("cnt4")%> /
 							</td>
 							<td><%=result.getString("connectip")%></td>

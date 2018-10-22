@@ -19,8 +19,8 @@
 	//1-2. 데이타 받기
 	String gameid 		= util.getParamStr(request, "gameid", "gameid");
 	String password 	= util.getParamStr(request, "password", "password");
-	String mode		 	= util.getParamStr(request, "mode", "1");
-	String kakaonickname= util.getParamStr(request, "kakaonickname", "");
+	String sid 			= util.getParamStr(request, "sid", "-1");
+	String nickname		= util.getParamStr(request, "nickname", "");
 	/////////////////////////////////////////////////////////////////////
 	//		파라미터 받기
 	/////////////////////////////////////////////////////////////////////
@@ -28,23 +28,22 @@
 		DEBUG_LOG_STR.append(this);
 		DEBUG_LOG_STR.append("\r\n gameid:" 	+ gameid);
 		DEBUG_LOG_STR.append("\r\n password:" 	+ password);
-		DEBUG_LOG_STR.append("\r\n mode:" 		+ mode);
-		DEBUG_LOG_STR.append("\r\n kakaonickname:" 	+ kakaonickname);
+		DEBUG_LOG_STR.append("\r\n sid=" 		+ sid);
+		DEBUG_LOG_STR.append("\r\n nickname:" 	+ nickname);
 		System.out.println(DEBUG_LOG_STR.toString());
 	}
 	/////////////////////////////////////////////////////////////////////
 
 	try{
 		//2. 데이타 조작
-		//exec spu_CheckKakaoNickName 'xxxx2', '049000s1i0n7t8445289', 1, '닉네임12', -1		-- 무료변경
-		//exec spu_CheckKakaoNickName 'xxxx2', '049000s1i0n7t8445289', 2, '닉네임12', -1		-- 유료변경
-		query.append("{ call dbo.spu_CheckKakaoNickName (?, ?, ?, ?, ?)} ");
+		//exec spu_CheckNickName 'mtxxxx3', '049000s1i0n7t8445289', 333, '닉네임mt3', -1		-- 정상처리.
+		query.append("{ call dbo.spu_CheckNickName (?, ?, ?, ?, ?)} ");
 		cstmt = conn.prepareCall(query.toString());
 
 		cstmt.setString(idx++, gameid);
 		cstmt.setString(idx++, password);
-		cstmt.setString(idx++, mode);
-		cstmt.setString(idx++, kakaonickname);
+		cstmt.setString(idx++, sid);
+		cstmt.setString(idx++, nickname);
 		cstmt.registerOutParameter(idx++, Types.INTEGER);
 
 		//2-2. 스토어즈 프로시져 실행하기
@@ -72,10 +71,10 @@
 		System.out.println("e:" + e);
 
 		DEBUG_LOG_STR.append(this);
-		DEBUG_LOG_STR.append("\r\n gameid:" 		+ gameid);
-		DEBUG_LOG_STR.append("\r\n password:" 		+ password);
-		DEBUG_LOG_STR.append("\r\n mode:" 			+ mode);
-		DEBUG_LOG_STR.append("\r\n kakaonickname:" 	+ kakaonickname);
+		DEBUG_LOG_STR.append("\r\n gameid:" 	+ gameid);
+		DEBUG_LOG_STR.append("\r\n password:" 	+ password);
+		DEBUG_LOG_STR.append("\r\n sid=" 		+ sid);
+		DEBUG_LOG_STR.append("\r\n nickname:" 	+ nickname);
 		System.out.println(DEBUG_LOG_STR.toString());
 	}
 

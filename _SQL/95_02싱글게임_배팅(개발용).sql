@@ -1,70 +1,34 @@
 /*
--- listidx:11 -> 응원의 소리(4600)
--- 싱글게임 배팅 > 1번만선택, 스트라이트(0) x 1개
---                 2 ~ 4번 미선택
 -- select=번호:select:cnt;
 --        [1번자리] : STRIKE( 0 ) : 수량(1) )
--- update dbo.tLottoInfo set nextturndate = DATEADD(ss, 0+5*60, getdate() ) where idx = ( select top 1 idx from dbo.tLottoInfo order by curturntime desc)
-declare @curturntime int  		select top 1 @curturntime = nextturntime from tLottoInfo order by curturntime desc
---declare @select varchar(100)	set @select = '1:-1:0; 2:-1:0; 3:-1:0; 4:-1:0;'	-- 0개 배팅
---declare @select varchar(100)	set @select = '1:0:100;2:-1:0; 3:-1:0; 4:-1:0;'	-- 1개 배팅
---declare @select varchar(100)	set @select = '1:0:100;2:0:100;3:-1:0; 4:-1:0;'	-- 2개 배팅
-declare @select varchar(100)	set @select = '1:0:100;2:0:100;3:0:100; 4:-1:0;'	-- 3개 배팅
---declare @select varchar(100)	set @select = '1:0:100;2:0:100;3:0:100;4:0:100;'	-- 4개 배팅
+declare @curturntime 	int				set @curturntime 	= 830092
+declare @select 		varchar(100)
 
---delete from dbo.tSingleGame      	where gameid = 'mtxxxx3' and curturntime = (select top 1 nextturntime from tLottoInfo order by curturntime desc)
---delete from dbo.tSingleGameLog   	where gameid = 'mtxxxx3' and curturntime = (select top 1 nextturntime from tLottoInfo order by curturntime desc)
-exec spu_SGBet 'mtxxxx3', '049000s1i0n7t8445289', 333, 1, 11, @curturntime, @select, -1
+--set @select = '1:0:100;2:-1:0; 3:-1:0; 4:-1:0;'		-- 1개 배팅
+--set @select = '1:0:100;2:0:100;3:-1:0; 4:-1:0;'		-- 2개 배팅
+--set @select = '1:0:100;2:0:100;3:0:100; 4:-1:0;'	-- 3개 배팅
+--set @select = '1:0:100;2:0:100;3:0:100;4:0:100;'	-- 4개 배팅
+--set @select = '1:1:100;2:-1:0; 3:-1:0; 4:-1:0;'		-- 1개 배팅
+--set @select = '1:1:100;2:1:100;3:-1:0; 4:-1:0;'		-- 2개 배팅
+--set @select = '1:1:100;2:1:100;3:1:100; 4:-1:0;'	-- 3개 배팅
+set @select = '1:1:100;2:1:100;3:1:100;4:1:100;'	-- 4개 배팅
 
--- select * from dbo.tSingleGame		where gameid = 'mtxxxx3' order by curturntime desc
--- delete from dbo.tSingleGame      	where gameid = 'mtxxxx3' and curturntime = (select top 1 nextturntime from tLottoInfo order by curturntime desc)
--- select top 1 nextturntime from tLottoInfo order by curturntime desc
+exec spu_SGBetTest 'mtxxxx4', '049000s1i0n7t8445289', 333, 1, -1, @curturntime, @select, -1
 
-
--- 싱글게임 배팅 : 돌 상의 조각 A(1600) x 1	-> 배팅불가
---        [1번자리] : STRIKE( 0 ) : 수량(1) )
-declare @curturntime int  		select top 1 @curturntime = nextturntime from tLottoInfo order by curturntime desc
-declare @select varchar(100)	set @select = '1:0:1;2:-1:0;3:-1:0;4:-1:0;'
-exec spu_SGBet 'mtxxxx3', '049000s1i0n7t8445289', 333, 1, 11, @curturntime, @select, -1
-
--- 관람만 할경우... > 던지면 안된다.
-declare @curturntime int  		select top 1 @curturntime = nextturntime from tLottoInfo order by curturntime desc
-declare @select varchar(100)	set @select = ''	-- 아무것도 없음.
-exec spu_SGBet 'mtxxxx3', '049000s1i0n7t8445289', 333, 1, 11, @curturntime, @select, -1
-
-
--- 강제로 데이타를 백업하고 롤돌린경우.
---update dbo.tSingleGame set gamestate = -2 where gameid = 'mtxxxx3' and idx = 56
-delete from dbo.tSingleGame where gameid = 'mtxxxx3' and curturntime in ( 828644, 828643, 828645 )
-delete from dbo.tSingleGameLog where gameid = 'mtxxxx3' and  curturntime in ( 828644, 828643, 828645 )
-insert into tSingleGame (
-							gameid,
-							curturntime, curturndate, gamemode, consumeitemcode, select1, cnt1,
-							select2, cnt2,
-							select3, cnt3,
-							select4, cnt4,
-							selectdata, writedate, connectip, level, exp, commissionbet, gamestate
-						)
-select
-							'mtxxxx3',
-							curturntime, curturndate, gamemode, consumeitemcode, select1, cnt1,
-							select2, cnt2,
-							select3, cnt3,
-							select4, cnt4,
-							selectdata, writedate, connectip, level, exp, commissionbet, gamestate
-from dbo.tSingleGame where gameid = 'mtxxxx2'
+--delete from dbo.tSingleGame where gameid = 'mtxxxx4' and curturntime = @curturntime and gamemode = 1
+--select * from dbo.tSingleGame where gameid = 'mtxxxx4'and curturntime = @curturntime
 */
 use GameMTBaseball
 GO
 
-IF OBJECT_ID ( 'dbo.spu_SGBet', 'P' ) IS NOT NULL
-    DROP PROCEDURE dbo.spu_SGBet;
+IF OBJECT_ID ( 'dbo.spu_SGBetTest', 'P' ) IS NOT NULL
+    DROP PROCEDURE dbo.spu_SGBetTest;
 GO
 
 ------------------------------------------------
 --	1. 프로시져 생성
 ------------------------------------------------
-create procedure dbo.spu_SGBet
+create procedure dbo.spu_SGBetTest
 	@gameid_								varchar(20),					-- 게임아이디
 	@password_								varchar(20),
 	@sid_									int,
@@ -218,19 +182,23 @@ Begin
 		end
 
 	-- 진행중인 회차 정보
-	select top 1
-		@curturntime = nextturntime,
-		@curturndate = nextturndate
-	from dbo.tLottoInfo order by curturntime desc
+	--select top 1
+	--	@curturntime = nextturntime,
+	--	@curturndate = nextturndate
+	--from dbo.tLottoInfo order by curturntime desc
 	--select 'DEBUG 3-5 회차정보.', @curdate curdate, @curturntime curturntime, @curturndate curturndate, @curdate curdate
 	--select 'DEBUG 3-5 시간이동.', @BET_TIME_START BET_TIME_START, @BET_TIME_END BET_TIME_END, @SAFE_TIME_START SAFE_TIME_START, @SAFE_TIME_END SAFE_TIME_END, @OVER_TIME_START OVER_TIME_START, @OVER_TIME_END OVER_TIME_END
 	--select 'DEBUG 3-5 시간이동.', @curdate curdate, @curturndate curturndate, DATEADD(ss, @OVER_TIME_START, @curturndate) p1, DATEADD(ss, @SAFE_TIME_START, @curturndate) p2, DATEADD(ss, @BET_TIME_START, @curturndate) p3
-
-	if( @curturntime_ = -1 )
-		begin
-			set @curturntime_ = @curturntime
-			--select 'DEBUG 3-5 배팅타임이 없어서 최근것을 그대로 보상.', @curturntime_ curturntime_
-		end
+	--
+	--if( @curturntime_ = -1 )
+	--	begin
+	--		set @curturntime_ = @curturntime
+	--		--select 'DEBUG 3-5 배팅타임이 없어서 최근것을 그대로 보상.', @curturntime_ curturntime_
+	--	end
+	select top 1
+		@curturntime = curturntime,
+		@curturndate = curturndate
+	from dbo.tLottoInfo where curturntime = @curturntime_
 
 	---------------------------------------------------------
 	-- 아이템 정보 검색.
@@ -275,34 +243,34 @@ Begin
 			set @comment 	= 'ERROR 세션이 만기 되었습니다. (로그아웃 시켜주세요.)'
 			--select 'DEBUG ' + @comment
 		END
-	else if(@curturntime_ != @curturntime)
-		BEGIN
-			-- (배팅회차정보 != 최고회차의 다음예정회차)
-			set @nResult_ 	= @RESULT_ERROR_TURNTIME_WRONG
-			set @comment 	= 'ERROR 회차정보가 잘못되었다.'
-			--select 'DEBUG ' + @comment
-		END
-	else if(@curdate > DATEADD(ss, @OVER_TIME_START, @curturndate))
-		BEGIN
-			-- 현재시간 > 다음예정완료예정시간 + 10초후 오버타임 이상 동안 회차가 안들어왔는가?
-			set @nResult_ 	= @RESULT_ERROR_NOT_BET_OVERTIME
-			set @comment 	= 'ERROR 오버타임이상에서는 배팅불가'
-			--select 'DEBUG ' + @comment
-		END
-	else if(@curdate > DATEADD(ss, @SAFE_TIME_START, @curturndate))
-		BEGIN
-			-- 현재시간 > 다음예정완료예정시간 - 30초전 ~ +10초전 세이프 타임인가?
-			set @nResult_ 	= @RESULT_ERROR_NOT_BET_SAFETIME
-			set @comment 	= 'ERROR 세이프타임에서는 배팅불가'
-			--select 'DEBUG ' + @comment
-		END
-	else if(@curdate < DATEADD(ss, @BET_TIME_START, @curturndate))
-		BEGIN
-			-- 현재시간 > 다음예정완료예정시간(bettime)이내가 아닌가?
-			set @nResult_ 	= @RESULT_ERROR_NOT_BET_SAFETIME
-			set @comment 	= 'ERROR 배팅 불가 타임입니다.'
-			--select 'DEBUG ' + @comment
-		END
+	--else if(@curturntime_ != @curturntime)
+	--	BEGIN
+	--		-- (배팅회차정보 != 최고회차의 다음예정회차)
+	--		set @nResult_ 	= @RESULT_ERROR_TURNTIME_WRONG
+	--		set @comment 	= 'ERROR 회차정보가 잘못되었다.'
+	--		--select 'DEBUG ' + @comment
+	--	END
+	--else if(@curdate > DATEADD(ss, @OVER_TIME_START, @curturndate))
+	--	BEGIN
+	--		-- 현재시간 > 다음예정완료예정시간 + 10초후 오버타임 이상 동안 회차가 안들어왔는가?
+	--		set @nResult_ 	= @RESULT_ERROR_NOT_BET_OVERTIME
+	--		set @comment 	= 'ERROR 오버타임이상에서는 배팅불가'
+	--		--select 'DEBUG ' + @comment
+	--	END
+	--else if(@curdate > DATEADD(ss, @SAFE_TIME_START, @curturndate))
+	--	BEGIN
+	--		-- 현재시간 > 다음예정완료예정시간 - 30초전 ~ +10초전 세이프 타임인가?
+	--		set @nResult_ 	= @RESULT_ERROR_NOT_BET_SAFETIME
+	--		set @comment 	= 'ERROR 세이프타임에서는 배팅불가'
+	--		--select 'DEBUG ' + @comment
+	--	END
+	--else if(@curdate < DATEADD(ss, @BET_TIME_START, @curturndate))
+	--	BEGIN
+	--		-- 현재시간 > 다음예정완료예정시간(bettime)이내가 아닌가?
+	--		set @nResult_ 	= @RESULT_ERROR_NOT_BET_SAFETIME
+	--		set @comment 	= 'ERROR 배팅 불가 타임입니다.'
+	--		--select 'DEBUG ' + @comment
+	--	END
 	else if( @gmode_ not in ( @GAME_MODE_PRACTICE, @GAME_MODE_SINGLE, @GAME_MODE_MULTI ) )
 		BEGIN
 			set @nResult_ 	= @RESULT_ERROR_NOT_SUPPORT_MODE
@@ -445,16 +413,16 @@ Begin
 	--------------------------------------------------------------
 	-- 결과전송.
 	--------------------------------------------------------------
-	select @nResult_ rtn, @comment comment, @curdate curdate, @curturntime curturntime, @curturndate curturndate, @cashcost cashcost, @gamecost gamecost
+	--select @nResult_ rtn, @comment comment, @curdate curdate, @curturntime curturntime, @curturndate curturndate, @cashcost cashcost, @gamecost gamecost
 
-	if(@nResult_ = @RESULT_SUCCESS)
-		BEGIN
-			--------------------------------------------------------------
-			-- 유저 보유 아이템 정보
-			--------------------------------------------------------------
-			select * from dbo.tUserItem
-			where gameid = @gameid_ and listidx in ( select listidx from @tTempTable )
-		END
+	--if(@nResult_ = @RESULT_SUCCESS)
+	--	BEGIN
+	--		--------------------------------------------------------------
+	--		-- 유저 보유 아이템 정보
+	--		--------------------------------------------------------------
+	--		select * from dbo.tUserItem
+	--		where gameid = @gameid_ and listidx in ( select listidx from @tTempTable )
+	--	END
 
 	------------------------------------------------
 	--	4-2. 유저정보

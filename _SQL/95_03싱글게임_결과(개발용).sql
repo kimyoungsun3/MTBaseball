@@ -1,39 +1,19 @@
 /*
-exec spu_SGResult 'mtxxxx3', '049000s1i0n7t8445289', 3331, 1,    -1, -1		-- 세션에러
-exec spu_SGResult 'mtxxxx3', '049000s1i0n7t8445289', 333, 1,     -1, -1		-- 회차없음 ( 로또X, 배티X, 전로또X )
-exec spu_SGResult 'mtxxxx3', '049000s1i0n7t8445289', 333, 1, 829532, -1		-- 회차없음 ( 그냥보는 사람 > 5+5분 안들어옴… > 로그아웃 )
-exec spu_SGResult 'mtxxxx3', '049000s1i0n7t8445289', 333, 1, 829533, -1		-- 배팅중 > 5+5분 안들어옴> 내부취소마킹, 로그아웃 해주세요(나중에 로그인하면 자동 롤백됩니다.)
-exec spu_SGResult 'mtxxxx3', '049000s1i0n7t8445289', 333, 1, 829753, -1		-- 로또정보가 안들어옴.(바로배팅한것 검사하는방식)
-exec spu_SGResult 'mtxxxx3', '049000s1i0n7t8445289', 333, 1, 829750, -1		-- 관람하기 들어온것.
+exec spu_SGResultTest 'mtxxxx4', '049000s1i0n7t8445289', 333, 1, 830092, -1	-- 1개배팅 -> 1개성공
 
-declare @curturntime int  select top 1 @curturntime = curturntime from dbo.tSingleGame where gameid = 'mtxxxx3' order by curturntime desc
-exec spu_SGResult 'mtxxxx3', '049000s1i0n7t8445289', 333, 1, @curturntime, -1
-
--- 829534
--- 스트라이크(0) / 100 /	직구(0) / 100 /	좌(0) / 100 /	상(0) / 100 /
---         볼(1)	        변화(1)	        좌(0)	        상(0)
-exec spu_SGResult 'mtxxxx3', '049000s1i0n7t8445289', 333, 1, 830092, -1	-- 1개배팅
-exec spu_SGResult 'mtxxxx3', '049000s1i0n7t8445289', 333, 1, 830093, -1	-- 2개배팅
-exec spu_SGResult 'mtxxxx3', '049000s1i0n7t8445289', 333, 1, 830094, -1	-- 3개배팅
-exec spu_SGResult 'mtxxxx3', '049000s1i0n7t8445289', 333, 1, 828643, -1	-- 4개배팅
-exec spu_SGResult 'mtxxxx3', '049000s1i0n7t8445289', 333, 1, 829540, -1
-exec spu_SGResult 'mtxxxx3', '049000s1i0n7t8445289', 333, 1, 829538, -1
-exec spu_SGResult 'mtxxxx3', '049000s1i0n7t8445289', 333, 1, 829537, -1
-exec spu_SGResult 'mtxxxx3', '049000s1i0n7t8445289', 333, 1, 829534, -1
-exec spu_SGResult 'mtxxxx3', '049000s1i0n7t8445289', 333, 1, 828644, -1
-
+--delete from dbo.tSingleGameLog where gameid = 'mtxxxx4' and curturntime = 830092
 */
 use GameMTBaseball
 GO
 
-IF OBJECT_ID ( 'dbo.spu_SGResult', 'P' ) IS NOT NULL
-    DROP PROCEDURE dbo.spu_SGResult;
+IF OBJECT_ID ( 'dbo.spu_SGResultTest', 'P' ) IS NOT NULL
+    DROP PROCEDURE dbo.spu_SGResultTest;
 GO
 
 ------------------------------------------------
 --	1. 프로시져 생성
 ------------------------------------------------
-create procedure dbo.spu_SGResult
+create procedure dbo.spu_SGResultTest
 	@gameid_								varchar(20),					-- 게임아이디
 	@password_								varchar(20),
 	@sid_									int,
@@ -152,13 +132,14 @@ as
 
 	-- 기타상수.
 	declare @COMMISSION_BASE					int					set @COMMISSION_BASE				= 700
+	declare @SINGLE_GAME_LOG_MAX				int					set @SINGLE_GAME_LOG_MAX 			= 10
 
 	-- 결과에 따른 경험치
-	declare @EXP_OUT							int					set @EXP_OUT						= 5
-	declare @EXP_ONE_HIT						int					set @EXP_ONE_HIT					= 20
-	declare @EXP_TWO_HIT						int					set @EXP_TWO_HIT					= 40
-	declare @EXP_THREE_HIT						int					set @EXP_THREE_HIT					= 80
-	declare @EXP_HOMERUN						int					set @EXP_HOMERUN					= 160
+	declare @EXP_OUT							int					set @EXP_OUT						=   100
+	declare @EXP_ONE_HIT						int					set @EXP_ONE_HIT					=   500
+	declare @EXP_TWO_HIT						int					set @EXP_TWO_HIT					=  1000
+	declare @EXP_THREE_HIT						int					set @EXP_THREE_HIT					=  3000
+	declare @EXP_HOMERUN						int					set @EXP_HOMERUN					= 10000
 
 	------------------------------------------------
 	--	2-3. 내부사용 변수
@@ -196,7 +177,7 @@ as
 	declare @idx2					int					set @idx2				= 0
 	declare @gameresult				int					set @gameresult			= @GAME_RESULT_ING
 	declare @gainexp				int					set @gainexp			= 0
-	declare @gaingamecost			int					set @gaingamecost		= 0
+	declare @gaingamecost			bigint				set @gaingamecost		= 0
 	declare @gaingamecostbet		int					set @gaingamecostbet	= 0
 	declare @pcgameid				varchar(20)			set @pcgameid			= ''
 
@@ -214,9 +195,9 @@ as
 	declare @betgamecostlose		int					set @betgamecostlose	= 0
 	declare @rgamecostwin			int					set @rgamecostwin		= 0		-- 결과에 대한 결과.
 	declare @rgamecostlose			int					set @rgamecostlose		= 0
-	declare @rpcgamecost			int					set @rpcgamecost		= 0		-- pc방에 주는것.
-	declare @betgamecostorg			int					set @betgamecostorg		= 0		-- 단순하게 배팅금액, 획득금액
-	declare @betgamecostearn		int					set @betgamecostearn	= 0
+	declare @rpcgamecost			bigint				set @rpcgamecost		= 0		-- pc방에 주는것.
+	declare @betgamecostorg			bigint				set @betgamecostorg		= 0		-- 단순하게 배팅금액, 획득금액
+	declare @betgamecostearn		bigint				set @betgamecostearn	= 0
 
 	--로또회차정보.
 	declare @ltcurturntime			int					set @ltcurturntime		= -1
@@ -231,6 +212,7 @@ as
 	-- 기타정보.
 	declare @levelupitemcode		int					set @levelupitemcode	= -1
 	declare @giftsendexists			int					set @giftsendexists		= -1
+	declare @idx2del				int					set @idx2del			= -1
 
 	--DECLARE @tTempTable TABLE(
 	--	listidx		int
@@ -248,7 +230,7 @@ Begin
 	------------------------------------------------
 	select
 		@gameid 	= gameid,		@blockstate		= blockstate,
-		@cashcost	= cashcost,		@gamecost		= gamecost,			@gaingamecost 	= gaingamecost,
+		@cashcost	= cashcost,		@gamecost		= gamecost,
 		@exp		= exp,			@level			= level,			@wearplusexp	= wearplusexp,
 		@sid		= sid
 	from dbo.tUserMaster
@@ -379,6 +361,16 @@ Begin
 		BEGIN
 			set @nResult_ = @RESULT_SUCCESS
 			set @comment = 'SUCCESS 배팅산출했다.(중복)'
+			select top 1
+				@curturntime 	= curturntime, 	@curturndate = curturndate,
+				@rselect1		= rselect1, 	@rcnt1 	= rcnt1,
+				@rselect2		= rselect2, 	@rcnt2 	= rcnt2,
+				@rselect3		= rselect3, 	@rcnt3 	= rcnt3,
+				@rselect4		= rselect4, 	@rcnt4 	= rcnt4,
+				@gameresult		= gameresult
+			from dbo.tSingleGameLog
+			where gameid = @gameid_ and curturntime = @curturntime_
+
 			--select 'DEBUG ' + @comment
 		END
 	-- 이하부터는 로또정보가 들어와 있음...(위에서 필터해줌)
@@ -395,7 +387,6 @@ Begin
 			--select 'DEBUG ' + @comment
 
 			------------------------------------------------
-			-- 700(7%) - 소모템(2~3%) - 레벨(0~6.5%) => 0% 이하로는 안내려감
 			-- 결과비교하기 1, 2, 3, 4
 			--	if(결과 : 미배팅)		> 패스
 			--	else if(결과 > 성공 )  > 오른쪽 참고(다이아바로Plus)
@@ -413,7 +404,7 @@ Begin
 			select @rselect4 = rselect, @rcnt4 = rcnt from dbo.fnu_GetSingleGameResult( @ltselect4, @select4, @cnt4)
 			--select 'DEBUG 결과비교4', @select4 select4, @ltselect4 ltselect4, @cnt4 cnt4, @rselect4 rselect4, @rcnt4 rcnt4
 
-			--결과에 따른 합, 수수료계산,
+			--결과에 따른 합
 			set @betgamecosttotal 	= @cnt1  + @cnt2  + @cnt3  + @cnt4
 			set @betgamecostwin		= @rcnt1 + @rcnt2 + @rcnt3 + @rcnt4
 			set @betgamecostlose	= @betgamecosttotal - @betgamecostwin
@@ -423,6 +414,7 @@ Begin
 			--select 'DEBUG 배팅정보.', @betgamecostwin betgamecostwin, @betgamecostlose betgamecostlose, @rcnt1 rcnt1, @rcnt2 rcnt2, @rcnt3 rcnt3, @rcnt4 rcnt4
 			--select 'DEBUG 배팅정보.', @rgamecostwin rgamecostwin, @rgamecostlose rgamecostlose
 
+			-- 700(7%) - 소모템(2~3%) - 레벨(0~6.5%) => 0% 이하로는 안내려감
 			set @rpcgamecost	 	=                 @betgamecosttotal * @commissionbet / 10000
 			set @rgamecostwin		= @rgamecostwin  - @rgamecostwin    * @commissionbet / 10000
 			set @rgamecostlose		= @rgamecostlose - @rgamecostlose   * @commissionbet / 10000
@@ -433,9 +425,9 @@ Begin
 			set @betgamecostorg		= @betgamecosttotal
 			set @betgamecostearn	= @betgamecostwin + @rgamecostwin
 
-			-- 유저수입, PC방, 회사수입정하기.
+			-- 유저배팅수입(배팅금액(승) + 수입(수수료차감)) - 전체배팅금액
 			set @gaingamecostbet= (@betgamecostwin + @rgamecostwin) - @betgamecosttotal
-			set @gaingamecost	= @gaingamecost + @gaingamecostbet
+			set @gaingamecost	= @gaingamecostbet
 			set @gamecost 		= @gamecost + ( @betgamecostwin + @rgamecostwin )
 			--select 'DEBUG 배팅정보.', @gaingamecost gaingamecost
 
@@ -499,7 +491,7 @@ Begin
 
 			if( @pcgameid != '' )
 				begin
-					--select 'DEBUG PC업주넣어주기', @rpcgamecost rpcgamecost, gamecost, gaingamecostpc from dbo.tUserMaster where gameid = @pcgameid
+					--select 'DEBUG PC업주넣어주기', @gameresult gameresult, @rpcgamecost rpcgamecost, gamecost, gaingamecostpc from dbo.tUserMaster where gameid = @pcgameid
 					-- pc 정보 업데이트.
 					update dbo.tPCRoomIP
 						set
@@ -517,12 +509,17 @@ Begin
 					 		gaingamecostpc 	= gaingamecostpc + @rpcgamecost
 					 where gameid = @pcgameid
 				end
+			else
+				begin
+					--select 'DEBUG PC방 업주 없음 > 수수료 클리어', @gameresult gameresult, @rpcgamecost rpcgamecost
+					set @rpcgamecost = 0
+				end
 
 			------------------------------------------------
 			-- 배팅로고 기록하기.
 			------------------------------------------------
-			--select 'DEBUG ', @select1 select1, @select2 select2, @select3 select3, @select4 select4, @rselect1 rselect1, @rselect2 rselect2, @rselect3 rselect3, @rselect4 rselect4, @betgamecostorg betgamecostorg, @betgamecostearn betgamecostearn
-			exec dbo.spu_SingleGameEarnLog @select1, @select2, @select3, @select4, @rselect1, @rselect2, @rselect3, @rselect4, @betgamecostorg, @betgamecostearn
+			--select 'DEBUG ', @select1 select1, @select2 select2, @select3 select3, @select4 select4, @rselect1 rselect1, @rselect2 rselect2, @rselect3 rselect3, @rselect4 rselect4, @betgamecostorg betgamecostorg, @betgamecostearn betgamecostearn, @rpcgamecost rpcgamecost
+			exec dbo.spu_SingleGameEarnLog @select1, @select2, @select3, @select4, @rselect1, @rselect2, @rselect3, @rselect4, @betgamecostorg, @betgamecostearn, @rpcgamecost
 
 			------------------------------------------------
 			-- 배팅테이블 -> 배팅로고로 이동, 기타정보 입력
@@ -538,6 +535,7 @@ Begin
 						gainexp,
 						gaingamecost,
 						rselect1, rselect2, rselect3, rselect4,
+						rcnt1, rcnt2, rcnt3, rcnt4,
 						ltselect1, ltselect2, ltselect3, ltselect4,
 						betgamecostorg, betgamecostearn,
 						pcgameid, pcgamecost, resultdate
@@ -550,6 +548,7 @@ Begin
 						@gainexp,
 						@gaingamecostbet,
 						@rselect1, @rselect2, @rselect3, @rselect4,
+						@rcnt1, @rcnt2, @rcnt3, @rcnt4,
 						@ltselect1, @ltselect2, @ltselect3, @ltselect4,
 						@betgamecostorg, @betgamecostearn,
 						@pcgameid, @rpcgamecost, getdate()
@@ -558,10 +557,20 @@ Begin
 
 
 			------------------------------------------------
-			-- 삭제하기.
+			-- 배팅정보 삭제.
 			------------------------------------------------
 			--select 'DEBUG 2-3 배팅정보삭제', * from dbo.tSingleGame where gameid = @gameid_ and curturntime = @curturntime
 			delete from dbo.tSingleGame where gameid = @gameid_ and curturntime = @curturntime
+
+			------------------------------------------------
+			-- 배팅로고 몇개만 저장하기 나머지는 삭제.
+			------------------------------------------------
+			set @idx2del = @idx2 - @SINGLE_GAME_LOG_MAX
+			if( @idx2del > 0 )
+				begin
+					--select 'DEBUG 2-7 배팅로고정보삭제', @idx2del idx2del, @idx2 idx2, * from dbo.tSingleGameLog where gameid = @gameid_ and idx2 < @idx2del
+					delete from dbo.tSingleGameLog where gameid = @gameid_ and idx2 < @idx2del
+				end
 
 			------------------------------------------------
 			-- 유저정보
@@ -569,7 +578,7 @@ Begin
 			update dbo.tUserMaster
 				set
 					singleflag	= @SINGLE_FLAG_END,
-					cashcost	= @cashcost, 			gamecost 	= @gamecost,	gaingamecost = @gaingamecost,
+					cashcost	= @cashcost, 			gamecost 	= @gamecost,	gaingamecost = gaingamecost + @gaingamecost,
 					exp			= @exp, 				level 		= @level2,
 					commission	= @commission
 			where gameid = @gameid_
@@ -579,27 +588,27 @@ Begin
 	--------------------------------------------------------------
 	-- 결과전송.
 	--------------------------------------------------------------
-	select @nResult_ rtn, @comment comment,
-	@curdate curdate, @curturntime curturntime, @curturndate curturndate,
-	@nextturntime nextturntime, @nextturndate nextturndate,
-	@cashcost cashcost, @gamecost gamecost,
-	@ltselect1 ltselect1, @ltselect2 ltselect2, @ltselect3 ltselect3, @ltselect4 ltselect4,
-	@rselect1 rselect1, @rselect2 rselect2, @rselect3 rselect3, @rselect4 rselect4,
-	@rcnt1 rcnt1, @rcnt2 rcnt2, @rcnt3 rcnt3, @rcnt4 rcnt4,
-	@gameresult gameresult
+	--select @nResult_ rtn, @comment comment,
+	--@curdate curdate, @curturntime curturntime, @curturndate curturndate,
+	--@nextturntime nextturntime, @nextturndate nextturndate,
+	--@cashcost cashcost, @gamecost gamecost,
+	--@ltselect1 ltselect1, @ltselect2 ltselect2, @ltselect3 ltselect3, @ltselect4 ltselect4,
+	--@rselect1 rselect1, @rselect2 rselect2, @rselect3 rselect3, @rselect4 rselect4,
+	--@rcnt1 rcnt1, @rcnt2 rcnt2, @rcnt3 rcnt3, @rcnt4 rcnt4,
+	--@gameresult gameresult
 
 
-	if(@nResult_ = @RESULT_SUCCESS)
-		BEGIN
-			--------------------------------------------------------------
-			-- 유저 보유 아이템 정보
-			--------------------------------------------------------------
+	--if(@nResult_ = @RESULT_SUCCESS)
+	--	BEGIN
+	--		--------------------------------------------------------------
+	--		-- 유저 보유 아이템 정보
+	--		--------------------------------------------------------------
 
-			if( @giftsendexists != -1 )
-				begin
-					exec spu_GiftList @gameid_
-				end
-		END
+	--		if( @giftsendexists != -1 )
+	--			begin
+	--				exec spu_GiftList @gameid_
+	--			end
+	--	END
 
 	------------------------------------------------
 	--	4-2. 유저정보

@@ -20,6 +20,7 @@ create table dbo.tUserMaster(
 																-- 20000801
 	email		varchar(60),									-- ai@aidata.com
 	nickname	varchar(60),									-- 길동닉네임...
+	nicknamechange int					default(0),
 	phone		varchar(60),									-- 01012345678 -> >5SEF5ES6Q7E
 	connectip	varchar(20)				default(''),			-- 접속시 사용되는 ip
 	version		int						default(100),			-- 가입버젼.
@@ -75,8 +76,8 @@ create table dbo.tUserMaster(
 	singlefailcnt		int				default(0),				--   실패횟수.
 	singleerrorcnt		int				default(0),				--   오류횟수(어뷰징).
 
-	gaingamecost		int				default(0),				-- 개인이 배팅해서 획득한 코인수량.
-	gaingamecostpc		int				default(0),				-- pc방 업주로써 획득한 코인.
+	gaingamecost		bigint			default(0),				-- 개인이 배팅해서 획득한 코인수량.
+	gaingamecostpc		bigint			default(0),				-- pc방 업주로써 획득한 코인.
 
 	-- (게임변수 : 착용아이템 인덱스리스트)
 	helmetlistidx		int 			default(-1),
@@ -369,7 +370,7 @@ create table dbo.tUserItemBuyLogMonth(
 	itemcode		int,
 
 	cashcost		bigint			default(0),
-	gamecost	int					default(0),
+	gamecost		int				default(0),
 	cnt				int				default(0),
 
 	-- Constraint
@@ -436,7 +437,7 @@ create table dbo.tPCRoomIP(
 	gameid			varchar(20),									-- PC방 사장ID
 	connectip		varchar(20),									-- 접속정보
 	cnt				int,											-- 배팅횟수
-	gaingamecost	int					default(0)					-- 누적수량...
+	gaingamecost	bigint				default(0)					-- 누적수량...
 
 	writedate		datetime			default(getdate()),			-- 등록일..
 	adminid			varchar(20),
@@ -468,9 +469,9 @@ create table dbo.tPCRoomEarnMaster(
 
 	dateid8			char(8),							-- 20101210
 
-	cashcost	int				default(0),
-	gamecost	int				default(0),
-	cnt			int				default(0),
+	cashcost		bigint			default(0),
+	gamecost		bigint			default(0),
+	cnt				int				default(0),
 
 	-- Constraint
 	CONSTRAINT	pk_tPCRoomEarnMaster_dateid	PRIMARY KEY(dateid8)
@@ -497,9 +498,9 @@ create table dbo.tPCRoomEarnSub(
 	dateid8			char(8),							-- 20101210
 	gameid			varchar(20),
 
-	cashcost	int				default(0),
-	gamecost	int				default(0),
-	cnt			int				default(0),
+	cashcost		bigint			default(0),
+	gamecost		bigint			default(0),
+	cnt				int				default(0),
 
 	-- Constraint
 	CONSTRAINT	pk_tPCRoomEarnSub_dateid8_itemcode	PRIMARY KEY(dateid8, gameid)
@@ -1266,10 +1267,19 @@ create table dbo.tSingleGameLog(
 	rselect3 		int 				default(-1),
 	rselect4 		int 				default(-1),
 
+	rcnt1	 		int 				default(0),
+	rcnt2	 		int 				default(0),
+	rcnt3	 		int 				default(0),
+	rcnt4	 		int 				default(0),
+
 	ltselect1		int					default(-1),										-- 로또의 정보.
 	ltselect2		int					default(-1),
 	ltselect3		int					default(-1),
 	ltselect4		int					default(-1),
+
+
+
+
 
 	betgamecostorg	int					default(0),				-- 단순하게 배팅금액, 획득금액
 	betgamecostearn	int					default(0),
@@ -1319,8 +1329,9 @@ create table dbo.tSingleGameEarnLogMaster(
 	selectsuccess3	int				default(0),
 	selectsuccess4	int				default(0),
 
-	betgamecostorg	int				default(0),				-- 단순하게 배팅금액, 획득금액
-	betgamecostearn	int				default(0),
+	betgamecostorg	bigint			default(0),			-- 단순하게 배팅금액, 획득금액
+	betgamecostearn	bigint			default(0),			-- 유저 획득금액.
+	rpcgamecost		bigint			default(0),			-- PC방 수익
 
 
 	-- Constraint
@@ -1334,6 +1345,26 @@ create table dbo.tSingleGameEarnLogMaster(
 --		cashcost = cashcost + 1
 --where dateid8 = '20120818'
 
+---------------------------------------------
+--		유저닉네임변경
+---------------------------------------------
+IF OBJECT_ID (N'dbo.tUserNickNameChange', N'U') IS NOT NULL
+	DROP TABLE dbo.tUserNickNameChange;
+GO
+
+create table dbo.tUserNickNameChange(
+	idx			int 					IDENTITY(1, 1),
+
+	--(유저정보)
+	gameid		varchar(20),
+	oldnickname	varchar(20)				default(''),
+	newnickname	varchar(20)				default(''),
+	writedate	datetime				default(getdate()),
+
+	-- Constraint
+	CONSTRAINT pk_tUserNickNameChange_idx	PRIMARY KEY(idx)
+)
+GO
 
 /*
 

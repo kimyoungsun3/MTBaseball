@@ -151,6 +151,39 @@
 		</td>
 	</tr>
 
+	<tr>
+		<td>sgresult.jsp</td>
+		<td>
+			<a href=sgresult.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&gmode=1&curturntime=830092>830092 결과</a><br>
+			<a href=sgresult.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&gmode=1&curturntime=830093>830093 결과</a><br>
+			<a href=sgresult.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&gmode=1&curturntime=830094>830094 결과</a><br>
+			<a href=sgresult.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&gmode=1&curturntime=828643>828643 결과</a><br>
+			<a href=sgresult.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&gmode=1&curturntime=829540>829540 결과</a><br>
+			<a href=sgresult.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&gmode=1&curturntime=829538>829538 결과</a><br>
+			<a href=sgresult.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&gmode=1&curturntime=829537>829537 결과</a><br>
+			<a href=sgresult.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&gmode=1&curturntime=829534>829534 결과</a><br>
+			<a href=sgresult.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&gmode=1&curturntime=828644>828644 결과</a><br>
+		</td>
+		<td>
+			gameid=xxxx			<br>
+			password=			<br>
+			sid=				<br>
+			gmode=				<br>
+			curturntime=		<br>
+		</td>
+	</tr>
+	<tr>
+		<td>kchecknn.jsp</td>
+		<td>
+			<a href=kchecknn.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&nickname=mtxxxx3nick>mtxxxx3nick 변경</a><br>
+			<a href=kchecknn.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&nickname=mtxxxx3nick2>mtxxxx3nick2 변경</a><br>
+		</td>
+		<td>
+			gameid=xxxx			<br>
+			password=			<br>
+			nickname=			<br>
+		</td>
+	</tr>
 	<%/*%>		
 	<!--
 	<tr>

@@ -132,19 +132,19 @@ function f_Submit(f) {
 							<td><%=getDate19(result.getString("curturndate"))%></td>
 							<td><%=getGameMode(result.getInt("gamemode"))%></td>
 							<td>
-								<%=getSelectMode(1, result.getInt("select1"))%> / 
+								<%=getSelectMode(1, result.getInt("select1"), result.getInt("ltselect1"))%> / 
 								<%=result.getInt("cnt1")%> /
 							</td>
 							<td>
-								<%=getSelectMode(2, result.getInt("select2"))%> / 
+								<%=getSelectMode(2, result.getInt("select2"), result.getInt("ltselect2"))%> / 
 								<%=result.getInt("cnt2")%> /
 							</td>
 							<td>
-								<%=getSelectMode(3, result.getInt("select3"))%> / 
+								<%=getSelectMode(3, result.getInt("select3"), result.getInt("ltselect3"))%> / 
 								<%=result.getInt("cnt3")%> /
 							</td>
 							<td>
-								<%=getSelectMode(4, result.getInt("select4"))%> / 
+								<%=getSelectMode(4, result.getInt("select4"), result.getInt("ltselect4"))%> / 
 								<%=result.getInt("cnt4")%> /
 							</td>
 							<td><%=result.getString("connectip")%></td>
@@ -172,7 +172,7 @@ function f_Submit(f) {
 							<td><%=getDate19(result.getString("resultdate"))%></td>
 							<td><%=result.getInt("gainexp")%></td>
 							<td><%=result.getInt("gaingamecost")%></td>
-							<td></td>
+							<td><%=getEarnCompare(result.getInt("betgamecostearn"), result.getInt("betgamecostorg"))%></td>
 							<td></td>
 							<td></td>
 							<td></td>

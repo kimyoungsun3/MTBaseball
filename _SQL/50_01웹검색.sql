@@ -1,7 +1,8 @@
 ﻿--@관리자 로그인(25)
 --exec spu_GameMTBaseballD 25, 1, 1000, -1, -1, -1, -1, -1, -1, -1, 'global', 'qwer1234', '', '', '', '', '', '', '', ''			-- 관리자 생성
 --exec spu_GameMTBaseballD 25, 1, 1000, -1, -1, -1, -1, -1, -1, -1, 'blackm', 'a1s2d3f4', '', '', '', '', '', '', '', ''			-- 관리자 생성
---exec spu_GameMTBaseballD 25, 1, 1000, -1, -1, -1, -1, -1, -1, -1, 'aidatakr', '12345', '', '', '', '', '', '', '', ''				-- 관리자 생성
+--exec spu_GameMTBaseballD 25, 1, 1000, -1, -1, -1, -1, -1, -1, -1, 'aidatakr', '12345', '', '', '', '', '', '', '', ''				-- AI사장
+--exec spu_GameMTBaseballD 25, 1, 1000, -1, -1, -1, -1, -1, -1, -1, 'jbaeg', '1234', '', '', '', '', '', '', '', ''					-- 클라개발자
 --exec spu_GameMTBaseballD 25, 2, -1, -1, -1, -1, -1, -1, -1, -1,   'blackm', 'qwer1234', '', '', '', '', '', '', '', ''			-- 관리자 로그인
 --exec spu_GameMTBaseballD 25, 3, 1000, -1, -1, -1, -1, -1, -1, -1, 'global', 'qwer1234', '', '', '', '', '', '', '', ''			-- 관리자 등급수정
 --exec spu_GameMTBaseballD 25, 3, 1000, -1, -1, -1, -1, -1, -1, -1, 'blackm', 'qwer1234', '', '', '', '', '', '', '', ''			-- 관리자 등급수정
@@ -52,11 +53,12 @@
 --exec spu_GameMTBaseballD 19, 31, 12, -1, -1, -1, -1, -1, -1, -1, 'xxxx', '', '', '', '', '', '', '', '', ''					-- 유저보유템 삭제
 --exec spu_GameMTBaseballD 19,2000, 25,  1, -1, -1, -1, -1, -1, -1, 'xxxx', '', '', '', '', '', '', '', '', ''					-- 배팅정보 강제삭제.
 --exec spu_GameMTBaseballD 19,2000, 26, 10, -1, -1, -1, -1, -1, -1, 'mtxxxx3', 'admin', '', '', '', '', '', '', '', ''			-- 배팅정보 강제롤백.
+--exec spu_GameMTBaseballD 19,2000, 29, 62359,-1,-1,-1,-1, -1, -1, 'mtxxxx3', 'admin', '', '', '', '', '', '', '', ''			-- 배팅정보 강제계산.
 --exec spu_GameMTBaseballD 19,2000, 27, 10, -1, -1, -1, -1, -1, -1, 'mtxxxx3', 'admin', '', '', '', '', '', '', '', ''			-- 상태변경.
 --exec spu_GameMTBaseballD 19,2000, 28, 10, -1, -1, -1, -1, -1, -1, 'mtxxxx3', 'admin', '', '', '', '', '', '', '', ''			-- 상태변경.
 --exec spu_GameMTBaseballD 19,1010, -1, -1, -1, -1,  1, -1, -1, -1, 'mtxxxx3', '', '', '', '', '', '', '', '', ''				-- 배팅정보 리스트.
 --exec spu_GameMTBaseballD 19,1011, -1, -1, -1, -1,  1, -1, -1, -1, 'mtxxxx3', '', '', '', '', '', '', '', '', ''				-- 배팅결과 리스트.
-
+--exec spu_GameMTBaseballD 19, 1109, -1, -1, -1, -1,  1, -1, -1, -1, 'mtxxxx3', '', '', '', '', '', '', '', '', ''				-- 닉네임변경.
 
 --exec spu_GameMTBaseballD 19, 1001, -1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''						-- 블럭리스트
 --exec spu_GameMTBaseballD 19, 1001, -1, -1, -1, -1, -1, -1, -1, -1, 'dd23', '', '', '', '', '', '', '', '', ''					--
@@ -99,12 +101,17 @@
 --exec spu_GameMTBaseballD 20, 22, 2,  1, -1, -1, -1, -1, -1, -1, 'xxxx', 'adminid', '127.0.0.1', '', '', '', '', '', '', ''--      등록.
 --exec spu_GameMTBaseballD 20, 22, 2,  2,  1, -1, -1, -1, -1, -1, 'xxxx', 'adminid', '127.0.0.1', '', '', '', '', '', '', ''--      수정.
 --exec spu_GameMTBaseballD 20, 22, 2,  3,  1, -1, -1, -1, -1, -1, 'xxxx', 'adminid', '127.0.0.1', '', '', '', '', '', '', ''--      삭제.
+--exec spu_GameMTBaseballD 20, 24, 1,  1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''					-- PC방로고 일일 읽기.
+--exec spu_GameMTBaseballD 20, 24, 1,  1,  1, -1, -1, -1, -1, -1, '', '', '20181018', '', '', '', '', '', '', ''
+--exec spu_GameMTBaseballD 20, 25, 1,  1, -1, -1, -1, -1, -1, -1, '', '', '20181018', '', '', '', '', '', '', ''			-- PC방로고 개별 읽기.
+--exec spu_GameMTBaseballD 20, 25, 1,  1,  1, -1, -1, -1, -1, -1, 'xxxx', '', '', '', '', '', '', '', '', ''
+--exec spu_GameMTBaseballD 20, 25, 1,  1,  1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''
 --exec spu_GameMTBaseballD 20, 23, 1,  1, -1, -1, -1, -1, -1, -1, '', '', '821730', '', '', '', '', '', '', ''				-- 나눔로또 정보.
 --exec spu_GameMTBaseballD 20, 23, 1,  1,  1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''					--
 --exec spu_GameMTBaseballD 20, 23, 2,  1,  1,  2,  3,  4,  5,  6, '', 'adminid', '821731', '', '', '', '', '', '', ''		--       기록.
 --exec spu_GameMTBaseballD 20, 23, 2,  2, 11, 12, 13, 14, 15, 16, '', 'adminid', '821731', '', '', '', '', '', '', ''		--       수정.
 --exec spu_GameMTBaseballD 20, 23, 2,  3, -1, -1, -1, -1, -1, -1, '', '', '821731', '', '', '', '', '', '', ''				--       삭제.
-
+--exec spu_GameMTBaseballD 20, 26, 1,  1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''					-- 배팅결과 정보...
 
 --@통계자료(21)
 --exec spu_GameMTBaseballD 21, 1, -1,  1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''						-- 일별통계
@@ -346,6 +353,7 @@ as
 	declare @exp			int
 	declare @commission		int
 	declare @commissionbet	int
+	declare @sid			int
 
 	declare @comment		varchar(2048)
 	declare @cashcost 		int
@@ -487,7 +495,8 @@ as
 	declare @eventendhour	int
 
 	-- lotto info
-	declare @curturntime	int
+	declare @curturntime	int				set @curturntime = -1
+	declare @curturndate	datetime
 	declare @curturnnum1	int
 	declare @curturnnum2	int
 	declare @curturnnum3	int
@@ -497,6 +506,7 @@ as
 	declare @nextturntime	int
 	declare @nextturndate	datetime
 	declare @totalball		int
+	declare @gamemode		int				set @gamemode = -1
 
 Begin
 	------------------------------------------------
@@ -831,6 +841,80 @@ Begin
 								end
 						end
 				end
+
+			else if(@subkind = 24)
+				begin
+					if(@p3_ = 1)
+						begin
+							if(@ps3_ != '')
+								begin
+									set @maxPage	= 1
+									set @page		= 1
+
+									select top 100 @maxPage maxPage, @page page, * from dbo.tPCRoomEarnMaster
+									where dateid8 = @ps3_ order by idx desc
+								end
+							else
+								begin
+									-- 읽기.
+									set @idxPage	= @p4_
+									select @idx = (isnull(max(idx), 1)) from dbo.tPCRoomEarnMaster
+
+									set @maxPage	= @idx / @PAGE_LINE
+									set @maxPage 	= @maxPage + case when (@idx % @PAGE_LINE != 0) then 1 else 0 end
+									set @page		= case
+														when (@idxPage <= 0)			then 1
+														when (@idxPage >  @maxPage)	then @maxPage
+														else @idxPage
+													end
+									set @idx		= @idx - (@page - 1) * @PAGE_LINE
+
+									select top 100 @maxPage maxPage, @page page, * from dbo.tPCRoomEarnMaster
+									where idx <= @idx order by idx desc
+								end
+						end
+				end
+			else if(@subkind = 25)
+				begin
+					if(@p3_ = 1)
+						begin
+							if(@ps1_ != '')
+								begin
+									set @maxPage	= 1
+									set @page		= 1
+
+									select top 100 @maxPage maxPage, @page page, * from dbo.tPCRoomEarnSub
+									where gameid = @ps1_ order by idx desc
+								end
+							else if(@ps3_ != '')
+								begin
+									set @maxPage	= 1
+									set @page		= 1
+
+									select top 100 @maxPage maxPage, @page page, * from dbo.tPCRoomEarnSub
+									where dateid8 = @ps3_ order by idx desc
+								end
+							else
+								begin
+									-- 읽기.
+									set @idxPage	= @p4_
+									select @idx = (isnull(max(idx), 1)) from dbo.tPCRoomEarnSub
+
+									set @maxPage	= @idx / @PAGE_LINE
+									set @maxPage 	= @maxPage + case when (@idx % @PAGE_LINE != 0) then 1 else 0 end
+									set @page		= case
+														when (@idxPage <= 0)			then 1
+														when (@idxPage >  @maxPage)	then @maxPage
+														else @idxPage
+													end
+									set @idx		= @idx - (@page - 1) * @PAGE_LINE
+
+									select top 100 @maxPage maxPage, @page page, * from dbo.tPCRoomEarnSub
+									where idx <= @idx order by idx desc
+								end
+						end
+				end
+
 			else if(@subkind = 23)
 				begin
 					if(@p3_ = 1)
@@ -951,6 +1035,39 @@ Begin
 									delete from dbo.tLottoInfo where curturntime = @curturntime
 
 									select @RESULT_SUCCESS 'rtn', @commentX commentX
+								end
+						end
+				end
+			else if(@subkind = 26)
+				begin
+					if(@p3_ = 1)
+						begin
+							if(@ps3_ != '')
+								begin
+									set @maxPage	= 1
+									set @page		= 1
+
+									select top 100 @maxPage maxPage, @page page, * from dbo.tSingleGameEarnLogMaster
+									where dateid8 = @ps3_
+									order by idx desc
+								end
+							else
+								begin
+									-- 읽기.
+									set @idxPage	= @p4_
+									select @idx = (isnull(max(idx), 1)) from dbo.tSingleGameEarnLogMaster
+
+									set @maxPage	= @idx / @PAGE_LINE
+									set @maxPage 	= @maxPage + case when (@idx % @PAGE_LINE != 0) then 1 else 0 end
+									set @page		= case
+														when (@idxPage <= 0)			then 1
+														when (@idxPage >  @maxPage)	then @maxPage
+														else @idxPage
+													end
+									set @idx		= @idx - (@page - 1) * @PAGE_LINE
+
+									select top 100 @maxPage maxPage, @page page, * from dbo.tSingleGameEarnLogMaster
+									where idx <= @idx order by idx desc
 								end
 						end
 				end
@@ -1246,6 +1363,38 @@ Begin
 							order by idx desc
 						end
 				end
+			else if(@p2_ =  1109)
+				begin
+					--------------------------------------------
+					-- 상세하기
+					--------------------------------------------
+					if(isnull(@gameid, '') = '')
+						begin
+							set @idxPage	= @p7_
+							select @idx = (isnull(max(idx), 1)) from dbo.tUserNickNameChange
+
+							set @maxPage	= @idx / @PAGE_LINE
+							set @maxPage 	= @maxPage + case when (@idx % @PAGE_LINE != 0) then 1 else 0 end
+							set @page		= case
+												when (@idxPage <= 0)			then 1
+												when (@idxPage >  @maxPage)	then @maxPage
+												else @idxPage
+											end
+							set @idx		= @idx - (@page - 1) * @PAGE_LINE
+
+							select top 100 @maxPage maxPage, @page page, * from dbo.tUserNickNameChange
+							where idx <= @idx order by idx desc
+						end
+					else
+						begin
+							set @maxPage	= 1
+							set @page		= 1
+
+							select top 100 @maxPage maxPage, @page page, * from dbo.tUserNickNameChange
+							where gameid = @gameid
+							order by idx desc
+						end
+				end
 			----------------------------------------------------
 			-- 캐쉬수정
 			----------------------------------------------------
@@ -1442,6 +1591,25 @@ Begin
 							set @comment = '관리자(' + @gameid + ')가 배팅상태를 변경했습니다.'
 							exec spu_AdminActionBlock @adminid, @gameid, @comment
 						end
+					else if(@p3_ = 29)
+						begin
+							select @password = password, @sid = sid from dbo.tUsermaster where gameid = @gameid
+							select
+								@gamemode 		= gamemode,
+								@curturntime 	= curturntime,
+								@curturndate 	= curturndate
+							from dbo.tSingleGame where idx = @p4_
+
+							if( @curturntime != -1 and @curdate > @curturndate )
+								begin
+									-- 강제계산하기.
+									exec spu_SGResult @gameid, @password, @sid, @gamemode, @curturntime, -1
+
+									set @comment = '관리자(' + @gameid + ')가 배팅데이타를 강제 연산처리해버린다.'
+									exec spu_AdminActionBlock @adminid, @gameid, @comment
+								end
+						end
+
 					select 1 rtn
 				end
 			else if(@p2_ =  71)

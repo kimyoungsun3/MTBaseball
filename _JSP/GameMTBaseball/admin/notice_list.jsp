@@ -28,8 +28,18 @@
 <script language="javascript">
 <!--
 function f_Submit(f) {
-	if(f_nul_chk(f.comment, '내용을 작성하세요.')) return false;
-	else return true;
+	if(f.syscheck.value == 1){
+		if(confirm('점검중을 선택하시면 진행중인 배팅이 전부 롤백처리되게 마킹됩니다. 하시겠습니까?')){
+			return true;
+		}else{
+			return false;
+		}
+	}else{
+		return true;
+	}
+	
+	//if(f_nul_chk(f.comment, '내용을 작성하세요.')) return false;
+	//else return true;
 }
 
 //-->

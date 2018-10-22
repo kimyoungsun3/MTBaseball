@@ -1,8 +1,8 @@
 ﻿/*
-exec dbo.spu_SingleGameEarnLog   0,-1, -1, -1, 1,-1, -1, -1, 100, 198	--1개
-exec dbo.spu_SingleGameEarnLog   0, 0, -1, -1, 1, 0, -1, -1, 200, 198	--2개
-exec dbo.spu_SingleGameEarnLog   0, 0,  0, -1, 1, 0,  1, -1, 300, 395	--3개
-exec dbo.spu_SingleGameEarnLog   0, 0,  0,  0, 1, 0,  0,  0, 400, 198	--4개
+exec dbo.spu_SingleGameEarnLog   0,-1, -1, -1, 1,-1, -1, -1, 100, 198,  7	--1개
+exec dbo.spu_SingleGameEarnLog   0, 0, -1, -1, 1, 0, -1, -1, 200, 198, 14	--2개
+exec dbo.spu_SingleGameEarnLog   0, 0,  0, -1, 1, 0,  1, -1, 300, 395, 21	--3개
+exec dbo.spu_SingleGameEarnLog   0, 0,  0,  0, 1, 0,  0,  0, 400, 198, 28	--4개
 
 select * from dbo.tSingleGameEarnLogMaster
 */
@@ -23,7 +23,8 @@ create procedure dbo.spu_SingleGameEarnLog
 	@rselect3_							int,
 	@rselect4_							int,
 	@betgamecostorg_					int,
-	@betgamecostearn_					int
+	@betgamecostearn_					int,
+	@rpcgamecost_						int
 	--WITH ENCRYPTION -- 프로시져를 암호화함.
 as
 	-- 플레그정보.
@@ -74,13 +75,13 @@ Begin
 				dateid8, cnt,
 				selecttry1, selecttry2, selecttry3, selecttry4,
 				selectsuccess1, selectsuccess2, selectsuccess3, selectsuccess4,
-				betgamecostorg, betgamecostearn
+				betgamecostorg, betgamecostearn, rpcgamecost
 			)
 			values(
 				@dateid8, 1,
 				@selecttry1, @selecttry2, @selecttry3, @selecttry4,
 				@selectsuccess1, @selectsuccess2, @selectsuccess3, @selectsuccess4,
-				@betgamecostorg_, @betgamecostearn_
+				@betgamecostorg_, @betgamecostearn_, @rpcgamecost_
 			)
 		end
 	else
@@ -88,7 +89,6 @@ Begin
 			--select 'DEBUG > update'
 			update dbo.tSingleGameEarnLogMaster
 				set
-					dateid8 		= @dateid8,
 					cnt				= cnt + 1,
 					selecttry1		= selecttry1 + @selecttry1,
 					selecttry2		= selecttry2 + @selecttry2,
@@ -99,7 +99,8 @@ Begin
 					selectsuccess3 	= selectsuccess3 + @selectsuccess3,
 					selectsuccess4 	= selectsuccess4 + @selectsuccess4,
 					betgamecostorg	= betgamecostorg + @betgamecostorg_,
-					betgamecostearn	= betgamecostearn +@betgamecostearn_
+					betgamecostearn	= betgamecostearn +@betgamecostearn_,
+					rpcgamecost		= rpcgamecost + @rpcgamecost_
 			where dateid8 = @dateid8
 		end
 

@@ -48,9 +48,9 @@
 		<description>돌 조각으로 조합한 장비</description>
 		<getbox>4100</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>35</expincrease100>
+		<expincrease100>100</expincrease100>
 		<setcode>0</setcode>
-		<setplusexp100>45</setplusexp100>
+		<setplusexp100>2000</setplusexp100>
 		<evolsuccess>10</evolsuccess>
 		<evolfailkeep>495</evolfailkeep>
 		<evolfaildestroy>495</evolfaildestroy>
@@ -76,9 +76,9 @@
 		<description>동 조각으로 조합한 장비</description>
 		<getbox>4101</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>70</expincrease100>
+		<expincrease100>200</expincrease100>
 		<setcode>1</setcode>
-		<setplusexp100>90</setplusexp100>
+		<setplusexp100>4000</setplusexp100>
 		<evolsuccess>10</evolsuccess>
 		<evolfailkeep>495</evolfailkeep>
 		<evolfaildestroy>495</evolfaildestroy>
@@ -104,9 +104,9 @@
 		<description>은 조각으로 조합한 장비</description>
 		<getbox>4102</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>105</expincrease100>
+		<expincrease100>300</expincrease100>
 		<setcode>2</setcode>
-		<setplusexp100>135</setplusexp100>
+		<setplusexp100>6000</setplusexp100>
 		<evolsuccess>10</evolsuccess>
 		<evolfailkeep>495</evolfailkeep>
 		<evolfaildestroy>495</evolfaildestroy>
@@ -132,9 +132,9 @@
 		<description>금 조각으로 조합한 장비</description>
 		<getbox>4103</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>140</expincrease100>
+		<expincrease100>400</expincrease100>
 		<setcode>3</setcode>
-		<setplusexp100>180</setplusexp100>
+		<setplusexp100>8000</setplusexp100>
 		<evolsuccess>10</evolsuccess>
 		<evolfailkeep>495</evolfailkeep>
 		<evolfaildestroy>495</evolfaildestroy>
@@ -160,9 +160,9 @@
 		<description>티타늄 조각으로 조합한 장비</description>
 		<getbox>4104</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>210</expincrease100>
+		<expincrease100>500</expincrease100>
 		<setcode>4</setcode>
-		<setplusexp100>270</setplusexp100>
+		<setplusexp100>10000</setplusexp100>
 		<evolsuccess>0</evolsuccess>
 		<evolfailkeep>1000</evolfailkeep>
 		<evolfaildestroy>0</evolfaildestroy>
@@ -216,7 +216,7 @@
 		<description>돌 조각으로 조합한 장비</description>
 		<getbox>4100</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>35</expincrease100>
+		<expincrease100>100</expincrease100>
 		<setnum>0</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -244,7 +244,7 @@
 		<description>동 조각으로 조합한 장비</description>
 		<getbox>4101</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>70</expincrease100>
+		<expincrease100>200</expincrease100>
 		<setnum>1</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -272,7 +272,7 @@
 		<description>은 조각으로 조합한 장비</description>
 		<getbox>4102</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>105</expincrease100>
+		<expincrease100>300</expincrease100>
 		<setnum>2</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -300,7 +300,7 @@
 		<description>금 조각으로 조합한 장비</description>
 		<getbox>4103</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>140</expincrease100>
+		<expincrease100>400</expincrease100>
 		<setnum>3</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -328,7 +328,7 @@
 		<description>티타늄 조각으로 조합한 장비</description>
 		<getbox>4104</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>210</expincrease100>
+		<expincrease100>500</expincrease100>
 		<setnum>4</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>0</evolsuccess>
@@ -384,7 +384,7 @@
 		<description>돌 조각으로 조합한 장비</description>
 		<getbox>4100</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>35</expincrease100>
+		<expincrease100>100</expincrease100>
 		<setnum>0</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -412,7 +412,7 @@
 		<description>동 조각으로 조합한 장비</description>
 		<getbox>4101</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>70</expincrease100>
+		<expincrease100>200</expincrease100>
 		<setnum>1</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -440,7 +440,7 @@
 		<description>은 조각으로 조합한 장비</description>
 		<getbox>4102</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>105</expincrease100>
+		<expincrease100>300</expincrease100>
 		<setnum>2</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -468,7 +468,7 @@
 		<description>금 조각으로 조합한 장비</description>
 		<getbox>4103</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>140</expincrease100>
+		<expincrease100>400</expincrease100>
 		<setnum>3</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -496,7 +496,7 @@
 		<description>티타늄 조각으로 조합한 장비</description>
 		<getbox>4104</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>210</expincrease100>
+		<expincrease100>500</expincrease100>
 		<setnum>4</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>0</evolsuccess>
@@ -552,7 +552,7 @@
 		<description>돌 조각으로 조합한 장비</description>
 		<getbox>4100</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>35</expincrease100>
+		<expincrease100>100</expincrease100>
 		<setnum>0</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -580,7 +580,7 @@
 		<description>동 조각으로 조합한 장비</description>
 		<getbox>4101</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>70</expincrease100>
+		<expincrease100>200</expincrease100>
 		<setnum>1</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -608,7 +608,7 @@
 		<description>은 조각으로 조합한 장비</description>
 		<getbox>4102</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>105</expincrease100>
+		<expincrease100>300</expincrease100>
 		<setnum>2</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -636,7 +636,7 @@
 		<description>금 조각으로 조합한 장비</description>
 		<getbox>4103</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>140</expincrease100>
+		<expincrease100>400</expincrease100>
 		<setnum>3</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -664,7 +664,7 @@
 		<description>티타늄 조각으로 조합한 장비</description>
 		<getbox>4104</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>210</expincrease100>
+		<expincrease100>500</expincrease100>
 		<setnum>4</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>0</evolsuccess>
@@ -720,7 +720,7 @@
 		<description>돌 조각으로 조합한 장비</description>
 		<getbox>4100</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>35</expincrease100>
+		<expincrease100>100</expincrease100>
 		<setnum>0</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -748,7 +748,7 @@
 		<description>동 조각으로 조합한 장비</description>
 		<getbox>4101</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>70</expincrease100>
+		<expincrease100>200</expincrease100>
 		<setnum>1</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -776,7 +776,7 @@
 		<description>은 조각으로 조합한 장비</description>
 		<getbox>4102</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>105</expincrease100>
+		<expincrease100>300</expincrease100>
 		<setnum>2</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -804,7 +804,7 @@
 		<description>금 조각으로 조합한 장비</description>
 		<getbox>4103</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>140</expincrease100>
+		<expincrease100>400</expincrease100>
 		<setnum>3</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -832,7 +832,7 @@
 		<description>티타늄 조각으로 조합한 장비</description>
 		<getbox>4104</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>210</expincrease100>
+		<expincrease100>500</expincrease100>
 		<setnum>4</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>0</evolsuccess>
@@ -888,7 +888,7 @@
 		<description>돌 조각으로 조합한 장비</description>
 		<getbox>4100</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>35</expincrease100>
+		<expincrease100>100</expincrease100>
 		<setnum>0</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -916,7 +916,7 @@
 		<description>동 조각으로 조합한 장비</description>
 		<getbox>4101</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>70</expincrease100>
+		<expincrease100>200</expincrease100>
 		<setnum>1</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -944,7 +944,7 @@
 		<description>은 조각으로 조합한 장비</description>
 		<getbox>4102</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>105</expincrease100>
+		<expincrease100>300</expincrease100>
 		<setnum>2</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -972,7 +972,7 @@
 		<description>금 조각으로 조합한 장비</description>
 		<getbox>4103</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>140</expincrease100>
+		<expincrease100>400</expincrease100>
 		<setnum>3</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -1000,7 +1000,7 @@
 		<description>티타늄 조각으로 조합한 장비</description>
 		<getbox>4104</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>210</expincrease100>
+		<expincrease100>500</expincrease100>
 		<setnum>4</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>0</evolsuccess>
@@ -1056,7 +1056,7 @@
 		<description>돌 조각으로 조합한 장비</description>
 		<getbox>4100</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>35</expincrease100>
+		<expincrease100>100</expincrease100>
 		<setnum>0</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -1084,7 +1084,7 @@
 		<description>동 조각으로 조합한 장비</description>
 		<getbox>4101</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>70</expincrease100>
+		<expincrease100>200</expincrease100>
 		<setnum>1</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -1112,7 +1112,7 @@
 		<description>은 조각으로 조합한 장비</description>
 		<getbox>4102</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>105</expincrease100>
+		<expincrease100>300</expincrease100>
 		<setnum>2</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -1140,7 +1140,7 @@
 		<description>금 조각으로 조합한 장비</description>
 		<getbox>4103</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>140</expincrease100>
+		<expincrease100>400</expincrease100>
 		<setnum>3</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -1168,7 +1168,7 @@
 		<description>티타늄 조각으로 조합한 장비</description>
 		<getbox>4104</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>210</expincrease100>
+		<expincrease100>500</expincrease100>
 		<setnum>4</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>0</evolsuccess>
@@ -1224,7 +1224,7 @@
 		<description>돌 조각으로 조합한 장비</description>
 		<getbox>4100</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>35</expincrease100>
+		<expincrease100>100</expincrease100>
 		<setnum>0</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -1252,7 +1252,7 @@
 		<description>동 조각으로 조합한 장비</description>
 		<getbox>4101</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>70</expincrease100>
+		<expincrease100>200</expincrease100>
 		<setnum>1</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -1280,7 +1280,7 @@
 		<description>은 조각으로 조합한 장비</description>
 		<getbox>4102</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>105</expincrease100>
+		<expincrease100>300</expincrease100>
 		<setnum>2</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -1308,7 +1308,7 @@
 		<description>금 조각으로 조합한 장비</description>
 		<getbox>4103</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>140</expincrease100>
+		<expincrease100>400</expincrease100>
 		<setnum>3</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -1336,7 +1336,7 @@
 		<description>티타늄 조각으로 조합한 장비</description>
 		<getbox>4104</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>210</expincrease100>
+		<expincrease100>500</expincrease100>
 		<setnum>4</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>0</evolsuccess>
@@ -1392,7 +1392,7 @@
 		<description>돌 조각으로 조합한 장비</description>
 		<getbox>4100</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>35</expincrease100>
+		<expincrease100>100</expincrease100>
 		<setnum>0</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -1420,7 +1420,7 @@
 		<description>동 조각으로 조합한 장비</description>
 		<getbox>4101</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>70</expincrease100>
+		<expincrease100>200</expincrease100>
 		<setnum>1</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -1448,7 +1448,7 @@
 		<description>은 조각으로 조합한 장비</description>
 		<getbox>4102</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>105</expincrease100>
+		<expincrease100>300</expincrease100>
 		<setnum>2</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -1476,7 +1476,7 @@
 		<description>금 조각으로 조합한 장비</description>
 		<getbox>4103</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>140</expincrease100>
+		<expincrease100>400</expincrease100>
 		<setnum>3</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -1504,7 +1504,7 @@
 		<description>티타늄 조각으로 조합한 장비</description>
 		<getbox>4104</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>210</expincrease100>
+		<expincrease100>500</expincrease100>
 		<setnum>4</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>0</evolsuccess>
@@ -1560,7 +1560,7 @@
 		<description>돌 조각으로 조합한 장비</description>
 		<getbox>4100</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>35</expincrease100>
+		<expincrease100>100</expincrease100>
 		<setnum>0</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -1588,7 +1588,7 @@
 		<description>동 조각으로 조합한 장비</description>
 		<getbox>4101</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>70</expincrease100>
+		<expincrease100>200</expincrease100>
 		<setnum>1</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -1616,7 +1616,7 @@
 		<description>은 조각으로 조합한 장비</description>
 		<getbox>4102</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>105</expincrease100>
+		<expincrease100>300</expincrease100>
 		<setnum>2</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -1644,7 +1644,7 @@
 		<description>금 조각으로 조합한 장비</description>
 		<getbox>4103</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>140</expincrease100>
+		<expincrease100>400</expincrease100>
 		<setnum>3</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -1672,7 +1672,7 @@
 		<description>티타늄 조각으로 조합한 장비</description>
 		<getbox>4104</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>210</expincrease100>
+		<expincrease100>500</expincrease100>
 		<setnum>4</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>0</evolsuccess>
@@ -1728,7 +1728,7 @@
 		<description>돌 조각으로 조합한 장비</description>
 		<getbox>4100</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>35</expincrease100>
+		<expincrease100>100</expincrease100>
 		<setnum>0</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -1756,7 +1756,7 @@
 		<description>동 조각으로 조합한 장비</description>
 		<getbox>4101</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>70</expincrease100>
+		<expincrease100>200</expincrease100>
 		<setnum>1</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -1784,7 +1784,7 @@
 		<description>은 조각으로 조합한 장비</description>
 		<getbox>4102</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>105</expincrease100>
+		<expincrease100>300</expincrease100>
 		<setnum>2</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -1812,7 +1812,7 @@
 		<description>금 조각으로 조합한 장비</description>
 		<getbox>4103</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>140</expincrease100>
+		<expincrease100>400</expincrease100>
 		<setnum>3</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -1840,7 +1840,7 @@
 		<description>티타늄 조각으로 조합한 장비</description>
 		<getbox>4104</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>210</expincrease100>
+		<expincrease100>500</expincrease100>
 		<setnum>4</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>0</evolsuccess>
@@ -1896,7 +1896,7 @@
 		<description>돌 조각으로 조합한 장비</description>
 		<getbox>4100</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>35</expincrease100>
+		<expincrease100>100</expincrease100>
 		<setnum>0</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -1924,7 +1924,7 @@
 		<description>동 조각으로 조합한 장비</description>
 		<getbox>4101</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>70</expincrease100>
+		<expincrease100>200</expincrease100>
 		<setnum>1</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -1952,7 +1952,7 @@
 		<description>은 조각으로 조합한 장비</description>
 		<getbox>4102</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>105</expincrease100>
+		<expincrease100>300</expincrease100>
 		<setnum>2</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -1980,7 +1980,7 @@
 		<description>금 조각으로 조합한 장비</description>
 		<getbox>4103</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>140</expincrease100>
+		<expincrease100>400</expincrease100>
 		<setnum>3</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -2008,7 +2008,7 @@
 		<description>티타늄 조각으로 조합한 장비</description>
 		<getbox>4104</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>210</expincrease100>
+		<expincrease100>500</expincrease100>
 		<setnum>4</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>0</evolsuccess>
@@ -2064,7 +2064,7 @@
 		<description>돌 조각으로 조합한 장비</description>
 		<getbox>4100</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>35</expincrease100>
+		<expincrease100>100</expincrease100>
 		<setnum>0</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -2092,7 +2092,7 @@
 		<description>동 조각으로 조합한 장비</description>
 		<getbox>4101</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>70</expincrease100>
+		<expincrease100>200</expincrease100>
 		<setnum>1</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -2120,7 +2120,7 @@
 		<description>은 조각으로 조합한 장비</description>
 		<getbox>4102</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>105</expincrease100>
+		<expincrease100>300</expincrease100>
 		<setnum>2</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -2148,7 +2148,7 @@
 		<description>금 조각으로 조합한 장비</description>
 		<getbox>4103</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>140</expincrease100>
+		<expincrease100>400</expincrease100>
 		<setnum>3</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>10</evolsuccess>
@@ -2176,7 +2176,7 @@
 		<description>티타늄 조각으로 조합한 장비</description>
 		<getbox>4104</getbox>
 		<getpercent1000>1</getpercent1000>
-		<expincrease100>210</expincrease100>
+		<expincrease100>500</expincrease100>
 		<setnum>4</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolsuccess>0</evolsuccess>

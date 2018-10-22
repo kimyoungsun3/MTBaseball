@@ -35,6 +35,7 @@
 	int earncoin				= 0;
 	int level					= 0;
 	int kind					= 0;
+	int row						= 0;
 	try{
 %>
 <html><head>
@@ -154,7 +155,10 @@ function f_Submit(f) {
 								보유캐쉬(다이아) 	: <a href=userminus_form.jsp?gameid=<%=result.getString("gameid")%>&mode=0><%=result.getString("cashcost")%></a><br>								
 								보유코인(볼) 	: <a href=userminus_form.jsp?gameid=<%=result.getString("gameid")%>&mode=3><%=result.getString("gamecost")%></a><br>								
 								누적캐쉬 		: <%=result.getString("cashbuytotal")%><br>
-								받은캐쉬 		: <%=result.getString("cashreceivetotal")%><br>
+								받은캐쉬 		: <%=result.getString("cashreceivetotal")%><br><br>
+								
+								배팅수익(누적볼)	: <%=result.getString("gaingamecost")%><br>
+								PC방업주마진수익(누적볼): <%=result.getString("gaingamecostpc")%><br>
 							</td>
 							<td>
 								exp :<a href=userminus_form4.jsp?mode=1&p1=19&p2=65&p3=2&ps1=<%=gameidCurRow%>&ps2=<%=adminid%>&gameid=<%=gameidCurRow%>&title=Experience&strlen=12><%=result.getString("exp")%></a><br>
@@ -488,19 +492,19 @@ function f_Submit(f) {
 							<td><%=getDate19(result.getString("curturndate"))%></td>
 							<td><%=getGameMode(result.getInt("gamemode"))%></td>
 							<td>
-								<%=getSelectMode(1, result.getInt("select1"))%> / 
+								<%=getSelectMode(1, result.getInt("select1"), -1)%> / 
 								<%=result.getInt("cnt1")%> /
 							</td>
 							<td>
-								<%=getSelectMode(2, result.getInt("select2"))%> / 
+								<%=getSelectMode(2, result.getInt("select2"), -1)%> / 
 								<%=result.getInt("cnt2")%> /
 							</td>
 							<td>
-								<%=getSelectMode(3, result.getInt("select3"))%> /
+								<%=getSelectMode(3, result.getInt("select3"), -1)%> /
 								<%=result.getInt("cnt3")%> /
 							</td>
 							<td>
-								<%=getSelectMode(4, result.getInt("select4"))%> / 
+								<%=getSelectMode(4, result.getInt("select4"), -1)%> / 
 								<%=result.getInt("cnt4")%> /
 							</td>
 							<td><%=result.getString("connectip")%></td>
@@ -558,26 +562,26 @@ function f_Submit(f) {
 							<td></td>
 						</tr>
 					<%while(result.next()){%>
-						<tr>
+						<tr <%=getColor(++row%2)%>>
 							<td><%=result.getString("idx")%>(<%=result.getString("idx2")%>)</td>
 							<td><%=result.getString("gameid")%></td>
 							<td><%=result.getString("curturntime")%></td>
 							<td><%=getDate19(result.getString("curturndate"))%></td>
 							<td><%=getGameMode(result.getInt("gamemode"))%></td>
 							<td>
-								<%=getSelectMode(1, result.getInt("select1"))%> / 
+								<%=getSelectMode(1, result.getInt("select1"), result.getInt("ltselect1"))%> / 
 								<%=result.getInt("cnt1")%> /
 							</td>
 							<td>
-								<%=getSelectMode(2, result.getInt("select2"))%> / 
+								<%=getSelectMode(2, result.getInt("select2"), result.getInt("ltselect2"))%> / 
 								<%=result.getInt("cnt2")%> /
 							</td>
 							<td>
-								<%=getSelectMode(3, result.getInt("select3"))%> / 
+								<%=getSelectMode(3, result.getInt("select3"), result.getInt("ltselect3"))%> / 
 								<%=result.getInt("cnt3")%> /
 							</td>
 							<td>
-								<%=getSelectMode(4, result.getInt("select4"))%> / 
+								<%=getSelectMode(4, result.getInt("select4"), result.getInt("ltselect4"))%> / 
 								<%=result.getInt("cnt4")%> /
 							</td>
 							<td><%=result.getString("connectip")%></td>
@@ -591,7 +595,7 @@ function f_Submit(f) {
 								<a href=usersetting_ok.jsp?p1=19&p2=2000&p3=27&p4=<%=result.getInt("idx")%>&ps1=<%=result.getString("gameid")%>&ps2=<%=adminid%>&gameid=<%=result.getString("gameid")%>&branch=userinfo_list>강제삭제</a>							
 							</td>
 						</tr>
-						<tr>
+						<tr <%=getColor(row%2)%>>
 							<td colspan=4></td>
 							<td><%=getGameResult(result.getInt("gameresult"))%></td>							
 							<td><%=getRSelect(result.getInt("rselect1"))%></td>
@@ -605,7 +609,7 @@ function f_Submit(f) {
 							<td><%=getDate19(result.getString("resultdate"))%></td>
 							<td><%=result.getInt("gainexp")%></td>
 							<td><%=result.getInt("gaingamecost")%></td>
-							<td></td>
+							<td><%=getEarnCompare(result.getInt("betgamecostearn"), result.getInt("betgamecostorg"))%></td>
 							<td></td>
 							<td></td>
 							<td></td>
