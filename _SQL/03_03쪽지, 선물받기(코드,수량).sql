@@ -37,6 +37,8 @@ exec spu_GiftGainNew 'xxxx2', '049000s1i0n7t8445289', 333, -3, 15, -1	-- 다이아 
 exec spu_GiftGainNew 'xxxx2', '049000s1i0n7t8445289', 333, -3, 16, -1	-- 작은 다이아 상자 (5004 / 1개)	1 개	저급(0)	날짜미정	4000
 exec spu_GiftGainNew 'xxxx2', '049000s1i0n7t8445289', 333, -3, 17, -1	-- 큰 다이아 상자 (5005 / 1개)	1 개	저급(0)	날짜미정	10000
 exec spu_GiftGainNew 'xxxx2', '049000s1i0n7t8445289', 333, -3, 18, -1	-- 대형 다이아 상자 (5006 / 1개)	1 개	저급(0)	날짜미정	20000
+exec spu_GiftGainNew 'mtxxxx3', '049000s1i0n7t8445289', 333, -3,423, -1	-- 닉네임 변경권 (4700 / 10개)
+exec spu_GiftGainNew 'mtxxxx3', '049000s1i0n7t8445289', 333, -3,424, -1	-- 랜덤 다이아 박스 (4800 / 10개)
 
 exec spu_GiftGainNew 'xxxx2', '049000s1i0n7t8445289', 333, -5, -1, -1	-- 리스트갱신
 */
@@ -134,6 +136,8 @@ as
 	declare @ITEM_SUBCATEGORY_BOX_ADVICE		int					set @ITEM_SUBCATEGORY_BOX_ADVICE			= 42 -- 조언 패키지 박스(42)
 	declare @ITEM_SUBCATEGORY_SCROLL_EVOLUTION	int					set @ITEM_SUBCATEGORY_SCROLL_EVOLUTION		= 45 -- 합성초월주문서(45)
 	declare @ITEM_SUBCATEGORY_SCROLL_COMMISSION	int					set @ITEM_SUBCATEGORY_SCROLL_COMMISSION		= 46 -- 수수료주문서(46)
+	declare @ITEM_SUBCATEGORY_NICKCHANGE		int					set @ITEM_SUBCATEGORY_NICKCHANGE			= 47 -- 닉네임변경권(47)
+	declare @ITEM_SUBCATEGORY_RANDOM_CASHCOST_BOX	int				set @ITEM_SUBCATEGORY_RANDOM_CASHCOST_BOX	= 48 -- 랜덤다이아(48)
 	declare @ITEM_SUBCATEGORY_CASHCOST			int					set @ITEM_SUBCATEGORY_CASHCOST				= 50 -- 다이아(50)
 	declare @ITEM_SUBCATEGORY_GAMECOST			int					set @ITEM_SUBCATEGORY_GAMECOST				= 60 -- 볼(60)
 	--declare @ITEM_SUBCATEGORY_STATICINFO		int					set @ITEM_SUBCATEGORY_STATICINFO			= 500 -- 정보수집(500)

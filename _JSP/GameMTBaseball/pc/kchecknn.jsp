@@ -65,6 +65,21 @@
 		msg.append("		<cashcost>");		msg.append(result.getString("cashcost"));msg.append("</cashcost>\n");
 		msg.append("		<gamecost>");		msg.append(result.getString("gamecost"));msg.append("</gamecost>\n");
 		msg.append("	</result>\n");
+	    if(resultCode == 1){
+	    	//2. 유저 보유 아이템 정보
+			if(cstmt.getMoreResults()){
+				result = cstmt.getResultSet();
+				while(result.next()){
+					msg.append("	<itemowner>\n");
+					msg.append("		<listidx>");		msg.append(result.getString("listidx"));   		msg.append("</listidx>\n");
+					msg.append("		<invenkind>");		msg.append(result.getString("invenkind"));   	msg.append("</invenkind>\n");
+					msg.append("		<itemcode>");		msg.append(result.getString("itemcode"));   	msg.append("</itemcode>\n");
+					msg.append("		<cnt>");			msg.append(result.getString("cnt"));   			msg.append("</cnt>\n");
+					msg.append("		<randserial>");		msg.append(result.getString("randserial"));   	msg.append("</randserial>\n");
+					msg.append("	</itemowner>\n");
+				}
+			}
+		}
 	    msg.append("</rows>\n");
 	}catch(Exception e){
 		System.out.println("==============================");

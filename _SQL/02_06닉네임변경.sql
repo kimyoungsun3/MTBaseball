@@ -1,17 +1,17 @@
 /*
-update dbo.tUserMaster set cashcost = 0 where gameid = 'mtxxxx3'
-exec spu_CheckNickName 'mtxxxx3', '049000s1i0n7t8445289', '닉네임12', -1		-- 비용없음.
+update dbo.tUserMaster set cashcost = 0, nickname = 'mtxxxx3' where gameid = 'mtxxxx3'
+exec spu_CheckNickName 'mtxxxx3', '049000s1i0n7t8445289', 333, '닉네임11', -1			-- 비용없음.
+exec spu_CheckNickName 'mtxxxx3', '049000s1i0n7t8445289', 333, '닉네임12', -1			-- 비용없음.
+
+update dbo.tUserMaster set cashcost = 10000, nickname = 'mtxxxx3' where gameid = 'mtxxxx3'
+exec spu_CheckNickName 'mtxxxx3', '049000s1i0n7t8445289', 333, 'mtnickname', -1			-- 다른 사람이 사용중...
 
 update dbo.tUserMaster set cashcost = 10000 where gameid = 'mtxxxx3'
-exec spu_CheckNickName 'mtxxxx3', '049000s1i0n7t8445289', 333, 'mtnickname', -1		-- 다른 사람이 사용중...
+exec spu_CheckNickName 'mtxxxx3', '049000s1i0n7t8445289', 333, 'mt3', -1				-- 최소4자리 이하...
 
-update dbo.tUserMaster set cashcost = 10000 where gameid = 'mtxxxx3'
-exec spu_CheckNickName 'mtxxxx3', '049000s1i0n7t8445289', 333, 'mt3', -1			-- 최소4자리 이하...
-
-update dbo.tUserMaster set cashcost = 10000 where gameid = 'mtxxxx3'
+update dbo.tUserMaster set cashcost = 10000, nickname = 'mtxxxx3' where gameid = 'mtxxxx3'
 exec spu_CheckNickName 'mtxxxx3', '049000s1i0n7t8445289', 333, '닉네임mt31', -1			-- 정상처리.
 exec spu_CheckNickName 'mtxxxx3', '049000s1i0n7t8445289', 333, '닉네임mt32', -1			-- 정상처리.
-exec spu_CheckNickName 'mtxxxx3', '049000s1i0n7t8445289', 333, '닉네임mt33', -1			-- 정상처리.
 
 */
 use GameMTBaseball
@@ -42,6 +42,7 @@ as
 
 	-- 요구캐쉬.
 	declare @NICKNAME_CHANGE_NEED_CASHCOST		int				set @NICKNAME_CHANGE_NEED_CASHCOST		= 1000
+	declare @NICKNAME_CHANGE_ITEMCODE			int				set @NICKNAME_CHANGE_ITEMCODE			= 4700
 
 	------------------------------------------------
 	--	2-1. 내부사용 변수
@@ -52,6 +53,13 @@ as
 	declare @oldnickname	varchar(20)		set @oldnickname	= ''
 	declare @cashcost 		int				set @cashcost		= 0
 	declare @gamecost 		int				set @gamecost		= 0
+	declare @listidx		int				set @listidx		= -1
+	declare @cnt			int				set @cnt			= 0
+
+	DECLARE @tTempTable TABLE(
+		listidx 	int
+	);
+
 Begin
 	------------------------------------------------
 	--	3-1. 초기화
@@ -70,6 +78,16 @@ Begin
 	from dbo.tUserMaster
 	where gameid = @gameid_ and password = @password_
 	--select 'DEBUG ', @gameid gameid, @cashcost cashcost, @gamecost gamecost, @oldnickname oldnickname, @sid sid
+
+	------------------------------------------------
+	--	3-3. 보유템.
+	------------------------------------------------
+	select
+		@listidx 	= listidx,
+		@cnt		= cnt
+	from dbo.tUserItem
+	where gameid = @gameid and itemcode = @NICKNAME_CHANGE_ITEMCODE
+	--select 'DEBUG ', @listidx listidx, @cnt cnt
 
 	------------------------------------------------
 	--	3-3. 유저생성.
@@ -99,7 +117,7 @@ Begin
 			set @comment 	= '최소 4자리 이상이여야 합니다.'
 			--select 'DEBUG ' + @comment
 		end
-	else if( @cashcost < @NICKNAME_CHANGE_NEED_CASHCOST )
+	else if( ( @listidx = -1 or @cnt <= 0 ) and @cashcost < @NICKNAME_CHANGE_NEED_CASHCOST )
 		begin
 			set @nResult_ 	= @RESULT_ERROR_CASHCOST_LACK
 			set @comment 	= '캐쉬비용(다이아)이 부족합니다.'
@@ -120,7 +138,22 @@ Begin
 			---------------------------------------------------
 			-- 정보변경
 			---------------------------------------------------
-			set @cashcost = @cashcost - @NICKNAME_CHANGE_NEED_CASHCOST
+			if( @listidx != -1 and @cnt > 0 )
+				begin
+
+					update dbo.tUserItem
+						set
+							cnt = cnt - 1
+					where gameid = @gameid and listidx = @listidx
+
+					--select 'DEBUG 닉네임 변경권 사용해서 변경'
+					insert into @tTempTable( listidx ) values ( @listidx )
+				end
+			else
+				begin
+					set @cashcost = @cashcost - @NICKNAME_CHANGE_NEED_CASHCOST
+					--select 'DEBUG 캐쉬로 변경'
+				end
 
 			---------------------------------------------------
 			-- 유저 정보 갱신
@@ -147,6 +180,16 @@ Begin
 	--	3-3. 결과리턴
 	------------------------------------------------
 	select @nResult_ rtn, @comment comment, @cashcost cashcost, @gamecost gamecost
+
+	if(@nResult_ = @RESULT_SUCCESS)
+		BEGIN
+			--------------------------------------------------------------
+			-- 유저 보유 아이템 정보
+			--------------------------------------------------------------
+			select * from dbo.tUserItem
+			where gameid = @gameid_ and listidx in ( select listidx from @tTempTable )
+		END
+
 
 	--최종 결과를 리턴한다.
 	set nocount off

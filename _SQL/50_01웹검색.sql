@@ -56,6 +56,8 @@
 --exec spu_GameMTBaseballD 19,2000, 29, 62359,-1,-1,-1,-1, -1, -1, 'mtxxxx3', 'admin', '', '', '', '', '', '', '', ''			-- 배팅정보 강제계산.
 --exec spu_GameMTBaseballD 19,2000, 27, 10, -1, -1, -1, -1, -1, -1, 'mtxxxx3', 'admin', '', '', '', '', '', '', '', ''			-- 상태변경.
 --exec spu_GameMTBaseballD 19,2000, 28, 10, -1, -1, -1, -1, -1, -1, 'mtxxxx3', 'admin', '', '', '', '', '', '', '', ''			-- 상태변경.
+--exec spu_GameMTBaseballD 19,2000, 30,  1, -1, -1, -1, -1, -1, -1, 'xxxx', '', '', '', '', '', '', '', '', ''					-- 배팅정보 강제삭제.
+--exec spu_GameMTBaseballD 19,2000, 31, 10, -1, -1, -1, -1, -1, -1, 'mtxxxx3', 'admin', '', '', '', '', '', '', '', ''			-- 배팅정보 강제롤백.
 --exec spu_GameMTBaseballD 19,1010, -1, -1, -1, -1,  1, -1, -1, -1, 'mtxxxx3', '', '', '', '', '', '', '', '', ''				-- 배팅정보 리스트.
 --exec spu_GameMTBaseballD 19,1011, -1, -1, -1, -1,  1, -1, -1, -1, 'mtxxxx3', '', '', '', '', '', '', '', '', ''				-- 배팅결과 리스트.
 --exec spu_GameMTBaseballD 19, 1109, -1, -1, -1, -1,  1, -1, -1, -1, 'mtxxxx3', '', '', '', '', '', '', '', '', ''				-- 닉네임변경.
@@ -1177,6 +1179,17 @@ Begin
 					where gameid = @gameid
 					order by idx desc
 
+					-----------------------------------------------
+					---- 배팅로고
+					-----------------------------------------------
+					select top 10 * from dbo.tPracticeGame
+					where gameid = @gameid
+					order by idx desc
+
+					select top 10 * from dbo.tPracticeGameLog
+					where gameid = @gameid
+					order by idx desc
+
 					---------------------------------------------
 					-- 비정상행동
 					---------------------------------------------
@@ -1608,6 +1621,16 @@ Begin
 									set @comment = '관리자(' + @gameid + ')가 배팅데이타를 강제 연산처리해버린다.'
 									exec spu_AdminActionBlock @adminid, @gameid, @comment
 								end
+						end
+					else if(@p3_ = 30)
+						begin
+							-- 삭제처리하기.
+							delete from dbo.tPracticeGame where idx = @p4_
+						end
+					else if(@p3_ = 31)
+						begin
+							-- 로고삭제.
+							delete from dbo.tPracticeGameLog where idx = @p4_
 						end
 
 					select 1 rtn
@@ -2041,6 +2064,8 @@ Begin
 					union all select * from dbo.tItemInfo where						 itemcode = 3600	--
 					union all select * from dbo.tItemInfo where subcategory = 45 						-- 조합주문서
 					union all select * from dbo.tItemInfo where subcategory = 46 						-- 수수료주문서
+					union all select * from dbo.tItemInfo where subcategory = 47 						-- 닉네임변경권
+					union all select * from dbo.tItemInfo where subcategory = 48 						-- 랜덤 다이아 박스.
 					union all select * from dbo.tItemInfo where subcategory = 40 						-- 박스템
 					union all select * from dbo.tItemInfo where subcategory = 41 						-- 박스템
 					union all select * from dbo.tItemInfo where subcategory = 42 						-- 박스템

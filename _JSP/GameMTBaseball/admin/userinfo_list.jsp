@@ -521,6 +521,7 @@ function f_Submit(f) {
 							<td>
 								<a href=usersetting_ok.jsp?p1=19&p2=2000&p3=25&p4=<%=result.getInt("idx")%>&ps1=<%=result.getString("gameid")%>&ps2=<%=adminid%>&gameid=<%=result.getString("gameid")%>&branch=userinfo_list>강제삭제</a>
 								<a href=usersetting_ok.jsp?p1=19&p2=2000&p3=26&p4=<%=result.getInt("idx")%>&ps1=<%=result.getString("gameid")%>&ps2=<%=adminid%>&gameid=<%=result.getString("gameid")%>&branch=userinfo_list>강제롤백</a>
+								<a href=usersetting_ok.jsp?p1=19&p2=2000&p3=29&p4=<%=result.getInt("idx")%>&ps1=<%=result.getString("gameid")%>&ps2=<%=adminid%>&gameid=<%=result.getString("gameid")%>&branch=userinfo_list>강제계산</a>
 							</td>
 						</tr>
 					<%}%>

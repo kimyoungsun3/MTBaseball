@@ -1149,6 +1149,7 @@ GO
 CREATE INDEX idx_tLottoInfo_nextturntime ON tLottoInfo (nextturntime)
 GO
 
+
 ---------------------------------------------
 -- 	싱글배팅(ing)
 ---------------------------------------------
@@ -1303,6 +1304,102 @@ IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tSingleGameLog_gameid
     DROP INDEX tSingleGameLog.idx_tSingleGameLog_gameid_idx
 GO
 CREATE INDEX idx_tSingleGameLog_gameid_idx ON tSingleGameLog (gameid, idx)
+GO
+---------------------------------------------
+-- 	연습게임(Practice)
+---------------------------------------------
+IF OBJECT_ID (N'dbo.tPracticeGame', N'U') IS NOT NULL
+	DROP TABLE dbo.tPracticeGame;
+GO
+
+create table dbo.tPracticeGame(
+	idx				int					IDENTITY(1,1),
+
+	gameid			varchar(20),
+	curturntime		int,										-- 나눔로또의 회차.
+	curturndate		datetime,
+
+	-- 유저가 선택한 정보.
+	gamemode		int,										-- 연습(0), 싱글(1), 멀티(2)
+	select1			int					default(-1),			-- 파워볼홀짝 	-> 미선택(-1), 스트라이크(0), 볼(1)
+	select2			int					default(-1),			-- 파워볼언오 	-> 미선택(-1), 직구(0), 변화구(1)
+	select3			int					default(-1),			-- 합볼홀짝 	-> 미선택(-1), 좌(0), 우(1)
+	select4			int					default(-1),			-- 합볼언오 	-> 미선택(-1), 상(0), 하(1)
+	selectdata		varchar(100),
+
+	-- 플레이당시 정보.
+	writedate		datetime			default(getdate()),
+	level			int					default(1),
+	exp				int					default(0),				--
+
+	CONSTRAINT	pk_tPracticeGame_curturntime_gameid	PRIMARY KEY(curturntime, gameid)
+)
+
+IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tPracticeGame_idx')
+    DROP INDEX tPracticeGame.idx_tPracticeGame_idx
+GO
+CREATE INDEX idx_tPracticeGame_idx ON tPracticeGame (idx)
+GO
+
+
+---------------------------------------------
+-- 	연습게임(Practice Log)
+---------------------------------------------
+IF OBJECT_ID (N'dbo.tPracticeGameLog', N'U') IS NOT NULL
+	DROP TABLE dbo.tPracticeGameLog;
+GO
+
+create table dbo.tPracticeGameLog(
+	idx				int					IDENTITY(1,1),
+	idx2			int,
+
+	gameid			varchar(20),
+	curturntime		int,										-- 나눔로또의 회차.
+	curturndate		datetime,
+
+	-- 유저가 선택한 정보.
+	gamemode		int,										-- 연습(0), 싱글(1), 멀티(2)
+	select1			int					default(-1),			-- 파워볼홀짝 	-> 미선택(-1), 스트라이크(0), 볼(1)
+	select2			int					default(-1),			-- 파워볼언오 	-> 미선택(-1), 직구(0), 변화구(1)
+	select3			int					default(-1),			-- 합볼홀짝 	-> 미선택(-1), 좌(0), 우(1)
+	select4			int					default(-1),			-- 합볼언오 	-> 미선택(-1), 상(0), 하(1)
+	selectdata		varchar(100),
+
+	-- 플레이당시 정보.
+	writedate		datetime			default(getdate()),
+	level			int					default(1),
+	exp				int					default(0),				--
+
+	-- 결과정보.
+	gameresult		int					default(-1),			-- 진행중(-1)
+																-- 아웃(0), 1루타(1), 2루타(2), 3루타(3), 홈런(4)
+	gainexp			int					default(0),				-- 획득경험치
+	rselect1 		int 				default(-1),			-- 각배팅결과 -> 미선택(-1), 패(0), 승(1)
+	rselect2 		int 				default(-1),
+	rselect3 		int 				default(-1),
+	rselect4 		int 				default(-1),
+
+	ltselect1		int					default(-1),										-- 로또의 정보.
+	ltselect2		int					default(-1),
+	ltselect3		int					default(-1),
+	ltselect4		int					default(-1),
+
+	resultdate		datetime,									-- 결과기록시간
+
+	-- Constraint
+	CONSTRAINT	pk_tPracticeGameLog_curturntime_gameid	PRIMARY KEY(curturntime, gameid)
+)
+
+IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tPracticeGameLog_idx')
+    DROP INDEX tPracticeGameLog.idx_tPracticeGameLog_idx
+GO
+CREATE INDEX idx_tPracticeGameLog_idx ON tPracticeGameLog (idx)
+GO
+
+IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tPracticeGameLog_gameid_idx')
+    DROP INDEX tPracticeGameLog.idx_tPracticeGameLog_gameid_idx
+GO
+CREATE INDEX idx_tPracticeGameLog_gameid_idx ON tPracticeGameLog (gameid, idx)
 GO
 
 
