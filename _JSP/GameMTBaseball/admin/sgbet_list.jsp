@@ -52,7 +52,7 @@ function f_Submit(f) {
 				<table>
 					<tr>
 						<td colspan=4>
-							배팅중인 정보 있음 <a href=sgbet_list.jsp><img src=images/refresh2.png alt="화면갱신"></a>
+							싱글 배팅중인 정보 있음 <a href=sgbet_list.jsp><img src=images/refresh2.png alt="화면갱신"></a>
 						</td>
 					</tr>
 					<tr>

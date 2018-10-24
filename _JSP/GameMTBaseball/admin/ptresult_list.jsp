@@ -47,12 +47,12 @@ function f_Submit(f) {
 	<tbody>
 	<tr>
 		<td align="center">
-			<form name="GIFTFORM" method="post" action="sgresult_list.jsp" onsubmit="return f_Submit(this);">
+			<form name="GIFTFORM" method="post" action="ptresult_list.jsp" onsubmit="return f_Submit(this);">
 			<div  style="border:1px solid #D7D6D6;background:#FCFCFC;padding:36px 0;">
 				<table>
 					<tr>
 						<td colspan=4>
-							싱글 배팅결과 정보 있음 <a href=sgresult_list.jsp><img src=images/refresh2.png alt="화면갱신"></a>
+							연습 배팅결과 정보 있음 <a href=ptresult_list.jsp><img src=images/refresh2.png alt="화면갱신"></a>
 						</td>
 					</tr>
 					<tr>
@@ -65,11 +65,11 @@ function f_Submit(f) {
 				<table border=1>
 					<%
 					//2. 데이타 조작
-					//exec spu_GameMTBaseballD 19,1011, -1, -1, -1, -1,  1, -1, -1, -1, 'mtxxxx3', '', '', '', '', '', '', '', '', ''				-- 배팅정보 리스트.
+					//exec spu_GameMTBaseballD 19,1013, -1, -1, -1, -1,  1, -1, -1, -1, 'mtxxxx3', '', '', '', '', '', '', '', '', ''				-- 연습 배팅결과 리스트.
 					query.append("{ call dbo.spu_GameMTBaseballD (?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?)} ");
 					cstmt = conn.prepareCall(query.toString());
 					cstmt.setInt(idxColumn++, 19);
-					cstmt.setInt(idxColumn++, 1011);
+					cstmt.setInt(idxColumn++, 1013);
 					cstmt.setInt(idxColumn++, -1);
 					cstmt.setInt(idxColumn++, -1);
 					cstmt.setInt(idxColumn++, -1);
@@ -113,49 +113,35 @@ function f_Submit(f) {
 							<td>직구/변화구<br>결과</td>
 							<td>좌/우<br>결과</td>
 							<td>상/하<br>결과</td>
-							<td>접속IP<br>PC방gameid</td>
-							<td>레벨<br>PC방획득볼</td>
-							<td>경험치<br>기록일</td>
-							<td>수수료차감값<br>유저획득경험치</td>
-							<td>소모템<br>유저획득볼</td>
+							<td><br>기록일</td>
 							<td>배팅상태</td>
 							<td></td>
 							<td></td>
 						</tr>
-
 					<%while(result.next()){%>
-
 						<tr>
 							<td><%=result.getString("idx")%>(<%=result.getString("idx2")%>)</td>
-							<td><a href=sgresult_list.jsp?gameid=<%=result.getString("gameid")%>><%=result.getString("gameid")%></a></td>
+							<td><a href=ptresult_list.jsp?gameid=<%=result.getString("gameid")%>><%=result.getString("gameid")%></a></td>
 							<td><%=result.getString("curturntime")%></td>
 							<td><%=getDate19(result.getString("curturndate"))%></td>
 							<td><%=getGameMode(result.getInt("gamemode"))%></td>
 							<td>
-								<%=getSelectMode(1, result.getInt("select1"), result.getInt("ltselect1"))%> / 
-								<%=result.getInt("cnt1")%> /
+								<%=getSelectMode(1, result.getInt("select1"), result.getInt("ltselect1"))%> 
 							</td>
 							<td>
-								<%=getSelectMode(2, result.getInt("select2"), result.getInt("ltselect2"))%> / 
-								<%=result.getInt("cnt2")%> /
+								<%=getSelectMode(2, result.getInt("select2"), result.getInt("ltselect2"))%>
 							</td>
 							<td>
-								<%=getSelectMode(3, result.getInt("select3"), result.getInt("ltselect3"))%> / 
-								<%=result.getInt("cnt3")%> /
+								<%=getSelectMode(3, result.getInt("select3"), result.getInt("ltselect3"))%>
 							</td>
 							<td>
-								<%=getSelectMode(4, result.getInt("select4"), result.getInt("ltselect4"))%> / 
-								<%=result.getInt("cnt4")%> /
+								<%=getSelectMode(4, result.getInt("select4"), result.getInt("ltselect4"))%>
 							</td>
-							<td><%=result.getString("connectip")%></td>
 							<td><%=result.getInt("level")%></td>
 							<td><%=result.getInt("exp")%></td>
-							<td><%=(float)result.getInt("commissionbet")/100%>%</td>
-							<td><%=result.getInt("consumeitemcode")%></td>
-							<td><%=getGameState(result.getInt("gamestate"))%></td>
 							<td><%=getDate19(result.getString("writedate"))%></td>
 							<td>
-								<a href=usersetting_ok.jsp?p1=19&p2=2000&p3=27&p4=<%=result.getInt("idx")%>&ps1=<%=result.getString("gameid")%>&ps2=<%=adminid%>&gameid=<%=result.getString("gameid")%>&branch=sgresult_list>강제삭제</a>							
+								<a href=usersetting_ok.jsp?p1=19&p2=2000&p3=31&p4=<%=result.getInt("idx")%>&ps1=<%=result.getString("gameid")%>&ps2=<%=adminid%>&gameid=<%=result.getString("gameid")%>&branch=ptresult_list>강제삭제</a>							
 							</td>
 						</tr>
 						<tr>
@@ -167,12 +153,8 @@ function f_Submit(f) {
 							<td><%=getRSelect(result.getInt("rselect4"))%></td>
 							
 							
-							<td><%=result.getString("pcgameid")%></td>
-							<td><%=result.getString("pcgamecost")%></td>
 							<td><%=getDate19(result.getString("resultdate"))%></td>
 							<td><%=result.getInt("gainexp")%></td>
-							<td><%=result.getInt("gaingamecost")%></td>
-							<td><%=getEarnCompare(result.getInt("betgamecostearn"), result.getInt("betgamecostorg"))%></td>
 							<td></td>
 							<td></td>
 							<td></td>
@@ -184,9 +166,9 @@ function f_Submit(f) {
 					<%}%>
 					<tr>
 						<td colspan=5 align=center>
-								<a href=sgresult_list.jsp?idxPage=<%=(idxPage - 1 < 1)?1:(idxPage-1)%>><<</a>
+								<a href=ptresult_list.jsp?idxPage=<%=(idxPage - 1 < 1)?1:(idxPage-1)%>><<</a>
 								<%=idxPage%> / <%=maxPage%>
-								<a href=sgresult_list.jsp?idxPage=<%=(idxPage + 1 > maxPage)?maxPage:(idxPage + 1)%>>>></a>
+								<a href=ptresult_list.jsp?idxPage=<%=(idxPage + 1 > maxPage)?maxPage:(idxPage + 1)%>>>></a>
 						</td>
 					</tr>
 				</table>

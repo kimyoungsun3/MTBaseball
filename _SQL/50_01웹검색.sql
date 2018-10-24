@@ -56,10 +56,12 @@
 --exec spu_GameMTBaseballD 19,2000, 29, 62359,-1,-1,-1,-1, -1, -1, 'mtxxxx3', 'admin', '', '', '', '', '', '', '', ''			-- 배팅정보 강제계산.
 --exec spu_GameMTBaseballD 19,2000, 27, 10, -1, -1, -1, -1, -1, -1, 'mtxxxx3', 'admin', '', '', '', '', '', '', '', ''			-- 상태변경.
 --exec spu_GameMTBaseballD 19,2000, 28, 10, -1, -1, -1, -1, -1, -1, 'mtxxxx3', 'admin', '', '', '', '', '', '', '', ''			-- 상태변경.
---exec spu_GameMTBaseballD 19,2000, 30,  1, -1, -1, -1, -1, -1, -1, 'xxxx', '', '', '', '', '', '', '', '', ''					-- 배팅정보 강제삭제.
---exec spu_GameMTBaseballD 19,2000, 31, 10, -1, -1, -1, -1, -1, -1, 'mtxxxx3', 'admin', '', '', '', '', '', '', '', ''			-- 배팅정보 강제롤백.
---exec spu_GameMTBaseballD 19,1010, -1, -1, -1, -1,  1, -1, -1, -1, 'mtxxxx3', '', '', '', '', '', '', '', '', ''				-- 배팅정보 리스트.
---exec spu_GameMTBaseballD 19,1011, -1, -1, -1, -1,  1, -1, -1, -1, 'mtxxxx3', '', '', '', '', '', '', '', '', ''				-- 배팅결과 리스트.
+--exec spu_GameMTBaseballD 19,2000, 30,  1, -1, -1, -1, -1, -1, -1, 'xxxx', '', '', '', '', '', '', '', '', ''					-- 싱글 배팅정보 강제삭제.
+--exec spu_GameMTBaseballD 19,2000, 31, 10, -1, -1, -1, -1, -1, -1, 'mtxxxx3', 'admin', '', '', '', '', '', '', '', ''			-- 싱글 배팅정보 강제롤백.
+--exec spu_GameMTBaseballD 19,1010, -1, -1, -1, -1,  1, -1, -1, -1, 'mtxxxx3', '', '', '', '', '', '', '', '', ''				-- 싱글 배팅정보 리스트.
+--exec spu_GameMTBaseballD 19,1011, -1, -1, -1, -1,  1, -1, -1, -1, 'mtxxxx3', '', '', '', '', '', '', '', '', ''				-- 싱글 배팅결과 리스트.
+--exec spu_GameMTBaseballD 19,1012, -1, -1, -1, -1,  1, -1, -1, -1, 'mtxxxx3', '', '', '', '', '', '', '', '', ''				-- 연습 배팅정보 리스트.
+--exec spu_GameMTBaseballD 19,1013, -1, -1, -1, -1,  1, -1, -1, -1, 'mtxxxx3', '', '', '', '', '', '', '', '', ''				-- 연습 배팅결과 리스트.
 --exec spu_GameMTBaseballD 19, 1109, -1, -1, -1, -1,  1, -1, -1, -1, 'mtxxxx3', '', '', '', '', '', '', '', '', ''				-- 닉네임변경.
 
 --exec spu_GameMTBaseballD 19, 1001, -1, -1, -1, -1, -1, -1, -1, -1, '', '', '', '', '', '', '', '', '', ''						-- 블럭리스트
@@ -1372,6 +1374,67 @@ Begin
 							set @page		= 1
 
 							select top 100 @maxPage maxPage, @page page, * from dbo.tSingleGameLog
+							where gameid = @gameid
+							order by idx desc
+						end
+				end
+			--------------------------------------------
+			-- 연스모드 배팅 / 로고.
+			--------------------------------------------
+			else if(@p2_ =  1012)
+				begin
+					if(isnull(@gameid, '') = '')
+						begin
+							set @idxPage	= @p7_
+							select @idx = (isnull(max(idx), 1)) from dbo.tPracticeGame
+
+							set @maxPage	= @idx / @PAGE_LINE
+							set @maxPage 	= @maxPage + case when (@idx % @PAGE_LINE != 0) then 1 else 0 end
+							set @page		= case
+												when (@idxPage <= 0)			then 1
+												when (@idxPage >  @maxPage)	then @maxPage
+												else @idxPage
+											end
+							set @idx		= @idx - (@page - 1) * @PAGE_LINE
+
+							select top 100 @maxPage maxPage, @page page, * from dbo.tPracticeGame
+							where idx <= @idx order by idx desc
+						end
+					else
+						begin
+							set @maxPage	= 1
+							set @page		= 1
+
+							select top 100 @maxPage maxPage, @page page, * from dbo.tPracticeGame
+							where gameid = @gameid
+							order by idx desc
+						end
+				end
+			else if(@p2_ =  1013)
+				begin
+					if(isnull(@gameid, '') = '')
+						begin
+							set @idxPage	= @p7_
+							select @idx = (isnull(max(idx), 1)) from dbo.tPracticeGameLog
+
+							set @maxPage	= @idx / @PAGE_LINE
+							set @maxPage 	= @maxPage + case when (@idx % @PAGE_LINE != 0) then 1 else 0 end
+							set @page		= case
+												when (@idxPage <= 0)			then 1
+												when (@idxPage >  @maxPage)	then @maxPage
+												else @idxPage
+											end
+							set @idx		= @idx - (@page - 1) * @PAGE_LINE
+
+							select top 100 @maxPage maxPage, @page page, * from dbo.tPracticeGameLog
+							where idx <= @idx order by idx desc
+						end
+					else
+						begin
+							set @maxPage	= 1
+							set @page		= 1
+
+							select top 100 @maxPage maxPage, @page page, * from dbo.tPracticeGameLog
 							where gameid = @gameid
 							order by idx desc
 						end

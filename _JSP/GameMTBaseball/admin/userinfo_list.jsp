@@ -452,7 +452,7 @@ function f_Submit(f) {
 				-->
 				<%if(cstmt.getMoreResults()){
 					result = cstmt.getResultSet();%>
-					<br><br><a href=sgbet_list.jsp?gameid=<%=gameid%> target=_blank>배팅중(더보기)</a>
+					<br><br><a href=sgbet_list.jsp?gameid=<%=gameid%> target=_blank>싱글 배팅중(더보기)</a>
 					<table border=1>
 						<tr>
 							<td colspan=2></td>
@@ -530,7 +530,7 @@ function f_Submit(f) {
 				
 				<%if(cstmt.getMoreResults()){
 					result = cstmt.getResultSet();%>
-					<br><br><a href=sgresult_list.jsp?gameid=<%=gameid%> target=_blank>배팅결과(더보기)</a>
+					<br><br><a href=sgresult_list.jsp?gameid=<%=gameid%> target=_blank>싱글 배팅결과(더보기)</a>
 					<table border=1>
 						<tr>
 							<td colspan=2></td>
@@ -621,6 +621,141 @@ function f_Submit(f) {
 				<%}%>
 				
 
+				<%if(cstmt.getMoreResults()){
+					result = cstmt.getResultSet();%>
+					<br><br><a href=ptbet_list.jsp?gameid=<%=gameid%> target=_blank>연습 배팅중(더보기)</a>
+					<table border=1>
+						<tr>
+							<td colspan=2></td>
+							<td colspan=2>배팅</td>
+							<td></td>
+							<td>파워볼</td>
+							<td></td>
+							<td>합볼</td>
+							<td></td>
+							<td colspan=2>배팅시 정보</td>
+							<td colspan=2></td>
+						</tr>
+						<tr>
+							<td>인덱스</td>
+							<td></td>
+							<td>회차</td>
+							<td>들어올예정시간</td>
+							<td>게임모드</td>
+							<td>스트라이크/볼</td>
+							<td>직구/변화구</td>
+							<td>좌/우</td>
+							<td>상/하</td>
+							<td>레벨</td>
+							<td>경험치</td>
+							<td>배팅상태</td>
+							<td></td>
+						</tr>
+					<%while(result.next()){%>
+						<tr>
+							<td><%=result.getString("idx")%></td>
+							<td><%=result.getString("gameid")%></td>
+							<td><%=result.getString("curturntime")%></td>
+							<td><%=getDate19(result.getString("curturndate"))%></td>
+							<td><%=getGameMode(result.getInt("gamemode"))%></td>
+							<td>
+								<%=getSelectMode(1, result.getInt("select1"), -1)%>
+							</td>
+							<td>
+								<%=getSelectMode(2, result.getInt("select2"), -1)%>
+							</td>
+							<td>
+								<%=getSelectMode(3, result.getInt("select3"), -1)%>
+							</td>
+							<td>
+								<%=getSelectMode(4, result.getInt("select4"), -1)%>
+							</td>
+							<td><%=result.getInt("level")%></td>
+							<td><%=result.getInt("exp")%></td>
+							<td><%=getDate19(result.getString("writedate"))%></td>
+							<td>
+								<a href=usersetting_ok.jsp?p1=19&p2=2000&p3=30&p4=<%=result.getInt("idx")%>&ps1=<%=result.getString("gameid")%>&ps2=<%=adminid%>&gameid=<%=result.getString("gameid")%>&branch=userinfo_list>강제삭제</a>
+							</td>
+						</tr>
+					<%}%>
+					</table>
+				<%}%>
+				
+				<%if(cstmt.getMoreResults()){
+					result = cstmt.getResultSet();%>
+					<br><br><a href=ptresult_list.jsp?gameid=<%=gameid%> target=_blank>연습 배팅결과(더보기)</a>
+					<table border=1>
+						<tr>
+							<td colspan=2></td>
+							<td colspan=2>배팅</td>
+							<td></td>
+							<td>파워볼</td>
+							<td></td>
+							<td>합볼</td>
+							<td></td>
+							<td colspan=4>배팅시 정보</td>
+							<td colspan=4></td>
+						</tr>
+						<tr>
+							<td>인덱스</td>
+							<td></td>
+							<td>회차</td>
+							<td>들어올예정시간</td>
+							<td>게임모드<br>결과</td>
+							<td>스트라이크/볼<br>결과</td>
+							<td>직구/변화구<br>결과</td>
+							<td>좌/우<br>결과</td>
+							<td>상/하<br>결과</td>
+							<td><br>기록일</td>
+							<td>배팅상태</td>
+							<td></td>
+							<td></td>
+						</tr>
+					<%while(result.next()){%>
+						<tr <%=getColor(++row%2)%>>
+							<td><%=result.getString("idx")%>(<%=result.getString("idx2")%>)</td>
+							<td><%=result.getString("gameid")%></td>
+							<td><%=result.getString("curturntime")%></td>
+							<td><%=getDate19(result.getString("curturndate"))%></td>
+							<td><%=getGameMode(result.getInt("gamemode"))%></td>
+							<td>
+								<%=getSelectMode(1, result.getInt("select1"), result.getInt("ltselect1"))%>
+							</td>
+							<td>
+								<%=getSelectMode(2, result.getInt("select2"), result.getInt("ltselect2"))%>
+							</td>
+							<td>
+								<%=getSelectMode(3, result.getInt("select3"), result.getInt("ltselect3"))%>
+							</td>
+							<td>
+								<%=getSelectMode(4, result.getInt("select4"), result.getInt("ltselect4"))%>
+							</td>
+							<td><%=result.getInt("level")%>렙</td>
+							<td>exp <%=result.getInt("exp")%></td>
+							<td><%=getDate19(result.getString("writedate"))%></td>
+							<td>
+								<a href=usersetting_ok.jsp?p1=19&p2=2000&p3=31&p4=<%=result.getInt("idx")%>&ps1=<%=result.getString("gameid")%>&ps2=<%=adminid%>&gameid=<%=result.getString("gameid")%>&branch=userinfo_list>강제삭제</a>							
+							</td>
+						</tr>
+						<tr <%=getColor(row%2)%>>
+							<td colspan=4></td>
+							<td><%=getGameResult(result.getInt("gameresult"))%></td>							
+							<td><%=getRSelect(result.getInt("rselect1"))%></td>
+							<td><%=getRSelect(result.getInt("rselect2"))%></td>
+							<td><%=getRSelect(result.getInt("rselect3"))%></td>
+							<td><%=getRSelect(result.getInt("rselect4"))%></td>
+							
+							
+							<td><%=getDate19(result.getString("resultdate"))%></td>
+							<td>획득 exp:<%=result.getInt("gainexp")%></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							
+						</tr>
+					<%}%>
+					</table>
+				<%}%>
 				<%if(cstmt.getMoreResults()){
 					result = cstmt.getResultSet();%>
 					<br><br><a href=unusual_list.jsp?gameid=<%=gameid%> target=_blank>비정상행동(더보기)</a>

@@ -70,6 +70,8 @@ as
 	------------------------------------------------
 	declare @comment				varchar(512)		set @comment			= ''
 	declare @gameid					varchar(20)			set @gameid				= ''
+	declare @cashcost				int					set @cashcost			= 0
+	declare @gamecost				int					set @gamecost			= 0
 	declare @sid					int					set @sid				= -1
 	declare @cursyscheck			int					set @cursyscheck		= @SYSCHECK_YES
 	declare @blockstate				int					set @blockstate			= @BLOCK_STATE_YES
@@ -91,6 +93,7 @@ Begin
 	------------------------------------------------
 	select
 		@gameid 		= gameid,	@blockstate		= blockstate,
+		@cashcost		= cashcost,	@gamecost		= gamecost,
 		@sid			= sid
 	from dbo.tUserMaster
 	where gameid = @gameid_ and password = @password_
@@ -160,7 +163,7 @@ Begin
 	--------------------------------------------------------------
 	-- 결과전송.
 	--------------------------------------------------------------
-	select @nResult_ rtn, @comment comment, @curdate curdate, @curturntime curturntime, @curturndate curturndate
+	select @nResult_ rtn, @comment comment, @curdate curdate, @curturntime curturntime, @curturndate curturndate, @cashcost cashcost, @gamecost gamecost
 
 
 

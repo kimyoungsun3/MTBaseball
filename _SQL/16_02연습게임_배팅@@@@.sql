@@ -1,12 +1,12 @@
 /*
--- select=번호:select:cnt;
---        [1번자리] : STRIKE( 0 ) : 수량(0) )
+-- select=번호:select;
+--        [1번자리] : STRIKE( 0 ) )
 declare @curturntime int  		select top 1 @curturntime = nextturntime from tLottoInfo order by curturntime desc
---declare @select varchar(100)	set @select = '1:-1:0;2:-1:0;3:-1:0;4:-1:0;'	-- 0개 배팅
---declare @select varchar(100)	set @select = '1: 0:0;2:-1:0;3:-1:0;4:-1:0;'	-- 1개 배팅
-declare @select varchar(100)	set @select = '1: 0:0;2: 0:0;3:-1:0;4:-1:0;'	-- 2개 배팅
---declare @select varchar(100)	set @select = '1: 0:0;2: 0:0;3: 0:0;4:-1:0;'	-- 3개 배팅
---declare @select varchar(100)	set @select = '1: 0:0;2: 0:0;3: 0:0;4: 0:0;'	-- 4개 배팅
+--declare @select varchar(100)	set @select = '1:-1;2:-1;3:-1;4:-1;'	-- 0개 배팅
+--declare @select varchar(100)	set @select = '1: 0;2:-1;3:-1;4:-1;'	-- 1개 배팅
+declare @select varchar(100)	set @select = '1: 0;2: 0;3:-1;4:-1;'	-- 2개 배팅
+--declare @select varchar(100)	set @select = '1: 0;2: 0;3: 0;4:-1;'	-- 3개 배팅
+--declare @select varchar(100)	set @select = '1: 0;2: 0;3: 0;4: 0;'	-- 4개 배팅
 
 --delete from dbo.tPracticeGame      	where gameid = 'mtxxxx3' and curturntime = (select top 1 nextturntime from tLottoInfo order by curturntime desc)
 exec spu_PTBet 'mtxxxx3', '049000s1i0n7t8445289', 333, 0, @curturntime, @select, -1
@@ -131,11 +131,11 @@ Begin
 		@sid		= sid
 	from dbo.tUserMaster
 	where gameid = @gameid_ and password = @password_
-	----select 'DEBUG 3-2 유저정보', @gameid gameid, @sid sid, @blockstate blockstate, @exp exp, @cashcost cashcost, @gamecost gamecost
+	--select 'DEBUG 3-2 유저정보', @gameid gameid, @sid sid, @blockstate blockstate, @exp exp, @cashcost cashcost, @gamecost gamecost
 
 	--	3-3. 공지사항 체크
 	select top 1 @cursyscheck = syscheck from dbo.tNotice order by idx desc
-	----select 'DEBUG 3-3 공지사항', @cursyscheck cursyscheck
+	--select 'DEBUG 3-3 공지사항', @cursyscheck cursyscheck
 
 	-- 진행중인 회차 정보
 	select top 1
@@ -157,10 +157,10 @@ Begin
 	---------------------------------------------------------
 	if( LEN( @select_ ) > 8)
 		begin
-			SELECT @select1 = param2 FROM dbo.fnu_SplitThree(';', ':', @select_) where param1 = 1
-			SELECT @select2 = param2 FROM dbo.fnu_SplitThree(';', ':', @select_) where param1 = 2
-			SELECT @select3 = param2 FROM dbo.fnu_SplitThree(';', ':', @select_) where param1 = 3
-			SELECT @select4 = param2 FROM dbo.fnu_SplitThree(';', ':', @select_) where param1 = 4
+			SELECT @select1 = param2 FROM dbo.fnu_SplitTwo(';', ':', @select_) where param1 = 1
+			SELECT @select2 = param2 FROM dbo.fnu_SplitTwo(';', ':', @select_) where param1 = 2
+			SELECT @select3 = param2 FROM dbo.fnu_SplitTwo(';', ':', @select_) where param1 = 3
+			SELECT @select4 = param2 FROM dbo.fnu_SplitTwo(';', ':', @select_) where param1 = 4
 		end
 	--select 'DEBUG 3-7 배팅 템정보.', @select1 select1, @select2 select2, @select3 select3, @select4 select4
 

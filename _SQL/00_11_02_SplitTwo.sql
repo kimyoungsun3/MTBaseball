@@ -8,21 +8,21 @@ SELECT * FROM dbo.fnu_SplitTwo(';', ':', '0:1;2:3;')
 SELECT * FROM dbo.fnu_SplitTwo(';', ':', '0:1;8:10000')
 
 -- 1. 커서 생성
-declare @fieldidx		int,
-		@listidx		int
+declare @param1		int,
+		@param2		int
 
 declare curTemp Cursor for
-select fieldidx, listidx FROM dbo.fnu_SplitTwo(';', ':', '0:1;2:3')
+select param1, param2 FROM dbo.fnu_SplitTwo(';', ':', '0:1;2:3')
 
 -- 2. 커서오픈
 open curTemp
 
 -- 3. 커서 사용
-Fetch next from curTemp into @fieldidx, @listidx
+Fetch next from curTemp into @param1, @param2
 while @@Fetch_status = 0
 	Begin
-		select @fieldidx, @listidx
-		Fetch next from curTemp into @fieldidx, @listidx
+		select @param1, @param2
+		Fetch next from curTemp into @param1, @param2
 	end
 
 -- 4. 커서닫기
@@ -44,8 +44,8 @@ CREATE FUNCTION dbo.fnu_SplitTwo(
 )
 	RETURNS
 		@SPLIT_TABLE_TEMP TABLE (
-			fieldidx		int,
-			listidx			int
+			param1			int,
+			param2			int
 		)
 AS
 begin
@@ -61,8 +61,8 @@ begin
 			@posNext 	int,
 			@posCenter 	int,
 			@strLen		int,
-			@fieldidx	varchar(20),
-			@listidx	varchar(20)
+			@param1	varchar(20),
+			@param2	varchar(20)
 	declare @strTemp 	VARCHAR(8000) 	-- 분리된 문자열 임시 저장변수
 
 	set @posStart 	= 1 	-- 구분문자 검색을 시작할 위치
@@ -91,17 +91,17 @@ begin
 			-- 2차분리.
 			------------------------------
 			set @posCenter 	= CHARINDEX(@charSplit2_, @strTemp, 1)
-			set @fieldidx = SUBSTRING(@strTemp, 1, @posCenter - 1)
-			set @listidx = RIGHT(@strTemp, len(@strTemp) - @posCenter)
-			--select @strTemp, @fieldidx, @listidx, @posCenter, @posStart, @posNext, @strLen
+			set @param1 = SUBSTRING(@strTemp, 1, @posCenter - 1)
+			set @param2 = RIGHT(@strTemp, len(@strTemp) - @posCenter)
+			--select @strTemp, @param1, @param2, @posCenter, @posStart, @posNext, @strLen
 
 			------------------------------
 			-- 데이타입력.
 			------------------------------
 			if len(@strTemp) > 0
 				begin
-					insert @SPLIT_TABLE_TEMP (fieldidx, listidx)
-					values (@fieldidx, @listidx)
+					insert @SPLIT_TABLE_TEMP (param1, param2)
+					values (@param1, @param2)
 				end
 			set @posStart	= @posNext + 1
 			if(@posNext >= @strLen)

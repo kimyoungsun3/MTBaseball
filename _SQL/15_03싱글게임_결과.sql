@@ -616,7 +616,8 @@ Begin
 	@ltselect1 ltselect1, @ltselect2 ltselect2, @ltselect3 ltselect3, @ltselect4 ltselect4,
 	@rselect1 rselect1, @rselect2 rselect2, @rselect3 rselect3, @rselect4 rselect4,
 	@rcnt1 rcnt1, @rcnt2 rcnt2, @rcnt3 rcnt3, @rcnt4 rcnt4,
-	@gameresult gameresult
+	@gameresult gameresult,
+	@exp exp, @level level, @giftsendexists levelup
 
 
 	if(@nResult_ = @RESULT_SUCCESS)

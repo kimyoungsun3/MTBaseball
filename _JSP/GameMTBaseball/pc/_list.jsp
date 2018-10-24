@@ -172,6 +172,52 @@
 			curturntime=		<br>
 		</td>
 	</tr>
+	
+	<tr>
+		<td>ptready.jsp</td>
+		<td>
+			<a href=ptready.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&gmode=0>연습게임</a>
+		</td>
+		<td>
+			gameid=xxxx			<br>
+			password=			<br>
+			sid=				<br>
+			gmode=				<br>
+		</td>
+	</tr>
+	<tr>
+		<td>ptbet.jsp</td>
+		<td>
+			<a href=ptbet.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&gmode=0&curturntime=-1&select=1:0;2:-1;3:-1;4:-1;>연습배팅x1</a><br>
+			<a href=ptbet.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&gmode=0&curturntime=-1&select=1:0;2:0;3:0;4:0;>연습배팅x4</a><br>
+			보기만 할때는 전송안하셔도 됩니다.
+		</td>
+		<td>
+			gameid=xxxx			<br>
+			password=			<br>
+			sid=				<br>
+			gmode=				<br>
+			curturntime=		<br>
+			select=				<br>
+		</td>
+	</tr>
+
+	<tr>
+		<td>ptresult.jsp</td>
+		<td>
+			<a href=ptresult.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&gmode=0&curturntime=831844>연습 831844 결과</a><br>
+			<a href=ptresult.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&gmode=0&curturntime=831845>연습 831845 결과</a><br>
+			<a href=ptresult.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&gmode=0&curturntime=831842>연습 831842 결과</a><br>
+			<a href=ptresult.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&gmode=0&curturntime=831843>연습 831843 결과</a><br>
+		</td>
+		<td>
+			gameid=xxxx			<br>
+			password=			<br>
+			sid=				<br>
+			gmode=				<br>
+			curturntime=		<br>
+		</td>
+	</tr>
 	<tr>
 		<td>kchecknn.jsp</td>
 		<td>
