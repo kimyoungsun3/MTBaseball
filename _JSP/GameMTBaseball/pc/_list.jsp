@@ -218,6 +218,7 @@
 			curturntime=		<br>
 		</td>
 	</tr>
+	
 	<tr>
 		<td>kchecknn.jsp</td>
 		<td>
@@ -228,6 +229,18 @@
 			gameid=xxxx			<br>
 			password=			<br>
 			nickname=			<br>
+		</td>
+	</tr>
+
+	<tr>
+		<td>gamerecord.jsp</td>
+		<td>
+			<a href=gamerecord.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333>기록실 보기(싱글,연습)</a><br>
+		</td>
+		<td>
+			gameid=xxxx			<br>
+			password=			<br>
+			sid=				<br>
 		</td>
 	</tr>
 	<%/*%>		
