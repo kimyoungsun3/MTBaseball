@@ -9,6 +9,7 @@ exec spu_UserCreate 'xxxx5',   '049000s1i0n7t8445289', '길동6', '19980106', '010
 exec spu_UserCreate 'xxxx6',   '049000s1i0n7t8445289', '길동7', '19980107', '01011112227', 'xxxx7@gmail.com',    '길동7닉네임', 100, -1
 exec spu_UserCreate 'xxxx7',   '049000s1i0n7t8445289', '길동8', '19980108', '01011112228', 'xxxx8@gmail.com',    '길동8닉네임', 100, -1
 exec spu_UserCreate 'xxxx8',   '049000s1i0n7t8445289', '길동9', '19980109', '01011112229', 'xxxx9@gmail.com',    '길동9닉네임', 100, -1
+exec spu_UserCreate 'xxxx10',  '049000s1i0n7t8445289', '길동10','19980109', '01011112230', 'xxxx10@gmail.com',   '길동10닉네임',100, -1
 
 -- select * from dbo.tUserBlockLog where gameid = ''
 -- select * from dbo.tUserMaster where gameid = ''
@@ -110,6 +111,21 @@ as
 	declare @ITEM_SUBCATEGORY_WEAR_KNEEPAD		int					set @ITEM_SUBCATEGORY_WEAR_KNEEPAD			= 12 -- 무릎 보호대(12)
 	declare @ITEM_SUBCATEGORY_WEAR_SOCKS		int					set @ITEM_SUBCATEGORY_WEAR_SOCKS			= 13 -- 양말(13)
 
+	-- 아이템 기본 listidx.
+	declare @BASE_HELMET_LISTIDX				int 				set @BASE_HELMET_LISTIDX					= 1
+	declare @BASE_SHIRT_LISTIDX					int 				set @BASE_SHIRT_LISTIDX						= 2
+	declare @BASE_PANTS_LISTIDX					int 				set @BASE_PANTS_LISTIDX						= 3
+	declare @BASE_GLOVES_LISTIDX				int 				set @BASE_GLOVES_LISTIDX					= 4
+	declare @BASE_SHOES_LISTIDX					int 				set @BASE_SHOES_LISTIDX						= 5
+	declare @BASE_BAT_LISTIDX					int 				set @BASE_BAT_LISTIDX						= 6
+	declare @BASE_BALL_LISTIDX					int 				set @BASE_BALL_LISTIDX						= 7
+	declare @BASE_GOGGLE_LISTIDX				int 				set @BASE_GOGGLE_LISTIDX					= 8
+	declare @BASE_WRISTBAND_LISTIDX				int 				set @BASE_WRISTBAND_LISTIDX					= 9
+	declare @BASE_ELBOWPAD_LISTIDX				int 				set @BASE_ELBOWPAD_LISTIDX					= 10
+	declare @BASE_BELT_LISTIDX					int 				set @BASE_BELT_LISTIDX						= 11
+	declare @BASE_KNEEPAD_LISTIDX				int 				set @BASE_KNEEPAD_LISTIDX					= 12
+	declare @BASE_SOCKS_LISTIDX					int 				set @BASE_SOCKS_LISTIDX						= 13
+
 	-- 선물 정의값
 	declare @GIFTLIST_GIFT_KIND_MESSAGE			int					set @GIFTLIST_GIFT_KIND_MESSAGE				= 1
 	declare @GIFTLIST_GIFT_KIND_GIFT			int					set @GIFTLIST_GIFT_KIND_GIFT				= 2
@@ -133,19 +149,19 @@ as
 	declare @cashcost 		int
 	declare @loop 			int
 
-	declare @helmetlistidx		int 		set @helmetlistidx 			= 1
-	declare @shirtlistidx		int 		set @shirtlistidx			= 2
-	declare @pantslistidx		int 		set @pantslistidx			= 3
-	declare @gloveslistidx		int 		set @gloveslistidx			= 4
-	declare @shoeslistidx		int 		set @shoeslistidx			= 5
-	declare @batlistidx			int 		set @batlistidx				= 6
-	declare @balllistidx		int 		set @balllistidx			= 7
-	declare @gogglelistidx		int 		set @gogglelistidx			= 8
-	declare @wristbandlistidx	int 		set @wristbandlistidx		= 9
-	declare @elbowpadlistidx	int 		set @elbowpadlistidx		= 10
-	declare @beltlistidx		int 		set @beltlistidx			= 11
-	declare @kneepadlistidx		int 		set @kneepadlistidx			= 12
-	declare @sockslistidx		int 		set @sockslistidx			= 13
+	declare @helmetlistidx		int 		set @helmetlistidx 			= @BASE_HELMET_LISTIDX
+	declare @shirtlistidx		int 		set @shirtlistidx			= @BASE_SHIRT_LISTIDX
+	declare @pantslistidx		int 		set @pantslistidx			= @BASE_PANTS_LISTIDX
+	declare @gloveslistidx		int 		set @gloveslistidx			= @BASE_GLOVES_LISTIDX
+	declare @shoeslistidx		int 		set @shoeslistidx			= @BASE_SHOES_LISTIDX
+	declare @batlistidx			int 		set @batlistidx				= @BASE_BAT_LISTIDX
+	declare @balllistidx		int 		set @balllistidx			= @BASE_BALL_LISTIDX
+	declare @gogglelistidx		int 		set @gogglelistidx			= @BASE_GOGGLE_LISTIDX
+	declare @wristbandlistidx	int 		set @wristbandlistidx		= @BASE_WRISTBAND_LISTIDX
+	declare @elbowpadlistidx	int 		set @elbowpadlistidx		= @BASE_ELBOWPAD_LISTIDX
+	declare @beltlistidx		int 		set @beltlistidx			= @BASE_BELT_LISTIDX
+	declare @kneepadlistidx		int 		set @kneepadlistidx			= @BASE_KNEEPAD_LISTIDX
+	declare @sockslistidx		int 		set @sockslistidx			= @BASE_SOCKS_LISTIDX
 
 Begin
 	------------------------------------------------
@@ -220,7 +236,7 @@ Begin
 			set @itemcode		= 1
 
 			insert into dbo.tUserItem(gameid,   listidx,      itemcode, cnt, invenkind)
-			values(					 @gameid_, @helmetlistidx, 	   100,   1, @USERITEM_INVENKIND_WEAR)
+			values(					 @gameid_, @helmetlistidx,     100,   1, @USERITEM_INVENKIND_WEAR)
 
 			insert into dbo.tUserItem(gameid,   listidx,      itemcode, cnt, invenkind)
 			values(					 @gameid_, @shirtlistidx, 	   200,   1, @USERITEM_INVENKIND_WEAR)
@@ -244,19 +260,19 @@ Begin
 			values(					 @gameid_, @gogglelistidx, 	   800,   1, @USERITEM_INVENKIND_WEAR)
 
 			insert into dbo.tUserItem(gameid,   listidx,      itemcode, cnt, invenkind)
-			values(					 @gameid_, @wristbandlistidx, 	900,   1, @USERITEM_INVENKIND_WEAR)
+			values(					 @gameid_, @wristbandlistidx,  900,   1, @USERITEM_INVENKIND_WEAR)
 
 			insert into dbo.tUserItem(gameid,   listidx,      itemcode, cnt, invenkind)
-			values(					 @gameid_, @elbowpadlistidx, 	1000,   1, @USERITEM_INVENKIND_WEAR)
+			values(					 @gameid_, @elbowpadlistidx,  1000,   1, @USERITEM_INVENKIND_WEAR)
 
 			insert into dbo.tUserItem(gameid,   listidx,      itemcode, cnt, invenkind)
-			values(					 @gameid_, @beltlistidx, 	    1100,   1, @USERITEM_INVENKIND_WEAR)
+			values(					 @gameid_, @beltlistidx, 	  1100,   1, @USERITEM_INVENKIND_WEAR)
 
 			insert into dbo.tUserItem(gameid,   listidx,      itemcode, cnt, invenkind)
-			values(					 @gameid_, @kneepadlistidx, 	1200,   1, @USERITEM_INVENKIND_WEAR)
+			values(					 @gameid_, @kneepadlistidx,   1200,   1, @USERITEM_INVENKIND_WEAR)
 
 			insert into dbo.tUserItem(gameid,   listidx,      itemcode, cnt, invenkind)
-			values(					 @gameid_, @sockslistidx, 	   1300,   1, @USERITEM_INVENKIND_WEAR)
+			values(					 @gameid_, @sockslistidx, 	  1300,   1, @USERITEM_INVENKIND_WEAR)
 
 			---------------------------------------------
 			-- 유저 정보 입력하기
