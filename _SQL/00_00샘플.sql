@@ -13,6 +13,7 @@ GO
 create procedure dbo.spu_SamplePro
 	@gameid_				varchar(20),						-- 게임아이디
 	@password_				varchar(20),						-- 암호화해서저장, 유저패스워가 해킹당해도 안전
+	@randserial_			varchar(20),						--
 	@nResult_				int					OUTPUT
 	--WITH ENCRYPTION
 as

@@ -93,10 +93,11 @@ create table dbo.tUserMaster(
 	beltlistidx			int 			default(-1),
 	kneepadlistidx		int 			default(-1),
 	sockslistidx		int 			default(-1),
-	wearplusexp			int 			default(0),				--착용템의 레벨업 +능력
 
 	-- 추가경험치값 (만분률값임... 100 -> 1%를 의미...)
-	helmetexp			int 			default(0),
+	wearplusexp			int 			default(0), 		-- 전체추가 경험치 ( 각파트 + 세트추가 )
+	setplusexp			int 			default(0),			--                    세트추가값
+	helmetexp			int 			default(0),			-- 착용템의 각파트.
 	shirtexp			int 			default(0),
 	pantsexp			int 			default(0),
 	glovesexp			int 			default(0),
@@ -111,19 +112,19 @@ create table dbo.tUserMaster(
 	socksexp			int 			default(0),
 
 	-- 세트번호.... -1(의미없음.), 0, 1, 2, 3, 4번까지 있음
-	helmetset			int 			default(-1),
-	shirtset			int 			default(-1),
-	pantsset			int 			default(-1),
-	glovesset			int 			default(-1),
-	shoesset			int 			default(-1),
-	batset				int 			default(-1),
-	ballset				int 			default(-1),
-	goggleset			int 			default(-1),
-	wristbandset		int 			default(-1),
-	elbowpadset			int 			default(-1),
-	beltset				int 			default(-1),
-	kneepadset			int 			default(-1),
-	socksset			int 			default(-1),
+	helmetsetnum		int 			default(-1),
+	shirtsetnum			int 			default(-1),
+	pantssetnum			int 			default(-1),
+	glovessetnum		int 			default(-1),
+	shoessetnum			int 			default(-1),
+	batsetnum			int 			default(-1),
+	ballsetnum			int 			default(-1),
+	gogglesetnum		int 			default(-1),
+	wristbandsetnum		int 			default(-1),
+	elbowpadsetnum		int 			default(-1),
+	beltsetnum			int 			default(-1),
+	kneepadsetnum		int 			default(-1),
+	sockssetnum			int 			default(-1),
 
 	-- 이벤트.
 	eventspot01		int					default(0),				-- 로그인사용(1~5).
