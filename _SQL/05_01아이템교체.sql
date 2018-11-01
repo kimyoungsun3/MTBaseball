@@ -300,35 +300,35 @@ Begin
 				begin
 					set @helmetlistidx 		= @listidx_
 					set @helmetexp			= @expincrease100
-					set @helmetsetnum 			= @setcode
+					set @helmetsetnum 		= @setcode
 					--select 'DEBUG 헬멧교체'
 				end
 			else if( @subcategory = @ITEM_SUBCATEGORY_WEAR_SHIRT )
 				begin
 					set @shirtlistidx 		= @listidx_
 					set @shirtexp			= @expincrease100
-					set @shirtsetnum 			= @setcode
+					set @shirtsetnum 		= @setcode
 					--select 'DEBUG shirt 교체'
 				end
 			else if( @subcategory = @ITEM_SUBCATEGORY_WEAR_PANTS )
 				begin
 					set @pantslistidx 		= @listidx_
 					set @pantsexp			= @expincrease100
-					set @pantssetnum 			= @setcode
+					set @pantssetnum 		= @setcode
 					--select 'DEBUG pants 교체'
 				end
 			else if( @subcategory = @ITEM_SUBCATEGORY_WEAR_GLOVES )
 				begin
 					set @gloveslistidx 		= @listidx_
 					set @glovesexp			= @expincrease100
-					set @glovessetnum 			= @setcode
+					set @glovessetnum 		= @setcode
 					--select 'DEBUG gloves 교체'
 				end
 			else if( @subcategory = @ITEM_SUBCATEGORY_WEAR_SHOES )
 				begin
 					set @shoeslistidx 		= @listidx_
 					set @shoesexp			= @expincrease100
-					set @shoessetnum 			= @setcode
+					set @shoessetnum 		= @setcode
 					--select 'DEBUG shoes 교체'
 				end
 			else if( @subcategory = @ITEM_SUBCATEGORY_WEAR_BAT )
@@ -342,35 +342,35 @@ Begin
 				begin
 					set @balllistidx 		= @listidx_
 					set @ballexp			= @expincrease100
-					set @ballsetnum 			= @setcode
+					set @ballsetnum 		= @setcode
 					--select 'DEBUG ball 교체'
 				end
 			else if( @subcategory = @ITEM_SUBCATEGORY_WEAR_GOGGLE )
 				begin
 					set @gogglelistidx 		= @listidx_
 					set @goggleexp			= @expincrease100
-					set @gogglesetnum 			= @setcode
+					set @gogglesetnum 		= @setcode
 					--select 'DEBUG goggle 교체'
 				end
 			else if( @subcategory = @ITEM_SUBCATEGORY_WEAR_WRISTBAND )
 				begin
 					set @wristbandlistidx 	= @listidx_
 					set @wristbandexp		= @expincrease100
-					set @wristbandsetnum 		= @setcode
+					set @wristbandsetnum 	= @setcode
 					--select 'DEBUG wristband 교체'
 				end
 			else if( @subcategory = @ITEM_SUBCATEGORY_WEAR_ELBOWPAD )
 				begin
 					set @elbowpadlistidx 	= @listidx_
 					set @elbowpadexp		= @expincrease100
-					set @elbowpadsetnum 		= @setcode
+					set @elbowpadsetnum 	= @setcode
 					--select 'DEBUG elbowpad 교체'
 				end
 			else if( @subcategory = @ITEM_SUBCATEGORY_WEAR_BELT )
 				begin
 					set @beltlistidx 		= @listidx_
 					set @beltexp			= @expincrease100
-					set @beltsetnum 			= @setcode
+					set @beltsetnum 		= @setcode
 					--select 'DEBUG belt 교체'
 				end
 			else if( @subcategory = @ITEM_SUBCATEGORY_WEAR_KNEEPAD )
@@ -384,7 +384,7 @@ Begin
 				begin
 					set @sockslistidx 		= @listidx_
 					set @socksexp			= @expincrease100
-					set @sockssetnum 			= @setcode
+					set @sockssetnum 		= @setcode
 					--select 'DEBUG socks 교체'
 				end
 			set @wearplusexp = @helmetexp + @shirtexp + @pantsexp + @glovesexp + @shoesexp + @batexp + @ballexp + @goggleexp + @wristbandexp + @elbowpadexp + @beltexp + @kneepadexp + @socksexp

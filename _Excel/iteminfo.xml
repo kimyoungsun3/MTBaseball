@@ -2515,7 +2515,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>2435</getpercent1000>
+		<getpercent1000>2425</getpercent1000>
 		<combcode>4</combcode>
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
@@ -2541,7 +2541,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>2435</getpercent1000>
+		<getpercent1000>2425</getpercent1000>
 		<combcode>4</combcode>
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
@@ -2567,7 +2567,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>395</getpercent1000>
+		<getpercent1000>2425</getpercent1000>
 		<combcode>4</combcode>
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
@@ -2593,7 +2593,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>2425</getpercent1000>
+		<getpercent1000>395</getpercent1000>
 		<combcode>4</combcode>
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
@@ -3035,7 +3035,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>2435</getpercent1000>
+		<getpercent1000>2425</getpercent1000>
 		<combcode>9</combcode>
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
@@ -3061,7 +3061,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>2435</getpercent1000>
+		<getpercent1000>2425</getpercent1000>
 		<combcode>9</combcode>
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
@@ -3087,7 +3087,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>395</getpercent1000>
+		<getpercent1000>2425</getpercent1000>
 		<combcode>9</combcode>
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
@@ -3113,7 +3113,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>2425</getpercent1000>
+		<getpercent1000>395</getpercent1000>
 		<combcode>9</combcode>
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
@@ -3555,7 +3555,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>2435</getpercent1000>
+		<getpercent1000>2425</getpercent1000>
 		<combcode>14</combcode>
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
@@ -3581,7 +3581,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>2435</getpercent1000>
+		<getpercent1000>2425</getpercent1000>
 		<combcode>14</combcode>
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
@@ -3607,7 +3607,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>395</getpercent1000>
+		<getpercent1000>2425</getpercent1000>
 		<combcode>14</combcode>
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
@@ -3633,7 +3633,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>2425</getpercent1000>
+		<getpercent1000>395</getpercent1000>
 		<combcode>14</combcode>
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
@@ -4075,7 +4075,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>2435</getpercent1000>
+		<getpercent1000>2425</getpercent1000>
 		<combcode>19</combcode>
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
@@ -4101,7 +4101,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>2435</getpercent1000>
+		<getpercent1000>2425</getpercent1000>
 		<combcode>19</combcode>
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
@@ -4127,7 +4127,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>395</getpercent1000>
+		<getpercent1000>2425</getpercent1000>
 		<combcode>19</combcode>
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
@@ -4153,7 +4153,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>2425</getpercent1000>
+		<getpercent1000>395</getpercent1000>
 		<combcode>19</combcode>
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
@@ -4595,7 +4595,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>2435</getpercent1000>
+		<getpercent1000>2425</getpercent1000>
 		<combcode>24</combcode>
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
@@ -4621,7 +4621,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>2435</getpercent1000>
+		<getpercent1000>2425</getpercent1000>
 		<combcode>24</combcode>
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
@@ -4647,7 +4647,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>395</getpercent1000>
+		<getpercent1000>2425</getpercent1000>
 		<combcode>24</combcode>
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
@@ -4673,7 +4673,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>2425</getpercent1000>
+		<getpercent1000>395</getpercent1000>
 		<combcode>24</combcode>
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
@@ -5115,7 +5115,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>2435</getpercent1000>
+		<getpercent1000>2425</getpercent1000>
 		<combcode>29</combcode>
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
@@ -5141,7 +5141,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>2435</getpercent1000>
+		<getpercent1000>2425</getpercent1000>
 		<combcode>29</combcode>
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
@@ -5167,7 +5167,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>395</getpercent1000>
+		<getpercent1000>2425</getpercent1000>
 		<combcode>29</combcode>
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
@@ -5193,7 +5193,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>2425</getpercent1000>
+		<getpercent1000>395</getpercent1000>
 		<combcode>29</combcode>
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
@@ -5635,7 +5635,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>2435</getpercent1000>
+		<getpercent1000>2425</getpercent1000>
 		<combcode>34</combcode>
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
@@ -5661,7 +5661,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>2435</getpercent1000>
+		<getpercent1000>2425</getpercent1000>
 		<combcode>34</combcode>
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
@@ -5687,7 +5687,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>395</getpercent1000>
+		<getpercent1000>2425</getpercent1000>
 		<combcode>34</combcode>
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
@@ -5713,7 +5713,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>2425</getpercent1000>
+		<getpercent1000>395</getpercent1000>
 		<combcode>34</combcode>
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
@@ -6155,7 +6155,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>2435</getpercent1000>
+		<getpercent1000>2425</getpercent1000>
 		<combcode>39</combcode>
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
@@ -6181,7 +6181,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>2435</getpercent1000>
+		<getpercent1000>2425</getpercent1000>
 		<combcode>39</combcode>
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
@@ -6207,7 +6207,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>395</getpercent1000>
+		<getpercent1000>2425</getpercent1000>
 		<combcode>39</combcode>
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
@@ -6233,7 +6233,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>2425</getpercent1000>
+		<getpercent1000>395</getpercent1000>
 		<combcode>39</combcode>
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
@@ -6675,7 +6675,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>2435</getpercent1000>
+		<getpercent1000>2425</getpercent1000>
 		<combcode>44</combcode>
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
@@ -6701,7 +6701,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>2435</getpercent1000>
+		<getpercent1000>2425</getpercent1000>
 		<combcode>44</combcode>
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
@@ -6727,7 +6727,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>395</getpercent1000>
+		<getpercent1000>2425</getpercent1000>
 		<combcode>44</combcode>
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
@@ -6753,7 +6753,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>2425</getpercent1000>
+		<getpercent1000>395</getpercent1000>
 		<combcode>44</combcode>
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
@@ -7195,7 +7195,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>2435</getpercent1000>
+		<getpercent1000>2425</getpercent1000>
 		<combcode>49</combcode>
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
@@ -7221,7 +7221,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>2435</getpercent1000>
+		<getpercent1000>2425</getpercent1000>
 		<combcode>49</combcode>
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
@@ -7247,7 +7247,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>395</getpercent1000>
+		<getpercent1000>2425</getpercent1000>
 		<combcode>49</combcode>
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
@@ -7273,7 +7273,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>2425</getpercent1000>
+		<getpercent1000>395</getpercent1000>
 		<combcode>49</combcode>
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
@@ -7715,7 +7715,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>2435</getpercent1000>
+		<getpercent1000>2425</getpercent1000>
 		<combcode>54</combcode>
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
@@ -7741,7 +7741,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>2435</getpercent1000>
+		<getpercent1000>2425</getpercent1000>
 		<combcode>54</combcode>
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
@@ -7767,7 +7767,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>395</getpercent1000>
+		<getpercent1000>2425</getpercent1000>
 		<combcode>54</combcode>
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
@@ -7793,7 +7793,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>2425</getpercent1000>
+		<getpercent1000>395</getpercent1000>
 		<combcode>54</combcode>
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
@@ -8235,7 +8235,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>2435</getpercent1000>
+		<getpercent1000>2425</getpercent1000>
 		<combcode>59</combcode>
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
@@ -8261,7 +8261,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>2435</getpercent1000>
+		<getpercent1000>2425</getpercent1000>
 		<combcode>59</combcode>
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
@@ -8287,7 +8287,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>395</getpercent1000>
+		<getpercent1000>2425</getpercent1000>
 		<combcode>59</combcode>
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
@@ -8313,7 +8313,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>2425</getpercent1000>
+		<getpercent1000>395</getpercent1000>
 		<combcode>59</combcode>
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
@@ -8755,7 +8755,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>2435</getpercent1000>
+		<getpercent1000>2425</getpercent1000>
 		<combcode>64</combcode>
 		<combsuborder>1</combsuborder>
 		<successpercent>1</successpercent>
@@ -8781,7 +8781,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>2435</getpercent1000>
+		<getpercent1000>2425</getpercent1000>
 		<combcode>64</combcode>
 		<combsuborder>2</combsuborder>
 		<successpercent>1</successpercent>
@@ -8807,7 +8807,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>395</getpercent1000>
+		<getpercent1000>2425</getpercent1000>
 		<combcode>64</combcode>
 		<combsuborder>3</combsuborder>
 		<successpercent>1</successpercent>
@@ -8833,7 +8833,7 @@
 		<sellcost>0</sellcost>
 		<description>금 랜덤박스</description>
 		<getbox>4003</getbox>
-		<getpercent1000>2425</getpercent1000>
+		<getpercent1000>395</getpercent1000>
 		<combcode>64</combcode>
 		<combsuborder>4</combsuborder>
 		<successpercent>1</successpercent>
@@ -8952,7 +8952,7 @@
 		<itemname>돌 조각 랜덤박스</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
-		<grade>0</grade>
+		<grade>1</grade>
 		<discount>0</discount>
 		<icon>box01</icon>
 		<playerlv>0</playerlv>
@@ -8972,7 +8972,7 @@
 		<itemname>동 조각 랜덤박스</itemname>
 		<activate>1</activate>
 		<toplist>0</toplist>
-		<grade>1</grade>
+		<grade>2</grade>
 		<discount>0</discount>
 		<icon>box02</icon>
 		<playerlv>0</playerlv>
@@ -8992,7 +8992,7 @@
 		<itemname>은 조각 랜덤박스</itemname>
 		<activate>1</activate>
 		<toplist>0</toplist>
-		<grade>2</grade>
+		<grade>3</grade>
 		<discount>0</discount>
 		<icon>box03</icon>
 		<playerlv>0</playerlv>
@@ -9012,7 +9012,7 @@
 		<itemname>금 조각 랜덤박스</itemname>
 		<activate>1</activate>
 		<toplist>0</toplist>
-		<grade>3</grade>
+		<grade>4</grade>
 		<discount>0</discount>
 		<icon>box04</icon>
 		<playerlv>0</playerlv>
@@ -9032,7 +9032,7 @@
 		<itemname>티타늄 조각 랜덤박스</itemname>
 		<activate>1</activate>
 		<toplist>0</toplist>
-		<grade>4</grade>
+		<grade>5</grade>
 		<discount>0</discount>
 		<icon>box05</icon>
 		<playerlv>0</playerlv>
@@ -9052,7 +9052,7 @@
 		<itemname>돌 의상 랜덤박스</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
-		<grade>0</grade>
+		<grade>1</grade>
 		<discount>0</discount>
 		<icon>box01</icon>
 		<playerlv>0</playerlv>
@@ -9071,7 +9071,7 @@
 		<itemname>동 의상 랜덤박스</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
-		<grade>1</grade>
+		<grade>2</grade>
 		<discount>0</discount>
 		<icon>box02</icon>
 		<playerlv>0</playerlv>
@@ -9090,7 +9090,7 @@
 		<itemname>은 의상 랜덤박스</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
-		<grade>2</grade>
+		<grade>3</grade>
 		<discount>0</discount>
 		<icon>box03</icon>
 		<playerlv>0</playerlv>
@@ -9109,7 +9109,7 @@
 		<itemname>금 의상 랜덤박스</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
-		<grade>3</grade>
+		<grade>4</grade>
 		<discount>0</discount>
 		<icon>box04</icon>
 		<playerlv>0</playerlv>
@@ -9128,7 +9128,7 @@
 		<itemname>티타늄 의상 랜덤박스</itemname>
 		<activate>0</activate>
 		<toplist>0</toplist>
-		<grade>4</grade>
+		<grade>5</grade>
 		<discount>0</discount>
 		<icon>box05</icon>
 		<playerlv>0</playerlv>
@@ -9153,7 +9153,7 @@
 		<playerlv>0</playerlv>
 		<multistate>0</multistate>
 		<gamecost>0</gamecost>
-		<cashcost>0</cashcost>
+		<cashcost>1000</cashcost>
 		<buyamount>1</buyamount>
 		<sellcost>0</sellcost>
 		<description>코치나 감독의 조언 주문서가 일정 확률로 나온다.</description>
@@ -9178,8 +9178,8 @@
 		<playerlv>0</playerlv>
 		<multistate>0</multistate>
 		<gamecost>0</gamecost>
-		<cashcost>1000</cashcost>
-		<buyamount>3</buyamount>
+		<cashcost>300</cashcost>
+		<buyamount>1</buyamount>
 		<sellcost>1</sellcost>
 		<description>조각들을 완성하는데 필요한 템</description>
 	</spendable>
@@ -9199,7 +9199,7 @@
 		<gamecost>0</gamecost>
 		<cashcost>500</cashcost>
 		<buyamount>1</buyamount>
-		<sellcost>2</sellcost>
+		<sellcost>1</sellcost>
 		<description>상위 등급으로 초월하는데 필요한 소모템</description>
 	</spendable>
 	<spendable>
@@ -9271,7 +9271,7 @@
 		<subcategory>47</subcategory>
 		<equpslot>3</equpslot>
 		<itemname>닉네임 변경권</itemname>
-		<activate>0</activate>
+		<activate>1</activate>
 		<toplist>0</toplist>
 		<grade>1</grade>
 		<discount>0</discount>
@@ -9442,7 +9442,7 @@
 		<subcategory>60</subcategory>
 		<equpslot>0</equpslot>
 		<itemname>볼</itemname>
-		<activate>0</activate>
+		<activate>1</activate>
 		<toplist>0</toplist>
 		<grade>0</grade>
 		<discount>0</discount>

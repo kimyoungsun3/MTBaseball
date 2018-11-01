@@ -179,19 +179,24 @@ function f_Submit(f) {
 								}%><br>
 							</td>
 							<td>
-								helmetlistidx 	: <%=result.getString("helmetlistidx")%><br>
-								shirtlistidx 	: <%=result.getString("shirtlistidx")%><br>
-								pantslistidx 	: <%=result.getString("pantslistidx")%><br>
-								gloveslistidx 	: <%=result.getString("gloveslistidx")%><br>
-								shoeslistidx 	: <%=result.getString("shoeslistidx")%><br>
-								batlistidx 		: <%=result.getString("batlistidx")%><br>
-								balllistidx 	: <%=result.getString("balllistidx")%><br>
-								gogglelistidx 	: <%=result.getString("gogglelistidx")%><br>
-								wristbandlistidx : <%=result.getString("wristbandlistidx")%><br>
-								elbowpadlistidx : <%=result.getString("elbowpadlistidx")%><br>
-								beltlistidx 	: <%=result.getString("beltlistidx")%><br>
-								kneepadlistidx 	: <%=result.getString("kneepadlistidx")%><br>
-								sockslistidx 	: <%=result.getString("sockslistidx")%><br>
+								착용템총: <%=(float)result.getInt("wearplusexp") / 100%>%
+								(<%=(float)(result.getInt("wearplusexp") - result.getInt("setplusexp")) / 100%>
+								+ <%=(float)result.getInt("setplusexp") / 100%>)
+								<br>
+								파트별:listidx (추가경험치/세트)<br>
+								helmetlistidx 	: <%=result.getString("helmetlistidx")%>	( <%=result.getInt("helmetexp")%> / <%=result.getInt("helmetsetnum")%>)<br>
+								shirtlistidx 	: <%=result.getString("shirtlistidx")%> 	( <%=result.getInt("shirtexp")%> / <%=result.getInt("shirtsetnum")%>)<br>
+								pantslistidx 	: <%=result.getString("pantslistidx")%> 	( <%=result.getInt("pantsexp")%> / <%=result.getInt("pantssetnum")%>)<br>
+								gloveslistidx 	: <%=result.getString("gloveslistidx")%> 	( <%=result.getInt("glovesexp")%> / <%=result.getInt("glovessetnum")%>)<br>
+								shoeslistidx 	: <%=result.getString("shoeslistidx")%> 	( <%=result.getInt("shoesexp")%> / <%=result.getInt("shoessetnum")%>)<br>
+								batlistidx 		: <%=result.getString("batlistidx")%> 		( <%=result.getInt("batexp")%> / <%=result.getInt("batsetnum")%>)<br>
+								balllistidx 	: <%=result.getString("balllistidx")%> 		( <%=result.getInt("ballexp")%> / <%=result.getInt("ballsetnum")%>)<br>
+								gogglelistidx 	: <%=result.getString("gogglelistidx")%> 	( <%=result.getInt("goggleexp")%> / <%=result.getInt("gogglesetnum")%>)<br>
+								wristbandlistidx : <%=result.getString("wristbandlistidx")%>( <%=result.getInt("wristbandexp")%> / <%=result.getInt("wristbandsetnum")%>)<br>
+								elbowpadlistidx : <%=result.getString("elbowpadlistidx")%> 	( <%=result.getInt("elbowpadexp")%> / <%=result.getInt("elbowpadsetnum")%>)<br>
+								beltlistidx 	: <%=result.getString("beltlistidx")%> 		( <%=result.getInt("beltexp")%> / <%=result.getInt("beltsetnum")%>)<br>
+								kneepadlistidx 	: <%=result.getString("kneepadlistidx")%> 	( <%=result.getInt("kneepadexp")%> / <%=result.getInt("kneepadsetnum")%>)<br>
+								sockslistidx 	: <%=result.getString("sockslistidx")%> 	( <%=result.getInt("socksexp")%> / <%=result.getInt("sockssetnum")%>)<br>
 							</td>
 							<td>
 								싱글플래그 		: 

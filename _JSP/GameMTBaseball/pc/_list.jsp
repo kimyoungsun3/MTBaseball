@@ -243,6 +243,56 @@
 			sid=				<br>
 		</td>
 	</tr>
+	<tr>
+		<td>itemchange.jsp</td>
+		<td>
+			<a href=itemchange.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&listidx=1&randserial=831841>기본 HELMET</a><br>
+			<a href=itemchange.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&listidx=39&randserial=831842>티타늄 HELMET</a><br>
+			<a href=itemchange.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&listidx=40&randserial=831843>티타늄 shirt</a><br>
+			<a href=itemchange.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&listidx=41&randserial=831844>티타늄 pants</a><br>
+			<a href=itemchange.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&listidx=42&randserial=831845>티타늄 gloves</a><br>
+			<a href=itemchange.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&listidx=43&randserial=831846>티타늄 shoes</a><br>
+			<a href=itemchange.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&listidx=44&randserial=831847>티타늄 bat</a><br>
+			<a href=itemchange.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&listidx=45&randserial=831848>티타늄 ball</a><br>
+			<a href=itemchange.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&listidx=46&randserial=831849>티타늄 goggle</a><br>
+			<a href=itemchange.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&listidx=47&randserial=831850>티타늄 wristband</a><br>
+			<a href=itemchange.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&listidx=48&randserial=831851>티타늄 elbowpad</a><br>
+			<a href=itemchange.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&listidx=49&randserial=831852>티타늄 belt</a><br>
+			<a href=itemchange.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&listidx=50&randserial=831853>티타늄 kneepad</a><br>
+			<a href=itemchange.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&listidx=51&randserial=831854>티타늄 socks</a><br>			
+		</td>
+		<td>
+			gameid=xxxx			<br>
+			password=			<br>
+			sid=				<br>
+			listidx=			<br>
+			randserial=			<br>
+		</td>
+	</tr>
+	<tr>
+		<td>itembuy.jsp</td>
+		<td>
+			<a href=itembuy.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&itemcode=4000&buycnt=1&randserial=831841>4000	돌 박스. -> error</a><br>
+			<a href=itembuy.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&itemcode=4001&buycnt=1&randserial=831842>4001	동 박스.</a><br>
+			<a href=itembuy.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&itemcode=4001&buycnt=1&randserial=831843>4001	동 박스.</a><br>
+			<a href=itembuy.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&itemcode=4500&buycnt=1&randserial=831844>4500	조합주문서</a><br>
+			<a href=itembuy.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&itemcode=4500&buycnt=1&randserial=831845>4500	조합주문서</a><br>
+			<a href=itembuy.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&itemcode=4501&buycnt=1&randserial=831846>4501	초월주문서</a><br>
+			<a href=itembuy.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&itemcode=4501&buycnt=1&randserial=831847>4501	초월주문서</a><br>
+			<a href=itembuy.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&itemcode=4700&buycnt=1&randserial=831848>4700 	닉네임변경권</a><br>
+			<a href=itembuy.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&itemcode=4700&buycnt=1&randserial=831849>4700	닉네임변경권</a><br>
+			<a href=itembuy.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&itemcode=6000&buycnt=1&randserial=831840>6000 볼구매</a><br>
+			<a href=itembuy.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&itemcode=6000&buycnt=1&randserial=831841>6000 볼구매</a><br>
+		</td>
+		<td>
+			gameid=xxxx			<br>
+			password=			<br>
+			sid=				<br>
+			itemcode=			<br>
+			buycnt=				<br>
+			randserial=			<br>
+		</td>
+	</tr>
 	<%/*%>		
 	<!--
 	<tr>
