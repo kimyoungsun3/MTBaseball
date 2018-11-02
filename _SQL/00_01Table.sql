@@ -126,6 +126,10 @@ create table dbo.tUserMaster(
 	kneepadsetnum		int 			default(-1),
 	sockssetnum			int 			default(-1),
 
+	-- 기타변수.
+	templistidx1	int					default(-1),
+	templistidx2	int					default(-1),
+
 	-- 이벤트.
 	eventspot01		int					default(0),				-- 로그인사용(1~5).
 	eventspot02		int					default(0),

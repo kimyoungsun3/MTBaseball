@@ -1,8 +1,9 @@
 ﻿/*
 -- 구매로그 기록(할인 될 수도 있어 직접 입력하는 형태로 한다. 30 -> 25)
-exec spu_UserItemBuyLogNew 'xxxx', 4001, 1000
+exec spu_UserItemBuyLogNew 'mtxxxx3', 4001, 1000,    0, 1
+exec spu_UserItemBuyLogNew 'mtxxxx3', 4001,    0, 1000, 1
 
-select top  20 * from dbo.tUserItemBuyLog where gameid = 'xxxx' order by idx desc
+select top  20 * from dbo.tUserItemBuyLog order by idx desc
 select top 100 * from dbo.tUserItemBuyLogTotalMaster order by dateid8
 select top 100 * from dbo.tUserItemBuyLogTotalSub order by dateid8 desc, itemcode desc
 select top 100 * from dbo.tUserItemBuyLogMonth order by dateid6 desc, itemcode desc
@@ -17,9 +18,10 @@ GO
 create procedure dbo.spu_UserItemBuyLogNew
 	@gameid_								varchar(20),		-- 게임아이디
 	@itemcode_								int,
+	@gamecost_								int,
 	@cashcost_								int,
-	@gamecost_								int
-	--WITH ENCRYPTION -- 프로시져를 암호화함.
+	@cnt_									int
+	WITH ENCRYPTION -- 프로시져를 암호화함.
 as
 	------------------------------------------------
 	declare @USER_LOGDATA_MAX					int					set @USER_LOGDATA_MAX 						= 200
@@ -48,25 +50,25 @@ Begin
 	select top 1 @idx2 = isnull(idx2, 1) from dbo.tUserItemBuyLog where gameid = @gameid_ order by idx desc
 	set @idx2 = @idx2 + 1
 
-	select top 1 @idx = isnull(idx, -1)
-	from dbo.tUserItemBuyLog
-	where gameid = @gameid_
+	select top 1 @idx = isnull(idx, -1)  from dbo.tUserItemBuyLog where gameid = @gameid_
 	      and buydate2 = @dateid8
 	      and itemcode = @itemcode_
 	 order by idx desc
 
 	if(@idx = -1)
 		begin
-			insert into dbo.tUserItemBuyLog(gameid,   itemcode,   cashcost,   gamecost,   idx2, buydate2)
-			values(                        @gameid_, @itemcode_, @cashcost_, @gamecost_, @idx2, @dateid8)
+			--select 'DEBUG > insert 구매했던 로그(개인)'
+			insert into dbo.tUserItemBuyLog(gameid,   itemcode,   cashcost,   gamecost,   idx2, buydate2,  cnt)
+			values(                        @gameid_, @itemcode_, @cashcost_, @gamecost_, @idx2, @dateid8, @cnt_)
 		end
 	else
 		begin
+			--select 'DEBUG > update 구매했던 로그(개인)'
 			update dbo.tUserItemBuyLog
 				set
 					cashcost 	= cashcost + @cashcost_,
 					gamecost 	= gamecost + @gamecost_,
-					cnt 		= cnt + 1
+					cnt 		= cnt + @cnt_
 			where idx = @idx
 		end
 
@@ -82,8 +84,8 @@ Begin
 		begin
 			--select 'DEBUG > insert'
 
-			insert into dbo.tUserItemBuyLogTotalMaster(dateid8,  cashcost,   gamecost,  cnt)
-			values(                                   @dateid8, @cashcost_, @gamecost_,   1)
+			insert into dbo.tUserItemBuyLogTotalMaster(dateid8,  cashcost,   gamecost,   cnt)
+			values(                                   @dateid8, @cashcost_, @gamecost_, @cnt_)
 		end
 	else
 		begin
@@ -93,7 +95,7 @@ Begin
 				set
 					cashcost = cashcost + @cashcost_,
 					gamecost = gamecost + @gamecost_,
-					cnt = cnt + 1
+					cnt = cnt + @cnt_
 			where dateid8 = @dateid8
 		end
 
@@ -106,8 +108,8 @@ Begin
 		begin
 			--select 'DEBUG > insert'
 
-			insert into dbo.tUserItemBuyLogTotalSub(dateid8,  itemcode,   cashcost,   gamecost,  cnt)
-			values(                                @dateid8, @itemcode_, @cashcost_, @gamecost_,  1)
+			insert into dbo.tUserItemBuyLogTotalSub(dateid8,  itemcode,   cashcost,   gamecost,   cnt)
+			values(                                @dateid8, @itemcode_, @cashcost_, @gamecost_, @cnt_)
 		end
 	else
 		begin
@@ -117,7 +119,7 @@ Begin
 				set
 					cashcost = cashcost + @cashcost_,
 					gamecost = gamecost + @gamecost_,
-					cnt = cnt + 1
+					cnt = cnt + @cnt_
 			where dateid8 = @dateid8 and itemcode = @itemcode_
 		end
 
@@ -129,8 +131,8 @@ Begin
 	if(not exists(select top 1 * from dbo.tUserItemBuyLogMonth where dateid6 = @dateid6 and itemcode = @itemcode_))
 		begin
 			--select 'DEBUG 월별(아이템) insert'
-			insert into dbo.tUserItemBuyLogMonth(dateid6,  itemcode,   cashcost,    gamecost, cnt)
-			values(                             @dateid6, @itemcode_, @cashcost_, @gamecost_,  1)
+			insert into dbo.tUserItemBuyLogMonth(dateid6,  itemcode,   cashcost,    gamecost,  cnt)
+			values(                             @dateid6, @itemcode_, @cashcost_, @gamecost_, @cnt_)
 		end
 	else
 		begin
@@ -140,7 +142,7 @@ Begin
 				set
 					cashcost = cashcost + @cashcost_,
 					gamecost = gamecost + @gamecost_,
-					cnt = cnt + 1
+					cnt = cnt + @cnt_
 			where dateid6 = @dateid6 and itemcode = @itemcode_
 		end
 

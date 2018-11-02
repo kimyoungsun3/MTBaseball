@@ -1,39 +1,35 @@
 /*
--- 1. 아이템을 장착할때 해당 아이템 클릭 (해당아이템 listidx)
--- 2. 아이템을 벗을 때는 캐릭터의 창에서 아이템을 클릭(기본 아이템 listidx)
-exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333,   1, 7711, -1	-- 기본 헬멧
-exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333,  26, 7712, -1	-- 돌 헬멧
-exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333,  39, 7713, -1	-- 티타늄 헬멧
-exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333,  40, 7714, -1	--
-exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333,  41, 7715, -1	--
-exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333,  42, 7716, -1	--
-exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333,  43, 7717, -1	--
-exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333,  44, 7718, -1	--
-exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333,  45, 7719, -1	--
-exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333,  46, 7711, -1	--
-exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333,  47, 7712, -1	--
-exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333,  48, 7713, -1	--
-exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333,  49, 7714, -1	--
-exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333,  50, 7715, -1	--
-exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333,  51, 7716, -1	--
+-- @@@@조각 랜덤박스.
+exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333, 59, 7711, -1	-- 돌 조각 랜덤박스(4000)
+exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333, 59, 7712, -1
+exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333, 52, 7713, -1	-- 동 조각 랜덤박스(4001)
+exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333, 52, 7714, -1
+exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333, 53, 7715, -1	-- 은 조각 랜덤박스(4002)
+exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333, 53, 7716, -1
+exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333, 54, 7717, -1	-- 금 조각 랜덤박스(4003)
+exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333, 54, 7718, -1
+exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333, 55, 7719, -1	-- 티타늄 조각 랜덤박스(4004)
+exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333, 55, 7720, -1
 
-exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333,  26, 7773, -1	-- 돌 헬멧
-exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333,  27, 7774, -1	--
-exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333,  28, 7775, -1	--
-exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333,  29, 7776, -1	--
-exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333,  30, 7777, -1	--
-exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333,  31, 7778, -1	--
-exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333,  32, 7779, -1	--
-exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333,  33, 7771, -1	--
-exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333,  34, 7772, -1	--
-exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333,  35, 7773, -1	--
-exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333,  36, 7774, -1	--
-exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333,  37, 7775, -1	--
-exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333,  38, 7776, -1	--
+-- @@@@의상 랜덤박스.
+exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333, 60, 7721, -1	-- 돌 의상 랜덤박스(4100)
+exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333, 60, 7722, -1
+exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333, 61, 7723, -1	-- 동 의상 랜덤박스(4101)
+exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333, 61, 7724, -1
+exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333, 62, 7725, -1	-- 은 의상 랜덤박스(4102)
+exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333, 62, 7726, -1
+exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333, 63, 7727, -1	-- 금 의상 랜덤박스(4103)
+exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333, 63, 7728, -1
+exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333, 64, 7729, -1	-- 티타늄 의상 랜덤박스(4104)
+exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333, 64, 7720, -1
 
+-- 조언패키지.
+exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333, 65, 7721, -1	-- 조언 패키지 박스(4200)
+exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333, 65, 7722, -1
 
-exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333, 21, 7778, -1	-- 조각으로 변경 -> error
-exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333, 24, 7778, -1	-- 닉네임변경권 -> error
+-- @@@@캐쉬박스.
+exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333, 66, 7723, -1	-- 랜덤 다이아 박스(4800)
+exec spu_ItemOpen 'mtxxxx3', '049000s1i0n7t8445289', 333, 66, 7724, -1
 */
 use GameMTBaseball
 GO
@@ -66,6 +62,11 @@ as
 	declare @RESULT_ERROR_NOT_FOUND_GAMEID		int				set @RESULT_ERROR_NOT_FOUND_GAMEID		= -13			--해당유저를 찾지 못함
 	declare @RESULT_ERROR_SERVER_CHECKING		int				set @RESULT_ERROR_SERVER_CHECKING		= -14			--서버를 점검하고 있다.
 
+	-- MT 게임중에 부족.
+	declare @RESULT_ERROR_CASHCOST_LACK			int				set @RESULT_ERROR_CASHCOST_LACK			= -22			--
+	declare @RESULT_ERROR_GAMECOST_LACK			int				set @RESULT_ERROR_GAMECOST_LACK			= -24			--
+	declare @RESULT_ERROR_ITEM_LACK				int				set @RESULT_ERROR_ITEM_LACK				= -23			--아이템이부족하다.
+
 	-- 기타오류
 	declare @RESULT_ERROR_NOT_FOUND_ITEMCODE	int				set @RESULT_ERROR_NOT_FOUND_ITEMCODE	= -50			-- 아이템코드못찾음
 	declare @RESULT_ERROR_PARAMETER				int				set @RESULT_ERROR_PARAMETER				= -122			-- 파라미터오류.
@@ -82,49 +83,71 @@ as
 	declare @SYSCHECK_NON						int					set @SYSCHECK_NON							= 0
 	declare @SYSCHECK_YES						int					set @SYSCHECK_YES							= 1
 
+	-- MT box open status
+	declare @BOX_OPEN_STATE_SUCCESS				int					set @BOX_OPEN_STATE_SUCCESS					= 1
+	declare @BOX_OPEN_STATE_FAIL				int					set @BOX_OPEN_STATE_FAIL					= -1
+
 	-- MT 아이템별 인벤분류
 	declare @USERITEM_INVENKIND_WEAR			int 				set @USERITEM_INVENKIND_WEAR				= 1
 	declare @USERITEM_INVENKIND_PIECE			int 				set @USERITEM_INVENKIND_PIECE				= 2
 	declare @USERITEM_INVENKIND_CONSUME			int 				set @USERITEM_INVENKIND_CONSUME				= 3
-
-	-- MT 아이템 대분류
-	declare @ITEM_MAINCATEGORY_WEARPART			int					set @ITEM_MAINCATEGORY_WEARPART 			= 1 	-- 장착템(1)
-	--declare @ITEM_MAINCATEGORY_PIECEPART		int					set @ITEM_MAINCATEGORY_PIECEPART			= 15 	-- 조각템(15)
-	--declare @ITEM_MAINCATEGORY_COMSUME		int					set @ITEM_MAINCATEGORY_COMSUME				= 40 	-- 소모품(40)
-	--declare @ITEM_MAINCATEGORY_CASHCOST		int					set @ITEM_MAINCATEGORY_CASHCOST 			= 50 	-- 캐쉬선물(50)
-	--declare @ITEM_MAINCATEGORY_STATICINFO		int					set @ITEM_MAINCATEGORY_STATICINFO 			= 500 	-- 정보수집(500)
-	--declare @ITEM_MAINCATEGORY_LEVELUPREWARD	int					set @ITEM_MAINCATEGORY_LEVELUPREWARD		= 510 	-- 레벨업 보상(510)
+	declare @USERITEM_INVENKIND_NON				int 				set @USERITEM_INVENKIND_NON					= 0
+	declare @USERITEM_INVENKIND_INFO			int 				set @USERITEM_INVENKIND_INFO				= 60
+	declare @USERITEM_INVENKIND_DIRECT			int 				set @USERITEM_INVENKIND_DIRECT				= 40
 
 	-- MT 아이템 소분류
-	declare @ITEM_SUBCATEGORY_WEAR_HELMET		int					set @ITEM_SUBCATEGORY_WEAR_HELMET			= 1  -- 헬멧(1)
-	declare @ITEM_SUBCATEGORY_WEAR_SHIRT		int					set @ITEM_SUBCATEGORY_WEAR_SHIRT			= 2  -- 상의(2)
-	declare @ITEM_SUBCATEGORY_WEAR_PANTS		int					set @ITEM_SUBCATEGORY_WEAR_PANTS			= 3  -- 하의(3)
-	declare @ITEM_SUBCATEGORY_WEAR_GLOVES		int					set @ITEM_SUBCATEGORY_WEAR_GLOVES			= 4  -- 장갑(4)
-	declare @ITEM_SUBCATEGORY_WEAR_SHOES		int					set @ITEM_SUBCATEGORY_WEAR_SHOES			= 5  -- 신발(5)
-	declare @ITEM_SUBCATEGORY_WEAR_BAT			int					set @ITEM_SUBCATEGORY_WEAR_BAT				= 6  -- 방망이(6)
-	declare @ITEM_SUBCATEGORY_WEAR_BALL			int					set @ITEM_SUBCATEGORY_WEAR_BALL				= 7  -- 색깔공(7)
-	declare @ITEM_SUBCATEGORY_WEAR_GOGGLE		int					set @ITEM_SUBCATEGORY_WEAR_GOGGLE			= 8  -- 고글(8)
-	declare @ITEM_SUBCATEGORY_WEAR_WRISTBAND	int					set @ITEM_SUBCATEGORY_WEAR_WRISTBAND		= 9  -- 손목 아대(9)
-	declare @ITEM_SUBCATEGORY_WEAR_ELBOWPAD		int					set @ITEM_SUBCATEGORY_WEAR_ELBOWPAD			= 10 -- 팔꿈치 보호대(10)
-	declare @ITEM_SUBCATEGORY_WEAR_BELT			int					set @ITEM_SUBCATEGORY_WEAR_BELT				= 11 -- 벨트(11)
-	declare @ITEM_SUBCATEGORY_WEAR_KNEEPAD		int					set @ITEM_SUBCATEGORY_WEAR_KNEEPAD			= 12 -- 무릎 보호대(12)
-	declare @ITEM_SUBCATEGORY_WEAR_SOCKS		int					set @ITEM_SUBCATEGORY_WEAR_SOCKS			= 13 -- 양말(13)
+	--declare @ITEM_SUBCATEGORY_WEAR_HELMET		int					set @ITEM_SUBCATEGORY_WEAR_HELMET			= 1  -- 헬멧(1)
+	--declare @ITEM_SUBCATEGORY_WEAR_SHIRT		int					set @ITEM_SUBCATEGORY_WEAR_SHIRT			= 2  -- 상의(2)
+	--declare @ITEM_SUBCATEGORY_WEAR_PANTS		int					set @ITEM_SUBCATEGORY_WEAR_PANTS			= 3  -- 하의(3)
+	--declare @ITEM_SUBCATEGORY_WEAR_GLOVES		int					set @ITEM_SUBCATEGORY_WEAR_GLOVES			= 4  -- 장갑(4)
+	--declare @ITEM_SUBCATEGORY_WEAR_SHOES		int					set @ITEM_SUBCATEGORY_WEAR_SHOES			= 5  -- 신발(5)
+	--declare @ITEM_SUBCATEGORY_WEAR_BAT		int					set @ITEM_SUBCATEGORY_WEAR_BAT				= 6  -- 방망이(6)
+	--declare @ITEM_SUBCATEGORY_WEAR_BALL		int					set @ITEM_SUBCATEGORY_WEAR_BALL				= 7  -- 색깔공(7)
+	--declare @ITEM_SUBCATEGORY_WEAR_GOGGLE		int					set @ITEM_SUBCATEGORY_WEAR_GOGGLE			= 8  -- 고글(8)
+	--declare @ITEM_SUBCATEGORY_WEAR_WRISTBAND	int					set @ITEM_SUBCATEGORY_WEAR_WRISTBAND		= 9  -- 손목 아대(9)
+	--declare @ITEM_SUBCATEGORY_WEAR_ELBOWPAD	int					set @ITEM_SUBCATEGORY_WEAR_ELBOWPAD			= 10 -- 팔꿈치 보호대(10)
+	--declare @ITEM_SUBCATEGORY_WEAR_BELT		int					set @ITEM_SUBCATEGORY_WEAR_BELT				= 11 -- 벨트(11)
+	--declare @ITEM_SUBCATEGORY_WEAR_KNEEPAD	int					set @ITEM_SUBCATEGORY_WEAR_KNEEPAD			= 12 -- 무릎 보호대(12)
+	--declare @ITEM_SUBCATEGORY_WEAR_SOCKS		int					set @ITEM_SUBCATEGORY_WEAR_SOCKS			= 13 -- 양말(13)
+	--declare @ITEM_SUBCATEGORY_PIECE_HELMET	int					set @ITEM_SUBCATEGORY_PIECE_HELMET	    	= 15 -- 헬멧 조각(15)
+	--declare @ITEM_SUBCATEGORY_PIECE_SHIRT		int					set @ITEM_SUBCATEGORY_PIECE_SHIRT	    	= 16 -- 상의 조각(16)
+	--declare @ITEM_SUBCATEGORY_PIECE_PANTS		int					set @ITEM_SUBCATEGORY_PIECE_PANTS	    	= 17 -- 하의 조각(17)
+	--declare @ITEM_SUBCATEGORY_PIECE_GLOVES	int					set @ITEM_SUBCATEGORY_PIECE_GLOVES	    	= 18 -- 장갑 조각(18)
+	--declare @ITEM_SUBCATEGORY_PIECE_SHOES		int					set @ITEM_SUBCATEGORY_PIECE_SHOES	    	= 19 -- 신발 조각(19)
+	--declare @ITEM_SUBCATEGORY_PIECE_BAT		int					set @ITEM_SUBCATEGORY_PIECE_BAT		    	= 20 -- 방망이 조각(20)
+	--declare @ITEM_SUBCATEGORY_PIECE_BALL		int					set @ITEM_SUBCATEGORY_PIECE_BALL			= 21 -- 색깔공 조각(21)
+	--declare @ITEM_SUBCATEGORY_PIECE_GOGGLE	int					set @ITEM_SUBCATEGORY_PIECE_GOGGLE	    	= 22 -- 고글 조각(22)
+	--declare @ITEM_SUBCATEGORY_PIECE_WRISTBAND	int					set @ITEM_SUBCATEGORY_PIECE_WRISTBAND   	= 23 -- 손목 아대 조각(23)
+	--declare @ITEM_SUBCATEGORY_PIECE_ELBOWPAD	int					set @ITEM_SUBCATEGORY_PIECE_ELBOWPAD		= 24 -- 팔꿈치 보호대 조각(24)
+	--declare @ITEM_SUBCATEGORY_PIECE_BELT		int					set @ITEM_SUBCATEGORY_PIECE_BELT			= 25 -- 벨트 조각(25)
+	--declare @ITEM_SUBCATEGORY_PIECE_KNEEPAD	int					set @ITEM_SUBCATEGORY_PIECE_KNEEPAD	    	= 26 -- 무릎 보호대 조각(26)
+	--declare @ITEM_SUBCATEGORY_PIECE_SOCKS		int					set @ITEM_SUBCATEGORY_PIECE_SOCKS	    	= 27 -- 양말 조각(27)
+	declare @ITEM_SUBCATEGORY_BOX_WEAR			int					set @ITEM_SUBCATEGORY_BOX_WEAR				= 40 -- 조각 랜덤박스(40)
+	declare @ITEM_SUBCATEGORY_BOX_PIECE			int					set @ITEM_SUBCATEGORY_BOX_PIECE				= 41 -- 의상 랜덤박스(41)
+	declare @ITEM_SUBCATEGORY_BOX_ADVICE		int					set @ITEM_SUBCATEGORY_BOX_ADVICE			= 42 -- 조언 패키지 박스(42)
+	--declare @ITEM_SUBCATEGORY_SCROLL_EVOLUTION	int				set @ITEM_SUBCATEGORY_SCROLL_EVOLUTION		= 45 -- 합성초월주문서(45)
+	declare @ITEM_SUBCATEGORY_SCROLL_COMMISSION	int					set @ITEM_SUBCATEGORY_SCROLL_COMMISSION		= 46 -- 수수료주문서(46)
+	--declare @ITEM_SUBCATEGORY_NICKCHANGE		int					set @ITEM_SUBCATEGORY_NICKCHANGE			= 47 -- 닉네임변경권(47)
+	declare @ITEM_SUBCATEGORY_RANDOM_CASHCOST_BOX	int				set @ITEM_SUBCATEGORY_RANDOM_CASHCOST_BOX	= 48 -- 랜덤다이아(48)
+	--declare @ITEM_SUBCATEGORY_CASHCOST		int					set @ITEM_SUBCATEGORY_CASHCOST				= 50 -- 다이아(50)
+	--declare @ITEM_SUBCATEGORY_GAMECOST		int					set @ITEM_SUBCATEGORY_GAMECOST				= 60 -- 볼(60)
+	--declare @ITEM_SUBCATEGORY_STATICINFO		int					set @ITEM_SUBCATEGORY_STATICINFO			= 500 -- 정보수집(500)
+	--declare @ITEM_SUBCATEGORY_LEVELUPREWARD	int					set @ITEM_SUBCATEGORY_LEVELUPREWARD			= 900 --레벨업 보상(510)
 
-	-- 아이템 기본 listidx.
-	declare @BASE_HELMET_LISTIDX				int 				set @BASE_HELMET_LISTIDX					= 1
-	declare @BASE_SHIRT_LISTIDX					int 				set @BASE_SHIRT_LISTIDX						= 2
-	declare @BASE_PANTS_LISTIDX					int 				set @BASE_PANTS_LISTIDX						= 3
-	declare @BASE_GLOVES_LISTIDX				int 				set @BASE_GLOVES_LISTIDX					= 4
-	declare @BASE_SHOES_LISTIDX					int 				set @BASE_SHOES_LISTIDX						= 5
-	declare @BASE_BAT_LISTIDX					int 				set @BASE_BAT_LISTIDX						= 6
-	declare @BASE_BALL_LISTIDX					int 				set @BASE_BALL_LISTIDX						= 7
-	declare @BASE_GOGGLE_LISTIDX				int 				set @BASE_GOGGLE_LISTIDX					= 8
-	declare @BASE_WRISTBAND_LISTIDX				int 				set @BASE_WRISTBAND_LISTIDX					= 9
-	declare @BASE_ELBOWPAD_LISTIDX				int 				set @BASE_ELBOWPAD_LISTIDX					= 10
-	declare @BASE_BELT_LISTIDX					int 				set @BASE_BELT_LISTIDX						= 11
-	declare @BASE_KNEEPAD_LISTIDX				int 				set @BASE_KNEEPAD_LISTIDX					= 12
-	declare @BASE_SOCKS_LISTIDX					int 				set @BASE_SOCKS_LISTIDX						= 13
+	-- MT 아이템 획득방법
+	declare @DEFINE_HOW_GET_FIRST				int					set @DEFINE_HOW_GET_FIRST					= 0		--기본
+	declare @DEFINE_HOW_GET_BUY					int					set @DEFINE_HOW_GET_BUY						= 1		--구매
+	declare @DEFINE_HOW_GET_GIFT				int					set @DEFINE_HOW_GET_GIFT					= 5		--선물
+	declare @DEFINE_HOW_GET_FREEANIRESTORE		int					set @DEFINE_HOW_GET_FREEANIRESTORE			= 17	--무료복구.
+	declare @DEFINE_HOW_GET_BOX_OPEN			int					set @DEFINE_HOW_GET_BOX_OPEN				= 20 	-- 박스뽑기.
+	declare @DEFINE_HOW_GET_LEVELUP				int 				set @DEFINE_HOW_GET_LEVELUP					= 21 	-- 레벨업.
+	declare @DEFINE_HOW_GET_AUCTION_BUY			int 				set @DEFINE_HOW_GET_AUCTION_BUY				= 22 	-- 경매장 구매.
+	declare @DEFINE_HOW_GET_COMBINATE			int 				set @DEFINE_HOW_GET_COMBINATE				= 23 	-- 조합으로 획득.
+	declare @DEFINE_HOW_GET_EVOLUTION			int 				set @DEFINE_HOW_GET_EVOLUTION				= 24 	-- 초월로 획득.
 
+	-- 조언패키지 박스 오픈템들.
+	declare @ITEMCODE_COACH_ADVICE				int 				set @ITEMCODE_COACH_ADVICE					= 4601 	-- 조언 박스에서 나오는템.
+	declare @ITEMCODE_DIRECTOR_ADVICE			int 				set @ITEMCODE_DIRECTOR_ADVICE				= 4602 	--
 
 	------------------------------------------------
 	--	2-3. 내부사용 변수
@@ -134,59 +157,27 @@ as
 	declare @cashcost				int					set @cashcost			= 0
 	declare @gamecost				int					set @gamecost			= 0
 	declare @sid					int					set @sid				= -1
-	declare @wearplusexp			int					set @wearplusexp		= 0
 	declare @blockstate				int					set @blockstate			= @BLOCK_STATE_YES
+	declare @templistidx1		 	int					set @templistidx1		= -1
+	declare @templistidx2		 	int					set @templistidx2		= -1
+
 	declare @itemcode				int					set @itemcode			= -1
+	declare @cnt					int					set @cnt				= 0
 	declare @randserial				varchar(20)			set @randserial			= '-1'
 	declare @subcategory			int					set @subcategory		= -1
-	declare @expincrease100			int					set @expincrease100		= 0
-	declare @setcode				int					set @setcode			= -1
-	declare @setplusexp100			int					set @setplusexp100		= 0
 
-	-- (게임변수 : 착용아이템 인덱스리스트)
-	declare @helmetlistidx			int 				set @helmetlistidx 		= @BASE_HELMET_LISTIDX
-	declare @shirtlistidx			int 				set @shirtlistidx		= @BASE_SHIRT_LISTIDX
-	declare @pantslistidx			int 				set @pantslistidx		= @BASE_PANTS_LISTIDX
-	declare @gloveslistidx			int 				set @gloveslistidx		= @BASE_GLOVES_LISTIDX
-	declare @shoeslistidx			int 				set @shoeslistidx		= @BASE_SHOES_LISTIDX
-	declare @batlistidx				int 				set @batlistidx			= @BASE_BAT_LISTIDX
-	declare @balllistidx			int 				set @balllistidx		= @BASE_BALL_LISTIDX
-	declare @gogglelistidx			int 				set @gogglelistidx		= @BASE_GOGGLE_LISTIDX
-	declare @wristbandlistidx		int 				set @wristbandlistidx	= @BASE_WRISTBAND_LISTIDX
-	declare @elbowpadlistidx		int 				set @elbowpadlistidx	= @BASE_ELBOWPAD_LISTIDX
-	declare @beltlistidx			int 				set @beltlistidx		= @BASE_BELT_LISTIDX
-	declare @kneepadlistidx			int 				set @kneepadlistidx		= @BASE_KNEEPAD_LISTIDX
-	declare @sockslistidx			int 				set @sockslistidx		= @BASE_SOCKS_LISTIDX
+	declare	@invenkind				int					set @invenkind			= -1
+	declare @rand					int					set @rand				= 0
+	declare @randsum				int					set @randsum			= 0
+	declare @itemcodenew			int					set @itemcodenew		= 0
+	declare @listidxcust		 	int					set @listidxcust		= -1
+	declare @listidxnew			 	int					set @listidxnew			= -1
+	declare @listidxrtn 			int					set @listidxrtn			= -1
+	declare @openstate				int					set @openstate 			= @BOX_OPEN_STATE_SUCCESS
 
-	-- 추가경험치값 (만분률값임... 100 -> 1%를 의미...)
-	declare @helmetexp				int 				set @helmetexp 			= 0
-	declare @shirtexp				int 				set @shirtexp 			= 0
-	declare @pantsexp				int 				set @pantsexp 			= 0
-	declare @glovesexp				int 				set @glovesexp 			= 0
-	declare @shoesexp				int 				set @shoesexp 			= 0
-	declare @batexp					int 				set @batexp 			= 0
-	declare @ballexp				int 				set @ballexp 			= 0
-	declare @goggleexp				int 				set @goggleexp 			= 0
-	declare @wristbandexp			int 				set @wristbandexp 		= 0
-	declare @elbowpadexp			int 				set @elbowpadexp 		= 0
-	declare @beltexp				int 				set @beltexp 			= 0
-	declare @kneepadexp				int 				set @kneepadexp 		= 0
-	declare @socksexp				int 				set @socksexp 			= 0
-
-	-- 세트번호.... -1(의미없음.), 0, 1, 2, 3, 4번까지 있음
-	declare @helmetsetnum			int 				set @helmetsetnum 		= -1
-	declare @shirtsetnum			int 				set @shirtsetnum 		= -1
-	declare @pantssetnum			int 				set @pantssetnum 		= -1
-	declare @glovessetnum			int 				set @glovessetnum 		= -1
-	declare @shoessetnum			int 				set @shoessetnum 		= -1
-	declare @batsetnum				int 				set @batsetnum 			= -1
-	declare @ballsetnum				int 				set @ballsetnum 		= -1
-	declare @gogglesetnum			int 				set @gogglesetnum 		= -1
-	declare @wristbandsetnum		int 				set @wristbandsetnum 	= -1
-	declare @elbowpadsetnum			int 				set @elbowpadsetnum 	= -1
-	declare @beltsetnum				int 				set @beltsetnum 		= -1
-	declare @kneepadsetnum			int 				set @kneepadsetnum 		= -1
-	declare @sockssetnum			int 				set @sockssetnum 		= -1
+	DECLARE @tTempTable TABLE(
+		listidx		int
+	);
 
 Begin
 	------------------------------------------------
@@ -195,7 +186,7 @@ Begin
 	set nocount on
 	set @nResult_ = @RESULT_ERROR
 	set @comment = 'ERROR 아이템을 변경할 수 없습니다.(-1)'
-	--select 'DEBUG 1 입력정보', @gameid_ gameid_, @password_ password_, @sid_ sid_, @listidx_ listidx_, @randserial_ randserial_
+	select 'DEBUG 1 입력정보', @gameid_ gameid_, @password_ password_, @sid_ sid_, @listidx_ listidx_, @randserial_ randserial_
 
 	------------------------------------------------
 	--	3-2. 연산수행
@@ -203,26 +194,11 @@ Begin
 	select
 		@gameid 		= gameid,			@blockstate		= blockstate,		@sid			= sid,
 		@cashcost		= cashcost,			@gamecost		= gamecost,
-		@wearplusexp	= wearplusexp,		@randserial 	= randserial,
-
-		@helmetlistidx 	= helmetlistidx, 	@shirtlistidx 	= shirtlistidx, 	@pantslistidx 	= pantslistidx, @gloveslistidx 	= gloveslistidx,
-		@shoeslistidx 	= shoeslistidx, 	@batlistidx 	= batlistidx, 		@balllistidx 	= balllistidx, 	@gogglelistidx 	= gogglelistidx,
-		@wristbandlistidx= wristbandlistidx,@elbowpadlistidx= elbowpadlistidx, 	@beltlistidx 	= beltlistidx, 	@kneepadlistidx = kneepadlistidx, 	@sockslistidx = sockslistidx,
-
-		@helmetexp 		= helmetexp, 		@shirtexp 		= shirtexp, 		@pantsexp 		= pantsexp, 	@glovesexp 		= glovesexp,
-		@shoesexp 		= shoesexp, 		@batexp 		= batexp, 			@ballexp 		= ballexp, 		@goggleexp 		= goggleexp,
-		@wristbandexp 	= wristbandexp, 	@elbowpadexp 	= elbowpadexp, 		@beltexp 		= beltexp, 		@kneepadexp 	= kneepadexp, 		@socksexp 		= socksexp,
-
-		@helmetsetnum 	= helmetsetnum, 	@shirtsetnum 	= shirtsetnum, 		@pantssetnum 	= pantssetnum, 	@glovessetnum 	= glovessetnum,
-		@shoessetnum 	= shoessetnum, 		@batsetnum 		= batsetnum, 		@ballsetnum 	= ballsetnum, 	@gogglesetnum 	= gogglesetnum,
-		@wristbandsetnum= wristbandsetnum, 	@elbowpadsetnum = elbowpadsetnum, 	@beltsetnum 	= beltsetnum, 	@kneepadsetnum 	= kneepadsetnum, 	@sockssetnum 	= sockssetnum
+		@templistidx1	= templistidx1, 	@templistidx2	= templistidx2,
+		@randserial 	= randserial
 	from dbo.tUserMaster
 	where gameid = @gameid_ and password = @password_
-	--select 'DEBUG 3-2 유저정보', @gameid gameid, @blockstate blockstate, @sid sid, @cashcost cashcost, @gamecost gamecost, @wearplusexp wearplusexp
-	--select 'DEBUG 파트 listidx', @helmetlistidx helmetlistidx, 	@shirtlistidx shirtlistidx, @pantslistidx pantslistidx, @gloveslistidx gloveslistidx, 	@shoeslistidx shoeslistidx, @batlistidx batlistidx, @balllistidx balllistidx, 	@gogglelistidx gogglelistidx, 	@wristbandlistidx wristbandlistidx, @elbowpadlistidx elbowpadlistidx, 	@beltlistidx beltlistidx, 	@kneepadlistidx kneepadlistidx, @sockslistidx sockslistidx
-	--select 'DEBUG 파트 추가경험치', @wearplusexp wearplusexp, @helmetexp helmetexp, @shirtexp shirtexp, @pantsexp pantsexp, @glovesexp glovesexp, @shoesexp shoesexp, @batexp batexp, @ballexp ballexp, @goggleexp goggleexp, @wristbandexp wristbandexp, @elbowpadexp elbowpadexp, @beltexp beltexp, @kneepadexp kneepadexp, @socksexp socksexp
-	--select 'DEBUG 파트 세트번호', @helmetsetnum helmetsetnum, @shirtsetnum shirtsetnum, @pantssetnum pantssetnum, @glovessetnum glovessetnum, @shoessetnum shoessetnum, @batsetnum batsetnum, @ballsetnum ballsetnum, @gogglesetnum gogglesetnum, @wristbandsetnum wristbandsetnum, @elbowpadsetnum elbowpadsetnum, @beltsetnum beltsetnum, @kneepadsetnum kneepadsetnum, @sockssetnum sockssetnum
-
+	select 'DEBUG 3-2 유저정보', @gameid gameid, @blockstate blockstate, @sid sid, @cashcost cashcost, @gamecost gamecost, @randserial randserial
 
 	if(@gameid != '')
 		begin
@@ -230,11 +206,11 @@ Begin
 			-- 유저보유템(tUserItem)
 			------------------------------------------------
 			select
-				@itemcode = itemcode
+				@itemcode 	= itemcode,
+				@cnt 		= cnt
 			from dbo.tUserItem
-			where gameid = @gameid and listidx = @listidx_ and invenkind = @USERITEM_INVENKIND_WEAR
-			--select 'DEBUG 보유템', @listidx_ listidx_, @itemcode itemcode
-
+			where gameid = @gameid and listidx = @listidx_
+			select 'DEBUG 보유템', @listidx_ listidx_, @itemcode itemcode, @cnt cnt
 
 			if( @itemcode != -1 )
 				begin
@@ -242,11 +218,10 @@ Begin
 					--  아이템(tItemInfo) > 종류
 					------------------------------------------------
 					select
-						@subcategory 	= subcategory,
-						@expincrease100 = param3, 		@setcode = param4
+						@subcategory 	= subcategory
 					from dbo.tItemInfo
-					where itemcode = @itemcode and category = @ITEM_MAINCATEGORY_WEARPART
-					--select 'DEBUG 템정보.', @itemcode itemcode, @subcategory subcategory, @expincrease100 expincrease100, @setcode setcode
+					where itemcode = @itemcode
+					select 'DEBUG 템정보.', @itemcode itemcode, @subcategory subcategory
 				end
 		end
 
@@ -257,27 +232,27 @@ Begin
 		BEGIN
 			set @nResult_ 	= @RESULT_ERROR_NOT_FOUND_GAMEID
 			set @comment 	= 'ERROR 아이디가 존재하지 않는다.'
-			--select 'DEBUG ' + @comment
+			select 'DEBUG ' + @comment
 		END
-	else if (@blockstate = @BLOCK_STATE_YES)
+	else if ( @blockstate = @BLOCK_STATE_YES )
 		BEGIN
 			-- 블럭유저인가?
 			set @nResult_ 	= @RESULT_ERROR_BLOCK_USER
 			set @comment 	= '블럭처리된 아이디입니다.'
-			--select 'DEBUG ', @comment
+			select 'DEBUG ', @comment
 		END
-	else if(@sid_ != @sid)
+	else if ( @sid_ != @sid )
 		BEGIN
 			set @nResult_ 	= @RESULT_ERROR_SESSION_ID_EXPIRE_LOGOUT
 			set @comment 	= 'ERROR 세션이 만기 되었습니다. (로그아웃 시켜주세요.)'
-			--select 'DEBUG ' + @comment
+			select 'DEBUG ' + @comment
 		END
 	else if ( @itemcode = -1 )
 		BEGIN
 			set @nResult_ = @RESULT_ERROR_NOT_FOUND_ITEMCODE
 			set @comment = 'ERROR 아이템을 찾지 못했습니다.(1)'
 		END
-	else if (@subcategory not in (@ITEM_SUBCATEGORY_WEAR_HELMET, @ITEM_SUBCATEGORY_WEAR_SHIRT, @ITEM_SUBCATEGORY_WEAR_PANTS, @ITEM_SUBCATEGORY_WEAR_GLOVES, @ITEM_SUBCATEGORY_WEAR_SHOES, @ITEM_SUBCATEGORY_WEAR_BAT, @ITEM_SUBCATEGORY_WEAR_BALL	, @ITEM_SUBCATEGORY_WEAR_GOGGLE, @ITEM_SUBCATEGORY_WEAR_WRISTBAND, @ITEM_SUBCATEGORY_WEAR_ELBOWPAD, @ITEM_SUBCATEGORY_WEAR_BELT, @ITEM_SUBCATEGORY_WEAR_KNEEPAD, @ITEM_SUBCATEGORY_WEAR_SOCKS))
+	else if ( @subcategory not in (@ITEM_SUBCATEGORY_BOX_WEAR, @ITEM_SUBCATEGORY_BOX_PIECE, @ITEM_SUBCATEGORY_BOX_ADVICE, @ITEM_SUBCATEGORY_RANDOM_CASHCOST_BOX))
 		BEGIN
 			set @nResult_ = @RESULT_ERROR_NOT_FOUND_ITEMCODE
 			set @comment = 'ERROR 아이템을 찾지 못했습니다.(2)'
@@ -285,166 +260,105 @@ Begin
 	else if ( @randserial_ = @randserial )
 		BEGIN
 			set @nResult_ = @RESULT_SUCCESS
-			set @comment = 'SUCCESS 장비를 교체했습니다.(2)'
+			set @comment = 'SUCCESS 박스를 오픈했습니다.(중복)'
+
+			insert into @tTempTable( listidx ) values( @templistidx1 )
+			insert into @tTempTable( listidx ) values( @templistidx2 )
+
+		END
+	else if ( @cnt <= 0 )
+		BEGIN
+			set @nResult_ = @RESULT_ERROR_ITEM_LACK
+			set @comment = 'ERROR 아이템이 부족합니다.'
 		END
 	else
 		BEGIN
 			set @nResult_ = @RESULT_SUCCESS
-			set @comment = 'SUCCESS 장비를 교체했습니다.'
-			--select 'DEBUG ' + @comment
+			set @comment = 'SUCCESS 박스를 오픈했습니다.'
+			select 'DEBUG ' + @comment
 
-			------------------------------------------------
-			-- 유저정보
-			------------------------------------------------
-			if( @subcategory = @ITEM_SUBCATEGORY_WEAR_HELMET )
+			if( @subcategory = @ITEM_SUBCATEGORY_BOX_WEAR )
 				begin
-					set @helmetlistidx 		= @listidx_
-					set @helmetexp			= @expincrease100
-					set @helmetsetnum 		= @setcode
-					--select 'DEBUG 헬멧교체'
+					select 'DEBUG 장비박스 오픈'
 				end
-			else if( @subcategory = @ITEM_SUBCATEGORY_WEAR_SHIRT )
+			else if( @subcategory = @ITEM_SUBCATEGORY_BOX_PIECE )
 				begin
-					set @shirtlistidx 		= @listidx_
-					set @shirtexp			= @expincrease100
-					set @shirtsetnum 		= @setcode
-					--select 'DEBUG shirt 교체'
+					select 'DEBUG 조각박스 오픈'
 				end
-			else if( @subcategory = @ITEM_SUBCATEGORY_WEAR_PANTS )
+			else if( @subcategory = @ITEM_SUBCATEGORY_BOX_ADVICE )
 				begin
-					set @pantslistidx 		= @listidx_
-					set @pantsexp			= @expincrease100
-					set @pantssetnum 		= @setcode
-					--select 'DEBUG pants 교체'
-				end
-			else if( @subcategory = @ITEM_SUBCATEGORY_WEAR_GLOVES )
-				begin
-					set @gloveslistidx 		= @listidx_
-					set @glovesexp			= @expincrease100
-					set @glovessetnum 		= @setcode
-					--select 'DEBUG gloves 교체'
-				end
-			else if( @subcategory = @ITEM_SUBCATEGORY_WEAR_SHOES )
-				begin
-					set @shoeslistidx 		= @listidx_
-					set @shoesexp			= @expincrease100
-					set @shoessetnum 		= @setcode
-					--select 'DEBUG shoes 교체'
-				end
-			else if( @subcategory = @ITEM_SUBCATEGORY_WEAR_BAT )
-				begin
-					set @batlistidx	 		= @listidx_
-					set @batexp				= @expincrease100
-					set @batsetnum 			= @setcode
-					--select 'DEBUG bat 교체'
-				end
-			else if( @subcategory = @ITEM_SUBCATEGORY_WEAR_BALL )
-				begin
-					set @balllistidx 		= @listidx_
-					set @ballexp			= @expincrease100
-					set @ballsetnum 		= @setcode
-					--select 'DEBUG ball 교체'
-				end
-			else if( @subcategory = @ITEM_SUBCATEGORY_WEAR_GOGGLE )
-				begin
-					set @gogglelistidx 		= @listidx_
-					set @goggleexp			= @expincrease100
-					set @gogglesetnum 		= @setcode
-					--select 'DEBUG goggle 교체'
-				end
-			else if( @subcategory = @ITEM_SUBCATEGORY_WEAR_WRISTBAND )
-				begin
-					set @wristbandlistidx 	= @listidx_
-					set @wristbandexp		= @expincrease100
-					set @wristbandsetnum 	= @setcode
-					--select 'DEBUG wristband 교체'
-				end
-			else if( @subcategory = @ITEM_SUBCATEGORY_WEAR_ELBOWPAD )
-				begin
-					set @elbowpadlistidx 	= @listidx_
-					set @elbowpadexp		= @expincrease100
-					set @elbowpadsetnum 	= @setcode
-					--select 'DEBUG elbowpad 교체'
-				end
-			else if( @subcategory = @ITEM_SUBCATEGORY_WEAR_BELT )
-				begin
-					set @beltlistidx 		= @listidx_
-					set @beltexp			= @expincrease100
-					set @beltsetnum 		= @setcode
-					--select 'DEBUG belt 교체'
-				end
-			else if( @subcategory = @ITEM_SUBCATEGORY_WEAR_KNEEPAD )
-				begin
-					set @kneepadlistidx 	= @listidx_
-					set @kneepadexp			= @expincrease100
-					set @kneepadsetnum 		= @setcode
-					--select 'DEBUG kneepad 교체'
-				end
-			else if( @subcategory = @ITEM_SUBCATEGORY_WEAR_SOCKS )
-				begin
-					set @sockslistidx 		= @listidx_
-					set @socksexp			= @expincrease100
-					set @sockssetnum 		= @setcode
-					--select 'DEBUG socks 교체'
-				end
-			set @wearplusexp = @helmetexp + @shirtexp + @pantsexp + @glovesexp + @shoesexp + @batexp + @ballexp + @goggleexp + @wristbandexp + @elbowpadexp + @beltexp + @kneepadexp + @socksexp
-			--select 'DEBUG 파트 추가경험치', @wearplusexp wearplusexp, @helmetexp helmetexp, @shirtexp shirtexp, @pantsexp pantsexp, @glovesexp glovesexp, @shoesexp shoesexp, @batexp batexp, @ballexp ballexp, @goggleexp goggleexp, @wristbandexp wristbandexp, @elbowpadexp elbowpadexp, @beltexp beltexp, @kneepadexp kneepadexp, @socksexp socksexp
-			--select 'DEBUG 파트 세트번호', @helmetsetnum helmetsetnum, @shirtsetnum shirtsetnum, @pantssetnum pantssetnum, @glovessetnum glovessetnum, @shoessetnum shoessetnum, @batsetnum batsetnum, @ballsetnum ballsetnum, @gogglesetnum gogglesetnum, @wristbandsetnum wristbandsetnum, @elbowpadsetnum elbowpadsetnum, @beltsetnum beltsetnum, @kneepadsetnum kneepadsetnum, @sockssetnum sockssetnum
-
-
-			------------------------------------------------
-			-- 세트 추가경험치.
-			------------------------------------------------
-			if(     @helmetsetnum 	!= -1
-				and	@helmetsetnum 	= @shirtsetnum
-				and @shirtsetnum 	= @pantssetnum
-				and @pantssetnum 	= @glovessetnum
-				and @glovessetnum	= @shoessetnum
-				and @shoessetnum 	= @batsetnum
-				and @batsetnum 	= @ballsetnum
-				and @ballsetnum 	= @gogglesetnum
-				and @gogglesetnum 	= @wristbandsetnum
-				and @wristbandsetnum = @elbowpadsetnum
-				and @elbowpadsetnum= @beltsetnum
-				and @beltsetnum 	= @kneepadsetnum
-				and @kneepadsetnum = @sockssetnum
-			)
-				begin
+					select 'DEBUG 3 조언패키지박스 오픈'
 					------------------------------------------------
-					--  아이템(tItemInfo) > 종류
+					-- 3-1. 조언박스 오픈 확률 확인.
+					--    7% -> 코치의 조언 주문서(4601)
+					--    3% -> 감독의 조언 주문서(4602)
+					--   90% -> 꽝.
 					------------------------------------------------
-					select
-						@setplusexp100 = param5
-					from dbo.tItemInfo
-					where itemcode = (
-						select
-							top 1 itemcode
-						from dbo.tUserItem
-						where gameid = @gameid and listidx = @helmetlistidx )
+					set @randsum 	= 100
+					set @rand 		= dbo.fnu_GetRandom(0, @randsum)
+					select 'DEBUG ', @randsum randsum, @rand rand
+					if( @rand < 7 )
+						begin
+							select 'DEBUG 코치의 조언획득'
+							set @itemcodenew 	= @ITEMCODE_COACH_ADVICE
+							set @openstate 		= @BOX_OPEN_STATE_SUCCESS
+						end
+					else if( @rand < (7+3) )
+						begin
+							select 'DEBUG 감독의 조언획득'
+							set @itemcodenew 	= @ITEMCODE_DIRECTOR_ADVICE
+							set @openstate 		= @BOX_OPEN_STATE_SUCCESS
+						end
+					else
+						begin
+							select 'DEBUG 꽝'
+							set @itemcodenew 	= -1
+							set @openstate 		= @BOX_OPEN_STATE_FAIL
+						end
 
-					set @wearplusexp = @wearplusexp + @setplusexp100
-					--select 'DEBUG 세트효과', @setplusexp100 setplusexp100, @wearplusexp wearplusexp
+					------------------------------------------------
+					-- 3-2. 아이템 지급하기.
+					------------------------------------------------
+					if( @itemcodenew != -1 )
+						begin
+							set @invenkind 	= dbo.fnu_GetInvenFromSubCategory(@ITEM_SUBCATEGORY_SCROLL_COMMISSION)
+							select 'DEBUG ', @invenkind invenkind
+
+							exec dbo.spu_ToUserItem @gameid_, @invenkind, @subcategory, @itemcodenew, 1, @DEFINE_HOW_GET_BOX_OPEN, @randserial_, @nResult2_ = @listidxrtn OUTPUT
+							select 'DEBUG 아이템지급', @gameid_ gameid_, @invenkind invenkind, @subcategory subcategory
+						end
+					select 'DEBUG ', @randsum randsum, @rand rand, @itemcodenew itemcodenew, @openstate openstate, @listidxrtn listidxrtn
+
+
+					------------------------------------------------
+					-- 3-4. 박스감소.
+					------------------------------------------------
+					insert into @tTempTable( listidx ) values( @listidx_ )
+					insert into @tTempTable( listidx ) values( @listidxrtn )
+
 				end
+			else if( @subcategory = @ITEM_SUBCATEGORY_RANDOM_CASHCOST_BOX )
+				begin
+					select 'DEBUG 캐쉬박스 오픈'
+				end
+
+			------------------------------------------------
+			-- 박스감소.
+			------------------------------------------------
+			select 'DEBUG 수량감소', @listidx_ listidx_
+			update dbo.tUserItem
+				set
+					cnt = cnt - 1
+			where gameid = @gameid and listidx = @listidx_
 
 			------------------------------------------------
 			-- 유저정보
 			------------------------------------------------
 			update dbo.tUserMaster
 				set
-					wearplusexp		= @wearplusexp,		setplusexp		= @setplusexp100,
-					randserial 		= @randserial_,
-
-					helmetlistidx 	= @helmetlistidx, 	shirtlistidx 	= @shirtlistidx, 	pantslistidx 	= @pantslistidx, 	gloveslistidx 	= @gloveslistidx,
-					shoeslistidx 	= @shoeslistidx, 	batlistidx 		= @batlistidx, 		balllistidx 	= @balllistidx, 	gogglelistidx 	= @gogglelistidx,
-					wristbandlistidx= @wristbandlistidx,elbowpadlistidx	= @elbowpadlistidx, beltlistidx 	= @beltlistidx, 	kneepadlistidx 	= @kneepadlistidx, 	sockslistidx = @sockslistidx,
-
-					helmetexp 		= @helmetexp, 		shirtexp 		= @shirtexp, 		pantsexp 		= @pantsexp, 		glovesexp 		= @glovesexp,
-					shoesexp 		= @shoesexp, 		batexp 			= @batexp, 			ballexp 		= @ballexp, 		goggleexp 		= @goggleexp,
-					wristbandexp	= @wristbandexp,	elbowpadexp		= @elbowpadexp, 	beltexp 		= @beltexp, 		kneepadexp 		= @kneepadexp, 		socksexp 	= @socksexp,
-
-					helmetsetnum 	= @helmetsetnum, 	shirtsetnum 	= @shirtsetnum, 	pantssetnum 	= @pantssetnum, 	glovessetnum 	= @glovessetnum,
-					shoessetnum 	= @shoessetnum, 	batsetnum 		= @batsetnum, 		ballsetnum 		= @ballsetnum, 		gogglesetnum 	= @gogglesetnum,
-					wristbandsetnum	= @wristbandsetnum,	elbowpadsetnum	= @elbowpadsetnum,	beltsetnum 		= @beltsetnum, 		kneepadsetnum 	= @kneepadsetnum, 	sockssetnum = @sockssetnum
+					--cashcost		= @cashcost,		gamecost 		= @gamecost,
+					templistidx1	= @listidx_, 	templistidx2		= @listidxrtn,
+					randserial 		= @randserial_
 			from dbo.tUserMaster
 			where gameid = @gameid_
 		END
@@ -453,12 +367,17 @@ Begin
 	--------------------------------------------------------------
 	-- 결과전송.
 	--------------------------------------------------------------
-	select @nResult_ rtn, @comment comment, @cashcost cashcost, @gamecost gamecost
+	select @nResult_ rtn, @comment comment, @cashcost cashcost, @gamecost gamecost, @openstate openstate
 
 
 	if(@nResult_ = @RESULT_SUCCESS)
 		BEGIN
-			select * from dbo.tUserMaster where gameid = @gameid_
+			--------------------------------------------------------------
+			-- 유저 보유 아이템 정보 > 새로 획득한 것만 전송(기존것 하고 같이 보내면 클라것의 데이터를 덮씌워서 문제됨)
+			--------------------------------------------------------------
+			select * from dbo.tUserItem
+			where gameid = @gameid_ and listidx in ( select listidx from @tTempTable )
+
 		END
 
 	------------------------------------------------

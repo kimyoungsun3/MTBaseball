@@ -153,6 +153,9 @@ Begin
 				begin
 					set @cashcost = @cashcost - @NICKNAME_CHANGE_NEED_CASHCOST
 					--select 'DEBUG 캐쉬로 변경'
+
+					-- 구매기록마킹
+					exec spu_UserItemBuyLogNew @gameid_, @NICKNAME_CHANGE_ITEMCODE, 0, @NICKNAME_CHANGE_NEED_CASHCOST, 1
 				end
 
 			---------------------------------------------------

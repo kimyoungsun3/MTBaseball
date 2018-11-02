@@ -49,7 +49,7 @@ function f_Submit(f) {
 				<table>
 					<tr>
 						<td colspan=4>
-							유저별 아이템을 구매 내역입니다.
+							유저별 아이템을 구매 내역입니다.<a href=useritembuylog_list.jsp><img src=images/refresh2.png alt="화면갱신"></a>
 						</td>
 					</tr>
 					<tr>

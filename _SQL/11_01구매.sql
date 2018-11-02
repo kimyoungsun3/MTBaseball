@@ -16,6 +16,8 @@ exec spu_ItemBuy 'mtxxxx3', '049000s1i0n7t8445289', 333, 4501, 1, 7770, -1
 exec spu_ItemBuy 'mtxxxx3', '049000s1i0n7t8445289', 333, 4700, 1, 7773, -1	-- 4700	소모품(40)	닉네임변경권(47)
 exec spu_ItemBuy 'mtxxxx3', '049000s1i0n7t8445289', 333, 4700, 1, 7770, -1
 exec spu_ItemBuy 'mtxxxx3', '049000s1i0n7t8445289', 333, 6000, 1, 7774, -1	-- 6000	볼(60)	볼(60)
+exec spu_ItemBuy 'mtxxxx3', '049000s1i0n7t8445289', 333, 6000,10, 7775, -1
+
 
 -- 구매 불가템들.
 exec spu_ItemBuy 'mtxxxx3', '049000s1i0n7t8445289', 333, 4200, 1, 7771, -1	-- 4200	소모품(40)	조언 패키지 박스(42) -> web
@@ -315,7 +317,7 @@ Begin
 					where gameid = @gameid_
 
 					-- 구매기록마킹
-					--exec spu_UserItemBuyLogNew @gameid_, @itemcode_, @gamecostsell, @cashcostsell, 0
+					exec spu_UserItemBuyLogNew @gameid_, @itemcode_, @gamecostsell, @cashcostsell, @cntnew
 				end
 			else if(@subcategory = @ITEM_SUBCATEGORY_GAMECOST)
 				begin
@@ -342,7 +344,7 @@ Begin
 					where gameid = @gameid_
 
 					-- 구매기록마킹
-					--exec spu_UserItemBuyLogNew @gameid_, @itemcode_, @gamecostsell, @cashcostsell, 0
+					exec spu_UserItemBuyLogNew @gameid_, @itemcode_, 0, @cashcostsell, @cntnew
 				end
 		END
 
