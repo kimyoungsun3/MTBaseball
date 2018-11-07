@@ -127,8 +127,13 @@ create table dbo.tUserMaster(
 	sockssetnum			int 			default(-1),
 
 	-- 기타변수.
-	templistidx1	int					default(-1),
-	templistidx2	int					default(-1),
+	templistidx			int				default(-1),
+	templistidx2		int				default(-1),
+	templistidx3		int				default(-1),
+	templistidx4		int				default(-1),
+	tempboxopenmode		int				default(-1),
+	temppluscashcost 	int				default(0),
+	tempopenstate		int				default(1),
 
 	-- 이벤트.
 	eventspot01		int					default(0),				-- 로그인사용(1~5).

@@ -45,8 +45,8 @@ BEGIN
 	declare @ITEM_SUBCATEGORY_PIECE_BELT		int					set @ITEM_SUBCATEGORY_PIECE_BELT			= 25 -- 벨트 조각(25)
 	declare @ITEM_SUBCATEGORY_PIECE_KNEEPAD		int					set @ITEM_SUBCATEGORY_PIECE_KNEEPAD	    	= 26 -- 무릎 보호대 조각(26)
 	declare @ITEM_SUBCATEGORY_PIECE_SOCKS		int					set @ITEM_SUBCATEGORY_PIECE_SOCKS	    	= 27 -- 양말 조각(27)
-	declare @ITEM_SUBCATEGORY_BOX_WEAR			int					set @ITEM_SUBCATEGORY_BOX_WEAR				= 40 -- 조각 랜덤박스(40)
-	declare @ITEM_SUBCATEGORY_BOX_PIECE			int					set @ITEM_SUBCATEGORY_BOX_PIECE				= 41 -- 의상 랜덤박스(41)
+	declare @ITEM_SUBCATEGORY_BOX_PIECE			int					set @ITEM_SUBCATEGORY_BOX_PIECE				= 40 -- 조각 랜덤박스(40)
+	declare @ITEM_SUBCATEGORY_BOX_CLOTH			int					set @ITEM_SUBCATEGORY_BOX_CLOTH				= 41 -- 의상 랜덤박스(41)
 	declare @ITEM_SUBCATEGORY_BOX_ADVICE		int					set @ITEM_SUBCATEGORY_BOX_ADVICE			= 42 -- 조언 패키지 박스(42)
 	declare @ITEM_SUBCATEGORY_SCROLL_EVOLUTION	int					set @ITEM_SUBCATEGORY_SCROLL_EVOLUTION		= 45 -- 합성초월주문서(45)
 	declare @ITEM_SUBCATEGORY_SCROLL_COMMISSION	int					set @ITEM_SUBCATEGORY_SCROLL_COMMISSION		= 46 -- 수수료주문서(46)
@@ -68,7 +68,7 @@ BEGIN
 	-- 다이아는 직접 넣어줘서 코드가 존재안함....
 	-- 총알			-> 총알1, 총알2, .... 총알n
 	--------------------------------------------------------------
-	--if(@subcategory_ = @ITEM_SUBCATEGORY_BOX_WEAR and (@itemcode_  >= @ITEM_BULLET_SUN1 and @itemcode_  <= @ITEM_BULLET_SUN2))
+	--if(@subcategory_ = @ITEM_SUBCATEGORY_BOX_PIECE and (@itemcode_  >= @ITEM_BULLET_SUN1 and @itemcode_  <= @ITEM_BULLET_SUN2))
 	--	begin
 	--		set @rtn = @ITEM_BULLET_MOTHER
 	--	end

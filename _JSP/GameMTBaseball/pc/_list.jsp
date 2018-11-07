@@ -293,6 +293,26 @@
 			randserial=			<br>
 		</td>
 	</tr>
+	<tr>
+		<td>itemopen.jsp</td>
+		<td>
+			<a href=itemopen.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&listidx=28&randserial=831841>조언패키지박스</a><br>
+			<a href=itemopen.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&listidx=28&randserial=831842>조언패키지박스</a><br>
+			<a href=itemopen.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&listidx=18&randserial=831843>돌 조각 랜덤박스</a><br>
+			<a href=itemopen.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&listidx=18&randserial=831844>돌 조각 랜덤박스</a><br>
+			<a href=itemopen.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&listidx=23&randserial=831845>돌 의상 랜덤박스</a><br>
+			<a href=itemopen.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&listidx=23&randserial=831846>돌 의상 랜덤박스</a><br>
+			<a href=itemopen.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&listidx=17&randserial=831847>랜덤 다이아 박스</a><br>
+			<a href=itemopen.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&listidx=17&randserial=831848>랜덤 다이아 박스</a><br>
+		</td>
+		<td>
+			gameid=xxxx			<br>
+			password=			<br>
+			sid=				<br>
+			listidx=			<br>
+			randserial=			<br>
+		</td>
+	</tr>
 	<%/*%>		
 	<!--
 	<tr>

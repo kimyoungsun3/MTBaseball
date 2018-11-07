@@ -9,7 +9,7 @@ select @listidxrtn
 -- 조각
 declare @listidxrtn		int				set @listidxrtn			= -1
 --						gameid_, invenkind_, subcategory_, itemcode_, cnt_, gethow_, randserial, nResult2_
-exec dbo.spu_ToUserItem 'mtxxxx3', 		  2,            15,     1500,    1,      20,       7771, @nResult2_ = @listidxrtn OUTPUT
+exec dbo.spu_ToUserItem 'mtxxxx3', 		  2,            15,     1501,    1,      20,       7771, @nResult2_ = @listidxrtn OUTPUT
 select @listidxrtn
 
 -- 조언주문서.

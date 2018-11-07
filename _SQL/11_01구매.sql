@@ -102,8 +102,8 @@ as
 	declare @ITEM_MAINCATEGORY_LEVELUPREWARD	int					set @ITEM_MAINCATEGORY_LEVELUPREWARD		= 510 	-- 레벨업 보상(510)
 
 	-- MT 아이템 소분류
-	declare @ITEM_SUBCATEGORY_BOX_WEAR			int					set @ITEM_SUBCATEGORY_BOX_WEAR				= 40 -- 조각 랜덤박스(40)
-	--declare @ITEM_SUBCATEGORY_BOX_PIECE		int					set @ITEM_SUBCATEGORY_BOX_PIECE				= 41 -- 의상 랜덤박스(41)
+	declare @ITEM_SUBCATEGORY_BOX_PIECE			int					set @ITEM_SUBCATEGORY_BOX_PIECE				= 40 -- 조각 랜덤박스(40)
+	--declare @ITEM_SUBCATEGORY_BOX_CLOTH		int					set @ITEM_SUBCATEGORY_BOX_CLOTH				= 41 -- 의상 랜덤박스(41)
 	declare @ITEM_SUBCATEGORY_BOX_ADVICE		int					set @ITEM_SUBCATEGORY_BOX_ADVICE			= 42 -- 조언 패키지 박스(42)
 	declare @ITEM_SUBCATEGORY_SCROLL_EVOLUTION	int					set @ITEM_SUBCATEGORY_SCROLL_EVOLUTION		= 45 -- 합성초월주문서(45)
 	--declare @ITEM_SUBCATEGORY_SCROLL_COMMISSION	int				set @ITEM_SUBCATEGORY_SCROLL_COMMISSION		= 46 -- 수수료주문서(46)
@@ -232,7 +232,7 @@ Begin
 			set @comment = 'ERROR 아이템을 찾을 수 없습니다.(판매안되는 아이템임1)'
 			--select 'DEBUG ' + @comment
 		END
-	else if (@subcategory not in ( @ITEM_SUBCATEGORY_BOX_WEAR, @ITEM_SUBCATEGORY_SCROLL_EVOLUTION, @ITEM_SUBCATEGORY_NICKCHANGE, @ITEM_SUBCATEGORY_GAMECOST ) )
+	else if (@subcategory not in ( @ITEM_SUBCATEGORY_BOX_PIECE, @ITEM_SUBCATEGORY_SCROLL_EVOLUTION, @ITEM_SUBCATEGORY_NICKCHANGE, @ITEM_SUBCATEGORY_GAMECOST ) )
 		BEGIN
 			set @nResult_ = @RESULT_ERROR_NOT_BUY_ITEMCODE
 			set @comment = 'ERROR 아이템을 찾을 수 없습니다.(판매안되는 아이템 카테고리임2)'

@@ -22,7 +22,6 @@ exec spu_SGResult 'mtxxxx3', '049000s1i0n7t8445289', 333, 1, 829537, -1
 exec spu_SGResult 'mtxxxx3', '049000s1i0n7t8445289', 333, 1, 829534, -1
 exec spu_SGResult 'mtxxxx3', '049000s1i0n7t8445289', 333, 1, 828644, -1
 exec spu_SGResult 'mtxxxx3', '049000s1i0n7t8445289', 333, 1, 829792, -1
-
 */
 use GameMTBaseball
 GO

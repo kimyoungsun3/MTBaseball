@@ -190,6 +190,12 @@ Begin
 			set @comment 	= '블럭처리된 아이디입니다.'
 			--select 'DEBUG 2-1', @comment
 		end
+	else if( LEN( @gameid_ ) <= 4)
+		begin
+			set @nResult_ = @RESULT_ERROR
+			set @comment = '계정사이즈가 4자리 이하는 등록이 안됩니다..'
+			--select 'DEBUG 2-4', @comment
+		end
 	else if exists (select top 1 * from tUserMaster where gameid = @gameid_)
 		begin
 			set @nResult_ = @RESULT_ERROR_ID_DUPLICATE
