@@ -372,10 +372,6 @@ Begin
 							exec dbo.spu_ToUserItem @gameid_, @invenkind, @subcategorynew, @itemcodenew, 1, @DEFINE_HOW_GET_BOX_OPEN, @randserial_, @nResult2_ = @listidxrtn2 OUTPUT
 							--select 'DEBUG 아이템지급', @gameid_ gameid_, @invenkind invenkind, @subcategorynew subcategorynew
 						end
-					else
-						begin
-							set @listidxrtn2 = -1
-						end
 					--select 'DEBUG ', @randsum randsum, @rand rand, @itemcodenew itemcodenew, @subcategorynew subcategorynew, @tempopenstate tempopenstate, @listidxrtn2 listidxrtn2
 
 

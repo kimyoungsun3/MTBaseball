@@ -131,9 +131,21 @@ create table dbo.tUserMaster(
 	templistidx2		int				default(-1),
 	templistidx3		int				default(-1),
 	templistidx4		int				default(-1),
+	templistidx5		int				default(-1),
 	tempboxopenmode		int				default(-1),
 	temppluscashcost 	int				default(0),
 	tempopenstate		int				default(1),
+	tempevolvestate		int 			default(-1),
+	tempdisapartstate	int 			default(-1),
+
+	tempcombinatestate	int 			default(-1),
+	tempitemcode		int				default(-1),
+	templistidxrtn		int				default(-1),
+	templistidxcust		int				default(-1),
+	templistidxpiece1	int 			default(-1),
+	templistidxpiece2	int 			default(-1),
+	templistidxpiece3	int 			default(-1),
+	templistidxpiece4	int 			default(-1),
 
 	-- 이벤트.
 	eventspot01		int					default(0),				-- 로그인사용(1~5).
