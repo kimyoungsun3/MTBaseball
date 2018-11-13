@@ -1,332 +1,332 @@
 use GameMTBaseball
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '100', '1', '1', '1', '기본 헬멧', '0', '0', '0', '0', '100', '0', '0', '0', '0', '1', '0', '기본으로 지급되는 장비', '-1', '0', '0', '-1', '0', '0', '1000', '0', '-1')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '100', '1', '1', '1', '기본 헬멧', '0', '0', '0', '0', '100', '0', '0', '0', '0', '1', '0', '기본으로 지급되는 장비', '-1', '0', '0', '-1', '0', '-1')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '101', '1', '1', '1', '돌 헬멧', '0', '0', '1', '0', '101', '0', '0', '0', '0', '1', '0', '돌 조각으로 조합한 장비', '4100', '1', '100', '0', '2000', '10', '495', '495', '102')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '101', '1', '1', '1', '돌 헬멧', '0', '0', '1', '0', '101', '0', '0', '0', '0', '1', '0', '돌 조각으로 조합한 장비', '4100', '1', '100', '0', '2000', '102')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '102', '1', '1', '1', '동 헬멧', '0', '0', '2', '0', '102', '0', '0', '0', '0', '1', '0', '동 조각으로 조합한 장비', '4101', '1', '200', '1', '4000', '10', '495', '495', '103')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '102', '1', '1', '1', '동 헬멧', '0', '0', '2', '0', '102', '0', '0', '0', '0', '1', '0', '동 조각으로 조합한 장비', '4101', '1', '200', '1', '4000', '103')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '103', '1', '1', '1', '은 헬멧', '0', '0', '3', '0', '103', '0', '0', '0', '0', '1', '0', '은 조각으로 조합한 장비', '4102', '1', '300', '2', '6000', '10', '495', '495', '104')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '103', '1', '1', '1', '은 헬멧', '0', '0', '3', '0', '103', '0', '0', '0', '0', '1', '0', '은 조각으로 조합한 장비', '4102', '1', '300', '2', '6000', '104')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '104', '1', '1', '1', '금 헬멧', '0', '0', '4', '0', '104', '0', '0', '0', '0', '1', '0', '금 조각으로 조합한 장비', '4103', '1', '400', '3', '8000', '10', '495', '495', '105')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '104', '1', '1', '1', '금 헬멧', '0', '0', '4', '0', '104', '0', '0', '0', '0', '1', '0', '금 조각으로 조합한 장비', '4103', '1', '400', '3', '8000', '105')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '105', '1', '1', '1', '티타늄 헬멧', '0', '0', '5', '0', '105', '0', '0', '0', '0', '1', '0', '티타늄 조각으로 조합한 장비', '4104', '1', '500', '4', '10000', '0', '1000', '0', '-1')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '105', '1', '1', '1', '티타늄 헬멧', '0', '0', '5', '0', '105', '0', '0', '0', '0', '1', '0', '티타늄 조각으로 조합한 장비', '4104', '1', '500', '4', '10000', '-1')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '200', '1', '2', '1', '기본 상의', '0', '0', '0', '0', '200', '0', '0', '0', '0', '1', '0', '기본으로 지급되는 장비', '-1', '0', '0', '-1', '0', '0', '1000', '0', '-1')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '200', '1', '2', '1', '기본 상의', '0', '0', '0', '0', '200', '0', '0', '0', '0', '1', '0', '기본으로 지급되는 장비', '-1', '0', '0', '-1', '0', '-1')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '201', '1', '2', '1', '돌 상의', '0', '0', '1', '0', '201', '0', '0', '0', '0', '1', '0', '돌 조각으로 조합한 장비', '4100', '1', '100', '0', '0', '10', '495', '495', '202')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '201', '1', '2', '1', '돌 상의', '0', '0', '1', '0', '201', '0', '0', '0', '0', '1', '0', '돌 조각으로 조합한 장비', '4100', '1', '100', 'fa', '0', '202')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '202', '1', '2', '1', '동 상의', '0', '0', '2', '0', '202', '0', '0', '0', '0', '1', '0', '동 조각으로 조합한 장비', '4101', '1', '200', '1', '0', '10', '495', '495', '203')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '202', '1', '2', '1', '동 상의', '0', '0', '2', '0', '202', '0', '0', '0', '0', '1', '0', '동 조각으로 조합한 장비', '4101', '1', '200', '1', '0', '203')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '203', '1', '2', '1', '은 상의', '0', '0', '3', '0', '203', '0', '0', '0', '0', '1', '0', '은 조각으로 조합한 장비', '4102', '1', '300', '2', '0', '10', '495', '495', '204')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '203', '1', '2', '1', '은 상의', '0', '0', '3', '0', '203', '0', '0', '0', '0', '1', '0', '은 조각으로 조합한 장비', '4102', '1', '300', '2', '0', '204')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '204', '1', '2', '1', '금 상의', '0', '0', '4', '0', '204', '0', '0', '0', '0', '1', '0', '금 조각으로 조합한 장비', '4103', '1', '400', '3', '0', '10', '495', '495', '205')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '204', '1', '2', '1', '금 상의', '0', '0', '4', '0', '204', '0', '0', '0', '0', '1', '0', '금 조각으로 조합한 장비', '4103', '1', '400', '3', '0', '205')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '205', '1', '2', '1', '티타늄 상의', '0', '0', '5', '0', '205', '0', '0', '0', '0', '1', '0', '티타늄 조각으로 조합한 장비', '4104', '1', '500', '4', '0', '0', '1000', '0', '-1')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '205', '1', '2', '1', '티타늄 상의', '0', '0', '5', '0', '205', '0', '0', '0', '0', '1', '0', '티타늄 조각으로 조합한 장비', '4104', '1', '500', '4', '0', '-1')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '300', '1', '3', '1', '기본 하의', '0', '0', '0', '0', '300', '0', '0', '0', '0', '1', '0', '기본으로 지급되는 장비', '-1', '0', '0', '-1', '0', '0', '1000', '0', '-1')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '300', '1', '3', '1', '기본 하의', '0', '0', '0', '0', '300', '0', '0', '0', '0', '1', '0', '기본으로 지급되는 장비', '-1', '0', '0', '-1', '0', '-1')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '301', '1', '3', '1', '돌 하의', '0', '0', '1', '0', '301', '0', '0', '0', '0', '1', '0', '돌 조각으로 조합한 장비', '4100', '1', '100', '0', '0', '10', '495', '495', '302')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '301', '1', '3', '1', '돌 하의', '0', '0', '1', '0', '301', '0', '0', '0', '0', '1', '0', '돌 조각으로 조합한 장비', '4100', '1', '100', '0', '0', '302')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '302', '1', '3', '1', '동 하의', '0', '0', '2', '0', '302', '0', '0', '0', '0', '1', '0', '동 조각으로 조합한 장비', '4101', '1', '200', '1', '0', '10', '495', '495', '303')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '302', '1', '3', '1', '동 하의', '0', '0', '2', '0', '302', '0', '0', '0', '0', '1', '0', '동 조각으로 조합한 장비', '4101', '1', '200', '1', '0', '303')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '303', '1', '3', '1', '은 하의', '0', '0', '3', '0', '303', '0', '0', '0', '0', '1', '0', '은 조각으로 조합한 장비', '4102', '1', '300', '2', '0', '10', '495', '495', '304')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '303', '1', '3', '1', '은 하의', '0', '0', '3', '0', '303', '0', '0', '0', '0', '1', '0', '은 조각으로 조합한 장비', '4102', '1', '300', '2', '0', '304')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '304', '1', '3', '1', '금 하의', '0', '0', '4', '0', '304', '0', '0', '0', '0', '1', '0', '금 조각으로 조합한 장비', '4103', '1', '400', '3', '0', '10', '495', '495', '305')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '304', '1', '3', '1', '금 하의', '0', '0', '4', '0', '304', '0', '0', '0', '0', '1', '0', '금 조각으로 조합한 장비', '4103', '1', '400', '3', '0', '305')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '305', '1', '3', '1', '티타늄 하의', '0', '0', '5', '0', '305', '0', '0', '0', '0', '1', '0', '티타늄 조각으로 조합한 장비', '4104', '1', '500', '4', '0', '0', '1000', '0', '-1')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '305', '1', '3', '1', '티타늄 하의', '0', '0', '5', '0', '305', '0', '0', '0', '0', '1', '0', '티타늄 조각으로 조합한 장비', '4104', '1', '500', '4', '0', '-1')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '400', '1', '4', '1', '기본 장갑', '0', '0', '0', '0', '400', '0', '0', '0', '0', '1', '0', '기본으로 지급되는 장비', '-1', '0', '0', '-1', '0', '0', '1000', '0', '-1')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '400', '1', '4', '1', '기본 장갑', '0', '0', '0', '0', '400', '0', '0', '0', '0', '1', '0', '기본으로 지급되는 장비', '-1', '0', '0', '-1', '0', '-1')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '401', '1', '4', '1', '돌 장갑', '0', '0', '1', '0', '401', '0', '0', '0', '0', '1', '0', '돌 조각으로 조합한 장비', '4100', '1', '100', '0', '0', '10', '495', '495', '402')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '401', '1', '4', '1', '돌 장갑', '0', '0', '1', '0', '401', '0', '0', '0', '0', '1', '0', '돌 조각으로 조합한 장비', '4100', '1', '100', '0', '0', '402')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '402', '1', '4', '1', '동 장갑', '0', '0', '2', '0', '402', '0', '0', '0', '0', '1', '0', '동 조각으로 조합한 장비', '4101', '1', '200', '1', '0', '10', '495', '495', '403')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '402', '1', '4', '1', '동 장갑', '0', '0', '2', '0', '402', '0', '0', '0', '0', '1', '0', '동 조각으로 조합한 장비', '4101', '1', '200', '1', '0', '403')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '403', '1', '4', '1', '은 장갑', '0', '0', '3', '0', '403', '0', '0', '0', '0', '1', '0', '은 조각으로 조합한 장비', '4102', '1', '300', '2', '0', '10', '495', '495', '404')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '403', '1', '4', '1', '은 장갑', '0', '0', '3', '0', '403', '0', '0', '0', '0', '1', '0', '은 조각으로 조합한 장비', '4102', '1', '300', '2', '0', '404')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '404', '1', '4', '1', '금 장갑', '0', '0', '4', '0', '404', '0', '0', '0', '0', '1', '0', '금 조각으로 조합한 장비', '4103', '1', '400', '3', '0', '10', '495', '495', '405')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '404', '1', '4', '1', '금 장갑', '0', '0', '4', '0', '404', '0', '0', '0', '0', '1', '0', '금 조각으로 조합한 장비', '4103', '1', '400', '3', '0', '405')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '405', '1', '4', '1', '티타늄 장갑', '0', '0', '5', '0', '405', '0', '0', '0', '0', '1', '0', '티타늄 조각으로 조합한 장비', '4104', '1', '500', '4', '0', '0', '1000', '0', '-1')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '405', '1', '4', '1', '티타늄 장갑', '0', '0', '5', '0', '405', '0', '0', '0', '0', '1', '0', '티타늄 조각으로 조합한 장비', '4104', '1', '500', '4', '0', '-1')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '500', '1', '5', '1', '기본 신발', '0', '0', '0', '0', '500', '0', '0', '0', '0', '1', '0', '기본으로 지급되는 장비', '-1', '0', '0', '-1', '0', '0', '1000', '0', '-1')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '500', '1', '5', '1', '기본 신발', '0', '0', '0', '0', '500', '0', '0', '0', '0', '1', '0', '기본으로 지급되는 장비', '-1', '0', '0', '-1', '0', '-1')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '501', '1', '5', '1', '돌 신발', '0', '0', '1', '0', '501', '0', '0', '0', '0', '1', '0', '돌 조각으로 조합한 장비', '4100', '1', '100', '0', '0', '10', '495', '495', '502')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '501', '1', '5', '1', '돌 신발', '0', '0', '1', '0', '501', '0', '0', '0', '0', '1', '0', '돌 조각으로 조합한 장비', '4100', '1', '100', '0', '0', '502')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '502', '1', '5', '1', '동 신발', '0', '0', '2', '0', '502', '0', '0', '0', '0', '1', '0', '동 조각으로 조합한 장비', '4101', '1', '200', '1', '0', '10', '495', '495', '503')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '502', '1', '5', '1', '동 신발', '0', '0', '2', '0', '502', '0', '0', '0', '0', '1', '0', '동 조각으로 조합한 장비', '4101', '1', '200', '1', '0', '503')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '503', '1', '5', '1', '은 신발', '0', '0', '3', '0', '503', '0', '0', '0', '0', '1', '0', '은 조각으로 조합한 장비', '4102', '1', '300', '2', '0', '10', '495', '495', '504')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '503', '1', '5', '1', '은 신발', '0', '0', '3', '0', '503', '0', '0', '0', '0', '1', '0', '은 조각으로 조합한 장비', '4102', '1', '300', '2', '0', '504')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '504', '1', '5', '1', '금 신발', '0', '0', '4', '0', '504', '0', '0', '0', '0', '1', '0', '금 조각으로 조합한 장비', '4103', '1', '400', '3', '0', '10', '495', '495', '505')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '504', '1', '5', '1', '금 신발', '0', '0', '4', '0', '504', '0', '0', '0', '0', '1', '0', '금 조각으로 조합한 장비', '4103', '1', '400', '3', '0', '505')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '505', '1', '5', '1', '티타늄 신발', '0', '0', '5', '0', '505', '0', '0', '0', '0', '1', '0', '티타늄 조각으로 조합한 장비', '4104', '1', '500', '4', '0', '0', '1000', '0', '-1')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '505', '1', '5', '1', '티타늄 신발', '0', '0', '5', '0', '505', '0', '0', '0', '0', '1', '0', '티타늄 조각으로 조합한 장비', '4104', '1', '500', '4', '0', '-1')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '600', '1', '6', '1', '기본 방망이', '0', '0', '0', '0', '600', '0', '0', '0', '0', '1', '0', '기본으로 지급되는 장비', '-1', '0', '0', '-1', '0', '0', '1000', '0', '-1')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '600', '1', '6', '1', '기본 방망이', '0', '0', '0', '0', '600', '0', '0', '0', '0', '1', '0', '기본으로 지급되는 장비', '-1', '0', '0', '-1', '0', '-1')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '601', '1', '6', '1', '돌 방망이', '0', '0', '1', '0', '601', '0', '0', '0', '0', '1', '0', '돌 조각으로 조합한 장비', '4100', '1', '100', '0', '0', '10', '495', '495', '602')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '601', '1', '6', '1', '돌 방망이', '0', '0', '1', '0', '601', '0', '0', '0', '0', '1', '0', '돌 조각으로 조합한 장비', '4100', '1', '100', '0', '0', '602')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '602', '1', '6', '1', '동 방망이', '0', '0', '2', '0', '602', '0', '0', '0', '0', '1', '0', '동 조각으로 조합한 장비', '4101', '1', '200', '1', '0', '10', '495', '495', '603')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '602', '1', '6', '1', '동 방망이', '0', '0', '2', '0', '602', '0', '0', '0', '0', '1', '0', '동 조각으로 조합한 장비', '4101', '1', '200', '1', '0', '603')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '603', '1', '6', '1', '은 방망이', '0', '0', '3', '0', '603', '0', '0', '0', '0', '1', '0', '은 조각으로 조합한 장비', '4102', '1', '300', '2', '0', '10', '495', '495', '604')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '603', '1', '6', '1', '은 방망이', '0', '0', '3', '0', '603', '0', '0', '0', '0', '1', '0', '은 조각으로 조합한 장비', '4102', '1', '300', '2', '0', '604')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '604', '1', '6', '1', '금 방망이', '0', '0', '4', '0', '604', '0', '0', '0', '0', '1', '0', '금 조각으로 조합한 장비', '4103', '1', '400', '3', '0', '10', '495', '495', '605')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '604', '1', '6', '1', '금 방망이', '0', '0', '4', '0', '604', '0', '0', '0', '0', '1', '0', '금 조각으로 조합한 장비', '4103', '1', '400', '3', '0', '605')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '605', '1', '6', '1', '티타늄 방망이', '0', '0', '5', '0', '605', '0', '0', '0', '0', '1', '0', '티타늄 조각으로 조합한 장비', '4104', '1', '500', '4', '0', '0', '1000', '0', '-1')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '605', '1', '6', '1', '티타늄 방망이', '0', '0', '5', '0', '605', '0', '0', '0', '0', '1', '0', '티타늄 조각으로 조합한 장비', '4104', '1', '500', '4', '0', '-1')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '700', '1', '7', '1', '기본 색깔공', '0', '0', '0', '0', '700', '0', '0', '0', '0', '1', '0', '기본으로 지급되는 장비', '-1', '0', '0', '-1', '0', '0', '1000', '0', '-1')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '700', '1', '7', '1', '기본 색깔공', '0', '0', '0', '0', '700', '0', '0', '0', '0', '1', '0', '기본으로 지급되는 장비', '-1', '0', '0', '-1', '0', '-1')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '701', '1', '7', '1', '돌 색깔공', '0', '0', '1', '0', '701', '0', '0', '0', '0', '1', '0', '돌 조각으로 조합한 장비', '4100', '1', '100', '0', '0', '10', '495', '495', '702')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '701', '1', '7', '1', '돌 색깔공', '0', '0', '1', '0', '701', '0', '0', '0', '0', '1', '0', '돌 조각으로 조합한 장비', '4100', '1', '100', '0', '0', '702')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '702', '1', '7', '1', '동 색깔공', '0', '0', '2', '0', '702', '0', '0', '0', '0', '1', '0', '동 조각으로 조합한 장비', '4101', '1', '200', '1', '0', '10', '495', '495', '703')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '702', '1', '7', '1', '동 색깔공', '0', '0', '2', '0', '702', '0', '0', '0', '0', '1', '0', '동 조각으로 조합한 장비', '4101', '1', '200', '1', '0', '703')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '703', '1', '7', '1', '은 색깔공', '0', '0', '3', '0', '703', '0', '0', '0', '0', '1', '0', '은 조각으로 조합한 장비', '4102', '1', '300', '2', '0', '10', '495', '495', '704')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '703', '1', '7', '1', '은 색깔공', '0', '0', '3', '0', '703', '0', '0', '0', '0', '1', '0', '은 조각으로 조합한 장비', '4102', '1', '300', '2', '0', '704')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '704', '1', '7', '1', '금 색깔공', '0', '0', '4', '0', '704', '0', '0', '0', '0', '1', '0', '금 조각으로 조합한 장비', '4103', '1', '400', '3', '0', '10', '495', '495', '705')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '704', '1', '7', '1', '금 색깔공', '0', '0', '4', '0', '704', '0', '0', '0', '0', '1', '0', '금 조각으로 조합한 장비', '4103', '1', '400', '3', '0', '705')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '705', '1', '7', '1', '티타늄 색깔공', '0', '0', '5', '0', '705', '0', '0', '0', '0', '1', '0', '티타늄 조각으로 조합한 장비', '4104', '1', '500', '4', '0', '0', '1000', '0', '-1')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '705', '1', '7', '1', '티타늄 색깔공', '0', '0', '5', '0', '705', '0', '0', '0', '0', '1', '0', '티타늄 조각으로 조합한 장비', '4104', '1', '500', '4', '0', '-1')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '800', '1', '8', '1', '기본 고글', '0', '0', '0', '0', '800', '0', '0', '0', '0', '1', '0', '기본으로 지급되는 장비', '-1', '0', '0', '-1', '0', '0', '1000', '0', '-1')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '800', '1', '8', '1', '기본 고글', '0', '0', '0', '0', '800', '0', '0', '0', '0', '1', '0', '기본으로 지급되는 장비', '-1', '0', '0', '-1', '0', '-1')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '801', '1', '8', '1', '돌 고글', '0', '0', '1', '0', '801', '0', '0', '0', '0', '1', '0', '돌 조각으로 조합한 장비', '4100', '1', '100', '0', '0', '10', '495', '495', '802')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '801', '1', '8', '1', '돌 고글', '0', '0', '1', '0', '801', '0', '0', '0', '0', '1', '0', '돌 조각으로 조합한 장비', '4100', '1', '100', '0', '0', '802')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '802', '1', '8', '1', '동 고글', '0', '0', '2', '0', '802', '0', '0', '0', '0', '1', '0', '동 조각으로 조합한 장비', '4101', '1', '200', '1', '0', '10', '495', '495', '803')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '802', '1', '8', '1', '동 고글', '0', '0', '2', '0', '802', '0', '0', '0', '0', '1', '0', '동 조각으로 조합한 장비', '4101', '1', '200', '1', '0', '803')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '803', '1', '8', '1', '은 고글', '0', '0', '3', '0', '803', '0', '0', '0', '0', '1', '0', '은 조각으로 조합한 장비', '4102', '1', '300', '2', '0', '10', '495', '495', '804')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '803', '1', '8', '1', '은 고글', '0', '0', '3', '0', '803', '0', '0', '0', '0', '1', '0', '은 조각으로 조합한 장비', '4102', '1', '300', '2', '0', '804')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '804', '1', '8', '1', '금 고글', '0', '0', '4', '0', '804', '0', '0', '0', '0', '1', '0', '금 조각으로 조합한 장비', '4103', '1', '400', '3', '0', '10', '495', '495', '805')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '804', '1', '8', '1', '금 고글', '0', '0', '4', '0', '804', '0', '0', '0', '0', '1', '0', '금 조각으로 조합한 장비', '4103', '1', '400', '3', '0', '805')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '805', '1', '8', '1', '티타늄 고글', '0', '0', '5', '0', '805', '0', '0', '0', '0', '1', '0', '티타늄 조각으로 조합한 장비', '4104', '1', '500', '4', '0', '0', '1000', '0', '-1')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '805', '1', '8', '1', '티타늄 고글', '0', '0', '5', '0', '805', '0', '0', '0', '0', '1', '0', '티타늄 조각으로 조합한 장비', '4104', '1', '500', '4', '0', '-1')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '900', '1', '9', '1', '기본 손목 아대', '0', '0', '0', '0', '900', '0', '0', '0', '0', '1', '0', '기본으로 지급되는 장비', '-1', '0', '0', '-1', '0', '0', '1000', '0', '-1')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '900', '1', '9', '1', '기본 손목 아대', '0', '0', '0', '0', '900', '0', '0', '0', '0', '1', '0', '기본으로 지급되는 장비', '-1', '0', '0', '-1', '0', '-1')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '901', '1', '9', '1', '돌 손목 아대', '0', '0', '1', '0', '901', '0', '0', '0', '0', '1', '0', '돌 조각으로 조합한 장비', '4100', '1', '100', '0', '0', '10', '495', '495', '902')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '901', '1', '9', '1', '돌 손목 아대', '0', '0', '1', '0', '901', '0', '0', '0', '0', '1', '0', '돌 조각으로 조합한 장비', '4100', '1', '100', '0', '0', '902')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '902', '1', '9', '1', '동 손목 아대', '0', '0', '2', '0', '902', '0', '0', '0', '0', '1', '0', '동 조각으로 조합한 장비', '4101', '1', '200', '1', '0', '10', '495', '495', '903')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '902', '1', '9', '1', '동 손목 아대', '0', '0', '2', '0', '902', '0', '0', '0', '0', '1', '0', '동 조각으로 조합한 장비', '4101', '1', '200', '1', '0', '903')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '903', '1', '9', '1', '은 손목 아대', '0', '0', '3', '0', '903', '0', '0', '0', '0', '1', '0', '은 조각으로 조합한 장비', '4102', '1', '300', '2', '0', '10', '495', '495', '904')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '903', '1', '9', '1', '은 손목 아대', '0', '0', '3', '0', '903', '0', '0', '0', '0', '1', '0', '은 조각으로 조합한 장비', '4102', '1', '300', '2', '0', '904')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '904', '1', '9', '1', '금 손목 아대', '0', '0', '4', '0', '904', '0', '0', '0', '0', '1', '0', '금 조각으로 조합한 장비', '4103', '1', '400', '3', '0', '10', '495', '495', '905')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '904', '1', '9', '1', '금 손목 아대', '0', '0', '4', '0', '904', '0', '0', '0', '0', '1', '0', '금 조각으로 조합한 장비', '4103', '1', '400', '3', '0', '905')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '905', '1', '9', '1', '티타늄 손목 아대', '0', '0', '5', '0', '905', '0', '0', '0', '0', '1', '0', '티타늄 조각으로 조합한 장비', '4104', '1', '500', '4', '0', '0', '1000', '0', '-1')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '905', '1', '9', '1', '티타늄 손목 아대', '0', '0', '5', '0', '905', '0', '0', '0', '0', '1', '0', '티타늄 조각으로 조합한 장비', '4104', '1', '500', '4', '0', '-1')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '1000', '1', '10', '1', '기본 팔꿈치 보호대', '0', '0', '0', '0', '1000', '0', '0', '0', '0', '1', '0', '기본으로 지급되는 장비', '-1', '0', '0', '-1', '0', '0', '1000', '0', '-1')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '1000', '1', '10', '1', '기본 팔꿈치 보호대', '0', '0', '0', '0', '1000', '0', '0', '0', '0', '1', '0', '기본으로 지급되는 장비', '-1', '0', '0', '-1', '0', '-1')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '1001', '1', '10', '1', '돌 팔꿈치 보호대', '0', '0', '1', '0', '1001', '0', '0', '0', '0', '1', '0', '돌 조각으로 조합한 장비', '4100', '1', '100', '0', '0', '10', '495', '495', '1002')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '1001', '1', '10', '1', '돌 팔꿈치 보호대', '0', '0', '1', '0', '1001', '0', '0', '0', '0', '1', '0', '돌 조각으로 조합한 장비', '4100', '1', '100', '0', '0', '1002')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '1002', '1', '10', '1', '동 팔꿈치 보호대', '0', '0', '2', '0', '1002', '0', '0', '0', '0', '1', '0', '동 조각으로 조합한 장비', '4101', '1', '200', '1', '0', '10', '495', '495', '1003')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '1002', '1', '10', '1', '동 팔꿈치 보호대', '0', '0', '2', '0', '1002', '0', '0', '0', '0', '1', '0', '동 조각으로 조합한 장비', '4101', '1', '200', '1', '0', '1003')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '1003', '1', '10', '1', '은 팔꿈치 보호대', '0', '0', '3', '0', '1003', '0', '0', '0', '0', '1', '0', '은 조각으로 조합한 장비', '4102', '1', '300', '2', '0', '10', '495', '495', '1004')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '1003', '1', '10', '1', '은 팔꿈치 보호대', '0', '0', '3', '0', '1003', '0', '0', '0', '0', '1', '0', '은 조각으로 조합한 장비', '4102', '1', '300', '2', '0', '1004')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '1004', '1', '10', '1', '금 팔꿈치 보호대', '0', '0', '4', '0', '1004', '0', '0', '0', '0', '1', '0', '금 조각으로 조합한 장비', '4103', '1', '400', '3', '0', '10', '495', '495', '1005')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '1004', '1', '10', '1', '금 팔꿈치 보호대', '0', '0', '4', '0', '1004', '0', '0', '0', '0', '1', '0', '금 조각으로 조합한 장비', '4103', '1', '400', '3', '0', '1005')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '1005', '1', '10', '1', '티타늄 팔꿈치 보호대', '0', '0', '5', '0', '1005', '0', '0', '0', '0', '1', '0', '티타늄 조각으로 조합한 장비', '4104', '1', '500', '4', '0', '0', '1000', '0', '-1')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '1005', '1', '10', '1', '티타늄 팔꿈치 보호대', '0', '0', '5', '0', '1005', '0', '0', '0', '0', '1', '0', '티타늄 조각으로 조합한 장비', '4104', '1', '500', '4', '0', '-1')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '1100', '1', '11', '1', '기본 벨트', '0', '0', '0', '0', '1100', '0', '0', '0', '0', '1', '0', '기본으로 지급되는 장비', '-1', '0', '0', '-1', '0', '0', '1000', '0', '-1')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '1100', '1', '11', '1', '기본 벨트', '0', '0', '0', '0', '1100', '0', '0', '0', '0', '1', '0', '기본으로 지급되는 장비', '-1', '0', '0', '-1', '0', '-1')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '1101', '1', '11', '1', '돌 벨트', '0', '0', '1', '0', '1101', '0', '0', '0', '0', '1', '0', '돌 조각으로 조합한 장비', '4100', '1', '100', '0', '0', '10', '495', '495', '1102')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '1101', '1', '11', '1', '돌 벨트', '0', '0', '1', '0', '1101', '0', '0', '0', '0', '1', '0', '돌 조각으로 조합한 장비', '4100', '1', '100', '0', '0', '1102')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '1102', '1', '11', '1', '동 벨트', '0', '0', '2', '0', '1102', '0', '0', '0', '0', '1', '0', '동 조각으로 조합한 장비', '4101', '1', '200', '1', '0', '10', '495', '495', '1103')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '1102', '1', '11', '1', '동 벨트', '0', '0', '2', '0', '1102', '0', '0', '0', '0', '1', '0', '동 조각으로 조합한 장비', '4101', '1', '200', '1', '0', '1103')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '1103', '1', '11', '1', '은 벨트', '0', '0', '3', '0', '1103', '0', '0', '0', '0', '1', '0', '은 조각으로 조합한 장비', '4102', '1', '300', '2', '0', '10', '495', '495', '1104')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '1103', '1', '11', '1', '은 벨트', '0', '0', '3', '0', '1103', '0', '0', '0', '0', '1', '0', '은 조각으로 조합한 장비', '4102', '1', '300', '2', '0', '1104')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '1104', '1', '11', '1', '금 벨트', '0', '0', '4', '0', '1104', '0', '0', '0', '0', '1', '0', '금 조각으로 조합한 장비', '4103', '1', '400', '3', '0', '10', '495', '495', '1105')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '1104', '1', '11', '1', '금 벨트', '0', '0', '4', '0', '1104', '0', '0', '0', '0', '1', '0', '금 조각으로 조합한 장비', '4103', '1', '400', '3', '0', '1105')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '1105', '1', '11', '1', '티타늄 벨트', '0', '0', '5', '0', '1105', '0', '0', '0', '0', '1', '0', '티타늄 조각으로 조합한 장비', '4104', '1', '500', '4', '0', '0', '1000', '0', '-1')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '1105', '1', '11', '1', '티타늄 벨트', '0', '0', '5', '0', '1105', '0', '0', '0', '0', '1', '0', '티타늄 조각으로 조합한 장비', '4104', '1', '500', '4', '0', '-1')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '1200', '1', '12', '1', '기본 무릎 보호대', '0', '0', '0', '0', '1200', '0', '0', '0', '0', '1', '0', '기본으로 지급되는 장비', '-1', '0', '0', '-1', '0', '0', '1000', '0', '-1')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '1200', '1', '12', '1', '기본 무릎 보호대', '0', '0', '0', '0', '1200', '0', '0', '0', '0', '1', '0', '기본으로 지급되는 장비', '-1', '0', '0', '-1', '0', '-1')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '1201', '1', '12', '1', '돌 무릎 보호대', '0', '0', '1', '0', '1201', '0', '0', '0', '0', '1', '0', '돌 조각으로 조합한 장비', '4100', '1', '100', '0', '0', '10', '495', '495', '1202')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '1201', '1', '12', '1', '돌 무릎 보호대', '0', '0', '1', '0', '1201', '0', '0', '0', '0', '1', '0', '돌 조각으로 조합한 장비', '4100', '1', '100', '0', '0', '1202')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '1202', '1', '12', '1', '동 무릎 보호대', '0', '0', '2', '0', '1202', '0', '0', '0', '0', '1', '0', '동 조각으로 조합한 장비', '4101', '1', '200', '1', '0', '10', '495', '495', '1203')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '1202', '1', '12', '1', '동 무릎 보호대', '0', '0', '2', '0', '1202', '0', '0', '0', '0', '1', '0', '동 조각으로 조합한 장비', '4101', '1', '200', '1', '0', '1203')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '1203', '1', '12', '1', '은 무릎 보호대', '0', '0', '3', '0', '1203', '0', '0', '0', '0', '1', '0', '은 조각으로 조합한 장비', '4102', '1', '300', '2', '0', '10', '495', '495', '1204')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '1203', '1', '12', '1', '은 무릎 보호대', '0', '0', '3', '0', '1203', '0', '0', '0', '0', '1', '0', '은 조각으로 조합한 장비', '4102', '1', '300', '2', '0', '1204')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '1204', '1', '12', '1', '금 무릎 보호대', '0', '0', '4', '0', '1204', '0', '0', '0', '0', '1', '0', '금 조각으로 조합한 장비', '4103', '1', '400', '3', '0', '10', '495+O87N86:Y9A86:Y98', '495', '1205')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '1204', '1', '12', '1', '금 무릎 보호대', '0', '0', '4', '0', '1204', '0', '0', '0', '0', '1', '0', '금 조각으로 조합한 장비', '4103', '1', '400', '3', '0', '1205')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '1205', '1', '12', '1', '티타늄 무릎 보호대', '0', '0', '5', '0', '1205', '0', '0', '0', '0', '1', '0', '티타늄 조각으로 조합한 장비', '4104', '1', '500', '4', '0', '0', '1000', '0', '-1')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '1205', '1', '12', '1', '티타늄 무릎 보호대', '0', '0', '5', '0', '1205', '0', '0', '0', '0', '1', '0', '티타늄 조각으로 조합한 장비', '4104', '1', '500', '4', '0', '-1')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '1300', '1', '13', '1', '기본 양말', '0', '0', '0', '0', '1300', '0', '0', '0', '0', '1', '0', '기본으로 지급되는 장비', '-1', '0', '0', '-1', '0', '0', '1000', '0', '-1')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '1300', '1', '13', '1', '기본 양말', '0', '0', '0', '0', '1300', '0', '0', '0', '0', '1', '0', '기본으로 지급되는 장비', '-1', '0', '0', '-1', '0', '-1')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '1301', '1', '13', '1', '돌 양말', '0', '0', '1', '0', '1301', '0', '0', '0', '0', '1', '0', '돌 조각으로 조합한 장비', '4100', '1', '100', '0', '0', '10', '495', '495', '1302')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '1301', '1', '13', '1', '돌 양말', '0', '0', '1', '0', '1301', '0', '0', '0', '0', '1', '0', '돌 조각으로 조합한 장비', '4100', '1', '100', '0', '0', '1302')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '1302', '1', '13', '1', '동 양말', '0', '0', '2', '0', '1302', '0', '0', '0', '0', '1', '0', '동 조각으로 조합한 장비', '4101', '1', '200', '1', '0', '10', '495', '495', '1303')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '1302', '1', '13', '1', '동 양말', '0', '0', '2', '0', '1302', '0', '0', '0', '0', '1', '0', '동 조각으로 조합한 장비', '4101', '1', '200', '1', '0', '1303')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '1303', '1', '13', '1', '은 양말', '0', '0', '3', '0', '1303', '0', '0', '0', '0', '1', '0', '은 조각으로 조합한 장비', '4102', '1', '300', '2', '0', '10', '495', '495', '1304')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '1303', '1', '13', '1', '은 양말', '0', '0', '3', '0', '1303', '0', '0', '0', '0', '1', '0', '은 조각으로 조합한 장비', '4102', '1', '300', '2', '0', '1304')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '1304', '1', '13', '1', '금 양말', '0', '0', '4', '0', '1304', '0', '0', '0', '0', '1', '0', '금 조각으로 조합한 장비', '4103', '1', '400', '3', '0', '10', '495', '495', '1305')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '1304', '1', '13', '1', '금 양말', '0', '0', '4', '0', '1304', '0', '0', '0', '0', '1', '0', '금 조각으로 조합한 장비', '4103', '1', '400', '3', '0', '1305')
 GO
 
-insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6, param7, param8, param9) 
-values('wearpart', '1305', '1', '13', '1', '티타늄 양말', '0', '0', '5', '0', '1305', '0', '0', '0', '0', '1', '0', '티타늄 조각으로 조합한 장비', '4104', '1', '500', '4', '0', '0', '1000', '0', '-1')
+insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
+values('wearpart', '1305', '1', '13', '1', '티타늄 양말', '0', '0', '5', '0', '1305', '0', '0', '0', '0', '1', '0', '티타늄 조각으로 조합한 장비', '4104', '1', '500', '4', '0', '-1')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1500', '15', '15', '2', '돌 헬멧 조각 A', '0', '0', '1', '0', '1500', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '2435', '1', '1', '101')
+values('piecepart', '1500', '15', '15', '2', '돌 헬멧 조각 A', '0', '0', '1', '0', '1500', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '2435', '1', '1', '101')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1501', '15', '15', '2', '돌 헬멧 조각 B', '0', '0', '1', '0', '1501', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '2435', '1', '2', '101')
+values('piecepart', '1501', '15', '15', '2', '돌 헬멧 조각 B', '0', '0', '1', '0', '1501', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '2435', '1', '2', '101')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1502', '15', '15', '2', '돌 헬멧 조각 C', '0', '0', '1', '0', '1502', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '2435', '1', '3', '101')
+values('piecepart', '1502', '15', '15', '2', '돌 헬멧 조각 C', '0', '0', '1', '0', '1502', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '2435', '1', '3', '101')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1503', '15', '15', '2', '돌 헬멧 조각 D', '0', '0', '1', '0', '1503', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '395', '1', '4', '101')
+values('piecepart', '1503', '15', '15', '2', '돌 헬멧 조각 D', '0', '0', '1', '0', '1503', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '395', '1', '4', '101')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
@@ -346,67 +346,67 @@ values('piecepart', '1507', '15', '15', '2', '동 헬멧 조각 D', '0', '0', '2', '0
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1508', '15', '15', '2', '은 헬멧 조각 A', '0', '0', '3', '0', '1508', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '2425', '3', '1', '103')
+values('piecepart', '1508', '15', '15', '2', '은 헬멧 조각 A', '0', '0', '3', '0', '1508', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '2425', '3', '1', '103')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1509', '15', '15', '2', '은 헬멧 조각 B', '0', '0', '3', '0', '1509', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '2425', '3', '2', '103')
+values('piecepart', '1509', '15', '15', '2', '은 헬멧 조각 B', '0', '0', '3', '0', '1509', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '2425', '3', '2', '103')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1510', '15', '15', '2', '은 헬멧 조각 C', '0', '0', '3', '0', '1510', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '2425', '3', '3', '103')
+values('piecepart', '1510', '15', '15', '2', '은 헬멧 조각 C', '0', '0', '3', '0', '1510', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '2425', '3', '3', '103')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1511', '15', '15', '2', '은 헬멧 조각 D', '0', '0', '3', '0', '1511', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '395', '3', '4', '103')
+values('piecepart', '1511', '15', '15', '2', '은 헬멧 조각 D', '0', '0', '3', '0', '1511', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '395', '3', '4', '103')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1512', '15', '15', '2', '금 헬멧 조각 A', '0', '0', '4', '0', '1512', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '2425', '4', '1', '104')
+values('piecepart', '1512', '15', '15', '2', '금 헬멧 조각 A', '0', '0', '4', '0', '1512', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '2425', '4', '1', '104')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1513', '15', '15', '2', '금 헬멧 조각 B', '0', '0', '4', '0', '1513', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '2425', '4', '2', '104')
+values('piecepart', '1513', '15', '15', '2', '금 헬멧 조각 B', '0', '0', '4', '0', '1513', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '2425', '4', '2', '104')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1514', '15', '15', '2', '금 헬멧 조각 C', '0', '0', '4', '0', '1514', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '2425', '4', '3', '104')
+values('piecepart', '1514', '15', '15', '2', '금 헬멧 조각 C', '0', '0', '4', '0', '1514', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '2425', '4', '3', '104')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1515', '15', '15', '2', '금 헬멧 조각 D', '0', '0', '4', '0', '1515', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '395', '4', '4', '104')
+values('piecepart', '1515', '15', '15', '2', '금 헬멧 조각 D', '0', '0', '4', '0', '1515', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '395', '4', '4', '104')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1516', '15', '15', '2', '티타늄 헬멧 조각 A', '0', '0', '5', '0', '1516', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '5', '1', '105')
+values('piecepart', '1516', '15', '15', '2', '티타늄 헬멧 조각 A', '0', '0', '5', '0', '1516', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '5', '1', '105')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1517', '15', '15', '2', '티타늄 헬멧 조각 B', '0', '0', '5', '0', '1517', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '5', '2', '105')
+values('piecepart', '1517', '15', '15', '2', '티타늄 헬멧 조각 B', '0', '0', '5', '0', '1517', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '5', '2', '105')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1518', '15', '15', '2', '티타늄 헬멧 조각 C', '0', '0', '5', '0', '1518', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '5', '3', '105')
+values('piecepart', '1518', '15', '15', '2', '티타늄 헬멧 조각 C', '0', '0', '5', '0', '1518', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '5', '3', '105')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1519', '15', '15', '2', '티타늄 헬멧 조각 D', '0', '0', '5', '0', '1519', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '395', '5', '4', '105')
+values('piecepart', '1519', '15', '15', '2', '티타늄 헬멧 조각 D', '0', '0', '5', '0', '1519', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '395', '5', '4', '105')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1600', '15', '16', '2', '돌 상의 조각 A', '0', '0', '1', '0', '1600', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '2435', '6', '1', '201')
+values('piecepart', '1600', '15', '16', '2', '돌 상의 조각 A', '0', '0', '1', '0', '1600', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '2435', '6', '1', '201')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1601', '15', '16', '2', '돌 상의 조각 B', '0', '0', '1', '0', '1601', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '2435', '6', '2', '201')
+values('piecepart', '1601', '15', '16', '2', '돌 상의 조각 B', '0', '0', '1', '0', '1601', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '2435', '6', '2', '201')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1602', '15', '16', '2', '돌 상의 조각 C', '0', '0', '1', '0', '1602', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '2435', '6', '3', '201')
+values('piecepart', '1602', '15', '16', '2', '돌 상의 조각 C', '0', '0', '1', '0', '1602', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '2435', '6', '3', '201')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1603', '15', '16', '2', '돌 상의 조각 D', '0', '0', '1', '0', '1603', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '395', '6', '4', '201')
+values('piecepart', '1603', '15', '16', '2', '돌 상의 조각 D', '0', '0', '1', '0', '1603', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '395', '6', '4', '201')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
@@ -426,67 +426,67 @@ values('piecepart', '1607', '15', '16', '2', '동 상의 조각 D', '0', '0', '2', '0
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1608', '15', '16', '2', '은 상의 조각 A', '0', '0', '3', '0', '1608', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '2425', '8', '1', '203')
+values('piecepart', '1608', '15', '16', '2', '은 상의 조각 A', '0', '0', '3', '0', '1608', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '2425', '8', '1', '203')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1609', '15', '16', '2', '은 상의 조각 B', '0', '0', '3', '0', '1609', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '2425', '8', '2', '203')
+values('piecepart', '1609', '15', '16', '2', '은 상의 조각 B', '0', '0', '3', '0', '1609', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '2425', '8', '2', '203')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1610', '15', '16', '2', '은 상의 조각 C', '0', '0', '3', '0', '1610', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '2425', '8', '3', '203')
+values('piecepart', '1610', '15', '16', '2', '은 상의 조각 C', '0', '0', '3', '0', '1610', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '2425', '8', '3', '203')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1611', '15', '16', '2', '은 상의 조각 D', '0', '0', '3', '0', '1611', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '395', '8', '4', '203')
+values('piecepart', '1611', '15', '16', '2', '은 상의 조각 D', '0', '0', '3', '0', '1611', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '395', '8', '4', '203')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1612', '15', '16', '2', '금 상의 조각 A', '0', '0', '4', '0', '1612', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '2425', '9', '1', '204')
+values('piecepart', '1612', '15', '16', '2', '금 상의 조각 A', '0', '0', '4', '0', '1612', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '2425', '9', '1', '204')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1613', '15', '16', '2', '금 상의 조각 B', '0', '0', '4', '0', '1613', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '2425', '9', '2', '204')
+values('piecepart', '1613', '15', '16', '2', '금 상의 조각 B', '0', '0', '4', '0', '1613', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '2425', '9', '2', '204')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1614', '15', '16', '2', '금 상의 조각 C', '0', '0', '4', '0', '1614', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '2425', '9', '3', '204')
+values('piecepart', '1614', '15', '16', '2', '금 상의 조각 C', '0', '0', '4', '0', '1614', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '2425', '9', '3', '204')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1615', '15', '16', '2', '금 상의 조각 D', '0', '0', '4', '0', '1615', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '395', '9', '4', '204')
+values('piecepart', '1615', '15', '16', '2', '금 상의 조각 D', '0', '0', '4', '0', '1615', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '395', '9', '4', '204')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1616', '15', '16', '2', '티타늄 상의 조각 A', '0', '0', '5', '0', '1616', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '10', '1', '205')
+values('piecepart', '1616', '15', '16', '2', '티타늄 상의 조각 A', '0', '0', '5', '0', '1616', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '10', '1', '205')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1617', '15', '16', '2', '티타늄 상의 조각 B', '0', '0', '5', '0', '1617', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '10', '2', '205')
+values('piecepart', '1617', '15', '16', '2', '티타늄 상의 조각 B', '0', '0', '5', '0', '1617', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '10', '2', '205')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1618', '15', '16', '2', '티타늄 상의 조각 C', '0', '0', '5', '0', '1618', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '10', '3', '205')
+values('piecepart', '1618', '15', '16', '2', '티타늄 상의 조각 C', '0', '0', '5', '0', '1618', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '10', '3', '205')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1619', '15', '16', '2', '티타늄 상의 조각 D', '0', '0', '5', '0', '1619', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '395', '10', '4', '205')
+values('piecepart', '1619', '15', '16', '2', '티타늄 상의 조각 D', '0', '0', '5', '0', '1619', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '395', '10', '4', '205')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1700', '15', '17', '2', '돌 하의 조각 A', '0', '0', '1', '0', '1700', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '2435', '11', '1', '301')
+values('piecepart', '1700', '15', '17', '2', '돌 하의 조각 A', '0', '0', '1', '0', '1700', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '2435', '11', '1', '301')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1701', '15', '17', '2', '돌 하의 조각 B', '0', '0', '1', '0', '1701', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '2435', '11', '2', '301')
+values('piecepart', '1701', '15', '17', '2', '돌 하의 조각 B', '0', '0', '1', '0', '1701', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '2435', '11', '2', '301')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1702', '15', '17', '2', '돌 하의 조각 C', '0', '0', '1', '0', '1702', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '2435', '11', '3', '301')
+values('piecepart', '1702', '15', '17', '2', '돌 하의 조각 C', '0', '0', '1', '0', '1702', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '2435', '11', '3', '301')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1703', '15', '17', '2', '돌 하의 조각 D', '0', '0', '1', '0', '1703', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '395', '11', '4', '301')
+values('piecepart', '1703', '15', '17', '2', '돌 하의 조각 D', '0', '0', '1', '0', '1703', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '395', '11', '4', '301')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
@@ -506,67 +506,67 @@ values('piecepart', '1707', '15', '17', '2', '동 하의 조각 D', '0', '0', '2', '0
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1708', '15', '17', '2', '은 하의 조각 A', '0', '0', '3', '0', '1708', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '2425', '13', '1', '303')
+values('piecepart', '1708', '15', '17', '2', '은 하의 조각 A', '0', '0', '3', '0', '1708', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '2425', '13', '1', '303')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1709', '15', '17', '2', '은 하의 조각 B', '0', '0', '3', '0', '1709', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '2425', '13', '2', '303')
+values('piecepart', '1709', '15', '17', '2', '은 하의 조각 B', '0', '0', '3', '0', '1709', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '2425', '13', '2', '303')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1710', '15', '17', '2', '은 하의 조각 C', '0', '0', '3', '0', '1710', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '2425', '13', '3', '303')
+values('piecepart', '1710', '15', '17', '2', '은 하의 조각 C', '0', '0', '3', '0', '1710', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '2425', '13', '3', '303')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1711', '15', '17', '2', '은 하의 조각 D', '0', '0', '3', '0', '1711', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '395', '13', '4', '303')
+values('piecepart', '1711', '15', '17', '2', '은 하의 조각 D', '0', '0', '3', '0', '1711', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '395', '13', '4', '303')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1712', '15', '17', '2', '금 하의 조각 A', '0', '0', '4', '0', '1712', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '2425', '14', '1', '304')
+values('piecepart', '1712', '15', '17', '2', '금 하의 조각 A', '0', '0', '4', '0', '1712', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '2425', '14', '1', '304')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1713', '15', '17', '2', '금 하의 조각 B', '0', '0', '4', '0', '1713', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '2425', '14', '2', '304')
+values('piecepart', '1713', '15', '17', '2', '금 하의 조각 B', '0', '0', '4', '0', '1713', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '2425', '14', '2', '304')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1714', '15', '17', '2', '금 하의 조각 C', '0', '0', '4', '0', '1714', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '2425', '14', '3', '304')
+values('piecepart', '1714', '15', '17', '2', '금 하의 조각 C', '0', '0', '4', '0', '1714', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '2425', '14', '3', '304')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1715', '15', '17', '2', '금 하의 조각 D', '0', '0', '4', '0', '1715', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '395', '14', '4', '304')
+values('piecepart', '1715', '15', '17', '2', '금 하의 조각 D', '0', '0', '4', '0', '1715', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '395', '14', '4', '304')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1716', '15', '17', '2', '티타늄 하의 조각 A', '0', '0', '5', '0', '1716', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '15', '1', '305')
+values('piecepart', '1716', '15', '17', '2', '티타늄 하의 조각 A', '0', '0', '5', '0', '1716', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '15', '1', '305')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1717', '15', '17', '2', '티타늄 하의 조각 B', '0', '0', '5', '0', '1717', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '15', '2', '305')
+values('piecepart', '1717', '15', '17', '2', '티타늄 하의 조각 B', '0', '0', '5', '0', '1717', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '15', '2', '305')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1718', '15', '17', '2', '티타늄 하의 조각 C', '0', '0', '5', '0', '1718', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '15', '3', '305')
+values('piecepart', '1718', '15', '17', '2', '티타늄 하의 조각 C', '0', '0', '5', '0', '1718', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '15', '3', '305')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1719', '15', '17', '2', '티타늄 하의 조각 D', '0', '0', '5', '0', '1719', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '395', '15', '4', '305')
+values('piecepart', '1719', '15', '17', '2', '티타늄 하의 조각 D', '0', '0', '5', '0', '1719', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '395', '15', '4', '305')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1800', '15', '18', '2', '돌 장갑 조각 A', '0', '0', '1', '0', '1800', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '2435', '16', '1', '401')
+values('piecepart', '1800', '15', '18', '2', '돌 장갑 조각 A', '0', '0', '1', '0', '1800', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '2435', '16', '1', '401')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1801', '15', '18', '2', '돌 장갑 조각 B', '0', '0', '1', '0', '1801', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '2435', '16', '2', '401')
+values('piecepart', '1801', '15', '18', '2', '돌 장갑 조각 B', '0', '0', '1', '0', '1801', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '2435', '16', '2', '401')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1802', '15', '18', '2', '돌 장갑 조각 C', '0', '0', '1', '0', '1802', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '2435', '16', '3', '401')
+values('piecepart', '1802', '15', '18', '2', '돌 장갑 조각 C', '0', '0', '1', '0', '1802', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '2435', '16', '3', '401')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1803', '15', '18', '2', '돌 장갑 조각 D', '0', '0', '1', '0', '1803', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '395', '16', '4', '401')
+values('piecepart', '1803', '15', '18', '2', '돌 장갑 조각 D', '0', '0', '1', '0', '1803', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '395', '16', '4', '401')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
@@ -586,67 +586,67 @@ values('piecepart', '1807', '15', '18', '2', '동 장갑 조각 D', '0', '0', '2', '0
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1808', '15', '18', '2', '은 장갑 조각 A', '0', '0', '3', '0', '1808', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '2425', '18', '1', '403')
+values('piecepart', '1808', '15', '18', '2', '은 장갑 조각 A', '0', '0', '3', '0', '1808', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '2425', '18', '1', '403')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1809', '15', '18', '2', '은 장갑 조각 B', '0', '0', '3', '0', '1809', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '2425', '18', '2', '403')
+values('piecepart', '1809', '15', '18', '2', '은 장갑 조각 B', '0', '0', '3', '0', '1809', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '2425', '18', '2', '403')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1810', '15', '18', '2', '은 장갑 조각 C', '0', '0', '3', '0', '1810', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '2425', '18', '3', '403')
+values('piecepart', '1810', '15', '18', '2', '은 장갑 조각 C', '0', '0', '3', '0', '1810', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '2425', '18', '3', '403')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1811', '15', '18', '2', '은 장갑 조각 D', '0', '0', '3', '0', '1811', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '395', '18', '4', '403')
+values('piecepart', '1811', '15', '18', '2', '은 장갑 조각 D', '0', '0', '3', '0', '1811', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '395', '18', '4', '403')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1812', '15', '18', '2', '금 장갑 조각 A', '0', '0', '4', '0', '1812', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '2425', '19', '1', '404')
+values('piecepart', '1812', '15', '18', '2', '금 장갑 조각 A', '0', '0', '4', '0', '1812', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '2425', '19', '1', '404')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1813', '15', '18', '2', '금 장갑 조각 B', '0', '0', '4', '0', '1813', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '2425', '19', '2', '404')
+values('piecepart', '1813', '15', '18', '2', '금 장갑 조각 B', '0', '0', '4', '0', '1813', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '2425', '19', '2', '404')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1814', '15', '18', '2', '금 장갑 조각 C', '0', '0', '4', '0', '1814', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '2425', '19', '3', '404')
+values('piecepart', '1814', '15', '18', '2', '금 장갑 조각 C', '0', '0', '4', '0', '1814', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '2425', '19', '3', '404')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1815', '15', '18', '2', '금 장갑 조각 D', '0', '0', '4', '0', '1815', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '395', '19', '4', '404')
+values('piecepart', '1815', '15', '18', '2', '금 장갑 조각 D', '0', '0', '4', '0', '1815', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '395', '19', '4', '404')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1816', '15', '18', '2', '티타늄 장갑 조각 A', '0', '0', '5', '0', '1816', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '20', '1', '405')
+values('piecepart', '1816', '15', '18', '2', '티타늄 장갑 조각 A', '0', '0', '5', '0', '1816', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '20', '1', '405')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1817', '15', '18', '2', '티타늄 장갑 조각 B', '0', '0', '5', '0', '1817', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '20', '2', '405')
+values('piecepart', '1817', '15', '18', '2', '티타늄 장갑 조각 B', '0', '0', '5', '0', '1817', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '20', '2', '405')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1818', '15', '18', '2', '티타늄 장갑 조각 C', '0', '0', '5', '0', '1818', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '20', '3', '405')
+values('piecepart', '1818', '15', '18', '2', '티타늄 장갑 조각 C', '0', '0', '5', '0', '1818', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '20', '3', '405')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1819', '15', '18', '2', '티타늄 장갑 조각 D', '0', '0', '5', '0', '1819', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '395', '20', '4', '405')
+values('piecepart', '1819', '15', '18', '2', '티타늄 장갑 조각 D', '0', '0', '5', '0', '1819', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '395', '20', '4', '405')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1900', '15', '19', '2', '돌 신발 조각 A', '0', '0', '1', '0', '1900', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '2435', '21', '1', '501')
+values('piecepart', '1900', '15', '19', '2', '돌 신발 조각 A', '0', '0', '1', '0', '1900', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '2435', '21', '1', '501')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1901', '15', '19', '2', '돌 신발 조각 B', '0', '0', '1', '0', '1901', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '2435', '21', '2', '501')
+values('piecepart', '1901', '15', '19', '2', '돌 신발 조각 B', '0', '0', '1', '0', '1901', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '2435', '21', '2', '501')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1902', '15', '19', '2', '돌 신발 조각 C', '0', '0', '1', '0', '1902', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '2435', '21', '3', '501')
+values('piecepart', '1902', '15', '19', '2', '돌 신발 조각 C', '0', '0', '1', '0', '1902', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '2435', '21', '3', '501')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1903', '15', '19', '2', '돌 신발 조각 D', '0', '0', '1', '0', '1903', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '395', '21', '4', '501')
+values('piecepart', '1903', '15', '19', '2', '돌 신발 조각 D', '0', '0', '1', '0', '1903', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '395', '21', '4', '501')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
@@ -666,67 +666,67 @@ values('piecepart', '1907', '15', '19', '2', '동 신발 조각 D', '0', '0', '2', '0
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1908', '15', '19', '2', '은 신발 조각 A', '0', '0', '3', '0', '1908', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '2425', '23', '1', '503')
+values('piecepart', '1908', '15', '19', '2', '은 신발 조각 A', '0', '0', '3', '0', '1908', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '2425', '23', '1', '503')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1909', '15', '19', '2', '은 신발 조각 B', '0', '0', '3', '0', '1909', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '2425', '23', '2', '503')
+values('piecepart', '1909', '15', '19', '2', '은 신발 조각 B', '0', '0', '3', '0', '1909', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '2425', '23', '2', '503')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1910', '15', '19', '2', '은 신발 조각 C', '0', '0', '3', '0', '1910', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '2425', '23', '3', '503')
+values('piecepart', '1910', '15', '19', '2', '은 신발 조각 C', '0', '0', '3', '0', '1910', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '2425', '23', '3', '503')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1911', '15', '19', '2', '은 신발 조각 D', '0', '0', '3', '0', '1911', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '395', '23', '4', '503')
+values('piecepart', '1911', '15', '19', '2', '은 신발 조각 D', '0', '0', '3', '0', '1911', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '395', '23', '4', '503')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1912', '15', '19', '2', '금 신발 조각 A', '0', '0', '4', '0', '1912', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '2425', '24', '1', '504')
+values('piecepart', '1912', '15', '19', '2', '금 신발 조각 A', '0', '0', '4', '0', '1912', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '2425', '24', '1', '504')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1913', '15', '19', '2', '금 신발 조각 B', '0', '0', '4', '0', '1913', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '2425', '24', '2', '504')
+values('piecepart', '1913', '15', '19', '2', '금 신발 조각 B', '0', '0', '4', '0', '1913', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '2425', '24', '2', '504')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1914', '15', '19', '2', '금 신발 조각 C', '0', '0', '4', '0', '1914', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '2425', '24', '3', '504')
+values('piecepart', '1914', '15', '19', '2', '금 신발 조각 C', '0', '0', '4', '0', '1914', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '2425', '24', '3', '504')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1915', '15', '19', '2', '금 신발 조각 D', '0', '0', '4', '0', '1915', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '395', '24', '4', '504')
+values('piecepart', '1915', '15', '19', '2', '금 신발 조각 D', '0', '0', '4', '0', '1915', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '395', '24', '4', '504')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1916', '15', '19', '2', '티타늄 신발 조각 A', '0', '0', '5', '0', '1916', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '25', '1', '505')
+values('piecepart', '1916', '15', '19', '2', '티타늄 신발 조각 A', '0', '0', '5', '0', '1916', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '25', '1', '505')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1917', '15', '19', '2', '티타늄 신발 조각 B', '0', '0', '5', '0', '1917', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '25', '2', '505')
+values('piecepart', '1917', '15', '19', '2', '티타늄 신발 조각 B', '0', '0', '5', '0', '1917', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '25', '2', '505')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1918', '15', '19', '2', '티타늄 신발 조각 C', '0', '0', '5', '0', '1918', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '25', '3', '505')
+values('piecepart', '1918', '15', '19', '2', '티타늄 신발 조각 C', '0', '0', '5', '0', '1918', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '25', '3', '505')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '1919', '15', '19', '2', '티타늄 신발 조각 D', '0', '0', '5', '0', '1919', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '395', '25', '4', '505')
+values('piecepart', '1919', '15', '19', '2', '티타늄 신발 조각 D', '0', '0', '5', '0', '1919', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '395', '25', '4', '505')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2000', '15', '20', '2', '돌 방망이 조각 A', '0', '0', '1', '0', '2000', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '2435', '26', '1', '601')
+values('piecepart', '2000', '15', '20', '2', '돌 방망이 조각 A', '0', '0', '1', '0', '2000', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '2435', '26', '1', '601')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2001', '15', '20', '2', '돌 방망이 조각 B', '0', '0', '1', '0', '2001', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '2435', '26', '2', '601')
+values('piecepart', '2001', '15', '20', '2', '돌 방망이 조각 B', '0', '0', '1', '0', '2001', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '2435', '26', '2', '601')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2002', '15', '20', '2', '돌 방망이 조각 C', '0', '0', '1', '0', '2002', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '2435', '26', '3', '601')
+values('piecepart', '2002', '15', '20', '2', '돌 방망이 조각 C', '0', '0', '1', '0', '2002', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '2435', '26', '3', '601')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2003', '15', '20', '2', '돌 방망이 조각 D', '0', '0', '1', '0', '2003', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '395', '26', '4', '601')
+values('piecepart', '2003', '15', '20', '2', '돌 방망이 조각 D', '0', '0', '1', '0', '2003', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '395', '26', '4', '601')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
@@ -746,67 +746,67 @@ values('piecepart', '2007', '15', '20', '2', '동 방망이 조각 D', '0', '0', '2', 
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2008', '15', '20', '2', '은 방망이 조각 A', '0', '0', '3', '0', '2008', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '2425', '28', '1', '603')
+values('piecepart', '2008', '15', '20', '2', '은 방망이 조각 A', '0', '0', '3', '0', '2008', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '2425', '28', '1', '603')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2009', '15', '20', '2', '은 방망이 조각 B', '0', '0', '3', '0', '2009', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '2425', '28', '2', '603')
+values('piecepart', '2009', '15', '20', '2', '은 방망이 조각 B', '0', '0', '3', '0', '2009', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '2425', '28', '2', '603')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2010', '15', '20', '2', '은 방망이 조각 C', '0', '0', '3', '0', '2010', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '2425', '28', '3', '603')
+values('piecepart', '2010', '15', '20', '2', '은 방망이 조각 C', '0', '0', '3', '0', '2010', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '2425', '28', '3', '603')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2011', '15', '20', '2', '은 방망이 조각 D', '0', '0', '3', '0', '2011', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '395', '28', '4', '603')
+values('piecepart', '2011', '15', '20', '2', '은 방망이 조각 D', '0', '0', '3', '0', '2011', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '395', '28', '4', '603')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2012', '15', '20', '2', '금 방망이 조각 A', '0', '0', '4', '0', '2012', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '2425', '29', '1', '604')
+values('piecepart', '2012', '15', '20', '2', '금 방망이 조각 A', '0', '0', '4', '0', '2012', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '2425', '29', '1', '604')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2013', '15', '20', '2', '금 방망이 조각 B', '0', '0', '4', '0', '2013', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '2425', '29', '2', '604')
+values('piecepart', '2013', '15', '20', '2', '금 방망이 조각 B', '0', '0', '4', '0', '2013', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '2425', '29', '2', '604')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2014', '15', '20', '2', '금 방망이 조각 C', '0', '0', '4', '0', '2014', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '2425', '29', '3', '604')
+values('piecepart', '2014', '15', '20', '2', '금 방망이 조각 C', '0', '0', '4', '0', '2014', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '2425', '29', '3', '604')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2015', '15', '20', '2', '금 방망이 조각 D', '0', '0', '4', '0', '2015', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '395', '29', '4', '604')
+values('piecepart', '2015', '15', '20', '2', '금 방망이 조각 D', '0', '0', '4', '0', '2015', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '395', '29', '4', '604')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2016', '15', '20', '2', '티타늄 방망이 조각 A', '0', '0', '5', '0', '2016', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '30', '1', '605')
+values('piecepart', '2016', '15', '20', '2', '티타늄 방망이 조각 A', '0', '0', '5', '0', '2016', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '30', '1', '605')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2017', '15', '20', '2', '티타늄 방망이 조각 B', '0', '0', '5', '0', '2017', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '30', '2', '605')
+values('piecepart', '2017', '15', '20', '2', '티타늄 방망이 조각 B', '0', '0', '5', '0', '2017', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '30', '2', '605')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2018', '15', '20', '2', '티타늄 방망이 조각 C', '0', '0', '5', '0', '2018', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '30', '3', '605')
+values('piecepart', '2018', '15', '20', '2', '티타늄 방망이 조각 C', '0', '0', '5', '0', '2018', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '30', '3', '605')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2019', '15', '20', '2', '티타늄 방망이 조각 D', '0', '0', '5', '0', '2019', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '395', '30', '4', '605')
+values('piecepart', '2019', '15', '20', '2', '티타늄 방망이 조각 D', '0', '0', '5', '0', '2019', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '395', '30', '4', '605')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2100', '15', '21', '2', '돌 색깔공 조각 A', '0', '0', '1', '0', '2100', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '2435', '31', '1', '701')
+values('piecepart', '2100', '15', '21', '2', '돌 색깔공 조각 A', '0', '0', '1', '0', '2100', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '2435', '31', '1', '701')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2101', '15', '21', '2', '돌 색깔공 조각 B', '0', '0', '1', '0', '2101', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '2435', '31', '2', '701')
+values('piecepart', '2101', '15', '21', '2', '돌 색깔공 조각 B', '0', '0', '1', '0', '2101', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '2435', '31', '2', '701')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2102', '15', '21', '2', '돌 색깔공 조각 C', '0', '0', '1', '0', '2102', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '2435', '31', '3', '701')
+values('piecepart', '2102', '15', '21', '2', '돌 색깔공 조각 C', '0', '0', '1', '0', '2102', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '2435', '31', '3', '701')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2103', '15', '21', '2', '돌 색깔공 조각 D', '0', '0', '1', '0', '2103', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '395', '31', '4', '701')
+values('piecepart', '2103', '15', '21', '2', '돌 색깔공 조각 D', '0', '0', '1', '0', '2103', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '395', '31', '4', '701')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
@@ -826,67 +826,67 @@ values('piecepart', '2107', '15', '21', '2', '동 색깔공 조각 D', '0', '0', '2', 
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2108', '15', '21', '2', '은 색깔공 조각 A', '0', '0', '3', '0', '2108', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '2425', '33', '1', '703')
+values('piecepart', '2108', '15', '21', '2', '은 색깔공 조각 A', '0', '0', '3', '0', '2108', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '2425', '33', '1', '703')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2109', '15', '21', '2', '은 색깔공 조각 B', '0', '0', '3', '0', '2109', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '2425', '33', '2', '703')
+values('piecepart', '2109', '15', '21', '2', '은 색깔공 조각 B', '0', '0', '3', '0', '2109', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '2425', '33', '2', '703')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2110', '15', '21', '2', '은 색깔공 조각 C', '0', '0', '3', '0', '2110', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '2425', '33', '3', '703')
+values('piecepart', '2110', '15', '21', '2', '은 색깔공 조각 C', '0', '0', '3', '0', '2110', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '2425', '33', '3', '703')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2111', '15', '21', '2', '은 색깔공 조각 D', '0', '0', '3', '0', '2111', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '395', '33', '4', '703')
+values('piecepart', '2111', '15', '21', '2', '은 색깔공 조각 D', '0', '0', '3', '0', '2111', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '395', '33', '4', '703')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2112', '15', '21', '2', '금 색깔공 조각 A', '0', '0', '4', '0', '2112', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '2425', '34', '1', '704')
+values('piecepart', '2112', '15', '21', '2', '금 색깔공 조각 A', '0', '0', '4', '0', '2112', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '2425', '34', '1', '704')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2113', '15', '21', '2', '금 색깔공 조각 B', '0', '0', '4', '0', '2113', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '2425', '34', '2', '704')
+values('piecepart', '2113', '15', '21', '2', '금 색깔공 조각 B', '0', '0', '4', '0', '2113', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '2425', '34', '2', '704')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2114', '15', '21', '2', '금 색깔공 조각 C', '0', '0', '4', '0', '2114', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '2425', '34', '3', '704')
+values('piecepart', '2114', '15', '21', '2', '금 색깔공 조각 C', '0', '0', '4', '0', '2114', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '2425', '34', '3', '704')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2115', '15', '21', '2', '금 색깔공 조각 D', '0', '0', '4', '0', '2115', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '395', '34', '4', '704')
+values('piecepart', '2115', '15', '21', '2', '금 색깔공 조각 D', '0', '0', '4', '0', '2115', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '395', '34', '4', '704')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2116', '15', '21', '2', '티타늄 색깔공 조각 A', '0', '0', '5', '0', '2116', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '35', '1', '705')
+values('piecepart', '2116', '15', '21', '2', '티타늄 색깔공 조각 A', '0', '0', '5', '0', '2116', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '35', '1', '705')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2117', '15', '21', '2', '티타늄 색깔공 조각 B', '0', '0', '5', '0', '2117', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '35', '2', '705')
+values('piecepart', '2117', '15', '21', '2', '티타늄 색깔공 조각 B', '0', '0', '5', '0', '2117', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '35', '2', '705')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2118', '15', '21', '2', '티타늄 색깔공 조각 C', '0', '0', '5', '0', '2118', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '35', '3', '705')
+values('piecepart', '2118', '15', '21', '2', '티타늄 색깔공 조각 C', '0', '0', '5', '0', '2118', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '35', '3', '705')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2119', '15', '21', '2', '티타늄 색깔공 조각 D', '0', '0', '5', '0', '2119', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '395', '35', '4', '705')
+values('piecepart', '2119', '15', '21', '2', '티타늄 색깔공 조각 D', '0', '0', '5', '0', '2119', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '395', '35', '4', '705')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2200', '15', '22', '2', '돌 고글 조각 A', '0', '0', '1', '0', '2200', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '2435', '36', '1', '801')
+values('piecepart', '2200', '15', '22', '2', '돌 고글 조각 A', '0', '0', '1', '0', '2200', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '2435', '36', '1', '801')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2201', '15', '22', '2', '돌 고글 조각 B', '0', '0', '1', '0', '2201', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '2435', '36', '2', '801')
+values('piecepart', '2201', '15', '22', '2', '돌 고글 조각 B', '0', '0', '1', '0', '2201', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '2435', '36', '2', '801')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2202', '15', '22', '2', '돌 고글 조각 C', '0', '0', '1', '0', '2202', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '2435', '36', '3', '801')
+values('piecepart', '2202', '15', '22', '2', '돌 고글 조각 C', '0', '0', '1', '0', '2202', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '2435', '36', '3', '801')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2203', '15', '22', '2', '돌 고글 조각 D', '0', '0', '1', '0', '2203', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '395', '36', '4', '801')
+values('piecepart', '2203', '15', '22', '2', '돌 고글 조각 D', '0', '0', '1', '0', '2203', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '395', '36', '4', '801')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
@@ -906,67 +906,67 @@ values('piecepart', '2207', '15', '22', '2', '동 고글 조각 D', '0', '0', '2', '0
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2208', '15', '22', '2', '은 고글 조각 A', '0', '0', '3', '0', '2208', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '2425', '38', '1', '803')
+values('piecepart', '2208', '15', '22', '2', '은 고글 조각 A', '0', '0', '3', '0', '2208', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '2425', '38', '1', '803')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2209', '15', '22', '2', '은 고글 조각 B', '0', '0', '3', '0', '2209', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '2425', '38', '2', '803')
+values('piecepart', '2209', '15', '22', '2', '은 고글 조각 B', '0', '0', '3', '0', '2209', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '2425', '38', '2', '803')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2210', '15', '22', '2', '은 고글 조각 C', '0', '0', '3', '0', '2210', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '2425', '38', '3', '803')
+values('piecepart', '2210', '15', '22', '2', '은 고글 조각 C', '0', '0', '3', '0', '2210', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '2425', '38', '3', '803')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2211', '15', '22', '2', '은 고글 조각 D', '0', '0', '3', '0', '2211', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '395', '38', '4', '803')
+values('piecepart', '2211', '15', '22', '2', '은 고글 조각 D', '0', '0', '3', '0', '2211', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '395', '38', '4', '803')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2212', '15', '22', '2', '금 고글 조각 A', '0', '0', '4', '0', '2212', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '2425', '39', '1', '804')
+values('piecepart', '2212', '15', '22', '2', '금 고글 조각 A', '0', '0', '4', '0', '2212', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '2425', '39', '1', '804')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2213', '15', '22', '2', '금 고글 조각 B', '0', '0', '4', '0', '2213', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '2425', '39', '2', '804')
+values('piecepart', '2213', '15', '22', '2', '금 고글 조각 B', '0', '0', '4', '0', '2213', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '2425', '39', '2', '804')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2214', '15', '22', '2', '금 고글 조각 C', '0', '0', '4', '0', '2214', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '2425', '39', '3', '804')
+values('piecepart', '2214', '15', '22', '2', '금 고글 조각 C', '0', '0', '4', '0', '2214', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '2425', '39', '3', '804')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2215', '15', '22', '2', '금 고글 조각 D', '0', '0', '4', '0', '2215', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '395', '39', '4', '804')
+values('piecepart', '2215', '15', '22', '2', '금 고글 조각 D', '0', '0', '4', '0', '2215', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '395', '39', '4', '804')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2216', '15', '22', '2', '티타늄 고글 조각 A', '0', '0', '5', '0', '2216', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '40', '1', '805')
+values('piecepart', '2216', '15', '22', '2', '티타늄 고글 조각 A', '0', '0', '5', '0', '2216', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '40', '1', '805')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2217', '15', '22', '2', '티타늄 고글 조각 B', '0', '0', '5', '0', '2217', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '40', '2', '805')
+values('piecepart', '2217', '15', '22', '2', '티타늄 고글 조각 B', '0', '0', '5', '0', '2217', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '40', '2', '805')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2218', '15', '22', '2', '티타늄 고글 조각 C', '0', '0', '5', '0', '2218', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '40', '3', '805')
+values('piecepart', '2218', '15', '22', '2', '티타늄 고글 조각 C', '0', '0', '5', '0', '2218', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '40', '3', '805')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2219', '15', '22', '2', '티타늄 고글 조각 D', '0', '0', '5', '0', '2219', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '395', '40', '4', '805')
+values('piecepart', '2219', '15', '22', '2', '티타늄 고글 조각 D', '0', '0', '5', '0', '2219', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '395', '40', '4', '805')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2300', '15', '23', '2', '돌 손목 아대 조각 A', '0', '0', '1', '0', '2300', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '2435', '41', '1', '901')
+values('piecepart', '2300', '15', '23', '2', '돌 손목 아대 조각 A', '0', '0', '1', '0', '2300', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '2435', '41', '1', '901')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2301', '15', '23', '2', '돌 손목 아대 조각 B', '0', '0', '1', '0', '2301', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '2435', '41', '2', '901')
+values('piecepart', '2301', '15', '23', '2', '돌 손목 아대 조각 B', '0', '0', '1', '0', '2301', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '2435', '41', '2', '901')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2302', '15', '23', '2', '돌 손목 아대 조각 C', '0', '0', '1', '0', '2302', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '2435', '41', '3', '901')
+values('piecepart', '2302', '15', '23', '2', '돌 손목 아대 조각 C', '0', '0', '1', '0', '2302', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '2435', '41', '3', '901')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2303', '15', '23', '2', '돌 손목 아대 조각 D', '0', '0', '1', '0', '2303', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '395', '41', '4', '901')
+values('piecepart', '2303', '15', '23', '2', '돌 손목 아대 조각 D', '0', '0', '1', '0', '2303', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '395', '41', '4', '901')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
@@ -986,67 +986,67 @@ values('piecepart', '2307', '15', '23', '2', '동 손목 아대 조각 D', '0', '0', '2
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2308', '15', '23', '2', '은 손목 아대 조각 A', '0', '0', '3', '0', '2308', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '2425', '43', '1', '903')
+values('piecepart', '2308', '15', '23', '2', '은 손목 아대 조각 A', '0', '0', '3', '0', '2308', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '2425', '43', '1', '903')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2309', '15', '23', '2', '은 손목 아대 조각 B', '0', '0', '3', '0', '2309', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '2425', '43', '2', '903')
+values('piecepart', '2309', '15', '23', '2', '은 손목 아대 조각 B', '0', '0', '3', '0', '2309', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '2425', '43', '2', '903')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2310', '15', '23', '2', '은 손목 아대 조각 C', '0', '0', '3', '0', '2310', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '2425', '43', '3', '903')
+values('piecepart', '2310', '15', '23', '2', '은 손목 아대 조각 C', '0', '0', '3', '0', '2310', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '2425', '43', '3', '903')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2311', '15', '23', '2', '은 손목 아대 조각 D', '0', '0', '3', '0', '2311', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '395', '43', '4', '903')
+values('piecepart', '2311', '15', '23', '2', '은 손목 아대 조각 D', '0', '0', '3', '0', '2311', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '395', '43', '4', '903')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2312', '15', '23', '2', '금 손목 아대 조각 A', '0', '0', '4', '0', '2312', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '2425', '44', '1', '904')
+values('piecepart', '2312', '15', '23', '2', '금 손목 아대 조각 A', '0', '0', '4', '0', '2312', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '2425', '44', '1', '904')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2313', '15', '23', '2', '금 손목 아대 조각 B', '0', '0', '4', '0', '2313', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '2425', '44', '2', '904')
+values('piecepart', '2313', '15', '23', '2', '금 손목 아대 조각 B', '0', '0', '4', '0', '2313', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '2425', '44', '2', '904')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2314', '15', '23', '2', '금 손목 아대 조각 C', '0', '0', '4', '0', '2314', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '2425', '44', '3', '904')
+values('piecepart', '2314', '15', '23', '2', '금 손목 아대 조각 C', '0', '0', '4', '0', '2314', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '2425', '44', '3', '904')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2315', '15', '23', '2', '금 손목 아대 조각 D', '0', '0', '4', '0', '2315', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '395', '44', '4', '904')
+values('piecepart', '2315', '15', '23', '2', '금 손목 아대 조각 D', '0', '0', '4', '0', '2315', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '395', '44', '4', '904')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2316', '15', '23', '2', '티타늄 손목 아대 조각 A', '0', '0', '5', '0', '2316', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '45', '1', '905')
+values('piecepart', '2316', '15', '23', '2', '티타늄 손목 아대 조각 A', '0', '0', '5', '0', '2316', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '45', '1', '905')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2317', '15', '23', '2', '티타늄 손목 아대 조각 B', '0', '0', '5', '0', '2317', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '45', '2', '905')
+values('piecepart', '2317', '15', '23', '2', '티타늄 손목 아대 조각 B', '0', '0', '5', '0', '2317', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '45', '2', '905')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2318', '15', '23', '2', '티타늄 손목 아대 조각 C', '0', '0', '5', '0', '2318', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '45', '3', '905')
+values('piecepart', '2318', '15', '23', '2', '티타늄 손목 아대 조각 C', '0', '0', '5', '0', '2318', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '45', '3', '905')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2319', '15', '23', '2', '티타늄 손목 아대 조각 D', '0', '0', '5', '0', '2319', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '395', '45', '4', '905')
+values('piecepart', '2319', '15', '23', '2', '티타늄 손목 아대 조각 D', '0', '0', '5', '0', '2319', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '395', '45', '4', '905')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2400', '15', '24', '2', '돌 팔꿈치 보호대 조각 A', '0', '0', '1', '0', '2400', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '2435', '46', '1', '1001')
+values('piecepart', '2400', '15', '24', '2', '돌 팔꿈치 보호대 조각 A', '0', '0', '1', '0', '2400', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '2435', '46', '1', '1001')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2401', '15', '24', '2', '돌 팔꿈치 보호대 조각 B', '0', '0', '1', '0', '2401', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '2435', '46', '2', '1001')
+values('piecepart', '2401', '15', '24', '2', '돌 팔꿈치 보호대 조각 B', '0', '0', '1', '0', '2401', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '2435', '46', '2', '1001')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2402', '15', '24', '2', '돌 팔꿈치 보호대 조각 C', '0', '0', '1', '0', '2402', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '2435', '46', '3', '1001')
+values('piecepart', '2402', '15', '24', '2', '돌 팔꿈치 보호대 조각 C', '0', '0', '1', '0', '2402', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '2435', '46', '3', '1001')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2403', '15', '24', '2', '돌 팔꿈치 보호대 조각 D', '0', '0', '1', '0', '2403', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '395', '46', '4', '1001')
+values('piecepart', '2403', '15', '24', '2', '돌 팔꿈치 보호대 조각 D', '0', '0', '1', '0', '2403', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '395', '46', '4', '1001')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
@@ -1066,67 +1066,67 @@ values('piecepart', '2407', '15', '24', '2', '동 팔꿈치 보호대 조각 D', '0', '0'
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2408', '15', '24', '2', '은 팔꿈치 보호대 조각 A', '0', '0', '3', '0', '2408', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '2425', '48', '1', '1003')
+values('piecepart', '2408', '15', '24', '2', '은 팔꿈치 보호대 조각 A', '0', '0', '3', '0', '2408', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '2425', '48', '1', '1003')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2409', '15', '24', '2', '은 팔꿈치 보호대 조각 B', '0', '0', '3', '0', '2409', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '2425', '48', '2', '1003')
+values('piecepart', '2409', '15', '24', '2', '은 팔꿈치 보호대 조각 B', '0', '0', '3', '0', '2409', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '2425', '48', '2', '1003')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2410', '15', '24', '2', '은 팔꿈치 보호대 조각 C', '0', '0', '3', '0', '2410', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '2425', '48', '3', '1003')
+values('piecepart', '2410', '15', '24', '2', '은 팔꿈치 보호대 조각 C', '0', '0', '3', '0', '2410', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '2425', '48', '3', '1003')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2411', '15', '24', '2', '은 팔꿈치 보호대 조각 D', '0', '0', '3', '0', '2411', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '395', '48', '4', '1003')
+values('piecepart', '2411', '15', '24', '2', '은 팔꿈치 보호대 조각 D', '0', '0', '3', '0', '2411', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '395', '48', '4', '1003')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2412', '15', '24', '2', '금 팔꿈치 보호대 조각 A', '0', '0', '4', '0', '2412', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '2425', '49', '1', '1004')
+values('piecepart', '2412', '15', '24', '2', '금 팔꿈치 보호대 조각 A', '0', '0', '4', '0', '2412', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '2425', '49', '1', '1004')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2413', '15', '24', '2', '금 팔꿈치 보호대 조각 B', '0', '0', '4', '0', '2413', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '2425', '49', '2', '1004')
+values('piecepart', '2413', '15', '24', '2', '금 팔꿈치 보호대 조각 B', '0', '0', '4', '0', '2413', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '2425', '49', '2', '1004')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2414', '15', '24', '2', '금 팔꿈치 보호대 조각 C', '0', '0', '4', '0', '2414', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '2425', '49', '3', '1004')
+values('piecepart', '2414', '15', '24', '2', '금 팔꿈치 보호대 조각 C', '0', '0', '4', '0', '2414', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '2425', '49', '3', '1004')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2415', '15', '24', '2', '금 팔꿈치 보호대 조각 D', '0', '0', '4', '0', '2415', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '395', '49', '4', '1004')
+values('piecepart', '2415', '15', '24', '2', '금 팔꿈치 보호대 조각 D', '0', '0', '4', '0', '2415', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '395', '49', '4', '1004')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2416', '15', '24', '2', '티타늄 팔꿈치 보호대 조각 A', '0', '0', '5', '0', '2416', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '50', '1', '1005')
+values('piecepart', '2416', '15', '24', '2', '티타늄 팔꿈치 보호대 조각 A', '0', '0', '5', '0', '2416', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '50', '1', '1005')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2417', '15', '24', '2', '티타늄 팔꿈치 보호대 조각 B', '0', '0', '5', '0', '2417', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '50', '2', '1005')
+values('piecepart', '2417', '15', '24', '2', '티타늄 팔꿈치 보호대 조각 B', '0', '0', '5', '0', '2417', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '50', '2', '1005')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2418', '15', '24', '2', '티타늄 팔꿈치 보호대 조각 C', '0', '0', '5', '0', '2418', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '50', '3', '1005')
+values('piecepart', '2418', '15', '24', '2', '티타늄 팔꿈치 보호대 조각 C', '0', '0', '5', '0', '2418', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '50', '3', '1005')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2419', '15', '24', '2', '티타늄 팔꿈치 보호대 조각 D', '0', '0', '5', '0', '2419', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '395', '50', '4', '1005')
+values('piecepart', '2419', '15', '24', '2', '티타늄 팔꿈치 보호대 조각 D', '0', '0', '5', '0', '2419', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '395', '50', '4', '1005')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2500', '15', '25', '2', '돌 벨트 조각 A', '0', '0', '1', '0', '2500', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '2435', '51', '1', '1101')
+values('piecepart', '2500', '15', '25', '2', '돌 벨트 조각 A', '0', '0', '1', '0', '2500', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '2435', '51', '1', '1101')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2501', '15', '25', '2', '돌 벨트 조각 B', '0', '0', '1', '0', '2501', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '2435', '51', '2', '1101')
+values('piecepart', '2501', '15', '25', '2', '돌 벨트 조각 B', '0', '0', '1', '0', '2501', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '2435', '51', '2', '1101')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2502', '15', '25', '2', '돌 벨트 조각 C', '0', '0', '1', '0', '2502', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '2435', '51', '3', '1101')
+values('piecepart', '2502', '15', '25', '2', '돌 벨트 조각 C', '0', '0', '1', '0', '2502', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '2435', '51', '3', '1101')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2503', '15', '25', '2', '돌 벨트 조각 D', '0', '0', '1', '0', '2503', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '395', '51', '4', '1101')
+values('piecepart', '2503', '15', '25', '2', '돌 벨트 조각 D', '0', '0', '1', '0', '2503', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '395', '51', '4', '1101')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
@@ -1146,67 +1146,67 @@ values('piecepart', '2507', '15', '25', '2', '동 벨트 조각 D', '0', '0', '2', '0
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2508', '15', '25', '2', '은 벨트 조각 A', '0', '0', '3', '0', '2508', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '2425', '53', '1', '1103')
+values('piecepart', '2508', '15', '25', '2', '은 벨트 조각 A', '0', '0', '3', '0', '2508', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '2425', '53', '1', '1103')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2509', '15', '25', '2', '은 벨트 조각 B', '0', '0', '3', '0', '2509', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '2425', '53', '2', '1103')
+values('piecepart', '2509', '15', '25', '2', '은 벨트 조각 B', '0', '0', '3', '0', '2509', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '2425', '53', '2', '1103')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2510', '15', '25', '2', '은 벨트 조각 C', '0', '0', '3', '0', '2510', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '2425', '53', '3', '1103')
+values('piecepart', '2510', '15', '25', '2', '은 벨트 조각 C', '0', '0', '3', '0', '2510', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '2425', '53', '3', '1103')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2511', '15', '25', '2', '은 벨트 조각 D', '0', '0', '3', '0', '2511', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '395', '53', '4', '1103')
+values('piecepart', '2511', '15', '25', '2', '은 벨트 조각 D', '0', '0', '3', '0', '2511', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '395', '53', '4', '1103')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2512', '15', '25', '2', '금 벨트 조각 A', '0', '0', '4', '0', '2512', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '2425', '54', '1', '1104')
+values('piecepart', '2512', '15', '25', '2', '금 벨트 조각 A', '0', '0', '4', '0', '2512', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '2425', '54', '1', '1104')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2513', '15', '25', '2', '금 벨트 조각 B', '0', '0', '4', '0', '2513', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '2425', '54', '2', '1104')
+values('piecepart', '2513', '15', '25', '2', '금 벨트 조각 B', '0', '0', '4', '0', '2513', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '2425', '54', '2', '1104')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2514', '15', '25', '2', '금 벨트 조각 C', '0', '0', '4', '0', '2514', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '2425', '54', '3', '1104')
+values('piecepart', '2514', '15', '25', '2', '금 벨트 조각 C', '0', '0', '4', '0', '2514', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '2425', '54', '3', '1104')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2515', '15', '25', '2', '금 벨트 조각 D', '0', '0', '4', '0', '2515', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '395', '54', '4', '1104')
+values('piecepart', '2515', '15', '25', '2', '금 벨트 조각 D', '0', '0', '4', '0', '2515', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '395', '54', '4', '1104')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2516', '15', '25', '2', '티타늄 벨트 조각 A', '0', '0', '5', '0', '2516', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '55', '1', '1105')
+values('piecepart', '2516', '15', '25', '2', '티타늄 벨트 조각 A', '0', '0', '5', '0', '2516', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '55', '1', '1105')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2517', '15', '25', '2', '티타늄 벨트 조각 B', '0', '0', '5', '0', '2517', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '55', '2', '1105')
+values('piecepart', '2517', '15', '25', '2', '티타늄 벨트 조각 B', '0', '0', '5', '0', '2517', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '55', '2', '1105')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2518', '15', '25', '2', '티타늄 벨트 조각 C', '0', '0', '5', '0', '2518', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '55', '3', '1105')
+values('piecepart', '2518', '15', '25', '2', '티타늄 벨트 조각 C', '0', '0', '5', '0', '2518', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '55', '3', '1105')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2519', '15', '25', '2', '티타늄 벨트 조각 D', '0', '0', '5', '0', '2519', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '395', '55', '4', '1105')
+values('piecepart', '2519', '15', '25', '2', '티타늄 벨트 조각 D', '0', '0', '5', '0', '2519', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '395', '55', '4', '1105')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2600', '15', '26', '2', '돌 무릎 보호대 조각 A', '0', '0', '1', '0', '2600', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '2435', '56', '1', '1201')
+values('piecepart', '2600', '15', '26', '2', '돌 무릎 보호대 조각 A', '0', '0', '1', '0', '2600', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '2435', '56', '1', '1201')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2601', '15', '26', '2', '돌 무릎 보호대 조각 B', '0', '0', '1', '0', '2601', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '2435', '56', '2', '1201')
+values('piecepart', '2601', '15', '26', '2', '돌 무릎 보호대 조각 B', '0', '0', '1', '0', '2601', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '2435', '56', '2', '1201')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2602', '15', '26', '2', '돌 무릎 보호대 조각 C', '0', '0', '1', '0', '2602', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '2435', '56', '3', '1201')
+values('piecepart', '2602', '15', '26', '2', '돌 무릎 보호대 조각 C', '0', '0', '1', '0', '2602', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '2435', '56', '3', '1201')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2603', '15', '26', '2', '돌 무릎 보호대 조각 D', '0', '0', '1', '0', '2603', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '395', '56', '4', '1201')
+values('piecepart', '2603', '15', '26', '2', '돌 무릎 보호대 조각 D', '0', '0', '1', '0', '2603', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '395', '56', '4', '1201')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
@@ -1226,67 +1226,67 @@ values('piecepart', '2607', '15', '26', '2', '동 무릎 보호대 조각 D', '0', '0', 
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2608', '15', '26', '2', '은 무릎 보호대 조각 A', '0', '0', '3', '0', '2608', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '2425', '58', '1', '1203')
+values('piecepart', '2608', '15', '26', '2', '은 무릎 보호대 조각 A', '0', '0', '3', '0', '2608', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '2425', '58', '1', '1203')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2609', '15', '26', '2', '은 무릎 보호대 조각 B', '0', '0', '3', '0', '2609', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '2425', '58', '2', '1203')
+values('piecepart', '2609', '15', '26', '2', '은 무릎 보호대 조각 B', '0', '0', '3', '0', '2609', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '2425', '58', '2', '1203')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2610', '15', '26', '2', '은 무릎 보호대 조각 C', '0', '0', '3', '0', '2610', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '2425', '58', '3', '1203')
+values('piecepart', '2610', '15', '26', '2', '은 무릎 보호대 조각 C', '0', '0', '3', '0', '2610', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '2425', '58', '3', '1203')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2611', '15', '26', '2', '은 무릎 보호대 조각 D', '0', '0', '3', '0', '2611', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '395', '58', '4', '1203')
+values('piecepart', '2611', '15', '26', '2', '은 무릎 보호대 조각 D', '0', '0', '3', '0', '2611', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '395', '58', '4', '1203')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2612', '15', '26', '2', '금 무릎 보호대 조각 A', '0', '0', '4', '0', '2612', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '2425', '59', '1', '1204')
+values('piecepart', '2612', '15', '26', '2', '금 무릎 보호대 조각 A', '0', '0', '4', '0', '2612', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '2425', '59', '1', '1204')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2613', '15', '26', '2', '금 무릎 보호대 조각 B', '0', '0', '4', '0', '2613', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '2425', '59', '2', '1204')
+values('piecepart', '2613', '15', '26', '2', '금 무릎 보호대 조각 B', '0', '0', '4', '0', '2613', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '2425', '59', '2', '1204')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2614', '15', '26', '2', '금 무릎 보호대 조각 C', '0', '0', '4', '0', '2614', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '2425', '59', '3', '1204')
+values('piecepart', '2614', '15', '26', '2', '금 무릎 보호대 조각 C', '0', '0', '4', '0', '2614', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '2425', '59', '3', '1204')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2615', '15', '26', '2', '금 무릎 보호대 조각 D', '0', '0', '4', '0', '2615', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '395', '59', '4', '1204')
+values('piecepart', '2615', '15', '26', '2', '금 무릎 보호대 조각 D', '0', '0', '4', '0', '2615', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '395', '59', '4', '1204')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2616', '15', '26', '2', '티타늄 무릎 보호대 조각 A', '0', '0', '5', '0', '2616', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '60', '1', '1205')
+values('piecepart', '2616', '15', '26', '2', '티타늄 무릎 보호대 조각 A', '0', '0', '5', '0', '2616', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '60', '1', '1205')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2617', '15', '26', '2', '티타늄 무릎 보호대 조각 B', '0', '0', '5', '0', '2617', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '60', '2', '1205')
+values('piecepart', '2617', '15', '26', '2', '티타늄 무릎 보호대 조각 B', '0', '0', '5', '0', '2617', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '60', '2', '1205')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2618', '15', '26', '2', '티타늄 무릎 보호대 조각 C', '0', '0', '5', '0', '2618', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '60', '3', '1205')
+values('piecepart', '2618', '15', '26', '2', '티타늄 무릎 보호대 조각 C', '0', '0', '5', '0', '2618', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '60', '3', '1205')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2619', '15', '26', '2', '티타늄 무릎 보호대 조각 D', '0', '0', '5', '0', '2619', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '395', '60', '4', '1205')
+values('piecepart', '2619', '15', '26', '2', '티타늄 무릎 보호대 조각 D', '0', '0', '5', '0', '2619', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '395', '60', '4', '1205')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2700', '15', '27', '2', '돌 양말 조각 A', '0', '0', '1', '0', '2700', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '2435', '61', '1', '1301')
+values('piecepart', '2700', '15', '27', '2', '돌 양말 조각 A', '0', '0', '1', '0', '2700', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '2435', '61', '1', '1301')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2701', '15', '27', '2', '돌 양말 조각 B', '0', '0', '1', '0', '2701', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '2435', '61', '2', '1301')
+values('piecepart', '2701', '15', '27', '2', '돌 양말 조각 B', '0', '0', '1', '0', '2701', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '2435', '61', '2', '1301')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2702', '15', '27', '2', '돌 양말 조각 C', '0', '0', '1', '0', '2702', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '2435', '61', '3', '1301')
+values('piecepart', '2702', '15', '27', '2', '돌 양말 조각 C', '0', '0', '1', '0', '2702', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '2435', '61', '3', '1301')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2703', '15', '27', '2', '돌 양말 조각 D', '0', '0', '1', '0', '2703', '0', '0', '0', '0', '1', '0', '돌 랜덤박스', '4000', '395', '61', '4', '1301')
+values('piecepart', '2703', '15', '27', '2', '돌 양말 조각 D', '0', '0', '1', '0', '2703', '0', '0', '0', '300', '1', '0', '돌 랜덤박스', '4000', '395', '61', '4', '1301')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
@@ -1306,55 +1306,55 @@ values('piecepart', '2707', '15', '27', '2', '동 양말 조각 D', '0', '0', '2', '0
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2708', '15', '27', '2', '은 양말 조각 A', '0', '0', '3', '0', '2708', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '2425', '63', '1', '1303')
+values('piecepart', '2708', '15', '27', '2', '은 양말 조각 A', '0', '0', '3', '0', '2708', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '2425', '63', '1', '1303')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2709', '15', '27', '2', '은 양말 조각 B', '0', '0', '3', '0', '2709', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '2425', '63', '2', '1303')
+values('piecepart', '2709', '15', '27', '2', '은 양말 조각 B', '0', '0', '3', '0', '2709', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '2425', '63', '2', '1303')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2710', '15', '27', '2', '은 양말 조각 C', '0', '0', '3', '0', '2710', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '2425', '63', '3', '1303')
+values('piecepart', '2710', '15', '27', '2', '은 양말 조각 C', '0', '0', '3', '0', '2710', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '2425', '63', '3', '1303')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2711', '15', '27', '2', '은 양말 조각 D', '0', '0', '3', '0', '2711', '0', '0', '0', '10000', '1', '0', '은 랜덤박스', '4002', '395', '63', '4', '1303')
+values('piecepart', '2711', '15', '27', '2', '은 양말 조각 D', '0', '0', '3', '0', '2711', '0', '0', '0', '3000', '1', '0', '은 랜덤박스', '4002', '395', '63', '4', '1303')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2712', '15', '27', '2', '금 양말 조각 A', '0', '0', '4', '0', '2712', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '2425', '64', '1', '1304')
+values('piecepart', '2712', '15', '27', '2', '금 양말 조각 A', '0', '0', '4', '0', '2712', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '2425', '64', '1', '1304')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2713', '15', '27', '2', '금 양말 조각 B', '0', '0', '4', '0', '2713', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '2425', '64', '2', '1304')
+values('piecepart', '2713', '15', '27', '2', '금 양말 조각 B', '0', '0', '4', '0', '2713', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '2425', '64', '2', '1304')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2714', '15', '27', '2', '금 양말 조각 C', '0', '0', '4', '0', '2714', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '2425', '64', '3', '1304')
+values('piecepart', '2714', '15', '27', '2', '금 양말 조각 C', '0', '0', '4', '0', '2714', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '2425', '64', '3', '1304')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2715', '15', '27', '2', '금 양말 조각 D', '0', '0', '4', '0', '2715', '0', '0', '0', '25000', '1', '0', '금 랜덤박스', '4003', '395', '64', '4', '1304')
+values('piecepart', '2715', '15', '27', '2', '금 양말 조각 D', '0', '0', '4', '0', '2715', '0', '0', '0', '5000', '1', '0', '금 랜덤박스', '4003', '395', '64', '4', '1304')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2716', '15', '27', '2', '티타늄 양말 조각 A', '0', '0', '5', '0', '2716', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '65', '1', '1305')
+values('piecepart', '2716', '15', '27', '2', '티타늄 양말 조각 A', '0', '0', '5', '0', '2716', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '65', '1', '1305')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2717', '15', '27', '2', '티타늄 양말 조각 B', '0', '0', '5', '0', '2717', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '65', '2', '1305')
+values('piecepart', '2717', '15', '27', '2', '티타늄 양말 조각 B', '0', '0', '5', '0', '2717', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '65', '2', '1305')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2718', '15', '27', '2', '티타늄 양말 조각 C', '0', '0', '5', '0', '2718', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '65', '3', '1305')
+values('piecepart', '2718', '15', '27', '2', '티타늄 양말 조각 C', '0', '0', '5', '0', '2718', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '2425', '65', '3', '1305')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5) 
-values('piecepart', '2719', '15', '27', '2', '티타늄 양말 조각 D', '0', '0', '5', '0', '2719', '0', '0', '0', '40000', '1', '0', '티타늄 랜덤박스', '4004', '395', '65', '4', '1305')
+values('piecepart', '2719', '15', '27', '2', '티타늄 양말 조각 D', '0', '0', '5', '0', '2719', '0', '0', '0', '10000', '1', '0', '티타늄 랜덤박스', '4004', '395', '65', '4', '1305')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description) 
-values('piecebox', '4000', '40', '40', '3', '돌 조각 랜덤박스', '0', '0', '1', '0', 'box01', '0', '0', '0', '0', '1', '0', '돌 조각의상 52종 중 랜덤 하나')
+values('piecebox', '4000', '40', '40', '3', '돌 조각 랜덤박스', '0', '0', '1', '0', 'box01', '0', '0', '0', '300', '1', '0', '돌 조각의상 52종 중 랜덤 하나')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description) 
@@ -1362,15 +1362,15 @@ values('piecebox', '4001', '40', '40', '3', '동 조각 랜덤박스', '1', '0', '2', '
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description) 
-values('piecebox', '4002', '40', '40', '3', '은 조각 랜덤박스', '1', '0', '3', '0', 'box03', '0', '0', '0', '10000', '1', '0', '은 조각의상 52종이나 응원의 소리 중 랜덤 하나')
+values('piecebox', '4002', '40', '40', '3', '은 조각 랜덤박스', '1', '0', '3', '0', 'box03', '0', '0', '0', '3000', '1', '0', '은 조각의상 52종이나 응원의 소리 중 랜덤 하나')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description) 
-values('piecebox', '4003', '40', '40', '3', '금 조각 랜덤박스', '1', '0', '4', '0', 'box04', '0', '0', '0', '25000', '1', '0', '금 조각의상 52종이나 응원의 소리 중 랜덤 하나')
+values('piecebox', '4003', '40', '40', '3', '금 조각 랜덤박스', '1', '0', '4', '0', 'box04', '0', '0', '0', '5000', '1', '0', '금 조각의상 52종이나 응원의 소리 중 랜덤 하나')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description) 
-values('piecebox', '4004', '40', '40', '3', '티타늄 조각 랜덤박스', '1', '0', '5', '0', 'box05', '0', '0', '0', '40000', '1', '0', '티타늄 조각의상 52종이나 응원의 소리 중 랜덤 하나')
+values('piecebox', '4004', '40', '40', '3', '티타늄 조각 랜덤박스', '1', '0', '5', '0', 'box05', '0', '0', '0', '10000', '1', '0', '티타늄 조각의상 52종이나 응원의 소리 중 랜덤 하나')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description) 

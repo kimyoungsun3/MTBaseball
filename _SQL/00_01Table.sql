@@ -134,10 +134,10 @@ create table dbo.tUserMaster(
 	templistidx5		int				default(-1),
 	tempboxopenmode		int				default(-1),
 	temppluscashcost 	int				default(0),
+	tempplusgamecost 	int				default(0),
 	tempopenstate		int				default(1),
-	tempevolvestate		int 			default(-1),
-	tempdisapartstate	int 			default(-1),
 
+	tempdisapartstate	int 			default(-1),
 	tempcombinatestate	int 			default(-1),
 	tempitemcode		int				default(-1),
 	templistidxrtn		int				default(-1),
@@ -146,6 +146,10 @@ create table dbo.tUserMaster(
 	templistidxpiece2	int 			default(-1),
 	templistidxpiece3	int 			default(-1),
 	templistidxpiece4	int 			default(-1),
+
+	templistidxcloth	int 			default(-1),
+	tempevolvestate		int 			default(-1),
+	tempevolveitemcode	int 			default(-1),
 
 	-- 이벤트.
 	eventspot01		int					default(0),				-- 로그인사용(1~5).
@@ -680,6 +684,9 @@ create table dbo.tDayLogInfoStatic(
 	practicecnt		int				default(0),					--   연습모드횟수
 	singlecnt		int				default(0),					--   싱글모드횟수
 	multicnt		int				default(0),					--
+	combinatecnt	int				default(0),					-- 일 조합.
+	evolvecnt		int				default(0),					-- 일 초월.
+	disapartcnt		int				default(0),					-- 일 분해.
 
 	certnocnt		int				default(0),					--   쿠폰사용횟수
 

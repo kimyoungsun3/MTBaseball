@@ -107,7 +107,7 @@ as
 	declare @RESULT_ERROR_ITEMCODE_GRADE_CHECK	int				set @RESULT_ERROR_ITEMCODE_GRADE_CHECK		= -212		-- 아이템 등급이 잘못되었습니다.
 	declare @RESULT_ERROR_MINUMUN_LACK			int				set @RESULT_ERROR_MINUMUN_LACK				= -213		-- 최소수량보다 부족.
 	declare @RESULT_ERROR_NOT_BUY_ITEMCODE		int				set @RESULT_ERROR_NOT_BUY_ITEMCODE			= -215		-- 구매불가템입니다.
-
+	declare @RESULT_ERROR_WEARING_NOT_UPGRADE	int				set @RESULT_ERROR_WEARING_NOT_UPGRADE		= -216		-- 착용중인 템은 업그레이드 불가능합니다.
 
 	------------------------------------------------
 	--	2-2. 정의값

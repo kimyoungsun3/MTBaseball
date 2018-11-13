@@ -4,17 +4,6 @@
 exec spu_ItemCombinate 'mtxxxx3', '049000s1i0n7t8445289', 333, '1:82;2:83;3:84;4:85;', 14, 7711, -1	-- µπ «Ô∏‰¡∂«’
 exec spu_ItemCombinate 'mtxxxx3', '049000s1i0n7t8445289', 333, '1:82;2:83;3:84;4:85;', 14, 7712, -1
 
-exec spu_ItemCombinate 'mtxxxx3', '049000s1i0n7t8445289', 333, '1:87;2:37;3:88;4:89;', 14, 7721, -1		-- µø«Ô∏‰ ¡∂∞¢
-exec spu_ItemCombinate 'mtxxxx3', '049000s1i0n7t8445289', 333, '1:87;2:37;3:88;4:89;', 14, 7722, -1
-exec spu_ItemCombinate 'mtxxxx3', '049000s1i0n7t8445289', 333, '1:90;2:91;3:92;4:93;', 14, 7723, -1		-- ¿∫ «Ô∏‰ ¡∂∞¢
-exec spu_ItemCombinate 'mtxxxx3', '049000s1i0n7t8445289', 333, '1:90;2:91;3:92;4:93;', 14, 7724, -1
-exec spu_ItemCombinate 'mtxxxx3', '049000s1i0n7t8445289', 333, '1:94;2:95;3:96;4:97;', 14, 7725, -1		-- ±› «Ô∏‰ ¡∂∞¢
-exec spu_ItemCombinate 'mtxxxx3', '049000s1i0n7t8445289', 333, '1:94;2:95;3:96;4:97;', 14, 7726, -1
-exec spu_ItemCombinate 'mtxxxx3', '049000s1i0n7t8445289', 333, '1:98;2:99;3:100;4:101;', 14, 7727, -1		-- ∆º≈∏¥Ω «Ô∏‰ ¡∂∞¢
-exec spu_ItemCombinate 'mtxxxx3', '049000s1i0n7t8445289', 333, '1:98;2:99;3:100;4:101;', 14, 7728, -1
-exec spu_ItemCombinate 'mtxxxx3', '049000s1i0n7t8445289', 333, '1:185;2:186;3:187;4:188;', 14, 7729, -1		-- ±› πÊ∏¡¿Ã ¡∂∞¢
-exec spu_ItemCombinate 'mtxxxx3', '049000s1i0n7t8445289', 333, '1:185;2:186;3:187;4:188;', 14, 7720, -1
-
 -- error
 exec spu_ItemCombinate 'mtxxxx3', '049000s1i0n7t8445289', 333, '1:82;2:83;3:84;4:-1;', 14, 7721, -1		-- «œ≥™∫Û¿⁄∏Æ.
 exec spu_ItemCombinate 'mtxxxx3', '049000s1i0n7t8445289', 333, '1:82;2:83;3:84;4:37;', 14, 7722, -1		-- ¥Ÿ∏• µÓ±ﬁ.
@@ -409,6 +398,11 @@ Begin
 			update dbo.tUserItem set cnt = cnt - 1 where gameid = @gameid and listidx = @templistidxpiece2
 			update dbo.tUserItem set cnt = cnt - 1 where gameid = @gameid and listidx = @templistidxpiece3
 			update dbo.tUserItem set cnt = cnt - 1 where gameid = @gameid and listidx = @templistidxpiece4
+
+			------------------------------------------------
+			-- ≈Î∞Ë¡§∫∏.
+			------------------------------------------------
+			exec spu_DayLogInfoStatic 25, 1				-- ¿œ ¡∂«’.
 
 			------------------------------------------------
 			-- ¿Ø¿˙¡§∫∏

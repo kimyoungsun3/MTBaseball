@@ -1,31 +1,28 @@
 /*
--- 조각 분해
-exec spu_ItemDisapart 'mtxxxx3', '049000s1i0n7t8445289', 333, 82, 7711, -1	-- 돌 헬멧 조각.
-exec spu_ItemDisapart 'mtxxxx3', '049000s1i0n7t8445289', 333, 82, 7712, -1
-exec spu_ItemDisapart 'mtxxxx3', '049000s1i0n7t8445289', 333, 87, 7713, -1	-- 동 헬멧.
-exec spu_ItemDisapart 'mtxxxx3', '049000s1i0n7t8445289', 333, 87, 7714, -1
-exec spu_ItemDisapart 'mtxxxx3', '049000s1i0n7t8445289', 333, 90, 7715, -1	-- 은 헬멧.
-exec spu_ItemDisapart 'mtxxxx3', '049000s1i0n7t8445289', 333, 90, 7716, -1
-exec spu_ItemDisapart 'mtxxxx3', '049000s1i0n7t8445289', 333, 94, 7717, -1	-- 금 헬멧.
-exec spu_ItemDisapart 'mtxxxx3', '049000s1i0n7t8445289', 333, 94, 7718, -1
-exec spu_ItemDisapart 'mtxxxx3', '049000s1i0n7t8445289', 333, 98, 7719, -1	-- 티타늄 헬멧.
-exec spu_ItemDisapart 'mtxxxx3', '049000s1i0n7t8445289', 333, 98, 7710, -1
+-- 초월 + 초월주문서.
+insert into dbo.tUserItem(gameid,      listidx,  itemcode, cnt,  invenkind,   gethow,  randserial)  values(					 'mtxxxx3',       332,       101,  1,           1,       20,        7712)
+exec spu_ItemEvolve 'mtxxxx3', '049000s1i0n7t8445289', 333, 332, 15, 7711, -1	-- 돌 헬멧초월.
+exec spu_ItemEvolve 'mtxxxx3', '049000s1i0n7t8445289', 333, 332, 15, 7712, -1
+
+--update dbo.tUserMaster set helmetlistidx = 86 where gameid = 'mtxxxx3'
+exec spu_ItemEvolve 'mtxxxx3', '049000s1i0n7t8445289', 333, 86, 15, 7712, -1
 */
 use GameMTBaseball
 GO
 
-IF OBJECT_ID ( 'dbo.spu_ItemDisapart', 'P' ) IS NOT NULL
-    DROP PROCEDURE dbo.spu_ItemDisapart;
+IF OBJECT_ID ( 'dbo.spu_ItemEvolve', 'P' ) IS NOT NULL
+    DROP PROCEDURE dbo.spu_ItemEvolve;
 GO
 
 ------------------------------------------------
 --	1. 프로시져 생성
 ------------------------------------------------
-create procedure dbo.spu_ItemDisapart
+create procedure dbo.spu_ItemEvolve
 	@gameid_								varchar(20),					-- 게임아이디
 	@password_								varchar(20),
 	@sid_									int,
-	@listidxpiece_							int,
+	@listidxcloth_							int,
+	@listidxcust_							int,
 	@randserial_							varchar(20),
 	@nResult_								int					OUTPUT
 	WITH ENCRYPTION -- 프로시져를 암호화함.
@@ -126,6 +123,36 @@ as
 	--declare @ITEM_SUBCATEGORY_STATICINFO		int					set @ITEM_SUBCATEGORY_STATICINFO			= 500 -- 정보수집(500)
 	--declare @ITEM_SUBCATEGORY_LEVELUPREWARD	int					set @ITEM_SUBCATEGORY_LEVELUPREWARD			= 900 --레벨업 보상(510)
 
+	-- MT 아이템 획득방법
+	--declare @DEFINE_HOW_GET_FIRST				int					set @DEFINE_HOW_GET_FIRST					= 0		--기본
+	--declare @DEFINE_HOW_GET_BUY				int					set @DEFINE_HOW_GET_BUY						= 1		--구매
+	--declare @DEFINE_HOW_GET_GIFT				int					set @DEFINE_HOW_GET_GIFT					= 5		--선물
+	--declare @DEFINE_HOW_GET_FREEANIRESTORE	int					set @DEFINE_HOW_GET_FREEANIRESTORE			= 17	--무료복구.
+	--declare @DEFINE_HOW_GET_BOX_OPEN			int					set @DEFINE_HOW_GET_BOX_OPEN				= 20 	-- 박스뽑기.
+	--declare @DEFINE_HOW_GET_LEVELUP			int 				set @DEFINE_HOW_GET_LEVELUP					= 21 	-- 레벨업.
+	--declare @DEFINE_HOW_GET_AUCTION_BUY		int 				set @DEFINE_HOW_GET_AUCTION_BUY				= 22 	-- 경매장 구매.
+	declare @DEFINE_HOW_GET_COMBINATE			int 				set @DEFINE_HOW_GET_COMBINATE				= 23 	-- 조합으로 획득.
+	declare @DEFINE_HOW_GET_EVOLUTION			int 				set @DEFINE_HOW_GET_EVOLUTION				= 24 	-- 초월로 획득.
+
+	--조합주문서.
+	declare @ITEMCODE_COMBINATE_SCROLL			int 				set @ITEMCODE_COMBINATE_SCROLL				= 4500	-- 조합 주문서
+	declare @ITEMCODE_EVOLVE_SCROLL				int 				set @ITEMCODE_EVOLVE_SCROLL					= 4501	-- 초월 주문서
+
+	-- 아이템 기본 listidx.
+	declare @BASE_HELMET_LISTIDX				int 				set @BASE_HELMET_LISTIDX					= 1
+	declare @BASE_SHIRT_LISTIDX					int 				set @BASE_SHIRT_LISTIDX						= 2
+	declare @BASE_PANTS_LISTIDX					int 				set @BASE_PANTS_LISTIDX						= 3
+	declare @BASE_GLOVES_LISTIDX				int 				set @BASE_GLOVES_LISTIDX					= 4
+	declare @BASE_SHOES_LISTIDX					int 				set @BASE_SHOES_LISTIDX						= 5
+	declare @BASE_BAT_LISTIDX					int 				set @BASE_BAT_LISTIDX						= 6
+	declare @BASE_BALL_LISTIDX					int 				set @BASE_BALL_LISTIDX						= 7
+	declare @BASE_GOGGLE_LISTIDX				int 				set @BASE_GOGGLE_LISTIDX					= 8
+	declare @BASE_WRISTBAND_LISTIDX				int 				set @BASE_WRISTBAND_LISTIDX					= 9
+	declare @BASE_ELBOWPAD_LISTIDX				int 				set @BASE_ELBOWPAD_LISTIDX					= 10
+	declare @BASE_BELT_LISTIDX					int 				set @BASE_BELT_LISTIDX						= 11
+	declare @BASE_KNEEPAD_LISTIDX				int 				set @BASE_KNEEPAD_LISTIDX					= 12
+	declare @BASE_SOCKS_LISTIDX					int 				set @BASE_SOCKS_LISTIDX						= 13
+
 	------------------------------------------------
 	--	2-3. 내부사용 변수
 	------------------------------------------------
@@ -137,10 +164,34 @@ as
 	declare @blockstate				int					set @blockstate			= @BLOCK_STATE_YES
 	declare @randserial				varchar(20)			set @randserial			= '-1'
 
-	declare @itemcode				int					set @itemcode			= -1
+	declare @itemcodecust			int					set @itemcodecust		= -1
 	declare @cnt					int					set @cnt				= 0
-	declare @gamecostorg			int					set @gamecostorg 		= 0
-	declare @gamecostplus			int					set @gamecostplus		= @EVOLVE_STATE_FAIL_EXPIRE
+	declare @itemcodecloth			int					set @itemcodecloth		= -1
+	declare @itemcodenext			int					set @itemcodenext		= -1
+
+	declare @evolvestate			int					set @evolvestate		= @EVOLVE_STATE_FAIL_EXPIRE
+	declare @evolveitemcode			int					set @evolveitemcode		= -1
+	declare @listidxcloth		 	int					set @listidxcloth		= -1
+	declare @listidxcust			int					set @listidxcust		= -1
+
+	declare @rand					int					set @rand				= 0
+	declare @randsum				int					set @randsum			= 0
+
+	-- (게임변수 : 착용아이템 인덱스리스트)
+	declare @helmetlistidx			int 				set @helmetlistidx 		= @BASE_HELMET_LISTIDX
+	declare @shirtlistidx			int 				set @shirtlistidx		= @BASE_SHIRT_LISTIDX
+	declare @pantslistidx			int 				set @pantslistidx		= @BASE_PANTS_LISTIDX
+	declare @gloveslistidx			int 				set @gloveslistidx		= @BASE_GLOVES_LISTIDX
+	declare @shoeslistidx			int 				set @shoeslistidx		= @BASE_SHOES_LISTIDX
+	declare @batlistidx				int 				set @batlistidx			= @BASE_BAT_LISTIDX
+	declare @balllistidx			int 				set @balllistidx		= @BASE_BALL_LISTIDX
+	declare @gogglelistidx			int 				set @gogglelistidx		= @BASE_GOGGLE_LISTIDX
+	declare @wristbandlistidx		int 				set @wristbandlistidx	= @BASE_WRISTBAND_LISTIDX
+	declare @elbowpadlistidx		int 				set @elbowpadlistidx	= @BASE_ELBOWPAD_LISTIDX
+	declare @beltlistidx			int 				set @beltlistidx		= @BASE_BELT_LISTIDX
+	declare @kneepadlistidx			int 				set @kneepadlistidx		= @BASE_KNEEPAD_LISTIDX
+	declare @sockslistidx			int 				set @sockslistidx		= @BASE_SOCKS_LISTIDX
+
 
 	DECLARE @tTempTable TABLE(
 		listidx		int
@@ -153,7 +204,7 @@ Begin
 	set nocount on
 	set @nResult_ = @RESULT_ERROR
 	set @comment = 'ERROR 아이템을 변경할 수 없습니다.(-1)'
-	--select 'DEBUG 1 입력정보', @gameid_ gameid_, @password_ password_, @sid_ sid_, @listidxpiece_ listidxpiece_, @randserial_ randserial_
+	--select 'DEBUG 1 입력정보', @gameid_ gameid_, @password_ password_, @sid_ sid_, @listidxcloth_ listidxcloth_, @listidxcust_ listidxcust_, @randserial_ randserial_
 
 	------------------------------------------------
 	--	3-2. 연산수행
@@ -161,22 +212,31 @@ Begin
 	select
 		@gameid 			= gameid,			@blockstate		= blockstate,		@sid			= sid,
 		@cashcost			= cashcost,			@gamecost		= gamecost,
-		@gamecostplus 		= tempplusgamecost,
+		@listidxcloth		= templistidxcloth,
+		@listidxcust		= templistidxcust,
+		@evolvestate 		= tempevolvestate,
+		@evolveitemcode		= tempevolveitemcode,
+		@helmetlistidx 		= helmetlistidx, 	@shirtlistidx 	= shirtlistidx, 	@pantslistidx 	= pantslistidx, @gloveslistidx 	= gloveslistidx,
+		@shoeslistidx 		= shoeslistidx, 	@batlistidx 	= batlistidx, 		@balllistidx 	= balllistidx, 	@gogglelistidx 	= gogglelistidx,
+		@wristbandlistidx	= wristbandlistidx,	@elbowpadlistidx= elbowpadlistidx, 	@beltlistidx 	= beltlistidx, 	@kneepadlistidx = kneepadlistidx, 	@sockslistidx = sockslistidx,
 		@randserial 		= randserial
 	from dbo.tUserMaster
 	where gameid = @gameid_ and password = @password_
-	--select 'DEBUG 3-2 유저정보', @gameid gameid, @blockstate blockstate, @sid sid, @cashcost cashcost, @gamecost gamecost, @randserial randserial, @gamecostplus gamecostplus
+	--select 'DEBUG 3-2 유저정보', @gameid gameid, @blockstate blockstate, @sid sid, @cashcost cashcost, @gamecost gamecost, @randserial randserial, @evolvestate evolvestate, @listidxcloth listidxcloth
 
-	if(@gameid != '' and @listidxpiece_ != -1 )
+	if(@gameid != '' and @listidxcust_ != -1 and @listidxcloth_ != -1 )
 		begin
 			------------------------------------------------
 			-- 유저보유템(tUserItem)
 			------------------------------------------------
-			select @itemcode = itemcode, @cnt = cnt from dbo.tUserItem where gameid = @gameid and listidx = @listidxpiece_
-			--select 'DEBUG 3-5보유템(조각)', @listidxpiece_ listidxpiece_, @itemcode itemcode, @cnt cnt
+			select @itemcodecust = itemcode, @cnt = cnt from dbo.tUserItem where gameid = @gameid and listidx = @listidxcust_
+			--select 'DEBUG 3-4보유템(주문서)', @listidxcust_ listidxcust_, @itemcodecust itemcodecust, @cnt cnt
 
-			select @gamecostorg = cashcost from dbo.tItemInfo where itemcode = @itemcode and category = @ITEM_MAINCATEGORY_PIECEPART
-			--select 'DEBUG 3-5보유템(조각) > 분해.', @itemcode itemcode, @gamecostorg gamecostorg
+			select @itemcodecloth = itemcode from dbo.tUserItem where gameid = @gameid and listidx = @listidxcloth_
+			--select 'DEBUG 3-5보유템(의상)', @listidxcloth_ listidxcloth_, @itemcodecloth itemcodecloth
+
+			select @itemcodenext = param6 from dbo.tItemInfo where itemcode = @itemcodecloth and category = @ITEM_MAINCATEGORY_WEARPART
+			--select 'DEBUG 3-5보유템(의상) > 초월템.', @itemcodenext itemcodenext
 		end
 
 	------------------------------------------------
@@ -204,72 +264,134 @@ Begin
 	else if ( @randserial_ = @randserial )
 		BEGIN
 			set @nResult_ = @RESULT_SUCCESS
-			set @comment = 'SUCCESS 분해을 시도합니다.(중복)'
+			set @comment = 'SUCCESS 초월을 시도합니다.(중복)'
 
-			insert into @tTempTable( listidx ) values( @listidxpiece_ )
+			insert into @tTempTable( listidx ) values( @listidxcloth )
+			insert into @tTempTable( listidx ) values( @listidxcust  )
 		END
-	else if ( @itemcode = -1 )
+	else if ( @itemcodecust != @ITEMCODE_EVOLVE_SCROLL )
 		BEGIN
 			set @nResult_ = @RESULT_ERROR_NOT_FOUND_ITEMCODE
-			set @comment = 'ERROR 아이템을 찾지 못했습니다.'
+			set @comment = 'ERROR 아이템을 찾지 못했습니다.(1-1주문서)'
 		END
 	else if ( @cnt <= 0 )
 		BEGIN
 			set @nResult_ = @RESULT_ERROR_ITEM_LACK
-			set @comment = 'ERROR 아이템이 부족합니다.'
+			set @comment = 'ERROR 아이템이 부족합니다.(1-2주문서)'
 		END
-	else if ( @gamecostorg <= 0 )
+	else if ( @itemcodecloth = -1 )
 		BEGIN
 			set @nResult_ = @RESULT_ERROR_NOT_FOUND_ITEMCODE
-			set @comment = 'ERROR 아이템을 찾지 못했습니다.'
+			set @comment = 'ERROR 아이템을 찾지 못했습니다.(2-1의상)'
+		END
+	else if ( @itemcodenext = -1 )
+		BEGIN
+			set @nResult_ = @RESULT_ERROR_UPGRADE_FULL
+			set @comment = 'ERROR 업그레이드를 더 이상 할 수 없습니다.'
+		END
+	else if (
+		@helmetlistidx 		= @listidxcloth_ 	or	@shirtlistidx 	= @listidxcloth_	or	@pantslistidx 	= @listidxcloth_	or @gloveslistidx 	= @listidxcloth_	or
+		@shoeslistidx 		= @listidxcloth_	or 	@batlistidx 	= @listidxcloth_	or	@balllistidx 	= @listidxcloth_	or @gogglelistidx 	= @listidxcloth_	or
+		@wristbandlistidx	= @listidxcloth_	or	@elbowpadlistidx= @listidxcloth_	or	@beltlistidx 	= @listidxcloth_	or @kneepadlistidx  = @listidxcloth_	or 	@sockslistidx = @listidxcloth_
+	)
+		BEGIN
+			set @nResult_ = @RESULT_ERROR_WEARING_NOT_UPGRADE
+			set @comment = 'ERROR 착용중인 템은 업그레이드가 불가능합니다.'
 		END
 	else
 		BEGIN
 			set @nResult_ = @RESULT_SUCCESS
-			set @comment = 'SUCCESS 분해을 시도합니다.'
+			set @comment = 'SUCCESS 초월을 시도합니다.'
 			--select 'DEBUG ' + @comment
 
 			------------------------------------------------
-			-- 1. 분해 80%
+			-- 1. 월초 확률 확인.
+			--   25% -> 성공.
+			--			주문서 감소, 의상 업글
+			--   30% -> 실패(파괴).
+			--			주문서 감소, 의상 삭제
+			--   45% -> 실패(유지).
+			--			주문서 감소, 의상 유지
 			------------------------------------------------
-			--select 'DEBUG (전)', @gamecost gamecost
-			set @gamecostplus = @gamecostorg * 80 / 100
-			set @gamecost = @gamecost + @gamecostplus
-			--select 'DEBUG (후)', @gamecost gamecost, @gamecostorg gamecostorg, @gamecostplus gamecostplus
+			set @randsum 	= 100
+			set @rand 		= dbo.fnu_GetRandom(0, @randsum)
+			--select 'DEBUG ', @randsum randsum, @rand rand
+			if( @rand < 25 )
+				begin
+					--select 'DEBUG 25% -> 성공.'
+					set @evolvestate	= @EVOLVE_STATE_SUCCESS
+					set @evolveitemcode	= @itemcodenext
+				end
+			else if( @rand < (25+30) )
+				begin
+					--select 'DEBUG 30% -> 실패(파괴소멸).'
+					set @evolvestate	= @EVOLVE_STATE_FAIL_EXPIRE
+					set @evolveitemcode	= -1
+				end
+			else
+				begin
+					--select 'DEBUG 45% -> 실패(유지실패).'
+					set @evolvestate 	= @EVOLVE_STATE_FAIL_ONLY
+					set @evolveitemcode = @itemcodecloth
+				end
 
 			------------------------------------------------
-			-- 1-2. 아이템 감소.
+			-- 1-2. 아이템 지급하기.
 			------------------------------------------------
-			----select 'DEBUG 조각수량감소', @listidxpiece_ listidxpiece_
-			update dbo.tUserItem set cnt = cnt - 1 where gameid = @gameid and listidx = @listidxpiece_
+			if( @evolvestate = @EVOLVE_STATE_SUCCESS )
+				begin
+					--select 'DEBUG 의상초월.'
+					update dbo.tUserItem
+						set
+							itemcode 	= @evolveitemcode,
+							gethow 		= @DEFINE_HOW_GET_EVOLUTION
+					where gameid = @gameid and listidx = @listidxcloth_
+				end
+			else if( @evolvestate = @EVOLVE_STATE_FAIL_EXPIRE )
+				begin
+					--select 'DEBUG 의상삭제.'
+					delete from dbo.tUserItem
+					where gameid = @gameid and listidx = @listidxcloth_
+				end
+
+			------------------------------------------------
+			-- 박스감소.
+			------------------------------------------------
+			----select 'DEBUG 수량감소', @listidxcust_ listidxcust_
+			update dbo.tUserItem set cnt = cnt - 1 where gameid = @gameid and listidx = @listidxcust_
+
 
 			------------------------------------------------
 			-- 1-4. 출력로고.
 			------------------------------------------------
-			insert into @tTempTable( listidx ) values( @listidxpiece_   )
+			insert into @tTempTable( listidx ) values( @listidxcust_    )
+			insert into @tTempTable( listidx ) values( @listidxcloth_   )
 
 			------------------------------------------------
 			--
 			------------------------------------------------
-			exec spu_DayLogInfoStatic 27, 1				-- 일 분해
+			exec spu_DayLogInfoStatic 26, 1				-- 일 초월.
 
 			------------------------------------------------
 			-- 유저정보
 			------------------------------------------------
 			update dbo.tUserMaster
 				set
-					gamecost 		= @gamecost,
-					tempplusgamecost= @gamecostplus,
+					templistidxcust	= @listidxcust_,
+					templistidxcloth= @listidxcloth_,
+					tempevolvestate	= @evolvestate,
+					tempevolveitemcode= @evolveitemcode,
 					randserial 		= @randserial_
-			from dbo.tUserMaster where gameid = @gameid_
+			from dbo.tUserMaster
+			where gameid = @gameid_
 		END
 
 
 	--------------------------------------------------------------
-	-- 결과전송.
+	-- 결과전송.s
 	--------------------------------------------------------------
 	select @nResult_ rtn, @comment comment, @cashcost cashcost, @gamecost gamecost,
-		   @gamecostplus gamecostplus
+		   @evolvestate evolvestate, @evolveitemcode evolveitemcode
 
 	if(@nResult_ = @RESULT_SUCCESS)
 		BEGIN

@@ -6,6 +6,11 @@ exec spu_DayLogInfoStatic 14, 1             -- 일 로그인(유니크)
 exec spu_DayLogInfoStatic 21, 1				-- 일 조각박스 열기
 exec spu_DayLogInfoStatic 22, 1				-- 일 의상박스 열기
 
+
+exec spu_DayLogInfoStatic 25, 1				-- 일 조합.
+exec spu_DayLogInfoStatic 26, 1				-- 일 초월.
+exec spu_DayLogInfoStatic 27, 1				-- 일 분해.
+
 exec spu_DayLogInfoStatic 31, 1				-- 일 캐쉬구매
 
 exec spu_DayLogInfoStatic 41, 1				-- 일 연습모드
@@ -58,11 +63,17 @@ Begin
 			pieceboxcnt 	= pieceboxcnt  		+ CASE WHEN @mode_ = 21 then @cnt_ else 0 end,		-- 일 조각박스 열기
 			clothesboxcnt 	= clothesboxcnt 	+ CASE WHEN @mode_ = 22 then @cnt_ else 0 end,		-- 일 의상박스 열기
 
+			combinatecnt	= combinatecnt		+ CASE WHEN @mode_ = 25 then @cnt_ else 0 end,		-- 일 조합.
+			evolvecnt		= evolvecnt			+ CASE WHEN @mode_ = 26 then @cnt_ else 0 end,		-- 일 초월.
+			disapartcnt		= disapartcnt		+ CASE WHEN @mode_ = 27 then @cnt_ else 0 end,		-- 일 분해.
+
 			cashcnt			= cashcnt 			+ CASE WHEN @mode_ = 31 then @cnt_ else 0 end,		-- 일 캐쉬구매
 
 			practicecnt 	= practicecnt 		+ CASE WHEN @mode_ = 41 then @cnt_ else 0 end,		-- 일 연습모드
 			singlecnt 		= singlecnt 		+ CASE WHEN @mode_ = 42 then @cnt_ else 0 end,		--   싱글모드
 			multicnt		= multicnt 			+ CASE WHEN @mode_ = 43 then @cnt_ else 0 end,		--   멀티모드
+
+
 
 			certnocnt 		= certnocnt 		+ CASE WHEN @mode_ = 51 then @cnt_ else 0 end		--   쿠폰
 	where dateid8 = @dateid8

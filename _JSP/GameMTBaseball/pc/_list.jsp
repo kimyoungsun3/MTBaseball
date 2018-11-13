@@ -313,6 +313,50 @@
 			randserial=			<br>
 		</td>
 	</tr>
+	<tr>
+		<td>itemcombinate.jsp</td>
+		<td>
+			<a href=itemcombinate.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&listidxpiece=1:87;2:37;3:88;4:89;&listidxcust=14&randserial=831841>µπ «Ô∏‰¡∂«’</a><br>
+			<a href=itemcombinate.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&listidxpiece=1:87;2:37;3:88;4:89;&listidxcust=14&randserial=831842>µπ «Ô∏‰¡∂«’</a><br>
+		</td>
+		<td>
+			gameid=xxxx			<br>
+			password=			<br>
+			sid=				<br>
+			listidxpiece=		<br>
+			listidxcust=		<br>
+			randserial=			<br>
+		</td>
+	</tr>
+	<tr>
+		<td>itemevolve.jsp</td>
+		<td>
+			<a href=itemevolve.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&listidxcloth=332&listidxcust=15&randserial=831841>µπ «Ô∏‰√ ø˘</a><br>
+			<a href=itemevolve.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&listidxcloth=332&listidxcust=15&randserial=831842>µπ «Ô∏‰√ ø˘</a><br>
+		</td>
+		<td>
+			gameid=xxxx			<br>
+			password=			<br>
+			sid=				<br>
+			listidxcloth=		<br>
+			listidxcust=		<br>
+			randserial=			<br>
+		</td>
+	</tr>
+	<tr>
+		<td>itemdisapart.jsp</td>
+		<td>
+			<a href=itemdisapart.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&listidxpiece=82&randserial=831851>µπ «Ô∏‰ ¡∂∞¢</a><br>
+			<a href=itemdisapart.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&listidxpiece=82&randserial=831852>µπ «Ô∏‰ ¡∂∞¢</a><br>
+		</td>
+		<td>
+			gameid=xxxx			<br>
+			password=			<br>
+			sid=				<br>
+			listidxpiece=		<br>
+			randserial=			<br>
+		</td>
+	</tr>
 	<%/*%>		
 	<!--
 	<tr>

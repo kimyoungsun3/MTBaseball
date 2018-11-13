@@ -171,7 +171,7 @@ function f_Submit(f) {
 									<%=getTutorial(result.getInt("tutorial"))%>
 								</a><br>
 								
-								randserial : <%=result.getInt("randserial")%><br>
+								randserial : <%=result.getString("randserial")%><br>
 								
 								파라미터(0 ~ 9):<br>
 								<%for(int i = 0; i < 10; i++){

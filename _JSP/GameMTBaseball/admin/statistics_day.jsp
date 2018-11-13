@@ -86,6 +86,9 @@ function f_Submit(f) {
 							<td>캐쉬구매</td>
 							<td>연습모드</td>
 							<td>싱글모드</td>
+							<td>조합</td>
+							<td>초월</td>
+							<td>분해</td>
 						</tr>
 
 					<%
@@ -109,6 +112,10 @@ function f_Submit(f) {
 							<td><%=result.getString("cashcnt")%></td>
 							<td><%=result.getString("practicecnt")%></td>
 							<td><%=result.getString("singlecnt")%></td>
+							
+							<td><%=result.getString("combinatecnt")%></td>
+							<td><%=result.getString("evolvecnt")%></td>
+							<td><%=result.getString("disapartcnt")%></td>
 						</tr>
 						<%
 							maxPage = result.getInt("maxPage");

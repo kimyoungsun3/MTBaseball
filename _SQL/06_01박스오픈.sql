@@ -419,6 +419,10 @@ Begin
 					------------------------------------------------
 					insert into @tTempTable( listidx ) values( @listidx_    )
 					insert into @tTempTable( listidx ) values( @listidxrtn2 )
+					------------------------------------------------
+					-- 1-5. 통계정보.
+					------------------------------------------------
+					exec spu_DayLogInfoStatic 21, 1				-- 일 조각박스 열기
 				end
 			else if( @subcategory = @ITEM_SUBCATEGORY_BOX_CLOTH )
 				begin
@@ -450,6 +454,11 @@ Begin
 					------------------------------------------------
 					insert into @tTempTable( listidx ) values( @listidx_    )
 					insert into @tTempTable( listidx ) values( @listidxrtn2 )
+
+					------------------------------------------------
+					-- 1-5. 통계정보.
+					------------------------------------------------
+					exec spu_DayLogInfoStatic 22, 1				-- 일 의상박스 열기
 				end
 			else if( @subcategory = @ITEM_SUBCATEGORY_RANDOM_CASHCOST_BOX )
 				begin
