@@ -1350,7 +1350,7 @@ create table dbo.tSingleGameLog(
 	resultdate		datetime,									-- 결과기록시간
 
 	-- Constraint
-	CONSTRAINT	pk_tSingleGameLog_curturntime_gameid	PRIMARY KEY(curturntime, gameid)
+	CONSTRAINT	pk_tSingleGameLog_idx	PRIMARY KEY(idx)
 )
 
 IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tSingleGameLog_idx')
@@ -1364,6 +1364,14 @@ IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tSingleGameLog_gameid
 GO
 CREATE INDEX idx_tSingleGameLog_gameid_idx ON tSingleGameLog (gameid, idx)
 GO
+
+IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tSingleGameLog_gameid_curturntime')
+    DROP INDEX tSingleGameLog.idx_tSingleGameLog_gameid_curturntime
+GO
+CREATE INDEX idx_tSingleGameLog_gameid_curturntime ON tSingleGameLog (gameid, curturntime)
+GO
+
+
 ---------------------------------------------
 -- 	연습게임(Practice)
 ---------------------------------------------
@@ -1446,7 +1454,7 @@ create table dbo.tPracticeGameLog(
 	resultdate		datetime,									-- 결과기록시간
 
 	-- Constraint
-	CONSTRAINT	pk_tPracticeGameLog_curturntime_gameid	PRIMARY KEY(curturntime, gameid)
+	CONSTRAINT	pk_tPracticeGameLog_idx	PRIMARY KEY(idx)
 )
 
 IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tPracticeGameLog_idx')
@@ -1461,6 +1469,11 @@ GO
 CREATE INDEX idx_tPracticeGameLog_gameid_idx ON tPracticeGameLog (gameid, idx)
 GO
 
+IF EXISTS (SELECT name FROM sys.indexes WHERE name = N'idx_tPracticeGameLog_gameid_curturntime')
+    DROP INDEX tPracticeGameLog.idx_tPracticeGameLog_gameid_curturntime
+GO
+CREATE INDEX idx_tPracticeGameLog_gameid_curturntime ON tPracticeGameLog (gameid, curturntime)
+GO
 
 ---------------------------------------------
 -- 	배팅일일 정보.
