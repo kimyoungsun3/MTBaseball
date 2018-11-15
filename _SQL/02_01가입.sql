@@ -9,6 +9,7 @@ exec spu_UserCreate 'xxxx5',   '049000s1i0n7t8445289', '길동6', '19980106', '010
 exec spu_UserCreate 'xxxx6',   '049000s1i0n7t8445289', '길동7', '19980107', '01011112227', 'xxxx7@gmail.com',    '길동7닉네임', 100, -1
 exec spu_UserCreate 'xxxx7',   '049000s1i0n7t8445289', '길동8', '19980108', '01011112228', 'xxxx8@gmail.com',    '길동8닉네임', 100, -1
 exec spu_UserCreate 'xxxx8',   '049000s1i0n7t8445289', '길동9', '19980109', '01011112229', 'xxxx9@gmail.com',    '길동9닉네임', 100, -1
+exec spu_UserCreate 'xxxx9',   '049000s1i0n7t8445289', '길동1', '19980101', '01011112221', 'xxxx1@gmail.com',    '길동1닉네임', 100, -1
 exec spu_UserCreate 'xxxx10',  '049000s1i0n7t8445289', '길동10','19980109', '01011112230', 'xxxx10@gmail.com',   '길동10닉네임',100, -1
 
 -- select * from dbo.tUserBlockLog where gameid = ''
@@ -302,7 +303,7 @@ Begin
 			-- 가입 통계를 작성한다.(일반, 게스트)
 			------------------------------------
 			--select 'DEBUG > 3-7-2 아이디입력방식 생성'
-			--exec spu_DayLogInfoStatic 10, 1
+			exec spu_DayLogInfoStatic 11, 1             -- 일 유니크 가입(O)
 
 			----------------------------------------------
 			---- 핸드폰별 가입 카운터

@@ -367,8 +367,11 @@ Begin
 					--select 'DEBUG 소모템 수수료 차감값 적용', @consumeitemcode consumeitemcode, @consumegetpercent consumegetpercent
 				end
 
+			--select 'DEBUG ', @exp exp
 			set @level 			= dbo.fnu_GetLevel( @exp )
+			--select 'DEBUG ', @level level
 			set @commission 	= @COMMISSION_BASE - dbo.fnu_GetTax100FromLevel( @level )
+			--select 'DEBUG ', @commission commission
 			set @commissionbet 	= @COMMISSION_BASE - dbo.fnu_GetTax100FromLevel( @level ) - @consumegetpercent
 			--select 'DEBUG (보정전)', @exp exp, @level level, @COMMISSION_BASE COMMISSION_BASE, dbo.fnu_GetTax100FromLevel( @level ) levelcommission, @consumegetpercent consumegetpercent, @commission commission, @commissionbet commissionbet
 

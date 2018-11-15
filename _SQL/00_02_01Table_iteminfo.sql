@@ -30,7 +30,7 @@ values('wearpart', '200', '1', '2', '1', '기본 상의', '0', '0', '0', '0', '200',
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 
-values('wearpart', '201', '1', '2', '1', '돌 상의', '0', '0', '1', '0', '201', '0', '0', '0', '0', '1', '0', '돌 조각으로 조합한 장비', '4100', '1', '100', 'fa', '0', '202')
+values('wearpart', '201', '1', '2', '1', '돌 상의', '0', '0', '1', '0', '201', '0', '0', '0', '0', '1', '0', '돌 조각으로 조합한 장비', '4100', '1', '100', '0', '0', '202')
 GO
 
 insert into dbo.tItemInfo(labelname, itemcode, category, subcategory, equpslot, itemname, activate, toplist, grade, discount, icon, playerlv, multistate, gamecost, cashcost, buyamount, sellcost, description, param1, param2, param3, param4, param5, param6) 

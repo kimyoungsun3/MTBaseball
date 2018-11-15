@@ -233,7 +233,7 @@ Begin
 				@itemcode = itemcode
 			from dbo.tUserItem
 			where gameid = @gameid and listidx = @listidx_ and invenkind = @USERITEM_INVENKIND_WEAR
-			--select 'DEBUG 보유템', @listidx_ listidx_, @itemcode itemcode
+			----select 'DEBUG 보유템', @listidx_ listidx_, @itemcode itemcode
 
 
 			if( @itemcode != -1 )

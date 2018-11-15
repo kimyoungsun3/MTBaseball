@@ -39,13 +39,20 @@ CREATE FUNCTION dbo.fnu_GetLevel(
 AS
 BEGIN
 	declare @rtn 		int	set @rtn 		= 0
+	declare @temp		int set @temp 		= 0
 
 	-- select @rtn = (Sqrt ((@exp_ - 1) / 100 + 380.25) - 19.5) + 1;
 	-- select @rtn = Sqrt (@exp_ - 1 + 950625)/50.0 - 37.0/2.0;
 	if ( @exp_ <= 6718464 )
-		set @rtn = Sqrt ( (@exp_ - 1) / 81.0 ) + 1
+		begin
+			set @temp = (@exp_ - 1)
+			set @temp = case when @temp <= 0 then 0 else @temp end
+			set @rtn = Sqrt ( (@temp) / 81.0 ) + 1
+		end
 	else
-		set @rtn = CEILING( Sqrt ( Sqrt ( 1024.0 * @exp_ ) ) )
+		begin
+			set @rtn = CEILING( Sqrt ( Sqrt ( 1024.0 * @exp_ ) ) )
+		end
 
 	set @rtn = case
 					when @rtn <=   0 then 	1

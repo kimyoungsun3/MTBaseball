@@ -136,8 +136,8 @@
 	<tr>
 		<td>sgbet.jsp</td>
 		<td>
-			<a href=sgbet.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&gmode=1&listidx=11&curturntime=-1&select=1:0:21:1;2:-1:-1:0;3:-1:-1:0;4:-1:-1:0;>배팅x1</a><br>
-			<a href=sgbet.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&gmode=1&listidx=11&curturntime=-1&select=1:0:21:1;2:0:13:1;3:0:22:1;4:0:23:1;>배팅x4</a><br>
+			<a href=sgbet.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&gmode=1&listidx=11&curturntime=-1&select=1:0:100;2:-1:0; 3:-1:0; 4:-1:0;>배팅x1</a><br>
+			<a href=sgbet.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&gmode=1&listidx=11&curturntime=-1&select=1:0:100;2:0:100;3:0:100;4:0:100;>배팅x4</a><br>
 			<a href=sgbet.jsp?gameid=mtxxxx3&password=049000s1i0n7t8445289&sid=333&gmode=1&listidx=-1&curturntime=-1&select=>보기만</a><br>
 		</td>
 		<td>

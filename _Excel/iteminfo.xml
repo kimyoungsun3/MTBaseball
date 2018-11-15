@@ -196,7 +196,7 @@
 		<getbox>4100</getbox>
 		<getpercent1000>1</getpercent1000>
 		<expincrease100>100</expincrease100>
-		<setnum>fa</setnum>
+		<setnum>0</setnum>
 		<setplusexp100>0</setplusexp100>
 		<evolgetitem>202</evolgetitem>
 	</wearpart>
