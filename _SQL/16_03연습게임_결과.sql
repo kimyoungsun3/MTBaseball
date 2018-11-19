@@ -122,14 +122,14 @@ as
 	declare @GAME_RESULT_HOMERUN				int					set @GAME_RESULT_HOMERUN			= 4
 
 	-- 유저가 선택한 정보.
-	declare @SELECT_1_STRIKE					int					set @SELECT_1_STRIKE				=  0
-	declare @SELECT_1_BALL						int					set @SELECT_1_BALL					=  1
-	declare @SELECT_2_FAST						int					set @SELECT_2_FAST					=  0
-	declare @SELECT_2_CURVE						int					set @SELECT_2_CURVE					=  1
-	declare @SELECT_3_LEFT						int					set @SELECT_3_LEFT					=  0
-	declare @SELECT_3_RIGHT						int					set @SELECT_3_RIGHT					=  1
-	declare @SELECT_4_UP						int					set @SELECT_4_UP					=  0
-	declare @SELECT_4_DOWN						int					set @SELECT_4_DOWN					=  1
+	declare @SELECT_1_STRIKE					int					set @SELECT_1_STRIKE				=  1
+	declare @SELECT_1_BALL						int					set @SELECT_1_BALL					=  0
+	declare @SELECT_2_FAST						int					set @SELECT_2_FAST					=  1
+	declare @SELECT_2_CURVE						int					set @SELECT_2_CURVE					=  0
+	declare @SELECT_3_LEFT						int					set @SELECT_3_LEFT					=  1
+	declare @SELECT_3_RIGHT						int					set @SELECT_3_RIGHT					=  0
+	declare @SELECT_4_UP						int					set @SELECT_4_UP					=  1
+	declare @SELECT_4_DOWN						int					set @SELECT_4_DOWN					=  0
 
 	-- 플레그정보.
 	declare @RESULT_SELECT_NON					int					set @RESULT_SELECT_NON				= -1

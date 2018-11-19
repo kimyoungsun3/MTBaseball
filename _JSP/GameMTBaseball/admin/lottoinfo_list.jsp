@@ -111,12 +111,12 @@ function f_Submit2(f) {
 							<td>파워볼등급</td>
 							<td>파워볼홀짝</td>
 							<td>파워볼언더오버</td>
-							<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-							<td>파워볼(홀짝)<br>스트라이크/볼</td>
-							<td>파워볼(언오)<br>직구/변화구</td>
-							<td>볼합(홀짝)<br>좌/우</td>
-							<td>볼합(언오)<br>상/하</td>
-							<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>파워볼(홀짝)<br>스트라이크(1)/볼(0)</td>
+							<td>파워볼(언오)<br>직구(1)/변화구(0)</td>
+							<td>볼합(홀짝)<br>좌(1)/우(0)</td>
+							<td>볼합(언오)<br>상(1)/하(0)</td>
+							<td>&nbsp;</td>
 							<td>다음회차</td>
 							<td>다음회차시간</td>
 							<td>등록관리자ID</td>

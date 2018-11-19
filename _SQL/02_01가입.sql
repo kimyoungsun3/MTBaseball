@@ -12,6 +12,12 @@ exec spu_UserCreate 'xxxx8',   '049000s1i0n7t8445289', '길동9', '19980109', '010
 exec spu_UserCreate 'xxxx9',   '049000s1i0n7t8445289', '길동1', '19980101', '01011112221', 'xxxx1@gmail.com',    '길동1닉네임', 100, -1
 exec spu_UserCreate 'xxxx10',  '049000s1i0n7t8445289', '길동10','19980109', '01011112230', 'xxxx10@gmail.com',   '길동10닉네임',100, -1
 
+
+exec spu_UserCreate 'xxxx21',  '049000s1i0n7t8445289', '길동21','19980121', '01011112221', 'xxxx21@gmail.com',   '길동22닉네임',100, -1
+exec spu_UserCreate 'xxxx22',  '049000s1i0n7t8445289', '길동22','19980122', '01011112222', 'xxxx22@gmail.com',   '길동23닉네임',100, -1
+exec spu_UserCreate 'xxxx23',  '049000s1i0n7t8445289', '길동23','19980123', '01011112223', 'xxxx23@gmail.com',   '길동24닉네임',100, -1
+exec spu_UserCreate 'xxxx24',  '049000s1i0n7t8445289', '길동24','19980124', '01011112224', 'xxxx24@gmail.com',   '길동25닉네임',100, -1
+
 -- select * from dbo.tUserBlockLog where gameid = ''
 -- select * from dbo.tUserMaster where gameid = ''
 -- select * from dbo.tUserItem where gameid = ''
@@ -131,6 +137,11 @@ as
 	declare @GIFTLIST_GIFT_KIND_MESSAGE			int					set @GIFTLIST_GIFT_KIND_MESSAGE				= 1
 	declare @GIFTLIST_GIFT_KIND_GIFT			int					set @GIFTLIST_GIFT_KIND_GIFT				= 2
 
+	-- 테스트 기간...
+	declare @TEST_DATE							varchar(10)			set @TEST_DATE								= '2018-12-01'
+	declare @TEST_CASHCOST						int					set @TEST_CASHCOST							= 10000
+	declare @TEST_GAMECOST						int					set @TEST_GAMECOST							= 10000
+
 	------------------------------------------------
 	--	2-1. 내부사용 변수
 	------------------------------------------------
@@ -143,11 +154,13 @@ as
 	declare @listidx		int
 	declare @itemcode		int
 	declare @cnt			int
+	declare @cashcost		int				set @cashcost		= 0
+	declare @gamecost		int				set @gamecost		= 0
+	declare @curdate		datetime		set @curdate		= getdate()
 
 	declare @deldate		datetime		set @deldate		= getdate() - 1
 	declare @dateid8 		varchar(8)		set @dateid8 		= Convert(varchar(8),Getdate(),112)
 	declare @joincnt		int				set @joincnt		= 0
-	declare @cashcost 		int
 	declare @loop 			int
 
 	declare @helmetlistidx		int 		set @helmetlistidx 			= @BASE_HELMET_LISTIDX
@@ -281,12 +294,23 @@ Begin
 			insert into dbo.tUserItem(gameid,   listidx,      itemcode, cnt, invenkind)
 			values(					 @gameid_, @sockslistidx, 	  1300,   1, @USERITEM_INVENKIND_WEAR)
 
+
+			---------------------------------------------
+			-- 임시 테스트...
+			---------------------------------------------
+			if( @curdate < @TEST_DATE)
+				begin
+					set @cashcost = @TEST_CASHCOST
+					set @gamecost = @TEST_GAMECOST
+				end
+
 			---------------------------------------------
 			-- 유저 정보 입력하기
 			---------------------------------------------
 			--select 'DEBUG 3-5 유저 정보 입력'
 			insert into dbo.tUserMaster(
 										gameid, 		password,
+										cashcost,		gamecost,
 										username, 		birthday, 		phone, 		email, 	nickname, 	version,
 										helmetlistidx, 	shirtlistidx, 	pantslistidx, 		gloveslistidx, 		shoeslistidx, 	batlistidx,
 										balllistidx, 	gogglelistidx, 	wristbandlistidx, 	elbowpadlistidx, 	beltlistidx, 	kneepadlistidx,
@@ -294,6 +318,7 @@ Begin
 										)
 			values(
 										@gameid_, 		@password_,
+										@cashcost,		@gamecost,
 										@username_, 	@birthday_, 	@phone_, 	@email_, @nickname_, @version_,
 										@helmetlistidx, @shirtlistidx, 	@pantslistidx, 		@gloveslistidx,		@shoeslistidx, 	@batlistidx,
 										@balllistidx, 	@gogglelistidx,	@wristbandlistidx, 	@elbowpadlistidx, 	@beltlistidx,	@kneepadlistidx,

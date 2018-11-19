@@ -109,10 +109,10 @@ function f_Submit(f) {
 							<td>회차</td>
 							<td>들어올예정시간</td>
 							<td>게임모드<br>결과</td>
-							<td>스트라이크/볼<br>결과</td>
-							<td>직구/변화구<br>결과</td>
-							<td>좌/우<br>결과</td>
-							<td>상/하<br>결과</td>
+							<td>스트라이크(1)/볼(0)<br>결과</td>
+							<td>직구(1)/변화구(0)<br>결과</td>
+							<td>좌(1)/우(0)<br>결과</td>
+							<td>상(1)/하(0)<br>결과</td>
 							<td>접속IP<br>PC방gameid</td>
 							<td>레벨<br>PC방획득볼</td>
 							<td>경험치<br>기록일</td>
